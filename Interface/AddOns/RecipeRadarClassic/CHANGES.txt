@@ -1,0 +1,22 @@
+lightweight tag f0cc882d28893ebb27eff23768244b14de4d5923 1.0.0.20-beta
+Author:	Yunohu <kernighan@gmail.com>
+Date:	Thu Sep 26 21:19:54 2019 +0000
+
+commit f0cc882d28893ebb27eff23768244b14de4d5923
+Author: Yunohu <kernighan@gmail.com>
+Date:   Thu Sep 26 21:19:54 2019 +0000
+
+    Version 1.0.0.20
+
+commit 0070746c4674db1c62f16df976909cd931afb80a
+Author: Yunohu <kernighan@gmail.com>
+Date:   Thu Sep 26 21:19:44 2019 +0000
+
+    Fix loading LibTourist
+
+commit d76519a466c252f49b822fc5f2c7a37d1e137427
+Author: Yunohu <kernighan@gmail.com>
+Date:   Thu Sep 26 20:36:13 2019 +0000
+
+    Drop mapIDs file
+

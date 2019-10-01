@@ -1,0 +1,10 @@
+lightweight tag da58ffe514f20dfef270a68bce7c7e956f768863 2.7.9-release
+Author:	NielsHeltner <niels.heltner@hotmail.com>
+Date:	Sun Sep 29 22:52:04 2019 +0200
+
+commit da58ffe514f20dfef270a68bce7c7e956f768863
+Author: NielsHeltner <niels.heltner@hotmail.com>
+Date:   Sun Sep 29 22:52:04 2019 +0200
+
+    remove tooltip hook not existing in classic
+

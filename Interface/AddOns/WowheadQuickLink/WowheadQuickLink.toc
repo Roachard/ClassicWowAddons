@@ -1,0 +1,12 @@
+## Interface: 11302
+## Version: 2.7.0
+## Title: Wowhead Quick Link
+## Notes: Mouse over and press CTRL-C on (almost) anything to generate a Wowhead link.
+## Author: Blur
+## SavedVariables: WowheadQuickLinkCfg
+
+WowheadQuickLinkConfig.xml
+WowheadQuickLinkConfig.lua
+
+WowheadQuickLinkStrategies.lua
+WowheadQuickLink.lua

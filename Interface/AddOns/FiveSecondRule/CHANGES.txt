@@ -1,0 +1,41 @@
+tag 8dee081003ff3bfe3b0e72c770f323937a80acd8 Release-1-5
+Author:	Stefan Michael Pedersen <sp@ceptu.com>
+Date:	Wed Sep 25 00:07:41 2019 +0200
+
+commit 0a0f29e299dc039ce61ffacdd34066754d6c7fb0
+Author: Stefan Michael Pedersen <sp@ceptu.com>
+Date:   Wed Sep 25 00:07:28 2019 +0200
+
+    Release version 1.5.
+    Also update Readme.
+
+commit 767fcedf2c1ea71785800f031c2b66ba1b167519
+Author: Stefan Michael Pedersen <sp@ceptu.com>
+Date:   Wed Sep 25 00:02:16 2019 +0200
+
+    Hide bars when the player is dead.
+
+commit 15d8be661e784a78f8a1aa4d61e8c1202e4eb13f
+Author: Stefan Michael Pedersen <sp@ceptu.com>
+Date:   Tue Sep 24 23:55:04 2019 +0200
+
+    Revert specification of frame strata.
+
+commit 3661ccec6f6bf738e2f749e10c0c8919d05ae302
+Author: Juan Medina <jamedina@gmail.com>
+Date:   Fri Sep 20 13:17:25 2019 +0100
+
+    adding sparks to the bar
+
+commit 3661ccec6f6bf738e2f749e10c0c8919d05ae302
+Author: Juan Medina <jamedina@gmail.com>
+Date:   Fri Sep 20 13:17:25 2019 +0100
+
+    adding sparks to the bar
+
+commit 4dfcc64d3177a2a9c2229d24a8dcbeb5d6ae23dd
+Author: Juan Medina <jamedina@gmail.com>
+Date:   Tue Sep 17 18:45:34 2019 +0100
+
+    adding options for a flat bar
+

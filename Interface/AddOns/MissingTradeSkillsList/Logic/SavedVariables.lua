@@ -1,0 +1,37 @@
+------------------------------------------------------
+-- Contains all functions for addon/saved variables --
+------------------------------------------------------
+----------------------------------
+-- Creates all saved variables --
+----------------------------------
+MTSL_PLAYERS = {}
+
+MTSL_LOGIC_SAVED_VARIABLES = {
+    ------------------------------------------------------------------------------------------------
+    -- Reset the content of the savedvariable to have a "clean" install
+    ------------------------------------------------------------------------------------------------
+    ResetSavedVariables = function(self)
+        MTSL_PLAYERS = {}
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Removes a character from the saved data
+    --
+    -- @name        String      The name of the character
+    -- @realm       String      The name of the realm
+    ------------------------------------------------------------------------------------------------
+    RemoveCharacter = function(self, name, realm)
+        if realm ~= nil and name ~= nil then
+            if MTSL_PLAYERS[realm] == nil then
+                print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Realm " .. realm .. " does not exist in saved data! Names are case sensitive")
+            elseif MTSL_PLAYERS[realm][name] == nil then
+                print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Realm " .. realm .. " does not have saved data for " .. name .. "! Names are case sensitive")
+            else
+                MTSL_PLAYERS[realm][name] = nil
+                print(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. "MTSL: Removed " .. name .. " on realm " .. realm .. " from the saved data! Logout to complete.")
+            end
+        else
+            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Realm and character name are needed to delete a char")
+        end
+    end,
+}
