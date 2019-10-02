@@ -1,4 +1,4 @@
-
+--[[
 function BagManagementConfigFunc()
 	if (GetLocale() == "zhCN") then
 		MOD_BAG_MANAGEMENT_TITLE = {"背包管理", "beibaoguanli"};
@@ -49,3 +49,4 @@ function BagManagementConfigFunc()
 end
 
 BigFoot_AddCollector(BagManagementConfigFunc)
+]]
