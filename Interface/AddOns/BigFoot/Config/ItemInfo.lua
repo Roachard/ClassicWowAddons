@@ -102,7 +102,7 @@ function ItemInfoConfigFunc()
 			function (__arg)
 				if (BigFoot_IsAddOnLoaded("ItemInfo")) then
 					if (__arg == 1) then
-						II_Config['SellValue'] = 1;
+						II_Config['SellValue'] = nil;
 					else
 						II_Config['SellValue'] = nil;
 					end
