@@ -346,7 +346,7 @@ local function createconfig()
 						desc = L["Resets the position of the waypoint arrow if its been dragged off screen"],
 						func = function()
 							TomTomCrazyArrow:ClearAllPoints()
-							local pos = {"CENTER", nil , "CENTER", 0, 0}
+							local pos = {"TOP", nil , "TOP", 0, -50}
 							set({arg="arrow.position"}, pos)
 							TomTomCrazyArrow:SetPoint(pos[1], UIParent, pos[3], pos[4], pos[5])
 						end,
