@@ -1452,7 +1452,7 @@ namespace.defaultConfig = {
     locale = GetLocale(),
 
     nameplate = {
-        enabled = true,
+        enabled = false,
         width = 106,
         height = 11,
         iconSize = 13,
