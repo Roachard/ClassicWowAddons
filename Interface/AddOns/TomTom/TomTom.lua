@@ -34,7 +34,7 @@ function TomTom:Initialize(event, addon)
                 corpse_arrow = true,
             },
             block = {
-                enable = true,
+                enable = false,
                 accuracy = 2,
                 bordercolor = {1, 0.8, 0, 0.8},
                 bgcolor = {0, 0, 0, 0.4},
@@ -48,7 +48,7 @@ function TomTom:Initialize(event, addon)
                 playerenable = false,
                 playeraccuracy = 2,
                 playeroffset = 0,
-                cursorenable = true,
+                cursorenable = false,
                 cursoraccuracy = 2,
                 cursoroffset = 0,
 				throttle = 0.1,
