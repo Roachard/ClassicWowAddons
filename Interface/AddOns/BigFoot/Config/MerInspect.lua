@@ -1,4 +1,4 @@
-
+--[[
 function MerInspectConfigFunc()
 	if (GetLocale() == "zhCN") then
 		MOD_INFO_STAT_TITLE = {"装备信息", "zhuangbeixinxi"};
@@ -210,3 +210,4 @@ function MerInspectConfigFunc()
 end
 
 BigFoot_AddCollector(MerInspectConfigFunc)
+]]
