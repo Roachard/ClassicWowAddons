@@ -65,7 +65,7 @@ local UnitAura = UnitAura
 
 local defaults = {
     point = "CENTER",
-    x = 0, y = 0,
+    x = -150, y = -50,
     marks = {},
     rage = true,
     energy = true,
