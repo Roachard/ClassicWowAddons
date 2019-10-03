@@ -724,7 +724,7 @@ ThreatPlates.DEFAULT_SETTINGS = {
       anchor = "CENTER",
     },
     ComboPoints = {
-      ON = false,
+      ON = true,
       ShowInHeadlineView = false,
       Style = "Orbs",
       HorizontalSpacing = 0,
