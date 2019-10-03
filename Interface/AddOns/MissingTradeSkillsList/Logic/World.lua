@@ -8,7 +8,7 @@ MTSL_LOGIC_WORLD = {
     --
     -- returns 		Array		The contintents
     ------------------------------------------------------------------------------------------------
-    GetContintents = function(self)
+    GetContinents = function(self)
         table.sort(MTSL_DATA["continents"], function (a, b) return a["name"][MTSLUI_CURRENT_LANGUAGE] < b["name"][MTSLUI_CURRENT_LANGUAGE] end)
         return MTSL_DATA["continents"]
     end,
@@ -20,7 +20,7 @@ MTSL_LOGIC_WORLD = {
     --
     -- returns 		Array		The continent
     ------------------------------------------------------------------------------------------------
-    GetContintentById = function(self, id)
+    GetContinentById = function(self, id)
         return MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["contitents"], "id", id)
     end,
 
@@ -31,7 +31,7 @@ MTSL_LOGIC_WORLD = {
     --
     -- returns 		Array		The continent
     ------------------------------------------------------------------------------------------------
-    GetContintentByName = function(self, name)
+    GetContinentByName = function(self, name)
         return MTSL_TOOLS:GetItemFromLocalisedArrayByKeyValue(MTSL_DATA["contitents"], "name", name)
     end,
 

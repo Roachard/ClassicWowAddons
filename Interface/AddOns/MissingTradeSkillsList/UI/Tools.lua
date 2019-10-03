@@ -118,15 +118,15 @@ MTSLUI_TOOLS = {
 	----------------------------------------------------------------------------------------
 	PrintHelpMessage = function (self)
 		self:PrintAboutMessage()
+		print("/mtsl"  .. MTSLUI_FONTS.TAB .. MTSLUI_FONTS.TAB .. MTSLUI_FONTS.TAB .."Opens the configuration/options menu")
+		print("/mtsl config")
+		print("/mtsl options")
 		print("/mstl about" .. MTSLUI_FONTS.TAB .. "Print information about this addon")
 		print("/mstl help" .. MTSLUI_FONTS.TAB .. "Print how to use this addon")
-        print("/mstl acc " .. MTSLUI_FONTS.TAB  .. "Toggles the account wide frame - COMING SOON")
+        print("/mstl acc " .. MTSLUI_FONTS.TAB  .. "Opens the account wide frame")
         print("/mstl account")
-		print("/mstl db" .. MTSLUI_FONTS.TAB .. "Shows the database explorer window")
+		print("/mstl db" .. MTSLUI_FONTS.TAB .. "Opens the database explorer window")
         print("/mstl database")
-		print("/mtsl remove <name char> <name realm>"  .. MTSLUI_FONTS.TAB .. "Removes the saved data of a certain char on a realm")
-		print("/mtsl reset"  .. MTSLUI_FONTS.TAB .. "Reset the saveddata of the addon ")
-		print("/mtsl scale <number>"  .. MTSLUI_FONTS.TAB .. "Scale the Database Explorer & Account explorer (Number must be > 0.5 and < 1.25)")
 	end,
 
 	------------------------------------------------------------------------------------------------

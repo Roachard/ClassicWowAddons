@@ -19,11 +19,16 @@ MTSLACCUI_ACCOUNT_FRAME = {
     -- Shows the frame
     ----------------------------------------------------------------------------------------
     Show = function (self)
-        -- hide database viewer
-        MTSLDBUI_DATABASE_FRAME:Hide()
-        self.ui_frame:Show()
-        -- update the UI of the screen
-        self:RefreshUI()
+        -- only show if not options menu open
+        if MTSLUI_OPTIONS_MENU_FRAME:IsShown() then
+            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Please close options menu first!")
+        else
+            -- hide database viewer
+            MTSLDBUI_DATABASE_FRAME:Hide()
+            self.ui_frame:Show()
+            -- update the UI of the screen
+            self:RefreshUI()
+        end
     end,
 
     ---------------------------------------------------------------------------------------
@@ -53,7 +58,6 @@ MTSLACCUI_ACCOUNT_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     Initialise = function(self)
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLACCUI_AccountFrame", nil, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
-        self.ui_frame:SetScale(MTSLUI_SAVED_VARIABLES:GetScale())
         -- Set Position to center of screen
         self.ui_frame:SetPoint("CENTER", nil, "CENTER", 0, 0)
         -- Dummy operation to do nothing, discarding the zooming in/out

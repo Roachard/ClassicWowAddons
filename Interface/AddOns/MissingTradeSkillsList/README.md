@@ -9,31 +9,43 @@ Please donate if you want to support this addon!
 Thumbkin (Retail: EU-Burning Steppes, Classic: EU-Pyrewood Village)
 
 ### Screenshots
-Skill is learnable from 1 source  
-![alt text](https://media.forgecdn.net/attachments/264/184/mtsl_main.png "Missing TradeSkills List - Profession Frame - One Source")
-Skill is learnable from 2 sources  
-![alt text](https://media.forgecdn.net/attachments/264/180/mtsl_multiple_sources.png "Missing TradeSkills List - Profession Frame - Two sources")
+MTSL - Vertical split (Change using options menu)
+![alt text](https://media.forgecdn.net/attachments/264/184/mtsl_main.png "Missing TradeSkills List - Vertical Split")
+MTSL - Horizontal split (Change using options menu)
+![alt text](https://media.forgecdn.net/attachments/264/475/mtsl_horizontal.png "Missing TradeSkills List - Horizontal Split")
 Account explorer (/mtsl acc or /mtsl account)
 ![alt text](https://media.forgecdn.net/attachments/264/181/mtsl_account.png "Missing TradeSkills List - Account explorer")
 Database explorer (/mtsl db or /mtsl database)
 ![alt text](https://media.forgecdn.net/attachments/264/182/mtsl_database.png "Missing TradeSkills List - Database explorer")
+Options menu (/mtsl or /mtsl config or /mtsl options)
+![alt text](https://media.forgecdn.net/attachments/264/476/mtsl_options.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
   * Add lines to tooltips for recipes to show if chars who know the skill can learn it or not (skip learned ones though)
-  * Translations for:
-    - The built-in labels of MTSL
-    - The special actions for certain skills
+  * Translations for the special actions for certain skills  
 
 ### Known Bugs
 1: Not all trainer skills have the correct minimum skill required or price  
 3: Reputation required not yet shown for items
-4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 5: World drops currently left out when filtering on specific zone for drops (mob range check not yet in place)
 
 ### Fixed Issues
 2: When a skill has multiple sources, the secondary source is not always shown correctly  
+4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
-### Version History
+### Version History 
+v1.13.18&nbsp;&nbsp;&nbsp;&nbsp;Changed way options/config is saved so current saved scale will be reset first time!  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed scaling bug  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong translations  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Splitted the location filter up into 2 dropdowns (1 for continent & 1 for subzone)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added "continents" for Dungeon, Raid & BG to "lighten" the mount of subzones in each drop down    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added a configuration menu (/mtsl or /mtsl config or /mtsl options) to allow more user UI tweaking  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose splitdirection (Horizontal/Vertical) for MTSL main window (NOT Account or Database explorer)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI Scaling for each Frame (Keep in mind that if other addon scales window, it adds to that scale)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose default font (not yet available)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Remove a character  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Clear all saved data and restore default values  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slash commands for user config have been removed  
 v1.13.17&nbsp;&nbsp;&nbsp;&nbsp;Translated all built-in MTSL labels (Report mistakes or improvements in opened Issues tickets)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added support for Skillet-Classic addon  
 v1.13.16&nbsp;&nbsp;&nbsp;&nbsp;Added check to only add "current zone" to list of zone filter when possible (does not always find the zone)      

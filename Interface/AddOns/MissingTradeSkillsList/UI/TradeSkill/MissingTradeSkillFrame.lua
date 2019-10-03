@@ -1,18 +1,22 @@
 -----------------------------------------------------------------
--- Name: MissingTradeSkillFrame			                           --
+-- Name: MissingTradeSkillFrame			                       --
 -- Description: The main frame shown next to TradeSkill window --
 -----------------------------------------------------------------
 MTSLUI_MISSING_TRADESKILLS_FRAME = {
     ui_frame = nil,
     -- Addon frame
-    FRAME_WIDTH = 865,
-    FRAME_HEIGHT = 447,
+    FRAME_WIDTH_VERTICAL_SPLIT = 865,
+    FRAME_HEIGHT_VERTICAL_SPLIT = 445,
+    -- means the list moves on top, so reduct size here (-345)
+    FRAME_WIDTH_HORIZONTAL_SPLIT = 520,
+    -- add the height of the new listframe (shows 7 instead of 19 items)
+    FRAME_HEIGHT_HORIZONTAL_SPLIT = 628,
     prev_amount_missing = "",
     prev_tradeskill_name = "",
 
-    ---------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     -- Hides the frame
-    ----------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     Hide = function (self)
         self.ui_frame:Hide()
         -- deselect any button from the list
@@ -21,18 +25,18 @@ MTSLUI_MISSING_TRADESKILLS_FRAME = {
         prev_tradeskill_name = ""
     end,
 
-    ---------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     -- Shows the frame
-    ----------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     Show = function (self)
         self.ui_frame:Show()
         -- update the UI of the screen
         self:RefreshUI()
     end,
 
-    ---------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     -- Toggle the frame
-    ----------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------------------
     Toggle = function (self)
         if self:IsShown() then
             self:Hide()
@@ -56,7 +60,8 @@ MTSLUI_MISSING_TRADESKILLS_FRAME = {
     -- @parent_frame		Frame		The parent frame
     ----------------------------------------------------------------------------------------------------------
     Initialise = function(self)
-        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLUI_MissingTradeSkillsFrame", MTSLUI_TOGGLE_BUTTON.ui_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
+        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLUI_MissingTradeSkillsFrame", MTSLUI_TOGGLE_BUTTON.ui_frame, nil, self.FRAME_WIDTH_VERTICAL_SPLIT, self.FRAME_HEIGHT_VERTICAL_SPLIT, true)
+        self.ui_frame:SetBackdropColor(0,0,0,1)
         -- Set Position relative to MTSL button
         self.ui_frame:SetPoint("TOPLEFT", MTSLUI_TOGGLE_BUTTON.ui_frame, "TOPRIGHT", -2, 0)
         -- Dummy operation to do nothing, discarding the zooming in/out
@@ -67,10 +72,37 @@ MTSLUI_MISSING_TRADESKILLS_FRAME = {
 
         -- Create the frames inside this frame
         MTSLUI_MTSLF_TITLE_FRAME:Initialise(self.ui_frame)
-        MTSLUI_MTSLF_MISSING_SKILLS_LIST_SORT_FRAME:Initialise(self.ui_frame)
-        MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME:Initialise(self.ui_frame)
-        MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:Initialise(self.ui_frame)
-        MTSLUI_MTSLF_PROGRESSBAR:Initialise(self.ui_frame)
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_SORT_FRAME:Initialise(MTSLUI_MTSLF_TITLE_FRAME.ui_frame)
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME:Initialise(MTSLUI_MTSLF_MISSING_SKILLS_LIST_SORT_FRAME.ui_frame)
+        MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:Initialise(MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME.ui_frame)
+        MTSLUI_MTSLF_PROGRESSBAR:Initialise(MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME.ui_frame)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Swap to Vertical Mode (Default mode, means list left & details right)
+    ----------------------------------------------------------------------------------------------------------
+    SwapToVerticalMode = function(self)
+        -- resize the frames
+        self.ui_frame:SetWidth(self.FRAME_WIDTH_VERTICAL_SPLIT)
+        self.ui_frame:SetHeight(self.FRAME_HEIGHT_VERTICAL_SPLIT)
+        MTSLUI_MTSLF_TITLE_FRAME:ResizeToVerticalMode()
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_SORT_FRAME:ResizeToVerticalMode()
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME:ResizeToVerticalMode()
+        MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:ResizeToVerticalMode()
+        MTSLUI_MTSLF_PROGRESSBAR:ResizeToVerticalMode()
+    end,
+    ----------------------------------------------------------------------------------------------------------
+    -- Swap to Horizontal Mode (means list on top & details below)
+    ----------------------------------------------------------------------------------------------------------
+    SwapToHorizontalMode = function(self)
+        -- resize the frames where needed
+        self.ui_frame:SetWidth(self.FRAME_WIDTH_HORIZONTAL_SPLIT)
+        self.ui_frame:SetHeight(self.FRAME_HEIGHT_HORIZONTAL_SPLIT)
+        MTSLUI_MTSLF_TITLE_FRAME:ResizeToHorizontalMode()
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_SORT_FRAME:ResizeToHorizontalMode()
+        MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME:ResizeToHorizontalMode()
+        MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:ResizeToHorizontalMode()
+        MTSLUI_MTSLF_PROGRESSBAR:ResizeToHorizontalMode()
     end,
 
     ----------------------------------------------------------------------------------------------------------

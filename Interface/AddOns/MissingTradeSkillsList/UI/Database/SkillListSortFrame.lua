@@ -123,7 +123,7 @@ MTSLDBUI_SKILL_LIST_SORT_FRAME = {
             table.insert(self.cont_zones, zone_filter)
         end
 
-        local contintents = MTSL_LOGIC_WORLD:GetContintents()
+        local contintents = MTSL_LOGIC_WORLD:GetContinents()
         for _, c in pairs(contintents) do
             local new_cont = {
                 ["name"] = c.name[MTSLUI_CURRENT_LANGUAGE],
@@ -140,6 +140,7 @@ MTSLDBUI_SKILL_LIST_SORT_FRAME = {
             table.insert(self.cont_zones, new_cont)
         end
     end,
+
     ----------------------------------------------------------------------------------------------------------
     -- Intialises drop down for sorting
     ----------------------------------------------------------------------------------------------------------

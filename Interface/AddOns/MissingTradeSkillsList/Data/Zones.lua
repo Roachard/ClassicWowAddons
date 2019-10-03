@@ -27,6 +27,45 @@ MTSL_DATA["continents"] = {
             ["Korean"] = "칼림도어",
             ["Chinese"] = "卡利姆多",
         }
+    },
+    {
+        ["id"] = 3,
+        ["name"] = {
+            ["English"] = "Battleground",
+            ["French"] = "Champ de bataille",
+            ["German"] = "Schlachtfeld",
+            ["Russian"] = "Поле боя",
+            ["Korean"] = "전장",
+            ["Chinese"] = "战场",
+            ["Spanish"] = "Campo de batalla",
+            ["Portuguese"] = "Campo de Batalha",
+        },
+    },
+    {
+        ["id"] = 4,
+        ["name"] = {
+            ["English"] = "Dungeon",
+            ["French"] = "Donjon",
+            ["German"] = "Dungeon",
+            ["Russian"] = "Подземелье",
+            ["Korean"] = "던전",
+            ["Chinese"] = "地下城",
+            ["Spanish"] = "Mazmorra",
+            ["Portuguese"] = "Masmorra",
+        },
+    },
+    {
+        ["id"] = 5,
+        ["name"] = {
+            ["English"] = "Raid",
+            ["French"] = "Raid",
+            ["German"] = "Schlachtzug",
+            ["Russian"] = "Рейд",
+            ["Korean"] = "공격대",
+            ["Chinese"] = "团队副本",
+            ["Spanish"] = "Banda",
+            ["Portuguese"] = "Raide",
+        },
     }
 }
 
@@ -43,7 +82,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "안퀴라즈",
             ["Chinese"] = "安其拉",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 36,
@@ -71,7 +110,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "알터랙 계곡",
             ["Chinese"] = "奥特兰克山谷",
         },
-        ["cont_id"] = 0,
+        ["cont_id"] = 3,
     },
     {
         ["id"] = 3358,
@@ -85,7 +124,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "아라시 분지",
             ["Chinese"] = "阿拉希盆地",
         },
-        ["cont_id"] = 0,
+        ["cont_id"] = 3,
     },
     {
         ["id"] = 45,
@@ -155,7 +194,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "검은심연의 나락",
             ["Chinese"] = "黑暗深渊",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1584,
@@ -169,7 +208,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "검은바위 나락",
             ["Chinese"] = "黑石深渊",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 25,
@@ -197,7 +236,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "검은바위 첨탑",
             ["Chinese"] = "黑石塔",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 2677,
@@ -211,7 +250,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "검은날개 둥지",
             ["Chinese"] = "黑翼之巢",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 4,
@@ -253,7 +292,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Die Höhlen der Zeit",
             ["Spanish"] = "Cavernas del Tiempo",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 148,
@@ -337,7 +376,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Düsterbruch",
             ["Spanish"] = "La Masacre",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1,
@@ -477,7 +516,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Gnomeregan",
             ["Spanish"] = "Gnomeregan",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 267,
@@ -533,7 +572,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Maraudon",
             ["Spanish"] = "Maraudon",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 2717,
@@ -547,7 +586,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Geschmolzener Kern",
             ["Spanish"] = "Núcleo de Magma",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 493,
@@ -589,7 +628,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Naxxramas",
             ["Spanish"] = "Naxxramas",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 2159,
@@ -603,7 +642,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Onyxias Hort",
             ["Spanish"] = "Guarida de Onyxia",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 1637,
@@ -631,7 +670,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Ragefireabgrund",
             ["Spanish"] = "Sima Ígnea",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 722,
@@ -645,7 +684,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Die Hügel von Razorfen",
             ["Spanish"] = "Zahúrda Rojocieno",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 491,
@@ -659,7 +698,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Der Kral von Razorfen",
             ["Spanish"] = "Horado Rajacieno",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 44,
@@ -687,7 +726,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Ruinen von Ahn'Qiraj",
             ["Spanish"] = "Ruinas de Ahn'Qiraj",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 5,
     },
     {
         ["id"] = 796,
@@ -701,7 +740,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Das scharlachrote Kloster",
             ["Spanish"] = "Monasterio Escarlata",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 2057,
@@ -715,7 +754,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Scholomance",
             ["Spanish"] = "Scholomance",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 51,
@@ -743,7 +782,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Burg Shadowfang",
             ["Spanish"] = "Castillo de Colmillo Oscuro",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1377,
@@ -827,7 +866,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Stratholme",
             ["Spanish"] = "Stratholme",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1417,
@@ -841,7 +880,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Versunkener Tempel",
             ["Spanish"] = "Templo Sumergido",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 8,
@@ -911,21 +950,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Die Todesminen",
             ["Spanish"] = "Las Minas de la Muerte",
         },
-        ["cont_id"] = 1,
-    },
-    {
-        ["id"] = 207,
-        ["name"]  = {
-            ["English"] = "The Great Sea",
-            ["Russian"] = "Великое море",
-            ["French"] = "La Grande mer",
-            ["Portuguese"] = "O Grande Oceano",
-            ["Korean"] = "대해",
-            ["Chinese"] = "无尽之海",
-            ["German"] = "Das große Meer",
-            ["Spanish"] = "Mare Magnum",
-        },
-        ["cont_id"] = 0,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 47,
@@ -967,21 +992,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Der Tempel von Atal'Hakkar",
             ["Spanish"] = "El Templo de Atal'Hakkar",
         },
-        ["cont_id"] = 1,
-    },
-    {
-        ["id"] = 457,
-        ["name"]  = {
-            ["English"] = "The Veiled Sea",
-            ["Russian"] = "Сокрытое Море",
-            ["French"] = "La Mer voilée",
-            ["Portuguese"] = "Mar Velado",
-            ["Korean"] = "장막의 바다",
-            ["Chinese"] = "迷雾之海",
-            ["German"] = "Das verhüllte Meer",
-            ["Spanish"] = "Mar de la Bruma",
-        },
-        ["cont_id"] = 0,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 400,
@@ -1037,7 +1048,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Uldaman",
             ["Spanish"] = "Uldaman",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1497,
@@ -1079,7 +1090,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Die Höhlen des Wehklagens",
             ["Spanish"] = "Cuevas de los Lamentos",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 3277,
@@ -1093,7 +1104,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Warsongschlucht",
             ["Spanish"] = "Garganta Grito de Guerra",
         },
-        ["cont_id"] = 0,
+        ["cont_id"] = 3,
     },
     {
         ["id"] = 28,
@@ -1163,7 +1174,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Zul'Farrak",
             ["Spanish"] = "Zul'Farrak",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 4,
     },
     {
         ["id"] = 1977,
@@ -1177,6 +1188,6 @@ MTSL_DATA["zones"] = {
             ["German"] = "Zul'Gurub",
             ["Spanish"] = "Zul'Gurub",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 5,
     },
 }

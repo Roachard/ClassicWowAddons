@@ -41,4 +41,23 @@ MTSLUI_PROGRESSBAR = {
         self.ui_frame.texture:SetStatusBarColor(0.0, 1.0, 0.0, 0.95)
         self.ui_frame.counter.text:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. current_value .. "/" .. max_value)
     end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Resize the progressbar
+    --
+    -- @width		number
+    -- @height		number
+    ----------------------------------------------------------------------------------------------------------
+    ResizeFrame = function (self, width, height)
+        if width ~= nil then
+            self.ui_frame:SetWidth(width)
+            self.ui_frame.texture:SetWidth(width - 8)
+            self.ui_frame.counter:SetWidth(width)
+        end
+        if height ~= nil then
+            self.ui_frame:SetHeight(height)
+            self.ui_frame.texture:SetHeight(height - 8)
+            self.ui_frame.counter:SetHeight(height)
+        end
+    end,
 }

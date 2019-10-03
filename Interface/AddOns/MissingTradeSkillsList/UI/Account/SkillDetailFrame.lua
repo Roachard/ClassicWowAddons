@@ -620,7 +620,7 @@ MTSLACCUI_SKILL_DETAIL_FRAME = {
             amount_labels = self.MAX_SOURCES_SHOWN_SECONDARY
         end
         label_sources.ui_frame:Show()
-        local text = MTSLUI_LOCALES_LABELS["worldwide drop"][MTSLUI_CURRENT_LANGUAGE] .. min_level .. MTSLUI_LOCALES_LABELS["to"][MTSLUI_CURRENT_LANGUAGE] .. max_level
+        local text = MTSLUI_LOCALES_LABELS["worldwide drop"][MTSLUI_CURRENT_LANGUAGE] .. min_level .. MTSLUI_LOCALES_LABELS["to"][MTSLUI_CURRENT_LANGUAGE] .. max_level .. MTSLUI_LOCALES_LABELS["worldwide drop rest"][MTSLUI_CURRENT_LANGUAGE]
         label_sources.values[1]:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. text)
         label_sources.values[1]:Show()
         for i=2,amount_labels do

@@ -22,9 +22,10 @@ MTSLUI_EVENT_HANDLER = {
 				print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_ADDON.NAME .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. " (by " .. MTSLUI_ADDON.AUTHOR .. ")" .. MTSLUI_FONTS.COLORS.TEXT.TITLE .. " v" .. MTSLUI_ADDON.VERSION .. " loaded!")
 				-- load the data for the player
 				MTSL_LOGIC_PLAYER:LoadPlayer()
-				self.addon_loaded = 1
 				-- update the counters for amount of skills in current phase
 				MTSL_TOOLS:CountData()
+				-- Try to load the saved variables
+				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- Initialise all the frames now we know we can use the addon
 				-- Create the toggle button (shown on tradeskill/craft window)
 				MTSLUI_TOGGLE_BUTTON:Initialise()
@@ -34,6 +35,12 @@ MTSLUI_EVENT_HANDLER = {
 				MTSLACCUI_ACCOUNT_FRAME:Initialise()
 				-- Create database explorer window
 				MTSLDBUI_DATABASE_FRAME:Initialise()
+				-- Create the options menu
+				MTSLUI_OPTIONS_MENU_FRAME:Initialise()
+				-- Load the saved variables for UI
+                MTSLUI_SAVED_VARIABLES:LoadSavedUIScales()
+				MTSLUI_SAVED_VARIABLES:LoadSavedSplitMode()
+				self.addon_loaded = 1
 			else
 				print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Your locale " .. GetLocale() .. " is not supported!")
 				self.addon_loaded = 0
@@ -169,28 +176,15 @@ MTSLUI_EVENT_HANDLER = {
 	-- @msg:			string		The argument for the slash command
 	---------------------------------------------------------------------------------------
     SLASH_COMMAND = function (self, msg)
-		msg, arg1, arg2 = strsplit(" ", msg, 3)
-
 		if msg == "acc" or msg == "account" then
-			MTSLACCUI_ACCOUNT_FRAME:Toggle()
+			MTSLACCUI_ACCOUNT_FRAME:Show()
 		elseif msg == "db" or msg == "database" then
-			MTSLDBUI_DATABASE_FRAME:Toggle()
+			MTSLDBUI_DATABASE_FRAME:Show()
 		elseif msg == "about" then
             MTSLUI_TOOLS:PrintAboutMessage()
-		elseif msg == "summary" then
-			MTSLUI_TOOLS:PrintSummary()
-		elseif msg == "scale" then
-			if unexpected_condition then
-				MTSLUI_SAVED_VARIABLES:SetScale(nil)
-			end
-			MTSLUI_SAVED_VARIABLES:SetScale(tonumber(arg1))
-		elseif msg == "remove" then
-			MTSL_LOGIC_PLAYER:RemoveCharacter(arg1, arg2)
-		elseif msg == "reset" then
-			MTSL_LOGIC_SAVED_VARIABLES:ResetSavedVariables()
-			MTSLUI_SAVED_VARIABLES:ResetSavedVariables()
-			print(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. "MTSL: Saved variables reset!")
-		-- Not a known paramter or "help"
+		elseif msg == nil or msg == "" or msg == "options" or msg == "config" then
+			MTSLUI_OPTIONS_MENU_FRAME:Show()
+		-- Not a known parameter or "help"
 		else
             MTSLUI_TOOLS:PrintHelpMessage()
 		end
@@ -223,5 +217,14 @@ MTSLUI_EVENT_HANDLER = {
 		event_frame:RegisterEvent("TRADE_SKILL_UPDATE")
 		-- Learned Skill from trainer
 		event_frame:RegisterEvent("TRAINER_UPDATE")
+	end,
+
+	---------------------------------------------------------------------------------------
+	-- Get loadstatus of addon
+	--
+	-- returns		Boolean		Flag indicating if addon is loaded
+	---------------------------------------------------------------------------------------
+	IsAddonLoaded = function (self)
+		return self.addon_loaded == 1
 	end,
 }

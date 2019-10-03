@@ -57,7 +57,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- create the frame
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", parent_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
         -- position just left of the Missing Skills List Frame
-        self.ui_frame:SetPoint("BOTTOMLEFT", MTSLUI_MTSLF_MISSING_SKILLS_LIST_FRAME.ui_frame, "BOTTOMRIGHT", 0, 0)
+        self.ui_frame:SetPoint("BOTTOMLEFT", parent_frame, "BOTTOMRIGHT", 0, 0)
         --  Black background
         self.ui_frame:SetBackdropColor(0,0,0,1)
         -- Add the Texts/Strings to the frame
@@ -137,7 +137,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- Labels to show "Trained by: <trainers> or Sold by: <vendors> or Dropped by: <mobs> or Obtained from: <quest>"
         self.labels.alt_sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
         -- Create a frame to show the alternative sources
-        self.labels.alt_sources.ui_frame= MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 107, self.FRAME_ALT_SOURCES_HEIGHT, false)
+        self.labels.alt_sources.ui_frame= MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 117, self.FRAME_ALT_SOURCES_HEIGHT, false)
         -- position halfway from the frame with primary sources
         self.labels.alt_sources.ui_frame:SetPoint("BOTTOMRIGHT", self.ui_frame, "BOTTOMRIGHT", -1, 0)
         -- hide on creation
@@ -635,7 +635,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             amount_labels = self.MAX_SOURCES_SHOWN_SECONDARY
         end
         label_sources.ui_frame:Show()
-        local text = MTSLUI_LOCALES_LABELS["worldwide drop"][MTSLUI_CURRENT_LANGUAGE] .. min_level .. MTSLUI_LOCALES_LABELS["to"][MTSLUI_CURRENT_LANGUAGE] .. max_level
+        local text = MTSLUI_LOCALES_LABELS["worldwide drop"][MTSLUI_CURRENT_LANGUAGE] .. min_level .. MTSLUI_LOCALES_LABELS["to"][MTSLUI_CURRENT_LANGUAGE] .. max_level .. MTSLUI_LOCALES_LABELS["worldwide drop rest"][MTSLUI_CURRENT_LANGUAGE]
         label_sources.values[1]:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. text)
         label_sources.values[1]:Show()
         for i=2,amount_labels do
@@ -707,5 +707,28 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                 labels_sources.values[i]:Hide()
             end
         end
+    end,
+
+
+    -- Switch to vertical split layout
+    ResizeToVerticalMode = function(self)
+        -- makes sure repositioning & resizing actualy happens
+        self.ui_frame:ClearAllPoints()
+        -- reposition
+        self.ui_frame:SetPoint("BOTTOMLEFT", self.ui_frame:GetParent(), "BOTTOMRIGHT", 0, 0)
+        -- adjust size
+        self.ui_frame:SetWidth(self.FRAME_WIDTH)
+        self.ui_frame:SetHeight(self.FRAME_HEIGHT)
+    end,
+
+    -- Switch to horizontal split layout
+    ResizeToHorizontalMode = function(self)
+        -- makes sure repositioning & resizing actualy happens
+        self.ui_frame:ClearAllPoints()
+        -- reposition
+        self.ui_frame:SetPoint("TOPLEFT", self.ui_frame:GetParent(), "BOTTOMLEFT", 0, 0)
+        -- adjust size
+        self.ui_frame:SetWidth(self.FRAME_WIDTH)
+        self.ui_frame:SetHeight(self.FRAME_HEIGHT)
     end,
 }

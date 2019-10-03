@@ -65,6 +65,13 @@ MTSLUI_LIST_ITEM = {
         end
     end,
 
+    -- Resize the list item
+    UpdateWidth = function(self, width)
+        self.FRAME_WIDTH_NO_SLIDER = width
+        -- width of the button when slider is not visible (FRAME_WIDTH_SLIDER + 16)
+        self.FRAME_WIDTH_SLIDER = width - MTSLUI_VERTICAL_SLIDER.FRAME_WIDTH + 5
+    end,
+
     ---------------------------------------------------------------------------------------
     -- Hides the button
     ----------------------------------------------------------------------------------------
