@@ -20,7 +20,7 @@ addon.db = {
         statusbarText     = false,                  --HP文字
         statusbarColor    = "auto",                 --HP顔色 default|auto|smooth
         statusbarTexture  = "Interface\\AddOns\\TinyTooltip\\texture\\StatusBar", --HP材質
-        anchor            = { position = "cursorRight", hiddenInCombat = false, returnInCombat = true, returnOnUnitFrame = false, cp = "BOTTOM", p = "BOTTOMRIGHT", }, --鼠標位置 default|cursor|static|cursorRight
+        anchor            = { position = "cursorRight", hiddenInCombat = false, returnInCombat = false, returnOnUnitFrame = false, cp = "BOTTOM", p = "BOTTOMRIGHT", }, --鼠標位置 default|cursor|static|cursorRight
         alwaysShowIdInfo  = true,
         skinMoreFrames    = true,
         headerFont        = "default",
@@ -34,27 +34,27 @@ addon.db = {
     unit = {
         player = {
             coloredBorder = "class",                --玩家邊框顔色 default|class|level|reaction|itemQuality|selection|faction|HEX
-            background = { colorfunc = "class", alpha = 0.9, },
+            background = { colorfunc = "faction", alpha = 0.9, },
             anchor = { position = "inherit", hiddenInCombat = false, returnInCombat = false, returnOnUnitFrame = false, cp = "BOTTOM", p = "BOTTOMRIGHT", },
             showTarget = true,                      --顯示目標
             showTargetBy = true,                    --顯示被關注
-            showModel = true,                       --顯示模型
+            showModel = false,                      --顯示模型
             grayForDead = false,                    --灰色死亡目標
             elements = {
                 raidIcon    = { enable = true, filter = "none" },
                 roleIcon    = { enable = true, filter = "none" },
                 pvpIcon     = { enable = true, filter = "none" },
-                factionIcon = { enable = true, filter = "none" },
-                factionBig  = { enable = true, filter = "none" },
+                factionIcon = { enable = false, filter = "none" },
+                factionBig  = { enable = false, filter = "none" },
                 classIcon   = { enable = true, filter = "none" },
                 title       = { enable = true, color = "ccffff", wildcard = "%s",   filter = "none" },
                 name        = { enable = true, color = "class",  wildcard = "%s",   filter = "none" },
-                realm       = { enable = true, color = "00eeee", wildcard = "%s",   filter = "none" },
+                realm       = { enable = false, color = "00eeee", wildcard = "%s",   filter = "none" },
                 statusAFK   = { enable = true, color = "ffd200", wildcard = "(%s)", filter = "none" },
                 statusDND   = { enable = true, color = "ffd200", wildcard = "(%s)", filter = "none" },
                 statusDC    = { enable = true, color = "999999", wildcard = "(%s)", filter = "none" },
                 guildName   = { enable = true, color = "ff00ff", wildcard = "<%s>", filter = "none" },
-                guildIndex  = { enable = false, color = "cc88ff", wildcard = "%s",  filter = "none" },
+                guildIndex  = { enable = true, color = "cc88ff", wildcard = "%s",  filter = "none" },
                 guildRank   = { enable = true, color = "cc88ff", wildcard = "(%s)", filter = "none" },
                 guildRealm  = { enable = true, color = "00cccc", wildcard = "%s",   filter = "none" },
                 levelValue  = { enable = true, color = "level",   wildcard = "%s",  filter = "none" }, 
@@ -64,7 +64,7 @@ addon.db = {
                 className   = { enable = true, color = "ffffff",  wildcard = "%s",  filter = "none" }, 
                 isPlayer    = { enable = false, color = "ffffff",  wildcard = "(%s)", filter = "none" }, 
                 role        = { enable = false, color = "ffffff",  wildcard = "(%s)", filter = "none" },
-                moveSpeed   = { enable = false, color = "e8e7a8",  wildcard = "%d%%", filter = "none" },
+                moveSpeed   = { enable = true, color = "e8e7a8",  wildcard = "%d%%", filter = "none" },
                 zone        = { enable = true,  color = "ffffff",  wildcard = "%s", filter = "none" },
                 { "raidIcon", "roleIcon", "pvpIcon", "factionIcon", "classIcon", "title", "name", "realm", "statusAFK", "statusDND", "statusDC", },
                 { "guildName", "guildIndex", "guildRank", "guildRealm", },
