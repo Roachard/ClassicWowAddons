@@ -5,12 +5,9 @@
 ## SavedVariablesPerCharacter: NRunDB_Char
 ## SavedVariables: NRunDB_Global, NugRunningConfigCustom
 ## Version: 1.13.26
-
 ## X-WoWI-ID: 24936
-
-Libs\LibStub\LibStub.lua
-Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
-Libs\LibSharedMedia-3.0\lib.xml
+## Dependencies: BigFoot
+## X-Revision: BigFoot
 
 helpers.lua
 classic.config.lua
