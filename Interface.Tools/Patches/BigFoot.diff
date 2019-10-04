@@ -1,0 +1,61 @@
+diff --git a/Interface/AddOns/BigFoot/Config/BagManagement.lua b/Interface/AddOns/BigFoot/Config/BagManagement.lua
+index d83e1e2..1ef61ac 100644
+--- a/Interface/AddOns/BigFoot/Config/BagManagement.lua
++++ b/Interface/AddOns/BigFoot/Config/BagManagement.lua
+@@ -1,4 +1,4 @@
+-
++--[[
+ function BagManagementConfigFunc()
+ 	if (GetLocale() == "zhCN") then
+ 		MOD_BAG_MANAGEMENT_TITLE = {"背包管理", "beibaoguanli"};
+@@ -48,4 +48,5 @@ function BagManagementConfigFunc()
+ 	);
+ end
+ 
+-BigFoot_AddCollector(BagManagementConfigFunc)
+\ No newline at end of file
++BigFoot_AddCollector(BagManagementConfigFunc)
++]]
+diff --git a/Interface/AddOns/BigFoot/Config/ItemInfo.lua b/Interface/AddOns/BigFoot/Config/ItemInfo.lua
+index d3c41ee..63ec3ce 100644
+--- a/Interface/AddOns/BigFoot/Config/ItemInfo.lua
++++ b/Interface/AddOns/BigFoot/Config/ItemInfo.lua
+@@ -102,7 +102,7 @@ function ItemInfoConfigFunc()
+ 			function (__arg)
+ 				if (BigFoot_IsAddOnLoaded("ItemInfo")) then
+ 					if (__arg == 1) then
+-						II_Config['SellValue'] = 1;
++						II_Config['SellValue'] = nil;
+ 					else
+ 						II_Config['SellValue'] = nil;
+ 					end
+diff --git a/Interface/AddOns/BigFoot/Config/MerInspect.lua b/Interface/AddOns/BigFoot/Config/MerInspect.lua
+index ad1639c..e2f2744 100644
+--- a/Interface/AddOns/BigFoot/Config/MerInspect.lua
++++ b/Interface/AddOns/BigFoot/Config/MerInspect.lua
+@@ -1,4 +1,4 @@
+-
++--[[
+ function MerInspectConfigFunc()
+ 	if (GetLocale() == "zhCN") then
+ 		MOD_INFO_STAT_TITLE = {"装备信息", "zhuangbeixinxi"};
+@@ -209,4 +209,5 @@ function MerInspectConfigFunc()
+ 	end
+ end
+ 
+-BigFoot_AddCollector(MerInspectConfigFunc)
+\ No newline at end of file
++BigFoot_AddCollector(MerInspectConfigFunc)
++]]
+diff --git a/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua b/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
+index 70c4a0b..619359a 100644
+--- a/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
++++ b/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
+@@ -52,6 +52,7 @@ local ignored = {
+ 	["QuestPointerPOI"] = true,
+ 	["LibDBIcon10_bfModelChange"] = true,
+ 	["LibDBIcon10_HandyNotes_NPCs"] = true,
++	["QuestieFrame"] = true,
+ }
+ 
+ local options = {
