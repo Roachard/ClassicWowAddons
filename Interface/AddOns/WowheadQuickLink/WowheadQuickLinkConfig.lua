@@ -6,7 +6,7 @@ frame:SetScript("OnEvent", function(self, event, arg1)
     if event == "ADDON_LOADED" and arg1 == "WowheadQuickLink" then
         if WowheadQuickLinkCfg == nil then
             WowheadQuickLinkCfg = {
-                prefix = "", 
+                prefix = "cn.",
                 suffix = ""
             }
         end
