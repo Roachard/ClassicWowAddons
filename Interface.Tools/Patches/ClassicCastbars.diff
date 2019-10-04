@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/ClassicCastbars/core/Data.lua b/Interface/AddOns/ClassicCastbars/core/Data.lua
+index 0179dea..a976b3f 100644
+--- a/Interface/AddOns/ClassicCastbars/core/Data.lua
++++ b/Interface/AddOns/ClassicCastbars/core/Data.lua
+@@ -1452,7 +1452,7 @@ namespace.defaultConfig = {
+     locale = GetLocale(),
+ 
+     nameplate = {
+-        enabled = true,
++        enabled = false,
+         width = 106,
+         height = 11,
+         iconSize = 13,
