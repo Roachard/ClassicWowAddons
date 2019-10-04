@@ -1,0 +1,31 @@
+diff --git a/Interface/AddOns/TidyPlates_ThreatPlates/Constants.lua b/Interface/AddOns/TidyPlates_ThreatPlates/Constants.lua
+index 5721422..387cd41 100644
+--- a/Interface/AddOns/TidyPlates_ThreatPlates/Constants.lua
++++ b/Interface/AddOns/TidyPlates_ThreatPlates/Constants.lua
+@@ -724,7 +724,7 @@ ThreatPlates.DEFAULT_SETTINGS = {
+       anchor = "CENTER",
+     },
+     ComboPoints = {
+-      ON = false,
++      ON = true,
+       ShowInHeadlineView = false,
+       Style = "Orbs",
+       HorizontalSpacing = 0,
+@@ -1020,7 +1020,7 @@ ThreatPlates.DEFAULT_SETTINGS = {
+       name = { -- Names for Healthbar View
+         show = true,
+         typeface = Addon.DEFAULT_FONT, -- old default: "Accidental Presidency",
+-        size = 10, -- old default: 14
++        size = 14, -- old default: 14
+         shadow = true,
+         flags = "NONE",
+         width = 140, -- old default: 116,
+@@ -1099,7 +1099,7 @@ ThreatPlates.DEFAULT_SETTINGS = {
+         x_hv = 0,
+         y_hv = 25,
+         anchor = "CENTER",
+-        hpColor = true,
++        hpColor = false,
+         show = true,
+         ShowInHeadlineView = false,
+         hpMarked = {
