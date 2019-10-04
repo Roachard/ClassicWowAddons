@@ -1,2 +1,2 @@
 #!/bin/bash
-git apply Interface/Patches/*
+git apply Interface/Patches/*.diff
