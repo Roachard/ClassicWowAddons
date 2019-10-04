@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/Quartz/Quartz.lua b/Interface/AddOns/Quartz/Quartz.lua
+index aea9dc6..3ea4922 100644
+--- a/Interface/AddOns/Quartz/Quartz.lua
++++ b/Interface/AddOns/Quartz/Quartz.lua
+@@ -28,7 +28,7 @@ local type, pairs, tonumber = type, pairs, tonumber
+ 
+ local defaults = {
+ 	profile = {
+-		modules = { ["*"] = true, ["EnemyCasts"] = false, ["Buff"] = false },
++		modules = { ["*"] = true, ["EnemyCasts"] = false },
+ 		hidesamwise = true,
+ 		sparkcolor = {1, 1, 1, 0.5},
+ 		spelltextcolor = {1, 1, 1},
