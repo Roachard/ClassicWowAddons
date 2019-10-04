@@ -100,7 +100,11 @@ function TestMode:SetCastbarMovable(unitID, parent)
     local castbar = ClassicCastbars:GetCastbarFrame(unitID)
     castbar:EnableMouse(true)
     castbar:SetMovable(true)
-    castbar:SetClampedToScreen(true)
+
+    if unitID ~= "nameplate" then
+        -- restricted frames can't be clamped
+        castbar:SetClampedToScreen(true)
+    end
 
     castbar.tooltip = castbar.tooltip or castbar:CreateFontString(nil, "ARTWORK", "GameFontNormal")
     castbar.tooltip:SetPoint("TOP", castbar, 0, 15)
@@ -129,6 +133,7 @@ function TestMode:SetCastbarMovable(unitID, parent)
         parentFrame:Show()
     end
 
+    castbar:ClearAllPoints() -- needed here to work with restricted frames
     if unitID == "player" then
         castbar:Show()
         castbar:SetAlpha(1)

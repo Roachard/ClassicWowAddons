@@ -430,6 +430,7 @@ local castSpellIDs = {
     3595, -- Frost Oil
     17460, -- Frost Ram
     25178, -- Frost Weakness
+    10181, -- Frostbolt
     8398, -- Frostbolt Volley
     16992, -- Frostguard
     6957, -- Frostmane Strength
@@ -1237,14 +1238,13 @@ local castSpellIDs = {
     24422, -- Zandalar Signet of Might
     24421, -- Zandalar Signet of Mojo
     24420, -- Zandalar Signet of Serenity
-    10181, -- Frostbolt (needs to be last for chinese clients, see issue #16)
 }
 
 local counter, cursor = 0, 1
 local castedSpells = {}
 namespace.castedSpells = castedSpells
 
--- TODO: cleanup
+-- temporary, ill clean up this later
 local function BuildSpellNameToSpellIDTable()
     counter = 0
 
@@ -1446,7 +1446,7 @@ namespace.crowdControls = {
 
 -- Addon Savedvariables
 namespace.defaultConfig = {
-    version = "13", -- settings version
+    version = "12", -- settings version
     pushbackDetect = true,
     movementDetect = true,
     locale = GetLocale(),
@@ -1531,19 +1531,19 @@ namespace.defaultConfig = {
 
     player = {
         enabled = false,
-        width = 195,
-        height = 20,
-        iconSize = 22,
+        width = 190,
+        height = 19,
+        iconSize = 16,
         showCastInfoOnly = false,
         showTimer = false,
         autoPosition = true,
         castFont = _G.STANDARD_TEXT_FONT,
-        castFontSize = 11,
+        castFontSize = 12,
         castStatusBar = "Interface\\TargetingFrame\\UI-StatusBar",
         castBorder = "Interface\\CastingBar\\UI-CastingBar-Border",
         hideIconBorder = false,
         position = { "CENTER", -18, -87 },
-        iconPositionX = -10,
+        iconPositionX = -5,
         iconPositionY = 0,
         borderColor = { 1, 1, 1, 1 },
         statusColor = { 1, 0.7, 0, 1 },
