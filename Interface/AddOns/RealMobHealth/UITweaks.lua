@@ -15,7 +15,7 @@ AddOn.Options=AddOn.Options or {};
 ----------------------------------
 AddOn.Options.ShowStatusBarTextAdditions=true;
 AddOn.Options.ModifyHealthBarText=true;
-AddOn.Options.ShowTooltipText=true;
+AddOn.Options.ShowTooltipText=false;
 AddOn.Options.ShowTooltipHealthText=true;
 AddOn.Options.ShowNamePlateHealthText=true;
 
