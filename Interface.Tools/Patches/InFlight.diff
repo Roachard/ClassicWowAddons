@@ -1,8 +1,8 @@
 diff --git a/Interface/AddOns/InFlight/Defaults.lua b/Interface/AddOns/InFlight/Defaults.lua
-index 25c3f0f..a61995b 100644
+index 25c3f0f..f07fe02 100644
 --- a/Interface/AddOns/InFlight/Defaults.lua
 +++ b/Interface/AddOns/InFlight/Defaults.lua
-@@ -28,445 +28,454 @@ InFlight.defaults = {
+@@ -28,445 +28,456 @@ InFlight.defaults = {
  	},
  	global = {
  		["Horde"] = {
@@ -771,6 +771,7 @@ index 25c3f0f..a61995b 100644
 +				["南海镇"] = 107,
 +			},
 +			["铁炉堡"] = {
++				["鹰巢山"] = 298,
 +				["瑟银哨塔"] = 87,
 +				["暴风城"] = 210,
 +				["夜色镇"] = 312,
@@ -811,6 +812,7 @@ index 25c3f0f..a61995b 100644
 +				["加基森"] = 171,
 +			},
 +			["加基森"] = {
++				["马绍尔营地"] = 104,
 +				["羽月要塞"] = 354,
 +				["刺枝林地"] = 670,
 +				["棘齿城"] = 262,
