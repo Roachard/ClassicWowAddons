@@ -170,7 +170,7 @@ local Default_Profile = {
 			["Names"] = {
 			}
 		},
-		MaxFights = 5,
+		MaxFights = 25,
 		--[[Window = {
 			--ShowCurAndLast = false,
 		},]]
@@ -221,8 +221,8 @@ local Default_Profile = {
 				RightButton = true,
 				CloseButton = true,
 			},
-			RowHeight = 14,
-			RowSpacing = 1,
+			RowHeight = 17,
+			RowSpacing = 0,
 			AutoHide = false,
 			ShowScrollbar = true, -- Elsia: Allow toggle of scrollbar
 			HideTotalBar = true,
@@ -236,8 +236,8 @@ local Default_Profile = {
 			Position = {
 				x = 0,
 				y = 0,
-				w = 140,
-				h = 200,
+				w = 250,
+				h = 150,
 			},
 		},
 		Filters = {
@@ -309,7 +309,7 @@ local Default_Profile = {
 			[false] = false
 		},
 		RealtimeWindows = { },
-		ClampToScreen = false,
+		ClampToScreen = true,
 	},
 }
 
