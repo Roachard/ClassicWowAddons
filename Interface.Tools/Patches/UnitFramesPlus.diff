@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua b/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
-index e5737bd..7f94fbc 100644
+index e5737bd..f5da11f 100644
 --- a/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
 +++ b/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
 @@ -1,9 +1,9 @@
@@ -43,7 +43,7 @@ index e5737bd..7f94fbc 100644
          coordpct = 1,    --副本战场内显示为百分比
          autohide = 0,    --玩家头像自动隐藏
          mouseshow = 0,    --鼠标滑过时才显示数值
-@@ -61,8 +61,8 @@ UnitFramesPlusDefaultDB = {
+@@ -61,15 +61,15 @@ UnitFramesPlusDefaultDB = {
          buffsize = 1,    --调节目标buff/debuff图标大小
          mysize = 24,    --自己施放的buff/debuff大小，默认 21
          othersize = 16,    --其他人施放的buff/debuff大小，默认 17
@@ -54,6 +54,14 @@ index e5737bd..7f94fbc 100644
          portraittype = 1,        --头像类型：1为3D，2为职业图标
          portrait3dbg = 1,        --3D头像背景
          portraitnpcno = 1,        --NPC不显示职业图标
+         mouseshow = 0,    --鼠标滑过时才显示数值
+         extrabar = 0,        --扩展框
+         bartext = 1,        --目标血条数值
+-        hpmp = 1,        --不显示扩展框时增加生命值和法力值(百分比)显示
++        hpmp = 0,        --不显示扩展框时增加生命值和法力值(百分比)显示
+         hpmppartone = 4,--生命值和法力值第一部分：1当前值，2最大值，3損失值，4百分比
+         hpmpparttwo = 5,--生命值和法力值第二部分：1当前值，2最大值，3損失值，4百分比，5不显示
+         hpmpunit = 1,        --生命值和法力值进位
 @@ -87,7 +87,7 @@ UnitFramesPlusDefaultDB = {
          debuff = 1,        --额外的ToT debuff
          cooldown = 1,        --额外的ToT debuff冷却
