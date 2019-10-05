@@ -1,41 +1,28 @@
-tag 8dee081003ff3bfe3b0e72c770f323937a80acd8 Release-1-5
-Author:	Stefan Michael Pedersen <sp@ceptu.com>
-Date:	Wed Sep 25 00:07:41 2019 +0200
+tag 15a51c7c9740ff9be485b7b91c5b714316f3a239 Release-1-6
+Author:	Stefan Pedersen <sp@ceptu.com>
+Date:	Fri Oct 4 18:17:32 2019 +0200
 
-commit 0a0f29e299dc039ce61ffacdd34066754d6c7fb0
+commit cb88454a3899fdb9aaefd7a988042acdbf41df77
+Author: Stefan Pedersen <sp@ceptu.com>
+Date:   Fri Oct 4 18:17:17 2019 +0200
+
+    Release version 1.6
+
+commit ad7bdc721450eee353f0142546ddae2e7552510e
+Author: Stefan Pedersen <sp@ceptu.com>
+Date:   Fri Oct 4 18:16:56 2019 +0200
+
+    Add the option to disable text on the bars.
+
+commit 01ee5fab14520cf4bc39b792ea5114f387dc1780
 Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:07:28 2019 +0200
+Date:   Wed Sep 25 00:22:16 2019 +0200
 
-    Release version 1.5.
-    Also update Readme.
+    Update readme.
 
-commit 767fcedf2c1ea71785800f031c2b66ba1b167519
+commit 69345f27bf49ab405007452fa07f1377a9d32de4
 Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:02:16 2019 +0200
+Date:   Wed Sep 25 00:13:53 2019 +0200
 
-    Hide bars when the player is dead.
-
-commit 15d8be661e784a78f8a1aa4d61e8c1202e4eb13f
-Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Tue Sep 24 23:55:04 2019 +0200
-
-    Revert specification of frame strata.
-
-commit 3661ccec6f6bf738e2f749e10c0c8919d05ae302
-Author: Juan Medina <jamedina@gmail.com>
-Date:   Fri Sep 20 13:17:25 2019 +0100
-
-    adding sparks to the bar
-
-commit 3661ccec6f6bf738e2f749e10c0c8919d05ae302
-Author: Juan Medina <jamedina@gmail.com>
-Date:   Fri Sep 20 13:17:25 2019 +0100
-
-    adding sparks to the bar
-
-commit 4dfcc64d3177a2a9c2229d24a8dcbeb5d6ae23dd
-Author: Juan Medina <jamedina@gmail.com>
-Date:   Tue Sep 17 18:45:34 2019 +0100
-
-    adding options for a flat bar
+    Update readme.
 
