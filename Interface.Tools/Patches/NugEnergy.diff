@@ -7,7 +7,7 @@ index 7bf3613..20aa05b 100644
  local defaults = {
      point = "CENTER",
 -    x = 0, y = 0,
-+    x = -150, y = -50,
++    x = -150, y = -75,
      marks = {},
      rage = true,
      energy = true,
