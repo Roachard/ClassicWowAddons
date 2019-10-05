@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/NugRunning/NugRunning.lua b/Interface/AddOns/NugRunning/NugRunning.lua
+index 7fa9e1a..2534a96 100755
+--- a/Interface/AddOns/NugRunning/NugRunning.lua
++++ b/Interface/AddOns/NugRunning/NugRunning.lua
+@@ -189,7 +189,7 @@ local defaults = {
+     localNames = defaultShowLocalNames,
+     totems = true,
+     leaveGhost = false,
+-    nameplates = true,
++    nameplates = false,
+     preghost = true,
+     dotpower = true,
+     dotticks = true,
