@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua b/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua
-index 4a1b33c..5066fa6 100644
+index 4a1b33c..c6d0e58 100644
 --- a/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua
 +++ b/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua
 @@ -344,7 +344,7 @@ function ResetSpamFilters()
@@ -20,6 +20,15 @@ index 4a1b33c..5066fa6 100644
  		autoCount		= 3,
  		autoTime		= 600,		
  		defexpire		= 0,
+@@ -383,7 +383,7 @@ local function ResetIgnoreDB()
+ 		filterDesc		= {},
+ 		filterList		= {},
+ 		skipGuild		= true,
+-		skipParty		= false,
++		skipParty		= true,
+ 		skipPrivate		= true
+ 	}
+ 	
 @@ -633,44 +633,128 @@ local function ApplicationStartup(self)
  	
  	-- Set filter defaults
@@ -176,6 +185,15 @@ index 4a1b33c..5066fa6 100644
  	filterDefActive[#filterDefActive + 1] = false
  
  	faction = UnitFactionGroup("player")
+@@ -686,7 +770,7 @@ local function ApplicationStartup(self)
+ 	end
+ 
+ 	if GlobalIgnoreDB.skipParty == nil then
+-		GlobalIgnoreDB.skipParty = false
++		GlobalIgnoreDB.skipParty = true
+ 	end
+ 
+ 	if GlobalIgnoreDB.skipGuild == nil then
 @@ -710,7 +794,7 @@ local function ApplicationStartup(self)
  	end
  	
