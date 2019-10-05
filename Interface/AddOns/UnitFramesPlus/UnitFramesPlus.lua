@@ -1,9 +1,9 @@
 ﻿--默认设置
 UnitFramesPlusDefaultDB = {
     global = {
-        movable = 0,    --Shift拖动头像
+        movable = 1,    --Shift拖动头像
         indicator = 1,    --头像内战斗信息
-        portrait = 0,    --更改头像显示
+        portrait = 1,    --更改头像显示
         portraittype = 1,        --头像类型：1为3D，2为职业图标
         portrait3dbg = 1,        --3D头像背景
         portraitnpcno = 1,        --NPC不显示职业图标
@@ -18,22 +18,22 @@ UnitFramesPlusDefaultDB = {
 
     player = {
         scale = 1,        --玩家头像缩放比例
-        dragonborder = 0,        --精英头像
+        dragonborder = 1,        --精英头像
         bordertype = 1,    --精英头像类型：1精英头像，2银英头像，3稀有头像
-        extrabar = 0,        --扩展框
-        hpmp = 0,        --不显示扩展框时增加生命值和法力值(百分比)显示
+        extrabar = 1,        --扩展框
+        hpmp = 1,        --不显示扩展框时增加生命值和法力值(百分比)显示
         hpmppartone = 1,--生命值和法力值第一部分：1当前值，2最大值，3損失值，4百分比
         hpmpparttwo = 2,--生命值和法力值第二部分：1当前值，2最大值，3損失值，4百分比，4不显示
         hpmpunit = 1,        --生命值和法力值进位
         unittype = 2,    --1为千进制(k/m)，2为万进位(万/亿)
         colorhp = 1,    --生命条染色
         colortype = 2,    --生命条染色类型：1职业，2生命值百分比
-        movable = 0,    --Shift拖动头像
+        movable = 1,    --Shift拖动头像
         indicator = 1,    --头像内战斗信息
-        portrait = 0,    --更改头像显示
+        portrait = 1,    --更改头像显示
         portraittype = 1,        --头像类型：1为3D，2为职业图标
         portrait3dbg = 1,        --3D头像背景
-        coord = 0,        --坐标
+        coord = 1,        --坐标
         coordpct = 1,    --副本战场内显示为百分比
         autohide = 0,    --玩家头像自动隐藏
         mouseshow = 0,    --鼠标滑过时才显示数值
@@ -61,15 +61,15 @@ UnitFramesPlusDefaultDB = {
         buffsize = 1,    --调节目标buff/debuff图标大小
         mysize = 24,    --自己施放的buff/debuff大小，默认 21
         othersize = 16,    --其他人施放的buff/debuff大小，默认 17
-        movable = 0,    --Shift拖动目标头像
-        portrait = 0,    --更改头像显示
+        movable = 1,    --Shift拖动目标头像
+        portrait = 1,    --更改头像显示
         portraittype = 1,        --头像类型：1为3D，2为职业图标
         portrait3dbg = 1,        --3D头像背景
         portraitnpcno = 1,        --NPC不显示职业图标
         mouseshow = 0,    --鼠标滑过时才显示数值
         extrabar = 0,        --扩展框
         bartext = 1,        --目标血条数值
-        hpmp = 0,        --不显示扩展框时增加生命值和法力值(百分比)显示
+        hpmp = 1,        --不显示扩展框时增加生命值和法力值(百分比)显示
         hpmppartone = 4,--生命值和法力值第一部分：1当前值，2最大值，3損失值，4百分比
         hpmpparttwo = 5,--生命值和法力值第二部分：1当前值，2最大值，3損失值，4百分比，5不显示
         hpmpunit = 1,        --生命值和法力值进位
@@ -87,7 +87,7 @@ UnitFramesPlusDefaultDB = {
         debuff = 1,        --额外的ToT debuff
         cooldown = 1,        --额外的ToT debuff冷却
         hppct = 1,    --额外的ToT生命值百分比
-        movable = 0,    --Shift拖动ToT头像
+        movable = 1,    --Shift拖动ToT头像
         portrait = 0,    --更改头像显示
         portraitnpcno = 1,        --NPC不显示职业图标
         enemycheck = 1,    --敌友检测
@@ -101,7 +101,7 @@ UnitFramesPlusDefaultDB = {
         bartext = 1,        --队友血条数值
         hp = 1,            --队友生命值
         hppct = 1,        --队友生命值显示为百分比
-        movable = 0,    --Shift拖动头像
+        movable = 1,    --Shift拖动头像
         portrait = 0,    --更改队友头像
         portraittype = 1,        --头像类型：1为3D，2为职业图标
         portrait3dbg = 1,        --3D头像背景
@@ -115,11 +115,12 @@ UnitFramesPlusDefaultDB = {
         -- castbar = 1,    --队友施法条
         scale = 1,        --队友头像缩放比例
         colorhp = 1,    --生命条染色
-        colortype = 2,    --生命条染色类型：1职业，2生命值百分比
+        colortype = 1,    --生命条染色类型：1职业，2生命值百分比
         death = 1,        --队友死亡/鬼魂状态
-        mouseshow = 1,    --鼠标滑过时才显示数值
+        mouseshow = 0,    --鼠标滑过时才显示数值
         hpmpunit = 1,        --生命值和法力值进位
         unittype = 2,    --1为千进制(k/m)，2为万进位(万/亿)
+        hidetools = 1,      --隐藏团队工具
     },
 
     partytarget = {
@@ -172,6 +173,8 @@ UnitFramesPlusDefaultVar = {
     target = {
         moving = 0,        --目标拖动状态
         moved = 0,        --目标已被拖动
+        x = 0,        --目标位置
+        y = 0,        --目标位置
     },
 
     targettarget = {
@@ -489,9 +492,6 @@ function UnitFramesPlus_GetValueFix(valueCurr, valueMax, valueunit, unittype)
     end
     return valueCurrfix, valueMaxfix, valueLossfix;
 end
-
-UFPClassicDurations = LibStub("LibClassicDurations")
-UFPClassicDurations:Register("UnitFramesPlus")
 
 --插件初始化
 local ufp = CreateFrame("Frame");
