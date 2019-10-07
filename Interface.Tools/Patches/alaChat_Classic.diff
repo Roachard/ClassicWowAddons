@@ -1,0 +1,44 @@
+diff --git a/Interface/AddOns/alaChat_Classic/addon.lua b/Interface/AddOns/alaChat_Classic/addon.lua
+index cbb3b90..75f4440 100644
+--- a/Interface/AddOns/alaChat_Classic/addon.lua
++++ b/Interface/AddOns/alaChat_Classic/addon.lua
+@@ -117,18 +117,18 @@ local default = {
+ 	_version				 = 190830.0,
+ 	_overrideVersion		 = 190830.0,
+ 
+-	position				 = "BELOW_EDITBOX",
++	position				 = "ABOVE_EDITOBX",
+ 	scale					 = 1.0,
+ 	alpha					 = 1.0,
+-	barStyle				 = "ala",
++	barStyle				 = "blz",
+ 
+ 	shortChannelName		 = true,
+ 	hyperLinkEnhanced		 = true,
+ 	chatEmote				 = true,
+ 	ColorNameByClass		 = true,
+-	shamanColor				 = false,
++	shamanColor				 = true,
+ 	filterQuestAnn			 = false,
+-	channelBarChannel		 = { true,true,true,true,true,true,true,true,true,true,true,true,true,true },
++	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
+ 	channelBarStyle			 = "CHAR",
+ 
+ 	bfWorld_Ignore_Switch	 = false,
+@@ -144,14 +144,14 @@ local default = {
+ 	ReadyCheck				 = true,
+ 	--statReport				 = true,
+ 	level					 = false,
+-	copy					 = false,
++	copy					 = true,
+ 	copyTagColor			 = { 0.25, 0.25, 1.00 },
+ 	copyTagFormat			 = "#s";
+ 
+ 	--hideConfBtn				 = true,
+ 	editBoxTab				 = true,
+ 	restoreAfterWhisper		 = true,
+-	hyperLinkHoverShow		 = false,
++	hyperLinkHoverShow		 = true,
+ 
+ 	keyWordHighlight		 = true,
+ 	keyWordColor			 = { 0.00, 1.00, 0.00 },

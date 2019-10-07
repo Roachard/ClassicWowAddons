@@ -1,0 +1,40 @@
+diff --git a/Interface/AddOns/Leatrix_Maps/Leatrix_Maps.lua b/Interface/AddOns/Leatrix_Maps/Leatrix_Maps.lua
+index ed245d8..ef6b702 100644
+--- a/Interface/AddOns/Leatrix_Maps/Leatrix_Maps.lua
++++ b/Interface/AddOns/Leatrix_Maps/Leatrix_Maps.lua
+@@ -1179,7 +1179,7 @@
+ 			-- Reset button click
+ 			poiFrame.r:HookScript("OnClick", function()
+ 				LeaMapsLC["ShowDungeonIcons"] = "On"
+-				LeaMapsLC["ShowFlightPoints"] = "On"
++				LeaMapsLC["ShowFlightPoints"] = "Off"
+ 				LeaMapsLC["ShowTravelPoints"] = "On"
+ 				SetPointsOfInterest()
+ 				poiFrame:Hide(); poiFrame:Show()
+@@ -1190,7 +1190,7 @@
+ 				if IsShiftKeyDown() and IsControlKeyDown() then
+ 					-- Preset profile
+ 					LeaMapsLC["ShowDungeonIcons"] = "On"
+-					LeaMapsLC["ShowFlightPoints"] = "On"
++					LeaMapsLC["ShowFlightPoints"] = "Off"
+ 					LeaMapsLC["ShowTravelPoints"] = "On"
+ 					SetPointsOfInterest()
+ 					if poiFrame:IsShown() then poiFrame:Hide(); poiFrame:Show(); end
+@@ -2157,7 +2157,7 @@
+ 				LeaMapsDB["tintAlpha"] = 1.0
+ 				LeaMapsDB["ShowPointsOfInterest"] = "On"
+ 				LeaMapsDB["ShowDungeonIcons"] = "On"
+-				LeaMapsDB["ShowFlightPoints"] = "On"
++				LeaMapsDB["ShowFlightPoints"] = "Off"
+ 				LeaMapsDB["ShowTravelPoints"] = "On"
+ 				LeaMapsDB["ShowZoneLevels"] = "On"
+ 				LeaMapsDB["ShowFishingLevels"] = "On"
+@@ -2247,7 +2247,7 @@
+ 			LeaMapsLC:LoadVarNum("tintAlpha", 1, 0, 1)					-- Tint opacity
+ 			LeaMapsLC:LoadVarChk("ShowPointsOfInterest", "On")			-- Show points of interest
+ 			LeaMapsLC:LoadVarChk("ShowDungeonIcons", "On")				-- Show dungeons and raids
+-			LeaMapsLC:LoadVarChk("ShowFlightPoints", "On")				-- Show flight points
++			LeaMapsLC:LoadVarChk("ShowFlightPoints", "Off")				-- Show flight points
+ 			LeaMapsLC:LoadVarChk("ShowTravelPoints", "On")				-- Show boats, zeppelins and trams
+ 			LeaMapsLC:LoadVarChk("ShowZoneLevels", "On")				-- Show zone levels
+ 			LeaMapsLC:LoadVarChk("ShowFishingLevels", "On")				-- Show fishing levels

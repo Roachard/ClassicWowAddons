@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/Questie/Questie.lua b/Interface/AddOns/Questie/Questie.lua
+index ddf55d4..4a75f25 100644
+--- a/Interface/AddOns/Questie/Questie.lua
++++ b/Interface/AddOns/Questie/Questie.lua
+@@ -138,7 +138,7 @@ _QuestieOptions.defaults = {
+       enableObjectives = true,
+       enableTurnins = true,
+       enableAvailable = true,
+-      enableTooltips = true,
++      enableTooltips = false,
+       enableMapIcons = true,
+       enableMiniMapIcons = true,
+       trackerFontSizeHeader = 13,
