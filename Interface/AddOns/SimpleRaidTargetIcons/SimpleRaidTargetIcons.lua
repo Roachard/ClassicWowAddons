@@ -164,7 +164,7 @@ function srti.PrintHelp()
 end
 
 srti.defaults = {
-	["ctrl"] = true,
+	["ctrl"] = false,
 	["alt"] = false,
 	["shift"] = false,
 	["singlehover"] = false,
@@ -172,11 +172,11 @@ srti.defaults = {
 	["double"] = true,
 	["speed"] = 0.25,
 	["radialscale"] = 1.0,
-	["doublehover"] = false,
+	["doublehover"] = true,
 
 	["bindinghover"] = false,
 
-	["hovertime"] = 0.2,
+	["hovertime"] = 0.1,
 }
 
 -- srti.frame
