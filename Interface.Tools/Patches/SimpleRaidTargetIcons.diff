@@ -1,24 +1,22 @@
 diff --git a/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua b/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
-index 21324e6..de548f6 100644
+index 21324e6..b2f8079 100644
 --- a/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
 +++ b/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
-@@ -164,7 +164,7 @@ function srti.PrintHelp()
- end
- 
- srti.defaults = {
--	["ctrl"] = true,
-+	["ctrl"] = false,
+@@ -167,16 +167,16 @@ srti.defaults = {
+ 	["ctrl"] = true,
  	["alt"] = false,
  	["shift"] = false,
- 	["singlehover"] = false,
-@@ -172,11 +172,11 @@ srti.defaults = {
+-	["singlehover"] = false,
++	["singlehover"] = true,
+ 
  	["double"] = true,
  	["speed"] = 0.25,
  	["radialscale"] = 1.0,
 -	["doublehover"] = false,
 +	["doublehover"] = true,
  
- 	["bindinghover"] = false,
+-	["bindinghover"] = false,
++	["bindinghover"] = true,
  
 -	["hovertime"] = 0.2,
 +	["hovertime"] = 0.1,
