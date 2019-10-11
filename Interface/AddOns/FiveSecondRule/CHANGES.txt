@@ -1,28 +1,23 @@
-tag 15a51c7c9740ff9be485b7b91c5b714316f3a239 Release-1-6
+tag e256d505d100d1a528b5a28a4839dc89a5d87de2 Release-1-8
 Author:	Stefan Pedersen <sp@ceptu.com>
-Date:	Fri Oct 4 18:17:32 2019 +0200
+Date:	Thu Oct 10 19:20:10 2019 +0200
 
-commit cb88454a3899fdb9aaefd7a988042acdbf41df77
+commit 283885c2a6107722e1980cb48513471dea1d53a3
 Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Fri Oct 4 18:17:17 2019 +0200
+Date:   Thu Oct 10 19:19:54 2019 +0200
 
-    Release version 1.6
+    Release version 1.8
 
-commit ad7bdc721450eee353f0142546ddae2e7552510e
+commit af807fa07c76bd16eb998eb0082d08180351c78c
 Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Fri Oct 4 18:16:56 2019 +0200
+Date:   Thu Oct 10 19:19:45 2019 +0200
 
-    Add the option to disable text on the bars.
+    Exclude mana ticks from Drinking, Innervate, and Consumables from the running average and from triggering mana ticks on the statusbar.
+    Also start mana regen when ressurected.
 
-commit 01ee5fab14520cf4bc39b792ea5114f387dc1780
-Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:22:16 2019 +0200
-
-    Update readme.
-
-commit 69345f27bf49ab405007452fa07f1377a9d32de4
-Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:13:53 2019 +0200
+commit 5a38a61528e7b49b80e509dc02dd5f3b1e77b64b
+Author: Stefan Pedersen <sp@ceptu.com>
+Date:   Wed Oct 9 23:20:25 2019 +0200
 
     Update readme.
 

@@ -21,6 +21,8 @@ local defaults = {
 local manaRegenTime = 2
 local updateTimerEverySeconds = 0.05
 local mp5delay = 5
+local mp5Sensitivty = 0.8
+local runningAverageSize = 5
 
 -- STATE VARIABLES
 local gainingMana = false
@@ -28,6 +30,10 @@ local fullmana = false
 local castCounter = 0
 local mp5StartTime = 0
 local manaTickTime = 0
+local tickSizeRunningWindow = {}
+local manaRegenerated = 0
+local averageManaTick = 0
+local isDead = false
 
 -- INTERFACE
 local FiveSecondRuleFrame = CreateFrame("Frame") -- Root frame
@@ -239,6 +245,7 @@ function FiveSecondRule:onEvent(self, event, arg1, ...)
 
     if event == "PLAYER_ENTERING_WORLD" then
         FiveSecondRule:updatePlayerMana()
+        isDead = UnitIsDead("player")
     end
 
     if event == "CURRENT_SPELL_CAST_CHANGED"  then
@@ -272,12 +279,17 @@ function FiveSecondRule:onEvent(self, event, arg1, ...)
 end
 
 function FiveSecondRuleFrame:onUpdate(sinceLastUpdate)
-    local isDead = UnitIsDead("player")
+    local stillDead = UnitIsDead("player")    
 
-    if isDead then
+    if stillDead then
+      isDead = stillDead
+
       statusbar:Hide()
       tickbar:Hide()
       return
+    end
+    if isDead and not stillDead then
+        self.sinceLastUpdate = 0
     end
 
     local now = GetTime()
@@ -303,8 +315,8 @@ function FiveSecondRuleFrame:onUpdate(sinceLastUpdate)
                         statusbar.value:SetText("")
                     end
 
-                    local ratio = FiveSecondRule_Options.barWidth * (remaining/mp5delay)
-                    statusbar.bg.spark:SetPoint("CENTER", statusbar.bg, "LEFT", ratio, 0)                    
+                    local positionLeft = math.min(FiveSecondRule_Options.barWidth * (remaining/mp5delay), FiveSecondRule_Options.barWidth)
+                    statusbar.bg.spark:SetPoint("CENTER", statusbar.bg, "LEFT", positionLeft, 0)                    
                 else
                     gainingMana = true
                     mp5StartTime = 0
@@ -323,11 +335,20 @@ function FiveSecondRuleFrame:onUpdate(sinceLastUpdate)
                 end
             else
                 if gainingMana then
+
                     if newMana > currentMana then
                         tickbar:Show() 
-        
-                        manaTickTime = now + manaRegenTime
-        
+
+                        local tickSize = newMana - currentMana
+                        local lowerLimit = averageManaTick * mp5Sensitivty
+                        local upperLimit = averageManaTick * (1 + (1 - mp5Sensitivty))
+                        local shouldLimit = #tickSizeRunningWindow == 10
+
+                        if (not shouldLimit or (lowerLimit < tickSize and tickSize < upperLimit)) then
+                            FiveSecondRule:TrackTick(tickSize)
+                            manaTickTime = now + manaRegenTime
+                        end
+
                         FiveSecondRule:updatePlayerMana()
                     end
         
@@ -416,4 +437,46 @@ end
 function FiveSecondRule:PrintHelp() 
     local colorHex = "2979ff"
     print("|cff"..colorHex.."FiveSecondRule loaded - /fsr")
+end
+
+function FiveSecondRule:TrackTick(tick)    
+
+    local isDrinking = FiveSecondRule:PlayerHasBuff("Drink")
+    local hasInervate = FiveSecondRule:PlayerHasBuff("Innervate")
+
+    if (isDrinking or hasInervate) then
+        return
+    end
+
+    table.insert(tickSizeRunningWindow, tick)
+
+    if (table.getn(tickSizeRunningWindow) > runningAverageSize) then
+        table.remove(tickSizeRunningWindow, 1)
+    end
+
+    local sum = 0
+    local ave = 0
+    local elements = #tickSizeRunningWindow
+    
+    for i = 1, elements do
+        sum = sum + tickSizeRunningWindow[i]
+    end
+    
+    ave = sum / elements
+
+    averageManaTick = ave
+    manaRegenerated = manaRegenerated + tick
+
+end
+
+function FiveSecondRule:PlayerHasBuff(nameString)
+    for i=1,40 do
+        local name, _, _, _, _, _ = UnitBuff("player",i)
+        if name then
+            if name == nameString then
+                return true
+            end
+        end
+      end
+      return false
 end

@@ -151,7 +151,7 @@ local setting =
 };
 setting.talentFrameXSizeSingle = setting.talentIconSize * MAX_NUM_COL + setting.talentIconXGap * (MAX_NUM_COL - 1) + setting.talentIconXToBorder * 2;
 setting.talentFrameXSizeTriple = setting.talentFrameXSizeSingle * 3;
-setting.talentFrameYSize = setting.talentFrameHeaderYSize + setting.talentIconSize * MAX_NUM_TIER + setting.talentIconYGap * (MAX_NUM_TIER - 1) + setting.talentIconYToTop  + setting.talentIconYToBottom+ setting.talentFrameFooterYSize;
+setting.talentFrameYSize = setting.talentFrameHeaderYSize + setting.talentIconYToTop + setting.talentIconSize * MAX_NUM_TIER + setting.talentIconYGap * (MAX_NUM_TIER - 1) + setting.talentIconYToBottom+ setting.talentFrameFooterYSize;
 setting.mainFrameXSizeDefault_Style1 = setting.talentFrameXSizeTriple + setting.talentFrameXToBorder * 2;
 setting.mainFrameYSizeDefault_Style1 = setting.talentFrameYSize + setting.talentFrameYToBorder * 2 + setting.mainFrameHeaderYSize + setting.mainFrameFooterYSize;
 setting.mainFrameXSizeDefault_Style2 = setting.talentFrameXSizeSingle + setting.talentFrameXToBorder * 2;
@@ -193,6 +193,7 @@ local TEXTURE_SET =
 	TALENT_RESET_BG_COORD = { 12 / 128, 118 / 128, 12 / 128, 118 / 128, },
 	TALENT_RESET_BG_COLOR = { 0.25, 0.25, 0.25, },
 	TALENT_RESET_HIGHLIGHT = ARTWORK_PATH .. "arcane_circular_flash",
+	TALENT_RESET_HIGHLIGHT_COORD = { 12 / 128, 118 / 128, 12 / 128, 118 / 128, },
 
 	LOCK = ARTWORK_PATH .. "minimap_shield_elite",
 	LOCK_LOCKED_COLOR = { 0.5, 0.5, 0.5, 0.75, },
@@ -387,7 +388,7 @@ function emu.winMan_RelWin(winId)
 		if winId == mainFrame.id then
 			if i ~= mainFrames.used then
 				table.remove(mainFrames, i);
-				mainFrames[mainFrames.used] = mainFrame;
+				table.insert(mainFrames, mainFrames.used, mainFrame);
 			end
 			mainFrames.used = mainFrames.used - 1;
 			if mainFrame:IsShown() then
@@ -430,38 +431,6 @@ function emu.winMan_RelAllButOne(id)
 	elseif mainFrames.used > 1 then
 		_error_("Emu Warn >> RelAllButOne", "USED NEQ 1, IS", mainFrames.used);
 	end
-	-- local one = nil;
-	-- local _id1 = nil;
-	-- for i = mainFrames.used, 1, -1 do
-	-- 	local mainFrame = mainFrames[i];
-	-- 	if mainFrame.id == id then
-	-- 		one = i;
-	-- 	else
-	-- 		if mainFrame.id == 1 then
-	-- 			_id1 = i;
-	-- 		end
-	-- 		mainFrame:Hide();
-	-- 	end
-	-- end
-	-- if one and one > 0 then
-	-- 	if _id1 and _id1 > 0 and one ~= _id1 then
-	-- 		mainFrames[_id1].id = mainFrames[one].id;
-	-- 		mainFrames[one].id = 1;
-	-- 	end
-	-- 	if one ~= 1 then
-	-- 		local f = mainFrames[1];
-	-- 		mainFrames[1] = mainFrames[one];
-	-- 		mainFrames[one] = f;
-	-- 		--mainFrames.used = 1;
-	-- 	end
-	-- else
-	-- 	if _id1 and _id1 > 0 and _id1 ~= 1 then
-	-- 		local f = mainFrames[1];
-	-- 		mainFrames[1] = mainFrames[_id1];
-	-- 		mainFrames[_id1] = f;
-	-- 	end
-	-- 	--mainFrames.used = 0;
-	-- end
 end
 function emu.winMan_IsAllSameStyle()
 	local style = -1;
@@ -485,7 +454,7 @@ function emu.winMan_SetWinId(mainFrame, winId)
 	end
 	local mainFrames = emu.mainFrames;
 	local index = nil;
-	for i = 1, mainFrames.used do
+	for i = 1, mainFrames.num do
 		local mainFrame = mainFrames[i];
 		if mainFrame.id == winId then
 			index = i;
@@ -495,7 +464,21 @@ function emu.winMan_SetWinId(mainFrame, winId)
 	if index then
 		local rawId = mainFrame.id;
 		mainFrame.id = winId;
-		mainFrames[index] = rawId;
+		mainFrames[index].id = rawId;
+	end
+end
+function emu.hideMainFrame(winId)
+	if type(winId) == "table" then
+		winId:Hide();
+	elseif type(winId) == "number" then
+		local mainFrames = emu.mainFrames;
+		for i = mainFrames.used, 1, -1 do
+			local mainFrame = mainFrames[i];
+			if mainFrame.id == winId then
+				mainFrame:Hide();
+				break;
+			end
+		end
 	end
 end
 
@@ -1677,7 +1660,6 @@ function emu.Emu_Set(mainFrame, class, data, level, readOnly, name)
 	emu.EmuCore_SetLevel(mainFrame, level);
 	emu.EmuCore_Reset(mainFrame);
 	if not emu.EmuCore_SetClass(mainFrame, class) then
-		--winMan_RelWin(mainFrame.id);
 		mainFrame:Hide();
 		return false;
 	end
@@ -1870,15 +1852,34 @@ function emu.Emu_Create(class, data, level, readOnly, name, style, ...)
 		mainFrame = emu.winMan_GetWin();
 	end
 	emu.mainFrameSetStyle(mainFrame, style or config.style);
-	if not class or class == "" then
-		class = emu.playerClass_Lower;
-	end
-	if emu.Emu_Set(mainFrame, class, data, tonumber(level) or 60, readOnly, name) then
+	if config.singleFrame then
+		if class and class ~= "" then
+			if emu.Emu_Set(mainFrame, class, data, tonumber(level) or 60, readOnly, name) then
+				return mainFrame.id;
+			end
+			mainFrame:Hide();
+			return nil;
+		end
+		if not mainFrame.initialized then
+			class = emu.playerClass_Lower;
+			if emu.Emu_Set(mainFrame, class, nil, 60, nil, nil) then
+				return mainFrame.id;
+			end
+			mainFrame:Hide();
+			return nil;
+		end
+		mainFrame:Show();
 		return mainFrame.id;
+	else
+		if not class or class == "" then
+			class = emu.playerClass_Lower;
+		end
+		if emu.Emu_Set(mainFrame, class, data, tonumber(level) or 60, readOnly, name) then
+			return mainFrame.id;
+		end
+		mainFrame:Hide();
+		return nil;
 	end
-	--emu.winMan_RelWin(mainFrame.id);
-	mainFrame:Hide();
-	return nil;
 end
 function emu.Emu_Import(mainFrame, code)
 	if type(mainFrame) == "string" then
@@ -1889,7 +1890,6 @@ function emu.Emu_Import(mainFrame, code)
 	if class and data and level then
 		mainFrame = mainFrame or emu.winMan_GetWin();
 		if not emu.Emu_Set(mainFrame, class, data, level) then
-			--emu.winMan_RelWin(mainFrame.id);
 			mainFrame:Hide();
 			return false;
 		end
@@ -1967,8 +1967,10 @@ end
 
 local function Config_SetSingleFrame(singleFrame, curFrame)
 	config.singleFrame = singleFrame;
-	local last = curFrame or emu.winMan_GetLastWin();
-	emu.winMan_RelAllButOne(last and last.id or nil);
+	if singleFrame then
+		local last = curFrame or emu.winMan_GetLastWin();
+		emu.winMan_RelAllButOne(last and last.id or nil);
+	end
 end
 local function Config_SetStyle(style, alsoSetShownWin)
 	config.style = style;
@@ -2257,6 +2259,7 @@ function emu.CreateTalentFrames(mainFrame)
 		resetButton:GetHighlightTexture():ClearAllPoints();
 		resetButton:GetHighlightTexture():SetPoint("CENTER");
 		resetButton:GetHighlightTexture():SetSize(setting.talentIconSize, setting.talentIconSize);
+		resetButton:GetHighlightTexture():SetTexCoord(TEXTURE_SET.TALENT_RESET_HIGHLIGHT_COORD[1], TEXTURE_SET.TALENT_RESET_HIGHLIGHT_COORD[2], TEXTURE_SET.TALENT_RESET_HIGHLIGHT_COORD[3], TEXTURE_SET.TALENT_RESET_HIGHLIGHT_COORD[4]);
 		resetButton:SetScript("OnClick", resetButton_OnClick);
 		resetButton:SetScript("OnEnter", Info_OnEnter);
 		resetButton:SetScript("OnLeave", Info_OnLeave);
@@ -2331,7 +2334,9 @@ local function inspectTargetButton_OnClick(self)
 	end
 end
 local function applyTalentsButton_OnClick(self)
-	emu.Emu_ApplyTalents(self:GetParent());
+	if UnitLevel('player') >= 10 then
+		emu.Emu_ApplyTalents(self:GetParent());
+	end
 end
 local function importButton_OnClick(self)
 	local editBox = self:GetParent().objects.editBox;
@@ -2564,7 +2569,6 @@ function emu.CreateMainFrameSubObject(mainFrame)
 		closeButton:SetPoint("TOPRIGHT", - (setting.mainFrameHeaderYSize - setting.controlButtonSize) * 0.5, - (setting.mainFrameHeaderYSize - setting.controlButtonSize) * 0.5);
 		closeButton:Show();
 		closeButton:SetScript("OnClick", function(self, button)
-				--emu.winMan_RelWin(self:GetParent().id);
 				self:GetParent():Hide();
 			end
 		);
@@ -3001,6 +3005,7 @@ function emu.CreateMainFrame()
 	mainFrame.data = nil;
 	mainFrame.readOnly = false;
 	mainFrame.name = nil;
+	mainFrame.initialized = false;
 
 	mainFrame.style = -1;
 	emu.mainFrameSetStyle(mainFrame, config.style);
@@ -3144,16 +3149,22 @@ function emu.CHAT_MSG_ADDON(self, event, prefix, text, channel, sender, target, 
 					if n and r == GetRealmName() then
 						sender = n;
 					end
+					local readOnly = false;
+					if n == UnitName('player') then
+						readOnly = false;
+					else
+						readOnly = true;
+					end
 					local specializedMainFrame = emu.specializedMainFrameInspect[sender];
 					if specializedMainFrame then
 						if specializedMainFrame[2]:IsShown() and specializedMainFrame[1] - GetTime() <= setting.INSPECT_WAIT_TIME then
-							emu.Emu_Set(specializedMainFrame[2], class, data, level, true, sender);
+							emu.Emu_Set(specializedMainFrame[2], class, data, level, readOnly, sender);
 						else
-							emu.Emu_Create(class, data, level, true, sender);
+							emu.Emu_Create(class, data, level, readOnly, sender);
 						end
 						emu.specializedMainFrameInspect[sender] = nil;
 					else
-						emu.Emu_Create(class, data, level, true, sender);
+						emu.Emu_Create(class, data, level, readOnly, sender);
 					end
 				end
 			end
@@ -3224,32 +3235,9 @@ function emu.Init()
 		else
 			emu.inspectButtonKeyFunc = IsAltKeyDown;
 		end
-		
-		if not IsAddOnLoaded("Blizzard_TalentUI") then
-			if LoadAddOn("Blizzard_TalentUI") then
-				if TalentFrame then
-					local button = CreateFrame("Button", nil, TalentFrame);
-					button:SetSize(80, 20);
-					button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
-					button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
-					button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-					button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-					button:SetHighlightTexture(TEXTURE_SET.NORMAL_HIGHLIGHT);
-					button:SetPoint("RIGHT", TalentFrameCloseButton, "LEFT", -2, 0);
-					button:RegisterForClicks("LeftButtonUp", "RightButtonUp");
-					button:SetScript("OnClick", function() emu.Emu_Create(); end);
-					button:SetScript("OnEnter", Info_OnEnter);
-					button:SetScript("OnLeave", Info_OnLeave);
-					button.information = L.TalentFrameCallButton;
-					local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-					fontString:SetText(L.TalentFrameCallButtonFontString);
-					fontString:SetPoint("CENTER");
-					button.fontString = fontString;
-				end
-			end
-		end
 
 		emu.initialized = true;
+
 	end
 end
 C_Timer.After(1.0, emu.Init);
@@ -3325,11 +3313,7 @@ ATEMU.Create = function(class, data, level, readOnly, name, style, ...)
 	return emu.Emu_Create(class, data, level, readOnly, name, style, ...);
 end
 ATEMU.Destroy = function(winId)
-	if type(winId) == "table" then
-		emu.Emu_DestroyMainFrame(winId);
-	elseif type(winId) == "number" then
-		emu.Emu_DestroyMainFrameById(winId);
-	end
+	emu.hideMainFrame(winId);
 end
 ATEMU.Query = function(unit)
 	if unit then
@@ -3452,18 +3436,22 @@ end
 --4Mv8i:sdWw7gm7R4JMw0
 --4jt-2:8QfgA0iJ5:2w0
 --/run ATEMU.ImportCode("4Mv8i:sdWw7gm7R4JMw0");
---ATEMU.Query("Destinyless")
 
-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------Popup Menu
 local locale = GetLocale();
 if locale == "zhCN" then
     UnitPopupButtons["EMU_INSPECT"] = { text = "查询天赋", };
+    UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查询天赋", nested = 1, };
 elseif locale == "zhTW" then
     UnitPopupButtons["EMU_INSPECT"] = { text = "查詢天賦", };
+    UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查詢天賦", nested = 1, };
 else
     UnitPopupButtons["EMU_INSPECT"] = { text = "Inspect talent", };
+    UnitPopupButtons["BN_EMU_INSPECT"] = { text = "Inspect talent", nested = 1, };
 end
+UnitPopupMenus["BN_EMU_INSPECT"] = {  },
 
+tinsert(UnitPopupMenus["SELF"], 1, "EMU_INSPECT");
 tinsert(UnitPopupMenus["FRIEND"], 1, "EMU_INSPECT");
 --tinsert(UnitPopupMenus["FRIEND_OFFLINE"], 1, "EMU_INSPECT");
 tinsert(UnitPopupMenus["PLAYER"], 1, "EMU_INSPECT");
@@ -3472,14 +3460,54 @@ tinsert(UnitPopupMenus["RAID_PLAYER"], 1, "EMU_INSPECT");
 tinsert(UnitPopupMenus["CHAT_ROSTER"], 1, "EMU_INSPECT");
 tinsert(UnitPopupMenus["GUILD"], 1, "EMU_INSPECT");
 
+-- tinsert(UnitPopupMenus["BN_FRIEND"], 1, "BN_EMU_INSPECT");
+
 hooksecurefunc("UnitPopup_OnClick", function(self)
 	local name = UIDROPDOWNMENU_INIT_MENU.name;
     if (self.value == "EMU_INSPECT") then
         emu.Emu_Query(name);
+    -- elseif self.value == "BN_EMU_INSPECT" and self.arg1 then
+    --     emu.Emu_Query(self.arg1.name);
     end
-end)
+end);
 
-----------------------------------------------------------------------------------------------------
+local LC = {  };
+for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do
+    LC[v] = k;
+end
+for k, v in pairs(LOCALIZED_CLASS_NAMES_MALE) do
+    LC[v] = k;
+end
+
+-- hooksecurefunc("UnitPopup_ShowMenu",
+--     function(dropdownMenu, which, unit, name, userData)
+--         if which == "BN_FRIEND" and UIDROPDOWNMENU_MENU_VALUE == "BN_EMU_INSPECT" and UIDROPDOWNMENU_MENU_LEVEL == 2 then
+--             local index = BNGetFriendIndex(UIDROPDOWNMENU_INIT_MENU.bnetIDAccount);
+--             local i = 1;
+--             local pFaction = UnitFactionGroup('player');
+--             local pRealmID = GetRealmID();
+--             while true do
+--                 local gameOnline, charName, client, realm, realmID, faction, race, class = BNGetFriendGameAccountInfo(index, i);
+--                 if client == BNET_CLIENT_WOW and realmID == pRealmID and faction == pFaction then
+--                     local color = RAID_CLASS_COLORS[LC[class]];
+--                     local info = UIDropDownMenu_CreateInfo();
+--                     info.text = string.format("\124cff%.2x%.2x%.2x", color.r * 255, color.g * 255, color.b * 255) .. charName .. "\124r";
+--                     info.arg1 = { name = charName, };
+--                     info.value = UIDROPDOWNMENU_MENU_VALUE;
+--                     info.func = UnitPopup_OnClick;
+--                     info.notCheckable = true;
+--                     UIDropDownMenu_AddButton(info, 2);
+--                 end
+--                 if gameOnline == nil then
+--                     break;
+--                 end
+--                 i = i + 1;
+--             end
+--         end
+--     end
+-- );
+
+----------------------------------------------------------------------------------------------------Button on UnitFrame
 local temp_unkFrame_id = 1;
 local function hookUnitFrame(unitFrame)
 	local unitFrameName = unitFrame:GetName();
@@ -3541,7 +3569,7 @@ end
 
 C_Timer.After(1.0, function() hookUnitFrame(TargetFrame); end);
 
-----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------Tooltip
 local Orig_TalentFrameTalent_OnClick = nil;
 local function _TalentFrameTalent_OnClick(self, mouseButton)
 	--ATEMU.QueryIdFromDB
@@ -3578,6 +3606,27 @@ local function onEvent(self, event, addon)
 				break;
 			end
 		end
+
+		if TalentFrame then
+			local button = CreateFrame("Button", nil, TalentFrame);
+			button:SetSize(80, 20);
+			button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
+			button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
+			button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+			button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+			button:SetHighlightTexture(TEXTURE_SET.NORMAL_HIGHLIGHT);
+			button:SetPoint("RIGHT", TalentFrameCloseButton, "LEFT", -2, 0);
+			button:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+			button:SetScript("OnClick", function() emu.Emu_Create(); end);
+			button:SetScript("OnEnter", Info_OnEnter);
+			button:SetScript("OnLeave", Info_OnLeave);
+			button.information = L.TalentFrameCallButton;
+			local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+			fontString:SetText(L.TalentFrameCallButtonFontString);
+			fontString:SetPoint("CENTER");
+			button.fontString = fontString;
+		end
+
 		self:UnregisterAllEvents();
 		self:SetScript("OnEvent", nil);
 	end
