@@ -20,11 +20,29 @@ MTSL_DATA = {
     ["NPCs"] = {},
     ["Quests"] = {},
     -- Each profession has 4 levels to learn (1-75, 75-150, 150-225, 225-300)
-    TRADESKILL_LEVELS = 4,
-    -- Counters keeping track of total amount of items  (counted at start addon)
-    AMOUNT_ITEMS = {},
-    -- Counters keeping track of total amount of skill  (counted at start addon)
-    AMOUNT_SKILLS = {},
-    -- holds counters for how many skills can be learned up the current content phase (counted at start addon)
-    AMOUNT_SKILLS_CURRENT_PHASE = {},
+    ["AMOUNT_TRADESKILL_LEVELS"] = 4,
+    -- Counters keeping track of total amount of skill (this includes AMOUNT_TRADESKILL_LEVELS)
+    ["AMOUNT_SKILLS"] = {
+        ["Tailoring"] = 229,
+        ["Blacksmithing"] = 253,
+        ["Alchemy"] = 115,
+        ["Mining"] = 16,
+        ["First Aid"] = 17,
+        ["Cooking"] = 85,
+        ["Engineering"] = 171,
+        ["Leatherworking"] = 239,
+        ["Enchanting"] = 155,
+    },
+    -- holds counters for how many skills can be learned up the current content phase (counted using DEV MODe of APP)
+    ["AMOUNT_SKILLS_CURRENT_PHASE"] = {
+        ["Tailoring"] = 229,
+        ["Blacksmithing"] = 253,
+        ["Alchemy"] = 115,
+        ["Mining"] = 16,
+        ["First Aid"] = 17,
+        ["Cooking"] = 85,
+        ["Engineering"] = 171,
+        ["Leatherworking"] = 239,
+        ["Enchanting"] = 137,
+    },
 }

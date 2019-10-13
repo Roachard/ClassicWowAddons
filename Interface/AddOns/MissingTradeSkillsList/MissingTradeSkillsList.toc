@@ -3,23 +3,32 @@
 ## Author: Thumbkin
 ## Notes: Shows missing skills & recipes for a profession and where to get them.
 ## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER
-## Version: 1.13.18
+## Version: 1.13.19
 
+
+##
 ## Load all global variables, saved variables & locale
+##
+
+Data\GlobalVariables.lua
+
 Logic\GlobalVariables.lua
 Logic\SavedVariables.lua
-UI\GlobalVariables.lua
-UI\SavedVariables.lua
-UI\Locales.lua
 
+UI\GlobalVariables.lua
+UI\Locales.lua
+UI\SavedVariables.lua
+
+##
 ## Load the data
-Data\GlobalVariables.lua
+##
 
 # Shared data
 Data\Factions.lua
 Data\Npcs.lua
 Data\Objects.lua
 Data\Quests.lua
+Data\Continents.lua
 Data\Zones.lua
 
 # Alchemy
@@ -67,12 +76,21 @@ Data\Tailoring\Tailoring_Levels.lua
 Data\Tailoring\Tailoring_Skills.lua
 Data\Tailoring\Tailoring_Items.lua
 
+##
 ## Load the logic
+##
 Logic\Tools.lua
-Logic\Player.lua
+Logic\FactionReputation.lua
+Logic\ItemObject.lua
+Logic\PlayerNpc.lua
+Logic\Profession.lua
+Logic\Quest.lua
+Logic\Skill.lua
 Logic\World.lua
 
+##
 ## Load the UI
+##
 
 # Shared functions
 UI\Fonts.lua
@@ -80,48 +98,31 @@ UI\Tools.lua
 UI\EventHandler.lua
 
 # Shared Frames
+UI\Common\BaseFrame.lua
 UI\Common\ExpandButton.lua
 UI\Common\HorizontalSlider.lua
-UI\Common\VerticalSlider.lua
 UI\Common\ListItem.lua
+UI\Common\ListFrame.lua
+UI\Common\PlayerListFrame.lua
+UI\Common\FilterFrame.lua
+UI\Common\PlayerFilterFrame.lua
+UI\Common\ProfessionListFrame.lua
 UI\Common\ProgressBar.lua
+UI\Common\SkillDetailFrame.lua
+UI\Common\TitleFrame.lua
+UI\Common\VerticalSlider.lua
 
-# MTSL Toggle Button
-UI\TradeSkill\ToggleButton.lua
-
-# MissingTradeSkillFrame
-UI\TradeSkill\MTSLF\TitleFrame.lua
-UI\TradeSkill\MTSLF\MissingSkillsListSortFrame.lua
-UI\TradeSkill\MTSLF\MissingSkillsListFrame.lua
-UI\TradeSkill\MTSLF\DetailsSelectedSkillFrame.lua
-UI\TradeSkill\MTSLF\ProgressBar.lua
-UI\TradeSkill\MissingTradeSkillFrame.lua
-
-# DatabaseFrame
-UI\Database\TitleFrame.lua
-UI\Database\ProfessionListFrame.lua
-UI\Database\SkillListSortFrame.lua
-UI\Database\SkillListFrame.lua
-UI\Database\SkillDetailFrame.lua
-UI\Database\CharactersSelectedSkillFrame.lua
-UI\Database\DatabaseFrame.lua
-
-# AccountFrame
-UI\Account\TitleFrame.lua
-UI\Account\CharactersListSortFrame.lua
-UI\Account\CharactersListFrame.lua
-UI\Account\ProfessionListFrame.lua
-UI\Account\SkillListSortFrame.lua
-UI\Account\SkillListFrame.lua
-UI\Account\SkillDetailFrame.lua
-UI\Account\AccountFrame.lua
-
-# OptionsFrame
-UI\Options\TitleFrame.lua
+# Components for OptionsFrame
 UI\Options\ConfigFrame.lua
 UI\Options\SaveFrame.lua
 UI\Options\ResetFrame.lua
-UI\Options\OptionsMenuFrame.lua
+
+# MainFrames
+UI\MainFrames\AccountExplorerFrame.lua
+UI\MainFrames\DatabaseExplorerFrame.lua
+UI\MainFrames\OptionsMenuFrame.lua
+UI\MainFrames\ToggleButton.lua
+UI\MainFrames\MissingTradeSkillsFrame.lua
 
 ## Initialise the frames & start the addon
 MissingTradeSkillsList.lua

@@ -23,8 +23,7 @@ MTSLUI_LIST_ITEM = {
     ----------------------------------------------------------------------------------------------------------
     Initialise = function (self, id, parent_frame, width, height, position_left, position_top)
         self.FRAME_WIDTH_NO_SLIDER = width
-        -- width of the button when slider is not visible (FRAME_WIDTH_SLIDER + 16)
-        self.FRAME_WIDTH_SLIDER = width - MTSLUI_VERTICAL_SLIDER.FRAME_WIDTH + 5
+        self.FRAME_WIDTH_SLIDER = width - MTSLUI_VERTICAL_SLIDER.FRAME_WIDTH + 8
         self.FRAME_HEIGHT = height
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Button", "", parent_frame.ui_frame, nil, self.FRAME_WIDTH_NO_SLIDER, self.FRAME_HEIGHT)
         self.ui_frame:SetPoint("TOPLEFT", parent_frame.ui_frame, "TOPLEFT", position_left, position_top)
@@ -68,8 +67,7 @@ MTSLUI_LIST_ITEM = {
     -- Resize the list item
     UpdateWidth = function(self, width)
         self.FRAME_WIDTH_NO_SLIDER = width
-        -- width of the button when slider is not visible (FRAME_WIDTH_SLIDER + 16)
-        self.FRAME_WIDTH_SLIDER = width - MTSLUI_VERTICAL_SLIDER.FRAME_WIDTH + 5
+        self.FRAME_WIDTH_SLIDER = width - MTSLUI_VERTICAL_SLIDER.FRAME_WIDTH + 8
     end,
 
     ---------------------------------------------------------------------------------------

@@ -1,10 +1,10 @@
-------------------------------------------------------------------
--- Name: DetailsSelectedSkillFrame							    --
--- Description: ui_frameshowing the details of the selected skill --
--- Parent Frame: MissingTradeSkillsListFrame					--
-------------------------------------------------------------------
+-------------------------------------------------------
+-- Name: SkillDetailFrame							 --
+-- Description: Shows the detail of a selected skill --
+-- Parent Frame: MissingTradeSkillsListFrame		 --
+-------------------------------------------------------
 
-MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
+MTSLUI_SKILL_DETAIL_FRAME = {
     ui_frame,
     -- array holding all labels shown on this panel, for easy acces later
     labels = {
@@ -32,13 +32,13 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         },
     },
     -- width of the frame
-    FRAME_WIDTH = 512,
+    FRAME_WIDTH = 515,
     -- height of the frame
-    FRAME_HEIGHT = 392,
+    FRAME_HEIGHT = 424,
     -- height of the primary sources frame
-    FRAME_SOURCES_HEIGHT = 280,
+    FRAME_SOURCES_HEIGHT = 305,
     -- shows up to 17 sources
-    MAX_SOURCES_SHOWN_PRIMARY = 17,
+    MAX_SOURCES_SHOWN_PRIMARY = 19,
     -- height of the frame with alternative source
     FRAME_ALT_SOURCES_HEIGHT = 120,
     -- shows up to 7 alternative sources
@@ -53,11 +53,11 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     --
     -- @parent_frame		Frame		The parent frame
     ----------------------------------------------------------------------------------------------------------
-    Initialise = function (self, parent_frame)
+    Initialise = function (self, parent_frame, frame_name)
+        -- make local copy of this instance to hook the events too
+        local event_class = self
         -- create the frame
-        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", parent_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
-        -- position just left of the Missing Skills List Frame
-        self.ui_frame:SetPoint("BOTTOMLEFT", parent_frame, "BOTTOMRIGHT", 0, 0)
+        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", frame_name, parent_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
         --  Black background
         self.ui_frame:SetBackdropColor(0,0,0,1)
         -- Add the Texts/Strings to the frame
@@ -71,7 +71,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- create a frame to hover over and show the tooltip
         self.labels.name.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.name.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, -2)
-        self.labels.name.tooltip_frame:SetScript("OnEnter", function() MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:ToolTipShowSkillName() end)
+        self.labels.name.tooltip_frame:SetScript("OnEnter", function() event_class:ToolTipShowSkillName() end)
         self.labels.name.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Required skill: <min skill>"
@@ -100,14 +100,14 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- create a frame to hover over and show the tooltip
         self.labels.type.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.type.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, text_label_top + 5)
-        self.labels.type.tooltip_frame:SetScript("OnEnter", function() MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:ToolTipShowSourceName() end)
+        self.labels.type.tooltip_frame:SetScript("OnEnter", function() event_class:ToolTipShowSourceName() end)
         self.labels.type.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Trained by: <trainers> or Sold by: <vendors> or Dropped by: <mobs> or Obtained from: <quest>"
         self.labels.sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
         self.labels.sources.title:Hide()
         -- Create a frame to hold the labels
-        self.labels.sources.ui_frame= MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 107, self.FRAME_SOURCES_HEIGHT, false)
+        self.labels.sources.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 107, self.FRAME_SOURCES_HEIGHT, false)
         -- position under MissingSkillsListui_frameand above ProgressBar
         self.labels.sources.ui_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 10, text_label_top + 8)
         -- we have MAX_SOURCES_SHOWN we can show at same time
@@ -121,7 +121,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             table.insert(self.labels.sources.values, string_sources_content)
         end
         -- add on click for tom tom integration
-        self.labels.sources.ui_frame:SetScript("OnMouseUp", function() MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:AddTomTomWayPointPrimarySource() end)
+        self.labels.sources.ui_frame:SetScript("OnMouseUp", function() event_class:AddTomTomWayPointPrimarySource() end)
         -- hide on creation
         self.labels.sources.ui_frame:Show()
         text_label_right = 125
@@ -131,19 +131,19 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- create a frame to hover over and show the tooltip
         self.labels.alt_type.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.alt_type.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, text_label_top + 5)
-        self.labels.alt_type.tooltip_frame:SetScript("OnEnter", function() MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:ToolTipShowAltSourceName() end)
+        self.labels.alt_type.tooltip_frame:SetScript("OnEnter", function() event_class:ToolTipShowAltSourceName() end)
         self.labels.alt_type.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Trained by: <trainers> or Sold by: <vendors> or Dropped by: <mobs> or Obtained from: <quest>"
         self.labels.alt_sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
         -- Create a frame to show the alternative sources
-        self.labels.alt_sources.ui_frame= MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 117, self.FRAME_ALT_SOURCES_HEIGHT, false)
+        self.labels.alt_sources.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 118, self.FRAME_ALT_SOURCES_HEIGHT, false)
         -- position halfway from the frame with primary sources
-        self.labels.alt_sources.ui_frame:SetPoint("BOTTOMRIGHT", self.ui_frame, "BOTTOMRIGHT", -1, 0)
+        self.labels.alt_sources.ui_frame:SetPoint("BOTTOMRIGHT", self.ui_frame, "BOTTOMRIGHT", -2, -2)
         -- hide on creation
         self.labels.alt_sources.ui_frame:Show()
         self.labels.alt_sources.values = {}
-        text_label_top = -8
+        text_label_top = -5
         text_label_right = 10
         -- Create the labels for sources
         for i=1,self.MAX_SOURCES_SHOWN_SECONDARY do
@@ -152,7 +152,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             table.insert(self.labels.alt_sources.values, string_sources_content)
         end
         -- add on click for tom tom integration
-        self.labels.alt_sources.ui_frame:SetScript("OnMouseUp", function() MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME:AddTomTomWayPointSecondarySource() end)
+        self.labels.alt_sources.ui_frame:SetScript("OnMouseUp", function() event_class:AddTomTomWayPointSecondarySource() end)
     end,
 
     -- Tries to add a way point to the map for the clicked NPC
@@ -257,18 +257,13 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     --
     -- @skill		MTSL_DATA	The skill of which the information must be shown
     ---------------------------------------------------------------------------
-    ShowDetailsOfSkill = function(self, skill)
+    ShowDetailsOfSkill = function(self, skill, profession_name, current_xp_level, current_skill_level)
         if skill ~= nil then
             -- Generic labelsetting for every type
             self.labels.name.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. skill["name"][MTSLUI_CURRENT_LANGUAGE])
-            -- Color the label red or green depending on our skill
-            if MTSL_CURRENT_TRADESKILL.SKILL_LEVEL >= skill.min_skill then
-                self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. skill.min_skill)
-            else
-                self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.TEXT.ERROR .. skill.min_skill)
-            end
+            self:SetRequiredSkillLevel(skill.min_skill, current_skill_level)
             -- Set minimum xp level
-            self:SetRequiredXPLevel(skill.min_xp_level)
+            self:SetRequiredXPLevel(skill.min_xp_level, current_xp_level)
             self:SetRequiredReputationWithFaction(skill.reputation)
             -- if special action is required
             if skill.special_action ~= nil then
@@ -292,13 +287,14 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             self:HideTooltipFrameShowAltSourceName()
 
             if skill.item ~= nil then
-                self:ShowDetailsOfSkillTypeItem(skill.item)
+                self:ShowDetailsOfSkillTypeItem(skill.item, profession_name, current_xp_level)
             elseif skill.trainers ~= nil then
                 self:ShowDetailsOfSkillTypeTrainer(skill.trainers)
             elseif skill.quests ~= nil then
-                self:ShowDetailsOfSkillTypeQuest(skill.quests, 0)
+                self:ShowDetailsOfSkillTypeQuest(skill.quests, profession_name, current_xp_level, 0)
             elseif skill.object ~= nil then
-                self:ShowDetailsOfSkillTypeObject(skill.object)-- no sources (special action only)
+                self:ShowDetailsOfSkillTypeObject(skill.object)
+            -- no sources (special action only)
             else
                 self.labels.type.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_LOCALES_LABELS["special action"][MTSLUI_CURRENT_LANGUAGE])
                 self.labels.sources.title:Hide()
@@ -307,25 +303,48 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             self.ui_frame:Show()
             -- Update the text for the tooltips
             self.tooltip_skill_name = "spell:"..skill.id
+            -- TODO UPDATE: Update the Character Screen
+            -- MTSLDBUI_CHARS_SELECTED_SKILL_FRAME:RefreshUI(profession_name, skill.id)
+        -- no valid skill so clear all
+        else
+            self:ShowNoSkillSelected()
+        end
+    end,
+
+    ----------------------------------------------------------------------------
+    -- Show the details of a minimum skill level required
+    --
+    -- @min_skill	            Number	    The minimum skill level required to learn the skill
+    -- @current_skill_level     Number      The current skill level of the player
+    ----------------------------------------------------------------------------
+    SetRequiredSkillLevel = function(self, min_skill, current_skill_level)
+        if min_skill == nil or min_skill <= 0  then
+            self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
+        elseif current_skill_level == nil or current_skill_level <= 0 then
+            self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.ALL .. min_skill)
+        elseif min_skill <= current_skill_level then
+            self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.YES .. min_skill)
+        else
+            self.labels.min_skill.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.NO .. min_skill)
         end
     end,
 
     ----------------------------------------------------------------------------
     -- Show the details of a minimum XP level required
     --
-    -- @min_xp_level	number	The minimum XP level required to learn the skill
+    -- @min_xp_level	    Number	    The minimum XP level required to learn the skill
+    -- @current_xp_level    Number      The current XP level of the player
     ----------------------------------------------------------------------------
-    SetRequiredXPLevel = function (self, min_xp_level)
+    SetRequiredXPLevel = function (self, min_xp_level, current_xp_level)
         -- Check if we need certain XP level to learn
-        if min_xp_level ~= nil then
-            -- green if we meet the level, red if we dont meet it
-            if MTSL_CURRENT_PLAYER.XP_LEVEL >= min_xp_level then
-                self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. min_xp_level)
-            else
-                self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.TEXT.ERROR .. min_xp_level)
-            end
-        else
+        if min_xp_level == nil or min_xp_level <= 0 then
             self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
+        elseif current_xp_level == nil or current_xp_level <= 0 then
+            self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.ALL .. min_xp_level)
+        elseif min_xp_level <= current_xp_level then
+            self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.YES .. min_xp_level)
+        else
+            self.labels.requires_xp.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.NO .. min_xp_level)
         end
     end,
 
@@ -337,17 +356,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     SetRequiredReputationWithFaction = function(self, reputation)
         -- Check if require reputation to acquire
         if reputation ~= nil then
-            -- Get the levels of reputation for player and needed for recipe
-            local player_standing_faction = MTSL_TOOLS:GetReputationLevelWithFaction(reputation.faction)
-            local req_standing_faction = MTSL_TOOLS:GetReputationLevelByLevelName(reputation.level)
-            local msg = MTSLUI_FONTS.COLORS.TEXT.NORMAL .. reputation.faction
-            -- use correct color if we have the required rep or not
-            if player_standing_faction >= req_standing_faction then
-                msg = msg .. MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. " [" .. reputation.level .. "]"
-            else
-                msg = msg .. MTSLUI_FONTS.COLORS.TEXT.ERROR .. " [" .. reputation.level .. "]"
-            end
-            self.labels.requires_rep.value:SetText(msg)
+            self.labels.requires_rep.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. reputation.faction .. " [" .. reputation.level .. "]")
         else
             self.labels.requires_rep.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
         end
@@ -364,7 +373,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         -- Labels to show "Trained by: <trainer>"
         self.labels.sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["trained by"][MTSLUI_CURRENT_LANGUAGE] .. ":")
         -- Get all "available" trainers for the player
-        local trainers = MTSL_TOOLS:GetNpcsByIds(trainers_info.sources)
+        local trainers = MTSL_LOGIC_PLAYER_NPC:GetNpcsByIds(trainers_info.sources)
         -- Show all the npcs
         self:ShowDetailsOfNpcs(trainers, 0)
         -- hide the tooltips
@@ -378,14 +387,14 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     -- @quest_id				number	The id of the quest to show
     -- @is_alternative_source	number	Indicates if quest is primary (=0) or secondary (=1) source for skill
     ----------------------------------------------------------------------------------------------------------
-    ShowDetailsOfSkillTypeQuest = function(self, quest_ids, is_alternative_source)
+    ShowDetailsOfSkillTypeQuest = function(self, quest_ids, profession_name, current_xp_level, is_alternative_source)
         if is_alternative_source == 1 then
             self.labels.alt_sources.title:Show()
             self.labels.alt_type.title:Show()
             self.labels.alt_type.value:Show()
         end
 
-        local quest = MTSL_TOOLS:GetQuestByIds(quest_ids)
+        local quest = MTSL_LOGIC_QUEST:GetQuestByIds(quest_ids)
         if is_alternative_source == 1 then
             self.labels.alt_sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["started by"][MTSLUI_CURRENT_LANGUAGE] .. ":")
         else
@@ -399,7 +408,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                 self.labels.type.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_LOCALES_LABELS["quest"][MTSLUI_CURRENT_LANGUAGE] .. ": " .. quest["name"][MTSLUI_CURRENT_LANGUAGE])
             end
             -- show xp level requirements if any
-            self:SetRequiredXPLevel(quest.min_xp_level)
+            self:SetRequiredXPLevel(quest.min_xp_level, current_xp_level)
             -- show the npcs as sources that start it if any
             local amount_npcs = MTSL_TOOLS:CountItemsInArray(quest.npcs)
             local amount_items = MTSL_TOOLS:CountItemsInArray(quest.items)
@@ -407,7 +416,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             -- Can only be 1 source
             if amount_npcs > 0 then
                 -- Get the npcs the player can interact with
-                local questgivers = MTSL_TOOLS:GetNpcsByIds(quest.npcs)
+                local questgivers = MTSL_LOGIC_PLAYER_NPC:GetNpcsByIds(quest.npcs)
                 self:ShowDetailsOfNpcs(questgivers, is_alternative_source)
                 -- hide the tooltip since it does not start from an item
                 if is_alternative_source == 0 then
@@ -418,7 +427,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             end
             -- show the items as sources
             if amount_items > 0 then
-                local items = MTSL_TOOLS:GetItemsCurrentTradeSkillByIds(quest.items)
+                local items = MTSL_LOGIC_ITEM_OBJECT:GetItemsForProfessionByIds(quest.items, profession_name)
                 self:ShowDetailsOfItems(items, is_alternative_source)
                 -- update the corresponding tooltip to show info on the item
                 if is_alternative_source == 0  then
@@ -429,10 +438,10 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             end
             -- show the objects
             if quest.objects ~= nil then
-                local objects = MTSL_TOOLS:GetObjectsByIds(quest.objects)
+                local objects = MTSL_LOGIC_ITEM_OBJECT:GetObjectsByIds(quest.objects)
                 self:ShowDetailsOfObjects(objects, is_alternative_source)
             end
-            -- not available for our faction
+        -- not available for our faction
         else
             self:ShowDetailsOfNpcs(quest, is_alternative_source)
         end
@@ -444,7 +453,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     -- @oject_id		number  	The id of the source zobject
     ----------------------------------------------------------------------------------------------------
     ShowDetailsOfSkillTypeObject = function (self, oject_id)
-        local object = MTSL_TOOLS:GetObjectById(oject_id)
+        local object = MTSL_LOGIC_ITEM_OBJECT:GetObjectById(oject_id)
         self.labels.type.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. object["name"][MTSLUI_CURRENT_LANGUAGE])
         local objects = { object }
         self:ShowDetailsOfObjects(objects, 0)
@@ -455,10 +464,10 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
     --
     -- @item_id		number	The id of the item to show
     ----------------------------------------------------------------------------------------------------
-    ShowDetailsOfSkillTypeItem = function(self, item_id)
-        local item = MTSL_TOOLS:GetItemCurrentTradeSkillById(item_id)
+    ShowDetailsOfSkillTypeItem = function(self, item_id, profession_name, current_xp_level)
+        local item = MTSL_LOGIC_ITEM_OBJECT:GetItemForProfessionById(item_id, profession_name)
         if item  == nil then
-            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL - Count not find item with id " .. item_id .. " for profession " .. MTSL_CURRENT_TRADESKILL.NAME .. ". Please report this bug!")
+            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL - Count not find item with id " .. item_id .. " for profession " .. profession_name .. ". Please report this bug!")
         else
             self:SetRequiredXPLevel(item.min_xp_level)
             self:SetRequiredReputationWithFaction(item.reputation)
@@ -505,17 +514,17 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                     self.labels.sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["sold by"][MTSLUI_CURRENT_LANGUAGE] .. ":")
                     self.labels.price.value:SetText(MTSL_TOOLS:GetNumberAsMoneyString(item.vendors.price))
                     -- Get all "available" vendors for the player
-                    local vendors = MTSL_TOOLS:GetNpcsByIds(item.vendors.sources)
+                    local vendors = MTSL_LOGIC_PLAYER_NPC:GetNpcsByIds(item.vendors.sources)
                     self:ShowDetailsOfNpcs(vendors, 0)
                 end
                 -- Obtained from a quest
                 if has_quests > 0 then
                     -- primary source since no vendors
                     if has_vendors <= 0 then
-                        self:ShowDetailsOfSkillTypeQuest(item.quests, 0)
+                        self:ShowDetailsOfSkillTypeQuest(item.quests, profession_name, current_xp_level, 0)
                         self.tooltip_source_name = "item:" .. item_id
                     else
-                        self:ShowDetailsOfSkillTypeQuest(item.quests, 1)
+                        self:ShowDetailsOfSkillTypeQuest(item.quests, profession_name, current_xp_level, 1)
                         self.tooltip_alt_source_name  = "item:" .. item_id
                     end
                 end
@@ -528,11 +537,11 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                         if item.drops.mobs_range ~= nil then
                             self:ShowWorldDropSources(item.drops.mobs_range.min_xp_level, item.drops.mobs_range.max_xp_level, 0)
                         else
-                            local mobs = MTSL_TOOLS:GetMobsByIds(item.drops.mobs)
+                            local mobs = MTSL_LOGIC_PLAYER_NPC:GetMobsByIds(item.drops.mobs)
                             self:ShowDetailsOfNpcs(mobs, 0)
                         end
                         self.tooltip_source_name = "item:" .. item_id
-                        -- alternative/secundary source
+                    -- alternative/secundary source
                     else
                         self.labels.alt_type.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_LOCALES_LABELS["mobs"][MTSLUI_CURRENT_LANGUAGE])
                         self.labels.alt_sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["dropped by"][MTSLUI_CURRENT_LANGUAGE] .. ":")
@@ -540,7 +549,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                         if item.drops.mobs_range ~= nil then
                             self:ShowWorldDropSources(item.drops.mobs_range.min_xp_level, item.drops.mobs_range.max_xp_level, 1)
                         else
-                            local mobs = MTSL_TOOLS:GetMobsByIds(item.drops.mobs)
+                            local mobs = MTSL_LOGIC_PLAYER_NPC:GetMobsByIds(item.drops.mobs)
                             self:ShowDetailsOfNpcs(mobs, 1)
                         end
                         self.tooltip_alt_source_name  = "item:" .. item_id
@@ -593,7 +602,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
             -- Show the npcs
             for i=1,amount_labels do
                 if npcs[i] ~= nil then
-                    local text = npcs[i]["name"][MTSLUI_CURRENT_LANGUAGE] .. " - " .. MTSL_LOGIC_WORLD:GetZoneNameById(npcs[i].zone_id)
+                    local text = npcs[i]["name"][MTSLUI_CURRENT_LANGUAGE] .. " - " ..  MTSL_LOGIC_WORLD:GetZoneNameById(npcs[i].zone_id)
                     -- add coords if known
                     if npcs[i].location ~= nil and npcs[i].location.x ~= "-" and
                             npcs[i].location.x ~= "" then
@@ -695,7 +704,7 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
         labels_sources.ui_frame:Show()
         for i=1, amount_labels do
             if objects[i] ~= nil then
-                local text =  "[object] " .. objects[i]["name"][MTSLUI_CURRENT_LANGUAGE] .. " - " .. MTSL_LOGIC_WORLD:GetZoneNameById(objects[i].zone_id)
+                local text =  "[object] " .. objects[i]["name"][MTSLUI_CURRENT_LANGUAGE] .. " - " ..  MTSL_LOGIC_WORLD:GetZoneNameById(objects[i].zone_id)
                 -- add coords if known
                 if objects[i].location ~= nil and objects[i].location.x ~= "-" and
                         objects[i].location.x ~= "" then
@@ -707,28 +716,5 @@ MTSLUI_MTSLF_DETAILS_SELECTED_SKILL_FRAME = {
                 labels_sources.values[i]:Hide()
             end
         end
-    end,
-
-
-    -- Switch to vertical split layout
-    ResizeToVerticalMode = function(self)
-        -- makes sure repositioning & resizing actualy happens
-        self.ui_frame:ClearAllPoints()
-        -- reposition
-        self.ui_frame:SetPoint("BOTTOMLEFT", self.ui_frame:GetParent(), "BOTTOMRIGHT", 0, 0)
-        -- adjust size
-        self.ui_frame:SetWidth(self.FRAME_WIDTH)
-        self.ui_frame:SetHeight(self.FRAME_HEIGHT)
-    end,
-
-    -- Switch to horizontal split layout
-    ResizeToHorizontalMode = function(self)
-        -- makes sure repositioning & resizing actualy happens
-        self.ui_frame:ClearAllPoints()
-        -- reposition
-        self.ui_frame:SetPoint("TOPLEFT", self.ui_frame:GetParent(), "BOTTOMLEFT", 0, 0)
-        -- adjust size
-        self.ui_frame:SetWidth(self.FRAME_WIDTH)
-        self.ui_frame:SetHeight(self.FRAME_HEIGHT)
     end,
 }

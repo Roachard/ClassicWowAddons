@@ -120,6 +120,21 @@ MTSLUI_HORIZONTAL_SLIDER = {
     end,
 
     ---------------------------------------------------------------------------------------
+    -- Sets the actual value of the current slider
+    --
+    -- @actual_value      Number      The actual value of the slider
+    ----------------------------------------------------------------------------------------
+    SetActualSliderValue = function(self, actual_value)
+        local i = 1
+        while (self.SCALE_VALUES[i] ~= nil and tonumber(self.SCALE_VALUES[i]) ~= tonumber(actual_value)) do
+            i = i + 1
+        end
+        if self.SCALE_VALUES[i] ~= nil then
+            self:SetSliderValue(i)
+        end
+    end,
+
+    ---------------------------------------------------------------------------------------
     -- Hides the slider
     ----------------------------------------------------------------------------------------
     Hide = function (self)

@@ -47,7 +47,7 @@ MTSLOPTUI_RESET_FRAME = {
                 -- If delete was succesfull, refresh the list
                 if MTSL_LOGIC_SAVED_VARIABLES:RemoveCharacter(MTSLOPTUI_RESET_FRAME.current_player, MTSLOPTUI_RESET_FRAME.current_realm) then
                     -- If no other chars on realm, update realm dropdown first
-                    if MTSL_LOGIC_PLAYER:CountPlayersOnRealm(MTSLOPTUI_RESET_FRAME.current_realm) <= 0 then
+                    if MTSL_LOGIC_PLAYER_NPC:CountPlayersOnRealm(MTSLOPTUI_RESET_FRAME.current_realm) <= 0 then
                         MTSLOPTUI_RESET_FRAME.current_realm = nil
                         MTSLOPTUI_RESET_FRAME:CreateDropDownRealms(1)
                     end
@@ -66,12 +66,11 @@ MTSLOPTUI_RESET_FRAME = {
         end)
         -- Reset all
         self.ui_frame.reset_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.ERROR .. "WARNING: can not be undone!", 25, -75, "LARGE", "TOPLEFT")
-        self.reset_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_ResetAll_Button", self.ui_frame, "UIPanelButtonTemplate",  self.BUTTON_WIDTH, self.BUTTON_HEIGHT)
-        self.reset_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, -65)
-        self.reset_btn:SetText("Reset all saved variables") --MTSLUI_LOCALES_LABELS["cancel"][MTSLUI_CURRENT_LANGUAGE])
+        self.reset_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_ResetAll_Button", self.ui_frame, "UIPanelButtonTemplate",  self.BUTTON_WIDTH + 50, self.BUTTON_HEIGHT)
+        self.reset_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left - 50, -65)
+        self.reset_btn:SetText("Remove all saved characters") --MTSLUI_LOCALES_LABELS["cancel"][MTSLUI_CURRENT_LANGUAGE])
         self.reset_btn:SetScript("OnClick", function ()
-            MTSL_LOGIC_SAVED_VARIABLES:ResetSavedVariables()
-            MTSLUI_SAVED_VARIABLES:ResetSavedVariables()
+            MTSL_LOGIC_SAVED_VARIABLES:RemoveAllCharacters()
         end)
     end,
 
@@ -80,9 +79,9 @@ MTSLOPTUI_RESET_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     BuildRealmList = function(self)
         self.realms = {}
-        for k, r in pairs(MTSL_PLAYERS) do
+        for k, _ in pairs(MTSL_PLAYERS) do
             -- only add if actual players are found on the realm
-            if MTSL_LOGIC_PLAYER:CountPlayersOnRealm(k) > 0 then
+            if MTSL_LOGIC_PLAYER_NPC:CountPlayersOnRealm(k) > 0 then
                 local new_realm = {
                     ["name"] = k,
                     ["id"] = k
@@ -108,7 +107,7 @@ MTSLOPTUI_RESET_FRAME = {
     BuildPlayersOnCurrentRealmList = function(self)
         self.player_on_realms = {}
         if self.current_realm ~= nil and MTSL_PLAYERS[self.current_realm] ~= nil then
-            for k, p in pairs(MTSL_PLAYERS[self.current_realm]) do
+            for k, _ in pairs(MTSL_PLAYERS[self.current_realm]) do
                 local new_player = {
                     ["name"] = k,
                     ["id"] = k
@@ -129,7 +128,7 @@ MTSLOPTUI_RESET_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     CreateDropDownRealms = function(self, level)
         MTSLOPTUI_RESET_FRAME:BuildRealmList()
-        MTSLUI_TOOLS:FillDropDown(level, MTSLOPTUI_RESET_FRAME.realms, MTSLOPTUI_RESET_FRAME.ChangeRealmHandler)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_RESET_FRAME.realms, MTSLOPTUI_RESET_FRAME.ChangeRealmHandler)
     end,
 
     --------------------------------------------------------------------------------------
@@ -157,7 +156,7 @@ MTSLOPTUI_RESET_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     CreateDropDownPlayersOnRealm = function(self, level)
         MTSLOPTUI_RESET_FRAME:BuildPlayersOnCurrentRealmList()
-        MTSLUI_TOOLS:FillDropDown(level, MTSLOPTUI_RESET_FRAME.player_on_realms, MTSLOPTUI_RESET_FRAME.ChangePlayersOnRealmHandler)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_RESET_FRAME.player_on_realms, MTSLOPTUI_RESET_FRAME.ChangePlayersOnRealmHandler)
     end,
 
     --------------------------------------------------------------------------------------

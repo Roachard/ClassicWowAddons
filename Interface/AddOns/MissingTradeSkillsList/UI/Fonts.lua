@@ -39,6 +39,8 @@ MTSLUI_FONTS = {
 		AVAILABLE = {
 			YES	= "|cff1eff00",
 			NO	= "|cffff0000",
+			LEARNABLE = "|cffffa500",
+			ALL = "|cffffffff",
 		},
         -- Colors of the color of factions
         FACTION = {

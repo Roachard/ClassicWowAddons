@@ -1,74 +1,6 @@
 -------------------
 -- All used Zones --
 -------------------
-MTSL_DATA["continents"] = {
-    {
-        ["id"] = 1,
-        ["name"] = {
-            ["English"] = "The Eastern Kingdoms",
-            ["German"] = "Das östliche Königreich",
-            ["Spanish"] = "Los Reinos del Este",
-            ["Russian"] = "Восточные королевства",
-            ["Portuguese"] = "Os Reinos do Leste",
-            ["French"] = "Les Royaumes de l'est",
-            ["Korean"] = "동부 왕국",
-            ["Chinese"] = "东部王国",
-        }
-    },
-    {
-        ["id"] = 2,
-        ["name"] = {
-            ["English"] = "Kalimdor",
-            ["German"] = "Kalimdor",
-            ["Spanish"] = "Kalimdor",
-            ["Russian"] = "Калимдор",
-            ["Portuguese"] = "Kalimdor",
-            ["French"] = "Kalimdor",
-            ["Korean"] = "칼림도어",
-            ["Chinese"] = "卡利姆多",
-        }
-    },
-    {
-        ["id"] = 3,
-        ["name"] = {
-            ["English"] = "Battleground",
-            ["French"] = "Champ de bataille",
-            ["German"] = "Schlachtfeld",
-            ["Russian"] = "Поле боя",
-            ["Korean"] = "전장",
-            ["Chinese"] = "战场",
-            ["Spanish"] = "Campo de batalla",
-            ["Portuguese"] = "Campo de Batalha",
-        },
-    },
-    {
-        ["id"] = 4,
-        ["name"] = {
-            ["English"] = "Dungeon",
-            ["French"] = "Donjon",
-            ["German"] = "Dungeon",
-            ["Russian"] = "Подземелье",
-            ["Korean"] = "던전",
-            ["Chinese"] = "地下城",
-            ["Spanish"] = "Mazmorra",
-            ["Portuguese"] = "Masmorra",
-        },
-    },
-    {
-        ["id"] = 5,
-        ["name"] = {
-            ["English"] = "Raid",
-            ["French"] = "Raid",
-            ["German"] = "Schlachtzug",
-            ["Russian"] = "Рейд",
-            ["Korean"] = "공격대",
-            ["Chinese"] = "团队副本",
-            ["Spanish"] = "Banda",
-            ["Portuguese"] = "Raide",
-        },
-    }
-}
-
 MTSL_DATA["zones"] = {
     {
         ["id"] = 3428,
@@ -96,7 +28,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "알터랙 산맥",
             ["Chinese"] = "奥特兰克山脉",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 2597,
@@ -138,7 +70,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "아라시 고원",
             ["Chinese"] = "阿拉希高地",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 331,
@@ -152,7 +84,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "잿빛 골짜기",
             ["Chinese"] = "灰谷",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 16,
@@ -166,7 +98,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "아즈샤라",
             ["Chinese"] = "艾萨拉",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 3,
@@ -180,7 +112,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "황야의 땅",
             ["Chinese"] = "荒芜之地",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 719,
@@ -222,7 +154,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "검은바위 산",
             ["Chinese"] = "黑石山",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1583,
@@ -264,7 +196,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "저주받은 땅",
             ["Chinese"] = "诅咒之地",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 46,
@@ -278,7 +210,7 @@ MTSL_DATA["zones"] = {
             ["Korean"] = "불타는 평원",
             ["Chinese"] = "燃烧平原",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1941,
@@ -306,7 +238,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Dunkelküste",
             ["Spanish"] = "Costa Oscura",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 1657,
@@ -320,7 +252,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Darnassus",
             ["Spanish"] = "Darnassus",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 41,
@@ -334,7 +266,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Gebirgspass der Totenwinde",
             ["Spanish"] = "Paso de la Muerte",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 2257,
@@ -348,7 +280,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Die Tiefenbahn",
             ["Spanish"] = "Tren subterráneo",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 405,
@@ -362,7 +294,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Desolace",
             ["Spanish"] = "Desolace",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 2557,
@@ -390,7 +322,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Dun Morogh",
             ["Spanish"] = "Dun Morogh",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 14,
@@ -404,7 +336,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Durotar",
             ["Spanish"] = "Durotar",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 10,
@@ -418,7 +350,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Dämmerwald",
             ["Spanish"] = "Bosque del Ocaso",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 15,
@@ -432,7 +364,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Marschen von Dustwallow",
             ["Spanish"] = "Marjal Revolcafango",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 139,
@@ -446,7 +378,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Östliche Pestländer",
             ["Spanish"] = "Tierras de la Peste del Este",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 12,
@@ -460,7 +392,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Wald von Elwynn",
             ["Spanish"] = "Bosque de Elwynn",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1397,
@@ -474,7 +406,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Smaragdwald",
             ["Spanish"] = "Bosque Esmeralda",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 361,
@@ -488,7 +420,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Teufelswald",
             ["Spanish"] = "Frondavil",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 357,
@@ -502,7 +434,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Feralas",
             ["Spanish"] = "Feralas",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 721,
@@ -530,7 +462,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Vorgebirge von Hillsbrad",
             ["Spanish"] = "Laderas de Trabalomas",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1537,
@@ -544,7 +476,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Ironforge",
             ["Spanish"] = "Forjaz",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 38,
@@ -558,7 +490,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Loch Modan",
             ["Spanish"] = "Loch Modan",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 2100,
@@ -600,7 +532,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Moonglade",
             ["Spanish"] = "Claro de la Luna",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 215,
@@ -614,7 +546,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Mulgore",
             ["Spanish"] = "Mulgore",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 3456,
@@ -656,7 +588,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Orgrimmar",
             ["Spanish"] = "Orgrimmar",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 2437,
@@ -712,7 +644,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Rotkammgebirge",
             ["Spanish"] = "Montañas Crestagrana",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 3429,
@@ -768,7 +700,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Sengende Schlucht",
             ["Spanish"] = "La Garganta de Fuego",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 209,
@@ -796,7 +728,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Silithus",
             ["Spanish"] = "Silithus",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 130,
@@ -810,7 +742,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Silberwald",
             ["Spanish"] = "Bosque de Argénteos",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 406,
@@ -824,7 +756,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Steinkrallengebirge",
             ["Spanish"] = "Sierra Espolón",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 1519,
@@ -838,7 +770,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Stormwind",
             ["Spanish"] = "Ciudad de Ventormenta",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 33,
@@ -852,7 +784,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Schlingendorntal",
             ["Spanish"] = "Vega de Tuercespina",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 2017,
@@ -894,7 +826,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Sümpfe des Elends",
             ["Spanish"] = "Pantano de las Penas",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 440,
@@ -908,7 +840,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Tanaris",
             ["Spanish"] = "Tanaris",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 141,
@@ -922,7 +854,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Teldrassil",
             ["Spanish"] = "Teldrassil",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 17,
@@ -936,7 +868,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Brachland",
             ["Spanish"] = "Los Baldíos",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 1581,
@@ -964,7 +896,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Hinterland",
             ["Spanish"] = "Tierras del Interior",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 717,
@@ -978,7 +910,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Das Verlies",
             ["Spanish"] = "Las Mazmorras",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1477,
@@ -1006,7 +938,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Tausend Nadeln",
             ["Spanish"] = "Las Mil Agujas",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 1638,
@@ -1020,7 +952,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Thunder Bluff",
             ["Spanish"] = "Cima del Trueno",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 85,
@@ -1034,7 +966,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Tirisfal",
             ["Spanish"] = "Claros de Tirisfal",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 1337,
@@ -1062,7 +994,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Undercity",
             ["Spanish"] = "Entrañas",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 490,
@@ -1076,7 +1008,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Un'Goro-Krater",
             ["Spanish"] = "Cráter de Un'Goro",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 718,
@@ -1118,7 +1050,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Westliche Pestländer",
             ["Spanish"] = "Tierras de la Peste del Oeste",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 40,
@@ -1132,7 +1064,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Westfall",
             ["Spanish"] = "Páramos de Poniente",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 11,
@@ -1146,7 +1078,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Sumpfland",
             ["Spanish"] = "Los Humedales",
         },
-        ["cont_id"] = 1,
+        ["cont_id"] = 2,
     },
     {
         ["id"] = 618,
@@ -1160,7 +1092,7 @@ MTSL_DATA["zones"] = {
             ["German"] = "Winterspring",
             ["Spanish"] = "Cuna del Invierno",
         },
-        ["cont_id"] = 2,
+        ["cont_id"] = 1,
     },
     {
         ["id"] = 1176,

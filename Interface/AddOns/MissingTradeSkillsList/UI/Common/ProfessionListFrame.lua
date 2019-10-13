@@ -4,29 +4,26 @@
 -- Parent Frame: DatabaseFrame              									--
 ----------------------------------------------------------------------------------
 
-MTSLACCUI_PROFESSION_LIST_FRAME = {
+MTSLUI_PROFESSION_LIST_FRAME = {
     -- Keeps the current created frame
     ui_frame,
     -- height of an item to select in the list
-    ITEM_HEIGHT = 45,
+    ITEM_HEIGHT = 46,
     -- width of the frame
     FRAME_WIDTH = 45,
     -- height of the frame
     FRAME_HEIGHT = 415,
     selected_index,
-    -- hold the selected player
-    selected_player_tradeskills,
 
 ----------------------------------------------------------------------------------------------------------
     -- Intialises the MissingSkillsListFrame
     --
     -- @parent_frame		Frame		The parent frame
     ----------------------------------------------------------------------------------------------------------
-    Initialise = function(self, parent_frame)
+    Initialise = function(self, parent_frame, frame_name)
+        self.shown_professions = MTSL_NAME_PROFESSIONS
         -- container frame (no scroll
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", parent_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, false)
-        -- position under TitleFrame and left of MTSLACCUI_CHARACTERS_LIST_FRAME
-        self.ui_frame:SetPoint("BOTTOMLEFT", MTSLACCUI_CHARACTERS_LIST_FRAME.ui_frame, "BOTTOMRIGHT", -3, -1)
         -- Create the background frames for the buttons
         self.PROF_BGS = {}
         -- Create the buttons
@@ -34,7 +31,7 @@ MTSLACCUI_PROFESSION_LIST_FRAME = {
         local left = 9
         local top = -2
         local i = 1
-        for _, k in pairs(MTSL_NAME_PROFESSIONS) do
+        while self.shown_professions[i] ~= nil do
             -- create background frame
             local bg_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH + 1, self.ITEM_HEIGHT + 5, true)
             -- yellow border & transparant fill
@@ -45,53 +42,89 @@ MTSLACCUI_PROFESSION_LIST_FRAME = {
             bg_frame:Hide()
             table.insert(self.PROF_BGS, bg_frame)
             -- Create a new list item (button) by making a copy of MTSLUI_LIST_ITEM
-            local skill_button = self:CreateProfessionButton(self.ui_frame, "MTSLACCUI_PROF_BTN_"..i, i)
+            local skill_button = self:CreateProfessionButton(frame_name .. "_BTN_PROF_"..i, i)
             skill_button:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, top)
             -- adjust top position for next button
             top = top - self.ITEM_HEIGHT
             -- add button to list
             table.insert(self.PROF_BUTTONS, skill_button)
             -- Show label with amount of skills for this profession
-            local title_text = MTSL_DATA.AMOUNT_SKILLS[k] + MTSL_DATA.TRADESKILL_LEVELS
+            local title_text = MTSL_DATA.AMOUNT_SKILLS[self.shown_professions[i]]
             skill_button.text = MTSLUI_TOOLS:CreateLabel(skill_button, title_text, 0, -12, "NORMAL", "BOTTOM")
 
             i = i + 1
         end
+        self.selected_index = nil
+        -- Default database wide
+        self.current_player = nil
     end,
 
+    ----------------------------------------------------------------------------------------------------------
+    -- Sets the class which will execute the event methods
+    ----------------------------------------------------------------------------------------------------------
+    SetFilterFrame = function(self, filter_frame)
+        self.filter_frame = filter_frame
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Sets the frame which will show the list items based on the filter
+    ----------------------------------------------------------------------------------------------------------
+    SetListFrame = function(self, list_item_frame)
+        self.list_item_frame = list_item_frame
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
     -- Create a button to represent a profession
-    CreateProfessionButton = function(self, parent_frame, name, i)
+    ----------------------------------------------------------------------------------------------------------
+    CreateProfessionButton = function(self, name, i)
+        local event_class = self
         -- Create the button:
-        local button = CreateFrame("Button", name, parent_frame, "")
+        local button = CreateFrame("Button", name, event_class.ui_frame, "")
         button:SetSize(30, 30)
         -- Add the icon:
         local icon = button:CreateTexture(nil, "ARTWORK")
         icon:SetAllPoints(true)
-        icon:SetTexture(MTSLUI_ICONS_PROFESSION[MTSL_NAME_PROFESSIONS[i]])
+        icon:SetTexture(MTSLUI_ICONS_PROFESSION[self.shown_professions[i]])
         button.icon = icon
 
         button:SetScript("OnClick", function ()
-            MTSLACCUI_PROFESSION_LIST_FRAME:HandleSelectedListItem(i)
+            event_class:HandleSelectedListItem(i)
         end)
         return button
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Updates the list of ProfessionListFrame (when choosing new player)
+    -- Change the player of whom professions are shown
     ----------------------------------------------------------------------------------------------------------
-    UpdateList = function (self, selected_player)
-        -- loop the know professions
-        self.selected_player_tradeskills = selected_player.TRADESKILLS
+    ChangePlayer = function(self, player_name, player_realm)
+        self.current_player = MTSL_LOGIC_PLAYER_NPC:GetPlayerOnRealm(player_name, player_realm)
 
+        local professions_to_show = MTSL_LOGIC_PLAYER_NPC:GetKnownProfessionsForPlayer(player_realm, player_name)
+        self:UpdateProfessions(professions_to_show)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Update the buttons for shown professions
+    ----------------------------------------------------------------------------------------------------------
+    UpdateProfessions = function(self, professions)
+        self.shown_professions = professions
         local first_button_shown = 0
-        if self.selected_player_tradeskills ~= {} and self.selected_player_tradeskills ~= nil then
+        if self.shown_professions ~= {} and self.shown_professions ~= nil then
             local left = 9
             local top = -2
             local i = 1
             while MTSL_NAME_PROFESSIONS[i] ~= nil do
-                if self.selected_player_tradeskills[MTSL_NAME_PROFESSIONS[i]] ~= nil and self.selected_player_tradeskills[MTSL_NAME_PROFESSIONS[i]] ~= 0 then
+                if self.shown_professions[i] ~= nil then
                     self.PROF_BGS[i]:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", 1, top + 5)
+                    self.PROF_BUTTONS[i].icon:SetTexture(MTSLUI_ICONS_PROFESSION[self.shown_professions[i]])
                     self.PROF_BUTTONS[i]:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, top)
+                    -- update date text best on player or overall
+                    if self.current_player ~= nil then
+                        self.PROF_BUTTONS[i].text:SetText(MTSL_LOGIC_PLAYER_NPC:GetAmountOfLearnedSkillsForProfession(self.current_player.NAME, self.current_player.REALM, self.shown_professions[i]))
+                    -- show all overall
+                    else
+                        self.PROF_BUTTONS[i].text:SetText(MTSL_DATA.AMOUNT_SKILLS[self.shown_professions[i]])
+                    end
                     self.PROF_BUTTONS[i]:Show()
                     top = top - self.ITEM_HEIGHT
                     if first_button_shown == 0 then
@@ -103,9 +136,9 @@ MTSLACCUI_PROFESSION_LIST_FRAME = {
                 end
                 i = i + 1
             end
+        -- no professions to show so hide all
         else
             local i = 1
-            -- has no skills so hide evertyhing
             while MTSL_NAME_PROFESSIONS[i] ~= nil do
                 self.PROF_BGS[i]:Hide()
                 self.PROF_BUTTONS[i]:Hide()
@@ -116,15 +149,14 @@ MTSLACCUI_PROFESSION_LIST_FRAME = {
         if first_button_shown > 0 then
             self:HandleSelectedListItem(first_button_shown)
             -- enabke the effects of filtering
-            MTSLACCUI_SKILL_LIST_SORT_FRAME:EnableFiltering()
-        --nothing to select so clear detail screen
+            self.filter_frame:EnableFiltering()
+            --nothing to select so clear detail screen
         else
             self.selected_index = nil
             -- disable the effects of filtering
-            MTSLACCUI_SKILL_LIST_SORT_FRAME:DisableFiltering()
+            self.filter_frame:DisableFiltering()
             -- clear the shown contents
-            MTSLACCUI_SKILL_LIST_FRAME:NoSkillsToShow()
-            MTSLACCUI_SKILL_DETAIL_FRAME:ShowNoSkillSelected()
+            self.list_item_frame:NoSkillsToShow()
         end
     end,
 
@@ -133,17 +165,39 @@ MTSLACCUI_PROFESSION_LIST_FRAME = {
     --
     -- @id		Number		The id (= index) of button that is pushed
     ----------------------------------------------------------------------------------------------------------
-    HandleSelectedListItem = function(self, id)
+    HandleSelectedListItem = function(self, index)
         -- only change if we selected a new profession
-        if self.selected_index ~= id then
+        if self.selected_index ~= index then
             -- Deselect the old BG_Frame by hiding it
             if self.selected_index ~= nil then
                 self.PROF_BGS[self.selected_index]:Hide()
             end
-            self.selected_index = id
+            self.selected_index = index
             self.PROF_BGS[self.selected_index]:Show()
-            local profession_name = MTSL_NAME_PROFESSIONS[id]
-            MTSLACCUI_SKILL_LIST_FRAME:ChangeProfession(profession_name, self.selected_player_tradeskills[profession_name].MISSING_SKILLS)
+
+            local prof_skills = {}
+            -- Get all available skills for the profession if no player is selected
+            if self.current_player == nil then
+                prof_skills = MTSL_LOGIC_PROFESSION:GetAllSkillsAndLevelsForProfession(self.shown_professions[index])
+            -- get the known skills for the current player
+            else
+                prof_skills = MTSL_LOGIC_PLAYER_NPC:GetLearnedSkillsForPlayerForProfession(self.current_player.NAME, self.current_player.REALM, self.shown_professions[index])
+            end
+            self.list_item_frame:ChangeProfession(self.shown_professions[index], prof_skills)
         end
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- GetCurrentProfession
+    ----------------------------------------------------------------------------------------------------------
+    GetCurrentProfession = function(self)
+        if self.selected_index ~= nil and self.shown_professions[self.selected_index] ~= nil then
+            return self.shown_professions[self.selected_index]
+        end
+        return "Any"
+    end,
+
+    ShowNoProfessions = function(self)
+        self:UpdateProfessions(nil)
     end,
 }
