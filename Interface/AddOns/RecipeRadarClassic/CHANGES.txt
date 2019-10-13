@@ -1,22 +1,22 @@
-lightweight tag f0cc882d28893ebb27eff23768244b14de4d5923 1.0.0.20-beta
+lightweight tag ba5543566ca5cf18e5912203836da8ba73cbe2e1 1.0.0.22
 Author:	Yunohu <kernighan@gmail.com>
-Date:	Thu Sep 26 21:19:54 2019 +0000
+Date:	Sat Oct 12 15:58:13 2019 +0000
 
-commit f0cc882d28893ebb27eff23768244b14de4d5923
+commit ba5543566ca5cf18e5912203836da8ba73cbe2e1
 Author: Yunohu <kernighan@gmail.com>
-Date:   Thu Sep 26 21:19:54 2019 +0000
+Date:   Sat Oct 12 15:58:13 2019 +0000
 
-    Version 1.0.0.20
+    Fix missing :
 
-commit 0070746c4674db1c62f16df976909cd931afb80a
+commit 51c28ef7cdb5aa821aca5d722f4a4279186aa438
 Author: Yunohu <kernighan@gmail.com>
-Date:   Thu Sep 26 21:19:44 2019 +0000
+Date:   Sat Oct 12 15:53:09 2019 +0000
 
-    Fix loading LibTourist
+    Version 1.0.0.22
 
-commit d76519a466c252f49b822fc5f2c7a37d1e137427
+commit 3171d944772cb16f9a4b7b7a8d7851840a050351
 Author: Yunohu <kernighan@gmail.com>
-Date:   Thu Sep 26 20:36:13 2019 +0000
+Date:   Sat Oct 12 15:52:12 2019 +0000
 
-    Drop mapIDs file
+    Fix callbackhander library location (Sync with upstream)
 
