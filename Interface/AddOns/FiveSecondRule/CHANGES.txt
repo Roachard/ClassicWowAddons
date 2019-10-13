@@ -1,23 +1,10 @@
-tag e256d505d100d1a528b5a28a4839dc89a5d87de2 Release-1-8
+tag 135eb3660000d99436e0c2b3211860960f9fa26f Release-1-14
 Author:	Stefan Pedersen <sp@ceptu.com>
-Date:	Thu Oct 10 19:20:10 2019 +0200
+Date:	Sun Oct 13 02:00:09 2019 +0200
 
-commit 283885c2a6107722e1980cb48513471dea1d53a3
+commit 2dccc5dcc08645b6eea93c8ebbb2b93280a338cd
 Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Thu Oct 10 19:19:54 2019 +0200
+Date:   Sun Oct 13 01:59:53 2019 +0200
 
-    Release version 1.8
-
-commit af807fa07c76bd16eb998eb0082d08180351c78c
-Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Thu Oct 10 19:19:45 2019 +0200
-
-    Exclude mana ticks from Drinking, Innervate, and Consumables from the running average and from triggering mana ticks on the statusbar.
-    Also start mana regen when ressurected.
-
-commit 5a38a61528e7b49b80e509dc02dd5f3b1e77b64b
-Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Wed Oct 9 23:20:25 2019 +0200
-
-    Update readme.
+    Tick validation significantly simplified. Running average increased to 10 ticks. Running average and average tick stored between reloads for stability. Release 1.14.
 
