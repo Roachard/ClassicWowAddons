@@ -1,0 +1,629 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\..\FrameXML\UI.xsd">
+    <Script file="Config.lua"/>
+
+    <Frame name="TrackOMaticConfig_ContainerTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="100" y="20"/>
+        </Size>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="$parentTitle" inherits="GameFontNormal">
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
+                            <Offset x="10" y="0"/>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+            <BorderColor r="0.5" g="0.5" b="0.5"/>
+            <Color r="0.25" g="0.25" b="0.25" a="0.5"/>
+            <BackgroundInsets>
+                <AbsInset left="3" right="3" top="3" bottom="3"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="16"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="16"/>
+            </EdgeSize>
+        </Backdrop>
+    </Frame>
+
+    <Slider name="TrackOMaticConfig_SliderTemplate" inherits="OptionsSliderTemplate" virtual="true">
+        <Size>
+            <AbsDimension x="340" y="20"/>
+        </Size>
+        <Layers>
+            <Layer level="BACKGROUND">
+                <FontString name="$parentText1" inherits="GameFontNormalSmall">
+                    <Color r="1.0" g="1.0" b="1.0"/>
+                    <Anchors>
+                        <Anchor point="BOTTOM" relativePoint="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="2"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="$parentText2" inherits="GameFontNormalSmall">
+                    <Anchors>
+                        <Anchor point="CENTER">
+                            <Offset>
+                                <AbsDimension x="0" y="-15"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnEnter>
+                TrackOMatic_Config_Option_OnEnter(self);
+            </OnEnter>
+            <OnLeave>
+                GameTooltip:Hide();
+            </OnLeave>
+        </Scripts>
+    </Slider>
+
+    <CheckButton name="TrackOMaticConfig_CheckBoxTemplate" inherits="UICheckButtonTemplate" virtual="true">
+        <HitRectInsets>
+            <AbsInset bottom="0" left="0" right="-100" top="0"/>
+        </HitRectInsets>
+        <Scripts>
+            <OnClick>
+                TrackOMatic_Config_OnClickOption(self, self:GetID());
+                if (self:GetChecked()) then
+                    PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_OFF);
+                else
+                    PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
+                end
+            </OnClick>
+            <OnEnter>
+                TrackOMatic_Config_Option_OnEnter(self);
+            </OnEnter>
+            <OnLeave>
+                GameTooltip:Hide();
+            </OnLeave>
+        </Scripts>
+    </CheckButton>
+
+    <Frame name="TrackOMaticConfigContainer">
+        <Layers>
+            <Layer level="BACKGROUND">
+                <Texture name="$parentBackground">
+                    <Size>
+                        <AbsDimension x="1" y="1"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="5" y="-5"/>
+                            </Offset>
+                        </Anchor>
+                        <Anchor point="BOTTOMRIGHT">
+                            <Offset>
+                                <AbsDimension x="-5" y="5"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Color r="0" g="0" b="0" a="0.75"/>
+                </Texture>
+            </Layer>
+        </Layers>
+        <Frames>
+            <ScrollFrame name="$parentScroll" inherits="UIPanelScrollFrameTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset>
+                            <AbsDimension x="5" y="-5"/>
+                        </Offset>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-28" y="77"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <ScrollChild>
+                    <Frame name="TrackOMaticConfig">
+                        <Size>
+                            <AbsDimension x="600" y="765"/>
+                        </Size>
+                        <Layers>
+                            <Layer level="ARTWORK">
+                                <FontString name="$parentTitle" inherits="GameFontNormalLarge">
+                                    <Anchors>
+                                        <Anchor point="TOPLEFT">
+                                            <Offset>
+                                                <AbsDimension x="20" y="-20"/>
+                                            </Offset>
+                                        </Anchor>
+                                    </Anchors>
+                                </FontString>
+                            </Layer>
+                        </Layers>
+                        <Frames>
+                            <Frame name="$parent_GeneralContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT">
+                                        <Offset x="20" y="-70"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativePoint="TOPRIGHT">
+                                        <Offset x="-20" y="-355"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="ARTWORK">
+                                        <FontString name="TrackOMaticConfig_GeneralOptions_TextureLabel" inherits="GameFontNormal">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT">
+                                                    <Offset>
+                                                        <AbsDimension x="120" y="-238"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <CheckButton name="TrackOMaticConfig_GeneralOptions_Show" id="1" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_GeneralOptions_Headers" id="2" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_GeneralOptions_Glows" id="3" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-50"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_GeneralOptions_LoadMessage" id="4" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-50"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_GeneralOptions_Alerts" id="5" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-85"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <Slider name="TrackOMaticConfig_GeneralOptions_Scale" id="1" minValue="0" maxValue="8" valueStep="1" inherits="TrackOMaticConfig_SliderTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="25" y="-140"/>
+                                                </Offset>
+                                            </Anchor>
+                                            <Anchor point="TOPRIGHT">
+                                                <Offset>
+                                                    <AbsDimension x="-25" y="-140"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnLoad>
+                                                _G[self:GetName() .. "Low"]:SetText("70%");
+                                                _G[self:GetName() .. "High"]:SetText("150%");
+                                            </OnLoad>
+                                            <OnValueChanged>
+                                                TrackOMatic_Config_OnSliderChanged(self, self:GetID());
+                                            </OnValueChanged>
+                                        </Scripts>
+                                    </Slider>
+                                    <Slider name="TrackOMaticConfig_GeneralOptions_Width" id="2" minValue="0" maxValue="10" valueStep="1" inherits="TrackOMaticConfig_SliderTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="25" y="-190"/>
+                                                </Offset>
+                                            </Anchor>
+                                            <Anchor point="TOPRIGHT">
+                                                <Offset>
+                                                    <AbsDimension x="-25" y="-190"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnLoad>
+                                                _G[self:GetName() .. "Low"]:SetText("75%");
+                                                _G[self:GetName() .. "High"]:SetText("125%");
+                                            </OnLoad>
+                                            <OnValueChanged>
+                                                TrackOMatic_Config_OnSliderChanged(self, self:GetID());
+                                            </OnValueChanged>
+                                        </Scripts>
+                                    </Slider>
+                                    <Button name="TrackOMaticConfig_GeneralOptions_Texture" inherits="UIDropDownMenuTemplate" id="1">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="200" y="-230"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>
+                                                TrackOMatic_Config_DropDown_OnClick(self);
+                                            </OnClick>
+                                            <OnEnter>
+                                                TrackOMatic_Config_Option_OnEnter(self);
+                                            </OnEnter>
+                                            <OnLeave>
+                                                GameTooltip:Hide();
+                                            </OnLeave>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+
+                            <Frame name="$parent_PlayerContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="$parent_GeneralContainer" relativePoint="BOTTOMLEFT">
+                                        <Offset x="0" y="-20"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent_GeneralContainer" relativePoint="BOTTOMRIGHT">
+                                        <Offset x="0" y="-125"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="ARTWORK">
+                                        <FontString name="TrackOMaticConfig_PlayerOptions_GoldBarLabel" inherits="GameFontHighlightSmall">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT">
+                                                    <Offset>
+                                                        <AbsDimension x="20" y="-20"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="TrackOMaticConfig_PlayerOptions_DurabilityBarLabel" inherits="GameFontHighlightSmall">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT">
+                                                    <Offset>
+                                                        <AbsDimension x="380" y="-20"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="TrackOMaticConfig_PlayerOptions_LevelingBarLabel" inherits="GameFontHighlightSmall">
+                                            <Anchors>
+                                                <Anchor point="TOPLEFT">
+                                                    <Offset>
+                                                        <AbsDimension x="200" y="-20"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                        <FontString name="TrackOMaticConfig_PlayerOptions_EstimationMethodLabel" justifyH="RIGHT" inherits="GameFontNormal">
+                                            <Anchors>
+                                                <Anchor point="TOPRIGHT" relativePoint="TOP">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="-73"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <CheckButton name="TrackOMaticConfig_PlayerOptions_GoldGlow" id="13" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-30"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_PlayerOptions_ReverseLeveling" id="16" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="195" y="-30"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_PlayerOptions_DurabilityGlow" id="15" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="375" y="-30"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <Button name="TrackOMaticConfig_PlayerOptions_EstimationMethod" inherits="UIDropDownMenuTemplate" id="2">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-65"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>
+                                                TrackOMatic_Config_DropDown_OnClick(self);
+                                            </OnClick>
+                                            <OnEnter>
+                                                TrackOMatic_Config_Option_OnEnter(self);
+                                            </OnEnter>
+                                            <OnLeave>
+                                                GameTooltip:Hide();
+                                            </OnLeave>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+
+                            <Frame name="$parent_ItemContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="$parent_PlayerContainer" relativePoint="BOTTOMLEFT">
+                                        <Offset x="0" y="-20"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent_PlayerContainer" relativePoint="BOTTOMRIGHT">
+                                        <Offset x="0" y="-115"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <CheckButton name="TrackOMaticConfig_ItemOptions_Quantity" id="20" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_ItemOptions_Percent" id="21" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+
+                                    <CheckButton name="TrackOMaticConfig_ItemOptions_DefaultGlow" id="22" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-50"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_ItemOptions_CustomGlow" id="23" inherits="TrackOMaticConfig_CheckBoxTemplate" hidden="true">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-50"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                </Frames>
+                            </Frame>
+
+                            <!-- <Frame name="$parent_CurrencyContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="$parent_ItemContainer" relativePoint="BOTTOMLEFT">
+                                        <Offset x="0" y="-20"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent_ItemContainer" relativePoint="BOTTOMRIGHT">
+                                        <Offset x="0" y="-115"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <CheckButton name="TrackOMaticConfig_CurrencyOptions_Quantity" id="30" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_CurrencyOptions_Percent" id="31" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                    <CheckButton name="TrackOMaticConfig_CurrencyOptions_DefaultGlow" id="32" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-50"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                </Frames>
+                            </Frame> -->
+
+                            <Frame name="$parent_ProfessionContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="$parent_ItemContainer" relativePoint="BOTTOMLEFT">
+                                        <Offset x="0" y="-20"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent_ItemContainer" relativePoint="BOTTOMRIGHT">
+                                        <Offset x="0" y="-80"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Frames>
+                                    <CheckButton name="TrackOMaticConfig_ProfessionOptions_Glow" id="41" inherits="TrackOMaticConfig_CheckBoxTemplate">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT">
+                                                <Offset>
+                                                    <AbsDimension x="15" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                    </CheckButton>
+                                </Frames>
+                            </Frame>
+
+                            <Frame name="$parent_ReputationContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                                <Anchors>
+                                    <Anchor point="TOPLEFT" relativeTo="$parent_ProfessionContainer" relativePoint="BOTTOMLEFT">
+                                        <Offset x="0" y="-20"/>
+                                    </Anchor>
+                                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent_ProfessionContainer" relativePoint="BOTTOMRIGHT">
+                                        <Offset x="0" y="-80"/>
+                                    </Anchor>
+                                </Anchors>
+                                <Layers>
+                                    <Layer level="ARTWORK">
+                                        <FontString name="TrackOMaticConfig_ReputationOptions_DisplayLabel" justifyH="RIGHT" inherits="GameFontNormal">
+                                            <Anchors>
+                                                <Anchor point="TOPRIGHT" relativePoint="TOP">
+                                                    <Offset>
+                                                        <AbsDimension x="0" y="-23"/>
+                                                    </Offset>
+                                                </Anchor>
+                                            </Anchors>
+                                        </FontString>
+                                    </Layer>
+                                </Layers>
+                                <Frames>
+                                    <Button name="TrackOMaticConfig_ReputationOptions_Display" inherits="UIDropDownMenuTemplate" id="2">
+                                        <Anchors>
+                                            <Anchor point="TOPLEFT" relativePoint="TOP">
+                                                <Offset>
+                                                    <AbsDimension x="0" y="-15"/>
+                                                </Offset>
+                                            </Anchor>
+                                        </Anchors>
+                                        <Scripts>
+                                            <OnClick>
+                                                TrackOMatic_Config_DropDown_OnClick(self);
+                                            </OnClick>
+                                            <OnEnter>
+                                                TrackOMatic_Config_Option_OnEnter(self);
+                                            </OnEnter>
+                                            <OnLeave>
+                                                GameTooltip:Hide();
+                                            </OnLeave>
+                                        </Scripts>
+                                    </Button>
+                                </Frames>
+                            </Frame>
+
+                        </Frames>
+                    </Frame>
+                </ScrollChild>
+            </ScrollFrame>
+            <Frame name="$parent_TipContainer" inherits="TrackOMaticConfig_ContainerTemplate">
+                <Anchors>
+                    <Anchor point="TOPLEFT" relativeTo="$parent" relativePoint="BOTTOMLEFT">
+                        <Offset x="5" y="75"/>
+                    </Anchor>
+                    <Anchor point="BOTTOMRIGHT" relativeTo="$parent" relativePoint="BOTTOMRIGHT">
+                        <Offset x="-5" y="5"/>
+                    </Anchor>
+                </Anchors>
+                <Layers>
+                    <Layer level="ARTWORK">
+                        <FontString name="TrackOMaticConfig_Tip" inherits="GameFontNormal" justifyH="CENTER" justifyV="MIDDLE">
+                            <Anchors>
+                                <Anchor point="TOPLEFT">
+                                    <Offset>
+                                        <AbsDimension x="60" y="-15"/>
+                                    </Offset>
+                                </Anchor>
+                                <Anchor point="BOTTOMRIGHT">
+                                    <Offset>
+                                        <AbsDimension x="-60" y="15"/>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                        </FontString>
+                    </Layer>
+                </Layers>
+                <Frames>
+                    <Button name="TrackOMaticConfig_Tip_PrevButton">
+                        <Size>
+                            <AbsDimension x="32" y="32"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="LEFT">
+                                <Offset>
+                                    <AbsDimension x="15" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                TrackOMatic_Config_PreviousTip();
+                            </OnClick>
+                        </Scripts>
+                        <NormalTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Up"/>
+                        <PushedTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Down"/>
+                        <DisabledTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-PrevPage-Disabled"/>
+                        <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+                    </Button>
+                    <Button name="TrackOMaticConfig_Tip_NextButton">
+                        <Size>
+                            <AbsDimension x="32" y="32"/>
+                        </Size>
+                        <Anchors>
+                            <Anchor point="RIGHT">
+                                <Offset>
+                                    <AbsDimension x="-15" y="0"/>
+                                </Offset>
+                            </Anchor>
+                        </Anchors>
+                        <Scripts>
+                            <OnClick>
+                                TrackOMatic_Config_NextTip();
+                            </OnClick>
+                        </Scripts>
+                        <NormalTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-NextPage-Up"/>
+                        <PushedTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-NextPage-Down"/>
+                        <DisabledTexture urgency="5" file="Interface\Buttons\UI-SpellbookIcon-NextPage-Disabled"/>
+                        <HighlightTexture file="Interface\Buttons\UI-Common-MouseHilight" alphaMode="ADD"/>
+                    </Button>
+                </Frames>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                TrackOMatic_Config_OnLoad(self);
+            </OnLoad>
+        </Scripts>
+    </Frame>
+    
+</Ui>

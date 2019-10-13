@@ -1,0 +1,25 @@
+## Interface: 11302
+## Title: Track-O-Matic |cffa335ee[Classic Edition]|r |cffffffffv1.1.0
+## Author: Germbread
+## Notes: On-screen tracking of reputation, profession skills and other information.
+## Version: 1.1.0
+## SavedVariables: TRACKOMATIC_VARS
+## X-Email: germbread@gmail.com
+
+lib\AceLocale-3.0.lua
+lib\CallbackHandler-1.0.lua
+lib\LibSharedMedia-3.0.lua
+lib\LibStub.lua
+
+locale\enUS.lua
+
+templates.xml
+GlowRuleInput.xml
+TrackOMatic.xml
+
+config\Config.xml
+config\Plugins.xml
+config\about.xml
+
+modules\TimeToLevel.lua
+modules\BagSpace.lua

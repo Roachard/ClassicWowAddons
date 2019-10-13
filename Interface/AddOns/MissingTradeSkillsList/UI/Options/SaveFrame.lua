@@ -18,18 +18,28 @@ MTSLOPTUI_SAVE_FRAME = {
         -- below config frame
         self.ui_frame:SetPoint("TOPLEFT", parent_frame, "BOTTOMLEFT", 0, 0)
         -- calculate position
-        local left = tonumber((self.FRAME_WIDTH - 2 * self.BUTTON_WIDTH)/3)
+        local left = tonumber((self.FRAME_WIDTH - 4 * self.BUTTON_WIDTH)/3)
         -- Save button
-        self.save_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_Cancel_Button", self.ui_frame, "UIPanelButtonTemplate", self.BUTTON_WIDTH, self.BUTTON_HEIGHT)
+        self.save_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_Cancel_Button", self.ui_frame, "UIPanelButtonTemplate", 2 * self.BUTTON_WIDTH, self.BUTTON_HEIGHT)
         self.save_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, 0)
         self.save_btn:SetText(MTSLUI_LOCALES_LABELS["save"][MTSLUI_CURRENT_LANGUAGE])
         self.save_btn:SetScript("OnClick", function ()
             MTSLOPTUI_CONFIG_FRAME:Save()
             MTSLUI_OPTIONS_MENU_FRAME:Hide()
         end)
+        -- Resetbutton
+        left = left + left + 2 * self.BUTTON_WIDTH
+        self.reset_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_Save_Button", self.ui_frame, "UIPanelButtonTemplate", self.BUTTON_WIDTH, self.BUTTON_HEIGHT)
+        self.reset_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, 0)
+        self.reset_btn:SetText(MTSLUI_LOCALES_LABELS["default"][MTSLUI_CURRENT_LANGUAGE])
+        self.reset_btn:SetScript("OnClick", function ()
+            MTSLUI_SAVED_VARIABLES:ResetSavedVariables()
+            MTSLOPTUI_CONFIG_FRAME:ResetUI()
+        end)
         -- Cancel button
+        left = left + self.BUTTON_WIDTH
         self.cancel_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_Save_Button", self.ui_frame, "UIPanelButtonTemplate", self.BUTTON_WIDTH, self.BUTTON_HEIGHT)
-        self.cancel_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", (left + left + self.BUTTON_WIDTH), 0)
+        self.cancel_btn:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", left, 0)
         self.cancel_btn:SetText(MTSLUI_LOCALES_LABELS["cancel"][MTSLUI_CURRENT_LANGUAGE])
         self.cancel_btn:SetScript("OnClick", function ()
             MTSLUI_OPTIONS_MENU_FRAME:Hide()

@@ -6,26 +6,34 @@
 
 MTSLUI_PROGRESSBAR = {
     ui_frame = {},
-    FRAME_WIDTH,
-    FRAME_HEIGHT,
+    FRAME_WIDTH_VERTICAL = 900,
+    FRAME_WIDTH_HORIZONTAL = 515,
+    FRAME_HEIGHT = 28,
+
+    MARGIN_PROGRESS_BAR = 150,
+    HEIGHT_PROGRESS_BAR = 24,
 
     ----------------------------------------------------------------------------------------------------------
     -- Intialises  the progressbar
     ----------------------------------------------------------------------------------------------------------
-    Initialise = function (self, parent_frame, name, width, height, left_gap_to_parent_frame)
-        self.FRAME_WIDTH = width
-        self.FRAME_HEIGHT = height
-        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", name .. "_frame", parent_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, false)
-        self.ui_frame:SetPoint("TOPLEFT", parent_frame, "TOPLEFT", left_gap_to_parent_frame, 0)
+    Initialise = function (self, parent_frame, name, title_text)
+        self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", name, parent_frame, nil, self.FRAME_WIDTH_VERTICAL, self.FRAME_HEIGHT, false)
+        self.ui_frame.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, title_text, 5, 0, "SMALL", "LEFT")
 
-        self.ui_frame.texture = MTSLUI_TOOLS:CreateBaseFrame("Statusbar", name .. "_Texture", self.ui_frame, nil, self.FRAME_WIDTH - 8, self.FRAME_HEIGHT - 8, false)
-        self.ui_frame.texture:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", 4, -4)
-        self.ui_frame.texture:SetStatusBarTexture("Interface/PaperDollInfoFrame/UI-Character-Skills-Bar")
+        local pb_width = self.FRAME_WIDTH_VERTICAL - self.MARGIN_PROGRESS_BAR
+        self.ui_frame.progressbar = {}
 
-        self.ui_frame.counter = MTSLUI_TOOLS:CreateBaseFrame("Frame",  name .. "_Counter",  self.ui_frame, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
-        self.ui_frame.counter:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", 0, 0)
+        self.ui_frame.progressbar.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", name .. "_PB_frame", self.ui_frame, nil, pb_width, self.HEIGHT_PROGRESS_BAR, false)
+        self.ui_frame.progressbar.ui_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_PROGRESS_BAR, -2)
+
+        self.ui_frame.progressbar.ui_frame.texture = MTSLUI_TOOLS:CreateBaseFrame("Statusbar", name .. "_PB_Texture", self.ui_frame.progressbar.ui_frame, nil, pb_width - 6, self.HEIGHT_PROGRESS_BAR - 6, false)
+        self.ui_frame.progressbar.ui_frame.texture:SetPoint("TOPLEFT", self.ui_frame.progressbar.ui_frame, "TOPLEFT", 4, -3)
+        self.ui_frame.progressbar.ui_frame.texture:SetStatusBarTexture("Interface/PaperDollInfoFrame/UI-Character-Skills-Bar")
+
+        self.ui_frame.progressbar.ui_frame.counter = MTSLUI_TOOLS:CreateBaseFrame("Frame",  name .. "_PB_Counter",  self.ui_frame.progressbar.ui_frame, nil, pb_width, self.HEIGHT_PROGRESS_BAR, true)
+        self.ui_frame.progressbar.ui_frame.counter:SetPoint("TOPLEFT", self.ui_frame.progressbar.ui_frame, "TOPLEFT", 0, 0)
         -- Status text
-        self.ui_frame.counter.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.counter, "", 0, 0, "NORMAL", "CENTER")
+        self.ui_frame.progressbar.ui_frame.counter.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.progressbar.ui_frame.counter, "", 0, 0, "NORMAL", "CENTER")
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -36,28 +44,39 @@ MTSLUI_PROGRESSBAR = {
     -- @current_value   number
     ----------------------------------------------------------------------------------------------------------
     UpdateStatusbar = function (self, min_value, max_value, current_value)
-        self.ui_frame.texture:SetMinMaxValues(min_value, max_value)
-        self.ui_frame.texture:SetValue(current_value)
-        self.ui_frame.texture:SetStatusBarColor(0.0, 1.0, 0.0, 0.95)
-        self.ui_frame.counter.text:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. current_value .. "/" .. max_value)
+        self.ui_frame.progressbar.ui_frame.texture:SetMinMaxValues(min_value, max_value)
+        self.ui_frame.progressbar.ui_frame.texture:SetValue(current_value)
+        self.ui_frame.progressbar.ui_frame.texture:SetStatusBarColor(0.0, 1.0, 0.0, 0.95)
+        self.ui_frame.progressbar.ui_frame.counter.text:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. current_value .. "/" .. max_value)
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Resize the progressbar
-    --
-    -- @width		number
-    -- @height		number
+    -- Switch to vertical split layout
     ----------------------------------------------------------------------------------------------------------
-    ResizeFrame = function (self, width, height)
-        if width ~= nil then
-            self.ui_frame:SetWidth(width)
-            self.ui_frame.texture:SetWidth(width - 8)
-            self.ui_frame.counter:SetWidth(width)
-        end
-        if height ~= nil then
-            self.ui_frame:SetHeight(height)
-            self.ui_frame.texture:SetHeight(height - 8)
-            self.ui_frame.counter:SetHeight(height)
-        end
+    ResizeToVerticalMode = function(self)
+        self:ResizeToWidth(self.FRAME_WIDTH_VERTICAL)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Switch to horizontal split layout
+    ----------------------------------------------------------------------------------------------------------
+    ResizeToHorizontalMode = function(self)
+        self:ResizeToWidth(self.FRAME_WIDTH_HORIZONTAL)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Resize the whole progressbar to a width
+    --
+    -- @width           Number      The number of the width of the frame
+    ----------------------------------------------------------------------------------------------------------
+    ResizeToWidth = function(self, width)
+        -- no need for height cause its same in both modes
+        self.ui_frame:SetWidth(width)
+        -- resize the progressbar
+        local pb_width = width - self.MARGIN_PROGRESS_BAR
+        self.ui_frame.progressbar.ui_frame:SetWidth(pb_width)
+        -- make fill texture smaller than border
+        self.ui_frame.progressbar.ui_frame.texture:SetWidth(pb_width - 6)
+        self.ui_frame.progressbar.ui_frame.counter:SetWidth(pb_width)
     end,
 }

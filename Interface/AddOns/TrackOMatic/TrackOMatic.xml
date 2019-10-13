@@ -1,0 +1,244 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <!-- <Script file="categories\Professions.lua"/> -->
+    <Script file="categories\Reputation_Data.lua"/>
+    <Script file="categories\Reputation.lua"/>
+    <Script file="categories\PlayerInfo.lua"/>
+    <Script file="categories\Miscinfo.lua"/>
+    <Script file="categories\Items.lua"/>
+    <!-- <Script file="categories\EventTriggers.lua"/> -->
+    <Script file="categories\Skills.lua"/>
+    <Script file="categories\HunterPet.lua"/>
+    <Script file="Plugin.lua"/>
+    <Script file="PluginAPI.lua"/>
+    <Script file="Templates.lua"/>
+    <Script file="Upgrade.lua"/>
+    <Script file="Functions.lua"/>
+    <Script file="MainMenu.lua"/>
+    <Script file="TrackOMatic.lua"/>
+
+    <Button name="TrackOMatic_AddReputationButton" parent="ReputationDetailFrame" inherits="GameMenuButtonTemplate">
+        <Size>
+            <AbsDimension x="170" y="24"/>
+        </Size>
+        <Anchors>
+            <Anchor point="BOTTOM">
+                <Offset>
+                    <AbsDimension x="-1" y="65"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Scripts>
+            <OnClick>
+                TrackOMatic_AddRepButton_OnClick(self);
+            </OnClick>
+        </Scripts>
+    </Button>
+
+    <Button name="TrackOMatic_AddSkillButton" parent="SkillDetailScrollFrame" inherits="GameMenuButtonTemplate">
+        <Size>
+            <AbsDimension x="200" y="23"/>
+        </Size>
+        <Anchors>
+            <Anchor point="BOTTOM">
+                <Offset>
+                    <AbsDimension x="0" y="5"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Scripts>
+            <OnClick>
+                TrackOMatic_AddSkillButton_OnClick();
+            </OnClick>
+        </Scripts>
+    </Button>
+
+    <Frame name="TrackOMatic" hidden="false" parent="UIParent" frameStrata="MEDIUM" toplevel="true" enableMouse="true" movable="true" clampedToScreen="true">
+        <Size>
+            <AbsDimension x="310" y="300"/>
+        </Size>
+        <Anchors>
+            <Anchor point="TOPLEFT" relativePoint="LEFT">
+                <Offset>
+                    <AbsDimension x="10" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Scripts>
+            <OnLoad>
+                TrackOMatic_OnLoad(self);
+            </OnLoad>
+            <OnEvent>
+                TrackOMatic_OnEvent(self, event, ...);
+            </OnEvent>
+            <OnUpdate>
+                TrackOMatic_OnUpdate(self, elapsed);
+            </OnUpdate>
+            <OnReceiveDrag>
+                TrackOMatic_CheckTrackerPosition();
+            </OnReceiveDrag>
+        </Scripts>
+    </Frame>
+
+    <Frame name="TrackOMatic_GoalInputBox" frameStrata ="DIALOG" hidden="true" parent="UIParent" enableMouse="true" movable="true">
+        <Size>
+            <AbsDimension x="320" y="140"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <BackgroundInsets>
+                <AbsInset left="11" right="11" top="11" bottom="11"/>
+            </BackgroundInsets>
+            <TileSize>
+                <AbsValue val="32"/>
+            </TileSize>
+            <EdgeSize>
+                <AbsValue val="32"/>
+            </EdgeSize>
+        </Backdrop>
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="TrackOMatic_GoalInputPrompt" inherits="GameFontNormal" justifyH="LEFT">
+                    <Size>
+                        <AbsDimension x="260" y="30"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOP">
+                            <Offset>
+                                <AbsDimension x="0" y="-20"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+                <FontString name="TrackOMatic_GoalInputItemText" inherits="GameFontHighlight" justifyH="CENTER">
+                    <Size>
+                        <AbsDimension x="260" y="20"/>
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="TrackOMatic_GoalInputPrompt" relativePoint="BOTTOMLEFT">
+                            <Offset>
+                                <AbsDimension x="0" y="-10"/>
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        <Frames>
+            <Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+                <Anchors>
+                    <Anchor point="TOPRIGHT" relativePoint="TOPRIGHT">
+                        <Offset>
+                            <AbsDimension x="-4" y="-4"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        self:GetParent():Hide();
+                    </OnClick>
+                </Scripts>
+            </Button>
+
+            <EditBox name="TrackOMatic_GoalInputEditBox" letters="9" numeric="true">
+                <Size>
+                    <AbsDimension x="80" y="32"/>
+                </Size>
+                <Layers>
+                    <Layer level="BACKGROUND">
+                        <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Left">
+                            <Size>
+                                <AbsDimension x="75" y="32"></AbsDimension>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="LEFT">
+                                    <Offset>
+                                        <AbsDimension x="-15" y="0"></AbsDimension>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0" right="0.2" top="0" bottom="1.0"></TexCoords>
+                        </Texture>
+                        <Texture file="Interface\ChatFrame\UI-ChatInputBorder-Right">
+                            <Size>
+                                <AbsDimension x="75" y="32"></AbsDimension>
+                            </Size>
+                            <Anchors>
+                                <Anchor point="RIGHT">
+                                    <Offset>
+                                        <AbsDimension x="15" y="0"></AbsDimension>
+                                    </Offset>
+                                </Anchor>
+                            </Anchors>
+                            <TexCoords left="0.7" right="1.0" top="0" bottom="1.0"></TexCoords>
+                        </Texture>
+                    </Layer>
+                </Layers>
+                <Anchors>
+                    <Anchor point="BOTTOMLEFT">
+                        <Offset>
+                            <AbsDimension x="85" y="20"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <FontString inherits="ChatFontNormal"/>
+                <Scripts>
+                    <OnEnterPressed>
+                        TrackOMatic_GoalInputOKButton:Click();
+                    </OnEnterPressed>
+                    <OnEscapePressed>
+                        TrackOMatic_GoalInputBox:Hide();
+                    </OnEscapePressed>
+                </Scripts>
+            </EditBox>
+            <Button name="TrackOMatic_GoalInputOKButton" inherits="GameMenuButtonTemplate">
+                <Size>
+                    <AbsDimension x="60" y="24"/>
+                </Size>
+                <Anchors>
+                    <Anchor point="BOTTOMRIGHT">
+                        <Offset>
+                            <AbsDimension x="-70" y="24"/>
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <Scripts>
+                    <OnClick>
+                        TrackOMatic_GoalInputAccept();
+                    </OnClick>
+                </Scripts>
+            </Button>
+        </Frames>
+    </Frame>
+
+    <Frame name="TrackOMatic_PlacementFrame" frameStrata="DIALOG" parent="UIParent" hidden="true" enableMouse="true">
+        <Size>
+            <AbsDimension x="300" y="200"/>
+        </Size>
+        <Anchors>
+            <Anchor point="CENTER">
+                <Offset>
+                    <AbsDimension x="0" y="0"/>
+                </Offset>
+            </Anchor>
+        </Anchors>
+        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background" edgeFile="Interface\Tooltips\UI-Tooltip-Border" tile="true">
+            <EdgeSize>
+                <AbsValue val="16"/>
+            </EdgeSize>
+            <TileSize>
+                <AbsValue val="16"/>
+            </TileSize>
+            <BackgroundInsets>
+                <AbsInset left="5" right="5" top="5" bottom="4"/>
+            </BackgroundInsets>
+        </Backdrop>
+    </Frame>
+
+</Ui>

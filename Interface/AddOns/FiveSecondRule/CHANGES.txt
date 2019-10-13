@@ -1,28 +1,10 @@
-tag 15a51c7c9740ff9be485b7b91c5b714316f3a239 Release-1-6
+tag 135eb3660000d99436e0c2b3211860960f9fa26f Release-1-14
 Author:	Stefan Pedersen <sp@ceptu.com>
-Date:	Fri Oct 4 18:17:32 2019 +0200
+Date:	Sun Oct 13 02:00:09 2019 +0200
 
-commit cb88454a3899fdb9aaefd7a988042acdbf41df77
+commit 2dccc5dcc08645b6eea93c8ebbb2b93280a338cd
 Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Fri Oct 4 18:17:17 2019 +0200
+Date:   Sun Oct 13 01:59:53 2019 +0200
 
-    Release version 1.6
-
-commit ad7bdc721450eee353f0142546ddae2e7552510e
-Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Fri Oct 4 18:16:56 2019 +0200
-
-    Add the option to disable text on the bars.
-
-commit 01ee5fab14520cf4bc39b792ea5114f387dc1780
-Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:22:16 2019 +0200
-
-    Update readme.
-
-commit 69345f27bf49ab405007452fa07f1377a9d32de4
-Author: Stefan Michael Pedersen <sp@ceptu.com>
-Date:   Wed Sep 25 00:13:53 2019 +0200
-
-    Update readme.
+    Tick validation significantly simplified. Running average increased to 10 ticks. Running average and average tick stored between reloads for stability. Release 1.14.
 

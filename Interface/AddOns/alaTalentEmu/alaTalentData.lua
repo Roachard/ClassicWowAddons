@@ -16,7 +16,7 @@ local ADDON, NS = ...;
 
 ]]
 
-NS._indexToClass = 
+NS._indexToClass =
 {
 	"druid",
 	"hunter",

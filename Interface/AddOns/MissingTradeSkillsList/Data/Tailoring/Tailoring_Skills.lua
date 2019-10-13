@@ -3469,7 +3469,7 @@ MTSL_DATA["Tailoring"]["skills"] = {
 	}, -- [137]
 	{
 		["phase"] = 1,
-		["min_skill"] = 225,
+		["min_skill"] = 255,
 		["trainers"] = {
 			["sources"] = {
 				2399, -- [1]

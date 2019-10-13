@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua b/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
-index 6419e11..a62ea73 100644
+index 82f1603..b068edf 100644
 --- a/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
 +++ b/Interface/AddOns/UnitFramesPlus/UnitFramesPlus.lua
 @@ -1,9 +1,9 @@
@@ -62,7 +62,7 @@ index 6419e11..a62ea73 100644
 +        indicator = 0,    --头像内战斗信息
          buffsize = 1,    --调节目标buff/debuff图标大小
          mysize = 24,    --自己施放的buff/debuff大小，默认 21
-         othersize = 16,    --其他人施放的buff/debuff大小，默认 17
+         othersize = 18,    --其他人施放的buff/debuff大小，默认 17，OmniCC默认 18
 -        movable = 1,    --Shift拖动目标头像
 -        portrait = 1,    --更改头像显示
 +        movable = 0,    --Shift拖动目标头像
@@ -78,7 +78,7 @@ index 6419e11..a62ea73 100644
          hpmppartone = 4,--生命值和法力值第一部分：1当前值，2最大值，3損失值，4百分比
          hpmpparttwo = 5,--生命值和法力值第二部分：1当前值，2最大值，3損失值，4百分比，5不显示
          hpmpunit = 1,        --生命值和法力值进位
-@@ -87,7 +87,7 @@ UnitFramesPlusDefaultDB = {
+@@ -89,7 +89,7 @@ UnitFramesPlusDefaultDB = {
          debuff = 1,        --额外的ToT debuff
          cooldown = 1,        --额外的ToT debuff冷却
          hppct = 1,    --额外的ToT生命值百分比
@@ -87,7 +87,7 @@ index 6419e11..a62ea73 100644
          portrait = 0,    --更改头像显示
          portraitnpcno = 1,        --NPC不显示职业图标
          enemycheck = 1,    --敌友检测
-@@ -101,12 +101,12 @@ UnitFramesPlusDefaultDB = {
+@@ -103,12 +103,12 @@ UnitFramesPlusDefaultDB = {
          bartext = 1,        --队友血条数值
          hp = 1,            --队友生命值
          hppct = 1,        --队友生命值显示为百分比
@@ -102,7 +102,7 @@ index 6419e11..a62ea73 100644
          buff = 1,        --队友buff
          filter = 1,        --buff filter
          filtertype = 1,        --buff filter选项
-@@ -115,9 +115,9 @@ UnitFramesPlusDefaultDB = {
+@@ -117,9 +117,9 @@ UnitFramesPlusDefaultDB = {
          -- castbar = 1,    --队友施法条
          scale = 1,        --队友头像缩放比例
          colorhp = 1,    --生命条染色

@@ -11,12 +11,20 @@ MTSLUI_PLAYER = {
         DATABASE,
         OPTIONSMENU,
     },
-    SPLIT_MODE,
+    UI_SPLIT_MODE = {
+        MTSL,
+        ACCOUNT,
+        DATABASE,
+    },
     FONT,
+    WELCOME_MSG,
 }
 
 MTSLUI_SAVED_VARIABLES = {
+    MIN_UI_SCALE = "0.5",
+    MAX_UI_SCALE = "1.25",
     DEFAULT_UI_SCALE = "1.00",
+    DEFAULT_UI_SPLIT_MODE = "Vertical",
 
     -- Try and load the values from saved files
     Initialise = function(self)
@@ -24,38 +32,30 @@ MTSLUI_SAVED_VARIABLES = {
         if MTSLUI_PLAYER == nil then
             print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All saved variables have been reset to default values!")
             MTSLUI_PLAYER = {}
-            MTSLUI_PLAYER.UI_SCALE = {}
-            MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
-            MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
-            MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
-            MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
-            MTSLUI_PLAYER.SPLIT_MODE = "Vertical"
+            self:ResetUIScales()
+            self:ResetSplitModes()
             MTSLUI_PLAYER.FONT = "Default"
+            MTSLUI_PLAYER.WELCOME_MSG = 1
         else
+            -- reset/remove the old splitmode
+            if MTSLUI_PLAYER.SPLIT_MODE ~= nil then
+                MTSLUI_PLAYER.SPLIT_MODE = nil
+            end
             -- only reset the scale
             if MTSLUI_PLAYER.UI_SCALE == nil then
-                MTSLUI_PLAYER.UI_SCALE = {}
-                MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
+                self:ResetUIScales()
             else
-                if MTSLUI_PLAYER.UI_SCALE.MTSL == nil then
-                    MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
-                end
-                if MTSLUI_PLAYER.UI_SCALE.ACCOUNT == nil then
-                    MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
-                end
-                if MTSLUI_PLAYER.UI_SCALE.DATABASE == nil then
-                    MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
-                end
-                if MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU == nil then
-                    MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
-                end
+                self:ValidateUIScales()
             end
-            if MTSLUI_PLAYER.SPLIT_MODE ~= "Vertical" and MTSLUI_PLAYER.SPLIT_MODE ~= "Horizontal" then
-                MTSLUI_PLAYER.SPLIT_MODE = "Vertical"
+            -- only reset the split
+            if MTSLUI_PLAYER.UI_SPLIT_MODE == nil then
+                self:ResetSplitModes()
+            else
+                self:ValidateSplitModes()
             end
+
+            self:SetShowWelcomeMessage(MTSLUI_PLAYER.WELCOME_MSG)
+
             -- todo: add check for font, ignored for now
             if MTSLUI_PLAYER.FONT ~= "Default" then
                 MTSLUI_PLAYER.FONT = "Default"
@@ -69,33 +69,110 @@ MTSLUI_SAVED_VARIABLES = {
     ResetSavedVariables = function(self)
         MTSLUI_PLAYER = nil
         self:Initialise()
-        self:LoadSavedSplitMode()
+        self:LoadSavedSplitModes()
         self:LoadSavedUIScales()
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Reset all UI scales to the default UI scale
+    ------------------------------------------------------------------------------------------------
+    ResetUIScales = function(self)
+        MTSLUI_PLAYER.UI_SCALE = {}
+        MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
+        MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
+        MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
+        MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Reset all split modes to the default value
+    ------------------------------------------------------------------------------------------------
+    ResetSplitModes = function(self)
+        MTSLUI_PLAYER.UI_SPLIT_MODE = {}
+        MTSLUI_PLAYER.UI_SPLIT_MODE.MTSL = self.DEFAULT_UI_SPLIT_MODE
+        MTSLUI_PLAYER.UI_SPLIT_MODE.ACCOUNT = self.DEFAULT_UI_SPLIT_MODE
+        MTSLUI_PLAYER.UI_SPLIT_MODE.DATABASE = self.DEFAULT_UI_SPLIT_MODE
     end,
 
     ------------------------------------------------------------------------------------------------
     -- Load the saved splitmode from saved variable
     ------------------------------------------------------------------------------------------------
-    LoadSavedSplitMode = function(self)
+    LoadSavedSplitModes = function(self)
         if MTSLUI_PLAYER == nil then
             self:ResetSavedVariables()
         else
-            if MTSLUI_PLAYER.SPLIT_MODE ~= "Vertical" and MTSLUI_PLAYER.SPLIT_MODE ~= "Horizontal" then
-                MTSLUI_PLAYER.SPLIT_MODE = "Vertical"
-                print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Splitmode was reset to Vertical")
-                else
-                -- adjust the frames according to saved variable
-                if MTSLUI_PLAYER.SPLIT_MODE == "Vertical" then
-                    MTSLUI_MISSING_TRADESKILLS_FRAME:SwapToVerticalMode()
-                else
-                    MTSLUI_MISSING_TRADESKILLS_FRAME:SwapToHorizontalMode()
-                end
+            -- convert old to new also
+            if MTSLUI_PLAYER.UI_SPLIT_MODE == nil or type(MTSLUI_PLAYER.UI_SPLIT_MODE) ~= "table" then
+                self:ResetSplitModes()
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All UI split orientations were reset to " .. DEFAULT_UI_SPLIT_MODE .. "!")
+            else
+                self:ValidateSplitModes()
+            end
+            self:SetSplitModes(MTSLUI_PLAYER.UI_SPLIT_MODE)
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Validates the saved splitmode from saved variable
+    ------------------------------------------------------------------------------------------------
+    ValidateSplitModes = function(self)
+        local keys_to_check =  { "MTSL", "ACCOUNT", "DATABASE" }
+        
+        for _,k in pairs(keys_to_check) do
+            -- reset split mode if not valid
+            if not self:IsValidSplitMode(MTSLUI_PLAYER.UI_SPLIT_MODE[k]) then
+                MTSLUI_PLAYER.UI_SPLIT_MODE[k] = self.DEFAULT_UI_SPLIT_MODE
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: " .. k .. " UI split oritentation was reset " .. DEFAULT_UI_SPLIT_MODE .. "!")
             end
         end
     end,
 
     ------------------------------------------------------------------------------------------------
-    -- Load the saved scales from saved variable
+    -- Set the splitmodes of the main windows
+    --
+    -- @split_modes         Array           List containing the splitmodes for all main windows
+    ------------------------------------------------------------------------------------------------
+    SetSplitModes = function(self, split_modes)
+        local keys_to_check =  { "MTSL", "ACCOUNT", "DATABASE" }
+        local frames_to_split = {
+            MTSL = MTSLUI_MISSING_TRADESKILLS_FRAME,
+            ACCOUNT = MTSLUI_ACCOUNT_EXPLORER_FRAME,
+            DATABASE = MTSLUI_DATABASE_EXPLORER_FRAME,
+        }
+        for _,k in pairs(keys_to_check) do
+            -- apply split mode if valide
+            if self:IsValidSplitMode(split_modes[k]) then
+                MTSLUI_PLAYER.UI_SPLIT_MODE[k] = split_modes[k]
+                frames_to_split[k]:SetSplitOrientation(MTSLUI_PLAYER.UI_SPLIT_MODE[k])
+            end
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the splitmode of a frame
+    --
+    -- return			String          The split orientation for the frame (The number for UI scale (will be > 0.5 and < 1.25)
+    ------------------------------------------------------------------------------------------------
+    GetSplitMode = function(self, name)
+        -- return the splitmode if not nil
+        if MTSLUI_PLAYER.UI_SPLIT_MODE[name] ~= nil then
+            return MTSLUI_PLAYER.UI_SPLIT_MODE[name]
+        end
+        -- return default if not found
+        return self.DEFAULT_UI_SPLIT_MODE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Check if a split orientation mode for UI frame is valid
+    --
+    -- @ui_scale        Number      The number of the scale (only valid >= 0.5 and <= 1.25)
+    ------------------------------------------------------------------------------------------------
+    IsValidSplitMode = function(self, split_mode)
+        return split_mode == "Vertical" or split_mode == "Horizontal"
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Load the saved ui scales from saved variable
     ------------------------------------------------------------------------------------------------
     LoadSavedUIScales = function(self)
         if MTSLUI_PLAYER == nil then
@@ -103,86 +180,62 @@ MTSLUI_SAVED_VARIABLES = {
         else
             -- convert old to new also
             if MTSLUI_PLAYER.UI_SCALE == nil then
-                MTSLUI_PLAYER.UI_SCALE = {}
-                MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
-                MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
-                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All UI scales were reset to 1.0!")
+                self:ResetUIScales()
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All UI scales were reset to " ..  self.DEFAULT_UI_SCALE .. "!")
+            -- Scales are saved, so check if valid
             else
-                if  MTSLUI_PLAYER.UI_SCALE.MTSL == nil or tonumber(MTSLUI_PLAYER.UI_SCALE.MTSL) < 0.5 or tonumber(MTSLUI_PLAYER.UI_SCALE.MTSL) > 1.25 then
-                    MTSLUI_PLAYER.UI_SCALE.MTSL = self.DEFAULT_UI_SCALE
-                    print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: MTSL UI scale was reset to 1.0!")
-                end
-                if MTSLUI_PLAYER.UI_SCALE.ACCOUNT == nil or tonumber(MTSLUI_PLAYER.UI_SCALE.ACCOUNT) < 0.5 or tonumber(MTSLUI_PLAYER.UI_SCALE.ACCOUNT) > 1.25 then
-                    MTSLUI_PLAYER.UI_SCALE.ACCOUNT = self.DEFAULT_UI_SCALE
-                    print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Account explorer UI scale was reset to 1.0!")
-                end
-                if MTSLUI_PLAYER.UI_SCALE.DATABASE == nil or tonumber(MTSLUI_PLAYER.UI_SCALE.DATABASE) < 0.5 or tonumber(MTSLUI_PLAYER.UI_SCALE.DATABASE) > 1.25 then
-                    MTSLUI_PLAYER.UI_SCALE.DATABASE = self.DEFAULT_UI_SCALE
-                    print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Database explorer UI scale was reset to 1.0!")
-                end
-                if MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU == nil or tonumber(MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU) < 0.5 or tonumber(MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU) > 1.25 then
-                    MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = self.DEFAULT_UI_SCALE
-                    print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Options menu UI scale was reset to 1.0!")
-                end
+                self:ValidateUIScales()
             end
-            MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.MTSL))
-            MTSLACCUI_ACCOUNT_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.ACCOUNT))
-            MTSLDBUI_DATABASE_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.DATABASE))
-            MTSLUI_OPTIONS_MENU_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU))
+            -- Set the valid scales for all windows
+            self:SetUIScales(MTSLUI_PLAYER.UI_SCALE)
         end
     end,
 
     ------------------------------------------------------------------------------------------------
-    -- Set splitmode
+    -- Validate the saved UI scales from saved variable
     ------------------------------------------------------------------------------------------------
-    SetSplitMode = function(self, split_mode)
-        -- only update splitmode if valid or needed
-        if split_mode == "Vertical" or split_mode == "Horizontal" and MTSLUI_PLAYER.SPLIT_MODE ~= split_mode then
-            MTSLUI_PLAYER.SPLIT_MODE = split_mode
-            -- adjust the frames according to saved variable
-            if split_mode == "Vertical" then
-                MTSLUI_MISSING_TRADESKILLS_FRAME:SwapToVerticalMode()
-            else
-                MTSLUI_MISSING_TRADESKILLS_FRAME:SwapToHorizontalMode()
+    ValidateUIScales = function(self)
+        local keys_to_check =  { "MTSL", "ACCOUNT", "DATABASE", "OPTIONSMENU" }
+
+        for _,k in pairs(keys_to_check) do
+            -- reset split mode if not valid
+            if not self:IsValidUIScale(MTSLUI_PLAYER.UI_SCALE[k]) then
+                MTSLUI_PLAYER.UI_SCALE[k] = self.DEFAULT_UI_SCALE
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: " .. k .. " UI scale was reset to " ..  self.DEFAULT_UI_SCALE .. "!")
             end
         end
     end,
-
-
+    
     ------------------------------------------------------------------------------------------------
-    -- Get splitmode
+    -- Check if a value for UI scale is valid
+    --
+    -- @ui_scale        Number      The number of the scale (must be => MIN_UI_SCALE and <= MAX_UI_SCALE)
     ------------------------------------------------------------------------------------------------
-    GetSplitMode = function(self)
-        return MTSLUI_PLAYER.SPLIT_MODE
-    end,
-
-    LoadSavedFont = function(self)
-
+    IsValidUIScale = function(self, ui_scale)
+        return ui_scale ~= nil and tonumber(ui_scale) ~= nil and
+                tonumber(ui_scale) >= tonumber(self.MIN_UI_SCALE) and tonumber(ui_scale) <= tonumber(self.MAX_UI_SCALE)
     end,
 
     ------------------------------------------------------------------------------------------------
     -- Scales the UI of the addon
     --
-    -- @scale			Number			The number for UI scale (must be > 0.5 and < 1.25)
+    -- @scale			Number			The number for UI scale (must be => MIN_UI_SCALE and <= MAX_UI_SCALE)
     ------------------------------------------------------------------------------------------------
-    SetScales = function(self, scales)
-        if scales.MTSL ~= nil and tonumber(scales.MTSL) ~= tonumber(MTSLUI_PLAYER.UI_SCALE.MTSL) then
-            MTSLUI_PLAYER.UI_SCALE.MTSL = scales.MTSL
-            MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.MTSL))
-        end
-        if scales.ACCOUNT ~= nil and tonumber(scales.ACCOUNT) ~= tonumber(MTSLUI_PLAYER.UI_SCALE.ACCOUNT) then
-            MTSLUI_PLAYER.UI_SCALE.ACCOUNT = scales.ACCOUNT
-            MTSLACCUI_ACCOUNT_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.ACCOUNT))
-        end
-        if scales.DATABASE ~= nil and tonumber(scales.DATABASE) ~= tonumber(MTSLUI_PLAYER.UI_SCALE.DATABASE) then
-            MTSLUI_PLAYER.UI_SCALE.DATABASE = scales.DATABASE
-            MTSLDBUI_DATABASE_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.DATABASE))
-        end
-        if scales.OPTIONSMENU ~= nil and tonumber(scales.OPTIONSMENU) ~= tonumber(MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU) then
-            MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU = scales.OPTIONSMENU
-            MTSLUI_OPTIONS_MENU_FRAME.ui_frame:SetScale(tonumber(MTSLUI_PLAYER.UI_SCALE.OPTIONSMENU))
+    SetUIScales = function(self, scales)
+        local keys_to_check =  { "MTSL", "ACCOUNT", "DATABASE", "OPTIONSMENU" }
+        local frames_to_scale = {
+            MTSL = MTSLUI_MISSING_TRADESKILLS_FRAME,
+            ACCOUNT = MTSLUI_ACCOUNT_EXPLORER_FRAME,
+            DATABASE = MTSLUI_DATABASE_EXPLORER_FRAME,
+            OPTIONSMENU = MTSLUI_OPTIONS_MENU_FRAME,
+        }
+        
+        for _,k in pairs(keys_to_check) do
+            -- apply split mode if valide
+            if self:IsValidUIScale(scales[k]) then
+                MTSLUI_PLAYER.UI_SCALE[k] = tostring(scales[k])
+                frames_to_scale[k]:SetUIScale(tonumber(MTSLUI_PLAYER.UI_SCALE[k]))
+            end
         end
     end,
 
@@ -191,14 +244,52 @@ MTSLUI_SAVED_VARIABLES = {
     --
     -- return			Number			The number for UI scale (will be > 0.5 and < 1.25)
     ------------------------------------------------------------------------------------------------
-    GetScale = function(self, name)
-        -- fresh addon started, so save the players scale
-        for k, v in pairs(MTSLUI_PLAYER.UI_SCALE) do
-            if k == name then
-                return v
-            end
+    GetUIScale = function(self, name)
+        -- return the scale if not nil
+        if MTSLUI_PLAYER.UI_SCALE[name] ~= nil then
+             return MTSLUI_PLAYER.UI_SCALE[name]
         end
         -- return default if not found
-        return self.DEFAULT_SCALE
-    end
+        return self.DEFAULT_UI_SCALE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets he scale of the UI of the addon as text to show
+    --
+    -- return			String			The number for UI scale as percentage text (100 % if not found)
+    ------------------------------------------------------------------------------------------------
+    GetUIScaleAsText = function(self, name)
+        -- return the scale if not nil
+        if MTSLUI_PLAYER.UI_SCALE[name] ~= nil then
+            return (100*MTSLUI_PLAYER.UI_SCALE[name]) .. " %"
+        end
+        -- return default if not found
+        return (100 * self.DEFAULT_UI_SCALE) .. " %"
+    end,
+
+    -- TODO
+    LoadSavedFont = function(self)
+
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the flag to say if we show welcome message or not
+    --
+    -- @show_welcome        Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    SetShowWelcomeMessage = function(self, show_welcome)
+        MTSLUI_PLAYER.WELCOME_MSG = 1
+        if show_welcome == 0 or show_welcome == false then
+            MTSLUI_PLAYER.WELCOME_MSG = 0
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the flag to say if we show welcome message or not
+    --
+    -- return			Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    GetShowWelcomeMessage = function(self)
+        return MTSLUI_PLAYER.WELCOME_MSG
+    end,
 }

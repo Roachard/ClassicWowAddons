@@ -8,9 +8,9 @@ MTSL_PLAYERS = {}
 
 MTSL_LOGIC_SAVED_VARIABLES = {
     ------------------------------------------------------------------------------------------------
-    -- Reset the content of the savedvariable to have a "clean" install
+    -- Reset the saved players
     ------------------------------------------------------------------------------------------------
-    ResetSavedVariables = function(self)
+    RemoveAllCharacters = function(self)
         MTSL_PLAYERS = {}
     end,
 
@@ -33,12 +33,12 @@ MTSL_LOGIC_SAVED_VARIABLES = {
                 MTSL_PLAYERS[realm][name] = nil
                 print(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. "MTSL: Removed " .. name .. " on realm " .. realm .. " from the saved data! Logout to complete.")
                 -- check if realm is emppty, if so remove it as well
-                if MTSL_LOGIC_PLAYER:CountPlayersOnRealm(realm) <= 0 then
+                if MTSL_LOGIC_PLAYER_NPC:CountPlayersOnRealm(realm) <= 0 then
                     MTSL_PLAYERS[realm] = nil
                 end
             end
         else
-            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Realm and character name are needed to delete a char")
+            print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Realm and character name are needed to delete a character")
             success = false
         end
         return success

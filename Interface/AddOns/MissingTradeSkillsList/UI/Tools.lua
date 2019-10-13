@@ -194,57 +194,33 @@ MTSLUI_TOOLS = {
 			end
 		end
 	end,
+
     ------------------------------------------------------------------------------------------------
     -- Fill A drop down list
     --
     -- @values              Array           List containing values to add
     -- @change_handler      Function        Function that handles the change of value in the DDL
+	-- @change_frame_name	String			The name of the frame to handle the change event
     ------------------------------------------------------------------------------------------------
-    FillDropDown = function(self, level, values, change_handler)
+    FillDropDown = function(self, values, change_handler, change_frame_name)
         local info = UIDropDownMenu_CreateInfo()
-        -- add top levels
-		if (level or 1) == 1 then
-       		for _, v in pairs(values) do
-				-- already localised in array so no need to index
-				info.text = v.name
-				-- always use only 1 value to select so not checkable
-				info.notCheckable = true
-				-- top level has no submenu
-				if v.sub_values == nil then
-					info.func = function()
-						change_handler(v.id, v.name)
-						CloseDropDownMenus()
-					end
-					info.hasArrow = false;
-					UIDropDownMenu_AddButton(info, level)
-				-- sublevel so add arrow
+        -- add all values
+		for _, v in pairs(values) do
+			-- already localised in array so no need to index
+			info.text = v.name
+			-- always use only 1 value to select so not checkable
+			info.notCheckable = true
+			-- top level has no submenu
+			info.func = function()
+				if change_frame_name ~= nil and _G[change_frame_name] ~= nil then
+					change_handler(_G[change_frame_name], v.id, v.name)
 				else
-					info.hasArrow = true;
-					UIDropDownMenu_AddButton(info, level)
+					change_handler(v.id, v.name)
 				end
+				CloseDropDownMenus()
 			end
-		-- add second level
-		elseif (level or 2) == 2 then
-			for _, v in pairs(values) do
-				-- add second level items
-				--print("Adding sublevels for " .. v["name"])
-				-- check if subvalues
-				if v.sub_values ~= nil then
-					-- Add the subvalues
-					for _, sv in pairs(v.sub_values) do
-						-- no submenu this time
-						info.hasArrow = false;
-						info.notCheckable = true
-						-- already localised in array so no need to index
-						info.text = sv["name"]
-						info.func = function()
-							change_handler(sv.id, v.name .. " - " .. sv.name)
-							CloseDropDownMenus()
-						end
-						UIDropDownMenu_AddButton(info, level)
-					end
-				end
-			end
-        end
+			info.hasArrow = false;
+			UIDropDownMenu_AddButton(info)
+		end
     end,
 }
