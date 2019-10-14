@@ -38,10 +38,7 @@ function MTSLUI_ACCOUNT_EXPLORER_FRAME:Initialise()
     -- Dummy operation to do nothing, discarding the zooming in/out
     self.ui_frame:SetScript("OnMouseWheel", function() end)
     -- Make the screen dragable/movable
-    self.ui_frame:SetMovable(true)
-    self.ui_frame:RegisterForDrag("LeftButton")
-    self.ui_frame:SetScript("OnDragStart", function(frame) frame:StartMoving() end)
-    self.ui_frame:SetScript("OnDragStop", function(frame) frame:StopMovingOrSizing() end)
+    MTSLUI_TOOLS:AddDragToFrame(self.ui_frame)
     -- close/hide window on esc
     tinsert(UISpecialFrames, "MTSLUI_AccountFrame")
 

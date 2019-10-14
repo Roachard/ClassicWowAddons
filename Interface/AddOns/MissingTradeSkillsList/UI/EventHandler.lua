@@ -74,6 +74,8 @@ MTSLUI_EVENT_HANDLER = {
 	CRAFT_SHOW = function (self)
         -- Check if we effectively opened a CraftFrame
 		if CraftFrame then
+			-- make it drageable
+			MTSLUI_TOOLS:AddDragToFrame(CraftFrame)
 			local localised_profession_name, current_skill_level = GetCraftDisplaySkillLine()
 			--Get the English name of the profession
 			local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_profession_name]
@@ -130,6 +132,8 @@ MTSLUI_EVENT_HANDLER = {
 	TRADE_SKILL_SHOW = function (self)
 		-- check if we are allowed to swap (this skips poisons)
 		if TradeSkillFrame then
+			-- make it drageable
+			MTSLUI_TOOLS:AddDragToFrame(TradeSkillFrame)
 			local localised_name, current_skill_level = GetTradeSkillLine()
 			local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_name]
 			-- only trigger event if its a trade_skill supported by the addon

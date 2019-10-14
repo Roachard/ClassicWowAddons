@@ -18,6 +18,7 @@ MTSLUI_PLAYER = {
     },
     FONT,
     WELCOME_MSG,
+    MTSL_LOCATION,
 }
 
 MTSLUI_SAVED_VARIABLES = {
@@ -60,6 +61,8 @@ MTSLUI_SAVED_VARIABLES = {
             if MTSLUI_PLAYER.FONT ~= "Default" then
                 MTSLUI_PLAYER.FONT = "Default"
             end
+
+            self:SetMTSLLocation(MTSLUI_PLAYER.MTSL_LOCATION)
         end
     end,
 
@@ -104,7 +107,7 @@ MTSLUI_SAVED_VARIABLES = {
             -- convert old to new also
             if MTSLUI_PLAYER.UI_SPLIT_MODE == nil or type(MTSLUI_PLAYER.UI_SPLIT_MODE) ~= "table" then
                 self:ResetSplitModes()
-                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All UI split orientations were reset to " .. DEFAULT_UI_SPLIT_MODE .. "!")
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All UI split orientations were reset to " .. self.DEFAULT_UI_SPLIT_MODE .. "!")
             else
                 self:ValidateSplitModes()
             end
@@ -122,7 +125,7 @@ MTSLUI_SAVED_VARIABLES = {
             -- reset split mode if not valid
             if not self:IsValidSplitMode(MTSLUI_PLAYER.UI_SPLIT_MODE[k]) then
                 MTSLUI_PLAYER.UI_SPLIT_MODE[k] = self.DEFAULT_UI_SPLIT_MODE
-                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: " .. k .. " UI split oritentation was reset " .. DEFAULT_UI_SPLIT_MODE .. "!")
+                print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: " .. k .. " UI split oritentation was reset " .. self.DEFAULT_UI_SPLIT_MODE .. "!")
             end
         end
     end,
@@ -291,5 +294,31 @@ MTSLUI_SAVED_VARIABLES = {
     ------------------------------------------------------------------------------------------------
     GetShowWelcomeMessage = function(self)
         return MTSLUI_PLAYER.WELCOME_MSG
+    end,
+
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets  the location where MTSL is hooked (left or right)
+    --
+    -- @frame_location        String         The location (default = right)
+    ------------------------------------------------------------------------------------------------
+    SetMTSLLocation = function(self, frame_location)
+        MTSLUI_PLAYER.MTSL_LOCATION = "right"
+        if frame_location == "left" then
+            MTSLUI_PLAYER.MTSL_LOCATION = "left"
+        end
+        -- reanchor the button if visible
+        if MTSLUI_TOGGLE_BUTTON ~= nil and MTSLUI_TOGGLE_BUTTON:IsShown() then
+            MTSLUI_TOGGLE_BUTTON:ReanchorButton()
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the location where MTSL is hooked (left or right)
+    --
+    -- return			String         The location
+    ------------------------------------------------------------------------------------------------
+    GetMTSLLocation = function(self)
+        return MTSLUI_PLAYER.MTSL_LOCATION
     end,
 }

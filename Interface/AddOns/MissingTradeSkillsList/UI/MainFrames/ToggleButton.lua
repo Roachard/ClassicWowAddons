@@ -39,14 +39,33 @@ function MTSLUI_TOGGLE_BUTTON:SwapToTradeSkillMode()
 end
 
 ---------------------------------------------------------------------------------------
+-- Reanchor the toggle button based on the position
+---------------------------------------------------------------------------------------
+function MTSLUI_TOGGLE_BUTTON:ReanchorButton()
+	self:ReanchorToNewParent(self.ui_frame:GetParent())
+end
+
+----------------------------------------------------------------------------------------------------------
+-- Shows the frame
+----------------------------------------------------------------------------------------------------------
+function MTSLUI_TOGGLE_BUTTON:Show()
+	self:ReanchorToNewParent(self.ui_frame:GetParent())
+	self.ui_frame:Show()
+end
+
+---------------------------------------------------------------------------------------
 -- Reanchors the toggle button to the craft or tradeskill window
 --
 -- @parent_frame		Object			The parentframe to hook MTSL button to
 ---------------------------------------------------------------------------------------
 function MTSLUI_TOGGLE_BUTTON:ReanchorToNewParent(parent_frame)
-	-- gaps to default BLizzard UI
+	-- gaps to default BLizzard UI (default right hook)
 	local gap_left = -33
 	local gap_top = -13
+	if MTSLUI_SAVED_VARIABLES:GetMTSLLocation() == "left" then
+		gap_left = 0
+		gap_top = 0
+	end
 	-- Overwrite parenttframe of Blizzard UI to Skillet-Classic addon if installed
 	if SkilletFrame then
 		parent_frame = SkilletFrame
@@ -55,7 +74,19 @@ function MTSLUI_TOGGLE_BUTTON:ReanchorToNewParent(parent_frame)
 	end
 	if parent_frame ~= nil then
 		self.ui_frame:SetParent(parent_frame)
-		self.ui_frame:SetPoint("BOTTOMRIGHT", parent_frame, "TOPRIGHT", gap_left, gap_top)
+		if MTSLUI_SAVED_VARIABLES:GetMTSLLocation() == "right" then
+			self.ui_frame:ClearAllPoints()
+			self.ui_frame:SetPoint("BOTTOMRIGHT", parent_frame, "TOPRIGHT", gap_left, gap_top)
+			-- adjust the MTSL frame as well
+			MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:ClearAllPoints()
+			MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPRIGHT", 0, 0)
+		else
+			self.ui_frame:ClearAllPoints()
+			self.ui_frame:SetPoint("BOTTOMLEFT", parent_frame, "TOPLEFT", gap_left, gap_top)
+			-- adjust the MTSL frame as well
+			MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:ClearAllPoints()
+			MTSLUI_MISSING_TRADESKILLS_FRAME.ui_frame:SetPoint("TOPRIGHT", self.ui_frame, "TOPLEFT", 0, 0)
+		end
 		-- clear any current selection of the craftskill window
 		MTSLUI_MISSING_TRADESKILLS_FRAME:NoSkillSelected()
 	end

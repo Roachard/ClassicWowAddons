@@ -10,7 +10,7 @@ MTSLUI_OPTIONS_MENU_FRAME = MTSL_TOOLS:CopyObject(MTSLUI_BASE_FRAME)
 -- Add or overwrite baseframe
     -- Addon frame
 MTSLUI_OPTIONS_MENU_FRAME.FRAME_WIDTH = 715
-MTSLUI_OPTIONS_MENU_FRAME.FRAME_HEIGHT = 315
+MTSLUI_OPTIONS_MENU_FRAME.FRAME_HEIGHT = 350
 
     ---------------------------------------------------------------------------------------
     -- Shows the frame

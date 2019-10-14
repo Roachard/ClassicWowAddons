@@ -6,7 +6,7 @@
 
 MTSLOPTUI_CONFIG_FRAME = {
     FRAME_WIDTH = 715,
-    FRAME_HEIGHT = 140,
+    FRAME_HEIGHT = 175,
     MARGIN_LEFT = 25,
     MARGIN_RIGHT = 175,
     split_modes = {
@@ -33,6 +33,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame:SetPoint("TOPLEFT", parent_frame, "BOTTOMLEFT", 0, -5)
 
         self:InitialiseCheckBoxWelcomeMessage()
+        self:InitialiseDropDownsMTSLFrameLocation()
         self:InitialiseDropDownsUISplitOrientation()
         self:InitialiseDropDownsUISplitScale()
     end,
@@ -47,24 +48,47 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.welcome_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetShowWelcomeMessage())
     end,
 
+    InitialiseDropDownsMTSLFrameLocation = function (self)
+        -- UI Split Orientation
+        self.locations = {
+            {
+                ["name"] = MTSLUI_LOCALES_LABELS["left"][MTSLUI_CURRENT_LANGUAGE],
+                ["id"] = "left",
+            },
+            {
+                ["name"] = MTSLUI_LOCALES_LABELS["right"][MTSLUI_CURRENT_LANGUAGE],
+                ["id"] = "right",
+            }
+        }
+
+        -- drop downs split orientation
+        self.ui_frame.location_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "MTSL frame location", self.MARGIN_LEFT, -40, "NORMAL", "TOPLEFT")
+
+        self.ui_frame.location_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.location_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, -33)
+        self.ui_frame.location_mtsl_drop_down.initialize = self.CreateDropDownLocationMTSL
+        UIDropDownMenu_SetWidth(self.ui_frame.location_mtsl_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.location_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetMTSLLocation())][MTSLUI_CURRENT_LANGUAGE])
+    end,
+
     InitialiseDropDownsUISplitOrientation = function (self)
         -- UI Split Orientation
         self.orientations = {
             {
                 ["name"] = MTSLUI_LOCALES_LABELS["vertical"][MTSLUI_CURRENT_LANGUAGE],
-                ["id"] = 1,
+                ["id"] = "Vertical",
             },
             {
                 ["name"] = MTSLUI_LOCALES_LABELS["horizontal"][MTSLUI_CURRENT_LANGUAGE],
-                ["id"] = 2,
+                ["id"] = "Horizontal",
             }
         }
 
         -- drop downs split orientation
-        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, -50, "NORMAL", "TOPLEFT")
+        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, -90, "NORMAL", "TOPLEFT")
 
         self.ui_frame.orientation_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
-        self.ui_frame.orientation_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, -43)
+        self.ui_frame.orientation_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.location_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
         self.ui_frame.orientation_mtsl_drop_down.initialize = self.CreateDropDownOrientationMTSL
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_mtsl_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])
@@ -103,7 +127,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             table.insert(self.scales, new_scale)
         end
 
-        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, -102, "NORMAL", "TOPLEFT")
+        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, -141, "NORMAL", "TOPLEFT")
 
         self.ui_frame.scale_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -183,6 +207,13 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ----------------------------------------------------------------------------------------------------------
+    -- Intialises drop down for location mtsl frame
+    ----------------------------------------------------------------------------------------------------------
+    CreateDropDownLocationMTSL = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.locations, MTSLOPTUI_CONFIG_FRAME.ChangeLocationMTSLHandler)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
     -- Intialises drop down for split orientation
     ----------------------------------------------------------------------------------------------------------
     CreateDropDownOrientationMTSL = function(self, level)
@@ -217,7 +248,19 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Handles DropDown Change event after changing the sorting
+    -- Handles DropDown Change event after changing the location
+    ----------------------------------------------------------------------------------------------------------
+    ChangeLocationMTSLHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangeLocation(value, text)
+    end,
+
+    ChangeLocation = function(self, value, text)
+        self.location_mtsl = value
+        UIDropDownMenu_SetText(self.ui_frame.location_mtsl_drop_down, text)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Handles DropDown Change event after changing the orientation
     ----------------------------------------------------------------------------------------------------------
     ChangeOrientationMTSLHandler = function(value, text)
         MTSLOPTUI_CONFIG_FRAME:ChangeOrientation("MTSL", value, text)
@@ -232,11 +275,7 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ChangeOrientation = function(self, dropdown_name, value, text)
-        if value == 1 then
-            self.split_modes[dropdown_name] = "Vertical"
-        else
-            self.split_modes[dropdown_name] = "Horizontal"
-        end
+        self.split_modes[dropdown_name] = value
         UIDropDownMenu_SetText(self.ui_frame["orientation_" .. string.lower(dropdown_name) .. "_drop_down"], text)
     end,
 
@@ -286,6 +325,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         MTSLUI_SAVED_VARIABLES:SetUIScales(self.ui_scales)
 
         MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -302,5 +342,6 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetText(self.ui_frame.scale_optionsmenu_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("OPTIONSMENU"))
 
         MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
     end,
 }
