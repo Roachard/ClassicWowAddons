@@ -169,7 +169,7 @@ srti.defaults = {
 	["shift"] = false,
 	["singlehover"] = true,
 
-	["double"] = true,
+	["double"] = false,
 	["speed"] = 0.25,
 	["radialscale"] = 1.0,
 	["doublehover"] = true,
@@ -191,6 +191,12 @@ srti.frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 srti.frame:RegisterEvent("GROUP_ROSTER_UPDATE")
 srti.frame:RegisterEvent("RAID_ROSTER_UPDATE")
 srti.frame:RegisterEvent("PLAYER_TARGET_CHANGED")
+srti.frame:RegisterEvent("NAME_PLATE_CREATED")
+srti.frame:RegisterEvent("NAME_PLATE_UNIT_ADDED")
+srti.frame:RegisterEvent("NAME_PLATE_UNIT_REMOVED")
+local GetNamePlateForUnit = C_NamePlate.GetNamePlateForUnit
+srti.frame.plate_cache = {}
+srti.frame.plateunit_cache = {}
 
 srti.frame:SetFrameStrata("DIALOG")
 
@@ -365,7 +371,7 @@ function srti.frame:Show()
 						self.hiding = curtime
 					end
 				elseif ( portrait ) then
-					if ( portrait == 0 and not (srti.mouseover or srti.nameplate) --[[UnitExists("target")]] ) then
+					if ( portrait == 0 and not (srti.mouseover or srti.nameplate) ) then
 						self:Hide()
 						return
 					end
@@ -602,6 +608,23 @@ srti.frame:SetScript("OnEvent", function(self,event,...)
 		srti.UpdateClassCount()
 	elseif ( event == "UPDATE_MOUSEOVER_UNIT" ) then
 		srti.MassMark()
+	elseif ( event == "NAME_PLATE_CREATED" ) then
+		local plate = ...
+		local unitid = plate:GetName()
+		self.plate_cache[plate] = unitid
+		self.plateunit_cache[unitid] = plate
+	elseif ( event == "NAME_PLATE_UNIT_ADDED" ) then
+		local unitid = ...
+		local plate = GetNamePlateForUnit(unitid)
+		self.plate_cache[plate] = unitid
+		self.plateunit_cache[unitid] = plate
+	elseif ( event == "NAME_PLATE_UNIT_REMOVED" ) then
+		local unitid = ...
+		local cached_plate = self.plateunit_cache[unitid]
+		if cached_plate then
+			self.plate_cache[cached_plate] = nil
+			self.plateunit_cache[unitid] = nil
+		end
 	else
 		if ( self:IsVisible() and not self.exists and not self.hiding ) then
 			self.index = nil
@@ -661,40 +684,10 @@ function srti.Show(frombinding)
 end
 
 function srti.IsNameplateUnderMouse()
-	local numch = WorldFrame:GetNumChildren()
-	if numch > 0 then
-		for i=1,numch do
-			local f=select(i,WorldFrame:GetChildren())
-			local x = f:IsForbidden()  -- Check for forbidden frames
-			-- filter out NamePlate%d before IsMouseOver call - 8.2.5
-			local fname = f:GetName()
-			if fname and string.find(fname, "NamePlate%d+") then
-				return 1
-			end
-			if x then
-			else
-				if f:IsShown() and f:IsMouseOver() then
-					-- 3rd party nameplate addons
-					if f.aloftData then -- Aloft
-						return 1
-					end
-					if f.extended then -- TidyPlates
-						return 1
-					end 
-					if f.done then -- caelNameplates + clones (shNameplates, ...)
-						return 1
-					end
-					if f.styled then -- rNameplates (zork)
-						return 1
-					end
-					if f.healthOriginal then -- dNameplates + eNameplates
-						return 1
-					end
-					if f.NPAHooked then -- NPA (NamePlatesAdvanced)
-						return 1
-					end
-				end
-			end
+	if not srti.plate_cache then return end
+	for plate,status in pairs(srti.plate_cache) do
+		if status and MouseIsOver(plate) then
+			return true
 		end
 	end
 	return nil
