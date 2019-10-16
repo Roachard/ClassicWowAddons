@@ -5,6 +5,8 @@
 GTFO Spell List - Classic
 ]]--
 
+if (GTFO.ClassicMode) then
+
 GTFO.SpellID["17742"] = {
 	--desc = "Cloud of Disease (Scholomance - Old)";
 	sound = 2;
@@ -82,3 +84,4 @@ GTFO.SpellID["17086"] = {
 	sound = 1;
 };
 
+end

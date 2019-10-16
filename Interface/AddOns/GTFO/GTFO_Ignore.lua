@@ -3,7 +3,6 @@
 --------------------------------------------------------------------------
 --[[
 GTFO Ignore List
-Author: Zensunim of Dragonblight
 ]]--
 
 GTFO.IgnoreSpellCategory["Fatigue"] = {
@@ -12,6 +11,24 @@ GTFO.IgnoreSpellCategory["Fatigue"] = {
 	tooltip = "Alert when entering a fatigue area",
 	override = true
 }
+
+if (not GTFO.ClassicMode) then
+
+	GTFO.IgnoreSpellCategory["HagaraWateryEntrenchment"] = {
+		-- mobID = 55689; -- Hagara the Stormbinder
+		spellID = 110317,
+		desc = "Watery Entrenchment"
+	}
+
+	GTFO.IgnoreSpellCategory["GarroshDesecrated"] = {
+		-- Garrosh Hellscream
+		spellID = 144762,
+		desc = "Desecrated Axe (Garrosh Phase 1 & 2)",
+		tooltip = "Alert from the Desecrated Axe from Garrosh Hellscream (Phase 1 & 2)",
+		override = true
+	}
+
+end
 
 -- Scanner ignore list
 GTFO.IgnoreScan["124255"] = true; -- Monk's Stagger

@@ -1,8 +1,8 @@
 --------------------------------------------------------------------------
--- GTFO_Spells_Generic.lua 
+-- GTFO_Spells_GenericClassic.lua 
 --------------------------------------------------------------------------
 --[[
-GTFO Spell List - Generic List
+GTFO Spell List - Generic List (Classic version)
 
 Sample:
 	GTFO.SpellID["12345"] = {
@@ -37,6 +37,8 @@ Sample:
 	};
 		
 ]]--
+
+if (GTFO.ClassicMode) then
 
 -- Paladin
 GTFO.SpellID["26573"] = {
@@ -98,3 +100,4 @@ GTFO.SpellID["13812"] = {
 	trivialPercent = 0;
 };
 
+end

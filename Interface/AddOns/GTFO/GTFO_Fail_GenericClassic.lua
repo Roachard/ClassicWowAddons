@@ -1,7 +1,10 @@
 --------------------------------------------------------------------------
--- GTFO_Fail_Generic.lua 
+-- GTFO_Fail_GenericClassic.lua 
 --------------------------------------------------------------------------
 --[[
-GTFO Fail List - Generic
+GTFO Fail List - Generic (Classic version)
 ]]--
 
+--if (GTFO.ClassicMode) then
+
+--end
