@@ -387,6 +387,15 @@ end
 
 
 --
+local function VUHDO_makeFullColorWoBackground(...)
+	local tColor = VUHDO_makeFullColor(...);
+	tColor["useBackground"] = false;
+	return tColor;
+end
+
+
+
+--
 local function VUHDO_makeFullColorWoOpacity(...)
 	local tColor = VUHDO_makeFullColor(...);
 	tColor["useOpacity"] = false;
@@ -562,8 +571,8 @@ local VUHDO_DEFAULT_CONFIG = {
 	["OMIT_MAIN_ASSIST"] = false,
 	["OMIT_PLAYER_TARGETS"] = false,
 	["OMIT_OWN_GROUP"] = false,
-	["OMIT_FOCUS"] = false,
-	["OMIT_TARGET"] = false,
+	["OMIT_FOCUS"] = true,
+	["OMIT_TARGET"] = true,
 	["OMIT_SELF"] = false,
 	["OMIT_DFT_MTS"] = false,
 	["BLIZZ_UI_HIDE_PLAYER"] = 2,
@@ -1034,11 +1043,11 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 		["DEBUFF" .. VUHDO_DEBUFF_TYPE_NONE] =  {
 			["useText"] = false, ["useBackground"] = false, ["useOpacity"] = false,
 		},
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_POISON] = VUHDO_makeFullColor(0, 0.592, 0.8, 1,   0, 1, 0.686, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_DISEASE] = VUHDO_makeFullColor(0.8, 0.4, 0.4, 1,   1, 0, 0, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CURSE] = VUHDO_makeFullColor(0.7, 0, 0.7, 1,   1, 0, 1, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_MAGIC] = VUHDO_makeFullColor(0.4, 0.4, 0.8, 1,   0.329, 0.957, 1, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CUSTOM] = VUHDO_makeFullColor(0.6, 0.3, 0, 1,   0.8, 0.5, 0, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_POISON] = VUHDO_makeFullColorWoBackground(0, 0.592, 0.8, 1,   0, 1, 0.686, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_DISEASE] = VUHDO_makeFullColorWoBackground(0.8, 0.4, 0.4, 1,   1, 0, 0, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CURSE] = VUHDO_makeFullColorWoBackground(0.7, 0, 0.7, 1,   1, 0, 1, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_MAGIC] = VUHDO_makeFullColorWoBackground(0.4, 0.4, 0.8, 1,   0.329, 0.957, 1, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CUSTOM] = VUHDO_makeFullColorWoBackground(0.6, 0.3, 0, 1,   0.8, 0.5, 0, 1),
 		["DEBUFF_BAR_GLOW"] = VUHDO_makeFullColor(0.95, 0.95, 0.32, 1,   1, 1, 0, 1),
 		["DEBUFF_ICON_GLOW"] = VUHDO_makeFullColor(0.95, 0.95, 0.32, 1,   1, 1, 0, 1),
 		["CHARMED"] = VUHDO_makeFullColor(0.51, 0.082, 0.263, 1,   1, 0.31, 0.31, 1),
@@ -1096,8 +1105,8 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 		["HOT_CHARGE_3"] = VUHDO_makeFullColorWoOpacity(0.3, 1, 0.3, 1,   0.6, 1, 0.6, 1),
 		["HOT_CHARGE_4"] = VUHDO_makeFullColorWoOpacity(0.8, 0.8, 0.8, 1,   1, 1, 1, 1),
 
-		["useDebuffIcon"] = false,
-		["useDebuffIconBossOnly"] = true,
+		["useDebuffIcon"] = true,
+		["useDebuffIconBossOnly"] = false,
 
 		["RAID_ICONS"] = {
 			["enable"] = false,
@@ -1175,14 +1184,14 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 ]]--
 
 	["SCALING"] = {
-		["columnSpacing"] = 5,
-		["rowSpacing"] = 2,
+		["columnSpacing"] = 0,
+		["rowSpacing"] = 0,
 
-		["borderGapX"] = 5,
-		["borderGapY"] = 5,
+		["borderGapX"] = 0,
+		["borderGapY"] = 0,
 
-		["barWidth"] = 80,
-		["barHeight"] = 40,
+		["barWidth"] = 60,
+		["barHeight"] = 30,
 
 		["showHeaders"] = true,
 		["headerHeight"] = 12,
@@ -1193,7 +1202,7 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["sideLeftWidth"] = 6,
 		["sideRightWidth"] = 6,
 
-		["maxColumnsWhenStructured"] = 10,
+		["maxColumnsWhenStructured"] = 5,
 		["maxRowsWhenLoose"] = 5,
 		["ommitEmptyWhenStructured"] = true,
 		["isPlayerOnTop"] = true,
