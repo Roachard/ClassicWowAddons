@@ -237,7 +237,7 @@ local function CreateFilterButtons()
 		end
 
 		FilterScrollButtons[count]:SetSize(BUTTON_WIDTH, BUTTON_HEIGHT)
-		FilterScrollButtons[count]:RegisterForClicks("LeftButtonUp")
+		FilterScrollButtons[count]:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 		FilterScrollButtons[count]:SetScript("OnClick", FilterScrollClick)
 
 		-- set name style
