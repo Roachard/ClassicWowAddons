@@ -111,7 +111,7 @@ end
 
 local VUHDO_DEFAULT_MODELS = {
 	{ VUHDO_ID_GROUP_1, VUHDO_ID_GROUP_2, VUHDO_ID_GROUP_3, VUHDO_ID_GROUP_4, VUHDO_ID_GROUP_5, VUHDO_ID_GROUP_6, VUHDO_ID_GROUP_7, VUHDO_ID_GROUP_8, VUHDO_ID_PETS },
-	{ VUHDO_ID_PRIVATE_TANKS, VUHDO_ID_BOSSES }, 
+--	{ VUHDO_ID_PRIVATE_TANKS, VUHDO_ID_BOSSES },
 };
 
 
@@ -133,7 +133,7 @@ local VUHDO_DEFAULT_SPELLS_KEYBOARD = {};
 
 
 local VUHDO_CLASS_DEFAULT_SPELL_ASSIGNMENT = {
-	["PALADIN"] = {
+--[[	["PALADIN"] = {
 		["1"] = {"", "1", VUHDO_SPELL_ID.FLASH_OF_LIGHT},
 		["2"] = {"", "2", VUHDO_SPELL_ID.PALA_CLEANSE},
 		["3"] = {"", "3", "menu"},
@@ -227,7 +227,7 @@ local VUHDO_CLASS_DEFAULT_SPELL_ASSIGNMENT = {
 		["shift1"] = { "shift-", "1", VUHDO_SPELL_ID.UPLIFT },
 		["shift2"] = { "shift-", "2", VUHDO_SPELL_ID.REVIVAL },
 	},
-
+]]
 };
 
 
@@ -236,9 +236,9 @@ local VUHDO_CLASS_DEFAULT_SPELL_ASSIGNMENT = {
 local VUHDO_GLOBAL_DEFAULT_SPELL_ASSIGNMENT = {
 	["1"] = {"", "1", "target"},
 	["2"] = {"", "2", "assist"},
-	["3"] = {"", "3", "focus"},
-	["4"] = {"", "4", "menu"},
-	["5"] = {"", "5", "menu"},
+	["3"] = {"", "3", "menu"},
+	["4"] = {"", "4", "dropdown"},
+	["5"] = {"", "5", "tell"},
 };
 
 
@@ -382,6 +382,15 @@ function VUHDO_loadSpellArray()
 	end
 
 	VUHDO_DEFAULT_SPELL_CONFIG = nil;
+end
+
+
+
+--
+local function VUHDO_makeFullColorWoBackground(...)
+	local tColor = VUHDO_makeFullColor(...);
+	tColor["useBackground"] = false;
+	return tColor;
 end
 
 
@@ -562,8 +571,8 @@ local VUHDO_DEFAULT_CONFIG = {
 	["OMIT_MAIN_ASSIST"] = false,
 	["OMIT_PLAYER_TARGETS"] = false,
 	["OMIT_OWN_GROUP"] = false,
-	["OMIT_FOCUS"] = false,
-	["OMIT_TARGET"] = false,
+	["OMIT_FOCUS"] = true,
+	["OMIT_TARGET"] = true,
 	["OMIT_SELF"] = false,
 	["OMIT_DFT_MTS"] = false,
 	["BLIZZ_UI_HIDE_PLAYER"] = 2,
@@ -1034,11 +1043,11 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 		["DEBUFF" .. VUHDO_DEBUFF_TYPE_NONE] =  {
 			["useText"] = false, ["useBackground"] = false, ["useOpacity"] = false,
 		},
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_POISON] = VUHDO_makeFullColor(0, 0.592, 0.8, 1,   0, 1, 0.686, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_DISEASE] = VUHDO_makeFullColor(0.8, 0.4, 0.4, 1,   1, 0, 0, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CURSE] = VUHDO_makeFullColor(0.7, 0, 0.7, 1,   1, 0, 1, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_MAGIC] = VUHDO_makeFullColor(0.4, 0.4, 0.8, 1,   0.329, 0.957, 1, 1),
-		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CUSTOM] = VUHDO_makeFullColor(0.6, 0.3, 0, 1,   0.8, 0.5, 0, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_POISON] = VUHDO_makeFullColorWoBackground(0, 0.592, 0.8, 1,   0, 1, 0.686, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_DISEASE] = VUHDO_makeFullColorWoBackground(0.8, 0.4, 0.4, 1,   1, 0, 0, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CURSE] = VUHDO_makeFullColorWoBackground(0.7, 0, 0.7, 1,   1, 0, 1, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_MAGIC] = VUHDO_makeFullColorWoBackground(0.4, 0.4, 0.8, 1,   0.329, 0.957, 1, 1),
+		["DEBUFF" .. VUHDO_DEBUFF_TYPE_CUSTOM] = VUHDO_makeFullColorWoBackground(0.6, 0.3, 0, 1,   0.8, 0.5, 0, 1),
 		["DEBUFF_BAR_GLOW"] = VUHDO_makeFullColor(0.95, 0.95, 0.32, 1,   1, 1, 0, 1),
 		["DEBUFF_ICON_GLOW"] = VUHDO_makeFullColor(0.95, 0.95, 0.32, 1,   1, 1, 0, 1),
 		["CHARMED"] = VUHDO_makeFullColor(0.51, 0.082, 0.263, 1,   1, 0.31, 0.31, 1),
@@ -1096,8 +1105,8 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 		["HOT_CHARGE_3"] = VUHDO_makeFullColorWoOpacity(0.3, 1, 0.3, 1,   0.6, 1, 0.6, 1),
 		["HOT_CHARGE_4"] = VUHDO_makeFullColorWoOpacity(0.8, 0.8, 0.8, 1,   1, 1, 1, 1),
 
-		["useDebuffIcon"] = false,
-		["useDebuffIconBossOnly"] = true,
+		["useDebuffIcon"] = true,
+		["useDebuffIconBossOnly"] = false,
 
 		["RAID_ICONS"] = {
 			["enable"] = false,
@@ -1178,22 +1187,22 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["columnSpacing"] = 5,
 		["rowSpacing"] = 2,
 
-		["borderGapX"] = 5,
-		["borderGapY"] = 5,
+		["borderGapX"] = 0,
+		["borderGapY"] = 0,
 
-		["barWidth"] = 80,
-		["barHeight"] = 40,
+		["barWidth"] = 60,
+		["barHeight"] = 30,
 
 		["showHeaders"] = true,
 		["headerHeight"] = 12,
 		["headerWidth"] = 100,
 		["headerSpacing"] = 5,
 
-		["manaBarHeight"] = 6,
+		["manaBarHeight"] = 4,
 		["sideLeftWidth"] = 6,
 		["sideRightWidth"] = 6,
 
-		["maxColumnsWhenStructured"] = 10,
+		["maxColumnsWhenStructured"] = 5,
 		["maxRowsWhenLoose"] = 5,
 		["ommitEmptyWhenStructured"] = true,
 		["isPlayerOnTop"] = true,
@@ -1221,7 +1230,7 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 
 	["LIFE_TEXT"] = {
 		["show"] = true,
-		["mode"] = VUHDO_LT_MODE_PERCENT,
+		["mode"] = VUHDO_LT_MODE_MISSING,
 		["position"] = VUHDO_LT_POS_ABOVE,
 		["verbose"] = false,
 		["hideIrrelevant"] = false,
@@ -1275,7 +1284,7 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 
 	["TOOLTIP"] = {
 		["show"] = true,
-		["position"] = 2, -- Standard-Pos
+		["position"] = 3,
 		["inFight"] = false,
 		["showBuffs"] = false,
 		["x"] = 100,
@@ -1297,10 +1306,10 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 
 	["RAID_ICON"] = {
 		["show"] = true,
-		["scale"] = 1,
+		["scale"] = 0.7,
 		["point"] = "TOP",
 		["xAdjust"] = 0,
-		["yAdjust"] = -20,
+		["yAdjust"] = -10,
 	},
 
 	["OVERHEAL_TEXT"] = {
@@ -1352,9 +1361,9 @@ function VUHDO_loadDefaultPanelSetup()
 	for tPanelNum = 1, 10 do -- VUHDO_MAX_PANELS
 		if not VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] and tPanelNum == 1 then
 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = {
-				["x"] = 130,
-				["y"] = 650,
-				["relativePoint"] = "BOTTOMLEFT",
+				["x"] = 200,
+				["y"] = 100,
+				["relativePoint"] = "CENTER",
 				["orientation"] = "TOPLEFT",
 				["growth"] = "TOPLEFT",
 				["width"] = 200,
@@ -1408,10 +1417,10 @@ local VUHDO_DEFAULT_BUFF_CONFIG = {
 	["HIDE_CHARGES"] = false,
 	["REFRESH_SECS"] = 1,
 	["POSITION"] = {
-		["x"] = 130,
-		["y"] = -130,
-		["point"] = "TOPLEFT",
-		["relativePoint"] = "TOPLEFT",
+		["x"] = 0,
+		["y"] = 0,
+		["point"] = "BOTTOMRIGHT",
+		["relativePoint"] = "BOTTOMRIGHT",
 	},
 	["SCALE"] = 1,
 	["PANEL_MAX_BUFFS"] = 5,
@@ -1434,7 +1443,7 @@ local VUHDO_DEFAULT_BUFF_CONFIG = {
 	["REBUFF_AT_PERCENT"] = 25,
 	["REBUFF_MIN_MINUTES"] = 3,
 	["HIGHLIGHT_COOLDOWN"] = true,
-	["WHEEL_SMART_BUFF"] = false,
+	["WHEEL_SMART_BUFF"] = true,
 
 	["SWATCH_COLOR_BUFF_OKAY"]     = VUHDO_makeFullColor(0,   0,   0,   1,   0,   0.8, 0,   1),
 	["SWATCH_COLOR_BUFF_LOW"]      = VUHDO_makeFullColor(0,   0,   0,   1,   1,   0.7, 0,   1),
@@ -1458,7 +1467,7 @@ VUHDO_DEFAULT_USER_CLASS_COLORS = {
 	[VUHDO_ID_MONKS]         = VUHDO_makeFullColor(0,    1,    0.59, 1,   0,    1,    0.69, 1),
 	[VUHDO_ID_DEMON_HUNTERS] = VUHDO_makeFullColor(0.54, 0.09, 0.69, 1,   0.64, 0.19, 0.79, 1),
 	[VUHDO_ID_PETS]          = VUHDO_makeFullColor(0.4,  0.6,  0.4,  1,   0.5,  0.9,  0.5,  1),
-	["petClassColor"] = false,
+	["petClassColor"] = true,
 }
 
 
@@ -1533,7 +1542,7 @@ function VUHDO_initBuffSettings()
 
 		if not VUHDO_BUFF_SETTINGS[tCategSpec] then
 			VUHDO_BUFF_SETTINGS[tCategSpec] = {
-				["enabled"] = false,
+				["enabled"] = true,
 				["missingColor"] = {
 					["show"] = false,
 					["R"] = 1, ["G"] = 1, ["B"] = 1, ["O"] = 1,
