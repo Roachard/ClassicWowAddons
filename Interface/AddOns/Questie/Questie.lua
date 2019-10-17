@@ -102,7 +102,7 @@ end
 _QuestieOptions.defaults = {
     global = {
       maxLevelFilter = 7,
-      minLevelFilter = 5, --Raised the default to allow more quests to be shown
+      minLevelFilter = 8, --Raised the default to allow more quests to be shown
       clusterLevel = 1,
       availableScale = 1.3,
       eventScale = 1.35,
@@ -123,7 +123,7 @@ _QuestieOptions.defaults = {
       nameplateScale = 1,
       nameplateEnabled = true,
       minimapCoordinatesEnabled = false,
-      mapCoordinatesEnabled = true,
+      mapCoordinatesEnabled = false,
       mapCoordinatePrecision = 1,
       mapShowHideEnabled = true,
       nameplateTargetFrameEnabled = false,
