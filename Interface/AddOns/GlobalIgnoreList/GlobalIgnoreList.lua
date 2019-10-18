@@ -344,7 +344,7 @@ function ResetSpamFilters()
 	
 	GlobalIgnoreDB.invertSpam = false
 	GlobalIgnoreDB.spamFilter = true
-	GlobalIgnoreDB.autoUpdate = false
+	GlobalIgnoreDB.autoUpdate = true
 	
 	for count = 1, #filterDefDesc do
 		GlobalIgnoreDB.filterDesc[count]  = filterDefDesc[count]
@@ -366,7 +366,7 @@ local function ResetIgnoreDB()
 		spamFilter		= true,
 		invertSpam		= true,
 		autoIgnore		= true,
-		autoUpdate      = false,
+		autoUpdate      = true,
 		autoCount		= 3,
 		autoTime		= 600,		
 		defexpire		= 0,
@@ -633,128 +633,44 @@ local function ApplicationStartup(self)
 	
 	-- Set filter defaults
 	
-	filterDefDesc[#filterDefDesc + 1]     = "刷屏"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=MMMMMM] or [contains=++++++] or [contains=------] or [contains=======] or [contains=~~~~~~]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
+	filterDefDesc[#filterDefDesc + 1]     = "Filter \"Anal\" Spammers"
+	filterDefFilter[#filterDefFilter + 1] = "([word=anal] or [contains=analan]) and ([link] or [words=2])"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Thunderfury linking"
+	filterDefFilter[#filterDefFilter + 1] = "[item=19019]"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Gold Spam #1"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=.c0m] or [contains=.c.0.m] or [contains=,com] or ([contains=.com] and ([contains=code] or [contains=usd] or [contains=+15]))"	
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Gold Spam #2"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=░] or [contains=▒] or [contains=▓] or [contains=█]) and ([contains=wts] or [contains=sell] or [contains=gold] or [contains=share]))"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Gold Spam #3"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=deliver] or [contains=delivery] or [contains=gold] or [contains=delievery] or [contains=sale]) and ([contains=.com] or [contains=,com] or [contains=c0m])"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Gold Spam #4"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=wts] or [contains=sell]) and [contains=share] and ([contains=account] or [contains=acc]))"
+	filterDefActive[#filterDefActive + 1] = true
+	
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Guild Recruitment"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=<] and [contains=>]) or ([contains=\\[] and [contains=\\]]) or ([contains=\\(] and [contains=\\)])) and ([contains=recruit] or [contains=progress] or [contains=raid] or [contains=guild] or [contains=seek] or [contains=mythic])"
 	filterDefActive[#filterDefActive + 1] = false
 
-	filterDefDesc[#filterDefDesc + 1]     = "奸商"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=无限收] or [contains=长期收]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Community Recruitment"
+	filterDefFilter[#filterDefFilter + 1] = "[community]"
 	filterDefActive[#filterDefActive + 1] = false
 
-	filterDefDesc[#filterDefDesc + 1]     = "G团"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=G团] or [contains=GKP] or [contains=内销]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
+	filterDefDesc[#filterDefDesc + 1]     = "Filter WTS"
+	filterDefFilter[#filterDefFilter + 1] = "[contains=WTS] or [contains=WTB]"
 	filterDefActive[#filterDefActive + 1] = false
 
-	filterDefDesc[#filterDefDesc + 1]     = "AA"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=AA]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "怒焰裂谷"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=怒焰]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "哀嚎洞穴"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=哀嚎]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "死亡矿井"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=死矿] or [contains=SK] or [contains=矿井]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "影牙城堡"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=影牙]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "黑暗深渊"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑暗深渊]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "监狱"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=监狱]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "诺莫瑞根"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=诺莫瑞根]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "血色修道院"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=血色] or [contains=XS] or [contains=墓地] or [contains=图书馆] or [contains=军械库] or [contains=武器库] or [contains=教堂]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "剃刀沼泽"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀沼泽] or [contains=TDZZ]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "剃刀高地"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀高地] or [contains=TDGD]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "奥达曼"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=奥达曼] or [contains=ADM]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "祖尔法拉克"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=祖尔法拉克] or [contains=ZUL] or [contains=ZR]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "玛拉顿"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=玛拉顿] or [contains=MLD]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "阿塔哈卡神庙"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=神庙]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "黑石深渊"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑石] or [contains=深渊]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "黑石塔下层"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑下]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "黑石塔上层"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑上]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "通灵学院"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=通灵] or [contains=TL]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "斯坦索姆"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=斯坦索姆] or [contains=STSM]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "厄运之槌"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=厄运]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "熔火之心"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=熔火之心] or [contains=MC]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "奥妮克希亚的巢穴"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=奥妮克希亚] or [contains=黑龙]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "黑翼之巢"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑翼] or [contains=BWL]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "祖尔格拉布"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=祖尔格拉布] or [contains=祖格] or [contains=ZG]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "安其拉废墟"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=废墟]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "安其拉"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=TAQ]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
-	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "纳克萨玛斯"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=纳克萨玛斯] or [contains=NAXX]) and ([channel=2] or [channel=3] or [channel=4] or [channel=5] or [channel=6])"
+	filterDefDesc[#filterDefDesc + 1]     = "Filter Chinese/Korean/Japanese"
+	filterDefFilter[#filterDefFilter + 1] = "[nonlatin]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	faction = UnitFactionGroup("player")
@@ -794,7 +710,7 @@ local function ApplicationStartup(self)
 	end
 	
 	if GlobalIgnoreDB.autoUpdate == nil then
-		GlobalIgnoreDB.autoUpdate = false
+		GlobalIgnoreDB.autoUpdate = true
 	end
 	
 	if GlobalIgnoreDB.autoCount == nil then
