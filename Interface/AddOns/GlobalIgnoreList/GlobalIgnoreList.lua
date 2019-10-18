@@ -638,7 +638,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "奸商"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=收]) and ([contains=邮寄])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收]) and ([contains=邮寄] or [contains=到付])"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "布"
@@ -649,6 +649,14 @@ local function ApplicationStartup(self)
 	filterDefFilter[#filterDefFilter + 1] = "([contains=硬甲皮] or [contains=厚皮])"
 	filterDefActive[#filterDefActive + 1] = false
 
+	filterDefDesc[#filterDefDesc + 1]     = "草药"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=梦叶草] or [contains=格罗姆之血] or [contains=墓地苔])"
+	filterDefActive[#filterDefActive + 1] = false
+
+	filterDefDesc[#filterDefDesc + 1]     = "附魔"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=法伤]) and ([contains=十字军])"
+	filterDefActive[#filterDefActive + 1] = false
+
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
 	filterDefFilter[#filterDefFilter + 1] = "([contains=飞机] or [contains=机票] or [contains=航空] or [contains=航班])"
 	filterDefActive[#filterDefActive + 1] = true
@@ -657,8 +665,12 @@ local function ApplicationStartup(self)
 	filterDefFilter[#filterDefFilter + 1] = "([contains=金团] or [contains=G团] or [contains=内销])"
 	filterDefActive[#filterDefActive + 1] = false
 
+	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=招]) and ([contains=公会] or [contains=工会])"
+	filterDefActive[#filterDefActive + 1] = true
+
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=刷] or [contains=法] or [contains=次] or [contains=消费] or [contains=老板]) and ([contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=STSM] or [contains=后门])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=带刷] or [contains=有偿] or [contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=STSM] or [contains=后门] or [contains=厄运]) and ([contains=带] or [contains=法] or [contains=次] or [contains=消费] or [contains=老板])"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
@@ -686,7 +698,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "奥妮克希亚的巢穴"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=奥妮克希亚] or [contains=黑龙])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=黑龙])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "熔火之心"
@@ -710,7 +722,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "斯坦索姆"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=斯坦索姆] or [contains=STSM])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=斯坦索姆] or [contains=STSM] or [contains=DK])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "黑石深渊"
@@ -730,7 +742,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "奥达曼"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=奥达曼] or [contains=ADM])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=奥达曼] or [contains=ADM] or [contains=矮人本])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "剃刀高地"
@@ -742,11 +754,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "血色修道院"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=血色] or [contains=XS] or [contains=墓地] or [contains=图书馆] or [contains=军械库] or [contains=武器库] or [contains=教堂])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=血色] or [contains=XS] or [contains=墓地] or [contains=图书馆] or [contains=军械库] or [contains=武器库] or [contains=教堂]) and not ([contains=斯坦索姆] or [contains=STSM] or [contains=区])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "诺莫瑞根"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=诺莫瑞根])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=诺莫瑞根] or [contains=侏儒本])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "监狱"
