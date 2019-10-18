@@ -634,7 +634,7 @@ local function ApplicationStartup(self)
 	-- Set filter defaults
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖]) and ([contains=米])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖]) and ([contains=米] or [contains=白菜])"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "奸商"
@@ -654,7 +654,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "附魔"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=法伤]) and ([contains=十字军])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=附魔] or [contains=FM] or [contains=力] or [contains=敏] or [contains=耐] or [contains=智] or [contains=精]) and ([contains=十字军] or [contains=灼热] or [contains=冰寒])"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
@@ -666,7 +666,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=招]) and ([contains=公会] or [contains=工会])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=招] or [contains=活动] or [contains=时间]) and ([contains=公会] or [contains=工会])"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
@@ -784,6 +784,10 @@ local function ApplicationStartup(self)
 	filterDefDesc[#filterDefDesc + 1]     = "怒焰裂谷"
 	filterDefFilter[#filterDefFilter + 1] = "([contains=怒焰])"
 	filterDefActive[#filterDefActive + 1] = false
+
+	filterDefDesc[#filterDefDesc + 1]     = "暴雪群组"
+	filterDefFilter[#filterDefFilter + 1] = "[community]"
+	filterDefActive[#filterDefActive + 1] = true
 
 	faction = UnitFactionGroup("player")
 		
