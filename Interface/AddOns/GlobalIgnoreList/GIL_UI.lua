@@ -237,7 +237,7 @@ local function CreateFilterButtons()
 		end
 
 		FilterScrollButtons[count]:SetSize(BUTTON_WIDTH, BUTTON_HEIGHT)
-		FilterScrollButtons[count]:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+		FilterScrollButtons[count]:RegisterForClicks("LeftButtonUp")
 		FilterScrollButtons[count]:SetScript("OnClick", FilterScrollClick)
 
 		-- set name style
@@ -274,7 +274,6 @@ function FilterScrollDoubleClick()
 	end
 end
 
---[[
 function FilterScrollClick(self, button, down)
 
 	if down == true then return end
@@ -285,24 +284,6 @@ function FilterScrollClick(self, button, down)
 	elseif FilterScrollSelect ~= self:GetID() then
 		FilterScrollSelect = self:GetID()
 		FilterListDrawUpdate(IgnoreScrollFrame)
-	end
-end
-]]
-function FilterScrollClick(self, button, down)
-	if down then return end
-	local id = self:GetID()
-	if button == "LeftButton" then
-		if FilterScrollSelect ~= id then
-			FilterScrollSelect = id
-			FilterListDrawUpdate(FilterScrollFrame)
-		else
-			FilterScrollDoubleClick()
-		end
-	elseif button == "RightButton" then
-		if GlobalIgnoreDB.filterDesc[id] ~= nil then
-			GlobalIgnoreDB.filterActive[id] = not GlobalIgnoreDB.filterActive[id]
-			FilterListDrawUpdate(FilterScrollFrame)
-		end
 	end
 end
 

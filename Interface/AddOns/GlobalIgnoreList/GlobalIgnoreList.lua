@@ -383,7 +383,7 @@ local function ResetIgnoreDB()
 		filterDesc		= {},
 		filterList		= {},
 		skipGuild		= true,
-		skipParty		= true,
+		skipParty		= false,
 		skipPrivate		= true
 	}
 	
@@ -686,7 +686,7 @@ local function ApplicationStartup(self)
 	end
 
 	if GlobalIgnoreDB.skipParty == nil then
-		GlobalIgnoreDB.skipParty = true
+		GlobalIgnoreDB.skipParty = false
 	end
 
 	if GlobalIgnoreDB.skipGuild == nil then
