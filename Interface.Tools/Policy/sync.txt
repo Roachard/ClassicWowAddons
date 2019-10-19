@@ -2,6 +2,7 @@
 AtlasLootClassic
 AtlasLootClassic_Collections
 AtlasLootClassic_Crafting
+AtlasLootClassic_Data
 AtlasLootClassic_DungeonsAndRaids
 AtlasLootClassic_Factions
 AtlasLootClassic_Maps
@@ -47,6 +48,7 @@ dct_options
 dct_spellAlert
 Decursive
 EventAlertMod
+Ex_AutoEquip
 HandyNotes
 HandyNotes_NPCs (Classic)
 HunterAssist
@@ -69,6 +71,7 @@ Recount
 RepairHelper
 SellerHelper
 TheBurningTrade
+TotemTimers
 TrinketMenu
 WhisperPop
 wMarker

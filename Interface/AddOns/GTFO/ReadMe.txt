@@ -1464,3 +1464,7 @@ Change Log:
 4.50.1
 * Fixed Classic spells (duplicates)
 
+4.51
+* Merged Classic and Retail versions since Twitch Client will sometimes wrongfully install the wrong addon
+* Added Battle for Azeroth spells (world)
+

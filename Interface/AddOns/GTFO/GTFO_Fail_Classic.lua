@@ -5,6 +5,8 @@
 GTFO Fail List - Classic
 ]]--
 
+if (GTFO.ClassicMode) then
+
 GTFO.SpellID["20476"] = {
 	--desc = "Explosion (Baron Geddon, Molten Core)";
 	sound = 4;
@@ -146,3 +148,5 @@ GTFO.SpellID["15284"] = {
 		15989, -- Sapphiron
 	};
 };
+
+end

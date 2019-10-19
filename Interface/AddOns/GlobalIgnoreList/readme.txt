@@ -184,7 +184,7 @@ The following commands are accessible by typing /gignore or /gi in the chat box:
 
 => VERSION HISTORY
 
-=> 8.2.2
+=> 8.2.2 retail (1.13.2 classic)
 
 Swapped the create and remove filter button in the chat filter editor, and added a confirmation dialog box when a filter is requested to be removed
 
@@ -198,7 +198,7 @@ Added the ability to disable or enable filtering of private messages.  This opti
 
 Updated the default "Anal" spam filter to utilize the words count, to address people who do not link a spell or item and instead type the name
 
-=> 8.2.1
+=> 8.2.1 retail (1.13.1 classic)
 
 Added option to never apply spam filters to Guild chat.  This option is turned on by default in the options tab.
 

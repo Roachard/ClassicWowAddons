@@ -223,4 +223,11 @@ MTSLUI_TOOLS = {
 			UIDropDownMenu_AddButton(info)
 		end
     end,
+
+	AddDragToFrame = function(self, frame_to_drag)
+		frame_to_drag:SetMovable(true)
+		frame_to_drag:RegisterForDrag("LeftButton")
+		frame_to_drag:SetScript("OnDragStart", function(frame) frame:StartMoving() end)
+		frame_to_drag:SetScript("OnDragStop", function(frame) frame:StopMovingOrSizing() end)
+	end,
 }

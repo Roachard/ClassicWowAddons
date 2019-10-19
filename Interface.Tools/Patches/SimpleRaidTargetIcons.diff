@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua b/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
-index 21324e6..b2f8079 100644
+index deede61..48da7ed 100644
 --- a/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
 +++ b/Interface/AddOns/SimpleRaidTargetIcons/SimpleRaidTargetIcons.lua
 @@ -167,16 +167,16 @@ srti.defaults = {
@@ -9,7 +9,8 @@ index 21324e6..b2f8079 100644
 -	["singlehover"] = false,
 +	["singlehover"] = true,
  
- 	["double"] = true,
+-	["double"] = true,
++	["double"] = false,
  	["speed"] = 0.25,
  	["radialscale"] = 1.0,
 -	["doublehover"] = false,

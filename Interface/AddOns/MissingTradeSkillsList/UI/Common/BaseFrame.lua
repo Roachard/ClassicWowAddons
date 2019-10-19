@@ -45,6 +45,9 @@ MTSLUI_BASE_FRAME = {
     -- returns		boolean      Visibility of the frame
     ----------------------------------------------------------------------------------------------------------
     IsShown = function(self)
+        if self.ui_frame == nil then
+            return false
+        end
         return self.ui_frame:IsVisible()
     end,
 
@@ -69,7 +72,6 @@ MTSLUI_BASE_FRAME = {
             self:SwapToVerticalMode()
         end
     end,
-
 
     ----------------------------------------------------------------------------------------------------------
     -- Swap to Vertical Mode (Default mode, means list left & details right)
