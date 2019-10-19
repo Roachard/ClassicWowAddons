@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/GlobalIgnoreList/GIL_UI.lua b/Interface/AddOns/GlobalIgnoreList/GIL_UI.lua
-index bbb01e1..8b27cee 100644
+index bbb01e1..5844135 100644
 --- a/Interface/AddOns/GlobalIgnoreList/GIL_UI.lua
 +++ b/Interface/AddOns/GlobalIgnoreList/GIL_UI.lua
 @@ -237,7 +237,7 @@ local function CreateFilterButtons()
@@ -44,6 +44,17 @@ index bbb01e1..8b27cee 100644
  
  
  --------------------------
+@@ -1396,8 +1415,8 @@ local function friendsHide()
+ 	end
+ end
+ 
+-FriendsFrame:HookScript("OnShow", friendsShow)
+-FriendsFrame:HookScript("OnHide", friendsHide)
++IgnoreListFrame:HookScript("OnShow", friendsShow)
++IgnoreListFrame:HookScript("OnHide", friendsHide)
+ 
+ --------------------------
+ -- HOOK INTO CHAT LINKS --
 diff --git a/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua b/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua
 index 4a1b33c..da9dcb1 100644
 --- a/Interface/AddOns/GlobalIgnoreList/GlobalIgnoreList.lua

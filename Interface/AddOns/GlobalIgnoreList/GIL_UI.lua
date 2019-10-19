@@ -1415,8 +1415,8 @@ local function friendsHide()
 	end
 end
 
-FriendsFrame:HookScript("OnShow", friendsShow)
-FriendsFrame:HookScript("OnHide", friendsHide)
+IgnoreListFrame:HookScript("OnShow", friendsShow)
+IgnoreListFrame:HookScript("OnHide", friendsHide)
 
 --------------------------
 -- HOOK INTO CHAT LINKS --
