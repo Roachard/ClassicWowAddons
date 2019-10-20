@@ -634,7 +634,7 @@ local function ApplicationStartup(self)
 	-- Set filter defaults
 
 	filterDefDesc[#filterDefDesc + 1]     = "刷屏"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=MMMMMMM] or [contains=+++++++] or [contains=```````] or [contains=~~~~~~~] or [contains=!!!!!!!] or [contains=！！！！！！！] or [contains=。。。。。。。] or [contains=1111111] or [contains=2222222] or [contains=3333333]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=MMMMMM] or [contains=++++++] or [contains=------] or [contains=``````] or [contains=~~~~~~] or [contains=!!!!!!] or [contains=！！！！！！] or [contains=。。。。。。] or [contains=111111] or [contains=222222] or [contains=333333]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "位面"
