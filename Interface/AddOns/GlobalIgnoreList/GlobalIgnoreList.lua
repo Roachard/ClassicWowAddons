@@ -642,7 +642,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖]) and ([contains=米] or [contains=白菜]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖]) and ([contains=G] or [contains=米] or [contains=菜]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "奸商"
@@ -670,7 +670,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=飞机] or [contains=机票] or [contains=航空] or [contains=航班] or [contains=直通车] or [contains=秒拉] or ([contains=拉人] and [contains=G])) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=飞机] or [contains=机票] or [contains=航空] or [contains=航班] or [contains=直达] or [contains=直通车] or [contains=秒拉] or ([contains=拉人] and [contains=G])) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金团"
@@ -678,11 +678,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收]) and ([contains=公会] or [contains=工会] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收] or [contains=欢迎] or [contains=加入]) and ([contains=公会] or [contains=工会] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=刷] or [contains=次] or [contains=有偿] or [contains=脱机] or [contains=服务]) and ([contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=深渊] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=专业] or [contains=效率] or [contains=消费] or [contains=老板]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=刷] or [contains=次] or [contains=有偿] or [contains=脱机] or [contains=服务]) and ([contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=深渊] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=专业] or [contains=效率] or [contains=消费] or [contains=老板] or [contains=人民币]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
