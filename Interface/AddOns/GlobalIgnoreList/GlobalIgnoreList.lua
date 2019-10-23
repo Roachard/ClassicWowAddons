@@ -682,7 +682,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=刷] or [contains=次] or [contains=有偿] or [contains=脱机] or [contains=服务]) and ([contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=深渊] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=专业] or [contains=效率] or [contains=消费] or [contains=老板] or [contains=人民币]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=刷] or [contains=次] or [contains=有偿] or [contains=脱机] or [contains=服务]) and ([contains=监狱] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=深渊] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=专业] or [contains=效率] or [contains=升级] or [contains=消费] or [contains=老板] or [contains=人民币]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
@@ -758,11 +758,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "剃刀高地"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀高地] or [contains=TDGD]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀高地] or [contains=TDGD] or [contains=TD高地]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "剃刀沼泽"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀沼泽] or [contains=TDZZ]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=剃刀沼泽] or [contains=TDZZ] or [contains=TD沼泽]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "血色修道院"
