@@ -14,7 +14,7 @@ L["FIRST_START_MSG"] = "|cFF00FF00" .. _addonName .. "|r|cFFffb178: 打开设置
 L["CHAT_NOTIFY_FOUND_SAYYELL"] = "找到 |cFF00FF00%s|r! |cFFFF66FF|H玩家:%s|h[%s]|h|r: %s";
 L["CHAT_NOTIFY_FOUND_CHANNEL"] = "找到 |cFF00FF00%s|r! |cFFFF66FF|H玩家:%s|h[%s]|h|r in %s: %s";
 
-L["CHAT_NOTIFY_FORMAT"] = "<<ccaaaa>>[{T}] 找到 <00ff00>{K}<>! [{S}]<ff66ff>[{P}]<>: <ffffaa>{MS}<00ff00>{MF}<ffffaa>{ME}";
+L["CHAT_NOTIFY_FORMAT"] = "<<ccaaaa>>{T}[{S}]<ff66ff>[{P}]<>: <ffffaa>{MS}<00ff00>{MF}<ffffaa>{ME}";
 L["ERR_NOTIFY_FORMAT_MISSING"] = "通知格式没有设置,请到设置界面建立一个通知格式,或重置默认格式.";
 
 L["SOUND_NO_SOUND"] = "- 无声 -";
