@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/CharacterNotes/CharacterNotes.lua b/Interface/AddOns/CharacterNotes/CharacterNotes.lua
+index 2513bc0..844f1af 100644
+--- a/Interface/AddOns/CharacterNotes/CharacterNotes.lua
++++ b/Interface/AddOns/CharacterNotes/CharacterNotes.lua
+@@ -51,7 +51,7 @@ local tooltipNoteWithMainFormat = "%s"..L["Note"].." (%s): "..WHITE.."%s".."|r"
+ local defaults = {
+ 	profile = {
+ 		minimap = {
+-			hide = true,
++			hide = false,
+ 		},
+ 		verbose = true,
+ 		debug = false,

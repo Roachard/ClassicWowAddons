@@ -51,7 +51,7 @@ local tooltipNoteWithMainFormat = "%s"..L["Note"].." (%s): "..WHITE.."%s".."|r"
 local defaults = {
 	profile = {
 		minimap = {
-			hide = true,
+			hide = false,
 		},
 		verbose = true,
 		debug = false,
