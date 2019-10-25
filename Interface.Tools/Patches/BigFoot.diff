@@ -30,7 +30,7 @@ index d3c41ee..63ec3ce 100644
  						II_Config['SellValue'] = nil;
  					end
 diff --git a/Interface/AddOns/BigFoot/Config/MerInspect.lua b/Interface/AddOns/BigFoot/Config/MerInspect.lua
-index ad1639c..e2f2744 100644
+index a14897f..cfc7083 100644
 --- a/Interface/AddOns/BigFoot/Config/MerInspect.lua
 +++ b/Interface/AddOns/BigFoot/Config/MerInspect.lua
 @@ -1,4 +1,4 @@
@@ -48,7 +48,7 @@ index ad1639c..e2f2744 100644
 +BigFoot_AddCollector(MerInspectConfigFunc)
 +]]
 diff --git a/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua b/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
-index 70c4a0b..619359a 100644
+index 70c4a0b..8eeb81c 100644
 --- a/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
 +++ b/Interface/AddOns/BigFoot/Mods/MBB/MBB.lua
 @@ -52,6 +52,7 @@ local ignored = {
@@ -59,3 +59,19 @@ index 70c4a0b..619359a 100644
  }
  
  local options = {
+@@ -245,8 +246,15 @@ function M:showButtons()
+ 	local itemperline = db.itemperline
+ 	if itemperline ==0 then itemperline = 100 end
+ 
++	local list = {}
+ 	for button,flag in pairs(self.buttons) do
+ 		if flag and button.oisshown then
++			table.insert(list,button)
++		end
++	end
++	table.sort(list,function(a,b) return a:GetName():gsub("^LibDBIcon[^_]*_","") < b:GetName():gsub("^LibDBIcon[^_]*_","") end)
++	for _,button in ipairs(list) do
++		if true then
+ 			self.hooks[button].ClearAllPoints(button)
+ 			x ,y = currentIndex%itemperline, floor(currentIndex/itemperline)
+ 			self.hooks[button].SetPoint(button,"TOPLEFT",self.panel,"TOPLEFT",(32+x*57),(-63-y*40))

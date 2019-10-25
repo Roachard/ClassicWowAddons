@@ -246,8 +246,15 @@ function M:showButtons()
 	local itemperline = db.itemperline
 	if itemperline ==0 then itemperline = 100 end
 
+	local list = {}
 	for button,flag in pairs(self.buttons) do
 		if flag and button.oisshown then
+			table.insert(list,button)
+		end
+	end
+	table.sort(list,function(a,b) return a:GetName():gsub("^LibDBIcon[^_]*_","") < b:GetName():gsub("^LibDBIcon[^_]*_","") end)
+	for _,button in ipairs(list) do
+		if true then
 			self.hooks[button].ClearAllPoints(button)
 			x ,y = currentIndex%itemperline, floor(currentIndex/itemperline)
 			self.hooks[button].SetPoint(button,"TOPLEFT",self.panel,"TOPLEFT",(32+x*57),(-63-y*40))
