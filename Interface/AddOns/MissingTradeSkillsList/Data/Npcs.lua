@@ -5051,6 +5051,31 @@ MTSL_DATA["npcs"] = {
 		},
 	}, -- [202]
 	{
+		["zone_id"] = 1637,
+		["phase"] = 1,
+		["id"] = 3413,
+		["location"] = {
+			["y"] = "75.60",
+			["x"] = "25.20",
+		},
+		["name"] = {
+			["Portuguese"] = "Sovik",
+			["Russian"] = "Совик",
+			["Chinese"] = "索维克",
+			["Spanish"] = "Sovik",
+			["French"] = "Sovik'",
+			["English"] = "Sovik",
+			["Korean"] = "소빅",
+			["German"] = "Sovik",
+		},
+		["reacts"] = "Horde",
+		["xp_level"] = {
+			["max"] = "30",
+			["min"] = "30",
+			["is_elite"] = 0,
+		},
+	},
+	{
 		["zone_id"] = 17,
 		["phase"] = 1,
 		["id"] = 3443,
@@ -5074,7 +5099,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "13",
 			["is_elite"] = 0,
 		},
-	}, -- [203]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -14267,6 +14292,31 @@ MTSL_DATA["npcs"] = {
 		},
 	}, -- [572]
 	{
+		["zone_id"] = 139,
+		["phase"] = 1,
+		["id"] = 12941,
+		["location"] = {
+			["y"] = "80.60",
+			["x"] = "57.6",
+		},
+		["name"] = {
+			["Portuguese"] = "Jessé Viálgures",
+			["Russian"] = "Джез Фарлен",
+			["Chinese"] = "贾斯·法拉恩",
+			["Spanish"] = "Jase Farlane",
+			["French"] = "Jase Farlane",
+			["English"] = "Jase Farlane",
+			["Korean"] = "제이스 파레인",
+			["German"] = "Jase Farlane",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "56",
+			["min"] = "56",
+			["is_elite"] = 0,
+		},
+	}, -- [573]
+	{
 		["zone_id"] = 28,
 		["phase"] = 1,
 		["id"] = 12942,
@@ -15246,4 +15296,70 @@ MTSL_DATA["npcs"] = {
 			["is_elite"] = 0,
 		},
 	}, -- [612]
+	{
+		["zone_id"] = 3456,
+		["phase"] = 1,
+		["id"] = 16376,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"] = {
+			["Portuguese"] = "Artesão Wilhelm",
+			["Russian"] = "Pемесленник Вильгельм",
+			["Chinese"] = "工匠威尔海姆",
+			["Spanish"] = "Artesano Wilhelm",
+			["French"] = "Artisan Wilhelm",
+			["English"] = "Craftsman Wilhelm",
+			["Korean"] = "기능공 빌헬름",
+			["German"] = "Handwerker Wilhelm",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "60",
+			["min"] = "60",
+			["is_elite"] = 0,
+		},
+	}, -- [612]
+	-- special NPCs to mrk Darkmoon Faire (one for Alliance in Elwynn forest, one in for Horde)
+	{
+		["zone_id"] = 12,
+		["id"] = 909909,
+		["phase"] = 1,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"]  = {
+			["English"] = "Darkmoon Faire",
+			["Russian"] = "Ярмарка Новолуния",
+			["French"] = "Foire de Sombrelune",
+			["Portuguese"] = "Feira de Negraluna",
+			["Korean"] = "다크문 유랑단",
+			["Chinese"] = "暗月马戏团",
+			["German"] = "Dunkelmond-Jahrmarkt",
+			["Spanish"] = "Feria de la Luna Negra",
+		},
+		["reacts"] = "Alliance",
+	},	-- [613]
+	{
+		["zone_id"] = 215,
+		["id"] = 909910,
+		["phase"] = 1,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"]  = {
+			["English"] = "Darkmoon Faire",
+			["Russian"] = "Ярмарка Новолуния",
+			["French"] = "Foire de Sombrelune",
+			["Portuguese"] = "Feira de Negraluna",
+			["Korean"] = "다크문 유랑단",
+			["Chinese"] = "暗月马戏团",
+			["German"] = "Dunkelmond-Jahrmarkt",
+			["Spanish"] = "Feria de la Luna Negra",
+		},
+		["reacts"] = "Horde",
+	}, -- [614]
 }

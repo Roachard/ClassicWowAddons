@@ -6,10 +6,10 @@ MTSLUI_DATABASE_EXPLORER_FRAME = MTSL_TOOLS:CopyObject(MTSLUI_BASE_FRAME)
 
 -- Custom properties
 MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_WIDTH_VERTICAL_SPLIT = 1253
-MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_HEIGHT_VERTICAL_SPLIT = 455
+MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_HEIGHT_VERTICAL_SPLIT = 470
 
 MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_WIDTH_HORIZONTAL_SPLIT = 868
-MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_HEIGHT_HORIZONTAL_SPLIT = 670
+MTSLUI_DATABASE_EXPLORER_FRAME.FRAME_HEIGHT_HORIZONTAL_SPLIT = 740
 
     ---------------------------------------------------------------------------------------
     -- Shows the frame
@@ -77,17 +77,17 @@ function MTSLUI_DATABASE_EXPLORER_FRAME:CreateCompontentFrames()
     self.profession_list_frame = MTSL_TOOLS:CopyObject(MTSLUI_PROFESSION_LIST_FRAME)
     self.profession_list_frame:Initialise(self.title_frame.ui_frame, "MTSLDBUI_PROFESSION_LIST_FRAME")
     -- position left under titleframe
-    self.profession_list_frame.ui_frame:SetPoint("TOPLEFT", self.title_frame.ui_frame, "BOTTOMLEFT", 3, 0)
+    self.profession_list_frame.ui_frame:SetPoint("TOPLEFT", self.title_frame.ui_frame, "BOTTOMLEFT", 3, -5)
     -- Copy & init the filter frame
     self.skill_list_filter_frame = MTSL_TOOLS:CopyObject(MTSLUI_FILTER_FRAME)
     self.skill_list_filter_frame:Initialise(self.profession_list_frame.ui_frame, "MTSLDBUI_SKILL_LIST_FILTER_FRAME")
     -- position under TitleFrame and right of ProfessionListFrame
-    self.skill_list_filter_frame.ui_frame:SetPoint("TOPLEFT", self.profession_list_frame.ui_frame, "TOPRIGHT", 0, -12)
+    self.skill_list_filter_frame.ui_frame:SetPoint("TOPLEFT", self.profession_list_frame.ui_frame, "TOPRIGHT", 0, 0)
     -- Copy & init the list frame
     self.skill_list_frame = MTSL_TOOLS:CopyObject(MTSLUI_LIST_FRAME)
     self.skill_list_frame:Initialise(self.skill_list_filter_frame.ui_frame, "MTSLDBUI_SKILL_LIST_FRAME")
     -- position under the filter frame
-    self.skill_list_frame.ui_frame:SetPoint("TOPLEFT", self.skill_list_filter_frame.ui_frame, "BOTTOMLEFT", 0, -5)
+    self.skill_list_frame.ui_frame:SetPoint("TOPLEFT", self.skill_list_filter_frame.ui_frame, "BOTTOMLEFT", 0, -4)
     -- Copy & init the skill detail frame
     self.skill_detail_frame = MTSL_TOOLS:CopyObject(MTSLUI_SKILL_DETAIL_FRAME)
     self.skill_detail_frame:Initialise(self.skill_list_frame.ui_frame, "MTSLDBUI_SKILL_DETAIL_FRAME")
@@ -96,12 +96,12 @@ function MTSLUI_DATABASE_EXPLORER_FRAME:CreateCompontentFrames()
     self.player_filter_frame = MTSL_TOOLS:CopyObject(MTSLUI_PLAYER_FILTER_FRAME)
     self.player_filter_frame:Initialise(self.skill_detail_frame.ui_frame, "MTSLDBUI_PLAYER_FILTER_FRAME")
     -- position next of the detail frame (in vertical mode)
-    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_detail_frame.ui_frame, "TOPRIGHT", 0, -15)
+    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_detail_frame.ui_frame, "TOPRIGHT", 0, -5)
     -- Copy & init the player list frames
     self.player_list_frame = MTSL_TOOLS:CopyObject(MTSLUI_PLAYER_LIST_FRAME)
     self.player_list_frame:Initialise(self.player_filter_frame.ui_frame, "MTSLDBUI_PLAYER_LIST_FRAME")
     -- position under the filter frame
-    self.player_list_frame.ui_frame:SetPoint("TOPLEFT", self.player_filter_frame.ui_frame, "BOTTOMLEFT", 0, -6)
+    self.player_list_frame.ui_frame:SetPoint("TOPLEFT", self.player_filter_frame.ui_frame, "BOTTOMLEFT", 0, -7)
 end
 
 function MTSLUI_DATABASE_EXPLORER_FRAME:LinkFrames()
@@ -138,7 +138,7 @@ function MTSLUI_DATABASE_EXPLORER_FRAME:SwapToVerticalMode()
     self.skill_detail_frame.ui_frame:SetPoint("BOTTOMLEFT", self.skill_list_frame.ui_frame, "BOTTOMRIGHT", 0, 0)
     -- no need to resize the player filter frame, just rehook it (next to detail frame)
     self.player_filter_frame.ui_frame:ClearAllPoints()
-    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_detail_frame.ui_frame, "TOPRIGHT", 0, -15)
+    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_detail_frame.ui_frame, "TOPRIGHT", 0, -8)
 
     self.player_list_frame:ResizeToVerticalMode()
 end
@@ -158,7 +158,7 @@ function MTSLUI_DATABASE_EXPLORER_FRAME:SwapToHorizontalMode()
     self.skill_detail_frame.ui_frame:SetPoint("TOPLEFT", self.skill_list_frame.ui_frame, "BOTTOMLEFT", 0, 0)
     -- no need to resize the player filter frame, just rehook it (next to detail frame)
     self.player_filter_frame.ui_frame:ClearAllPoints()
-    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_list_filter_frame.ui_frame, "TOPRIGHT", 0, 2)
+    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.skill_list_filter_frame.ui_frame, "TOPRIGHT", 0, 0)
 
     self.player_list_frame:ResizeToHorizontalMode()
 end

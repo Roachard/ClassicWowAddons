@@ -21,23 +21,29 @@ Options menu (/mtsl or /mtsl config or /mtsl options)
 ![alt text](https://media.forgecdn.net/attachments/265/541/mtsl_options.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
+
   * Add lines to tooltips for recipes to show if chars who know the skill can learn it or not (skip learned ones though)
   * Translations for the special actions for certain skills  
 
 ### Known Bugs
+
 1: Not all trainer skills have the correct minimum skill required or price  
-3: Reputation required not yet shown for items
-5: World drops currently left out when filtering on specific zone for drops (mob range check not yet in place)
+3: Reputation required not yet shown for items  
+5: World drops currently left out when filtering on specific zone for drops (mob range check not yet in place)  
 
 ### Fixed Issues
+
 2: When a skill has multiple sources, the secondary source is not always shown correctly  
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
 ### Latest version 
-v1.13.20&nbsp;&nbsp;&nbsp;&nbsp;Fixed wrong translations  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some lua errrors  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TradeSkillFrame & CraftFrame are now draggable  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added menu option to hook MTSL button left or right on TradeSkillFrame/CraftFrame  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for SkilletFrame for CraftFrame as well  
+v1.13.21&nbsp;&nbsp;&nbsp;&nbsp;Added specializations to spells (Blacksmithing, Engineering & Leatherworking)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some engineering recipes  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug with lower trained ranks still shown in list  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Only hooked MTSL to SkilletFrame if also used/visible  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default selected current character in mtsl options screen  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replaced sort option by level/name by option to search by (partial) name  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added filter option for source type of skill (Trainer, Quest, Vendor, Drop, Object)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added filter option for specializations  
 
 [Full Version History](VERSION_HISTORY.md)

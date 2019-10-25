@@ -136,7 +136,7 @@ MTSL_TOOLS = {
 	--
 	-- returns		Object		The item with the corresponding id or nil if not found
 	----------------------------------------------------------------------------------------------------------
-	GetItemFromNamedListByIdex = function(self, list, index)
+	GetItemFromNamedListByIndex = function(self, list, index)
 		local i = 1
 
 		if list ~= nil then

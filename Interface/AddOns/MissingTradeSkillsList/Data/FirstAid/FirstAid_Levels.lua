@@ -34,6 +34,7 @@ MTSL_DATA["First Aid"]["levels"] = {
 		["min_skill"] = 0,
 		["id"] = 3273,
 		["max_skill"] = 75,
+		["rank"] = 1,
 	}, -- [1]
 	{
 		["trainers"] = {
@@ -67,6 +68,7 @@ MTSL_DATA["First Aid"]["levels"] = {
 		["min_skill"] = 50,
 		["id"] = 3274,
 		["max_skill"] = 150,
+		["rank"] = 2,
 	}, -- [2]
 	{
 		["name"] = {
@@ -82,6 +84,7 @@ MTSL_DATA["First Aid"]["levels"] = {
 		["min_skill"] = 125,
 		["id"] = 7924,
 		["max_skill"] = 225,
+		["rank"] = 3,
 		["item"] = 16084,
 	}, -- [3]
 	{
@@ -103,5 +106,6 @@ MTSL_DATA["First Aid"]["levels"] = {
 			6624, -- [2]
 		},
 		["max_skill"] = 300,
+		["rank"] = 4,
 	}, -- [4]
 }

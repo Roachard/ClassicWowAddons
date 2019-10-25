@@ -12,6 +12,7 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         min_skill = {},
         requires_xp = {},
         requires_rep = {},
+        requires_spec = {},
         special_action = {},
         price = {},
         type = {},
@@ -34,15 +35,15 @@ MTSLUI_SKILL_DETAIL_FRAME = {
     -- width of the frame
     FRAME_WIDTH = 515,
     -- height of the frame
-    FRAME_HEIGHT = 424,
+    FRAME_HEIGHT = 440,
     -- height of the primary sources frame
     FRAME_SOURCES_HEIGHT = 305,
     -- shows up to 17 sources
     MAX_SOURCES_SHOWN_PRIMARY = 19,
     -- height of the frame with alternative source
-    FRAME_ALT_SOURCES_HEIGHT = 120,
+    FRAME_ALT_SOURCES_HEIGHT = 135,
     -- shows up to 7 alternative sources
-    MAX_SOURCES_SHOWN_SECONDARY = 7,
+    MAX_SOURCES_SHOWN_SECONDARY = 8,
     -- save the texts for the tooltips
     tooltip_skill_name,
     tooltip_source_name,
@@ -85,6 +86,10 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         -- Labels to show "Required reputation: <reputation>"
         self.labels.requires_rep.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs reputation"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
         self.labels.requires_rep.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        text_label_top = text_label_top - text_gap
+        -- Labels to show "Required reputation: <reputation>"
+        self.labels.requires_spec.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs specialization"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.requires_spec.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Special action <special action>"
         self.labels.special_action.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["special action"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
@@ -265,12 +270,8 @@ MTSLUI_SKILL_DETAIL_FRAME = {
             -- Set minimum xp level
             self:SetRequiredXPLevel(skill.min_xp_level, current_xp_level)
             self:SetRequiredReputationWithFaction(skill.reputation)
-            -- if special action is required
-            if skill.special_action ~= nil then
-                self.labels.special_action.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. skill.special_action["English"])
-            else
-                self.labels.special_action.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
-            end
+            self:SetRequiredSpecialization(profession_name, skill.specialization)
+            self:SetRequiredSpecialAction(skill.special_action)
             -- clear the price
             self.labels.price.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
 
@@ -362,6 +363,44 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         end
     end,
 
+    ----------------------------------------------------------------------------
+    -- Show the details of a specialization required for the skill
+    --
+    -- @profession_name         String      The name of the profession
+    -- @rspecialisation 	    Number      The number of the specialisation
+    ----------------------------------------------------------------------------
+    SetRequiredSpecialization = function(self, profession_name, specialization)
+        -- Check if require specialization to acquire
+        if specialization ~= nil and specialization > 0 then
+            local name_spec = MTSL_LOGIC_PROFESSION:GetNameSpecialization(profession_name, specialization)
+            -- global database so show neutral color
+            if current_xp_level == nil or current_xp_level <= 0 then
+                self.labels.requires_spec.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.ALL .. name_spec)
+            -- check if player knows the specialisation by using its spellid
+            elseif IsSpellKnown(specialization) then
+                self.labels.requires_spec.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.YES .. name_spec)
+            else
+                self.labels.requires_spec.value:SetText(MTSLUI_FONTS.COLORS.AVAILABLE.NO .. name_spec)
+            end
+        else
+            self.labels.requires_spec.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
+        end
+    end,
+
+    ----------------------------------------------------------------------------
+    -- Show the details of a special action required for the skill
+    --
+    -- @special_action         String      The special actiion
+    ----------------------------------------------------------------------------
+    SetRequiredSpecialAction = function(self, special_action)
+        -- if special action is required
+        if special_action ~= nil then
+            self.labels.special_action.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. special_action["English"])
+        else
+            self.labels.special_action.value:SetText(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. "-")
+        end
+    end,
+
     ---------------------------------------------------------------------------------------------------
     -- Show the details of a skill learned from trainer
     --
@@ -384,8 +423,10 @@ MTSLUI_SKILL_DETAIL_FRAME = {
     ---------------------------------------------------------------------------------------------------------
     -- Show the details of a skill learned from quest
     --
-    -- @quest_id				number	The id of the quest to show
-    -- @is_alternative_source	number	Indicates if quest is primary (=0) or secondary (=1) source for skill
+    -- @quest_id				Number	    The id of the quest to show
+    -- @profession_name         String      The name of the profession
+    -- @current_xp_level        Number      The current XP level of the player
+    -- @is_alternative_source	Number	    Indicates if quest is primary (=0) or secondary (=1) source for skill
     ----------------------------------------------------------------------------------------------------------
     ShowDetailsOfSkillTypeQuest = function(self, quest_ids, profession_name, current_xp_level, is_alternative_source)
         if is_alternative_source == 1 then

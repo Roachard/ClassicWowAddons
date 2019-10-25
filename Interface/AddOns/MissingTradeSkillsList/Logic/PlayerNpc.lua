@@ -56,7 +56,7 @@ MTSL_LOGIC_PLAYER_NPC = {
             table.sort(MTSL_PLAYERS, function(a, b) return a < b end)
             table.sort(MTSL_PLAYERS[realm], function(a, b) return a.name < b.name end)
         elseif MTSLUI_SAVED_VARIABLES:GetShowWelcomeMessage() == 1 then
-            print(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. "MTSL: Player " .. current_player.NAME .. " (" .. current_player.XP_LEVEL .. ", " .. current_player.FACTION .. ") on " .. current_player.REALM .. " loaded")
+            print(MTSLUI_FONTS.COLORS.TEXT.SUCCESS .. "MTSL: " .. current_player.NAME .. " (" .. current_player.XP_LEVEL .. ", " .. current_player.FACTION .. ") on " .. current_player.REALM .. " loaded")
         end
         -- set the loaded or created player as current one
         MTSL_CURRENT_PLAYER = current_player
@@ -104,6 +104,22 @@ MTSL_LOGIC_PLAYER_NPC = {
         end
         return nil
     end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Check if player exists in saved date
+    --
+    -- @name    String      The name of the player
+    -- @realm	String 		The name of the realm
+    --
+    -- returns 	Number		The number of chars on that realm
+    ------------------------------------------------------------------------------------------------
+    PlayerExists = function (self, name, realm)
+        if MTSL_PLAYERS[realm] ~= nil and MTSL_PLAYERS[realm][name] ~= nil then
+            return true
+        end
+        return false
+    end,
+
 
     ------------------------------------------------------------------------------------------------
     -- Returns the amount of missing skills of a player for a profession
@@ -313,14 +329,16 @@ MTSL_LOGIC_PLAYER_NPC = {
     --
     -- @profession_name         String      The name of the profession to scan
     -- @current_skill_level     Number      The number of the current skill level of the player
+    -- @max_level               Number      Maximum number of skilllevel that can be achieved for current rank
     ------------------------------------------------------------------------------------------------
-    UpdateMissingSkillsForProfessionCurrentPlayer = function(self, profession_name, current_skill_level)
+    UpdateMissingSkillsForProfessionCurrentPlayer = function(self, profession_name, current_skill_level, max_level)
         -- Reset any previously saved skills
         MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name] = {
             ["NAME"] = profession_name,
             ["AMOUNT_MISSING"] = 0,
             ["SKILL_LEVEL"] = current_skill_level,
             ["SPELLID_HIGHEST_KNOWN_RANK"] = 0,
+            ["HIGHEST_KNOWN_RANK"] = 0,
             ["AMOUNT_LEARNED"] = 0,
             ["MISSING_SKILLS"] = {},
             ["LEARNED_SKILLS"] = {},
@@ -350,30 +368,29 @@ MTSL_LOGIC_PLAYER_NPC = {
             end
         end
 
-        self:UpdateMissingLevelsForProfessionCurrentPlayer(profession_name)
+        self:UpdateMissingLevelsForProfessionCurrentPlayer(profession_name, max_level)
     end,
 
     ------------------------------------------------------------------------------------------------
     -- Refresh the list of missing skills for a profession for the current player
     --
     -- @profession_name         String      The name of the profession to scan
-    -- @current_skill_level     Number      The number of the current skill level of the player
+    -- @max_level               Number      Maximum number of skilllevel that can be achieved for current rank
     ------------------------------------------------------------------------------------------------
-    UpdateMissingLevelsForProfessionCurrentPlayer = function(self, profession_name)
+    UpdateMissingLevelsForProfessionCurrentPlayer = function(self, profession_name, max_level)
+        -- Get the current trained max based on max_level for the player for the profession
+        local learned_rank = MTSL_LOGIC_PROFESSION:GetRankForProfessionByMaxLevel(profession_name, max_level)
+        MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name]["HIGHEST_KNOWN_RANK"] = learned_rank
         -- add all the missing levels to the array of skills as well and increase counter
         local level_ids = MTSL_LOGIC_PROFESSION:GetLevelsForProfession(profession_name)
 
-        local found_first_learned = false
-
+        -- loop all level ranks
         for _, v in pairs(level_ids) do
-            -- Only returns true for highest level so until we found it add lesser ranks as learned as well
-            if IsSpellKnown(v.id) or found_first_learned == false then
+            if v.rank <= learned_rank then
                 table.insert(MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].LEARNED_SKILLS, v.id)
                 MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED = MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED + 1
-                MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].SPELLID_HIGHEST_KNOWN_RANK = v.id
-                -- all other "not known spells" are not learned
-                if found_first_learned == false then
-                    found_first_learned = true
+                if v.rank == learned_rank then
+                    MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].SPELLID_HIGHEST_KNOWN_RANK = v.id
                 end
             else
                 table.insert(MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].MISSING_SKILLS, v.id)

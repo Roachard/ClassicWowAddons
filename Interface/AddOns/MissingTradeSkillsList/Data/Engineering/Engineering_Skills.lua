@@ -1445,7 +1445,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 	}, -- [56]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -1464,6 +1464,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Rocket Boots",
 		},
 		["id"] = 8895,
+		["specialization"] = 20222,
 	}, -- [57]
 	{
 		["phase"] = 1,
@@ -2013,7 +2014,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 	}, -- [84]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2032,10 +2033,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Rocket Fuel Recipe",
 		},
 		["id"] = 12715,
+		["specialization"] = 20222,
 	}, -- [85]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2053,10 +2055,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Mortar",
 		},
 		["id"] = 12716,
+		["specialization"] = 20222,
 	}, -- [86]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2075,10 +2078,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Mining Helmet",
 		},
 		["id"] = 12717,
+		["specialization"] = 20222,
 	}, -- [87]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2097,47 +2101,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Construction Helmet",
 		},
 		["id"] = 12718,
+		["specialization"] = 20222,
 	}, -- [88]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				1702, -- [1]
-				2857, -- [2]
-				3290, -- [3]
-				3412, -- [4]
-				3494, -- [5]
-				4586, -- [6]
-				5174, -- [7]
-				5518, -- [8]
-				8736, -- [9]
-				10993, -- [10]
-				11017, -- [11]
-				11025, -- [12]
-				11026, -- [13]
-				11028, -- [14]
-				11029, -- [15]
-				11031, -- [16]
-				11037, -- [17]
-			},
-			["price"] = 0,
-		},
-		["name"] = {
-			["Russian"] = "Гоблинское радио",
-			["Portuguese"] = "Rádio Goblínico",
-			["Chinese"] = "地精无线电",
-			["Spanish"] = "Radio goblin",
-			["French"] = "Radio des gobelins",
-			["German"] = "Goblin-Radio",
-			["Korean"] = "고블린 라디오",
-			["English"] = "Goblin Radio",
-		},
-		["id"] = 12722,
-	}, -- [89]
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2156,10 +2124,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "The Big One",
 		},
 		["id"] = 12754,
+		["specialization"] = 20222,
 	}, -- [90]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2178,10 +2147,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Bomb Dispenser",
 		},
 		["id"] = 12755,
+		["specialization"] = 20222,
 	}, -- [91]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 235,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2200,10 +2170,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Rocket Helmet",
 		},
 		["id"] = 12758,
+		["specialization"] = 20222,
 	}, -- [92]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 240,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2222,10 +2193,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Death Ray",
 		},
 		["id"] = 12759,
+		["specialization"] = 20219,
 	}, -- [93]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2244,10 +2216,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Sapper Charge",
 		},
 		["id"] = 12760,
+		["specialization"] = 20222,
 	}, -- [94]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2267,10 +2240,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Inlaid Mithril Cylinder Plans",
 		},
 		["id"] = 12895,
+		["specialization"] = 20219,
 	}, -- [95]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2289,10 +2263,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Goggles",
 		},
 		["id"] = 12897,
+		["specialization"] = 20219,
 	}, -- [96]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2311,47 +2286,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Shrink Ray",
 		},
 		["id"] = 12899,
+		["specialization"] = 20219,
 	}, -- [97]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				1702, -- [1]
-				2857, -- [2]
-				3290, -- [3]
-				3412, -- [4]
-				3494, -- [5]
-				4586, -- [6]
-				5174, -- [7]
-				5518, -- [8]
-				8736, -- [9]
-				10993, -- [10]
-				11017, -- [11]
-				11025, -- [12]
-				11026, -- [13]
-				11028, -- [14]
-				11029, -- [15]
-				11031, -- [16]
-				11037, -- [17]
-			},
-			["price"] = 0,
-		},
-		["name"] = {
-			["Russian"] = "Передвижная сирена",
-			["Portuguese"] = "Alarme Móvel",
-			["Chinese"] = "移动警报器",
-			["Spanish"] = "Alarma móvil",
-			["French"] = "Alarme mobile",
-			["German"] = "Mobiler Alarm",
-			["Korean"] = "휴대용 경보기",
-			["English"] = "Mobile Alarm",
-		},
-		["id"] = 12900,
-	}, -- [98]
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2370,10 +2309,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Net-o-Matic Projector",
 		},
 		["id"] = 12902,
+		["specialization"] = 20219,
 	}, -- [99]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 215,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2392,47 +2332,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Harm Prevention Belt",
 		},
 		["id"] = 12903,
+		["specialization"] = 20219,
 	}, -- [100]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				1702, -- [1]
-				2857, -- [2]
-				3290, -- [3]
-				3412, -- [4]
-				3494, -- [5]
-				4586, -- [6]
-				5174, -- [7]
-				5518, -- [8]
-				8736, -- [9]
-				10993, -- [10]
-				11017, -- [11]
-				11025, -- [12]
-				11026, -- [13]
-				11028, -- [14]
-				11029, -- [15]
-				11031, -- [16]
-				11037, -- [17]
-			},
-			["price"] = 0,
-		},
-		["name"] = {
-			["Russian"] = "Любительское радио гномов",
-			["Portuguese"] = "Radioamador Gnômico",
-			["Chinese"] = "侏儒业余无线电",
-			["Spanish"] = "Radio gnoma",
-			["French"] = "Petite radio gnome",
-			["German"] = "Gnomen-Amateurradio",
-			["Korean"] = "노움 무전기",
-			["English"] = "Gnomish Ham Radio",
-		},
-		["id"] = 12904,
-	}, -- [101]
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2451,10 +2355,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Rocket Boots",
 		},
 		["id"] = 12905,
+		["specialization"] = 20219,
 	}, -- [102]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2473,10 +2378,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Battle Chicken",
 		},
 		["id"] = 12906,
+		["specialization"] = 20219,
 	}, -- [103]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 215,
 		["trainers"] = {
 			["sources"] = {
 				7406, -- [1]
@@ -2495,10 +2401,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Gnomish Mind Control Cap",
 		},
 		["id"] = 12907,
+		["specialization"] = 20219,
 	}, -- [104]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 240,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2517,10 +2424,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Goblin Dragon Gun",
 		},
 		["id"] = 12908,
+		["specialization"] = 20222,
 	}, -- [105]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
 				8126, -- [1]
@@ -2538,6 +2446,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "The Mortar: Reloaded",
 		},
 		["id"] = 13240,
+		["specialization"] = 20222,
 	}, -- [106]
 	{
 		["phase"] = 1,
@@ -2577,6 +2486,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Pet Bombling",
 		},
 		["id"] = 15628,
+		["specialization"] = 20222,
 	}, -- [108]
 	{
 		["phase"] = 1,
@@ -2593,6 +2503,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Lil' Smoky",
 		},
 		["id"] = 15633,
+		["specialization"] = 20219,
 	}, -- [109]
 	{
 		["phase"] = 1,
@@ -2639,13 +2550,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 	{
 		["phase"] = 1,
 		["id"] = 19790,
-		["trainers"] = {
-			["sources"] = {
-				8736, -- [1]
-			},
-			["price"] = 9000,
-		},
-		["item"] = 8736,
+		["item"] = 16041,
 		["name"] = {
 			["Russian"] = "Ториевая граната",
 			["Portuguese"] = "Granada de Tório",
@@ -2656,18 +2561,12 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["Korean"] = "토륨 수류탄",
 			["English"] = "Thorium Grenade",
 		},
-		["min_skill"] = 0,
+		["min_skill"] = 260,
 	}, -- [112]
 	{
 		["phase"] = 1,
 		["id"] = 19791,
-		["trainers"] = {
-			["sources"] = {
-				8736, -- [1]
-			},
-			["price"] = 4500,
-		},
-		["item"] = 8736,
+		["item"] = 16042,
 		["name"] = {
 			["Russian"] = "Ториевое устройство",
 			["Portuguese"] = "Treco de Tório",
@@ -2678,7 +2577,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["Korean"] = "토륨 부품",
 			["English"] = "Thorium Widget",
 		},
-		["min_skill"] = 0,
+		["min_skill"] = 260,
 	}, -- [113]
 	{
 		["phase"] = 1,
@@ -3215,10 +3114,11 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "World Enlarger",
 		},
 		["id"] = 23129,
+		["specialization"] = 20219,
 	}, -- [146]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 260,
 		["trainers"] = {
 			["sources"] = {
 				8736, -- [1]
@@ -3236,6 +3136,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Dimensional Ripper - Everlook",
 		},
 		["id"] = 23486,
+		["specialization"] = 20222,
 	}, -- [147]
 	{
 		["phase"] = 1,
@@ -3257,6 +3158,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Ultrasafe Transporter - Gadgetzan",
 		},
 		["id"] = 23489,
+		["specialization"] = 20219,
 	}, -- [148]
 	{
 		["phase"] = 1,
@@ -3550,29 +3452,8 @@ MTSL_DATA["Engineering"]["skills"] = {
 	}, -- [166]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				1702, -- [1]
-				2857, -- [2]
-				3290, -- [3]
-				3412, -- [4]
-				3494, -- [5]
-				4586, -- [6]
-				5174, -- [7]
-				5518, -- [8]
-				8736, -- [9]
-				10993, -- [10]
-				11017, -- [11]
-				11025, -- [12]
-				11026, -- [13]
-				11028, -- [14]
-				11029, -- [15]
-				11031, -- [16]
-				11037, -- [17]
-			},
-			["price"] = 0,
-		},
+		["min_skill"] = 275,
+		["quest"] = 9249,
 		["name"] = {
 			["Russian"] = "Пульт управления паровым танком",
 			["Portuguese"] = "Controlador de Tonque a Vapor",

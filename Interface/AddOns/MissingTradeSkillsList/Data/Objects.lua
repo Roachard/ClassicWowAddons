@@ -18,6 +18,25 @@ MTSL_DATA["objects"] = {
 		["id"] = 164869,
 	}, -- [1]
 	{
+		["zone_id"] = 2557,
+		["phase"] = 1,
+		["id"] = 179501,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"] = {
+			["Portuguese"] = "Esconderijo de Knot Thimblejack",
+			["Russian"] = "Тайник Уззла Наперстяка",
+			["Chinese"] = "[Knot Thimblejack's Cache]",
+			["Spanish"] = "Alijo de Knot Thimblejack",
+			["French"] = "Réserve de Knot Thimblejack",
+			["English"] = "Knot Thimblejack's Cache",
+			["Korean"] = "[Knot Thimblejack's Cache]",
+			["German"] = "Knot Thimblejacks Behälter",
+		},
+	}, -- [2]
+	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
 		["id"] = 180503,

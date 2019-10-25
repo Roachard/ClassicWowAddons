@@ -8,8 +8,8 @@ MTSLUI_LIST_FRAME = {
     -- Keeps the current created frame
     scroll_frame,
     -- Maximum amount of items shown at once
-    MAX_ITEMS_SHOWN_CURRENTLY = 18, -- default mode
-    MAX_ITEMS_SHOWN_VERTICAL = 18,
+    MAX_ITEMS_SHOWN_CURRENTLY = 16, -- default mode
+    MAX_ITEMS_SHOWN_VERTICAL = 16,
     MAX_ITEMS_SHOWN_HORIZONTAL = 7,
     ITEM_HEIGHT = 19,
     -- array holding the buttons of this frame
@@ -27,8 +27,8 @@ MTSLUI_LIST_FRAME = {
     FRAME_WIDTH_VERTICAL = 385,
     FRAME_WIDTH_HORIZONTAL = 515,
     -- height of the frame
-    FRAME_HEIGHT_VERTICAL = 354,
-    FRAME_HEIGHT_HORIZONTAL = 145,
+    FRAME_HEIGHT_VERTICAL = 315,
+    FRAME_HEIGHT_HORIZONTAL = 147,
     -- show all by default
     current_zone = 0,
     -- list of missing skills
@@ -68,7 +68,9 @@ MTSLUI_LIST_FRAME = {
         self.profession_skills = {}
         self.shown_skills = {}
         self.amount_shown_skills = 0
-
+        self.current_specialization = 0
+        self.search_name_skill = ""
+        self.current_source = "any"
         self.player_list_frame = nil
     end,
 
@@ -105,7 +107,7 @@ MTSLUI_LIST_FRAME = {
     UpdateList = function (self, missing_skills)
         self.profession_skills = missing_skills
 
-        self.shown_skills = MTSL_LOGIC_PROFESSION:FilterListOfSkills(self.profession_skills, self.profession_name, self.current_phase, self.current_zone)
+        self.shown_skills = MTSL_LOGIC_PROFESSION:FilterListOfSkills(self.profession_skills, self.profession_name, self.search_name_skill, self.current_source, self.current_specialization, self.current_phase, self.current_zone)
         self.amount_shown_skills = MTSL_TOOLS:CountItemsInArray(self.shown_skills)
 
         -- sort the list
@@ -327,10 +329,30 @@ MTSLUI_LIST_FRAME = {
         -- Only sort if list is not empty
         if self.amount_shown_skills > 0 then
             if self.current_sort == 1 then
-                table.sort(self.shown_skills, function(a, b) return a.min_skill < b.min_skill end)
+                table.sort(self.shown_skills, function(a, b)
+                    if a.min_skill < b.min_skill then
+                        return true
+                    elseif a.min_skill > b.min_skill then
+                        return false
+                    -- equal skill so return alphabetical
+                    else
+                        return a.name[MTSLUI_CURRENT_LANGUAGE] < b.name[MTSLUI_CURRENT_LANGUAGE]
+                    end
+                end)
             else
                 table.sort(self.shown_skills, function(a, b) return a.name[MTSLUI_CURRENT_LANGUAGE] < b.name[MTSLUI_CURRENT_LANGUAGE] end)
             end
+        end
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Change the name of skills searched for
+    ----------------------------------------------------------------------------------------------------------
+    ChangeSearchNameSkill = function(self, new_search_name_skill)
+        -- Only change if new one
+        if self.search_name_skill ~= new_search_name_skill then
+            self.search_name_skill = new_search_name_skill
+            self:RefreshList()
         end
     end,
 
@@ -340,8 +362,29 @@ MTSLUI_LIST_FRAME = {
     ChangeSort = function(self, new_sort)
         -- Only change if new one
         if self.current_sort ~= new_sort then
-            -- extend with zone & phase
             self.current_sort = new_sort
+            self:RefreshList()
+        end
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Change the source for skills shown
+    ----------------------------------------------------------------------------------------------------------
+    ChangeSource = function(self, new_source)
+        -- Only change if new one
+        if self.current_source ~= new_source then
+            self.current_source = new_source
+            self:RefreshList()
+        end
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Change the specialisation of contents shown in the list
+    ----------------------------------------------------------------------------------------------------------
+    ChangeSpecialization = function(self, new_specialization)
+        -- Only change if new one
+        if self.current_specialization ~= new_specialization then
+            self.current_specialization = new_specialization
             self:RefreshList()
         end
     end,
@@ -352,7 +395,6 @@ MTSLUI_LIST_FRAME = {
     ChangeZone = function(self, new_zone)
         -- Only change if new one
         if self.current_zone ~= new_zone then
-            -- extend with zone & phase
             self.current_zone = new_zone
             self:RefreshList()
         end
@@ -364,7 +406,6 @@ MTSLUI_LIST_FRAME = {
     ChangePhase = function(self, new_phase)
         -- Only change if new one
         if self.current_phase ~= new_phase then
-            -- extend with zone & phase
             self.current_phase = new_phase
             self:RefreshList()
         end

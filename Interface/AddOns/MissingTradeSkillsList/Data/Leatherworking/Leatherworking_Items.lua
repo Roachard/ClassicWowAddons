@@ -1893,7 +1893,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["phase"] = 1,
 		["quality"] = "common",
-		["id"] = 15756,
+		["id"] = 12941,
+		["vendors"] = {
+			["sources"] = {
+				12959, -- [1]
+			},
+			["price"] = 25000,
+		},
 	}, -- [90]
 	{
 		["phase"] = 1,
@@ -2463,6 +2469,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "rare",
 		["id"] = 18515,
+		["object"] = 179501
 	}, -- [118]
 	{
 		["phase"] = 2,
@@ -3108,6 +3115,31 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "rare",
 	}, -- [148]
+	{
+		["vendors"] = {
+			["sources"] = {
+				16365, -- [1]
+			},
+			["price"] = 0,
+		},
+		["id"] = 22694,
+		["name"] = {
+			["Russian"] = "Выкройка: снежные перчатки",
+			["Portuguese"] = "Molde: Luvas Polares",
+			["Chinese"] = "图样：北极手套",
+			["Spanish"] = "Patrón: guantes polares",
+			["French"] = "Patron : Gants polaires",
+			["German"] = "Muster: Polarhandschuhe",
+			["Korean"] = "도안: 북극의 장갑",
+			["English"] = "Pattern: Polar Gloves",
+		},
+		["quality"] = "common",
+		["phase"] = 6,
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+	}, -- [149]
 	{
 		["vendors"] = {
 			["sources"] = {

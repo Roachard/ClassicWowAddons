@@ -5,10 +5,10 @@
 MTSLUI_ACCOUNT_EXPLORER_FRAME = MTSL_TOOLS:CopyObject(MTSLUI_BASE_FRAME)
 
 MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_WIDTH_VERTICAL_SPLIT = 1253
-MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_HEIGHT_VERTICAL_SPLIT = 455
+MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_HEIGHT_VERTICAL_SPLIT = 470
 
 MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_WIDTH_HORIZONTAL_SPLIT = 868
-MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_HEIGHT_HORIZONTAL_SPLIT = 670
+MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_HEIGHT_HORIZONTAL_SPLIT = 738
 
 ---------------------------------------------------------------------------------------
 -- Shows the frame
@@ -70,7 +70,7 @@ function MTSLUI_ACCOUNT_EXPLORER_FRAME:CreateCompontentFrames()
     self.player_filter_frame = MTSL_TOOLS:CopyObject(MTSLUI_PLAYER_FILTER_FRAME)
     self.player_filter_frame:Initialise(self.title_frame.ui_frame, "MTSLACCUI_PLAYER_FILTER_FRAME")
     -- position next of the detail frame (in vertical mode)
-    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.title_frame.ui_frame, "BOTTOMLEFT", 4, -11)
+    self.player_filter_frame.ui_frame:SetPoint("TOPLEFT", self.title_frame.ui_frame, "BOTTOMLEFT", 4, -5)
     -- Copy & init the player list frames
     self.player_list_frame = MTSL_TOOLS:CopyObject(MTSLUI_PLAYER_LIST_FRAME)
     self.player_list_frame:Initialise(self.player_filter_frame.ui_frame, "MTSLACCUI_PLAYER_LIST_FRAME")
@@ -85,7 +85,7 @@ function MTSLUI_ACCOUNT_EXPLORER_FRAME:CreateCompontentFrames()
     self.skill_list_filter_frame = MTSL_TOOLS:CopyObject(MTSLUI_FILTER_FRAME)
     self.skill_list_filter_frame:Initialise(self.profession_list_frame.ui_frame, "MTSLACCUI_SKILL_LIST_FILTER_FRAME")
     -- position under TitleFrame and right of ProfessionListFrame
-    self.skill_list_filter_frame.ui_frame:SetPoint("TOPLEFT", self.profession_list_frame.ui_frame, "TOPRIGHT", 1, -12)
+    self.skill_list_filter_frame.ui_frame:SetPoint("TOPLEFT", self.profession_list_frame.ui_frame, "TOPRIGHT", 1, -8)
     -- Copy & init the list frame
     self.skill_list_frame = MTSL_TOOLS:CopyObject(MTSLUI_LIST_FRAME)
     self.skill_list_frame:Initialise(self.skill_list_filter_frame.ui_frame, "MTSLACCUI_SKILL_LIST_FRAME")

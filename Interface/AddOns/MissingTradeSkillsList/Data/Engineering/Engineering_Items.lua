@@ -651,6 +651,50 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 	}, -- [31]
 	{
+		["vendors"] = {
+			["sources"] = {
+				3413, -- [1]
+				5175, -- [2]
+			},
+			["price"] = 10800,
+		},
+		["id"] = 16041,
+		["name"] = {
+			["Russian"] = "Чертеж: ториевая граната",
+			["Portuguese"] = "Diagrama: Granada de Tório",
+			["Chinese"] = "结构图：瑟银手榴弹",
+			["Spanish"] = "Esquema: granada de torio",
+			["French"] = "Schéma : Grenade en thorium",
+			["German"] = "Bauplan: Thoriumgranate",
+			["Korean"] = "설계도: 토륨 수류탄",
+			["English"] = "Schematic: Thorium Grenade",
+		},
+		["quality"] = "common",
+		["phase"] = 1,
+	}, -- [31]
+	{
+		["vendors"] = {
+			["sources"] = {
+				3413, -- [1]
+				5175, -- [2]
+			},
+			["price"] = 10800,
+		},
+		["id"] = 16042,
+		["name"] = {
+			["Russian"] = "Чертеж: ториевое устройство",
+			["Portuguese"] = "Diagrama: Treco de Tório",
+			["Chinese"] = "结构图：瑟银零件",
+			["Spanish"] = "Esquema: trastos wow de torio",
+			["French"] = "Schéma : Rouages en thorium",
+			["German"] = "Bauplan: Thoriumapparat",
+			["Korean"] = "설계도: 토륨 부품",
+			["English"] = "Schematic: Thorium Widget",
+		},
+		["quality"] = "common",
+		["phase"] = 1,
+	}, -- [31]
+	{
 		["phase"] = 1,
 		["id"] = 16043,
 		["drops"] = {

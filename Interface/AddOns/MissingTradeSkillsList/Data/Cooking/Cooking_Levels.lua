@@ -35,6 +35,7 @@ MTSL_DATA["Cooking"]["levels"] = {
 		["min_skill"] = 0,
 		["id"] = 2550,
 		["max_skill"] = 75,
+		["rank"] = 1,
 	}, -- [1]
 	{
 		["trainers"] = {
@@ -69,6 +70,7 @@ MTSL_DATA["Cooking"]["levels"] = {
 		["min_skill"] = 50,
 		["id"] = 3102,
 		["max_skill"] = 150,
+		["rank"] = 2,
 	}, -- [2]
 	{
 		["name"] = {
@@ -84,6 +86,7 @@ MTSL_DATA["Cooking"]["levels"] = {
 		["min_skill"] = 125,
 		["id"] = 3413,
 		["max_skill"] = 225,
+		["rank"] = 3,
 		["item"] = 16072,
 	}, -- [3]
 	{
@@ -104,5 +107,6 @@ MTSL_DATA["Cooking"]["levels"] = {
 			6610, -- [1]
 		},
 		["max_skill"] = 300,
+		["rank"] = 4,
 	}, -- [4]
 }

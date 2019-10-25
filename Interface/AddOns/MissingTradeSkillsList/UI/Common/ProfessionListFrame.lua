@@ -183,6 +183,9 @@ MTSLUI_PROFESSION_LIST_FRAME = {
             else
                 prof_skills = MTSL_LOGIC_PLAYER_NPC:GetLearnedSkillsForPlayerForProfession(self.current_player.NAME, self.current_player.REALM, self.shown_professions[index])
             end
+            if self.filter_frame ~= nil then
+                self.filter_frame:ChangeProfession(self.shown_professions[index])
+            end
             self.list_item_frame:ChangeProfession(self.shown_professions[index], prof_skills)
         end
     end,

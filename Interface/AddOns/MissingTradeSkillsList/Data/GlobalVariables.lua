@@ -29,8 +29,8 @@ MTSL_DATA = {
         ["Mining"] = 16,
         ["First Aid"] = 17,
         ["Cooking"] = 85,
-        ["Engineering"] = 171,
-        ["Leatherworking"] = 239,
+        ["Engineering"] = 168,
+        ["Leatherworking"] = 238,
         ["Enchanting"] = 155,
     },
     -- holds counters for how many skills can be learned up the current content phase (counted using DEV MODe of APP)
@@ -41,8 +41,8 @@ MTSL_DATA = {
         ["Mining"] = 16,
         ["First Aid"] = 17,
         ["Cooking"] = 85,
-        ["Engineering"] = 171,
-        ["Leatherworking"] = 239,
+        ["Engineering"] = 168,
+        ["Leatherworking"] = 238,
         ["Enchanting"] = 137,
     },
 }

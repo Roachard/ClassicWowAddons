@@ -21,8 +21,6 @@ MTSLUI_EVENT_HANDLER = {
 				end
 				-- load the data for the player
 				MTSL_LOGIC_PLAYER_NPC:LoadPlayer()
-				-- update the counters for amount of skills in current phase
-				-- MTSL_TOOLS_DEVELOPER:CountData()
 				-- Try to load the saved variables
 				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- make the data for dropdowns in sort frames
@@ -76,12 +74,12 @@ MTSLUI_EVENT_HANDLER = {
 		if CraftFrame then
 			-- make it drageable
 			MTSLUI_TOOLS:AddDragToFrame(CraftFrame)
-			local localised_profession_name, current_skill_level = GetCraftDisplaySkillLine()
+			local localised_profession_name, current_skill_level, max_level = GetCraftDisplaySkillLine()
 			--Get the English name of the profession
 			local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_profession_name]
 			-- There are other craftframes like (Beast Training) so we only want enchanting
 			if profession_name ~= nil and profession_name == "Enchanting" then
-				self:SwapToProfession(profession_name, current_skill_level)
+				self:SwapToProfession(profession_name, current_skill_level, max_level)
 				MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI()
 			end
 		end
@@ -92,11 +90,11 @@ MTSLUI_EVENT_HANDLER = {
 	---------------------------------------------------------------------------------------
 	CRAFT_UPDATE = function (self)
 		-- only trigger update event if we have the window opened
-		local localised_name, current_skill_level = GetCraftDisplaySkillLine()
+		local localised_name, current_skill_level, max_level = GetCraftDisplaySkillLine()
 		local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_name]
 		-- only trigger event if its a different but supported tradeskill in addon
 		if CraftFrame and profession_name == "Enchanting" then
-			self:RefreshSkills(profession_name, current_skill_level)
+			self:RefreshSkills(profession_name, current_skill_level, max_level)
 		end
 	end,
 		
@@ -104,9 +102,9 @@ MTSLUI_EVENT_HANDLER = {
 	-- Event started when a skill point is gained or unlearned a profession
 	---------------------------------------------------------------------------------------
 	SKILL_LINES_CHANGED = function (self)
-		-- Check if we unlearned a profession (only possbile if SkillFrame is shown and active
-		if SkillFrame and SkillFrame:IsVisible() then
-			MTSL_TOOLS:CheckProfessions()
+		-- Check if we unlearned a profession (only possbile if SkillFrame is shown and active and player exists)
+		if SkillFrame and SkillFrame:IsVisible() and MTSL_LOGIC_PLAYER_NPC:PlayerExists(MTSL_CURRENT_PLAYER.NAME, MTSL_CURRENT_PLAYER.REALM) then
+			MTSL_LOGIC_PLAYER_NPC:CheckProfessions()
 		end
 	end,
 	
@@ -134,11 +132,11 @@ MTSLUI_EVENT_HANDLER = {
 		if TradeSkillFrame then
 			-- make it drageable
 			MTSLUI_TOOLS:AddDragToFrame(TradeSkillFrame)
-			local localised_name, current_skill_level = GetTradeSkillLine()
+			local localised_name, current_skill_level, max_level = GetTradeSkillLine()
 			local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_name]
 			-- only trigger event if its a trade_skill supported by the addon
 			if profession_name ~= nil and profession_name ~= "Poisons" then
-				self:SwapToProfession(profession_name, current_skill_level)
+				self:SwapToProfession(profession_name, current_skill_level, max_level)
 				MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI()
 			end
 		end
@@ -149,11 +147,11 @@ MTSLUI_EVENT_HANDLER = {
 	---------------------------------------------------------------------------------------
 	TRADE_SKILL_UPDATE = function (self)
 		-- only trigger update event if we have the window opened
-		local localised_name, current_skill_level = GetTradeSkillLine()
+		local localised_name, current_skill_level, max_level = GetTradeSkillLine()
 		local profession_name = MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][localised_name]
 		-- only trigger event if its a different but supported tradeskill in addon
 		if TradeSkillFrame and profession_name ~= nil and profession_name ~= "Poisons" then
-			self:RefreshSkills(profession_name, current_skill_level)
+			self:RefreshSkills(profession_name, current_skill_level, max_level)
 		end
 	end,
 
@@ -162,12 +160,13 @@ MTSLUI_EVENT_HANDLER = {
 	--
 	-- @profession_name			String			The name of the profession
 	-- @current_skill_level		Number			The number of the current level of skill of the current player for the profession
+    -- @max_level               Number          Maximum number of skilllevel that can be achieved for current rank
 	---------------------------------------------------------------------------------------
-	RefreshSkills = function(self, profession_name, current_skill_level)
+	RefreshSkills = function(self, profession_name, current_skill_level, max_level)
 		-- save the current amount of missing skills
 		local amount_missing_skills = MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_MISSING
 		-- trigger the show event to refresh the missing list
-		MTSL_LOGIC_PLAYER_NPC:UpdateMissingSkillsForProfessionCurrentPlayer(profession_name, current_skill_level)
+		MTSL_LOGIC_PLAYER_NPC:UpdateMissingSkillsForProfessionCurrentPlayer(profession_name, current_skill_level, max_level)
 		-- only refresh the ui if we the amount missing is lower
 		if amount_missing_skills > MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_MISSING then
 			-- Only refresh the UI if we succesfully updated the skillinfo (this ignores the update with any unsupported profession)
@@ -264,8 +263,9 @@ MTSLUI_EVENT_HANDLER = {
 	--
 	-- @profession_name         String      The name of the profession to scan
 	-- @current_skill_level     Number      The number of the current skill level of the player
+    -- @max_level               Number      Maximum number of skilllevel that can be achieved for current rank
 	---------------------------------------------------------------------------------------
-	SwapToProfession = function(self, profession_name, current_skill_level)
+	SwapToProfession = function(self, profession_name, current_skill_level, max_level)
 		if profession_name == "Enchanting" then
 			self.ui_craft_open = 1
 			MTSLUI_TOGGLE_BUTTON:SwapToCraftMode()
@@ -275,7 +275,7 @@ MTSLUI_EVENT_HANDLER = {
 		end
 		MTSLUI_TOGGLE_BUTTON:Show()
 		-- Update the missing skills for the current player
-		MTSL_LOGIC_PLAYER_NPC:UpdateMissingSkillsForProfessionCurrentPlayer(profession_name, current_skill_level)
+		MTSL_LOGIC_PLAYER_NPC:UpdateMissingSkillsForProfessionCurrentPlayer(profession_name, current_skill_level, max_level)
 		MTSLUI_MISSING_TRADESKILLS_FRAME:SetCurrentProfessionDetails(profession_name, current_skill_level, MTSL_CURRENT_PLAYER.XP_LEVEL)
 		MTSLUI_MISSING_TRADESKILLS_FRAME:NoSkillSelected()
 	end,

@@ -34,6 +34,7 @@ MTSL_DATA["Mining"]["levels"] = {
 		["min_skill"] = 0,
 		["id"] = 2575,
 		["max_skill"] = 75,
+		["rank"] = 1,
 	}, -- [1]
 	{
 		["trainers"] = {
@@ -67,6 +68,7 @@ MTSL_DATA["Mining"]["levels"] = {
 		["min_skill"] = 50,
 		["id"] = 2576,
 		["max_skill"] = 150,
+		["rank"] = 2,
 	}, -- [2]
 	{
 		["trainers"] = {
@@ -100,6 +102,7 @@ MTSL_DATA["Mining"]["levels"] = {
 		["min_skill"] = 125,
 		["id"] = 3564,
 		["max_skill"] = 225,
+		["rank"] = 3,
 	}, -- [3]
 	{
 		["min_xp_level"] = 35,
@@ -134,5 +137,6 @@ MTSL_DATA["Mining"]["levels"] = {
 		["min_skill"] = 200,
 		["id"] = 10248,
 		["max_skill"] = 300,
+		["rank"] = 4,
 	}, -- [4]
 }

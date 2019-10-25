@@ -1550,4 +1550,47 @@ MTSL_DATA["quests"] = {
 			10305, -- [1]
 		},
 	}, -- [86]
+	{
+		["phase"] =6,
+		["id"] = 9236,
+		["min_xp_level"] = 60,
+		["name"] = {
+			["Portuguese"] = "Icebane Breastplate",
+			["Russian"] = "Кираса ледяной погибели",
+			["Chinese"] = "破冰胸甲",
+			["Spanish"] = "La coraza Deliriohelado",
+			["French"] = "La cuirasse plaie-de-glace",
+			["English"] = "Icebane Breastplate",
+			["Korean"] = "[Icebane Breastplate]",
+			["German"] = "Eisfluchbrustplatte",
+		},
+		-- Special reference to Darkmoon faire NPCs
+		["npcs"] = {
+			16376, -- [1]
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+	}, -- [87]
+	{
+		["phase"] = 1,
+		["id"] = 9249,
+		["min_xp_level"] = 45,
+		["name"] = {
+			["Portuguese"] = "40 Cupons – Diagrama: Controlador de Tonque a Vapor",
+			["Russian"] = "40 купонов – пульт управления паровым танком",
+			["Chinese"] = "40张奖券 - 结构图：蒸汽坦克控制器",
+			["Spanish"] = "40 vales: esquema (mando de tonque de vapor)",
+			["French"] = "40 bons - Schéma : Commande de chariotte à vapeur",
+			["English"] = "40 Tickets - Schematic: Steam Tonk Controller",
+			["Korean"] = "상품권 40매 - 설계도: 통통 전차 조종기",
+			["German"] = "40 Lose - Bauplan: Dampfpanzersteuerung",
+		},
+		-- Special reference to Darkmoon faire NPCs
+		["npcs"] = {
+			909909, -- [1]
+			909910, -- [2]
+		},
+	}, -- [87]
 }

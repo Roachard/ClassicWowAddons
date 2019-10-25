@@ -2677,7 +2677,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	}, -- [123]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
 				7868, -- [1]
@@ -2696,6 +2696,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Helm of Fire",
 		},
 		["id"] = 10632,
+		["specialization"] = 10658,
 	}, -- [124]
 	{
 		["phase"] = 1,
@@ -2720,10 +2721,11 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Feathered Breastplate",
 		},
 		["id"] = 10647,
+		["specialization"] = 10660,
 	}, -- [125]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 255,
 		["trainers"] = {
 			["sources"] = {
 				7866, -- [1]
@@ -2742,6 +2744,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dragonscale Breastplate",
 		},
 		["id"] = 10650,
+		["specialization"] = 10656,
 	}, -- [126]
 	{
 		["phase"] = 1,
@@ -2859,6 +2862,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Dragonscale Breastplate",
 		},
 		["id"] = 19050,
+		["specialization"] = 10656,
 	}, -- [132]
 	{
 		["phase"] = 1,
@@ -2907,6 +2911,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chimeric Gloves",
 		},
 		["id"] = 19053,
+		["specialization"] = 10660,
 	}, -- [135]
 	{
 		["phase"] = 1,
@@ -2923,6 +2928,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Red Dragonscale Breastplate",
 		},
 		["id"] = 19054,
+		["specialization"] = 10656,
 	}, -- [136]
 	{
 		["phase"] = 1,
@@ -2978,6 +2984,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Volcanic Leggings",
 		},
 		["id"] = 19059,
+		["specialization"] = 10658,
 	}, -- [139]
 	{
 		["phase"] = 1,
@@ -2994,6 +3001,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Dragonscale Leggings",
 		},
 		["id"] = 19060,
+		["specialization"] = 10656,
 	}, -- [140]
 	{
 		["phase"] = 1,
@@ -3010,6 +3018,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Living Shoulders",
 		},
 		["id"] = 19061,
+		["specialization"] = 10658,
 	}, -- [141]
 	{
 		["phase"] = 1,
@@ -3026,6 +3035,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Ironfeather Shoulders",
 		},
 		["id"] = 19062,
+		["specialization"] = 10660,
 	}, -- [142]
 	{
 		["phase"] = 1,
@@ -3042,6 +3052,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chimeric Boots",
 		},
 		["id"] = 19063,
+		["specialization"] = 10660,
 	}, -- [143]
 	{
 		["phase"] = 1,
@@ -3090,6 +3101,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Frostsaber Boots",
 		},
 		["id"] = 19066,
+		["specialization"] = 10660,
 	}, -- [146]
 	{
 		["phase"] = 1,
@@ -3106,6 +3118,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Stormshroud Pants",
 		},
 		["id"] = 19067,
+		["specialization"] = 10658,
 	}, -- [147]
 	{
 		["phase"] = 1,
@@ -3122,6 +3135,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Warbear Harness",
 		},
 		["id"] = 19068,
+		["specialization"] = 10660,
 	}, -- [148]
 	{
 		["phase"] = 1,
@@ -3186,6 +3200,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chimeric Leggings",
 		},
 		["id"] = 19073,
+		["specialization"] = 10660,
 	}, -- [152]
 	{
 		["phase"] = 1,
@@ -3202,6 +3217,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Frostsaber Leggings",
 		},
 		["id"] = 19074,
+		["specialization"] = 10660,
 	}, -- [153]
 	{
 		["phase"] = 1,
@@ -3250,6 +3266,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Blue Dragonscale Breastplate",
 		},
 		["id"] = 19077,
+		["specialization"] = 10656,
 	}, -- [156]
 	{
 		["phase"] = 1,
@@ -3266,6 +3283,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Living Leggings",
 		},
 		["id"] = 19078,
+		["specialization"] = 10658,
 	}, -- [157]
 	{
 		["phase"] = 1,
@@ -3282,6 +3300,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Stormshroud Armor",
 		},
 		["id"] = 19079,
+		["specialization"] = 10658,
 	}, -- [158]
 	{
 		["phase"] = 1,
@@ -3298,6 +3317,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Warbear Woolies",
 		},
 		["id"] = 19080,
+		["specialization"] = 10660,
 	}, -- [159]
 	{
 		["phase"] = 1,
@@ -3314,6 +3334,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chimeric Vest",
 		},
 		["id"] = 19081,
+		["specialization"] = 10660,
 	}, -- [160]
 	{
 		["phase"] = 1,
@@ -3362,6 +3383,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Devilsaur Gauntlets",
 		},
 		["id"] = 19084,
+		["specialization"] = 10660,
 	}, -- [163]
 	{
 		["phase"] = 1,
@@ -3378,6 +3400,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Dragonscale Breastplate",
 		},
 		["id"] = 19085,
+		["specialization"] = 10656,
 	}, -- [164]
 	{
 		["phase"] = 1,
@@ -3394,6 +3417,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Ironfeather Breastplate",
 		},
 		["id"] = 19086,
+		["specialization"] = 10660,
 	}, -- [165]
 	{
 		["phase"] = 1,
@@ -3410,6 +3434,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Frostsaber Gloves",
 		},
 		["id"] = 19087,
+		["specialization"] = 10660,
 	}, -- [166]
 	{
 		["phase"] = 1,
@@ -3442,6 +3467,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Blue Dragonscale Shoulders",
 		},
 		["id"] = 19089,
+		["specialization"] = 10656,
 	}, -- [168]
 	{
 		["phase"] = 1,
@@ -3458,6 +3484,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Stormshroud Shoulders",
 		},
 		["id"] = 19090,
+		["specialization"] = 10658,
 	}, -- [169]
 	{
 		["phase"] = 1,
@@ -3525,6 +3552,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Dragonscale Shoulders",
 		},
 		["id"] = 19094,
+		["specialization"] = 10656,
 	}, -- [173]
 	{
 		["phase"] = 1,
@@ -3541,6 +3569,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Living Breastplate",
 		},
 		["id"] = 19095,
+		["specialization"] = 10658,
 	}, -- [174]
 	{
 		["phase"] = 1,
@@ -3557,6 +3586,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Devilsaur Leggings",
 		},
 		["id"] = 19097,
+		["specialization"] = 10660,
 	}, -- [175]
 	{
 		["phase"] = 1,
@@ -3605,6 +3635,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Volcanic Shoulders",
 		},
 		["id"] = 19101,
+		["specialization"] = 10658,
 	}, -- [178]
 	{
 		["phase"] = 1,
@@ -3653,43 +3684,8 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Frostsaber Tunic",
 		},
 		["id"] = 19104,
-	}, -- [181]
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
-			},
-			["price"] = 0,
-		},
-		["name"] = {
-			["Russian"] = "Кираса из чешуи Ониксии",
-			["Portuguese"] = "Peitoral de Escama da Onyxia",
-			["Chinese"] = "奥妮克希亚鳞片胸甲",
-			["Spanish"] = "Peto de escamas Onyxia",
-			["French"] = "Cuirasse en écailles d'Onyxia",
-			["German"] = "Onyxiaschuppenbrustplatte",
-			["Korean"] = "오닉시아 비늘 흉갑",
-			["English"] = "Onyxia Scale Breastplate",
-		},
-		["id"] = 19106,
-	}, -- [182]
+		["specialization"] = 10660,
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3705,6 +3701,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Dragonscale Leggings",
 		},
 		["id"] = 19107,
+		["specialization"] = 10656,
 	}, -- [183]
 	{
 		["phase"] = 1,
@@ -3795,6 +3792,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Corehound Boots",
 		},
 		["id"] = 20853,
+		["specialization"] = 10660,
 	}, -- [187]
 	{
 		["phase"] = 1,
@@ -3811,6 +3809,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Molten Helm",
 		},
 		["id"] = 20854,
+		["specialization"] = 10658,
 	}, -- [188]
 	{
 		["phase"] = 1,
@@ -3827,6 +3826,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Dragonscale Boots",
 		},
 		["id"] = 20855,
+		["specialization"] = 10656,
 	}, -- [189]
 	{
 		["phase"] = 1,
@@ -3982,6 +3982,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chromatic Cloak",
 		},
 		["id"] = 22926,
+		["specialization"] = 10656,
 	}, -- [198]
 	{
 		["phase"] = 1,
@@ -3998,6 +3999,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hide of the Wild",
 		},
 		["id"] = 22927,
+		["specialization"] = 10660,
 	}, -- [199]
 	{
 		["phase"] = 1,
@@ -4142,6 +4144,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Chromatic Gauntlets",
 		},
 		["id"] = 23708,
+		["specialization"] = 10656,
 	}, -- [208]
 	{
 		["phase"] = 1,
@@ -4158,6 +4161,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Corehound Belt",
 		},
 		["id"] = 23709,
+		["specialization"] = 10660,
 	}, -- [209]
 	{
 		["phase"] = 1,
@@ -4174,6 +4178,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Molten Belt",
 		},
 		["id"] = 23710,
+		["specialization"] = 10658,
 	}, -- [210]
 	{
 		["phase"] = 1,
@@ -4257,7 +4262,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	}, -- [215]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
 				7866, -- [1]
@@ -4276,10 +4281,11 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Blue Dragonscale Leggings",
 		},
 		["id"] = 24654,
+		["specialization"] = 10656,
 	}, -- [216]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 280,
 		["trainers"] = {
 			["sources"] = {
 				7866, -- [1]
@@ -4298,6 +4304,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Dragonscale Gauntlets",
 		},
 		["id"] = 24655,
+		["specialization"] = 10656,
 	}, -- [217]
 	{
 		["phase"] = 1,
@@ -4314,6 +4321,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dreamscale Breastplate",
 		},
 		["id"] = 24703,
+		["specialization"] = 10656,
 	}, -- [218]
 	{
 		["phase"] = 1,
@@ -4442,6 +4450,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Stormshroud Gloves",
 		},
 		["id"] = 26279,
+		["specialization"] = 10658,
 	}, -- [226]
 	{
 		["phase"] = 1,
@@ -4482,27 +4491,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
-			},
-			["price"] = 0,
-		},
+		["item"] = 22694,
 		["name"] = {
 			["Russian"] = "Снежные перчатки",
 			["Portuguese"] = "Luvas Polares",

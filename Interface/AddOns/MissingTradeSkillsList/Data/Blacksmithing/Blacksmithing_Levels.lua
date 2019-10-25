@@ -38,6 +38,7 @@ MTSL_DATA["Blacksmithing"]["levels"] = {
 		["min_skill"] = 0,
 		["id"] = 2018,
 		["max_skill"] = 75,
+		["rank"] = 1,
 		["min_xp_level"] = 5,
 	}, -- [1]
 	{
@@ -69,6 +70,7 @@ MTSL_DATA["Blacksmithing"]["levels"] = {
 		["min_skill"] = 50,
 		["id"] = 3100,
 		["max_skill"] = 150,
+		["rank"] = 2,
 	}, -- [2]
 	{
 		["trainers"] = {
@@ -92,6 +94,7 @@ MTSL_DATA["Blacksmithing"]["levels"] = {
 		["min_skill"] = 125,
 		["id"] = 3538,
 		["max_skill"] = 225,
+		["rank"] = 3,
 	}, -- [3]
 	{
 		["min_xp_level"] = 35,
@@ -114,5 +117,6 @@ MTSL_DATA["Blacksmithing"]["levels"] = {
 		["min_skill"] = 200,
 		["id"] = 9785,
 		["max_skill"] = 300,
+		["rank"] = 4,
 	}, -- [4]
 }

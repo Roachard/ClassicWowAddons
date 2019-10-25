@@ -8,9 +8,9 @@ MTSLUI_PLAYER_LIST_FRAME = {
     -- Keeps the current created frame
     scroll_frame,
     -- Maximum amount of items shown at once
-    MAX_ITEMS_SHOWN_CURRENTLY = 18, -- default mode
-    MAX_ITEMS_SHOWN_VERTICAL = 18,
-    MAX_ITEMS_SHOWN_HORIZONTAL = 29,
+    MAX_ITEMS_SHOWN_CURRENTLY = 19, -- default mode
+    MAX_ITEMS_SHOWN_VERTICAL = 19,
+    MAX_ITEMS_SHOWN_HORIZONTAL = 33,
     ITEM_HEIGHT = 19,
     -- array holding the buttons of this frame
     LIST_BUITTONS,
@@ -26,8 +26,8 @@ MTSLUI_PLAYER_LIST_FRAME = {
     -- width of the frame
     FRAME_WIDTH = 300,
     -- height of the frame
-    FRAME_HEIGHT_VERTICAL = 354,
-    FRAME_HEIGHT_HORIZONTAL = 570,
+    FRAME_HEIGHT_VERTICAL = 375,
+    FRAME_HEIGHT_HORIZONTAL = 645,
     -- show all by default
     current_zone = 0,
 
@@ -199,7 +199,7 @@ MTSLUI_PLAYER_LIST_FRAME = {
                 self.selected_button_index = id
                 self:SelectCurrentPlayerButton()
                 -- Show the information of the selected player
-                local selected_player = MTSL_TOOLS:GetItemFromNamedListByIdex(self.shown_players, self.selected_list_item_index)
+                local selected_player = MTSL_TOOLS:GetItemFromNamedListByIndex(self.shown_players, self.selected_list_item_index)
                 if selected_player ~= nil and self.profession_list_frame ~= nil then
                     self.selected_list_item_id = id
                     -- cant select item so deselect details

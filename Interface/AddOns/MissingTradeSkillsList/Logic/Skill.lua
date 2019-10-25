@@ -223,4 +223,68 @@ MTSL_LOGIC_SKILL = {
         end
         return skill
     end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Returns a list of source types for a skill for a certain profession by id
+    --
+    -- @skill_id		    Number		The id of the skill
+    -- @profession_name		String		Name of the profession
+    --
+    -- returns	 		    Array		The sourcetypes
+    ------------------------------------------------------------------------------------------------
+    GetSourcesForSkillForProfessionById = function(self, skill_id, profession_name)
+        local source_types = {}
+        local skill = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA[profession_name]["skills"], "id", skill_id)
+        -- try a level if nil
+        if skill == nil then
+            skill = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA[profession_name]["levels"], "id", skill_id)
+        end
+        if skill ~= nil then
+            -- try types on skill itself
+            if skill.trainers ~= nil then
+                table.insert(source_types, "trainer")
+            end
+            if skill.quests ~= nil then
+                table.insert(source_types, "quest")
+            end
+            -- if learned from item, determine the source types based on the item source
+            if skill.item ~= nil then
+                local item = MTSL_LOGIC_ITEM_OBJECT:GetItemForProfessionById(skill.item, profession_name)
+                if item ~= nil then
+                    if item.vendors ~= nil then
+                        table.insert(source_types, "vendor")
+                    end
+                    if item.quests ~= nil then
+                        table.insert(source_types, "quest")
+                    end
+                    if item.drops ~= nil then
+                        table.insert(source_types, "drop")
+                    end
+                end
+            end
+            -- if we learned from object
+            if skill.object ~= nil then
+                table.insert(source_types, "object")
+            end
+        end
+
+        return source_types
+    end,
+
+    ----------------------------------------------------------------------------------------
+    -- Checks if at skill is avaiable through a source type
+    --
+    -- @skill_id		    Number		The id of the skill
+    -- @profession_name		String		Name of the profession
+    -- @source_type         String      The type of source want
+    --
+    -- return				Boolean		Flag indicating obtainable
+    -----------------------------------------------------------------------------------------
+    IsAvailableForSourceType = function(self, skill_id, profession_name, source_type)
+        local source_types = self:GetSourcesForSkillForProfessionById(skill_id, profession_name)
+        if MTSL_TOOLS:CountItemsInArray(source_types) <= 0 then
+            print(skill_id .. " - " .. profession_name .. " has 0 sources")
+        end
+        return MTSL_TOOLS:ListContainsKey(source_types, source_type)
+    end,
 }

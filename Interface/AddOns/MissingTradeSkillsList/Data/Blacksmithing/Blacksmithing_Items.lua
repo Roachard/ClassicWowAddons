@@ -3059,6 +3059,22 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["quality"] = "epic",
 	}, -- [153]
 	{
+		["quest"] = 9236,
+		["id"] = 22703,
+		["name"] = {
+			["Russian"] = "Чертеж: кираса Ледяной погибели",
+			["Portuguese"] = "Instruções: Peitoral da Perdição Gélida",
+			["Chinese"] = "图样：破冰胸甲",
+			["Spanish"] = "Diseño: coraza Deliriohelado",
+			["French"] = "Plans : Cuirasse plaie-de-glace",
+			["German"] = "Muster: Eisfluchbrustplatte",
+			["Korean"] = "도면: 얼음막이 흉갑",
+			["English"] = "Plans: Icebane Breastplate",
+		},
+		["quality"] = "common",
+		["phase"] = 6,
+	}, -- [154]
+	{
 		["vendors"] = {
 			["sources"] = {
 				15176, -- [1]
