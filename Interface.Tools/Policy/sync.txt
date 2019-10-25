@@ -21,10 +21,12 @@ BigFootBar
 BigFootBot
 BubbleChat
 ChannelFilter
+CharacterStatsClassic
 ClassicAuraDurations
 ClassicCastbars
 ClassicCastbars_Options
 ClassicCodex
+ClassicThreatMeter
 Clique
 CombatIndicator
 CoolLine
@@ -49,6 +51,7 @@ dct_spellAlert
 Decursive
 EventAlertMod
 Ex_AutoEquip
+GDKP
 HandyNotes
 HandyNotes_NPCs (Classic)
 HunterAssist
