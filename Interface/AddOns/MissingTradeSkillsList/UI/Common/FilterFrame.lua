@@ -53,7 +53,7 @@ MTSLUI_FILTER_FRAME = {
         -- create the container frame
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", parent_frame, nil, self.FRAME_WIDTH_VERTICAL, self.FRAME_HEIGHT, false)
         -- create a filter for sorting
-       -- self.ui_frame.sort_by_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["sort"][MTSLUI_CURRENT_LANGUAGE], 5, -4, "NORMAL", "TOPLEFT")
+       -- self.ui_frame.sort_by_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["sort"][MTSLUI_CURRENT_LANGUAGE], 5, -4, "LABEL", "TOPLEFT")
        -- self.ui_frame.sort_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_SORTS", self.ui_frame, "UIDropDownMenuTemplate")
        -- self.ui_frame.sort_drop_down:SetPoint("TOPLEFT", self.ui_frame.sort_by_text, "TOPRIGHT", -10, 9)
        -- self.ui_frame.sort_drop_down.filter_frame_name = filter_frame_name
@@ -86,7 +86,7 @@ MTSLUI_FILTER_FRAME = {
         self.ui_frame.search_btn:SetText(MTSLUI_LOCALES_LABELS["search"][MTSLUI_CURRENT_LANGUAGE])
         self.ui_frame.search_btn:SetScript("OnClick", function() _G[filter_frame_name]:SearchRecipes() end)
         -- create a filter for source type
-        self.ui_frame.source_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE], 5, -34, "NORMAL", "TOPLEFT")
+        self.ui_frame.source_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE], 5, -34, "LABEL", "TOPLEFT")
         self.ui_frame.source_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_SOURCES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.source_drop_down.filter_frame_name = filter_frame_name
         self.ui_frame.source_drop_down.initialize = self.CreateDropDownSources
@@ -95,21 +95,21 @@ MTSLUI_FILTER_FRAME = {
         -- default select the "current" phase
         self.current_phase = MTSL_CURRENT_PHASE
         -- create a filter for content phase
-        self.ui_frame.phase_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["phase"][MTSLUI_CURRENT_LANGUAGE], 215, -34, "NORMAL", "TOPLEFT")
+        self.ui_frame.phase_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["phase"][MTSLUI_CURRENT_LANGUAGE], 215, -34, "LABEL", "TOPLEFT")
         self.ui_frame.phase_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_PHASES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.phase_drop_down.filter_frame_name = filter_frame_name
         self.ui_frame.phase_drop_down.initialize = self.CreateDropDownPhases
         UIDropDownMenu_SetWidth(self.ui_frame.phase_drop_down, 95)
         UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, self.phases[self.current_phase]["name"])
         -- Specializations
-        self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["specialization"][MTSLUI_CURRENT_LANGUAGE], 5, -64, "NORMAL", "TOPLEFT")
+        self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["specialization"][MTSLUI_CURRENT_LANGUAGE], 5, -64, "LABEL", "TOPLEFT")
         self.ui_frame.specs_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_SPECS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.specs_drop_down.filter_frame_name = filter_frame_name
         self.ui_frame.specs_drop_down.initialize = self.CreateDropDownSpecializations
         UIDropDownMenu_SetWidth(self.ui_frame.specs_drop_down, self.DOUBLE_VERTICAL_WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.specs_drop_down, MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE])
         -- Contintents & zones
-        self.ui_frame.zone_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["zone"][MTSLUI_CURRENT_LANGUAGE], 5, -94, "NORMAL", "TOPLEFT")
+        self.ui_frame.zone_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["zone"][MTSLUI_CURRENT_LANGUAGE], 5, -94, "LABEL", "TOPLEFT")
         -- Continent more split up with types as well, to reduce number of items shown
         self.ui_frame.continent_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_CONTS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.continent_drop_down:SetPoint("TOPLEFT", self.ui_frame.zone_text, "TOPRIGHT", -10, 9)

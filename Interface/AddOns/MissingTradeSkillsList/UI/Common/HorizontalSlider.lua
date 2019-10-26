@@ -69,9 +69,9 @@ MTSLUI_HORIZONTAL_SLIDER = {
         end)
         self.ui_frame.slider:SetMinMaxValues(self.MIN_VALUE, self.MAX_VALUE)
         -- creat text labels
-        self.ui_frame.slider_min_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.NORMAL .. self.SCALE_VALUES[self.MIN_VALUE], -20, 0, "SMALL", "LEFT")
-        self.ui_frame.slider_max_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.NORMAL .. self.SCALE_VALUES[self.MAX_VALUE], 20, 0, "SMALL", "RIGHT")
-        self.ui_frame.slider_current_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.TITLE .. self.SCALE_VALUES[self.MIN_VALUE], 0, 15, "SMALL", "CENTER")
+        self.ui_frame.slider_min_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.NORMAL .. self.SCALE_VALUES[self.MIN_VALUE], -20, 0, "TEXT", "LEFT")
+        self.ui_frame.slider_max_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.NORMAL .. self.SCALE_VALUES[self.MAX_VALUE], 20, 0, "TEXT", "RIGHT")
+        self.ui_frame.slider_current_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_FONTS.COLORS.TEXT.TITLE .. self.SCALE_VALUES[self.MIN_VALUE], 0, 15, "TEXT", "CENTER")
         -- set the position of the slider based on the current scale
         local i = 1
         while self.SCALE_VALUES[i] ~= nil and tonumber(self.SCALE_VALUES[i]) ~= tonumber(current_value) do

@@ -6,7 +6,7 @@
 
 MTSLOPTUI_CONFIG_FRAME = {
     FRAME_WIDTH = 715,
-    FRAME_HEIGHT = 175,
+    FRAME_HEIGHT = 225,
     MARGIN_LEFT = 25,
     MARGIN_RIGHT = 175,
     split_modes = {
@@ -36,10 +36,11 @@ MTSLOPTUI_CONFIG_FRAME = {
         self:InitialiseDropDownsMTSLFrameLocation()
         self:InitialiseDropDownsUISplitOrientation()
         self:InitialiseDropDownsUISplitScale()
+        self:InitialiseDropDownsFonts()
     end,
 
     InitialiseCheckBoxWelcomeMessage = function(self)
-        self.ui_frame.welcome_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Display addon loaded message", self.MARGIN_LEFT, -3, "NORMAL", "TOPLEFT")
+        self.ui_frame.welcome_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Display addon loaded message", self.MARGIN_LEFT, -3, "LABEL", "TOPLEFT")
 
         self.welcome_check = CreateFrame("CheckButton", "MTSLOPTUI_ConfigFrame_Welcome", self.ui_frame, "ChatConfigCheckButtonTemplate");
         self.welcome_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 100, 0)
@@ -62,7 +63,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         }
 
         -- drop downs split orientation
-        self.ui_frame.location_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "MTSL frame location", self.MARGIN_LEFT, -40, "NORMAL", "TOPLEFT")
+        self.ui_frame.location_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "MTSL frame location", self.MARGIN_LEFT, -40, "LABEL", "TOPLEFT")
 
         self.ui_frame.location_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.location_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, -33)
@@ -85,7 +86,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         }
 
         -- drop downs split orientation
-        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, -90, "NORMAL", "TOPLEFT")
+        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, -90, "LABEL", "TOPLEFT")
 
         self.ui_frame.orientation_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.orientation_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.location_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -93,7 +94,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_mtsl_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])
         -- center text above the dropdown
-        self.ui_frame.orientation_mtsl_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_mtsl_drop_down, "MTSL", 0, 20, "NORMAL", "CENTER")
+        self.ui_frame.orientation_mtsl_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_mtsl_drop_down, "MTSL", 0, 20, "LABEL", "CENTER")
 
         self.ui_frame.orientation_account_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_ACC", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.orientation_account_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_mtsl_drop_down, "TOPRIGHT", -20, 0)
@@ -101,7 +102,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_account_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.orientation_account_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))][MTSLUI_CURRENT_LANGUAGE])
         -- center text above the dropdown
-        self.ui_frame.orientation_account_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_account_drop_down, "Account Explorer", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.orientation_account_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_account_drop_down, "Account Explorer", 0, 22, "LABEL", "CENTER")
 
         self.ui_frame.orientation_database_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_DB", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.orientation_database_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_account_drop_down, "TOPRIGHT", -20, 0)
@@ -109,7 +110,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_database_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))][MTSLUI_CURRENT_LANGUAGE])
         -- center text above the dropdown
-        self.ui_frame.orientation_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_database_drop_down, "Database Explorer", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.orientation_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_database_drop_down, "Database Explorer", 0, 22, "LABEL", "CENTER")
     end,
 
     InitialiseDropDownsUISplitScale = function (self)
@@ -127,7 +128,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             table.insert(self.scales, new_scale)
         end
 
-        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, -141, "NORMAL", "TOPLEFT")
+        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, -141, "LABEL", "TOPLEFT")
 
         self.ui_frame.scale_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -135,7 +136,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.scale_mtsl_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.scale_mtsl_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("MTSL"))
         -- center text above the dropdown
-        self.ui_frame.scale_mtsl_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_mtsl_drop_down, "MTSL", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.scale_mtsl_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_mtsl_drop_down, "MTSL", 0, 22, "LABEL", "CENTER")
 
         self.ui_frame.scale_account_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_ACC", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_account_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_mtsl_drop_down, "TOPRIGHT", -20, 0)
@@ -143,7 +144,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.scale_account_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.scale_account_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("ACCOUNT"))
         -- center text above the dropdown
-        self.ui_frame.scale_account_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_account_drop_down, "Account Explorer", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.scale_account_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_account_drop_down, "Account Explorer", 0, 22, "LABEL", "CENTER")
 
         self.ui_frame.scale_database_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_DB", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_database_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_account_drop_down, "TOPRIGHT", -20, 0)
@@ -151,7 +152,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.scale_database_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.scale_database_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("DATABASE"))
         -- center text above the dropdown
-        self.ui_frame.scale_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_database_drop_down, "Database Explorer", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.scale_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_database_drop_down, "Database Explorer", 0, 22, "LABEL", "CENTER")
 
         self.ui_frame.scale_optionsmenu_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_OPTIONS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_optionsmenu_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_database_drop_down, "TOPRIGHT", -20, 0)
@@ -159,51 +160,53 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.scale_optionsmenu_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.scale_optionsmenu_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("OPTIONSMENU"))
         -- center text above the dropdown
-        self.ui_frame.scale_options_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_optionsmenu_drop_down, "Options menu", 0, 22, "NORMAL", "CENTER")
+        self.ui_frame.scale_options_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_optionsmenu_drop_down, "Options menu", 0, 22, "LABEL", "CENTER")
     end,
 
-    IntialiseDropDownsFonts = function (self)
+    InitialiseDropDownsFonts = function (self)
         -- Fonts
-        self.fonts = {
-            {
-                ["name"] = "2002",
-                ["id"] = 1,
-                ["fontname"] = "2002.ttf",
-            },
-            {
-                ["name"] = "Arial Narrow",
-                ["id"] = 2,
-                ["fontname"] = "ARIALN.ttf",
-            },
-            {
-                ["name"] = "Arkai",
-                ["id"] = 3,
-                ["fontname"] = "ARKai_T.ttf",
-            },
-            {
-                ["name"] = "Friz Quadrata",
-                ["id"] = 4,
-                ["fontname"] = "FRIZQT__.ttf",
-                ["fontname_cyr"] = "FRIZQT___CYR.ttf",
-            },
-            {
-                ["name"] = "Morpheus",
-                ["id"] = 5,
-                ["fontname"] = "morpheus.ttf",
-            },
-            {
-                ["name"] = "Skurri",
-                ["id"] = 6,
-                ["fontname"] = "skurri.ttf",
-            },
+        self.font_names = MTSLUI_FONTS.AVAILABLE_FONT_NAMES
+        self.font_name =  MTSLUI_PLAYER.FONT.NAME
+        self.font_sizes = MTSLUI_FONTS.AVAILABLE_FONT_SIZES
+        self.font_size = {
+            title = MTSLUI_PLAYER.FONT.SIZE.TITLE,
+            label = MTSLUI_PLAYER.FONT.SIZE.LABEL,
+            text = MTSLUI_PLAYER.FONT.SIZE.TEXT,
         }
 
-        self.ui_frame.fonts_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Font (Not yet working!)", self.MARGIN_LEFT, -49, "NORMAL", "TOPLEFT")
-        self.ui_frame.fonts_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_FONTS", self.ui_frame, "UIDropDownMenuTemplate")
-        self.ui_frame.fonts_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, -40)
-        self.ui_frame.fonts_drop_down.initialize = self.CreateDropDownFonts
-        UIDropDownMenu_SetWidth(self.ui_frame.fonts_drop_down, 200)
-        UIDropDownMenu_SetText(self.ui_frame.fonts_drop_down, "Friz Quadrata")
+        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Font (will reload UI)", self.MARGIN_LEFT, -192, "LABEL", "TOPLEFT")
+
+        self.ui_frame.font_type_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.font_type_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
+        self.ui_frame.font_type_drop_down.initialize = self.CreateDropDownFontType
+        UIDropDownMenu_SetWidth(self.ui_frame.font_type_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.font_type_drop_down, MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSLUI_FONTS.AVAILABLE_FONT_NAMES, "id", self.font_name).name)
+        -- center text above the dropdown
+        self.ui_frame.font_type_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.font_type_drop_down, "Type", 0, 22, "LABEL", "CENTER")
+
+        self.ui_frame.font_title_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_TITLE", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.font_title_drop_down:SetPoint("TOPLEFT", self.ui_frame.font_type_drop_down, "TOPRIGHT", -20, 0)
+        self.ui_frame.font_title_drop_down.initialize = self.CreateDropDownSizeTitle
+        UIDropDownMenu_SetWidth(self.ui_frame.font_title_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.font_title_drop_down, self.font_size.title)
+        -- center text above the dropdown
+        self.ui_frame.font_title_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.font_title_drop_down, "Title", 0, 22, "LABEL", "CENTER")
+
+        self.ui_frame.font_label_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_LABEL", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.font_label_drop_down:SetPoint("TOPLEFT", self.ui_frame.font_title_drop_down, "TOPRIGHT", -20, 0)
+        self.ui_frame.font_label_drop_down.initialize = self.CreateDropDownSizeLabel
+        UIDropDownMenu_SetWidth(self.ui_frame.font_label_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.font_label_drop_down, self.font_size.label)
+        -- center text above the dropdown
+        self.ui_frame.font_label_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.font_label_drop_down, "Label / List", 0, 22, "LABEL", "CENTER")
+
+        self.ui_frame.font_text_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_TEXT", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.font_text_drop_down:SetPoint("TOPLEFT", self.ui_frame.font_label_drop_down, "TOPRIGHT", -20, 0)
+        self.ui_frame.font_text_drop_down.initialize = self.CreateDropDownSizeText
+        UIDropDownMenu_SetWidth(self.ui_frame.font_text_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.font_text_drop_down, self.font_size.text)
+        -- center text above the dropdown
+        self.ui_frame.font_options_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.font_text_drop_down, "Text", 0, 22, "LABEL", "CENTER")
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -245,6 +248,25 @@ MTSLOPTUI_CONFIG_FRAME = {
 
     CreateDropDownScaleOptionsMenu = function(self, level)
         MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.scales, MTSLOPTUI_CONFIG_FRAME.ChangeScaleOptionsMenuHandler)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Intialises drop down for font
+    ----------------------------------------------------------------------------------------------------------
+    CreateDropDownFontType = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.font_names, MTSLOPTUI_CONFIG_FRAME.ChangeFontTypeHandler)
+    end,
+
+    CreateDropDownSizeTitle = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.font_sizes, MTSLOPTUI_CONFIG_FRAME.ChangeFontSizeTitleHandler)
+    end,
+
+    CreateDropDownSizeLabel = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.font_sizes, MTSLOPTUI_CONFIG_FRAME.ChangeFontSizeLabelHandler)
+    end,
+
+    CreateDropDownSizeText = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.font_sizes, MTSLOPTUI_CONFIG_FRAME.ChangeFontSizeTextHandler)
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -304,34 +326,58 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Intialises drop down for fonts
+    -- Handles DropDown Change event after changing the font
     ----------------------------------------------------------------------------------------------------------
-    CreateDropDownFonts = function(self, level)
-        MTSLUI_TOOLS:FillDropDown(level, MTSLOPTUI_CONFIG_FRAME.fonts, MTSLOPTUI_CONFIG_FRAME.ChangeFontsHandler)
+    ChangeFontTypeHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangeFontType(value, text)
     end,
 
-    ----------------------------------------------------------------------------------------------------------
-    -- Handles DropDown Change event after changing the sorting
-    ----------------------------------------------------------------------------------------------------------
-    ChangeFontsHandler = function(value, text)
-        UIDropDownMenu_SetText(MTSLOPTUI_CONFIG_FRAME.ui_frame.fonts_drop_down, text)
+    ChangeFontSizeTitleHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangeFontSize("title", value, text)
+    end,
+
+    ChangeFontSizeLabelHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangeFontSize("label", value, text)
+    end,
+
+    ChangeFontSizeTextHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangeFontSize("text", value, text)
+    end,
+
+    ChangeFontType = function(self, value, text)
+        self.font_name = value
+        UIDropDownMenu_SetText(self.ui_frame["font_type_drop_down"], text)
+    end,
+
+    ChangeFontSize = function(self, dropdown_name, value, text)
+        self.font_size[dropdown_name] = value
+        UIDropDownMenu_SetText(self.ui_frame["font_" .. string.lower(dropdown_name) .. "_drop_down"], text)
     end,
 
     ----------------------------------------------------------------------------------------------------------
     -- Save the current valures
     ----------------------------------------------------------------------------------------------------------
     Save = function(self)
+        MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
+
         MTSLUI_SAVED_VARIABLES:SetSplitModes(self.split_modes)
         MTSLUI_SAVED_VARIABLES:SetUIScales(self.ui_scales)
 
-        MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
-        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
+        -- if Font was actualy changed, reload ui
+        if MTSLUI_SAVED_VARIABLES:SetFont(self.font_name, self.font_size) == true then
+            MTSLUI_FONTS:Initialise()
+            ReloadUI()
+        end
     end,
 
     ----------------------------------------------------------------------------------------------------------
     -- Reset the current valures
     ----------------------------------------------------------------------------------------------------------
     ResetUI = function(self)
+        MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
+
         UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])
         UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))][MTSLUI_CURRENT_LANGUAGE])
         UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))][MTSLUI_CURRENT_LANGUAGE])
@@ -341,7 +387,9 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetText(self.ui_frame.scale_database_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("DATABASE"))
         UIDropDownMenu_SetText(self.ui_frame.scale_optionsmenu_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("OPTIONSMENU"))
 
-        MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
-        MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
+        UIDropDownMenu_SetText(self.ui_frame.font_type_drop_down, MTSLUI_PLAYER.FONT.NAME)
+        UIDropDownMenu_SetText(self.ui_frame.font_title_drop_down, MTSLUI_PLAYER.FONT.SIZE.TITLE)
+        UIDropDownMenu_SetText(self.ui_frame.font_label_drop_down, MTSLUI_PLAYER.FONT.SIZE.LABEL)
+        UIDropDownMenu_SetText(self.ui_frame.font_text_drop_down, MTSLUI_PLAYER.FONT.SIZE.TEXT)
     end,
 }

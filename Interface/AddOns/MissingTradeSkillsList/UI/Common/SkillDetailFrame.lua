@@ -67,8 +67,8 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         local text_label_top = -8
         local text_gap = 16
         -- Labels to show "name: <name>"
-        self.labels.name.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["name"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.name.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.name.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["name"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.name.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         -- create a frame to hover over and show the tooltip
         self.labels.name.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.name.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, -2)
@@ -76,32 +76,32 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         self.labels.name.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Required skill: <min skill>"
-        self.labels.min_skill.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs skill level"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.min_skill.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.min_skill.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs skill level"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.min_skill.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Required XP level: <xp level>"
-        self.labels.requires_xp.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs XP level"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.requires_xp.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.requires_xp.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs XP level"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.requires_xp.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Required reputation: <reputation>"
-        self.labels.requires_rep.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs reputation"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.requires_rep.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.requires_rep.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs reputation"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.requires_rep.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Required reputation: <reputation>"
-        self.labels.requires_spec.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs specialization"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.requires_spec.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.requires_spec.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["needs specialization"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.requires_spec.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Special action <special action>"
-        self.labels.special_action.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["special action"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.special_action.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.special_action.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["special action"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.special_action.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Price: <price>"
-        self.labels.price.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["price"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.price.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.price.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["price"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.price.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         text_label_top = text_label_top - text_gap
         -- Labels to show "Learned from: <type>"
-        self.labels.type.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.type.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.type.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.type.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         -- create a frame to hover over and show the tooltip
         self.labels.type.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.type.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, text_label_top + 5)
@@ -109,7 +109,7 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         self.labels.type.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Trained by: <trainers> or Sold by: <vendors> or Dropped by: <mobs> or Obtained from: <quest>"
-        self.labels.sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
         self.labels.sources.title:Hide()
         -- Create a frame to hold the labels
         self.labels.sources.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 107, self.FRAME_SOURCES_HEIGHT, false)
@@ -121,7 +121,7 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         text_label_right = 10
         -- Create the labels for sources
         for i=1,self.MAX_SOURCES_SHOWN_PRIMARY do
-            local string_sources_content = MTSLUI_TOOLS:CreateLabel(self.labels.sources.ui_frame, i, text_label_right, text_label_top, "SMALL", "TOPLEFT")
+            local string_sources_content = MTSLUI_TOOLS:CreateLabel(self.labels.sources.ui_frame, i, text_label_right, text_label_top, "TEXT", "TOPLEFT")
             text_label_top = text_label_top - text_gap
             table.insert(self.labels.sources.values, string_sources_content)
         end
@@ -131,8 +131,8 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         self.labels.sources.ui_frame:Show()
         text_label_right = 125
         text_label_top = text_label_top + text_gap + 2
-        self.labels.alt_type.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["also learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
-        self.labels.alt_type.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.alt_type.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["also learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
+        self.labels.alt_type.value = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "-", text_label_right, text_label_top, "TEXT", "TOPLEFT")
         -- create a frame to hover over and show the tooltip
         self.labels.alt_type.tooltip_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, 300, text_gap + 5, false)
         self.labels.alt_type.tooltip_frame:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", text_label_right - 5, text_label_top + 5)
@@ -140,7 +140,7 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         self.labels.alt_type.tooltip_frame:SetScript("OnLeave", function() _G.GameTooltip:Hide() end)
         text_label_top = text_label_top - text_gap
         -- Labels to show "Trained by: <trainers> or Sold by: <vendors> or Dropped by: <mobs> or Obtained from: <quest>"
-        self.labels.alt_sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "SMALL", "TOPLEFT")
+        self.labels.alt_sources.title = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE] .. ":", text_label_left, text_label_top, "LABEL", "TOPLEFT")
         -- Create a frame to show the alternative sources
         self.labels.alt_sources.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "", self.ui_frame, nil, self.FRAME_WIDTH - 118, self.FRAME_ALT_SOURCES_HEIGHT, false)
         -- position halfway from the frame with primary sources
@@ -152,7 +152,7 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         text_label_right = 10
         -- Create the labels for sources
         for i=1,self.MAX_SOURCES_SHOWN_SECONDARY do
-            local string_sources_content = MTSLUI_TOOLS:CreateLabel(self.labels.alt_sources.ui_frame, i .. " alt", text_label_right, text_label_top, "SMALL", "TOPLEFT")
+            local string_sources_content = MTSLUI_TOOLS:CreateLabel(self.labels.alt_sources.ui_frame, i .. " alt", text_label_right, text_label_top, "TEXT", "TOPLEFT")
             text_label_top = text_label_top - text_gap
             table.insert(self.labels.alt_sources.values, string_sources_content)
         end

@@ -22,7 +22,7 @@ MTSLUI_TITLE_FRAME = {
         if type_frame ~= nil and type_frame ~= "" then
             title_text = title_text .. " - " .. type_frame
         end
-        self.ui_frame.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, title_text, 0, 0, "LARGE", "CENTER")
+        self.ui_frame.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, title_text, 0, 0, "TITLE", "CENTER")
         -- Make the screen dragable/movable by clicking through to main frame
         self.ui_frame:EnableMouse(false)
     end,

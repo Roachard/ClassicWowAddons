@@ -18,7 +18,7 @@ Account explorer (/mtsl acc or /mtsl account)
 Database explorer (/mtsl db or /mtsl database)
 ![alt text](https://media.forgecdn.net/attachments/265/615/mtsl_database.png "Missing TradeSkills List - Database explorer")
 Options menu (/mtsl or /mtsl config or /mtsl options)
-![alt text](https://media.forgecdn.net/attachments/265/541/mtsl_options.png "Missing TradeSkills List - Options menu")
+![alt text](https://media.forgecdn.net/attachments/266/869/mtsl_options.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
 
@@ -37,7 +37,9 @@ Options menu (/mtsl or /mtsl config or /mtsl options)
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
 ### Latest version 
-v1.13.22&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug for addon not working for engineering by adding ranks to the levels    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default selected current character in mtsl options screen    
+v1.13.23&nbsp;&nbsp;&nbsp;&nbsp;Added option to change font type & size of Titles, labels & text  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UI will auto reload if changed  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Does not affect buttons & dropdowns  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Improved French localization  
 
 [Full Version History](VERSION_HISTORY.md)

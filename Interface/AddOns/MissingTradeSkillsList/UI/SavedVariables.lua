@@ -16,7 +16,12 @@ MTSLUI_PLAYER = {
         ACCOUNT,
         DATABASE,
     },
-    FONT,
+    FONT = {
+        NAME,
+        SIZE_SMALL,
+        SIZE_NORMAL,
+        SIZE_LARGE,
+    },
     WELCOME_MSG,
     MTSL_LOCATION,
 }
@@ -26,6 +31,9 @@ MTSLUI_SAVED_VARIABLES = {
     MAX_UI_SCALE = "1.25",
     DEFAULT_UI_SCALE = "1.00",
     DEFAULT_UI_SPLIT_MODE = "Vertical",
+    DEFAULT_SIZE_TEXT = 10,
+    DEFAULT_SIZE_LABEL = 11,
+    DEFAULT_SIZE_TITLE = 13,
 
     -- Try and load the values from saved files
     Initialise = function(self)
@@ -57,10 +65,14 @@ MTSLUI_SAVED_VARIABLES = {
 
             self:SetShowWelcomeMessage(MTSLUI_PLAYER.WELCOME_MSG)
 
-            -- todo: add check for font, ignored for now
-            if MTSLUI_PLAYER.FONT ~= "Default" then
-                MTSLUI_PLAYER.FONT = "Default"
+            if MTSLUI_PLAYER.FONT == nil or type(MTSLUI_PLAYER.FONT) ~= "table" or
+                    MTSLUI_PLAYER.FONT.SIZE == nil or type(MTSLUI_PLAYER.FONT.SIZE) ~= "table" then
+                self:ResetFont()
+            else
+                self:ValidateFont()
             end
+            -- Intialise our fonts
+            MTSLUI_FONTS:Initialise()
 
             self:SetMTSLLocation(MTSLUI_PLAYER.MTSL_LOCATION)
         end
@@ -74,6 +86,7 @@ MTSLUI_SAVED_VARIABLES = {
         self:Initialise()
         self:LoadSavedSplitModes()
         self:LoadSavedUIScales()
+        self:LoadSavedFont()
     end,
 
     ------------------------------------------------------------------------------------------------
@@ -95,6 +108,38 @@ MTSLUI_SAVED_VARIABLES = {
         MTSLUI_PLAYER.UI_SPLIT_MODE.MTSL = self.DEFAULT_UI_SPLIT_MODE
         MTSLUI_PLAYER.UI_SPLIT_MODE.ACCOUNT = self.DEFAULT_UI_SPLIT_MODE
         MTSLUI_PLAYER.UI_SPLIT_MODE.DATABASE = self.DEFAULT_UI_SPLIT_MODE
+    end,
+
+    -----------------------------------------------------------------------------------------------
+    -- Reset the font to default
+    ------------------------------------------------------------------------------------------------
+    ResetFont = function(self)
+        local font_names = {
+            ["frFR"] = "FRIZQT__",
+            ["enGB"] = "FRIZQT__",
+            ["enUS"] = "FRIZQT__",
+            ["deDE"] = "FRIZQT__",
+            ["ruRU"] = "FRIZQT___CYR",
+            ["esES"] = "FRIZQT__",
+            ["esMX"] = "FRIZQT__",
+            ["ptBR"] = "FRIZQT__",
+            ["koKR"] = "2002",
+            ["zhCN"] = "ARKai_T",
+        }
+        local font_name = font_names[GetLocale()]
+        -- fall back to default
+        if font_name == nil then
+            font_name = "FRIZQT__"
+        end
+
+        MTSLUI_PLAYER.FONT = {}
+        MTSLUI_PLAYER.FONT.NAME = font_name .. ".ttf"
+        MTSLUI_PLAYER.FONT.SIZE = {}
+        MTSLUI_PLAYER.FONT.SIZE.TEXT = self.DEFAULT_SIZE_TEXT
+        MTSLUI_PLAYER.FONT.SIZE.LABEL = self.DEFAULT_SIZE_LABEL
+        MTSLUI_PLAYER.FONT.SIZE.TITLE = self.DEFAULT_SIZE_TITLE
+
+        print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: Font was reset to default!")
     end,
 
     ------------------------------------------------------------------------------------------------
@@ -245,7 +290,7 @@ MTSLUI_SAVED_VARIABLES = {
     ------------------------------------------------------------------------------------------------
     -- Gets he scale of the UI of the addon
     --
-    -- return			Number			The number for UI scale (will be > 0.5 and < 1.25)
+    -- return			Number			The number for UI scale (will be >= MIN_UI_SCALE and <= MAX_UI_SCALE)
     ------------------------------------------------------------------------------------------------
     GetUIScale = function(self, name)
         -- return the scale if not nil
@@ -270,9 +315,88 @@ MTSLUI_SAVED_VARIABLES = {
         return (100 * self.DEFAULT_UI_SCALE) .. " %"
     end,
 
-    -- TODO
+    ------------------------------------------------------------------------------------------------
+    -- Load the font from saved variable
+    ------------------------------------------------------------------------------------------------
     LoadSavedFont = function(self)
+        if MTSLUI_PLAYER == nil then
+            self:ResetSavedVariables()
+        else
+            -- convert old to new also
+            if self:ValidateFont() == false then
+                self:ResetFont()
+            end
+            MTSLUI_FONTS:Initialise()
+        end
+    end,
 
+    ------------------------------------------------------------------------------------------------
+    -- Validates the saved splitmode from saved variable
+    ------------------------------------------------------------------------------------------------
+    ValidateFont = function(self)
+        -- Check if name of font is valid
+        if MTSLUI_PLAYER.FONT.NAME == nil or self:IsValidFontType(MTSLUI_PLAYER.FONT.NAME) == false then
+            self:ResetFont()
+        end
+        -- check the numbers of the each size
+        local keys_to_check =  { "TITLE", "LABEL", "TEXT" }
+
+        for _,k in pairs(keys_to_check) do
+            if not self:IsValidFontSize(MTSLUI_PLAYER.FONT.SIZE[k]) then
+                self:ResetFont()
+            end
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Check if a name of the font is valid
+    --
+    -- @ui_scale        Number      The number of the scale (must be => MIN_UI_SCALE and <= MAX_UI_SCALE)
+    ------------------------------------------------------------------------------------------------
+    IsValidFontType = function(self, font_name)
+        return font_name ~= nil and font_name == "FRIZQT___CYR.ttf" or MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSLUI_FONTS.AVAILABLE_FONT_NAMES, "id", font_name) ~= nil
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Check if a value for UI scale is valid
+    --
+    -- @ui_scale        Number      The number of the scale (must be => MIN_UI_SCALE and <= MAX_UI_SCALE)
+    ------------------------------------------------------------------------------------------------
+    IsValidFontSize = function(self, font_size)
+        return font_size ~= nil and tonumber(font_size) >= tonumber(MTSLUI_FONTS.MIN_SIZE) and tonumber(font_size) <= tonumber(MTSLUI_FONTS.MAX_SIZE)
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Set the font
+    --
+    -- @font_name           String          The name of the font
+    -- @font_sizes          Array           List containing the sizes for the 3 font_sizes used
+    --
+    -- returns              Boolean         Flag indication if font actualy was updated/changed
+    ------------------------------------------------------------------------------------------------
+    SetFont = function(self, font_name, font_sizes)
+        local font_changed = false
+        if self:IsValidFontType(font_name) and font_name ~= MTSLUI_PLAYER.FONT.NAME then
+            MTSLUI_PLAYER.FONT.NAME = font_name
+            font_changed = true
+        end
+
+        if self:IsValidFontSize(font_sizes["text"]) and font_sizes["text"] ~= MTSLUI_PLAYER.FONT.SIZE.TEXT then
+            MTSLUI_PLAYER.FONT.SIZE.TEXT = tonumber(font_sizes["text"])
+            font_changed = true
+        end
+
+        if self:IsValidFontSize(font_sizes["label"]) and font_sizes["label"] ~= MTSLUI_PLAYER.FONT.SIZE.LABEL then
+            MTSLUI_PLAYER.FONT.SIZE.LABEL = tonumber(font_sizes["label"])
+            font_changed = true
+        end
+
+        if self:IsValidFontSize(font_sizes["title"]) and font_sizes["title"] ~= MTSLUI_PLAYER.FONT.SIZE.TITLE then
+            MTSLUI_PLAYER.FONT.SIZE.TITLE = tonumber(font_sizes["title"])
+            font_changed = true
+        end
+
+        return font_changed
     end,
 
     ------------------------------------------------------------------------------------------------
@@ -295,7 +419,6 @@ MTSLUI_SAVED_VARIABLES = {
     GetShowWelcomeMessage = function(self)
         return MTSLUI_PLAYER.WELCOME_MSG
     end,
-
 
     ------------------------------------------------------------------------------------------------
     -- Sets  the location where MTSL is hooked (left or right)
