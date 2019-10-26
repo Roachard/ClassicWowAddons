@@ -770,7 +770,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "诺莫瑞根"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=诺莫瑞根] or [contains=侏儒本]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=诺莫瑞根] or [contains=侏儒本] or [contains=矮子本]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "监狱"
