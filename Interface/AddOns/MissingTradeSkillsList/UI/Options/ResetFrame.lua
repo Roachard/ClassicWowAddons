@@ -173,4 +173,16 @@ MTSLOPTUI_RESET_FRAME = {
         self.current_player = text
         UIDropDownMenu_SetText(self.ui_frame.player_drop_down, text)
     end,
+
+    -- Try to select the current logged in player in the drop down
+    SelectCurrentPlayer = function(self)
+        -- only select if we have the realm
+        if MTSL_TOOLS:GetItemFromArrayByKeyValue(self.realms, "id", MTSL_CURRENT_PLAYER.REALM) then
+            self:ChangeRealm(MTSL_CURRENT_PLAYER.REALM, MTSL_CURRENT_PLAYER.REALM)
+            -- only select player if present on the realm
+            if MTSL_TOOLS:GetItemFromArrayByKeyValue(self.player_on_realms, "id", MTSL_CURRENT_PLAYER.NAME) then
+                self:ChangePlayer(MTSL_CURRENT_PLAYER.NAME, MTSL_CURRENT_PLAYER.NAME)
+            end
+        end
+    end,
 }

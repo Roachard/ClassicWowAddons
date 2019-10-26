@@ -110,7 +110,7 @@ MTSL_LOGIC_PROFESSION = {
                     skill_passed_filter = false
                 end
                 -- check if source type is ok
-                if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:IsAvailableForSourceType(v.id, profession_name, source_type) == false then
+                if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:GetRankForProfessionByMaxLevel(v.id, profession_name, source_type) == false then
                     skill_passed_filter = false
                 end
                 -- passed all filters so add it to list

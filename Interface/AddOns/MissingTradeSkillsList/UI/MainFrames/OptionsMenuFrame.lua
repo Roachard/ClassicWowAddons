@@ -22,6 +22,8 @@ function MTSLUI_OPTIONS_MENU_FRAME:Show()
     MTSLUI_DATABASE_EXPLORER_FRAME:Hide()
     -- show the options
     self.ui_frame:Show()
+    -- auto select the current player in the drop down to remove data
+    MTSLOPTUI_RESET_FRAME:SelectCurrentPlayer()
 end
 
 ----------------------------------------------------------------------------------------------------------

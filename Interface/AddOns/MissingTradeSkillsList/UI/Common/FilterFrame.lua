@@ -347,7 +347,6 @@ MTSLUI_FILTER_FRAME = {
         UIDropDownMenu_SetText(self.ui_frame.specs_drop_down, text)
         -- Apply filter if we may
         if self:IsFilteringEnabled() then
-            print("ChangeSpecialization " .. text)
             self.list_frame:ChangeSpecialization(id)
         end
     end,

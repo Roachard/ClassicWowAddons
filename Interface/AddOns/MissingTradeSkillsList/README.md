@@ -10,7 +10,7 @@ Thumbkin (Retail: EU-Burning Steppes, Classic: EU-Pyrewood Village)
 
 ### Screenshots
 MTSL - Vertical split (Change using options menu)
-![alt text](https://media.forgecdn.net/attachments/265/613/mtsl_main.png "Missing TradeSkills List - Vertical Split")
+![alt text](https://media.forgecdn.net/attachments/266/746/mtsl_main.png "Missing TradeSkills List - Vertical Split")
 MTSL - Horizontal split (Change using options menu)
 ![alt text](https://media.forgecdn.net/attachments/265/614/mtsl_main_horizontal.png "Missing TradeSkills List - Horizontal Split")
 Account explorer (/mtsl acc or /mtsl account)
@@ -37,13 +37,7 @@ Options menu (/mtsl or /mtsl config or /mtsl options)
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
 ### Latest version 
-v1.13.21&nbsp;&nbsp;&nbsp;&nbsp;Added specializations to spells (Blacksmithing, Engineering & Leatherworking)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some engineering recipes  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug with lower trained ranks still shown in list  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Only hooked MTSL to SkilletFrame if also used/visible  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default selected current character in mtsl options screen  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replaced sort option by level/name by option to search by (partial) name  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added filter option for source type of skill (Trainer, Quest, Vendor, Drop, Object)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added filter option for specializations  
+v1.13.22&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug for addon not working for engineering by adding ranks to the levels    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default selected current character in mtsl options screen    
 
 [Full Version History](VERSION_HISTORY.md)
