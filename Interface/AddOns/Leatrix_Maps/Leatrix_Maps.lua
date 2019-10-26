@@ -1,6 +1,6 @@
 
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 1.13.35 (16th October 2019)
+	-- 	Leatrix Maps 1.13.36 (23rd October 2019)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,8 +12,8 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "1.13.35"
-	LeaMapsLC["RestartReq"] = false
+	LeaMapsLC["AddonVer"] = "1.13.36"
+	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
 	local void, Leatrix_Maps = ...
@@ -1230,7 +1230,7 @@
 			-- Reset button click
 			poiFrame.r:HookScript("OnClick", function()
 				LeaMapsLC["ShowDungeonIcons"] = "On"
-				LeaMapsLC["ShowFlightPoints"] = "Off"
+				LeaMapsLC["ShowFlightPoints"] = "On"
 				LeaMapsLC["ShowTravelPoints"] = "On"
 				SetPointsOfInterest()
 				poiFrame:Hide(); poiFrame:Show()
@@ -1241,7 +1241,7 @@
 				if IsShiftKeyDown() and IsControlKeyDown() then
 					-- Preset profile
 					LeaMapsLC["ShowDungeonIcons"] = "On"
-					LeaMapsLC["ShowFlightPoints"] = "Off"
+					LeaMapsLC["ShowFlightPoints"] = "On"
 					LeaMapsLC["ShowTravelPoints"] = "On"
 					SetPointsOfInterest()
 					if poiFrame:IsShown() then poiFrame:Hide(); poiFrame:Show(); end
@@ -1617,6 +1617,40 @@
 					end
 				end)
 			end
+
+		end
+
+		----------------------------------------------------------------------
+		-- Create panel in game options panel
+		----------------------------------------------------------------------
+
+		do
+
+			local interPanel = CreateFrame("FRAME")
+			interPanel.name = "Leatrix Maps"
+
+			local maintitle = LeaMapsLC:MakeTx(interPanel, "Leatrix Maps", 0, 0)
+			maintitle:SetFont(maintitle:GetFont(), 72)
+			maintitle:ClearAllPoints()
+			maintitle:SetPoint("TOP", 0, -72)
+
+			local subTitle = LeaMapsLC:MakeTx(interPanel, "curseforge.com/wow/addons/leatrix-maps-classic", 0, 0)
+			subTitle:SetFont(subTitle:GetFont(), 20)
+			subTitle:ClearAllPoints()
+			subTitle:SetPoint("BOTTOM", 0, 72)
+
+			local slashTitle = LeaMapsLC:MakeTx(interPanel, "/ltm", 0, 0)
+			slashTitle:SetFont(slashTitle:GetFont(), 72)
+			slashTitle:ClearAllPoints()
+			slashTitle:SetPoint("BOTTOM", subTitle, "TOP", 0, 40)
+
+			local pTex = interPanel:CreateTexture(nil, "BACKGROUND")
+			pTex:SetAllPoints()
+			pTex:SetTexture("Interface\\GLUES\\Models\\UI_MainMenu\\swordgradient2")
+			pTex:SetAlpha(0.2)
+			pTex:SetTexCoord(0, 1, 1, 0)
+
+			InterfaceOptions_AddCategory(interPanel)
 
 		end
 
@@ -2209,7 +2243,7 @@
 				LeaMapsDB["tintAlpha"] = 1.0
 				LeaMapsDB["ShowPointsOfInterest"] = "On"
 				LeaMapsDB["ShowDungeonIcons"] = "On"
-				LeaMapsDB["ShowFlightPoints"] = "Off"
+				LeaMapsDB["ShowFlightPoints"] = "On"
 				LeaMapsDB["ShowTravelPoints"] = "On"
 				LeaMapsDB["ShowZoneLevels"] = "On"
 				LeaMapsDB["ShowFishingLevels"] = "On"
@@ -2300,7 +2334,7 @@
 			LeaMapsLC:LoadVarNum("tintAlpha", 1, 0, 1)					-- Tint opacity
 			LeaMapsLC:LoadVarChk("ShowPointsOfInterest", "On")			-- Show points of interest
 			LeaMapsLC:LoadVarChk("ShowDungeonIcons", "On")				-- Show dungeons and raids
-			LeaMapsLC:LoadVarChk("ShowFlightPoints", "Off")				-- Show flight points
+			LeaMapsLC:LoadVarChk("ShowFlightPoints", "On")				-- Show flight points
 			LeaMapsLC:LoadVarChk("ShowTravelPoints", "On")				-- Show boats, zeppelins and trams
 			LeaMapsLC:LoadVarChk("ShowZoneLevels", "On")				-- Show zone levels
 			LeaMapsLC:LoadVarChk("ShowFishingLevels", "On")				-- Show fishing levels
