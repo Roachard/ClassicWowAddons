@@ -11,7 +11,7 @@
 ## Notes-ptBR: Raid and Party Assist
 ## Notes-esES: Raid and Party Assist
 ## Notes-esMX: Raid and Party Assist
-## Version: v2-classic
+## Version: v3-classic
 ## Author: Funkydude, Nebula
 
 ## X-Credits: Cladhaire, Ammo, Rabbit
@@ -21,7 +21,7 @@
 # X-WoWI-ID: 14635
 
 ## SavedVariables: oRA3DB
-## OptionalDeps: Ace3, LibCandyBar-3.0, LibSharedMedia-3.0, LibDDI-1.0, LibGroupInSpecT-1.1, LibDualSpec-1.0, LibChatAnims, LibLatency, LibDurability, LibDialog-1.0, Masque
+## OptionalDeps: Ace3, LibCandyBar-3.0, LibSharedMedia-3.0, LibDDI-1.0, LibChatAnims, LibLatency, LibDurability, LibDialog-1.0, Masque
 
 libs.xml
 
@@ -40,10 +40,10 @@ oRA3.lua
 modulePrototype.lua
 
 # module order in options
-modules\Alerts.lua
-modules\BattleRes.lua
-modules\Consumables.lua
-modules\Cooldowns\module.xml
+#modules\Alerts.lua
+#modules\BattleRes.lua
+#modules\Consumables.lua
+#modules\Cooldowns\module.xml
 modules\ReadyCheck.lua
 # modules with no settings
 modules\Durability.lua
@@ -51,6 +51,6 @@ modules\Gear.lua
 modules\Invite.lua
 modules\Latency.lua
 modules\Promote.lua
-modules\RoleIcons.lua
+#modules\RoleIcons.lua
 modules\Tanks.lua
 modules\Zone.lua
