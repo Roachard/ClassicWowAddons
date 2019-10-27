@@ -1027,7 +1027,7 @@ function CharacterNotes:CreateNotesFrame()
 
 	local searchterm = _G.CreateFrame("EditBox", nil, noteswindow, "InputBoxTemplate")
 	searchterm:SetFontObject(_G.ChatFontNormal)
-	searchterm:SetWidth(300)
+	searchterm:SetWidth(200)
 	searchterm:SetHeight(35)
 	searchterm:SetPoint("TOPLEFT", noteswindow, "TOPLEFT", 25, -50)
 	searchterm:SetScript("OnShow", function(this) this:SetFocus() end)
@@ -1058,6 +1058,19 @@ function CharacterNotes:CreateNotesFrame()
 	        searchterm:SetText("")
 	        this:GetParent().table:SortData()
 	    end)
+
+	local addbutton = _G.CreateFrame("Button", nil, noteswindow, "UIPanelButtonTemplate")
+	addbutton:SetText(L["Add"])
+	addbutton:SetWidth(100)
+	addbutton:SetHeight(20)
+	addbutton:SetPoint("LEFT", clearbutton, "RIGHT", 10, 0)
+	addbutton:SetScript("OnClick",
+		function(this)
+			local name = searchterm:GetText()
+			if name and #name > 0 then
+				self:EditNoteHandler(name)
+			end
+		end)
 
 	local closebutton = _G.CreateFrame("Button", nil, noteswindow, "UIPanelButtonTemplate")
 	closebutton:SetText(L["Close"])
