@@ -2835,7 +2835,14 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["English"] = "Field Repair Bot 74A",
 		},
 		["special_action"] = {
-			["English"] = "Loot schematic on the floor near Golem Lord Argelmach in Blackrock Depths.",
+			["English"] = "Loot schematic on the floor near Golem Lord Argelmach in Blackrock Depths",
+			["Portuguese"] = "Diagrama esquemático no chão perto de Lorde Golem Argelmach em Abismo Rocha Negra",
+			["Russian"] = "Схема добычи на полу возле Повелитель големов Аргелмах в Глубины Черной горы",
+			["Chinese"] = "在傀儡统帅阿格曼奇 黑石深渊附近的地板上掠夺原理图",
+			["Spanish"] = "Esquema de botín en el piso cerca de Señor Gólem Argelmach en Profundidades de Roca Negra",
+			["French"] = "Schéma de butin sur le sol près de Seigneur golem Argelmach en Profondeurs de Blackrock",
+			["Korean"] = "골렘 군주 아젤마크의 검은바위 나락 근처 바닥에있는 전리품 도식",
+			["German"] = "Erbeute schematisch auf dem Boden in der Nähe von Golemlord Argelmach in Blackrocktiefen",
 		},
 	}, -- [129]
 	{

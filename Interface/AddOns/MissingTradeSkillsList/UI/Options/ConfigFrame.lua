@@ -174,7 +174,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             text = MTSLUI_PLAYER.FONT.SIZE.TEXT,
         }
 
-        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Font (will reload UI)", self.MARGIN_LEFT, -192, "LABEL", "TOPLEFT")
+        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["font"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_LOCALES_LABELS["reload UI"][MTSLUI_CURRENT_LANGUAGE] .. ")", self.MARGIN_LEFT, -192, "LABEL", "TOPLEFT")
 
         self.ui_frame.font_type_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.font_type_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_mtsl_drop_down, "BOTTOMLEFT", 0, -18)

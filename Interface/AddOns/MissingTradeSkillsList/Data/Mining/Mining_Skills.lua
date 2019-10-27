@@ -317,7 +317,14 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Dark Iron",
 		},
 		["special_action"] = {
-			["English"] = "Talk to NPC after completing quest",
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
 		},
 	}, -- [10]
 	{
@@ -374,7 +381,14 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Elementium",
 		},
 		["special_action"] = {
-			["English"] = "Talk to Master Elemental Shaper Krikix while he is mindcontrolled",
+			["English"] = "Talk to Master Elemental Shaper Krixix while he is mindcontrolled",
+			["Portuguese"] = "Fale com Mestre Moldador Elemental Krixix enquanto ele é controlado pela mente",
+			["Russian"] = "Поговорите с Ваятель стихий Криксикс пока он находится под контролем ума",
+			["Chinese"] = "受到精神控制时与大元素师克里希克交谈",
+			["Spanish"] = "Habla con Maestro de los elementos Formacio Krixix mientras él está controlado mentalmente",
+			["French"] = "Parlez à Maître élémentaire Krixix le Sculpteur alors qu'il est contrôlé par l'esprit",
+			["Korean"] = "수석 원소구현술사 크릭시스",
+			["German"] = "Sprich mit Meisterelementarformer Krixix während er den Verstand kontrolliert",
 		},
 	}, -- [12]
 }

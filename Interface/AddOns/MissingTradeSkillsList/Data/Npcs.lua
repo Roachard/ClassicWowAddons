@@ -2901,7 +2901,14 @@ MTSL_DATA["npcs"] = {
 		["zone_id"] = 45,
 		["phase"] = 1,
 		["special_action"] = {
-			["English"] = "Any Troll Camp Around The Lake",
+			["English"] = "Any troll camp around the lake",
+			["Portuguese"] = "Qualquer acampamento de trolls ao redor do lago",
+			["Russian"] = "Любой тролль в лагере вокруг озера",
+			["Chinese"] = "湖周围的任何巨魔营地",
+			["Spanish"] = "Cualquier campamento de trolls alrededor del lago",
+			["French"] = "Tout camp de trolls autour du lac",
+			["Korean"] = "호수 주변의 트롤 캠프",
+			["German"] = "Jedes Trollcamp rund um den See",
 		},
 		["id"] = 2606,
 		["location"] = {
@@ -10079,7 +10086,14 @@ MTSL_DATA["npcs"] = {
 		["zone_id"] = 440,
 		["phase"] = 1,
 		["special_action"] = {
-			["English"] = "Spawns during quest to escort Robot Chicken",
+			["English"] = "Spawns during quest to escort robot chicken",
+			["Portuguese"] = "Nasce durante a missão de escoltar frango robô",
+			["Russian"] = "Появляется во время квеста на сопровождение робота-курицы",
+			["Chinese"] = "在寻找护卫机器人鸡的过程中产生",
+			["Spanish"] = "Aparece durante la búsqueda para escoltar a un pollo robot",
+			["French"] = "Apparaît pendant la quête pour escorter un poulet robot",
+			["Korean"] = "로봇 치킨을 호위하기 위해 퀘스트 중 생성",
+			["German"] = "Erscheint während der Suche nach einem Roboterhuhn",
 		},
 		["id"] = 7805,
 		["location"] = {
@@ -11530,6 +11544,13 @@ MTSL_DATA["npcs"] = {
 		["phase"] = 1,
 		["special_action"] = {
 			["English"] = "Boss in arena event",
+			["Chinese"] = "舞台上的老板事件",
+			["Spanish"] = "Jefe en evento de arena",
+			["Portuguese"] = "Chefe no evento de arena",
+			["Russian"] = "Босс на арене",
+			["French"] = "Boss dans l'arène",
+			["Korean"] = "경기장 이벤트에서 보스",
+			["German"] = "Boss im Arena-Event",
 		},
 		["id"] = 9028,
 		["location"] = {
@@ -12167,6 +12188,13 @@ MTSL_DATA["npcs"] = {
 		["phase"] = 1,
 		["special_action"] = {
 			["English"] = "Spawns during father flame event",
+			["Portuguese"] = "Nasce durante evento de chama do pai",
+			["Russian"] = "Появляется во время пламени отца",
+			["Chinese"] = "父亲火焰事件期间产生",
+			["Spanish"] = "Engendra durante el evento de la llama del padre",
+			["French"] = "Fraye pendant la flamme du père",
+			["Korean"] = "아버지 불꽃 이벤트 중 산란",
+			["German"] = "Erscheint während des Vaterflammenereignisses",
 		},
 		["id"] = 10264,
 		["location"] = {
@@ -13765,6 +13793,31 @@ MTSL_DATA["npcs"] = {
 			["is_elite"] = 0,
 		},
 	}, -- [551]
+	{
+		["zone_id"] = 618,
+		["phase"] = 1,
+		["id"] = 11188,
+		["location"] = {
+			["y"] = "37.80",
+			["x"] = "60.80",
+		},
+		["name"] = {
+			["Portuguese"] = "Evie Rodacerva",
+			["Russian"] = "Иви Бурноварка",
+			["Chinese"] = "埃文·维布鲁",
+			["Spanish"] = "Evie Brebegira",
+			["French"] = "Evie Whirlbrew",
+			["English"] = "Evie Whirlbrew",
+			["Korean"] = "에비 휠브루",
+			["German"] = "Evie Whirlbrew",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "58",
+			["min"] = "58",
+			["is_elite"] = 0,
+		},
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,

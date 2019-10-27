@@ -2307,7 +2307,14 @@ MTSL_DATA["Alchemy"]["skills"] = {
 			["English"] = "Gurubashi Mojo Madness",
 		},
 		["special_action"] = {
-			["English"] = "Inspect the tablet at the Edge of Madness room in Zul'Gurub",
+			["English"] = "Inspect the Tablet of Madness in Zul'Gurub",
+			["Russian"] = "Осмотрите Табличка Безумия в Зул'Гурубе",
+			["French"] = "Inspectez la Tablette de la Folie à Zul'Gurub",
+			["Portuguese"] = "Inspecione a Tabuleta da Loucura em Zul'Gurub",
+			["Korean"] = "줄구룹의 광기 태블릿 검사",
+			["Chinese"] = "检查祖古鲁的疯狂平板电脑",
+			["German"] = "Untersucht die Schrifttafel des Wahnsinns in Zul'Gurub",
+			["Spanish"] = "Inspecciona la Tablilla de Locura en Zul'Gurub",
 		},
 	}, -- [105]
 	{

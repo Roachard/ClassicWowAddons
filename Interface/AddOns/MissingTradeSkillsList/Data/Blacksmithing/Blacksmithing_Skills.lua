@@ -1670,7 +1670,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [63]
 	{
 		["phase"] = 1,
-		["min_skill"] = 110,
+		["min_skill"] = 115,
 		["trainers"] = {
 			["sources"] = {
 				1383, -- [1]
@@ -1886,7 +1886,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [72]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 70,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -1939,7 +1939,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [74]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 140,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -2194,7 +2194,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [85]
 	{
 		["phase"] = 1,
-		["min_skill"] = 100,
+		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
 				2836, -- [1]
@@ -2357,7 +2357,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [93]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 220,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -2923,7 +2923,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [119]
 	{
 		["phase"] = 1,
-		["min_skill"] = 270,
+		["min_skill"] = 245,
 		["trainers"] = {
 			["sources"] = {
 				7231, -- [1]
@@ -2964,7 +2964,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [121]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
 				7231, -- [1]
@@ -3973,7 +3973,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [178]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 260,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -4010,7 +4010,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [179]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 270,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -4047,7 +4047,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [180]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 270,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -4167,7 +4167,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [186]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 285,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -4254,7 +4254,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [190]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -4291,7 +4291,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [191]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -5226,7 +5226,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [244]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]
@@ -5263,7 +5263,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 	}, -- [245]
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
 				514, -- [1]

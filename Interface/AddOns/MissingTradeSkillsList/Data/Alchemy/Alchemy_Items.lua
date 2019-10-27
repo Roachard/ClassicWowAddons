@@ -846,6 +846,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["quality"] = "uncommon",
 	}, -- [40]
 	{
+		["vendors"] = {
+			["sources"] = {
+				11188, -- [1]
+			},
+			["price"] = 15000,
+		},
 		["name"] = {
 			["Russian"] = "Рецепт: хорошее лечебное зелье",
 			["Portuguese"] = "Receita: Poção Elevada de Cura",

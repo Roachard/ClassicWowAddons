@@ -3916,7 +3916,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Gordok Ogre Suit",
 		},
 		["special_action"] = {
-			["English"] = "Talk to NPC after completing quest",
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
 		},
 	}, -- [194]
 	{

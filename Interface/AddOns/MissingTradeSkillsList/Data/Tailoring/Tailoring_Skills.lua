@@ -4326,7 +4326,14 @@ MTSL_DATA["Tailoring"]["skills"] = {
 			["English"] = "Gordok Ogre Suit",
 		},
 		["special_action"] = {
-			["English"] = "Talk to NPC after completing the quest to learn",
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
 		},
 	}, -- [190]
 	{
@@ -4650,6 +4657,13 @@ MTSL_DATA["Tailoring"]["skills"] = {
 		},
 		["special_action"] = {
 			["English"] = "Book dropped on the floor after killing Jandice Barov",
+			["Russian"] = "Книга упала на пол после убийства Джандис Баров",
+			["Portuguese"] = "Livro caiu no chão depois de matar Jandice Barov",
+			["Chinese"] = "杀死詹迪斯·巴罗夫后书掉在地上",
+			["Spanish"] = "Libro caído al suelo después de matar a Jandice Barov",
+			["French"] = "Livre tombé par terre après avoir tué Jandice Barov",
+			["German"] = "Buch fiel auf den Boden, nachdem er Jandice Barov getötet hatte",
+			["Korean"] = "잔다이스 바로브을 를 죽인 후 책이 바닥에 떨어졌다",
 		},
 	}, -- [210]
 	{
