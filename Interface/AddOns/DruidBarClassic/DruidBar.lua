@@ -144,6 +144,14 @@ function Load_Variables(className)
 		DruidBarKey.color = {0,0,1,1};
 		DruidBarKey.bordercolor = {1,1,1,1};
 		DruidBarKey.bgcolor = {0,0,0,0.5};
+		
+		DruidBarKey.Player = true;
+		--Assign value that default to match player frame
+		DruidBarKey.xvar = 125;
+		DruidBarKey.yvar = 18;
+		DruidBarKey.Lock = true;
+		DruidBarKey.HideInCaster = true;
+		DruidBarKey.Text = 1;
 	end
 
 	if not DruidBarKey.color then DruidBarKey.color = {0,0,1,1}; end
