@@ -1703,6 +1703,12 @@ local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5
 	elseif event == "CHAT_MSG_RAID" then chnum = "r"
 	elseif event == "CHAT_MSG_GUILD" then chnum = "g"
 	elseif event == "CHAT_MSG_OFFICER" then chnum = "o"
+	elseif event == "CHAT_MSG_CHANNEL" and not(
+		chname:find("^综合") or
+		chname:find("^交易") or
+		chname:find("^本地防务") or
+		chname == "寻求组队" or
+		chname == "大脚世界频道") then return false
 	end
 			
 	if GIL_Loaded ~= true then
