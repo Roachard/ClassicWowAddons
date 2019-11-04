@@ -650,7 +650,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "[contains=飞机] or [contains=机票] or [contains=机场] or [contains=航空] or [contains=航班] or [contains=航-班] or [contains=直达] or [contains=直通车] or [contains=高速] or [contains=快\\ 滴] or [contains=秒拉] or ([contains=G] and ([contains=拉人] or [contains=血'色] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运] or [contains=斯坦] or [contains=STSM]))"
+	filterDefFilter[#filterDefFilter + 1] = "[contains=飞机] or [contains=直飞] or [contains=机票] or [contains=机场] or [contains=航空] or [contains=航班] or [contains=航-班] or [contains=直达] or [contains=直通车] or [contains=高速] or [contains=快\\ 滴] or [contains=秒拉] or ([contains=G] and ([contains=拉人] or [contains=血'色] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运] or [contains=斯坦] or [contains=STSM]))"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
@@ -670,7 +670,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "草药"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=梦叶草] or [contains=格罗姆之血] or [contains=墓地苔]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=黑莲花] or [contains=梦叶草] or [contains=格罗姆之血] or [contains=墓地苔]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "代工"
@@ -678,7 +678,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "附魔"
-	filterDefFilter[#filterDefFilter + 1] = "(([contains=附魔] or [contains=FM]) or (([contains=力] or [contains=敏] or [contains=火抗]) and ([contains=十字军] or [contains=灼热] or [contains=冰寒]))) and not [contains=求] and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=附魔] or [contains=FM]) or (([contains=力] or [contains=敏] or [contains=火抗]) and ([contains=十字] or [contains=灼热] or [contains=冰寒]))) and not [contains=求] and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "金团"
@@ -730,7 +730,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "斯坦索姆"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=斯坦索姆] or [contains=STSM] or [contains=DK] or [contains=牵马]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=斯坦索姆] or [contains=STSM] or [contains=DK] or [contains=摸马] or [contains=牵马]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "黑石深渊"
@@ -794,7 +794,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收] or [contains=欢迎] or [contains=加入]) and ([contains=公会] or [contains=工会] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收] or [contains=补充] or [contains=欢迎] or [contains=加入]) and ([contains=公会] or [contains=工会] or [contains=开荒] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "交流群"
@@ -1703,7 +1703,7 @@ local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5
 	elseif event == "CHAT_MSG_RAID" then chnum = "r"
 	elseif event == "CHAT_MSG_GUILD" then chnum = "g"
 	elseif event == "CHAT_MSG_OFFICER" then chnum = "o"
-	elseif event == "CHAT_MSG_CHANNEL" and not(
+	elseif GetCurrentRegion() == 5 and event == "CHAT_MSG_CHANNEL" and not(
 		chname:find("^综合") or
 		chname:find("^交易") or
 		chname:find("^本地防务") or
