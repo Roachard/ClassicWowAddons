@@ -642,7 +642,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=AA] or [contains=A\\ A] or [contains=刷刷]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=AA] or [contains=A\\ A]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
