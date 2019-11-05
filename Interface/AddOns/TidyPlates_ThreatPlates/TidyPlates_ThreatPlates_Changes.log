@@ -1,8 +1,22 @@
+------------------------------------------------------
+1.2.6
+------------------------------------------------------
+* Fixed a Lua error with the castbar when a cast was interrupted in certain situations, e.g., while the unit died [Issue #17].
+
+------------------------------------------------------
+1.2.5
+------------------------------------------------------
+* Enabled support for buffs again to the Auras widget [Comment #355].
+* Fixed a bug with the configuration mode of clickable area to respect WoW's internal nameplate scaling (controlled by CVars).
+* Fixed a Lua error in Social widget because of a deprecated API usage [Issue #16, Comments TP#4053].
+* Updated included libraries LibClassicDurations (rev. 34), LibClassicCasterino (rev. 24).
+* Updated localizations for enES and esMX (thanks to Woopy).
+
 ﻿﻿------------------------------------------------------
 1.2.4
 ------------------------------------------------------
 * Fixed a bug where the player pet's nameplate was only shown when Guardian nameplates were enabled (not pet nameplates) [E-Mail].
-* Updated included libraries LibThreatClassic-1.0 (rev. 10), LibClassicDurations (rev. 24), LibClassicCasterino (rev. 20).
+* Updated included libraries LibThreatClassic-1.0 (rev. 10), LibClassicDurations (rev. 24), LibClassicCasterino (rev. 20) [Issues #14, #13].
 
 ﻿------------------------------------------------------
 1.2.3
@@ -69,4 +83,3 @@
 1.0.0
 ------------------------------------------------------
 * Basic port of Threat Plates 9.1.13 to WoW Classic.
-
