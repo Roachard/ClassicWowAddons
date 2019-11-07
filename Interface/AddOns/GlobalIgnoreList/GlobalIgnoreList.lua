@@ -650,7 +650,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "[contains=飞机] or [contains=直飞] or [contains=机票] or [contains=机场] or [contains=航空] or [contains=航班] or [contains=航-班] or [contains=直达] or [contains=直通车] or [contains=高速] or [contains=快\\ 滴] or [contains=秒拉] or ([contains=G] and ([contains=拉人] or [contains=血'色] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运] or [contains=斯坦] or [contains=STSM]))"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=专] or [contains=票] or [contains=达] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运]))"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
@@ -714,11 +714,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "黑石塔上层"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑石塔上层] or [contains=黑上]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=黑石塔上] or [contains=黑上]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "黑石塔下层"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=黑石塔下层] or [contains=黑下]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=黑石塔下] or [contains=黑下]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "厄运之槌"
