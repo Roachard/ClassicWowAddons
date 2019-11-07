@@ -1,23 +1,4 @@
----@class QuestieComms
-local QuestieComms = QuestieLoader:CreateModule("QuestieComms");
--------------------------
---Import modules.
--------------------------
----@type QuestieQuest
-local QuestieQuest = QuestieLoader:ImportModule("QuestieQuest");
----@type QuestieEventHandler
-local QuestieEventHandler = QuestieLoader:ImportModule("QuestieEventHandler");
----@type QuestieSerializer
-local QuestieSerializer = QuestieLoader:ImportModule("QuestieSerializer");
----@type QuestieCompress
---local QuestieCompress = QuestieLoader:ImportModule("QuestieCompress");
----@type QuestieLib
-local QuestieLib = QuestieLoader:ImportModule("QuestieLib");
----@type QuestiePlayer
-local QuestiePlayer = QuestieLoader:ImportModule("QuestiePlayer");
----@type QuestieDB
-local QuestieDB = QuestieLoader:ImportModule("QuestieDB");
-
+QuestieComms = {...};
 local _QuestieComms = {...};
 -- Addon message prefix
 _QuestieComms.prefix = "questie";
@@ -244,15 +225,13 @@ function QuestieComms:CreateQuestDataPacket(questId)
     quest.id = questId;
     local rawObjectives = QuestieQuest:GetAllLeaderBoardDetails(questId);
     quest.objectives = {}
-    if questObject then
-        for objectiveIndex, objective in pairs(rawObjectives) do
-            quest.objectives[objectiveIndex] = {};
-            quest.objectives[objectiveIndex].id = questObject.Objectives[objectiveIndex].Id;--[_QuestieComms.idLookup["id"]] = questObject.Objectives[objectiveIndex].Id;
-            quest.objectives[objectiveIndex].typ = string.sub(objective.type, 1, 1);-- Get the first char only.--[_QuestieComms.idLookup["type"]] = string.sub(objective.type, 1, 1);-- Get the first char only.
-            quest.objectives[objectiveIndex].fin = objective.finished;--[_QuestieComms.idLookup["finished"]] = objective.finished;
-            quest.objectives[objectiveIndex].ful = objective.numFulfilled;--[_QuestieComms.idLookup["fulfilled"]] = objective.numFulfilled;
-            quest.objectives[objectiveIndex].req = objective.numRequired;--[_QuestieComms.idLookup["required"]] = objective.numRequired;
-        end
+    for objectiveIndex, objective in pairs(rawObjectives) do
+        quest.objectives[objectiveIndex] = {};
+        quest.objectives[objectiveIndex].id = questObject.Objectives[objectiveIndex].Id;--[_QuestieComms.idLookup["id"]] = questObject.Objectives[objectiveIndex].Id;
+        quest.objectives[objectiveIndex].typ = string.sub(objective.type, 1, 1);-- Get the first char only.--[_QuestieComms.idLookup["type"]] = string.sub(objective.type, 1, 1);-- Get the first char only.
+        quest.objectives[objectiveIndex].fin = objective.finished;--[_QuestieComms.idLookup["finished"]] = objective.finished;
+        quest.objectives[objectiveIndex].ful = objective.numFulfilled;--[_QuestieComms.idLookup["fulfilled"]] = objective.numFulfilled;
+        quest.objectives[objectiveIndex].req = objective.numRequired;--[_QuestieComms.idLookup["required"]] = objective.numRequired;
     end
     Questie:Debug(DEBUG_SPAM, "[QuestieComms] questPacket made: Objectivetable:", quest.objectives);
     return quest;
@@ -406,9 +385,9 @@ function _QuestieComms:OnCommReceived(message, distribution, sender)
                     local majorOwn, minorOwn, patchOwn = QuestieLib:GetAddonVersionInfo();
                     if((majorOwn < tonumber(major) or minorOwn < tonumber(minor)) and not UnitAffectingCombat("player")) then
                         suggestUpdate = false;
-                        if(majorOwn < tonumber(major)) then
+                        if(majorOwn < major) then
                             Questie:Print("A Major patch for Questie exist! Please update as soon as possible!");
-                        elseif(majorOwn == tonumber(major) and minorOwn < tonumber(minor)) then
+                        elseif(majorOwn == major and minorOwn < minor) then
                             Questie:Print("You have an outdated version of Questie! Please consider updating!");
                         end
                     end
@@ -482,7 +461,7 @@ end]]--
 
 
 
---[[ NOT USED
+-- NOT USED
 function QuestieComms:MessageReceived(channel, message, type, source) -- pcall this
     Questie:Debug(DEBUG_DEVELOP, "recv(|cFF22FF22" .. message .. "|r)")
     if channel == "questie" and source then
@@ -490,7 +469,7 @@ function QuestieComms:MessageReceived(channel, message, type, source) -- pcall t
       _QuestieComms.packets[message.msgId].read(decompressedData);
     end
 end
-]]--
+
 --AeroScripts comms module, do not remove!!! Everything is still a WIP!!!
 --[[QuestieComms = {};
 

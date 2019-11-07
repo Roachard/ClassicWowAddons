@@ -1,10 +1,4 @@
----@class QuestieNameplate
-local QuestieNameplate = QuestieLoader:CreateModule("QuestieNameplate");
--------------------------
---Import modules.
--------------------------
----@type QuestieTooltips
-local QuestieTooltips = QuestieLoader:ImportModule("QuestieTooltips");
+QuestieNameplate = {};
 
 local activeGUIDs = {};
 local npFrames = {};
@@ -160,10 +154,10 @@ function QuestieNameplate:UpdateNameplate(self)
 end
 
 function QuestieNameplate:HideCurrentFrames()
-    for guid, token in pairs(activeGUIDs) do
-        activeGUIDs[guid] = nil;
-        QuestieNameplate:RemoveFrame(guid);
-    end
+        for guid, token in pairs(activeGUIDs) do
+            activeGUIDs[guid] = nil;
+            QuestieNameplate:RemoveFrame(guid);
+        end
 end
 
 

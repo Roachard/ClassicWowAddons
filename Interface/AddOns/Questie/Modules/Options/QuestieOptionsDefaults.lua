@@ -1,5 +1,4 @@
----@class QuestieOptionsDefaults
-local QuestieOptionsDefaults = QuestieLoader:CreateModule("QuestieOptionsDefaults");
+QuestieOptionsDefaults = {...}
 
 function QuestieOptionsDefaults:Load()
     return {
@@ -74,7 +73,6 @@ function QuestieOptionsDefaults:Load()
         char = {
             complete = {},
             hidden = {},
-            enableMinimalisticIcons = false,
             enabled = true,
             lowlevel = false,
             manualMinLevelOffset = false,

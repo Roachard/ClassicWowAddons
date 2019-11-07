@@ -1,11 +1,3 @@
--- AUTO GENERATED FILE! DO NOT EDIT!
-
--------------------------
---Import modules.
--------------------------
----@type QuestieDB
-local QuestieDB = QuestieLoader:ImportModule("QuestieDB");
-
 QuestieDB.objectKeys = {
     ['name'] = 1, -- string
     ['questStarts'] = 2, -- table {questID(int),...}

@@ -1,22 +1,12 @@
--------------------------
---Import modules.
--------------------------
----@type QuestieDB
-local QuestieDB = QuestieLoader:ImportModule("QuestieDB");
----@type QuestieComms
-local QuestieComms = QuestieLoader:ImportModule("QuestieComms");
----@type QuestieLib
-local QuestieLib = QuestieLoader:ImportModule("QuestieLib");
-
 QuestieComms.data = {}
 
 --[i_1337][playerName][questId] = objective
-local commsTooltipLookup = {}
+commsTooltipLookup = {}
 
 --[playerName] = {
     --[questId] = {["i_1337"]=true,["o_1338"]=true,}
 --}
-local playerRegisteredTooltips = {}
+playerRegisteredTooltips = {}
 
 ---@param tooltipKey string @A key in the form of "i_1337"
 ---@return boolean @true if exist nil if not

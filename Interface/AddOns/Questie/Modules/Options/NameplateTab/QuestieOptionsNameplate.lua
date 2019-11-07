@@ -1,15 +1,3 @@
--------------------------
---Import modules.
--------------------------
----@type QuestieOptions
-local QuestieOptions = QuestieLoader:ImportModule("QuestieOptions");
----@type QuestieOptionsDefaults
-local QuestieOptionsDefaults = QuestieLoader:ImportModule("QuestieOptionsDefaults");
----@type QuestieOptionsUtils
-local QuestieOptionsUtils = QuestieLoader:ImportModule("QuestieOptionsUtils");
----@type QuestieNameplate
-local QuestieNameplate = QuestieLoader:ImportModule("QuestieNameplate");
-
 QuestieOptions.tabs.nameplate = {...}
 local optionsDefaults = QuestieOptionsDefaults:Load()
 
