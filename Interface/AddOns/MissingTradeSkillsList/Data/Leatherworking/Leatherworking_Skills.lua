@@ -7,22 +7,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -37,28 +37,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Boots",
 		},
 		["id"] = 2149,
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -73,27 +73,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Light Armor Kit",
 		},
 		["id"] = 2152,
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 15,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 50,
 		},
@@ -108,7 +108,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Pants",
 		},
 		["id"] = 2153,
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -124,26 +124,26 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Boots",
 		},
 		["id"] = 2158,
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 85,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				7866, -- [8]
-				7867, -- [9]
-				7868, -- [10]
-				7869, -- [11]
-				8153, -- [12]
-				11081, -- [13]
-				11084, -- [14]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				7866,
+				7867,
+				7868,
+				7869,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 550,
 		},
@@ -158,27 +158,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Cloak",
 		},
 		["id"] = 2159,
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 40,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 100,
 		},
@@ -193,27 +193,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Embossed Leather Vest",
 		},
 		["id"] = 2160,
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 55,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 100,
 		},
@@ -228,23 +228,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Embossed Leather Boots",
 		},
 		["id"] = 2161,
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				11083, -- [10]
-				11096, -- [11]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				11083,
+				11096,
 			},
 			["price"] = 100,
 		},
@@ -259,7 +259,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Embossed Leather Cloak",
 		},
 		["id"] = 2162,
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
@@ -275,7 +275,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "White Leather Jerkin",
 		},
 		["id"] = 2163,
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 75,
@@ -291,22 +291,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Gloves",
 		},
 		["id"] = 2164,
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 650,
 		},
@@ -321,26 +321,26 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Medium Armor Kit",
 		},
 		["id"] = 2165,
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				7866, -- [8]
-				7867, -- [9]
-				7868, -- [10]
-				7869, -- [11]
-				8153, -- [12]
-				11081, -- [13]
-				11084, -- [14]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				7866,
+				7867,
+				7868,
+				7869,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 1400,
 		},
@@ -355,26 +355,26 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Toughened Leather Armor",
 		},
 		["id"] = 2166,
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				7866, -- [8]
-				7867, -- [9]
-				7868, -- [10]
-				7869, -- [11]
-				8153, -- [12]
-				11081, -- [13]
-				11084, -- [14]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				7866,
+				7867,
+				7868,
+				7869,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 650,
 		},
@@ -389,22 +389,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Boots",
 		},
 		["id"] = 2167,
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 1000,
 		},
@@ -419,7 +419,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Cloak",
 		},
 		["id"] = 2168,
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -435,28 +435,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Tunic",
 		},
 		["id"] = 2169,
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -471,27 +471,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Light Leather",
 		},
 		["id"] = 2881,
-	}, -- [16]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 25,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 75,
 		},
@@ -506,23 +506,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Belt",
 		},
 		["id"] = 3753,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 55,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				11083, -- [10]
-				11096, -- [11]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				11083,
+				11096,
 			},
 			["price"] = 150,
 		},
@@ -537,22 +537,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Embossed Leather Gloves",
 		},
 		["id"] = 3756,
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 75,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 500,
 		},
@@ -567,14 +567,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Embossed Leather Pants",
 		},
 		["id"] = 3759,
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2000,
 		},
@@ -589,22 +589,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hillman's Cloak",
 		},
 		["id"] = 3760,
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 85,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 550,
 		},
@@ -619,7 +619,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Tunic",
 		},
 		["id"] = 3761,
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -635,22 +635,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hillman's Leather Vest",
 		},
 		["id"] = 3762,
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 500,
 		},
@@ -665,14 +665,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Belt",
 		},
 		["id"] = 3763,
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1800,
 		},
@@ -687,7 +687,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hillman's Leather Gloves",
 		},
 		["id"] = 3764,
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
@@ -703,14 +703,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Gloves",
 		},
 		["id"] = 3765,
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1500,
 		},
@@ -725,7 +725,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Belt",
 		},
 		["id"] = 3766,
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
@@ -741,14 +741,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hillman's Belt",
 		},
 		["id"] = 3767,
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 130,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1200,
 		},
@@ -763,7 +763,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Hillman's Shoulders",
 		},
 		["id"] = 3768,
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 140,
@@ -779,14 +779,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Shoulders",
 		},
 		["id"] = 3769,
-	}, -- [29]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 135,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1500,
 		},
@@ -801,7 +801,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Toughened Leather Gloves",
 		},
 		["id"] = 3770,
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
@@ -817,7 +817,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Gloves",
 		},
 		["id"] = 3771,
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
@@ -833,7 +833,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Leather Armor",
 		},
 		["id"] = 3772,
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -849,14 +849,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Armor",
 		},
 		["id"] = 3773,
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 160,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2500,
 		},
@@ -871,7 +871,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Leather Belt",
 		},
 		["id"] = 3774,
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
@@ -887,14 +887,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Belt",
 		},
 		["id"] = 3775,
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 180,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -909,7 +909,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Leather Bracers",
 		},
 		["id"] = 3776,
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 195,
@@ -925,7 +925,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Leather Bracers",
 		},
 		["id"] = 3777,
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 185,
@@ -941,7 +941,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Gem-studded Leather Belt",
 		},
 		["id"] = 3778,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -957,14 +957,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Belt",
 		},
 		["id"] = 3779,
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2000,
 		},
@@ -979,27 +979,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Armor Kit",
 		},
 		["id"] = 3780,
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 35,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 50,
 		},
@@ -1014,22 +1014,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Cured Light Hide",
 		},
 		["id"] = 3816,
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 650,
 		},
@@ -1044,14 +1044,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Cured Medium Hide",
 		},
 		["id"] = 3817,
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1800,
 		},
@@ -1066,7 +1066,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Cured Heavy Hide",
 		},
 		["id"] = 3818,
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 165,
@@ -1082,7 +1082,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Raptor Hide Harness",
 		},
 		["id"] = 4096,
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 165,
@@ -1098,7 +1098,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Raptor Hide Belt",
 		},
 		["id"] = 4097,
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 40,
@@ -1114,14 +1114,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Kodo Hide Bag",
 		},
 		["id"] = 5244,
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -1136,7 +1136,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Harness",
 		},
 		["id"] = 6661,
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -1152,7 +1152,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Murloc Scale Belt",
 		},
 		["id"] = 6702,
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 95,
@@ -1168,7 +1168,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Murloc Scale Breastplate",
 		},
 		["id"] = 6703,
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
@@ -1184,7 +1184,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Thick Murloc Armor",
 		},
 		["id"] = 6704,
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
@@ -1200,28 +1200,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Murloc Scale Bracers",
 		},
 		["id"] = 6705,
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -1236,7 +1236,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Vest",
 		},
 		["id"] = 7126,
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 105,
@@ -1252,22 +1252,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fine Leather Pants",
 		},
 		["id"] = 7133,
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 115,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 1000,
 		},
@@ -1282,14 +1282,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dark Leather Pants",
 		},
 		["id"] = 7135,
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 160,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2500,
 		},
@@ -1304,7 +1304,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Pants",
 		},
 		["id"] = 7147,
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
@@ -1320,14 +1320,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Leggings",
 		},
 		["id"] = 7149,
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2500,
 		},
@@ -1342,7 +1342,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Shoulders",
 		},
 		["id"] = 7151,
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 185,
@@ -1358,14 +1358,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Cloak",
 		},
 		["id"] = 7153,
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -1380,7 +1380,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Guardian Gloves",
 		},
 		["id"] = 7156,
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -1396,7 +1396,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Deviate Scale Cloak",
 		},
 		["id"] = 7953,
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 105,
@@ -1412,7 +1412,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Deviate Scale Gloves",
 		},
 		["id"] = 7954,
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 115,
@@ -1428,7 +1428,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Deviate Scale Belt",
 		},
 		["id"] = 7955,
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -1444,28 +1444,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Moonglow Vest",
 		},
 		["id"] = 8322,
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -1480,28 +1480,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Cloak",
 		},
 		["id"] = 9058,
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -1516,27 +1516,27 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Handstitched Leather Bracers",
 		},
 		["id"] = 9059,
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 30,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				11083, -- [14]
-				11096, -- [15]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				11083,
+				11096,
 			},
 			["price"] = 100,
 		},
@@ -1551,23 +1551,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Light Leather Quiver",
 		},
 		["id"] = 9060,
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 30,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				11083, -- [10]
-				11096, -- [11]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				11083,
+				11096,
 			},
 			["price"] = 100,
 		},
@@ -1582,7 +1582,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Small Leather Ammo Pouch",
 		},
 		["id"] = 9062,
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 35,
@@ -1598,26 +1598,26 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Rugged Leather Pants",
 		},
 		["id"] = 9064,
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 70,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				7866, -- [8]
-				7867, -- [9]
-				7868, -- [10]
-				7869, -- [11]
-				8153, -- [12]
-				11081, -- [13]
-				11084, -- [14]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				7866,
+				7867,
+				7868,
+				7869,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 450,
 		},
@@ -1632,26 +1632,26 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Light Leather Bracers",
 		},
 		["id"] = 9065,
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 95,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				7866, -- [8]
-				7867, -- [9]
-				7868, -- [10]
-				7869, -- [11]
-				8153, -- [12]
-				11081, -- [13]
-				11084, -- [14]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				7866,
+				7867,
+				7868,
+				7869,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 600,
 		},
@@ -1666,7 +1666,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Light Leather Pants",
 		},
 		["id"] = 9068,
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -1682,7 +1682,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Whelp Cloak",
 		},
 		["id"] = 9070,
-	}, -- [71]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
@@ -1698,22 +1698,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Red Whelp Gloves",
 		},
 		["id"] = 9072,
-	}, -- [72]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 1400,
 		},
@@ -1728,14 +1728,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nimble Leather Gloves",
 		},
 		["id"] = 9074,
-	}, -- [73]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1500,
 		},
@@ -1750,7 +1750,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Fletcher's Gloves",
 		},
 		["id"] = 9145,
-	}, -- [74]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 135,
@@ -1766,7 +1766,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Herbalist's Gloves",
 		},
 		["id"] = 9146,
-	}, -- [75]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 135,
@@ -1782,7 +1782,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Earthen Leather Shoulders",
 		},
 		["id"] = 9147,
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 140,
@@ -1798,7 +1798,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Pilferer's Gloves",
 		},
 		["id"] = 9148,
-	}, -- [77]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
@@ -1814,14 +1814,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Earthen Gloves",
 		},
 		["id"] = 9149,
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2000,
 		},
@@ -1836,14 +1836,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Quiver",
 		},
 		["id"] = 9193,
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2000,
 		},
@@ -1858,7 +1858,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Leather Ammo Pouch",
 		},
 		["id"] = 9194,
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 165,
@@ -1874,14 +1874,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dusky Leather Leggings",
 		},
 		["id"] = 9195,
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2500,
 		},
@@ -1896,7 +1896,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dusky Leather Armor",
 		},
 		["id"] = 9196,
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1912,14 +1912,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Whelp Armor",
 		},
 		["id"] = 9197,
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 180,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -1934,14 +1934,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Frost Leather Cloak",
 		},
 		["id"] = 9198,
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 180,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -1956,7 +1956,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dusky Bracers",
 		},
 		["id"] = 9201,
-	}, -- [85]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
@@ -1972,14 +1972,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Green Whelp Bracers",
 		},
 		["id"] = 9202,
-	}, -- [86]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 195,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -1994,7 +1994,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dusky Belt",
 		},
 		["id"] = 9206,
-	}, -- [87]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -2010,7 +2010,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dusky Boots",
 		},
 		["id"] = 9207,
-	}, -- [88]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -2026,14 +2026,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Swift Boots",
 		},
 		["id"] = 9208,
-	}, -- [89]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -2048,14 +2048,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Cured Thick Hide",
 		},
 		["id"] = 10482,
-	}, -- [90]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 3500,
 		},
@@ -2070,7 +2070,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Thick Armor Kit",
 		},
 		["id"] = 10487,
-	}, -- [91]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -2086,14 +2086,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Comfortable Leather Hat",
 		},
 		["id"] = 10490,
-	}, -- [92]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
-				11097, -- [1]
-				11098, -- [2]
+				11097,
+				11098,
 			},
 			["price"] = 3500,
 		},
@@ -2108,14 +2108,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Tunic",
 		},
 		["id"] = 10499,
-	}, -- [93]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
-				11097, -- [1]
-				11098, -- [2]
+				11097,
+				11098,
 			},
 			["price"] = 3500,
 		},
@@ -2130,7 +2130,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Headband",
 		},
 		["id"] = 10507,
-	}, -- [94]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 205,
@@ -2146,15 +2146,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Turtle Scale Gloves",
 		},
 		["id"] = 10509,
-	}, -- [95]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4000,
 		},
@@ -2169,7 +2169,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Turtle Scale Breastplate",
 		},
 		["id"] = 10511,
-	}, -- [96]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
@@ -2185,15 +2185,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Shoulders",
 		},
 		["id"] = 10516,
-	}, -- [97]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4000,
 		},
@@ -2208,7 +2208,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Turtle Scale Bracers",
 		},
 		["id"] = 10518,
-	}, -- [98]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 215,
@@ -2224,7 +2224,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Big Voodoo Robe",
 		},
 		["id"] = 10520,
-	}, -- [99]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
@@ -2240,7 +2240,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Breastplate",
 		},
 		["id"] = 10525,
-	}, -- [100]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
@@ -2256,7 +2256,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Shoulders",
 		},
 		["id"] = 10529,
-	}, -- [101]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
@@ -2272,7 +2272,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Big Voodoo Mask",
 		},
 		["id"] = 10531,
-	}, -- [102]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
@@ -2288,7 +2288,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Bracers",
 		},
 		["id"] = 10533,
-	}, -- [103]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -2304,7 +2304,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Gloves",
 		},
 		["id"] = 10542,
-	}, -- [104]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -2320,7 +2320,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Vest",
 		},
 		["id"] = 10544,
-	}, -- [105]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -2336,15 +2336,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Helmet",
 		},
 		["id"] = 10546,
-	}, -- [106]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4600,
 		},
@@ -2359,28 +2359,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Pants",
 		},
 		["id"] = 10548,
-	}, -- [107]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -2395,15 +2395,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Cloak",
 		},
 		["id"] = 10550,
-	}, -- [108]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4300,
 		},
@@ -2418,7 +2418,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Turtle Scale Helm",
 		},
 		["id"] = 10552,
-	}, -- [109]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
@@ -2434,15 +2434,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Boots",
 		},
 		["id"] = 10554,
-	}, -- [110]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4600,
 		},
@@ -2457,15 +2457,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Turtle Scale Leggings",
 		},
 		["id"] = 10556,
-	}, -- [111]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4600,
 		},
@@ -2480,7 +2480,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Nightscape Boots",
 		},
 		["id"] = 10558,
-	}, -- [112]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
@@ -2496,7 +2496,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Big Voodoo Pants",
 		},
 		["id"] = 10560,
-	}, -- [113]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
@@ -2512,7 +2512,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Big Voodoo Cloak",
 		},
 		["id"] = 10562,
-	}, -- [114]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
@@ -2528,7 +2528,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Shoulders",
 		},
 		["id"] = 10564,
-	}, -- [115]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 245,
@@ -2544,7 +2544,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Boots",
 		},
 		["id"] = 10566,
-	}, -- [116]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 245,
@@ -2560,7 +2560,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Leggings",
 		},
 		["id"] = 10568,
-	}, -- [117]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -2576,7 +2576,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Tough Scorpid Helm",
 		},
 		["id"] = 10570,
-	}, -- [118]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -2592,7 +2592,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Leggings",
 		},
 		["id"] = 10572,
-	}, -- [119]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -2608,14 +2608,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wild Leather Cloak",
 		},
 		["id"] = 10574,
-	}, -- [120]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				7866, -- [1]
-				7867, -- [2]
+				7866,
+				7867,
 			},
 			["price"] = 0,
 		},
@@ -2630,14 +2630,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dragonscale Gauntlets",
 		},
 		["id"] = 10619,
-	}, -- [121]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				7871, -- [2]
+				7870,
+				7871,
 			},
 			["price"] = 0,
 		},
@@ -2652,14 +2652,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wolfshead Helm",
 		},
 		["id"] = 10621,
-	}, -- [122]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				7868, -- [1]
-				7869, -- [2]
+				7868,
+				7869,
 			},
 			["price"] = 0,
 		},
@@ -2674,14 +2674,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Gauntlets of the Sea",
 		},
 		["id"] = 10630,
-	}, -- [123]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				7868, -- [1]
-				7869, -- [2]
+				7868,
+				7869,
 			},
 			["price"] = 0,
 		},
@@ -2697,16 +2697,16 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 10632,
 		["specialization"] = 10658,
-	}, -- [124]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				7871, -- [2]
-				11097, -- [3]
-				11098, -- [4]
+				7870,
+				7871,
+				11097,
+				11098,
 			},
 			["price"] = 5500,
 		},
@@ -2722,14 +2722,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 10647,
 		["specialization"] = 10660,
-	}, -- [125]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 255,
 		["trainers"] = {
 			["sources"] = {
-				7866, -- [1]
-				7867, -- [2]
+				7866,
+				7867,
 			},
 			["price"] = 0,
 		},
@@ -2745,15 +2745,69 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 10650,
 		["specialization"] = 10656,
-	}, -- [126]
+	},
+    {
+        ["id"] = 10656,
+        ["name"]  = {
+            ["English"] = "Dragonscale leatherworking",
+            ["Russian"] = "Кожевничество: чешуя драконов",
+            ["French"] = "Travail du cuir d'écailles de dragon",
+            ["Portuguese"] = "Couraria Dragônica",
+            ["Korean"] = "용비늘 가죽세공",
+            ["Chinese"] = "龙鳞制皮",
+            ["German"] = "Drachenlederverarbeitung",
+            ["Spanish"] = "Peletería dragontina",
+        },
+        -- Same Q name alliance/horde so only use 1 id, other id = 5145
+        ["quests"] = {
+            5141,
+        },
+        ["min_skill"] = 225,
+    },
+    {
+        ["id"] = 10658,
+        ["name"]  = {
+            ["English"] = "Elemental leatherworking",
+            ["Russian"] = "Кожевничество: сила стихий",
+            ["French"] = "Travail du cuir élémentaire",
+            ["Portuguese"] = "Couraria Elemental",
+            ["Korean"] = "원소 가죽세공",
+            ["Chinese"] = "元素制皮",
+            ["German"] = "Elementarlederverarbeitung",
+            ["Spanish"] = "Peletería elemental",
+        },
+        -- Same Q name alliance/horde so only use 1 id, other id = 5146
+        ["quests"] = {
+            5144,
+        },
+        ["min_skill"] = 225,
+    },
+    {
+        ["id"] = 10660,
+        ["name"]  = {
+            ["English"] = "Tribal leatherworking",
+            ["Russian"] = "Кожевничество: традиции предков",
+            ["French"] = "Travail du cuir tribal",
+            ["Portuguese"] = "Couraria tribal",
+            ["Korean"] = "전통 가죽세공",
+            ["Chinese"] = "部族制皮",
+            ["German"] = "Stammeslederverarbeitung",
+            ["Spanish"] = "Peletería tribal",
+        },
+        -- Same Q name alliance/horde so only use 1 id, other id = 5148
+        ["quests"] = {
+            5143,
+        },
+        ["min_skill"] = 225,
+    },
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4000,
 		},
@@ -2768,15 +2822,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Quickdraw Quiver",
 		},
 		["id"] = 14930,
-	}, -- [127]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4000,
 		},
@@ -2791,15 +2845,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Thick Leather Ammo Pouch",
 		},
 		["id"] = 14932,
-	}, -- [128]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4300,
 		},
@@ -2814,7 +2868,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Cured Rugged Hide",
 		},
 		["id"] = 19047,
-	}, -- [129]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 255,
@@ -2830,7 +2884,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Bracers",
 		},
 		["id"] = 19048,
-	}, -- [130]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 260,
@@ -2846,7 +2900,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Gauntlets",
 		},
 		["id"] = 19049,
-	}, -- [131]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 260,
@@ -2863,7 +2917,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19050,
 		["specialization"] = 10656,
-	}, -- [132]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2879,7 +2933,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Vest",
 		},
 		["id"] = 19051,
-	}, -- [133]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2895,7 +2949,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Bracers",
 		},
 		["id"] = 19052,
-	}, -- [134]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2912,7 +2966,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19053,
 		["specialization"] = 10660,
-	}, -- [135]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2929,7 +2983,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19054,
 		["specialization"] = 10656,
-	}, -- [136]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -2945,15 +2999,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Gauntlets",
 		},
 		["id"] = 19055,
-	}, -- [137]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				7870, -- [1]
-				11097, -- [2]
-				11098, -- [3]
+				7870,
+				11097,
+				11098,
 			},
 			["price"] = 4300,
 		},
@@ -2968,7 +3022,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Rugged Armor Kit",
 		},
 		["id"] = 19058,
-	}, -- [138]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -2985,7 +3039,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19059,
 		["specialization"] = 10658,
-	}, -- [139]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -3002,7 +3056,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19060,
 		["specialization"] = 10656,
-	}, -- [140]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -3019,7 +3073,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19061,
 		["specialization"] = 10658,
-	}, -- [141]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -3036,7 +3090,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19062,
 		["specialization"] = 10660,
-	}, -- [142]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3053,7 +3107,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19063,
 		["specialization"] = 10660,
-	}, -- [143]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3069,7 +3123,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Gauntlets",
 		},
 		["id"] = 19064,
-	}, -- [144]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3085,7 +3139,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Bracers",
 		},
 		["id"] = 19065,
-	}, -- [145]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3102,7 +3156,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19066,
 		["specialization"] = 10660,
-	}, -- [146]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3119,7 +3173,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19067,
 		["specialization"] = 10658,
-	}, -- [147]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3136,7 +3190,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19068,
 		["specialization"] = 10660,
-	}, -- [148]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
@@ -3152,7 +3206,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Belt",
 		},
 		["id"] = 19070,
-	}, -- [149]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
@@ -3168,7 +3222,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Headband",
 		},
 		["id"] = 19071,
-	}, -- [150]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
@@ -3184,7 +3238,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Belt",
 		},
 		["id"] = 19072,
-	}, -- [151]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
@@ -3201,7 +3255,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19073,
 		["specialization"] = 10660,
-	}, -- [152]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3218,7 +3272,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19074,
 		["specialization"] = 10660,
-	}, -- [153]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3234,7 +3288,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Leggings",
 		},
 		["id"] = 19075,
-	}, -- [154]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3250,7 +3304,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Volcanic Breastplate",
 		},
 		["id"] = 19076,
-	}, -- [155]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3267,7 +3321,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19077,
 		["specialization"] = 10656,
-	}, -- [156]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3284,7 +3338,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19078,
 		["specialization"] = 10658,
-	}, -- [157]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3301,7 +3355,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19079,
 		["specialization"] = 10658,
-	}, -- [158]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -3318,7 +3372,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19080,
 		["specialization"] = 10660,
-	}, -- [159]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3335,7 +3389,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19081,
 		["specialization"] = 10660,
-	}, -- [160]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3351,7 +3405,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Headband",
 		},
 		["id"] = 19082,
-	}, -- [161]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3367,7 +3421,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Pants",
 		},
 		["id"] = 19083,
-	}, -- [162]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3384,7 +3438,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19084,
 		["specialization"] = 10660,
-	}, -- [163]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3401,7 +3455,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19085,
 		["specialization"] = 10656,
-	}, -- [164]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -3418,7 +3472,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19086,
 		["specialization"] = 10660,
-	}, -- [165]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -3435,7 +3489,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19087,
 		["specialization"] = 10660,
-	}, -- [166]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -3451,7 +3505,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Helm",
 		},
 		["id"] = 19088,
-	}, -- [167]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -3468,7 +3522,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19089,
 		["specialization"] = 10656,
-	}, -- [168]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -3485,7 +3539,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19090,
 		["specialization"] = 10658,
-	}, -- [169]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3501,7 +3555,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Pants",
 		},
 		["id"] = 19091,
-	}, -- [170]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3517,11 +3571,11 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Belt",
 		},
 		["id"] = 19092,
-	}, -- [171]
+	},
 	{
 		["quests"] = {
-			7493, -- [1]
-			7497, -- [2]
+			7493,
+			7497,
 		},
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3536,7 +3590,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Onyxia Scale Cloak",
 		},
 		["id"] = 19093,
-	}, -- [172]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3553,7 +3607,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19094,
 		["specialization"] = 10656,
-	}, -- [173]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3570,7 +3624,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19095,
 		["specialization"] = 10658,
-	}, -- [174]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3587,7 +3641,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19097,
 		["specialization"] = 10660,
-	}, -- [175]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3603,7 +3657,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Wicked Leather Armor",
 		},
 		["id"] = 19098,
-	}, -- [176]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3619,7 +3673,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Scorpid Shoulders",
 		},
 		["id"] = 19100,
-	}, -- [177]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3636,7 +3690,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19101,
 		["specialization"] = 10658,
-	}, -- [178]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3652,7 +3706,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Armor",
 		},
 		["id"] = 19102,
-	}, -- [179]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3668,7 +3722,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Runic Leather Shoulders",
 		},
 		["id"] = 19103,
-	}, -- [180]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3702,22 +3756,22 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 19107,
 		["specialization"] = 10656,
-	}, -- [183]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1385, -- [1]
-				3365, -- [2]
-				3703, -- [3]
-				3967, -- [4]
-				4588, -- [5]
-				5127, -- [6]
-				5564, -- [7]
-				8153, -- [8]
-				11081, -- [9]
-				11084, -- [10]
+				1385,
+				3365,
+				3703,
+				3967,
+				4588,
+				5127,
+				5564,
+				8153,
+				11081,
+				11084,
 			},
 			["price"] = 500,
 		},
@@ -3732,14 +3786,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Medium Leather",
 		},
 		["id"] = 20648,
-	}, -- [184]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 1800,
 		},
@@ -3754,14 +3808,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Leather",
 		},
 		["id"] = 20649,
-	}, -- [185]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				3007, -- [1]
-				4212, -- [2]
+				3007,
+				4212,
 			},
 			["price"] = 2800,
 		},
@@ -3776,7 +3830,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Thick Leather",
 		},
 		["id"] = 20650,
-	}, -- [186]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -3793,7 +3847,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 20853,
 		["specialization"] = 10660,
-	}, -- [187]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3810,7 +3864,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 20854,
 		["specialization"] = 10658,
-	}, -- [188]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3827,7 +3881,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 20855,
 		["specialization"] = 10656,
-	}, -- [189]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
@@ -3843,14 +3897,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Gloves of the Greatfather",
 		},
 		["id"] = 21943,
-	}, -- [190]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				11097, -- [1]
-				11098, -- [2]
+				11097,
+				11098,
 			},
 			["price"] = 4300,
 		},
@@ -3865,7 +3919,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Rugged Leather",
 		},
 		["id"] = 22331,
-	}, -- [191]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -3881,7 +3935,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Shadowskin Gloves",
 		},
 		["id"] = 22711,
-	}, -- [192]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3897,10 +3951,10 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Core Armor Kit",
 		},
 		["id"] = 22727,
-	}, -- [193]
+	},
 	{
 		["quests"] = {
-			5518, -- [1]
+			5518,
 		},
 		["phase"] = 1,
 		["min_skill"] = 1,
@@ -3925,7 +3979,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
 			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
 		},
-	}, -- [194]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3941,7 +3995,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Girdle of Insight",
 		},
 		["id"] = 22921,
-	}, -- [195]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3957,7 +4011,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Mongoose Boots",
 		},
 		["id"] = 22922,
-	}, -- [196]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3973,7 +4027,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Swift Flight Bracers",
 		},
 		["id"] = 22923,
-	}, -- [197]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3990,7 +4044,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 22926,
 		["specialization"] = 10656,
-	}, -- [198]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4007,7 +4061,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 22927,
 		["specialization"] = 10660,
-	}, -- [199]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4023,7 +4077,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Shifting Cloak",
 		},
 		["id"] = 22928,
-	}, -- [200]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
@@ -4039,7 +4093,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Heavy Leather Ball",
 		},
 		["id"] = 23190,
-	}, -- [201]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
@@ -4055,7 +4109,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Barbaric Bracers",
 		},
 		["id"] = 23399,
-	}, -- [202]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -4071,7 +4125,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Might of the Timbermaw",
 		},
 		["id"] = 23703,
-	}, -- [203]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4087,7 +4141,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Timbermaw Brawlers",
 		},
 		["id"] = 23704,
-	}, -- [204]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -4103,7 +4157,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Dawn Treaders",
 		},
 		["id"] = 23705,
-	}, -- [205]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4119,7 +4173,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Golden Mantle of the Dawn",
 		},
 		["id"] = 23706,
-	}, -- [206]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4135,7 +4189,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Lava Belt",
 		},
 		["id"] = 23707,
-	}, -- [207]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4152,7 +4206,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 23708,
 		["specialization"] = 10656,
-	}, -- [208]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4169,7 +4223,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 23709,
 		["specialization"] = 10660,
-	}, -- [209]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4186,7 +4240,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 23710,
 		["specialization"] = 10658,
-	}, -- [210]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4202,7 +4256,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Primal Batskin Jerkin",
 		},
 		["id"] = 24121,
-	}, -- [211]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4218,7 +4272,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Primal Batskin Gloves",
 		},
 		["id"] = 24122,
-	}, -- [212]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4234,7 +4288,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Primal Batskin Bracers",
 		},
 		["id"] = 24123,
-	}, -- [213]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4250,7 +4304,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Blood Tiger Breastplate",
 		},
 		["id"] = 24124,
-	}, -- [214]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4266,14 +4320,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Blood Tiger Shoulders",
 		},
 		["id"] = 24125,
-	}, -- [215]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
-				7866, -- [1]
-				7867, -- [2]
+				7866,
+				7867,
 			},
 			["price"] = 0,
 		},
@@ -4289,14 +4343,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 24654,
 		["specialization"] = 10656,
-	}, -- [216]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
 		["trainers"] = {
 			["sources"] = {
-				7866, -- [1]
-				7867, -- [2]
+				7866,
+				7867,
 			},
 			["price"] = 0,
 		},
@@ -4312,7 +4366,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 24655,
 		["specialization"] = 10656,
-	}, -- [217]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4329,7 +4383,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 24703,
 		["specialization"] = 10656,
-	}, -- [218]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4345,7 +4399,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Spitfire Bracers",
 		},
 		["id"] = 24846,
-	}, -- [219]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4361,7 +4415,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Spitfire Gauntlets",
 		},
 		["id"] = 24847,
-	}, -- [220]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4377,7 +4431,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Spitfire Breastplate",
 		},
 		["id"] = 24848,
-	}, -- [221]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4393,7 +4447,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Sandstalker Bracers",
 		},
 		["id"] = 24849,
-	}, -- [222]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4409,7 +4463,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Sandstalker Gauntlets",
 		},
 		["id"] = 24850,
-	}, -- [223]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4425,7 +4479,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Sandstalker Breastplate",
 		},
 		["id"] = 24851,
-	}, -- [224]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -4441,7 +4495,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Black Whelp Tunic",
 		},
 		["id"] = 24940,
-	}, -- [225]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4458,28 +4512,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		},
 		["id"] = 26279,
 		["specialization"] = 10658,
-	}, -- [226]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -4494,7 +4548,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Tunic",
 		},
 		["id"] = 28219,
-	}, -- [227]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
@@ -4510,28 +4564,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Gloves",
 		},
 		["id"] = 28220,
-	}, -- [228]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -4546,28 +4600,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Bracers",
 		},
 		["id"] = 28221,
-	}, -- [229]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -4582,28 +4636,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Breastplate",
 		},
 		["id"] = 28222,
-	}, -- [230]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -4618,28 +4672,28 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Gauntlets",
 		},
 		["id"] = 28223,
-	}, -- [231]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223, -- [1]
-				1466, -- [2]
-				1632, -- [3]
-				3008, -- [4]
-				3069, -- [5]
-				3549, -- [6]
-				3605, -- [7]
-				5784, -- [8]
-				5811, -- [9]
-				7866, -- [10]
-				7867, -- [11]
-				7868, -- [12]
-				7869, -- [13]
-				7870, -- [14]
-				11083, -- [15]
-				11096, -- [16]
+				223,
+				1466,
+				1632,
+				3008,
+				3069,
+				3549,
+				3605,
+				5784,
+				5811,
+				7866,
+				7867,
+				7868,
+				7869,
+				7870,
+				11083,
+				11096,
 			},
 			["price"] = 0,
 		},
@@ -4654,7 +4708,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Bracers",
 		},
 		["id"] = 28224,
-	}, -- [232]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4670,7 +4724,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Bramblewood Helm",
 		},
 		["id"] = 28472,
-	}, -- [233]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4686,7 +4740,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Bramblewood Boots",
 		},
 		["id"] = 28473,
-	}, -- [234]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -4702,5 +4756,5 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Bramblewood Belt",
 		},
 		["id"] = 28474,
-	}, -- [235]
+	},
 }

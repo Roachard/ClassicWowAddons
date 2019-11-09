@@ -22,7 +22,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Linen Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2601,
@@ -43,7 +43,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Gray Woolen Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4292,
@@ -64,7 +64,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Green Woolen Bag",
 		},
 		["quality"] = "uncommon",
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4345,
@@ -85,7 +85,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Woolen Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4346,
@@ -106,7 +106,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Heavy Woolen Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4347,
@@ -127,7 +127,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Reinforced Woolen Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4348,
@@ -148,7 +148,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Phoenix Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4349,
@@ -169,7 +169,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Phoenix Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4350,
@@ -190,7 +190,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Spider Silk Slippers",
 		},
 		["quality"] = "uncommon",
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4351,
@@ -211,7 +211,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Shadow Hood",
 		},
 		["quality"] = "uncommon",
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4352,
@@ -232,7 +232,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Boots of the Enchanter",
 		},
 		["quality"] = "uncommon",
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4353,
@@ -253,7 +253,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Spider Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4354,
@@ -274,12 +274,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Rich Purple Silk Shirt",
 		},
 		["quality"] = "rare",
-	}, -- [13]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2381, -- [1]
-				6567, -- [2]
+				2381,
+				6567,
 			},
 			["price"] = 1500,
 		},
@@ -296,7 +296,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4356,
@@ -317,14 +317,14 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Star Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [15]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				843, -- [1]
-				3005, -- [2]
-				3556, -- [3]
-				4189, -- [4]
+				843,
+				3005,
+				3556,
+				4189,
 			},
 			["price"] = 200,
 		},
@@ -341,28 +341,28 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				590, -- [1]
-				3530, -- [2]
-				3531, -- [3]
+				590,
+				3530,
+				3531,
 			},
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [16]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				777, -- [1]
-				1454, -- [2]
-				1474, -- [3]
-				3005, -- [4]
-				3364, -- [5]
-				3485, -- [6]
-				3537, -- [7]
-				3683, -- [8]
-				4189, -- [9]
-				4577, -- [10]
-				5944, -- [11]
+				777,
+				1454,
+				1474,
+				3005,
+				3364,
+				3485,
+				3537,
+				3683,
+				4189,
+				4577,
+				5944,
 			},
 			["price"] = 500,
 		},
@@ -379,20 +379,20 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				450, -- [1]
-				2264, -- [2]
+				450,
+				2264,
 			},
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5773,
 		["drops"] = {
 			["mobs"] = {
-				910, -- [1]
-				2337, -- [2]
+				910,
+				2337,
 			},
 		},
 		["name"] = {
@@ -406,7 +406,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Robes of Arcana",
 		},
 		["quality"] = "uncommon",
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5774,
@@ -427,15 +427,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Green Silk Pack",
 		},
 		["quality"] = "uncommon",
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5775,
 		["drops"] = {
 			["mobs"] = {
-				2242, -- [1]
-				2434, -- [2]
-				4834, -- [3]
+				2242,
+				2434,
+				4834,
 			},
 		},
 		["name"] = {
@@ -449,14 +449,14 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Black Silk Pack",
 		},
 		["quality"] = "uncommon",
-	}, -- [20]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				66, -- [1]
-				3364, -- [2]
-				3522, -- [3]
-				4189, -- [4]
+				66,
+				3364,
+				3522,
+				4189,
 			},
 			["price"] = 200,
 		},
@@ -473,7 +473,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6271,
@@ -494,15 +494,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Linen Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [22]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1250, -- [1]
-				3485, -- [2]
-				3499, -- [3]
-				3556, -- [4]
-				4168, -- [5]
+				1250,
+				3485,
+				3499,
+				3556,
+				4168,
 			},
 			["price"] = 300,
 		},
@@ -519,14 +519,14 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [23]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				843, -- [1]
-				1347, -- [2]
-				2394, -- [3]
-				3364, -- [4]
+				843,
+				1347,
+				2394,
+				3364,
 			},
 			["price"] = 400,
 		},
@@ -543,15 +543,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [24]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1454, -- [1]
-				1474, -- [2]
-				2669, -- [3]
-				4168, -- [4]
-				4577, -- [5]
+				1454,
+				1474,
+				2669,
+				4168,
+				4577,
 			},
 			["price"] = 800,
 		},
@@ -568,7 +568,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6390,
@@ -589,7 +589,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Stylish Blue Shirt",
 		},
 		["quality"] = "uncommon",
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6391,
@@ -610,13 +610,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Stylish Green Shirt",
 		},
 		["quality"] = "uncommon",
-	}, -- [27]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2394, -- [1]
-				2669, -- [2]
-				12246, -- [3]
+				2394,
+				2669,
+				12246,
 			},
 			["price"] = 1100,
 		},
@@ -633,7 +633,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7084,
@@ -654,7 +654,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Crimson Silk Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [29]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7085,
@@ -675,7 +675,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Azure Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7086,
@@ -696,12 +696,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Earthen Silk Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [31]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2670, -- [1]
-				12246, -- [2]
+				2670,
+				12246,
 			},
 			["price"] = 1200,
 		},
@@ -718,11 +718,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [32]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				6568, -- [1]
+				6568,
 			},
 			["price"] = 5000,
 		},
@@ -739,12 +739,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [33]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				6574, -- [1]
-				6576, -- [2]
+				6574,
+				6576,
 			},
 			["price"] = 1500,
 		},
@@ -761,7 +761,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7090,
@@ -782,7 +782,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Green Silk Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7091,
@@ -803,7 +803,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Truefaith Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7092,
@@ -824,12 +824,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Hands of Darkness",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2679, -- [1]
-				9636, -- [2]
+				2679,
+				9636,
 			},
 			["price"] = 1000,
 		},
@@ -846,7 +846,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10300,
@@ -867,7 +867,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Mageweave Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10301,
@@ -888,7 +888,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: White Bandit Mask",
 		},
 		["quality"] = "uncommon",
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10302,
@@ -909,12 +909,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Mageweave Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [41]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3005, -- [1]
-				4168, -- [2]
+				3005,
+				4168,
 			},
 			["price"] = 3000,
 		},
@@ -931,7 +931,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10312,
@@ -952,12 +952,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Mageweave Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [43]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3364, -- [1]
-				8681, -- [2]
+				3364,
+				8681,
 			},
 			["price"] = 4000,
 		},
@@ -974,7 +974,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10315,
@@ -995,7 +995,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Mageweave Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10316,
@@ -1016,12 +1016,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Colorful Kilt",
 		},
 		["quality"] = "uncommon",
-	}, -- [46]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3364, -- [1]
-				8681, -- [2]
+				3364,
+				8681,
 			},
 			["price"] = 4000,
 		},
@@ -1038,11 +1038,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [47]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2672, -- [1]
+				2672,
 			},
 			["price"] = 7000,
 		},
@@ -1059,7 +1059,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10320,
@@ -1080,12 +1080,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Red Mageweave Headband",
 		},
 		["quality"] = "uncommon",
-	}, -- [49]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4577, -- [1]
-				8681, -- [2]
+				4577,
+				8681,
 			},
 			["price"] = 4500,
 		},
@@ -1102,12 +1102,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [50]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4577, -- [1]
-				8681, -- [2]
+				4577,
+				8681,
 			},
 			["price"] = 4500,
 		},
@@ -1124,12 +1124,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [51]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1347, -- [1]
-				3005, -- [2]
+				1347,
+				3005,
 			},
 			["price"] = 10000,
 		},
@@ -1146,12 +1146,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [52]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4577, -- [1]
-				8681, -- [2]
+				4577,
+				8681,
 			},
 			["price"] = 5000,
 		},
@@ -1168,10 +1168,10 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [53]
+	},
 	{
 		["quests"] = {
-			3402, -- [1]
+			3402,
 		},
 		["phase"] = 1,
 		["id"] = 10463,
@@ -1186,11 +1186,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["Korean"] = "도안: 그림자매듭 복면",
 			["English"] = "Pattern: Shadoweave Mask",
 		},
-	}, -- [54]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2663, -- [1]
+				2663,
 			},
 			["price"] = 1500,
 		},
@@ -1207,7 +1207,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14466,
@@ -1228,7 +1228,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Frostweave Tunic",
 		},
 		["quality"] = "uncommon",
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14467,
@@ -1249,11 +1249,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Frostweave Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [57]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11189, -- [1]
+				11189,
 			},
 			["price"] = 10000,
 		},
@@ -1270,7 +1270,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [58]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: одеяние из рунной ткани",
@@ -1285,7 +1285,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14469,
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14470,
@@ -1306,13 +1306,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runecloth Tunic",
 		},
 		["quality"] = "uncommon",
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14471,
 		["drops"] = {
 			["mobs"] = {
-				5861, -- [1]
+				5861,
 			},
 		},
 		["name"] = {
@@ -1326,7 +1326,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cindercloth Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [61]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: плащ из рунной ткани",
@@ -1341,13 +1341,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14472,
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14473,
 		["drops"] = {
 			["mobs"] = {
-				7864, -- [1]
+				7864,
 			},
 		},
 		["name"] = {
@@ -1361,7 +1361,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Ghostweave Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14474,
@@ -1382,13 +1382,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Frostweave Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14476,
 		["drops"] = {
 			["mobs"] = {
-				5861, -- [1]
+				5861,
 			},
 		},
 		["name"] = {
@@ -1402,14 +1402,14 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cindercloth Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14477,
 		["drops"] = {
 			["mobs"] = {
-				7864, -- [1]
-				8538, -- [2]
+				7864,
+				8538,
 			},
 		},
 		["name"] = {
@@ -1423,7 +1423,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Ghostweave Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14478,
@@ -1444,7 +1444,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Brightcloth Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14479,
@@ -1465,13 +1465,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Brightcloth Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14480,
 		["drops"] = {
 			["mobs"] = {
-				8538, -- [1]
+				8538,
 			},
 		},
 		["name"] = {
@@ -1485,7 +1485,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Ghostweave Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [69]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: перчатки из рунной ткани",
@@ -1500,13 +1500,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14481,
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14482,
 		["drops"] = {
 			["mobs"] = {
-				7037, -- [1]
+				7037,
 			},
 		},
 		["name"] = {
@@ -1520,11 +1520,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cindercloth Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [71]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12022, -- [1]
+				12022,
 			},
 			["price"] = 10000,
 		},
@@ -1541,7 +1541,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [72]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14484,
@@ -1562,13 +1562,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Brightcloth Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [73]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14485,
 		["drops"] = {
 			["mobs"] = {
-				8551, -- [1]
+				8551,
 			},
 		},
 		["name"] = {
@@ -1582,13 +1582,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Wizardweave Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [74]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14486,
 		["drops"] = {
 			["mobs"] = {
-				9026, -- [1]
+				9026,
 			},
 		},
 		["name"] = {
@@ -1602,7 +1602,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cloak of Fire",
 		},
 		["quality"] = "rare",
-	}, -- [75]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: сапоги из рунной ткани",
@@ -1617,7 +1617,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14488,
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14489,
@@ -1638,13 +1638,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Frostweave Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [77]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14490,
 		["drops"] = {
 			["mobs"] = {
-				7037, -- [1]
+				7037,
 			},
 		},
 		["name"] = {
@@ -1658,7 +1658,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cindercloth Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14491,
@@ -1679,7 +1679,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runecloth Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14492,
@@ -1700,13 +1700,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Felcloth Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14493,
 		["drops"] = {
 			["mobs"] = {
-				7437, -- [1]
+				7437,
 			},
 		},
 		["name"] = {
@@ -1720,7 +1720,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Robe of Winter Night",
 		},
 		["quality"] = "rare",
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14494,
@@ -1741,13 +1741,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Brightcloth Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14495,
 		["drops"] = {
 			["mobs"] = {
-				10384, -- [1]
+				10384,
 			},
 		},
 		["name"] = {
@@ -1761,7 +1761,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Ghostweave Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14496,
@@ -1782,7 +1782,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Felcloth Hood",
 		},
 		["quality"] = "uncommon",
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14497,
@@ -1803,7 +1803,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [85]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14498,
@@ -1824,7 +1824,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runecloth Headband",
 		},
 		["quality"] = "uncommon",
-	}, -- [86]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14499,
@@ -1845,13 +1845,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Bag",
 		},
 		["quality"] = "uncommon",
-	}, -- [87]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14500,
 		["drops"] = {
 			["mobs"] = {
-				8526, -- [1]
+				8526,
 			},
 		},
 		["name"] = {
@@ -1865,7 +1865,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Wizardweave Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [88]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14501,
@@ -1886,7 +1886,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Vest",
 		},
 		["quality"] = "rare",
-	}, -- [89]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14504,
@@ -1907,13 +1907,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runecloth Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [90]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14505,
 		["drops"] = {
 			["mobs"] = {
-				8526, -- [1]
+				8526,
 			},
 		},
 		["name"] = {
@@ -1927,7 +1927,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Wizardweave Turban",
 		},
 		["quality"] = "uncommon",
-	}, -- [91]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14506,
@@ -1948,7 +1948,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Felcloth Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [92]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14507,
@@ -1969,7 +1969,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [93]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14508,
@@ -1990,7 +1990,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Felcloth Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [94]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14509,
@@ -2011,7 +2011,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Circlet",
 		},
 		["quality"] = "rare",
-	}, -- [95]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14510,
@@ -2032,7 +2032,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Bottomless Bag",
 		},
 		["quality"] = "rare",
-	}, -- [96]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14511,
@@ -2053,13 +2053,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Gloves of Spell Mastery",
 		},
 		["quality"] = "epic",
-	}, -- [97]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14512,
 		["drops"] = {
 			["mobs"] = {
-				10813, -- [1]
+				10813,
 			},
 		},
 		["name"] = {
@@ -2073,13 +2073,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Truefaith Vestments",
 		},
 		["quality"] = "epic",
-	}, -- [98]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14513,
 		["drops"] = {
 			["mobs"] = {
-				9264, -- [1]
+				9264,
 			},
 		},
 		["name"] = {
@@ -2093,13 +2093,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Robe of the Archmage",
 		},
 		["quality"] = "epic",
-	}, -- [99]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 14514,
 		["drops"] = {
 			["mobs"] = {
-				1853, -- [1]
+				1853,
 			},
 		},
 		["name"] = {
@@ -2113,11 +2113,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Robe of the Void",
 		},
 		["quality"] = "epic",
-	}, -- [100]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11189, -- [1]
+				11189,
 			},
 			["price"] = 20000,
 		},
@@ -2134,11 +2134,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [101]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2668, -- [1]
+				2668,
 			},
 			["price"] = 800,
 		},
@@ -2155,12 +2155,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [102]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2670, -- [1]
-				12246, -- [2]
+				2670,
+				12246,
 			},
 			["price"] = 1000,
 		},
@@ -2177,11 +2177,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [103]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 180000,
 		},
@@ -2198,11 +2198,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [104]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 80000,
 		},
@@ -2219,7 +2219,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [105]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: зеленая выходная рубашка",
@@ -2234,7 +2234,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 17724,
-	}, -- [106]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18265,
@@ -2255,15 +2259,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Flarecore Wraps",
 		},
 		["quality"] = "rare",
-	}, -- [107]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18414,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
-				11450, -- [3]
+				417,
+				11448,
+				11450,
 			},
 		},
 		["name"] = {
@@ -2277,13 +2281,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Belt of the Archmage",
 		},
 		["quality"] = "epic",
-	}, -- [108]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18415,
 		["drops"] = {
 			["mobs"] = {
-				11450, -- [1]
+				11450,
 			},
 		},
 		["name"] = {
@@ -2297,15 +2301,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Felcloth Gloves",
 		},
 		["quality"] = "rare",
-	}, -- [109]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18416,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
-				11450, -- [3]
+				417,
+				11448,
+				11450,
 			},
 		},
 		["name"] = {
@@ -2319,13 +2323,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Inferno Gloves",
 		},
 		["quality"] = "rare",
-	}, -- [110]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18417,
 		["drops"] = {
 			["mobs"] = {
-				14351, -- [1]
+				14351,
 			},
 		},
 		["name"] = {
@@ -2339,15 +2343,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Mooncloth Gloves",
 		},
 		["quality"] = "rare",
-	}, -- [111]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18418,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
-				11450, -- [3]
+				417,
+				11448,
+				11450,
 			},
 		},
 		["name"] = {
@@ -2361,11 +2365,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Cloak of Warding",
 		},
 		["quality"] = "rare",
-	}, -- [112]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14371, -- [1]
+				14371,
 			},
 			["price"] = 40000,
 		},
@@ -2382,11 +2386,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 2,
-	}, -- [113]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 20000,
 		},
@@ -2403,13 +2407,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [114]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 20000,
 		},
@@ -2426,13 +2430,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [115]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 40000,
 		},
@@ -2449,11 +2453,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [116]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 40000,
 		},
@@ -2470,11 +2474,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [117]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 60000,
 		},
@@ -2491,11 +2495,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [118]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 90000,
 		},
@@ -2512,11 +2516,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [119]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2533,11 +2537,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [120]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2554,11 +2558,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [121]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2575,13 +2579,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [122]
+	},
 	{
 		["phase"] = 4,
 		["id"] = 20546,
 		["drops"] = {
 			["mobs"] = {
-				11881, -- [1]
+				11881,
 			},
 		},
 		["name"] = {
@@ -2595,7 +2599,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runed Stygian Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [123]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: рунические стигийские сапоги",
@@ -2610,7 +2614,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20547,
-	}, -- [124]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: рунический стигийский пояс",
@@ -2625,11 +2629,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20548,
-	}, -- [125]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				6568, -- [1]
+				6568,
 			},
 			["price"] = 10000,
 		},
@@ -2646,7 +2650,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [126]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 21371,
@@ -2667,7 +2671,7 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Core Felcloth Bag",
 		},
 		["quality"] = "rare",
-	}, -- [127]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: праздничное платье",
@@ -2682,7 +2686,14 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21722,
-	}, -- [128]
+		["holiday"] = 327,
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: праздничный костюм",
@@ -2697,19 +2708,26 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21723,
-	}, -- [129]
+		["holiday"] = 327,
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1318, -- [1]
-				3012, -- [2]
-				3346, -- [3]
-				4228, -- [4]
-				4617, -- [5]
-				5158, -- [6]
-				5757, -- [7]
-				5758, -- [8]
-				15419, -- [9]
+				1318,
+				3012,
+				3346,
+				4228,
+				4617,
+				5158,
+				5757,
+				5758,
+				15419,
 			},
 			["price"] = 6000,
 		},
@@ -2726,11 +2744,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [130]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15419, -- [1]
+				15419,
 			},
 			["price"] = 20000,
 		},
@@ -2747,13 +2765,13 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [131]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22309,
 		["drops"] = {
 			["mobs"] = {
-				11487, -- [1]
+				11487,
 			},
 		},
 		["name"] = {
@@ -2767,11 +2785,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Big Bag of Enchantment",
 		},
 		["quality"] = "uncommon",
-	}, -- [132]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 20000,
 		},
@@ -2788,11 +2806,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [133]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 50000,
 		},
@@ -2809,11 +2827,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [134]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 90000,
 		},
@@ -2830,11 +2848,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [135]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				16365, -- [1]
+				16365,
 			},
 			["price"] = 0,
 		},
@@ -2855,11 +2873,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 6,
-	}, -- [136]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				16365, -- [1]
+				16365,
 			},
 			["price"] = 0,
 		},
@@ -2880,11 +2898,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 6,
-	}, -- [137]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				16365, -- [1]
+				16365,
 			},
 			["price"] = 0,
 		},
@@ -2905,11 +2923,11 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 6,
-	}, -- [138]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 50000,
 		},
@@ -2926,11 +2944,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [139]
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 5,
+		},
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 50000,
 		},
@@ -2947,11 +2969,15 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [140]
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 6,
+		},
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15179, -- [1]
+				15179,
 			},
 			["price"] = 50000,
 		},
@@ -2968,5 +2994,9 @@ MTSL_DATA["Tailoring"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [141]
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 7,
+		},
+	},
 }

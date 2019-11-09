@@ -489,6 +489,16 @@ MTSLUI_LOCALES_LABELS = {
         ["Spanish"] = "Fuente",
         ["Portuguese"] = "Fonte",
     },
+    ["holiday"] = {
+        ["English"] = "Holiday",
+        ["French"] = "Événement mondial",
+        ["German"] = "Feiertag",
+        ["Russian"] = "Праздник",
+        ["Korean"] = "휴일",
+        ["Chinese"] = "节日",
+        ["Spanish"] = "Vacaciones",
+        ["Portuguese"] = "Feriado",
+    },
     ["horizontal"] = {
         ["English"] = "Horizontal",
         ["French"] = "Horizontal",
@@ -628,6 +638,16 @@ MTSLUI_LOCALES_LABELS = {
         ["Chinese"] = "宾语",
         ["Spanish"] = "Objeto",
         ["Portuguese"] = "Objeto",
+    },
+    ["obtained from"] = {
+        ["English"] = "Obtained from",
+        ["French"] = "Source",
+        ["German"] = "Gelernt von",
+        ["Russian"] = "Учится у",
+        ["Korean"] = "에서 배운",
+        ["Chinese"] = "从中学到",
+        ["Spanish"] = "Aprendido de",
+        ["Portuguese"] = "Aprendido de",
     },
     ["options"] = {
         ["English"] = "Options",

@@ -215,6 +215,10 @@ MTSLUI_FILTER_FRAME = {
                 ["name"] = MTSLUI_LOCALES_LABELS["vendor"][MTSLUI_CURRENT_LANGUAGE],
                 ["id"] = "vendor",
             },
+            {
+                ["name"] = MTSLUI_LOCALES_LABELS["holiday"][MTSLUI_CURRENT_LANGUAGE],
+                ["id"] = "holiday",
+            },
         }
         -- auto select "any" as source
         if self.current_source_id == nil  then

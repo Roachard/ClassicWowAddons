@@ -5,15 +5,15 @@ MTSL_DATA["Enchanting"]["items"] = {
 	{
 		["vendors"] = {
 			["sources"] = {
-				1318, -- [1]
-				3012, -- [2]
-				3346, -- [3]
-				4228, -- [4]
-				4617, -- [5]
-				5158, -- [6]
-				5757, -- [7]
-				5758, -- [8]
-				15419, -- [9]
+				1318,
+				3012,
+				3346,
+				4228,
+				4617,
+				5158,
+				5757,
+				5758,
+				15419,
 			},
 			["price"] = 300,
 		},
@@ -36,7 +36,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6344,
@@ -57,12 +57,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Minor Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3346, -- [1]
-				5757, -- [2]
+				3346,
+				5757,
 			},
 			["price"] = 400,
 		},
@@ -79,7 +79,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6347,
@@ -100,7 +100,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Minor Strength",
 		},
 		["quality"] = "uncommon",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6348,
@@ -121,13 +121,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Minor Beastslayer",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3012, -- [1]
-				3346, -- [2]
-				5158, -- [3]
+				3012,
+				3346,
+				5158,
 			},
 			["price"] = 500,
 		},
@@ -144,7 +144,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6375,
@@ -165,12 +165,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Lesser Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [7]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3012, -- [1]
-				3537, -- [2]
+				3012,
+				3537,
 			},
 			["price"] = 1000,
 		},
@@ -187,7 +187,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11038,
@@ -208,12 +208,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant 2H Weapon - Lesser Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [9]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3954, -- [1]
-				12043, -- [2]
+				3954,
+				12043,
 			},
 			["price"] = 800,
 		},
@@ -236,7 +236,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11081,
@@ -257,7 +257,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Shield - Lesser Protection",
 		},
 		["quality"] = "uncommon",
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11098,
@@ -278,12 +278,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Lesser Shadow Resistance",
 		},
 		["quality"] = "uncommon",
-	}, -- [12]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3954, -- [1]
-				12043, -- [2]
+				3954,
+				12043,
 			},
 			["price"] = 2500,
 		},
@@ -300,17 +300,17 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11150,
 		["drops"] = {
 			["mobs"] = {
-				1051, -- [1]
-				1052, -- [2]
-				1053, -- [3]
-				1054, -- [4]
-				1364, -- [5]
+				1051,
+				1052,
+				1053,
+				1054,
+				1364,
 			},
 		},
 		["name"] = {
@@ -324,17 +324,17 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Mining",
 		},
 		["quality"] = "uncommon",
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11151,
 		["drops"] = {
 			["mobs"] = {
-				3834, -- [1]
-				3919, -- [2]
-				4028, -- [3]
-				4029, -- [4]
-				4030, -- [5]
+				3834,
+				3919,
+				4028,
+				4029,
+				4030,
 			},
 		},
 		["name"] = {
@@ -348,17 +348,17 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Herbalism",
 		},
 		["quality"] = "uncommon",
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11152,
 		["drops"] = {
 			["mobs"] = {
-				2374, -- [1]
-				2375, -- [2]
-				2376, -- [3]
-				2377, -- [4]
-				14276, -- [5]
+				2374,
+				2375,
+				2376,
+				2377,
+				14276,
 			},
 		},
 		["name"] = {
@@ -372,12 +372,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Fishing",
 		},
 		["quality"] = "uncommon",
-	}, -- [16]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2381, -- [1]
-				2821, -- [2]
+				2381,
+				2821,
 			},
 			["price"] = 3000,
 		},
@@ -394,7 +394,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11164,
@@ -415,7 +415,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Lesser Beastslayer",
 		},
 		["quality"] = "uncommon",
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11165,
@@ -436,16 +436,16 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Lesser Elemental Slayer",
 		},
 		["quality"] = "uncommon",
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11166,
 		["drops"] = {
 			["mobs"] = {
-				2556, -- [1]
-				2557, -- [2]
-				2558, -- [3]
-				2606, -- [4]
+				2556,
+				2557,
+				2558,
+				2606,
 			},
 		},
 		["name"] = {
@@ -459,7 +459,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Skinning",
 		},
 		["quality"] = "uncommon",
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11167,
@@ -480,7 +480,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Boots - Lesser Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11168,
@@ -501,7 +501,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Shield - Lesser Block",
 		},
 		["quality"] = "uncommon",
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11202,
@@ -522,13 +522,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Shield - Stamina",
 		},
 		["quality"] = "uncommon",
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11203,
 		["drops"] = {
 			["mobs"] = {
-				674, -- [1]
+				674,
 			},
 		},
 		["name"] = {
@@ -542,7 +542,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Advanced Mining",
 		},
 		["quality"] = "uncommon",
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11204,
@@ -563,17 +563,17 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Greater Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11205,
 		["drops"] = {
 			["mobs"] = {
-				764, -- [1]
-				765, -- [2]
-				766, -- [3]
-				1081, -- [4]
-				14448, -- [5]
+				764,
+				765,
+				766,
+				1081,
+				14448,
 			},
 		},
 		["name"] = {
@@ -587,15 +587,15 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Advanced Herbalism",
 		},
 		["quality"] = "uncommon",
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11206,
 		["drops"] = {
 			["mobs"] = {
-				2246, -- [1]
-				5623, -- [2]
-				7805, -- [3]
+				2246,
+				5623,
+				7805,
 			},
 		},
 		["name"] = {
@@ -609,13 +609,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Lesser Agility",
 		},
 		["quality"] = "uncommon",
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11207,
 		["drops"] = {
 			["mobs"] = {
-				9024, -- [1]
+				9024,
 			},
 		},
 		["name"] = {
@@ -629,7 +629,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Fiery Weapon",
 		},
 		["quality"] = "uncommon",
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11208,
@@ -650,12 +650,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Demonslaying",
 		},
 		["quality"] = "uncommon",
-	}, -- [29]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				989, -- [1]
-				4229, -- [2]
+				989,
+				4229,
 			},
 			["price"] = 5800,
 		},
@@ -672,7 +672,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11224,
@@ -693,7 +693,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Shield - Frost Resistance",
 		},
 		["quality"] = "uncommon",
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11225,
@@ -714,7 +714,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Greater Stamina",
 		},
 		["quality"] = "uncommon",
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11226,
@@ -735,13 +735,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Riding Skill",
 		},
 		["quality"] = "uncommon",
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11813,
 		["drops"] = {
 			["mobs"] = {
-				9025, -- [1]
+				9025,
 			},
 		},
 		["name"] = {
@@ -755,13 +755,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Smoking Heart of the Mountain",
 		},
 		["quality"] = "uncommon",
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16214,
 		["drops"] = {
 			["mobs"] = {
-				2642, -- [1]
+				2642,
 			},
 		},
 		["name"] = {
@@ -775,7 +775,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Greater Intellect",
 		},
 		["quality"] = "uncommon",
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16215,
@@ -796,13 +796,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Boots - Greater Stamina",
 		},
 		["quality"] = "uncommon",
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16216,
 		["drops"] = {
 			["mobs"] = {
-				5259, -- [1]
+				5259,
 			},
 		},
 		["name"] = {
@@ -816,12 +816,12 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Greater Resistance",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4229, -- [1]
-				4561, -- [2]
+				4229,
+				4561,
 			},
 			["price"] = 10000,
 		},
@@ -838,7 +838,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16218,
@@ -859,13 +859,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Superior Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16219,
 		["drops"] = {
 			["mobs"] = {
-				6201, -- [1]
+				6201,
 			},
 		},
 		["name"] = {
@@ -879,7 +879,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Greater Agility",
 		},
 		["quality"] = "uncommon",
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16220,
@@ -900,11 +900,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Boots - Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [41]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11189, -- [1]
+				11189,
 			},
 			["price"] = 10000,
 		},
@@ -921,13 +921,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16222,
 		["drops"] = {
 			["mobs"] = {
-				9447, -- [1]
+				9447,
 			},
 		},
 		["name"] = {
@@ -941,13 +941,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Shield - Superior Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16223,
 		["drops"] = {
 			["mobs"] = {
-				7524, -- [1]
+				7524,
 			},
 		},
 		["name"] = {
@@ -961,11 +961,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Icy Chill",
 		},
 		["quality"] = "uncommon",
-	}, -- [44]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12022, -- [1]
+				12022,
 			},
 			["price"] = 20000,
 		},
@@ -982,13 +982,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16242,
 		["drops"] = {
 			["mobs"] = {
-				9452, -- [1]
+				9452,
 			},
 		},
 		["name"] = {
@@ -1002,11 +1002,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Chest - Major Mana",
 		},
 		["quality"] = "uncommon",
-	}, -- [46]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12022, -- [1]
+				12022,
 			},
 			["price"] = 20000,
 		},
@@ -1023,13 +1023,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16244,
 		["drops"] = {
 			["mobs"] = {
-				9198, -- [1]
+				9198,
 			},
 		},
 		["name"] = {
@@ -1043,7 +1043,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Greater Strength",
 		},
 		["quality"] = "uncommon",
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16245,
@@ -1064,13 +1064,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Boots - Greater Agility",
 		},
 		["quality"] = "uncommon",
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16246,
 		["drops"] = {
 			["mobs"] = {
-				7372, -- [1]
+				7372,
 			},
 		},
 		["name"] = {
@@ -1084,13 +1084,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Superior Strength",
 		},
 		["quality"] = "uncommon",
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16247,
 		["drops"] = {
 			["mobs"] = {
-				10317, -- [1]
+				10317,
 			},
 		},
 		["name"] = {
@@ -1104,13 +1104,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant 2H Weapon - Superior Impact",
 		},
 		["quality"] = "uncommon",
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16248,
 		["drops"] = {
 			["mobs"] = {
-				10398, -- [1]
+				10398,
 			},
 		},
 		["name"] = {
@@ -1124,13 +1124,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Unholy",
 		},
 		["quality"] = "uncommon",
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16249,
 		["drops"] = {
 			["mobs"] = {
-				10422, -- [1]
+				10422,
 			},
 		},
 		["name"] = {
@@ -1144,13 +1144,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant 2H Weapon - Major Intellect",
 		},
 		["quality"] = "uncommon",
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16250,
 		["drops"] = {
 			["mobs"] = {
-				9216, -- [1]
+				9216,
 			},
 		},
 		["name"] = {
@@ -1164,7 +1164,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Superior Striking",
 		},
 		["quality"] = "uncommon",
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16251,
@@ -1185,14 +1185,14 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Bracer - Superior Stamina",
 		},
 		["quality"] = "uncommon",
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16252,
 		["drops"] = {
 			["mobs"] = {
-				4494, -- [1]
-				9451, -- [2]
+				4494,
+				9451,
 			},
 		},
 		["name"] = {
@@ -1206,7 +1206,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Crusader",
 		},
 		["quality"] = "uncommon",
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16253,
@@ -1227,13 +1227,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Chest - Greater Stats",
 		},
 		["quality"] = "uncommon",
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16254,
 		["drops"] = {
 			["mobs"] = {
-				10499, -- [1]
+				10499,
 			},
 		},
 		["name"] = {
@@ -1247,13 +1247,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Lifestealing",
 		},
 		["quality"] = "rare",
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16255,
 		["drops"] = {
 			["mobs"] = {
-				10469, -- [1]
+				10469,
 			},
 		},
 		["name"] = {
@@ -1267,7 +1267,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant 2H Weapon - Major Spirit",
 		},
 		["quality"] = "uncommon",
-	}, -- [59]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Формула чар для оружия: могущество зимы",
@@ -1282,7 +1282,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 17725,
-	}, -- [60]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18259,
@@ -1303,7 +1307,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Spell Power",
 		},
 		["quality"] = "rare",
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18260,
@@ -1324,11 +1328,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Weapon - Healing Power",
 		},
 		["quality"] = "rare",
-	}, -- [62]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 30000,
 		},
@@ -1345,11 +1349,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [63]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 30000,
 		},
@@ -1366,13 +1370,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [64]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 30000,
 		},
@@ -1389,13 +1393,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [65]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 60000,
 		},
@@ -1412,11 +1416,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [66]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 80000,
 		},
@@ -1433,11 +1437,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [67]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 100000,
 		},
@@ -1454,13 +1458,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [68]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20726,
 		["drops"] = {
 			["mobs"] = {
-				15275, -- [1]
+				15275,
 			},
 		},
 		["name"] = {
@@ -1474,7 +1478,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Threat",
 		},
 		["quality"] = "rare",
-	}, -- [69]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20727,
@@ -1495,7 +1499,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Shadow Power",
 		},
 		["quality"] = "rare",
-	}, -- [70]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20728,
@@ -1516,7 +1520,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Frost Power",
 		},
 		["quality"] = "rare",
-	}, -- [71]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20729,
@@ -1537,7 +1541,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Fire Power",
 		},
 		["quality"] = "rare",
-	}, -- [72]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20730,
@@ -1558,7 +1562,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Healing Power",
 		},
 		["quality"] = "rare",
-	}, -- [73]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20731,
@@ -1579,11 +1583,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Gloves - Superior Agility",
 		},
 		["quality"] = "rare",
-	}, -- [74]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15419, -- [1]
+				15419,
 			},
 			["price"] = 100000,
 		},
@@ -1600,11 +1604,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [75]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15419, -- [1]
+				15419,
 			},
 			["price"] = 100000,
 		},
@@ -1621,7 +1625,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [76]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20734,
@@ -1642,13 +1646,13 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Stealth",
 		},
 		["quality"] = "rare",
-	}, -- [77]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20735,
 		["drops"] = {
 			["mobs"] = {
-				15276, -- [1]
+				15276,
 			},
 		},
 		["name"] = {
@@ -1662,7 +1666,7 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Subtlety",
 		},
 		["quality"] = "rare",
-	}, -- [78]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 20736,
@@ -1683,19 +1687,19 @@ MTSL_DATA["Enchanting"]["items"] = {
 			["English"] = "Formula: Enchant Cloak - Dodge",
 		},
 		["quality"] = "rare",
-	}, -- [79]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1318, -- [1]
-				3012, -- [2]
-				3346, -- [3]
-				4228, -- [4]
-				4617, -- [5]
-				5158, -- [6]
-				5757, -- [7]
-				5758, -- [8]
-				15419, -- [9]
+				1318,
+				3012,
+				3346,
+				4228,
+				4617,
+				5158,
+				5757,
+				5758,
+				15419,
 			},
 			["price"] = 3000,
 		},
@@ -1712,19 +1716,19 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [80]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1318, -- [1]
-				3012, -- [2]
-				3346, -- [3]
-				4228, -- [4]
-				4617, -- [5]
-				5158, -- [6]
-				5757, -- [7]
-				5758, -- [8]
-				15419, -- [9]
+				1318,
+				3012,
+				3346,
+				4228,
+				4617,
+				5158,
+				5757,
+				5758,
+				15419,
 			},
 			["price"] = 4000,
 		},
@@ -1741,11 +1745,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [81]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15419, -- [1]
+				15419,
 			},
 			["price"] = 10000,
 		},
@@ -1762,11 +1766,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [82]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15419, -- [1]
+				15419,
 			},
 			["price"] = 20000,
 		},
@@ -1783,11 +1787,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [83]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 40000,
 		},
@@ -1804,11 +1808,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [84]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 40000,
 		},
@@ -1825,19 +1829,19 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [85]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1318, -- [1]
-				3012, -- [2]
-				3346, -- [3]
-				4228, -- [4]
-				4617, -- [5]
-				5158, -- [6]
-				5757, -- [7]
-				5758, -- [8]
-				15419, -- [9]
+				1318,
+				3012,
+				3346,
+				4228,
+				4617,
+				5158,
+				5757,
+				5758,
+				15419,
 			},
 			["price"] = 500,
 		},
@@ -1854,11 +1858,11 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [86]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 20000,
 		},
@@ -1875,5 +1879,5 @@ MTSL_DATA["Enchanting"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [87]
+	},
 }

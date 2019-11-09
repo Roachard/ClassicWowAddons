@@ -22,7 +22,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Minor Agility",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2555,
@@ -43,7 +43,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Swiftness Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3393,
@@ -64,7 +64,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Minor Magic Resistance Potion",
 		},
 		["quality"] = "common",
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3394,
@@ -85,7 +85,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Poison Resistance",
 		},
 		["quality"] = "common",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3395,
@@ -106,7 +106,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Limited Invulnerability Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3396,
@@ -127,7 +127,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Lesser Agility",
 		},
 		["quality"] = "common",
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3830,
@@ -148,7 +148,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Fortitude",
 		},
 		["quality"] = "common",
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3831,
@@ -169,7 +169,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Mighty Troll's Blood Potion",
 		},
 		["quality"] = "common",
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3832,
@@ -190,10 +190,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Detect Lesser Invisibility",
 		},
 		["quality"] = "uncommon",
-	}, -- [9]
+	},
 	{
 		["quests"] = {
-			429, -- [1]
+			429,
 		},
 		["phase"] = 1,
 		["id"] = 4597,
@@ -208,10 +208,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["Korean"] = "조제법: 빛바랜 치유 물약",
 			["English"] = "Recipe: Discolored Healing Potion",
 		},
-	}, -- [10]
+	},
 	{
 		["quests"] = {
-			715, -- [1]
+			715,
 		},
 		["phase"] = 1,
 		["id"] = 4624,
@@ -226,14 +226,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["Korean"] = "조제법: 하급 돌방패 물약",
 			["English"] = "Recipe: Lesser Stoneshield Potion",
 		},
-	}, -- [11]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1669, -- [1]
-				1685, -- [2]
-				3335, -- [3]
-				3499, -- [4]
+				1669,
+				1685,
+				3335,
+				3499,
 			},
 			["price"] = 100,
 		},
@@ -250,13 +250,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [12]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3348, -- [1]
-				4226, -- [2]
-				5178, -- [3]
+				3348,
+				4226,
+				5178,
 			},
 			["price"] = 1800,
 		},
@@ -273,12 +273,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [13]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3335, -- [1]
-				4226, -- [2]
+				3335,
+				4226,
 			},
 			["price"] = 2000,
 		},
@@ -295,13 +295,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [14]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1685, -- [1]
-				3134, -- [2]
-				3490, -- [3]
+				1685,
+				3134,
+				3490,
 			},
 			["price"] = 800,
 		},
@@ -318,12 +318,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [15]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2393, -- [1]
-				3956, -- [2]
+				2393,
+				3956,
 			},
 			["price"] = 900,
 		},
@@ -340,12 +340,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [16]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2380, -- [1]
-				4083, -- [2]
+				2380,
+				4083,
 			},
 			["price"] = 1500,
 		},
@@ -362,12 +362,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [17]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2812, -- [1]
-				2848, -- [2]
+				2812,
+				2848,
 			},
 			["price"] = 2000,
 		},
@@ -384,14 +384,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [18]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2848, -- [1]
-				5594, -- [2]
-				8157, -- [3]
-				8158, -- [4]
+				2848,
+				5594,
+				8157,
+				8158,
 			},
 			["price"] = 2000,
 		},
@@ -408,12 +408,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [19]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2481, -- [1]
-				4878, -- [2]
+				2481,
+				4878,
 			},
 			["price"] = 1500,
 		},
@@ -430,7 +430,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6211,
@@ -451,7 +451,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Ogre's Strength",
 		},
 		["quality"] = "common",
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6663,
@@ -472,7 +472,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Giant Growth",
 		},
 		["quality"] = "uncommon",
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9293,
@@ -493,7 +493,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Magic Resistance Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9294,
@@ -514,7 +514,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Wildvine Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9295,
@@ -535,14 +535,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Invisibility Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9296,
 		["drops"] = {
 			["mobs"] = {
-				1783, -- [1]
-				1791, -- [2]
+				1783,
+				1791,
 			},
 		},
 		["name"] = {
@@ -556,7 +556,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Gift of Arthas",
 		},
 		["quality"] = "uncommon",
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9297,
@@ -577,7 +577,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Dream Vision",
 		},
 		["quality"] = "uncommon",
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 9298,
@@ -598,12 +598,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Giants",
 		},
 		["quality"] = "uncommon",
-	}, -- [28]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8177, -- [1]
-				8178, -- [2]
+				8177,
+				8178,
 			},
 			["price"] = 10000,
 		},
@@ -620,12 +620,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [29]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1313, -- [1]
-				4610, -- [2]
+				1313,
+				4610,
 			},
 			["price"] = 10000,
 		},
@@ -642,12 +642,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [30]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8157, -- [1]
-				8158, -- [2]
+				8157,
+				8158,
 			},
 			["price"] = 9000,
 		},
@@ -664,11 +664,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [31]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5594, -- [1]
+				5594,
 			},
 			["price"] = 8000,
 		},
@@ -685,11 +685,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [32]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5594, -- [1]
+				5594,
 			},
 			["price"] = 8000,
 		},
@@ -706,11 +706,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [33]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5594, -- [1]
+				5594,
 			},
 			["price"] = 8000,
 		},
@@ -727,7 +727,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [34]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Рецепт: гоблинское ракетное топливо",
@@ -742,11 +742,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 10644,
-	}, -- [35]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5594, -- [1]
+				5594,
 			},
 			["price"] = 50000,
 		},
@@ -763,13 +763,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13476,
 		["drops"] = {
 			["mobs"] = {
-				7027, -- [1]
+				7027,
 			},
 		},
 		["name"] = {
@@ -783,7 +783,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Mighty Rage Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Рецепт: наилучшее зелье маны",
@@ -798,12 +798,19 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 13477,
-	}, -- [38]
+		["vendors"] = {
+			["sources"] = {
+				4226,
+				4610,
+			},
+			["price"] = 12750,
+		},
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3348, -- [1]
-				5178, -- [2]
+				3348,
+				5178,
 			},
 			["price"] = 10000,
 		},
@@ -820,17 +827,17 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13479,
 		["drops"] = {
 			["mobs"] = {
-				9449, -- [1]
-				9450, -- [2]
-				9451, -- [3]
-				9452, -- [4]
-				15162, -- [5]
+				9449,
+				9450,
+				9451,
+				9452,
+				15162,
 			},
 		},
 		["name"] = {
@@ -844,11 +851,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of the Sages",
 		},
 		["quality"] = "uncommon",
-	}, -- [40]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11188, -- [1]
+				11188,
 			},
 			["price"] = 15000,
 		},
@@ -865,10 +872,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 13480,
-	}, -- [41]
+	},
 	{
 		["quests"] = {
-			5150, -- [1]
+			5150,
 		},
 		["phase"] = 1,
 		["id"] = 13481,
@@ -883,13 +890,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["Korean"] = "조제법: 야수 힘의 비약",
 			["English"] = "Recipe: Elixir of Brute Force",
 		},
-	}, -- [42]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 10000,
 		},
@@ -906,11 +913,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [43]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				9499, -- [1]
+				9499,
 			},
 			["price"] = 10000,
 		},
@@ -927,11 +934,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [44]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 10000,
 		},
@@ -948,7 +955,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [45]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Рецепт: трансмутация воды в воздух",
@@ -963,7 +970,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 13485,
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13486,
@@ -984,7 +991,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Transmute Undeath to Water",
 		},
 		["quality"] = "uncommon",
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13487,
@@ -1005,7 +1012,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Transmute Water to Undeath",
 		},
 		["quality"] = "uncommon",
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13488,
@@ -1026,7 +1033,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Transmute Life to Earth",
 		},
 		["quality"] = "uncommon",
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13489,
@@ -1047,7 +1054,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Transmute Earth to Life",
 		},
 		["quality"] = "uncommon",
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13490,
@@ -1068,14 +1075,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Stoneshield Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13491,
 		["drops"] = {
 			["mobs"] = {
-				6201, -- [1]
-				7106, -- [2]
+				6201,
+				7106,
 			},
 		},
 		["name"] = {
@@ -1089,7 +1096,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of the Mongoose",
 		},
 		["quality"] = "uncommon",
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13492,
@@ -1110,7 +1117,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Purification Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13493,
@@ -1131,14 +1138,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Arcane Elixir",
 		},
 		["quality"] = "uncommon",
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13494,
 		["drops"] = {
 			["mobs"] = {
-				9262, -- [1]
-				9264, -- [2]
+				9262,
+				9264,
 			},
 		},
 		["name"] = {
@@ -1152,13 +1159,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Fire Protection Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13495,
 		["drops"] = {
 			["mobs"] = {
-				7428, -- [1]
+				7428,
 			},
 		},
 		["name"] = {
@@ -1172,14 +1179,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Frost Protection Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13496,
 		["drops"] = {
 			["mobs"] = {
-				1812, -- [1]
-				1813, -- [2]
+				1812,
+				1813,
 			},
 		},
 		["name"] = {
@@ -1193,13 +1200,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Nature Protection Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13497,
 		["drops"] = {
 			["mobs"] = {
-				7437, -- [1]
+				7437,
 			},
 		},
 		["name"] = {
@@ -1213,14 +1220,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Arcane Protection Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13499,
 		["drops"] = {
 			["mobs"] = {
-				8546, -- [1]
-				8550, -- [2]
+				8546,
+				8550,
 			},
 		},
 		["name"] = {
@@ -1234,13 +1241,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Greater Shadow Protection Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13501,
 		["drops"] = {
 			["mobs"] = {
-				1853, -- [1]
+				1853,
 			},
 		},
 		["name"] = {
@@ -1254,7 +1261,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Major Mana Potion",
 		},
 		["quality"] = "uncommon",
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13518,
@@ -1275,13 +1282,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Flask of Petrification",
 		},
 		["quality"] = "uncommon",
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13519,
 		["drops"] = {
 			["mobs"] = {
-				10363, -- [1]
+				10363,
 			},
 		},
 		["name"] = {
@@ -1295,13 +1302,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Flask of the Titans",
 		},
 		["quality"] = "uncommon",
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13520,
 		["drops"] = {
 			["mobs"] = {
-				10813, -- [1]
+				10813,
 			},
 		},
 		["name"] = {
@@ -1315,13 +1322,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Flask of Distilled Wisdom",
 		},
 		["quality"] = "uncommon",
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13521,
 		["drops"] = {
 			["mobs"] = {
-				10508, -- [1]
+				10508,
 			},
 		},
 		["name"] = {
@@ -1335,13 +1342,13 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Flask of Supreme Power",
 		},
 		["quality"] = "uncommon",
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 13522,
 		["drops"] = {
 			["mobs"] = {
-				10339, -- [1]
+				10339,
 			},
 		},
 		["name"] = {
@@ -1355,11 +1362,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Flask of Chromatic Resistance",
 		},
 		["quality"] = "uncommon",
-	}, -- [65]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2480, -- [1]
+				2480,
 			},
 			["price"] = 2500,
 		},
@@ -1376,15 +1383,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 17709,
-		["drops"] = {
-			["mobs"] = {
-				8598, -- [1]
-			},
-		},
 		["name"] = {
 			["Russian"] = "Рецепт: эликсир Силы льда",
 			["Portuguese"] = "Receita: Elixir de Poder Gélido",
@@ -1396,7 +1398,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Frost Power",
 		},
 		["quality"] = "common",
-	}, -- [67]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18257,
@@ -1417,11 +1423,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Major Rejuvenation Potion",
 		},
 		["quality"] = "rare",
-	}, -- [68]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -1438,11 +1444,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [69]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -1459,11 +1465,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [70]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -1480,11 +1486,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [71]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -1501,11 +1507,11 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [72]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 12000,
 		},
@@ -1522,15 +1528,15 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [73]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 21547,
 		["drops"] = {
 			["mobs"] = {
-				5844, -- [1]
-				5846, -- [2]
-				8637, -- [3]
+				5844,
+				5846,
+				8637,
 			},
 		},
 		["name"] = {
@@ -1544,7 +1550,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Greater Firepower",
 		},
 		["quality"] = "uncommon",
-	}, -- [74]
+	},
 	{
 		["quality"] = "common",
 		["phase"] = 1,
@@ -1559,5 +1565,5 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Items",
 		},
 		["id"] = 180368,
-	}, -- [75]
+	},
 }

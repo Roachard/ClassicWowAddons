@@ -40,7 +40,7 @@ MTSL_LOGIC_FACTION_REPUTATION = {
     --
     -- returns 			String		The localised name of the reputation level
     ------------------------------------------------------------------------------------------------
-    GetReputationLevelById = function(self, faction_id)
+    GetReputationLevelById = function(self, level_id)
         -- Get the English name corresponding the level
         local rep_level = self:GetReputationLevelNameById(level_id)
         -- Localise  the name

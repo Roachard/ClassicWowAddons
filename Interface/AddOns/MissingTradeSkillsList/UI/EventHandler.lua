@@ -21,6 +21,7 @@ MTSLUI_EVENT_HANDLER = {
 				end
 				-- load the data for the player
 				MTSL_LOGIC_PLAYER_NPC:LoadPlayer()
+
 				-- Try to load the saved variables
 				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- make the data for dropdowns in sort frames

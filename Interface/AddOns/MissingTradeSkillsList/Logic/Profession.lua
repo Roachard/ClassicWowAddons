@@ -110,7 +110,7 @@ MTSL_LOGIC_PROFESSION = {
                     skill_passed_filter = false
                 end
                 -- check if source type is ok
-                if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:GetRankForProfessionByMaxLevel(v.id, profession_name, source_type) == false then
+                if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:IsAvailableForSourceType(v.id, profession_name, source_type) == false then
                     skill_passed_filter = false
                 end
                 -- passed all filters so add it to list
@@ -387,7 +387,7 @@ MTSL_LOGIC_PROFESSION = {
     --
     -- return				    String		Name or nil
     ------------------------------------------------------------------------------------------------
-    GetNameSpecialization= function(self, profession_name, specialization_id)
+    GetNameSpecialization = function(self, profession_name, specialization_id)
         local spec = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["specializations"][profession_name], "id", specialization_id)
         if spec ~= nil then
             return spec["name"][MTSLUI_CURRENT_LANGUAGE]

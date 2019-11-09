@@ -17,7 +17,7 @@ MTSL_LOGIC_SKILL = {
         if skill.phase ~= nil and skill.phase > max_phase then
             available = false
         -- Ignore checks if we check for MTSL_MAX_PHASE cause then all are available
-        elseif max_phase < MTSL_CURRENT_PHASE then
+        elseif max_phase < MTSL_MAX_PHASE then
             -- check if at least one of the sources is available in the current or previous phases
             -- With trainers, quest or object a skill is always available
             -- Check for the content phase of the item
@@ -26,7 +26,7 @@ MTSL_LOGIC_SKILL = {
                     print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Skill  " .. skill.name["English"] .. " (id: " .. skill.id .. ") has no sources. Report this bug!")
                     return false
                 else
-                    local skill_item = MTSL_LOGIC_ITEM_OBJECT:GetItemFromProfessionById(skill.item, profession_name)
+                    local skill_item = MTSL_LOGIC_ITEM_OBJECT:GetItemForProfessionById(skill.item, profession_name)
                     if skill_item ~= nil and skill_item.phase  > max_phase then
                         available = false
                     end
@@ -260,11 +260,19 @@ MTSL_LOGIC_SKILL = {
                     if item.drops ~= nil then
                         table.insert(source_types, "drop")
                     end
+                    -- if only obtainable during holiday event
+                    if item.holiday ~= nil then
+                        table.insert(source_types, "holiday")
+                    end
                 end
             end
             -- if we learned from object
             if skill.object ~= nil then
                 table.insert(source_types, "object")
+            end
+            -- if only obtainable during holiday event
+            if skill.holiday ~= nil then
+                table.insert(source_types, "holiday")
             end
         end
 
@@ -282,9 +290,9 @@ MTSL_LOGIC_SKILL = {
     -----------------------------------------------------------------------------------------
     IsAvailableForSourceType = function(self, skill_id, profession_name, source_type)
         local source_types = self:GetSourcesForSkillForProfessionById(skill_id, profession_name)
-        if MTSL_TOOLS:CountItemsInArray(source_types) <= 0 then
-            print(skill_id .. " - " .. profession_name .. " has 0 sources")
-        end
+        --if MTSL_TOOLS:CountItemsInArray(source_types) <= 0 then
+        --    print(skill_id .. " - " .. profession_name .. " has 0 sources")
+        --end
         return MTSL_TOOLS:ListContainsKey(source_types, source_type)
     end,
 }

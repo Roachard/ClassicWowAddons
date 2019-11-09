@@ -3,7 +3,7 @@
 ## Author: Thumbkin
 ## Notes: Shows missing skills & recipes for a profession and where to get them.
 ## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER
-## Version: 1.13.24
+## Version: 1.13.25
 
 
 ##
@@ -25,6 +25,7 @@ UI\SavedVariables.lua
 
 # Shared data
 Data\Factions.lua
+Data\Holidays.lua
 Data\Npcs.lua
 Data\Objects.lua
 Data\Quests.lua

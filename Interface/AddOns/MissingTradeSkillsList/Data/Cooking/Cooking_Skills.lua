@@ -7,20 +7,20 @@ MTSL_DATA["Cooking"]["skills"] = {
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 0,
 		},
@@ -35,26 +35,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Charred Wolf Meat",
 		},
 		["id"] = 2538,
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 10,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 10,
 		},
@@ -69,26 +69,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Spiced Wolf Meat",
 		},
 		["id"] = 2539,
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 0,
 		},
@@ -103,26 +103,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Roasted Boar Meat",
 		},
 		["id"] = 2540,
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 100,
 		},
@@ -137,7 +137,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Coyote Steak",
 		},
 		["id"] = 2541,
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -153,7 +153,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Goretusk Liver Pie",
 		},
 		["id"] = 2542,
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 75,
@@ -169,26 +169,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Westfall Stew",
 		},
 		["id"] = 2543,
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 75,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 200,
 		},
@@ -203,7 +203,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Crab Cake",
 		},
 		["id"] = 2544,
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 85,
@@ -219,26 +219,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Cooked Crab Claw",
 		},
 		["id"] = 2545,
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 150,
 		},
@@ -253,7 +253,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Dry Pork Ribs",
 		},
 		["id"] = 2546,
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -269,7 +269,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Redridge Goulash",
 		},
 		["id"] = 2547,
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -285,7 +285,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Succulent Pork Ribs",
 		},
 		["id"] = 2548,
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -301,7 +301,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Seasoned Wolf Kabob",
 		},
 		["id"] = 2549,
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 25,
@@ -317,7 +317,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Beer Basted Boar Ribs",
 		},
 		["id"] = 2795,
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
@@ -333,7 +333,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Crocolisk Steak",
 		},
 		["id"] = 3370,
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
@@ -349,7 +349,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Blood Sausage",
 		},
 		["id"] = 3371,
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -365,7 +365,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Murloc Fin Soup",
 		},
 		["id"] = 3372,
-	}, -- [16]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
@@ -381,7 +381,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Crocolisk Gumbo",
 		},
 		["id"] = 3373,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 130,
@@ -397,7 +397,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Curiously Tasty Omelet",
 		},
 		["id"] = 3376,
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -413,7 +413,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Gooey Spider Cake",
 		},
 		["id"] = 3377,
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -429,7 +429,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Big Bear Steak",
 		},
 		["id"] = 3397,
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
@@ -445,7 +445,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Hot Lion Chops",
 		},
 		["id"] = 3398,
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
@@ -461,7 +461,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Tasty Lion Steak",
 		},
 		["id"] = 3399,
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -477,7 +477,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Soothing Turtle Bisque",
 		},
 		["id"] = 3400,
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -493,7 +493,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Barbecued Buzzard Wing",
 		},
 		["id"] = 4094,
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 10,
@@ -509,7 +509,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Kaldorei Spider Kabob",
 		},
 		["id"] = 6412,
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 20,
@@ -525,7 +525,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Scorpid Surprise",
 		},
 		["id"] = 6413,
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 35,
@@ -541,7 +541,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Roasted Kodo Meat",
 		},
 		["id"] = 6414,
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -557,7 +557,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Fillet of Frenzy",
 		},
 		["id"] = 6415,
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -573,7 +573,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Strider Stew",
 		},
 		["id"] = 6416,
-	}, -- [29]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -589,7 +589,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Dig Rat Stew",
 		},
 		["id"] = 6417,
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -605,7 +605,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Crispy Lizard Tail",
 		},
 		["id"] = 6418,
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -621,26 +621,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Lean Venison",
 		},
 		["id"] = 6419,
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 100,
 		},
@@ -655,26 +655,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Boiled Clams",
 		},
 		["id"] = 6499,
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 300,
 		},
@@ -689,7 +689,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Goblin Deviled Clams",
 		},
 		["id"] = 6500,
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -705,7 +705,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Clam Chowder",
 		},
 		["id"] = 6501,
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -721,7 +721,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Giant Clam Scorcho",
 		},
 		["id"] = 7213,
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
@@ -737,7 +737,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Brilliant Smallfish",
 		},
 		["id"] = 7751,
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
@@ -753,7 +753,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Slitherskin Mackerel",
 		},
 		["id"] = 7752,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -769,7 +769,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Longjaw Mud Snapper",
 		},
 		["id"] = 7753,
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -785,7 +785,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Loch Frenzy Delight",
 		},
 		["id"] = 7754,
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -801,7 +801,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Bristle Whisker Catfish",
 		},
 		["id"] = 7755,
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
@@ -817,7 +817,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Rainbow Fin Albacore",
 		},
 		["id"] = 7827,
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -833,7 +833,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Rockscale Cod",
 		},
 		["id"] = 7828,
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 85,
@@ -849,26 +849,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Savory Deviate Delight",
 		},
 		["id"] = 8238,
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 0,
 		},
@@ -883,7 +883,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Herb Baked Egg",
 		},
 		["id"] = 8604,
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 40,
@@ -899,7 +899,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Smoked Bear Meat",
 		},
 		["id"] = 8607,
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
@@ -915,13 +915,13 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Thistle Tea",
 		},
 		["id"] = 9513,
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				8696, -- [1]
+				8696,
 			},
 			["price"] = 0,
 		},
@@ -936,7 +936,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Goldthorn Tea",
 		},
 		["id"] = 13028,
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
@@ -952,7 +952,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Lean Wolf Steak",
 		},
 		["id"] = 15853,
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -968,7 +968,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Roast Raptor",
 		},
 		["id"] = 15855,
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -984,7 +984,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Hot Wolf Ribs",
 		},
 		["id"] = 15856,
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1000,7 +1000,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Jungle Stew",
 		},
 		["id"] = 15861,
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1016,7 +1016,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Carrion Surprise",
 		},
 		["id"] = 15863,
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1032,7 +1032,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Mystery Stew",
 		},
 		["id"] = 15865,
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -1048,7 +1048,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Dragonbreath Chili",
 		},
 		["id"] = 15906,
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -1064,7 +1064,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Heavy Kodo Stew",
 		},
 		["id"] = 15910,
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1080,7 +1080,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Spiced Chili Crab",
 		},
 		["id"] = 15915,
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1096,7 +1096,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Monster Omelet",
 		},
 		["id"] = 15933,
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
@@ -1112,7 +1112,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Crispy Bat Wing",
 		},
 		["id"] = 15935,
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1128,7 +1128,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Spotted Yellowtail",
 		},
 		["id"] = 18238,
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1144,7 +1144,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Cooked Glossy Mightfish",
 		},
 		["id"] = 18239,
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
@@ -1160,7 +1160,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Grilled Squid",
 		},
 		["id"] = 18240,
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1176,7 +1176,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Filet of Redgill",
 		},
 		["id"] = 18241,
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
@@ -1192,7 +1192,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Hot Smoked Bass",
 		},
 		["id"] = 18242,
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -1208,7 +1208,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Nightfin Soup",
 		},
 		["id"] = 18243,
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -1224,7 +1224,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Poached Sunscale Salmon",
 		},
 		["id"] = 18244,
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -1240,7 +1240,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Lobster Stew",
 		},
 		["id"] = 18245,
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -1256,7 +1256,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Mightfish Steak",
 		},
 		["id"] = 18246,
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -1272,7 +1272,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Baked Salmon",
 		},
 		["id"] = 18247,
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1288,7 +1288,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Undermine Clam Chowder",
 		},
 		["id"] = 20626,
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1304,7 +1304,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Mithril Headed Trout",
 		},
 		["id"] = 20916,
-	}, -- [71]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
@@ -1320,7 +1320,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Gingerbread Cookie",
 		},
 		["id"] = 21143,
-	}, -- [72]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 35,
@@ -1336,26 +1336,26 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Egg Nog",
 		},
 		["id"] = 21144,
-	}, -- [73]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				1355, -- [1]
-				1382, -- [2]
-				1430, -- [3]
-				1699, -- [4]
-				3026, -- [5]
-				3067, -- [6]
-				3087, -- [7]
-				3399, -- [8]
-				4210, -- [9]
-				4552, -- [10]
-				5159, -- [11]
-				5482, -- [12]
-				6286, -- [13]
-				8306, -- [14]
+				1355,
+				1382,
+				1430,
+				1699,
+				3026,
+				3067,
+				3087,
+				3399,
+				4210,
+				4552,
+				5159,
+				5482,
+				6286,
+				8306,
 			},
 			["price"] = 4000,
 		},
@@ -1370,7 +1370,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Spider Sausage",
 		},
 		["id"] = 21175,
-	}, -- [74]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1386,7 +1386,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Tender Wolf Steak",
 		},
 		["id"] = 22480,
-	}, -- [75]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -1402,7 +1402,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Runn Tum Tuber Surprise",
 		},
 		["id"] = 22761,
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
@@ -1418,10 +1418,10 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Heavy Crocolisk Stew",
 		},
 		["id"] = 24418,
-	}, -- [77]
+	},
 	{
 		["quests"] = {
-			8313, -- [1]
+			8313,
 		},
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -1436,7 +1436,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Smoked Desert Dumplings",
 		},
 		["id"] = 24801,
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -1452,7 +1452,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Dirge's Kickin' Chimaerok Chops",
 		},
 		["id"] = 25659,
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
@@ -1468,7 +1468,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Smoked Sagefish",
 		},
 		["id"] = 25704,
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1484,5 +1484,5 @@ MTSL_DATA["Cooking"]["skills"] = {
 			["English"] = "Sagefish Delight",
 		},
 		["id"] = 25954,
-	}, -- [81]
+	},
 }

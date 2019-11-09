@@ -101,19 +101,6 @@ MTSL_DATA["specializations"] = {
     ["First Aid"] = {},
     ["Leatherworking"] = {
         {
-            ["id"] = 10658,
-            ["name"]  = {
-                ["English"] = "Elemental leatherworking",
-                ["Russian"] = "Кожевничество: сила стихий",
-                ["French"] = "Travail du cuir élémentaire",
-                ["Portuguese"] = "Couraria Elemental",
-                ["Korean"] = "원소 가죽세공",
-                ["Chinese"] = "元素制皮",
-                ["German"] = "Elementarlederverarbeitung",
-                ["Spanish"] = "Peletería elemental",
-            },
-        },
-        {
             ["id"] = 10656,
             ["name"]  = {
                 ["English"] = "Dragonscale leatherworking",
@@ -124,6 +111,19 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "龙鳞制皮",
                 ["German"] = "Drachenlederverarbeitung",
                 ["Spanish"] = "Peletería dragontina",
+            },
+        },
+        {
+            ["id"] = 10658,
+            ["name"]  = {
+                ["English"] = "Elemental leatherworking",
+                ["Russian"] = "Кожевничество: сила стихий",
+                ["French"] = "Travail du cuir élémentaire",
+                ["Portuguese"] = "Couraria Elemental",
+                ["Korean"] = "원소 가죽세공",
+                ["Chinese"] = "元素制皮",
+                ["German"] = "Elementarlederverarbeitung",
+                ["Spanish"] = "Peletería elemental",
             },
         },
         {
