@@ -8,8 +8,7 @@
 ## LoadOnDemand: 0
 ## DefaultState: enabled
 ## Author: alex
-## Version: 113r.191016
+## Version: 113r.191106
 
 alaTalentEmu.xml
-
 
