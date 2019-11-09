@@ -682,7 +682,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "金团"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=金团] or [contains=G团] or [contains=RMB团] or [contains=内销]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=金团] or [contains=G团] or [contains=RMB团] or [contains=包团] or [contains=内销]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	-- filterDefDesc[#filterDefDesc + 1]     = "纳克萨玛斯"
