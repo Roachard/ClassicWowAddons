@@ -7,23 +7,23 @@ MTSL_DATA["Enchanting"]["skills"] = {
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				5695, -- [7]
-				7949, -- [8]
-				11065, -- [9]
-				11066, -- [10]
-				11067, -- [11]
-				11068, -- [12]
-				11070, -- [13]
-				11071, -- [14]
-				11072, -- [15]
-				11073, -- [16]
-				11074, -- [17]
+				1317,
+				3011,
+				3345,
+				3606,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 0,
 		},
@@ -38,30 +38,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Health",
 		},
 		["id"] = 7418,
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 10,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 50,
 		},
@@ -76,29 +76,29 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Minor Health",
 		},
 		["id"] = 7420,
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				5695, -- [7]
-				7949, -- [8]
-				11065, -- [9]
-				11066, -- [10]
-				11067, -- [11]
-				11068, -- [12]
-				11070, -- [13]
-				11071, -- [14]
-				11072, -- [15]
-				11073, -- [16]
-				11074, -- [17]
+				1317,
+				3011,
+				3345,
+				3606,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 0,
 		},
@@ -113,30 +113,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Runed Copper Rod",
 		},
 		["id"] = 7421,
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 40,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 100,
 		},
@@ -151,18 +151,18 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Minor Absorption",
 		},
 		["id"] = 7426,
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				3011, -- [1]
-				3345, -- [2]
-				4213, -- [3]
-				4616, -- [4]
-				5157, -- [5]
-				7949, -- [6]
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
 			},
 			["price"] = 0,
 		},
@@ -177,7 +177,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Deflect",
 		},
 		["id"] = 7428,
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 20,
@@ -193,30 +193,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Minor Mana",
 		},
 		["id"] = 7443,
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 45,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 100,
 		},
@@ -231,30 +231,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Minor Resistance",
 		},
 		["id"] = 7454,
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 50,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 250,
 		},
@@ -269,22 +269,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Stamina",
 		},
 		["id"] = 7457,
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 450,
 		},
@@ -299,30 +299,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Minor Impact",
 		},
 		["id"] = 7745,
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 250,
 		},
@@ -337,7 +337,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Lesser Health",
 		},
 		["id"] = 7748,
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 60,
@@ -353,30 +353,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Spirit",
 		},
 		["id"] = 7766,
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 70,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 200,
 		},
@@ -391,7 +391,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Minor Protection",
 		},
 		["id"] = 7771,
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
@@ -407,22 +407,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Lesser Mana",
 		},
 		["id"] = 7776,
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 360,
 		},
@@ -437,7 +437,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Agility",
 		},
 		["id"] = 7779,
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 80,
@@ -453,7 +453,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Minor Strength",
 		},
 		["id"] = 7782,
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
@@ -469,22 +469,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Minor Beastslayer",
 		},
 		["id"] = 7786,
-	}, -- [16]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 90,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 450,
 		},
@@ -499,7 +499,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Minor Striking",
 		},
 		["id"] = 7788,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
@@ -515,22 +515,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Lesser Intellect",
 		},
 		["id"] = 7793,
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 100,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 900,
 		},
@@ -545,22 +545,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Runed Silver Rod",
 		},
 		["id"] = 7795,
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 900,
 		},
@@ -575,7 +575,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Health",
 		},
 		["id"] = 7857,
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 120,
@@ -591,22 +591,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Lesser Spirit",
 		},
 		["id"] = 7859,
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 1125,
 		},
@@ -621,22 +621,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Lesser Fire Resistance",
 		},
 		["id"] = 7861,
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 1260,
 		},
@@ -651,7 +651,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Minor Stamina",
 		},
 		["id"] = 7863,
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
@@ -667,22 +667,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Minor Agility",
 		},
 		["id"] = 7867,
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 105,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 540,
 		},
@@ -697,7 +697,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Minor Stamina",
 		},
 		["id"] = 13378,
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -713,7 +713,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Lesser Spirit",
 		},
 		["id"] = 13380,
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 110,
@@ -729,22 +729,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Minor Agility",
 		},
 		["id"] = 13419,
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 115,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 720,
 		},
@@ -759,7 +759,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Lesser Protection",
 		},
 		["id"] = 13421,
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 115,
@@ -775,22 +775,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Lesser Protection",
 		},
 		["id"] = 13464,
-	}, -- [29]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 130,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 1350,
 		},
@@ -805,22 +805,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Lesser Spirit",
 		},
 		["id"] = 13485,
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 130,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 1350,
 		},
@@ -835,22 +835,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Lesser Stamina",
 		},
 		["id"] = 13501,
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 140,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 1800,
 		},
@@ -865,7 +865,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Lesser Striking",
 		},
 		["id"] = 13503,
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 135,
@@ -881,22 +881,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Lesser Shadow Resistance",
 		},
 		["id"] = 13522,
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2160,
 		},
@@ -911,7 +911,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Lesser Impact",
 		},
 		["id"] = 13529,
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 140,
@@ -927,22 +927,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Lesser Strength",
 		},
 		["id"] = 13536,
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 140,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2250,
 		},
@@ -957,22 +957,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Lesser Absorption",
 		},
 		["id"] = 13538,
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2160,
 		},
@@ -987,7 +987,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Mana",
 		},
 		["id"] = 13607,
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
@@ -1003,7 +1003,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Mining",
 		},
 		["id"] = 13612,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
@@ -1019,7 +1019,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Herbalism",
 		},
 		["id"] = 13617,
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 145,
@@ -1035,22 +1035,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Fishing",
 		},
 		["id"] = 13620,
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2250,
 		},
@@ -1065,22 +1065,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Lesser Intellect",
 		},
 		["id"] = 13622,
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2250,
 		},
@@ -1095,22 +1095,22 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Minor Stats",
 		},
 		["id"] = 13626,
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				4213, -- [4]
-				4616, -- [5]
-				5157, -- [6]
-				7949, -- [7]
-				11072, -- [8]
-				11073, -- [9]
-				11074, -- [10]
+				1317,
+				3011,
+				3345,
+				4213,
+				4616,
+				5157,
+				7949,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2250,
 		},
@@ -1125,15 +1125,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Runed Golden Rod",
 		},
 		["id"] = 13628,
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2600,
 		},
@@ -1148,15 +1148,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Lesser Stamina",
 		},
 		["id"] = 13631,
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2600,
 		},
@@ -1171,15 +1171,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Defense",
 		},
 		["id"] = 13635,
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 160,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2800,
 		},
@@ -1194,15 +1194,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Lesser Agility",
 		},
 		["id"] = 13637,
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 160,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2800,
 		},
@@ -1217,15 +1217,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Greater Health",
 		},
 		["id"] = 13640,
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 0,
 		},
@@ -1240,15 +1240,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Spirit",
 		},
 		["id"] = 13642,
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2800,
 		},
@@ -1263,7 +1263,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Lesser Stamina",
 		},
 		["id"] = 13644,
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
@@ -1279,15 +1279,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Lesser Deflection",
 		},
 		["id"] = 13646,
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 170,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2520,
 		},
@@ -1302,7 +1302,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Stamina",
 		},
 		["id"] = 13648,
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1318,7 +1318,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Lesser Beastslayer",
 		},
 		["id"] = 13653,
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
@@ -1334,15 +1334,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Lesser Elemental Slayer",
 		},
 		["id"] = 13655,
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2700,
 		},
@@ -1357,15 +1357,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Fire Resistance",
 		},
 		["id"] = 13657,
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 180,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2880,
 		},
@@ -1380,15 +1380,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Spirit",
 		},
 		["id"] = 13659,
-	}, -- [55]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 180,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3240,
 		},
@@ -1403,15 +1403,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Strength",
 		},
 		["id"] = 13661,
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 185,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3420,
 		},
@@ -1426,7 +1426,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Greater Mana",
 		},
 		["id"] = 13663,
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
@@ -1442,7 +1442,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Lesser Spirit",
 		},
 		["id"] = 13687,
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 195,
@@ -1458,15 +1458,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Lesser Block",
 		},
 		["id"] = 13689,
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 195,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3600,
 		},
@@ -1481,15 +1481,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Striking",
 		},
 		["id"] = 13693,
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 4000,
 		},
@@ -1504,7 +1504,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Impact",
 		},
 		["id"] = 13695,
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -1520,15 +1520,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Skinning",
 		},
 		["id"] = 13698,
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3600,
 		},
@@ -1543,15 +1543,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Lesser Stats",
 		},
 		["id"] = 13700,
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3600,
 		},
@@ -1566,15 +1566,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Runed Truesilver Rod",
 		},
 		["id"] = 13702,
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3780,
 		},
@@ -1589,15 +1589,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Greater Defense",
 		},
 		["id"] = 13746,
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 205,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3780,
 		},
@@ -1612,15 +1612,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Resistance",
 		},
 		["id"] = 13794,
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3960,
 		},
@@ -1635,7 +1635,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Agility",
 		},
 		["id"] = 13815,
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
@@ -1651,15 +1651,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Stamina",
 		},
 		["id"] = 13817,
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 210,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 3960,
 		},
@@ -1674,15 +1674,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Intellect",
 		},
 		["id"] = 13822,
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 215,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 4140,
 		},
@@ -1697,7 +1697,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Stamina",
 		},
 		["id"] = 13836,
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 215,
@@ -1713,7 +1713,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Advanced Mining",
 		},
 		["id"] = 13841,
-	}, -- [71]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
@@ -1729,15 +1729,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Greater Spirit",
 		},
 		["id"] = 13846,
-	}, -- [72]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 220,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 4320,
 		},
@@ -1752,7 +1752,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Superior Health",
 		},
 		["id"] = 13858,
-	}, -- [73]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1768,7 +1768,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Advanced Herbalism",
 		},
 		["id"] = 13868,
-	}, -- [74]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
@@ -1784,15 +1784,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Lesser Agility",
 		},
 		["id"] = 13882,
-	}, -- [75]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 4500,
 		},
@@ -1807,15 +1807,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Strength",
 		},
 		["id"] = 13887,
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 4500,
 		},
@@ -1830,7 +1830,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Minor Speed",
 		},
 		["id"] = 13890,
-	}, -- [77]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -1846,13 +1846,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Fiery Weapon",
 		},
 		["id"] = 13898,
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 0,
 		},
@@ -1867,7 +1867,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Greater Spirit",
 		},
 		["id"] = 13905,
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 230,
@@ -1883,13 +1883,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Demonslaying",
 		},
 		["id"] = 13915,
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 5400,
 		},
@@ -1904,7 +1904,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Superior Mana",
 		},
 		["id"] = 13917,
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
@@ -1920,7 +1920,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Deflection",
 		},
 		["id"] = 13931,
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
@@ -1936,13 +1936,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Frost Resistance",
 		},
 		["id"] = 13933,
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 235,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 5800,
 		},
@@ -1957,13 +1957,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Agility",
 		},
 		["id"] = 13935,
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 6200,
 		},
@@ -1978,13 +1978,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Greater Impact",
 		},
 		["id"] = 13937,
-	}, -- [85]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 240,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 6200,
 		},
@@ -1999,13 +1999,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Greater Strength",
 		},
 		["id"] = 13939,
-	}, -- [86]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 245,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 6200,
 		},
@@ -2020,13 +2020,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Stats",
 		},
 		["id"] = 13941,
-	}, -- [87]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 245,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 6200,
 		},
@@ -2041,7 +2041,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Greater Striking",
 		},
 		["id"] = 13943,
-	}, -- [88]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 245,
@@ -2057,7 +2057,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Greater Stamina",
 		},
 		["id"] = 13945,
-	}, -- [89]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -2073,13 +2073,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Riding Skill",
 		},
 		["id"] = 13947,
-	}, -- [90]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 6500,
 		},
@@ -2094,30 +2094,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Minor Haste",
 		},
 		["id"] = 13948,
-	}, -- [91]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 10,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 50,
 		},
@@ -2132,30 +2132,30 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Lesser Magic Wand",
 		},
 		["id"] = 14293,
-	}, -- [92]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 70,
 		["trainers"] = {
 			["sources"] = {
-				1317, -- [1]
-				3011, -- [2]
-				3345, -- [3]
-				3606, -- [4]
-				4213, -- [5]
-				4616, -- [6]
-				5157, -- [7]
-				5695, -- [8]
-				7949, -- [9]
-				11065, -- [10]
-				11066, -- [11]
-				11067, -- [12]
-				11068, -- [13]
-				11070, -- [14]
-				11071, -- [15]
-				11072, -- [16]
-				11073, -- [17]
-				11074, -- [18]
+				1317,
+				3011,
+				3345,
+				3606,
+				4213,
+				4616,
+				5157,
+				5695,
+				7949,
+				11065,
+				11066,
+				11067,
+				11068,
+				11070,
+				11071,
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 200,
 		},
@@ -2170,15 +2170,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Greater Magic Wand",
 		},
 		["id"] = 14807,
-	}, -- [93]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2600,
 		},
@@ -2193,15 +2193,15 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Lesser Mystic Wand",
 		},
 		["id"] = 14809,
-	}, -- [94]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
 		["trainers"] = {
 			["sources"] = {
-				11072, -- [1]
-				11073, -- [2]
-				11074, -- [3]
+				11072,
+				11073,
+				11074,
 			},
 			["price"] = 2700,
 		},
@@ -2216,7 +2216,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Greater Mystic Wand",
 		},
 		["id"] = 14810,
-	}, -- [95]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2232,13 +2232,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Smoking Heart of the Mountain",
 		},
 		["id"] = 15596,
-	}, -- [96]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 10000,
 		},
@@ -2253,13 +2253,13 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchanted Thorium",
 		},
 		["id"] = 17180,
-	}, -- [97]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				11073, -- [1]
+				11073,
 			},
 			["price"] = 10000,
 		},
@@ -2274,7 +2274,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchanted Leather",
 		},
 		["id"] = 17181,
-	}, -- [98]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 255,
@@ -2290,7 +2290,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Greater Intellect",
 		},
 		["id"] = 20008,
-	}, -- [99]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -2306,7 +2306,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Superior Spirit",
 		},
 		["id"] = 20009,
-	}, -- [100]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -2322,7 +2322,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Superior Strength",
 		},
 		["id"] = 20010,
-	}, -- [101]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2338,7 +2338,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Superior Stamina",
 		},
 		["id"] = 20011,
-	}, -- [102]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 270,
@@ -2354,7 +2354,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Greater Agility",
 		},
 		["id"] = 20012,
-	}, -- [103]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -2370,7 +2370,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Greater Strength",
 		},
 		["id"] = 20013,
-	}, -- [104]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2386,7 +2386,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Greater Resistance",
 		},
 		["id"] = 20014,
-	}, -- [105]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -2402,7 +2402,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Superior Defense",
 		},
 		["id"] = 20015,
-	}, -- [106]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 280,
@@ -2418,7 +2418,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Superior Spirit",
 		},
 		["id"] = 20016,
-	}, -- [107]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 265,
@@ -2434,7 +2434,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Shield - Greater Stamina",
 		},
 		["id"] = 20017,
-	}, -- [108]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 260,
@@ -2450,7 +2450,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Greater Stamina",
 		},
 		["id"] = 20020,
-	}, -- [109]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -2466,7 +2466,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Greater Agility",
 		},
 		["id"] = 20023,
-	}, -- [110]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -2482,7 +2482,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Boots - Spirit",
 		},
 		["id"] = 20024,
-	}, -- [111]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2498,7 +2498,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Greater Stats",
 		},
 		["id"] = 20025,
-	}, -- [112]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -2514,7 +2514,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Major Health",
 		},
 		["id"] = 20026,
-	}, -- [113]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -2530,7 +2530,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Chest - Major Mana",
 		},
 		["id"] = 20028,
-	}, -- [114]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 285,
@@ -2546,7 +2546,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Icy Chill",
 		},
 		["id"] = 20029,
-	}, -- [115]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -2562,7 +2562,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Superior Impact",
 		},
 		["id"] = 20030,
-	}, -- [116]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2578,7 +2578,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Superior Striking",
 		},
 		["id"] = 20031,
-	}, -- [117]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2594,7 +2594,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Lifestealing",
 		},
 		["id"] = 20032,
-	}, -- [118]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 295,
@@ -2610,7 +2610,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Unholy Weapon",
 		},
 		["id"] = 20033,
-	}, -- [119]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2626,7 +2626,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Crusader",
 		},
 		["id"] = 20034,
-	}, -- [120]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2642,7 +2642,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Major Spirit",
 		},
 		["id"] = 20035,
-	}, -- [121]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2658,7 +2658,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Major Intellect",
 		},
 		["id"] = 20036,
-	}, -- [122]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 290,
@@ -2674,7 +2674,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Runed Arcanite Rod",
 		},
 		["id"] = 20051,
-	}, -- [123]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 190,
@@ -2690,7 +2690,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Winter's Might",
 		},
 		["id"] = 21931,
-	}, -- [124]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2706,7 +2706,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Spell Power",
 		},
 		["id"] = 22749,
-	}, -- [125]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -2722,7 +2722,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Healing Power",
 		},
 		["id"] = 22750,
-	}, -- [126]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 290,
@@ -2738,7 +2738,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Strength",
 		},
 		["id"] = 23799,
-	}, -- [127]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 290,
@@ -2754,7 +2754,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Agility",
 		},
 		["id"] = 23800,
-	}, -- [128]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 290,
@@ -2770,7 +2770,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Mana Regeneration",
 		},
 		["id"] = 23801,
-	}, -- [129]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 300,
@@ -2786,7 +2786,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Bracer - Healing Power",
 		},
 		["id"] = 23802,
-	}, -- [130]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 300,
@@ -2802,7 +2802,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Mighty Spirit",
 		},
 		["id"] = 23803,
-	}, -- [131]
+	},
 	{
 		["phase"] = 3,
 		["min_skill"] = 300,
@@ -2818,7 +2818,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Weapon - Mighty Intellect",
 		},
 		["id"] = 23804,
-	}, -- [132]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2834,7 +2834,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Threat",
 		},
 		["id"] = 25072,
-	}, -- [133]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2850,7 +2850,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Shadow Power",
 		},
 		["id"] = 25073,
-	}, -- [134]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2866,7 +2866,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Frost Power",
 		},
 		["id"] = 25074,
-	}, -- [135]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2882,7 +2882,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Fire Power",
 		},
 		["id"] = 25078,
-	}, -- [136]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2898,7 +2898,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Healing Power",
 		},
 		["id"] = 25079,
-	}, -- [137]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2914,7 +2914,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Gloves - Superior Agility",
 		},
 		["id"] = 25080,
-	}, -- [138]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2930,7 +2930,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Greater Fire Resistance",
 		},
 		["id"] = 25081,
-	}, -- [139]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2946,7 +2946,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Greater Nature Resistance",
 		},
 		["id"] = 25082,
-	}, -- [140]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2962,7 +2962,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Stealth",
 		},
 		["id"] = 25083,
-	}, -- [141]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2978,7 +2978,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Subtlety",
 		},
 		["id"] = 25084,
-	}, -- [142]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 300,
@@ -2994,7 +2994,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant Cloak - Dodge",
 		},
 		["id"] = 25086,
-	}, -- [143]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 45,
@@ -3010,7 +3010,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Minor Wizard Oil",
 		},
 		["id"] = 25124,
-	}, -- [144]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 150,
@@ -3026,7 +3026,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Minor Mana Oil",
 		},
 		["id"] = 25125,
-	}, -- [145]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 200,
@@ -3042,7 +3042,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Lesser Wizard Oil",
 		},
 		["id"] = 25126,
-	}, -- [146]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
@@ -3058,7 +3058,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Lesser Mana Oil",
 		},
 		["id"] = 25127,
-	}, -- [147]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 275,
@@ -3074,7 +3074,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Wizard Oil",
 		},
 		["id"] = 25128,
-	}, -- [148]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3090,7 +3090,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Brilliant Wizard Oil",
 		},
 		["id"] = 25129,
-	}, -- [149]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
@@ -3106,7 +3106,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Brilliant Mana Oil",
 		},
 		["id"] = 25130,
-	}, -- [150]
+	},
 	{
 		["phase"] = 5,
 		["min_skill"] = 290,
@@ -3122,5 +3122,5 @@ MTSL_DATA["Enchanting"]["skills"] = {
 			["English"] = "Enchant 2H Weapon - Agility",
 		},
 		["id"] = 27837,
-	}, -- [151]
+	},
 }

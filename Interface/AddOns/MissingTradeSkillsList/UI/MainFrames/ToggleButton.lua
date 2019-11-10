@@ -66,7 +66,7 @@ function MTSLUI_TOGGLE_BUTTON:ReanchorToNewParent(parent_frame)
 		gap_left = 0
 		gap_top = 0
 	end
-	-- Overwrite parenttframe of Blizzard UI to Skillet-Classic addon if installed
+	-- Overwrite parenttframe of Blizzard UI to Skillet-Classic addon
 	if SkilletFrame then
 		parent_frame = SkilletFrame
 		gap_left = 0

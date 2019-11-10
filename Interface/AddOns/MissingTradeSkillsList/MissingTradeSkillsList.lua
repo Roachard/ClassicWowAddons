@@ -2,9 +2,6 @@
 -- Start the addon --
 ---------------------
 
--- Intialise our fonts
-MTSLUI_FONTS:Initialise()
-
 -- Initialise our event handler
 MTSLUI_EVENT_HANDLER:Initialise()
 

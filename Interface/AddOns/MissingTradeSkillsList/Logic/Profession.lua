@@ -16,6 +16,24 @@ MTSL_NAME_PROFESSIONS = {
 
 MTSL_LOGIC_PROFESSION = {
     ----------------------------------------------------------------------------------------
+    -- Returns the current rank learned for a profession (1 Apprentice to  4 Artisan)
+    --
+    -- @profession_name     String      The name of the profession
+    -- @max_level           Number      The current maximum number of skill that can be gained
+    --
+    -- returns              Array       The array with the ids of the missing levels
+    -----------------------------------------------------------------------------------------
+    GetRankForProfessionByMaxLevel = function(self, profession_name, max_level)
+        for k, v in pairs(self:GetLevelsForProfession(profession_name)) do
+            if v.max_skill == max_level then
+                return v.rank
+            end
+        end
+
+        return 0
+    end,
+
+    ----------------------------------------------------------------------------------------
     -- Searches for skill levels the player hasn't learned yet and add them to list
     --
     -- @profession_name     String      The name of the profession
@@ -44,26 +62,59 @@ MTSL_LOGIC_PROFESSION = {
     end,
 
     -----------------------------------------------------------------------------------------------
-    -- Get all the levels of a profession, ordered by max_skill
+    -- Get all the levels of a profession, ordered by rank (Apprentice, Journeyman, Expert, Artisan)
     --
     -- @profession_name     String      The name of the profession
     --
     -- returns              Array       The array with levels
     -----------------------------------------------------------------------------------------------
     GetLevelsForProfession = function(self, profession_name)
-        table.sort(MTSL_DATA[profession_name]["levels"], function (a, b) return a.max_skill < b.max_skill end)
+        table.sort(MTSL_DATA[profession_name]["levels"], function (a, b) return a.rank < b.rank end)
         return MTSL_DATA[profession_name]["levels"]
     end,
 
     -----------------------------------------------------------------------------------------------
     -- Returns a list of skills based on the filters
+    --
+    -- @list_skills         Array       The list of skills to filter
+    -- @profession_name     String      The name of the profession
+    -- @skill_name          String      The (partial) name of the skill
+    -- @source_type         String      The sourcetype for the skill
+    -- @specialization      String      The name of the specialization
+    -- @max_phase			Number		The maximum content phase for skill to be included (default = current)
+    -- @zone_id				Number		The id of the zone in which we must be able to learn skill (0 = all)
+    --
+    -- returns              Array       The skills passed the filter
     -----------------------------------------------------------------------------------------------
-    FilterListOfSkills = function(self, list_skills, profession_name, max_phase, zone_id)
+    FilterListOfSkills = function(self, list_skills, profession_name, skill_name, source_type, specialization, max_phase, zone_id)
         local filtered_list = {}
         -- add all the skills
         if list_skills ~= nil then
             for _, v in pairs(list_skills) do
-                if MTSL_LOGIC_SKILL:IsSkillAvailableInPhaseAndZone(v, profession_name, max_phase, zone_id) then
+                local skill_passed_filter = true
+                -- Check if name is ok
+                if skill_name ~= nil and skill_name ~= "" then
+                    local name = string.lower(v["name"][MTSLUI_CURRENT_LANGUAGE])
+                    local contains = string.lower(skill_name)
+                    -- if we cant match the full text it didnt pass the filter
+                    if string.match(name, contains) ~= contains then
+                        skill_passed_filter = false
+                    end
+                end
+                --  check specialization
+                if skill_passed_filter == true and specialization ~= nil and specialization > 0 and v.specialization ~= specialization then
+                    skill_passed_filter = false
+                end
+                -- Check availability in zone & phase
+                if skill_passed_filter == true and MTSL_LOGIC_SKILL:IsSkillAvailableInPhaseAndZone(v, profession_name, max_phase, zone_id) == false then
+                    skill_passed_filter = false
+                end
+                -- check if source type is ok
+                if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:IsAvailableForSourceType(v.id, profession_name, source_type) == false then
+                    skill_passed_filter = false
+                end
+                -- passed all filters so add it to list
+                if skill_passed_filter then
                     table.insert(filtered_list, v)
                 end
             end
@@ -74,7 +125,7 @@ MTSL_LOGIC_PROFESSION = {
     -----------------------------------------------------------------------------------------------
     -- Get All the available (in the given phase) skills and levels in a zone for one profession sorted by minimim skill
     --
-    -- @prof_name			String		The name of the profession
+    -- @profession_name		String		The name of the profession
     -- @max_phase			Number		The maximum content phase for skill to be included (default = current)
     -- @zone_id				Number		The id of the zone in which we must be able to learn skill (0 = all)
     --
@@ -316,4 +367,31 @@ MTSL_LOGIC_PROFESSION = {
 
         return counter
     end,
+
+    -----------------------------------------------------------------------------------------------
+    -- Get list of specializations for a profession
+    --
+    -- @profession_name		String		The name of the profession
+    --
+    -- return				Array		List or {}
+    ------------------------------------------------------------------------------------------------
+    GetSpecializationsForProfession = function(self, profession_name)
+        return MTSL_DATA["specializations"][profession_name] or {}
+    end,
+
+    -----------------------------------------------------------------------------------------------
+    -- Get list of specializations for a profession
+    --
+    -- @profession_name		    String		The name of the profession
+    -- @specialization_id	    Number		The id of the specialization
+    --
+    -- return				    String		Name or nil
+    ------------------------------------------------------------------------------------------------
+    GetNameSpecialization = function(self, profession_name, specialization_id)
+        local spec = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["specializations"][profession_name], "id", specialization_id)
+        if spec ~= nil then
+            return spec["name"][MTSLUI_CURRENT_LANGUAGE]
+        end
+        return ""
+    end
 }

@@ -10,7 +10,7 @@ Thumbkin (Retail: EU-Burning Steppes, Classic: EU-Pyrewood Village)
 
 ### Screenshots
 MTSL - Vertical split (Change using options menu)
-![alt text](https://media.forgecdn.net/attachments/265/613/mtsl_main.png "Missing TradeSkills List - Vertical Split")
+![alt text](https://media.forgecdn.net/attachments/266/746/mtsl_main.png "Missing TradeSkills List - Vertical Split")
 MTSL - Horizontal split (Change using options menu)
 ![alt text](https://media.forgecdn.net/attachments/265/614/mtsl_main_horizontal.png "Missing TradeSkills List - Horizontal Split")
 Account explorer (/mtsl acc or /mtsl account)
@@ -18,26 +18,30 @@ Account explorer (/mtsl acc or /mtsl account)
 Database explorer (/mtsl db or /mtsl database)
 ![alt text](https://media.forgecdn.net/attachments/265/615/mtsl_database.png "Missing TradeSkills List - Database explorer")
 Options menu (/mtsl or /mtsl config or /mtsl options)
-![alt text](https://media.forgecdn.net/attachments/265/541/mtsl_options.png "Missing TradeSkills List - Options menu")
+![alt text](https://media.forgecdn.net/attachments/266/869/mtsl_options.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
+
   * Add lines to tooltips for recipes to show if chars who know the skill can learn it or not (skip learned ones though)
-  * Translations for the special actions for certain skills  
 
 ### Known Bugs
+
 1: Not all trainer skills have the correct minimum skill required or price  
-3: Reputation required not yet shown for items
-5: World drops currently left out when filtering on specific zone for drops (mob range check not yet in place)
+5: World drops currently left out when filtering on specific zone for drops (mob range check not yet in place)  
 
 ### Fixed Issues
+
 2: When a skill has multiple sources, the secondary source is not always shown correctly  
+3: Reputation required not yet shown for items  
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
 ### Latest version 
-v1.13.20&nbsp;&nbsp;&nbsp;&nbsp;Fixed wrong translations  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some lua errrors  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TradeSkillFrame & CraftFrame are now draggable  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added menu option to hook MTSL button left or right on TradeSkillFrame/CraftFrame  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Support for SkilletFrame for CraftFrame as well  
+v1.13.25&nbsp;&nbsp;&nbsp;&nbsp;Added specialisations as skills too  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong recipes  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added holidays as source type  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added label to show the holiday needed to get a skill  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added label to show the sourcetype of a sources of a skill  (e.g.: if skill is obtained from recipe, you can also see the sourcetype of the recipe)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug when using the sourcetype filter  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug when using the phase filter  
 
 [Full Version History](VERSION_HISTORY.md)

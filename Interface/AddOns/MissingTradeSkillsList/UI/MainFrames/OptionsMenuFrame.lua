@@ -10,7 +10,7 @@ MTSLUI_OPTIONS_MENU_FRAME = MTSL_TOOLS:CopyObject(MTSLUI_BASE_FRAME)
 -- Add or overwrite baseframe
     -- Addon frame
 MTSLUI_OPTIONS_MENU_FRAME.FRAME_WIDTH = 715
-MTSLUI_OPTIONS_MENU_FRAME.FRAME_HEIGHT = 350
+MTSLUI_OPTIONS_MENU_FRAME.FRAME_HEIGHT = 400
 
     ---------------------------------------------------------------------------------------
     -- Shows the frame
@@ -22,6 +22,8 @@ function MTSLUI_OPTIONS_MENU_FRAME:Show()
     MTSLUI_DATABASE_EXPLORER_FRAME:Hide()
     -- show the options
     self.ui_frame:Show()
+    -- auto select the current player in the drop down to remove data
+    MTSLOPTUI_RESET_FRAME:SelectCurrentPlayer()
 end
 
 ----------------------------------------------------------------------------------------------------------

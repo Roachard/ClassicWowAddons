@@ -417,6 +417,13 @@ function CSC_PaperDollFrame_SetSpellCritChance(statFrame, unit)
 			-- set the new maximum
 			maxSpellCrit = max(maxSpellCrit, statFrame.holyCrit);
 		end
+	elseif (unitClassLoc == "PALADIN") then
+		local paladinHolyCrit = CSC_GetPaladinCritStatsFromTalents();
+		if (paladinHolyCrit > 0) then
+			statFrame.holyCrit = statFrame.holyCrit + paladinHolyCrit;
+			-- set the new maximum
+			maxSpellCrit = max(maxSpellCrit, statFrame.holyCrit);
+		end
 	end
 
 	CSC_PaperDollFrame_SetLabelAndText(statFrame, STAT_CRITICAL_STRIKE, maxSpellCrit, true, maxSpellCrit);
@@ -538,13 +545,19 @@ function CSC_PaperDollFrame_SetDefense(statFrame, unit)
 
 	local numSkills = GetNumSkillLines();
 	local skillIndex = 0;
+	local currentHeader = nil;
 
 	for i = 1, numSkills do
 		local skillName = select(1, GetSkillLineInfo(i));
+		local isHeader = select(2, GetSkillLineInfo(i));
 
-		if (skillName == DEFENSE) then
-			skillIndex = i;
-			break;
+		if isHeader ~= nil and isHeader then
+			currentHeader = skillName;
+		else
+			if (currentHeader == CSC_WEAPON_SKILLS_HEADER and skillName == CSC_DEFENSE) then
+				skillIndex = i;
+				break;
+			end
 		end
 	end
 
@@ -566,7 +579,7 @@ function CSC_PaperDollFrame_SetDefense(statFrame, unit)
 	end
 	local valueText, tooltipText = CSC_PaperDollFormatStat(DEFENSE_COLON, skillRank, posBuff, negBuff);
 	local valueNum = max(0, skillRank + posBuff + negBuff);
-	CSC_PaperDollFrame_SetLabelAndText(statFrame, DEFENSE, valueText, false, valueNum);
+	CSC_PaperDollFrame_SetLabelAndText(statFrame, CSC_DEFENSE, valueText, false, valueNum);
 	statFrame.tooltip = tooltipText;
 	tooltipText = format(DEFAULT_STATDEFENSE_TOOLTIP, valueNum, 0, valueNum*0.04, valueNum*0.04);
 	tooltipText = tooltipText:gsub('.-\n', '', 1);

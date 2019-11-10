@@ -2,11 +2,6 @@
 -- Contains all shared functions for the logic --
 -------------------------------------------------
 
--- Hols the curent phase of the content patches on live servers
-MTSL_CURRENT_PHASE = 1
--- Hols the max phase of game to ever be released on live servers
-MTSL_MAX_PHASE = 6
-
 MTSL_TOOLS = {
 	---------------------------------------------------------------------------------------
 	-- Conver a number to xx g xx s xx c
@@ -136,7 +131,7 @@ MTSL_TOOLS = {
 	--
 	-- returns		Object		The item with the corresponding id or nil if not found
 	----------------------------------------------------------------------------------------------------------
-	GetItemFromNamedListByIdex = function(self, list, index)
+	GetItemFromNamedListByIndex = function(self, list, index)
 		local i = 1
 
 		if list ~= nil then

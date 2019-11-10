@@ -18,7 +18,7 @@ MTSLUI_PROGRESSBAR = {
     ----------------------------------------------------------------------------------------------------------
     Initialise = function (self, parent_frame, name, title_text)
         self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", name, parent_frame, nil, self.FRAME_WIDTH_VERTICAL, self.FRAME_HEIGHT, false)
-        self.ui_frame.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, title_text, 5, 0, "SMALL", "LEFT")
+        self.ui_frame.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, title_text, 5, 0, "TEXT", "LEFT")
 
         local pb_width = self.FRAME_WIDTH_VERTICAL - self.MARGIN_PROGRESS_BAR
         self.ui_frame.progressbar = {}
@@ -33,7 +33,7 @@ MTSLUI_PROGRESSBAR = {
         self.ui_frame.progressbar.ui_frame.counter = MTSLUI_TOOLS:CreateBaseFrame("Frame",  name .. "_PB_Counter",  self.ui_frame.progressbar.ui_frame, nil, pb_width, self.HEIGHT_PROGRESS_BAR, true)
         self.ui_frame.progressbar.ui_frame.counter:SetPoint("TOPLEFT", self.ui_frame.progressbar.ui_frame, "TOPLEFT", 0, 0)
         -- Status text
-        self.ui_frame.progressbar.ui_frame.counter.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.progressbar.ui_frame.counter, "", 0, 0, "NORMAL", "CENTER")
+        self.ui_frame.progressbar.ui_frame.counter.text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.progressbar.ui_frame.counter, "", 0, 0, "LABEL", "CENTER")
     end,
 
     ----------------------------------------------------------------------------------------------------------

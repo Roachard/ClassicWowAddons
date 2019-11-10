@@ -17,9 +17,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Pastete aus Geiferzahnleber",
 		},
 		["npcs"] = {
-			235, -- [1]
+			235,
 		},
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 38,
@@ -35,9 +35,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Westfall-Eintopf",
 		},
 		["npcs"] = {
-			235, -- [1]
+			235,
 		},
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 90,
@@ -53,9 +53,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Gewürzter Wolfskebab",
 		},
 		["npcs"] = {
-			272, -- [1]
+			272,
 		},
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 92,
@@ -71,9 +71,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Rotkammgulasch",
 		},
 		["npcs"] = {
-			343, -- [1]
+			343,
 		},
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 93,
@@ -89,9 +89,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Schwärzliche Krebsküchlein",
 		},
 		["npcs"] = {
-			272, -- [1]
+			272,
 		},
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 127,
@@ -107,9 +107,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Fischhandel",
 		},
 		["npcs"] = {
-			381, -- [1]
+			381,
 		},
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 296,
@@ -125,9 +125,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Ormers Rache",
 		},
 		["npcs"] = {
-			1078, -- [1]
+			1078,
 		},
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 384,
@@ -143,9 +143,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Eberrippchen in Biersauce",
 		},
 		["npcs"] = {
-			1267, -- [1]
+			1267,
 		},
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 385,
@@ -161,9 +161,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Krokiliskenjagd",
 		},
 		["npcs"] = {
-			1154, -- [1]
+			1154,
 		},
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 418,
@@ -179,9 +179,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Thelsamar-Blutwurst",
 		},
 		["npcs"] = {
-			1963, -- [1]
+			1963,
 		},
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 429,
@@ -197,9 +197,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wilde Herzen",
 		},
 		["npcs"] = {
-			1950, -- [1]
+			1950,
 		},
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 471,
@@ -215,9 +215,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Lehrlingspflichten",
 		},
 		["npcs"] = {
-			2094, -- [1]
+			2094,
 		},
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 498,
@@ -233,9 +233,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Rettung",
 		},
 		["npcs"] = {
-			2229, -- [1]
+			2229,
 		},
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 501,
@@ -251,9 +251,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Elixier der Schmerzen",
 		},
 		["npcs"] = {
-			2216, -- [1]
+			2216,
 		},
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 555,
@@ -269,9 +269,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Milde Schildkrötensuppe",
 		},
 		["npcs"] = {
-			2430, -- [1]
+			2430,
 		},
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 564,
@@ -287,9 +287,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Teure Bedrohung",
 		},
 		["npcs"] = {
-			2382, -- [1]
+			2382,
 		},
-	}, -- [16]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 703,
@@ -305,9 +305,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Gegrillte Bussardflügel",
 		},
 		["npcs"] = {
-			2817, -- [1]
+			2817,
 		},
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 715,
@@ -323,9 +323,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Flüssigstein",
 		},
 		["npcs"] = {
-			2920, -- [1]
+			2920,
 		},
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 769,
@@ -341,9 +341,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Kodobalgtasche",
 		},
 		["npcs"] = {
-			3050, -- [1]
+			3050,
 		},
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 862,
@@ -359,9 +359,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Grubenratteneintopf",
 		},
 		["npcs"] = {
-			3443, -- [1]
+			3443,
 		},
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 1487,
@@ -377,9 +377,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Ausrottung der Deviat",
 		},
 		["npcs"] = {
-			5768, -- [1]
+			5768,
 		},
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 1559,
@@ -395,9 +395,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Blitzstrahlbombenanleitung",
 		},
 		["npcs"] = {
-			2817, -- [1]
+			2817,
 		},
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 1582,
@@ -413,9 +413,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Mondscheinweste",
 		},
 		["npcs"] = {
-			6034, -- [1]
+			6034,
 		},
-	}, -- [23]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 1618,
@@ -431,9 +431,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Aufrüstung im Rotkammgebirge",
 		},
 		["npcs"] = {
-			6031, -- [1]
+			6031,
 		},
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2178,
@@ -449,9 +449,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Schreitereintopf",
 		},
 		["npcs"] = {
-			3702, -- [1]
+			3702,
 		},
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2203,
@@ -467,9 +467,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Reagenzien-Suche im Ödland II",
 		},
 		["npcs"] = {
-			6868, -- [1]
+			6868,
 		},
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2359,
@@ -485,9 +485,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Klavens Turm",
 		},
 		["npcs"] = {
-			7024, -- [1]
+			7024,
 		},
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2478,
@@ -503,9 +503,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Mission: möglich, aber nicht sehr wahrscheinlich",
 		},
 		["npcs"] = {
-			7233, -- [1]
+			7233,
 		},
-	}, -- [28]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2501,
@@ -521,9 +521,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Reagenzien-Suche im Ödland II",
 		},
 		["npcs"] = {
-			1470, -- [1]
+			1470,
 		},
-	}, -- [29]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2751,
@@ -539,9 +539,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Barbarische Waffenschmiedekunst",
 		},
 		["npcs"] = {
-			7790, -- [1]
+			7790,
 		},
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2752,
@@ -557,9 +557,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Über Eisenschulterstücke",
 		},
 		["npcs"] = {
-			7790, -- [1]
+			7790,
 		},
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2753,
@@ -575,9 +575,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "In den Boden getrampelt",
 		},
 		["npcs"] = {
-			7790, -- [1]
+			7790,
 		},
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2754,
@@ -593,9 +593,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Hörner der Raserei",
 		},
 		["npcs"] = {
-			7790, -- [1]
+			7790,
 		},
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2755,
@@ -611,9 +611,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Freude der Omoshs",
 		},
 		["npcs"] = {
-			7790, -- [1]
+			7790,
 		},
-	}, -- [34]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2756,
@@ -629,9 +629,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die alten Traditionen",
 		},
 		["npcs"] = {
-			7792, -- [1]
+			7792,
 		},
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2758,
@@ -647,9 +647,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Herkunft der Schmiedekunst",
 		},
 		["npcs"] = {
-			7798, -- [1]
+			7798,
 		},
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2761,
@@ -665,9 +665,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Hier verhütten, da verhütten",
 		},
 		["npcs"] = {
-			7802, -- [1]
+			7802,
 		},
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2762,
@@ -683,9 +683,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Der große silberne Betrüger",
 		},
 		["npcs"] = {
-			7802, -- [1]
+			7802,
 		},
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2763,
@@ -701,9 +701,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Kunst der Magieerfüllung",
 		},
 		["npcs"] = {
-			7802, -- [1]
+			7802,
 		},
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2771,
@@ -719,9 +719,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Ein schlauer Kopf auf den Schultern",
 		},
 		["npcs"] = {
-			7804, -- [1]
+			7804,
 		},
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2772,
@@ -737,9 +737,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Welt zu Euren Füßen",
 		},
 		["npcs"] = {
-			7804, -- [1]
+			7804,
 		},
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2773,
@@ -755,9 +755,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Mithril-Kid",
 		},
 		["npcs"] = {
-			7804, -- [1]
+			7804,
 		},
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2848,
@@ -773,9 +773,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederschultern",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2849,
@@ -791,9 +791,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederweste",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2850,
@@ -809,9 +809,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederhelm",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2851,
@@ -827,9 +827,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederstiefel",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2852,
@@ -845,9 +845,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildledergamaschen",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2853,
@@ -863,9 +863,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Meister des Wildleders",
 		},
 		["npcs"] = {
-			7852, -- [1]
+			7852,
 		},
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2855,
@@ -881,9 +881,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederschultern",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2856,
@@ -899,9 +899,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederweste",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2857,
@@ -917,9 +917,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederhelm",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2858,
@@ -935,9 +935,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildlederstiefel",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2859,
@@ -953,9 +953,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Wildledergamaschen",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [53]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2860,
@@ -971,9 +971,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Meister des Wildleders",
 		},
 		["npcs"] = {
-			7854, -- [1]
+			7854,
 		},
-	}, -- [54]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3402,
@@ -989,9 +989,52 @@ MTSL_DATA["quests"] = {
 			["German"] = "Der Untermarkt",
 		},
 		["npcs"] = {
-			8439, -- [1]
+			8439,
 		},
-	}, -- [55]
+	},
+	{
+		["phase"] = 1,
+		["id"] = 3629,
+		["npcs"] = {
+			5518,
+			5174,
+			3494,
+			4586,
+		},
+		["name"]  = {
+			["English"] = "Goblin engineering",
+			["Russian"] = "Гоблинское инженерное дело",
+			["French"] = "Ingénierie des gobelins",
+			["Portuguese"] = "Engenharia goblínica",
+			["Korean"] = "고블린 기계공학",
+			["Chinese"] = "地精工程",
+			["German"] = "Goblin-Ingenieurskunst",
+			["Spanish"] = "Ingeniería goblin",
+		},
+		["min_skill"] = 200,
+		["min_xp_level"] = 30,
+	},
+	{
+		["phase"] = 1,
+		["id"] = 3630,
+		["min_xp_level"] = 30,
+		["name"] = {
+			["Portuguese"] = "Engenharia gnômica",
+			["Russian"] = "Гномское инженерное дело",
+			["Chinese"] = "侏儒工程",
+			["Spanish"] = "Ingeniería gnómica",
+			["French"] = "Ingénierie des gnomes",
+			["English"] = "Gnome Engineering",
+			["Korean"] = "노움 기계공학",
+			["German"] = "Gnomen-Ingenieurskunst",
+		},
+		["npcs"] = {
+			5518,
+			5174,
+			3494,
+			4586,
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4083,
@@ -1007,9 +1050,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Der spektrale Kelch",
 		},
 		["objects"] = {
-			164869, -- [1]
+			164869,
 		},
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4161,
@@ -1025,45 +1068,99 @@ MTSL_DATA["quests"] = {
 			["German"] = "Rezept der Kaldorei",
 		},
 		["npcs"] = {
-			6286, -- [1]
+			6286,
 		},
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5124,
 		["min_xp_level"] = 60,
 		["name"] = {
-			["Portuguese"] = "[Fiery Plate Gauntlets]",
-			["Russian"] = "[Fiery Plate Gauntlets]",
-			["Chinese"] = "[Fiery Plate Gauntlets]",
-			["Spanish"] = "[Fiery Plate Gauntlets]",
-			["French"] = "[Fiery Plate Gauntlets]",
+			["Portuguese"] = "Manoplas de Placa Ardente",
+			["Russian"] = "Огненные латные рукавицы",
+			["Chinese"] = "炽热板甲护手",
+			["Spanish"] = "Guanteletes de placas ardientes",
+			["French"] = "Gantelets en plaque de feu",
 			["English"] = "Fiery Plate Gauntlets",
-			["Korean"] = "[Fiery Plate Gauntlets]",
+			["Korean"] = "불꽃의 판금 건틀릿",
 			["German"] = "Feurige Plattenstulpen",
 		},
 		["npcs"] = {
-			10637, -- [1]
+			10637,
 		},
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5127,
 		["min_xp_level"] = 58,
 		["name"] = {
 			["Portuguese"] = "A forja demoníaca",
-			["Russian"] = "[The Demon Forge]",
-			["Chinese"] = "[The Demon Forge]",
+			["Russian"] = "Демонова кузня",
+			["Chinese"] = "恶魔熔炉",
 			["Spanish"] = "La forja demoníaca",
 			["French"] = "La forge démoniaque",
 			["English"] = "The Demon Forge",
-			["Korean"] = "[The Demon Forge]",
+			["Korean"] = "악마의 룬",
 			["German"] = "Die Dämonenschmiede",
 		},
 		["npcs"] = {
-			10918, -- [1]
+			10918,
 		},
-	}, -- [59]
+	},
+	{
+		["id"] = 5141,
+		["name"]  = {
+			["English"] = "Dragonscale leatherworking",
+			["Russian"] = "Кожевничество: чешуя драконов",
+			["French"] = "Travail du cuir d'écailles de dragon",
+			["Portuguese"] = "Couraria Dragônica",
+			["Korean"] = "용비늘 가죽세공",
+			["Chinese"] = "龙鳞制皮",
+			["German"] = "Drachenlederverarbeitung",
+			["Spanish"] = "Peletería dragontina",
+		},
+		["npcs"] = {
+			7866,
+			7867,
+		},
+		["min_xp_level"] = 40,
+	},
+	{
+		["id"] = 5144,
+		["name"]  = {
+			["English"] = "Elemental leatherworking",
+			["Russian"] = "Кожевничество: сила стихий",
+			["French"] = "Travail du cuir élémentaire",
+			["Portuguese"] = "Couraria Elemental",
+			["Korean"] = "원소 가죽세공",
+			["Chinese"] = "元素制皮",
+			["German"] = "Elementarlederverarbeitung",
+			["Spanish"] = "Peletería elemental",
+		},
+		["npcs"] = {
+			7868,
+			7869,
+		},
+		["min_xp_level"] = 40,
+	},
+	{
+		["id"] = 5143,
+		["name"]  = {
+			["English"] = "Tribal leatherworking",
+			["Russian"] = "Кожевничество: традиции предков",
+			["French"] = "Travail du cuir tribal",
+			["Portuguese"] = "Couraria tribal",
+			["Korean"] = "전통 가죽세공",
+			["Chinese"] = "部族制皮",
+			["German"] = "Stammeslederverarbeitung",
+			["Spanish"] = "Peletería tribal",
+		},
+		["npcs"] = {
+			7870,
+			7871,
+		},
+		["min_xp_level"] = 40,
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5150,
@@ -1079,35 +1176,71 @@ MTSL_DATA["quests"] = {
 			["German"] = "Dadanga ist hungrig!",
 		},
 		["npcs"] = {
-			9274, -- [1]
+			9274,
 		},
-	}, -- [60]
+	},
+	{
+		["id"] = 5283,
+		["name"]  = {
+			["English"] = "The Art of the Armorsmith",
+			["Russian"] = "Искусство школы Брони",
+			["French"] = "L'art de l'armurier",
+			["Portuguese"] = "A arte de forjar armaduras",
+			["Korean"] = "기갑 세공 기술",
+			["Chinese"] = "盔甲匠的艺术",
+			["German"] = "Die Kunst des Rüstungsschmiedes",
+			["Spanish"] = "El arte del forjador de armaduras",
+		},
+		["npcs"] = {
+			5164,
+			11177,
+		},
+		["min_xp_level"] = 40,
+	},
+	{
+		["id"] = 5284,
+		["name"]  = {
+			["English"] = "The Way of the Weaponsmith",
+			["Russian"] = "Путь оружейника",
+			["French"] = "La voie du Forgeron d'armes",
+			["Portuguese"] = "O caminho do armeiro",
+			["Korean"] = "무기제작자의 길",
+			["Chinese"] = "武器铸造师之道",
+			["German"] = "Der Weg des Waffenschmieds",
+			["Spanish"] = "El arte del forjador de armas",
+		},
+		["npcs"] = {
+			11146,
+			11178,
+		},
+		["min_xp_level"] = 40,
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5305,
 		["min_xp_level"] = 50,
 		["name"] = {
-			["Portuguese"] = "[Sweet Serenity]",
+			["Portuguese"] = "Doce Serenidade",
 			["Russian"] = "Секрет безмятежности",
-			["Chinese"] = "[Sweet Serenity]",
-			["Spanish"] = "[Sweet Serenity]",
+			["Chinese"] = "甜美的平静",
+			["Spanish"] = "Dulce serenidad",
 			["French"] = "Douce sérénité",
 			["English"] = "Sweet Serenity",
-			["Korean"] = "[Sweet Serenity]",
-			["German"] = "[Sweet Serenity]",
+			["Korean"] = "달콤한 평온",
+			["German"] = "Süße Beschaulichkeit",
 		},
 		["npcs"] = {
-			11191, -- [1]
+			11191,
 		},
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5306,
 		["min_xp_level"] = 50,
 		["name"] = {
 			["Portuguese"] = "A litofídia da caçadora sombria",
-			["Russian"] = "[Snakestone of the Shadow Huntress]",
-			["Chinese"] = "[Snakestone of the Shadow Huntress]",
+			["Russian"] = "Змеиный камень Теневой Охотницы",
+			["Chinese"] = "沃什加斯的菊石",
 			["Spanish"] = "Piedra Serpiente de la Cazadora de las Sombras",
 			["French"] = "Pierre du serpent de la chasseresse des ombres",
 			["English"] = "Snakestone of the Shadow Huntress",
@@ -1115,27 +1248,27 @@ MTSL_DATA["quests"] = {
 			["German"] = "Schlangenstein der Schattenjägerin",
 		},
 		["npcs"] = {
-			11192, -- [1]
+			11192,
 		},
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5307,
 		["min_xp_level"] = 50,
 		["name"] = {
-			["Portuguese"] = "[Corruption]",
+			["Portuguese"] = "Corrupção",
 			["Russian"] = "Скверна",
-			["Chinese"] = "[Corruption]",
-			["Spanish"] = "[Corruption]",
+			["Chinese"] = "腐蚀",
+			["Spanish"] = "Corrupción",
 			["French"] = "Corruption",
 			["English"] = "Corruption",
-			["Korean"] = "[Corruption]",
-			["German"] = "[Corruption]",
+			["Korean"] = "부패의 검",
+			["German"] = "Verderbnis",
 		},
 		["npcs"] = {
-			11193, -- [1]
+			11193,
 		},
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5518,
@@ -1151,9 +1284,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Der Ogeranzug der Gordok",
 		},
 		["npcs"] = {
-			14338, -- [1]
+			14338,
 		},
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5519,
@@ -1169,9 +1302,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Der Ogeranzug der Gordok",
 		},
 		["npcs"] = {
-			14338, -- [1]
+			14338,
 		},
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6032,
@@ -1187,9 +1320,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Hochheiliger Stoff",
 		},
 		["npcs"] = {
-			11557, -- [1]
+			11557,
 		},
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6610,
@@ -1197,7 +1330,7 @@ MTSL_DATA["quests"] = {
 		["name"] = {
 			["Portuguese"] = "Escondidinho Marisquete",
 			["Russian"] = "Мидии с сюрпризом",
-			["Chinese"] = "[Clamlette Surprise]",
+			["Chinese"] = "蚌肉大餐",
 			["Spanish"] = "Sorpresa de almejate",
 			["French"] = "Surprise de palourdes",
 			["English"] = "Clamlette Surprise",
@@ -1205,9 +1338,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Muschelette Surprise",
 		},
 		["npcs"] = {
-			8125, -- [1]
+			8125,
 		},
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6622,
@@ -1223,9 +1356,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Triage",
 		},
 		["npcs"] = {
-			12920, -- [1]
+			12920,
 		},
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6624,
@@ -1241,9 +1374,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Triage",
 		},
 		["npcs"] = {
-			12939, -- [1]
+			12939,
 		},
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7321,
@@ -1259,9 +1392,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Milde Schildkrötensuppe",
 		},
 		["npcs"] = {
-			2393, -- [1]
+			2393,
 		},
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7493,
@@ -1277,9 +1410,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Die Reise beginnt erst",
 		},
 		["npcs"] = {
-			14392, -- [1]
+			14392,
 		},
-	}, -- [71]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7497,
@@ -1295,12 +1428,12 @@ MTSL_DATA["quests"] = {
 			["German"] = "[The Journey Has Just Begun]",
 		},
 		["npcs"] = {
-			14394, -- [1]
+			14394,
 		},
-	}, -- [72]
+	},
 	{
 		["items"] = {
-			18628, -- [1]
+			18628,
 		},
 		["id"] = 7604,
 		["min_xp_level"] = 60,
@@ -1315,10 +1448,10 @@ MTSL_DATA["quests"] = {
 			["German"] = "Ein verbindlicher Vertrag",
 		},
 		["phase"] = 1,
-	}, -- [73]
+	},
 	{
 		["items"] = {
-			18769, -- [1]
+			18769,
 		},
 		["id"] = 7649,
 		["min_xp_level"] = 60,
@@ -1333,10 +1466,10 @@ MTSL_DATA["quests"] = {
 			["German"] = "Verzauberter Thoriumplattenpanzer: Band I",
 		},
 		["phase"] = 1,
-	}, -- [74]
+	},
 	{
 		["items"] = {
-			18770, -- [1]
+			18770,
 		},
 		["id"] = 7650,
 		["min_xp_level"] = 60,
@@ -1351,10 +1484,10 @@ MTSL_DATA["quests"] = {
 			["German"] = "Verzauberter Thoriumplattenpanzer: Band II",
 		},
 		["phase"] = 1,
-	}, -- [75]
+	},
 	{
 		["items"] = {
-			18771, -- [1]
+			18771,
 		},
 		["id"] = 7651,
 		["min_xp_level"] = 55,
@@ -1369,7 +1502,7 @@ MTSL_DATA["quests"] = {
 			["German"] = "Verzauberter Thoriumplattenpanzer: Band III",
 		},
 		["phase"] = 1,
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7653,
@@ -1385,9 +1518,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperialer Plattengürtel",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [77]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7654,
@@ -1403,9 +1536,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperiale Plattenstiefel",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7655,
@@ -1421,9 +1554,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperiale Plattenarmschienen",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7656,
@@ -1439,9 +1572,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperiale Plattenrüstung",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7657,
@@ -1457,9 +1590,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperialer Plattenhelm",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7658,
@@ -1475,9 +1608,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperiale Plattengamaschen",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7659,
@@ -1493,9 +1626,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Imperiale Plattenschultern",
 		},
 		["npcs"] = {
-			14567, -- [1]
+			14567,
 		},
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8313,
@@ -1511,9 +1644,9 @@ MTSL_DATA["quests"] = {
 			["German"] = "Geteiltes Wissen",
 		},
 		["objects"] = {
-			180503, -- [1]
+			180503,
 		},
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8586,
@@ -1529,9 +1662,34 @@ MTSL_DATA["quests"] = {
 			["German"] = "Dirges abgefahrene Chimaerokkoteletts",
 		},
 		["npcs"] = {
-			8125, -- [1]
+			8125,
 		},
-	}, -- [85]
+	},
+	{
+		["phase"] = 1,
+		["id"] = 8769,
+		["min_xp_level"] = 40,
+		["name"] = {
+			["Portuguese"] = "Um presente tiquetaquean",
+			["Russian"] = "Тикающий подарок",
+			["Chinese"] = "条纹礼物盒",
+			["Spanish"] = "Un presente que hace tic tac",
+			["French"] = "Un cadeau tic-taquant",
+			["English"] = "A Ticking Present",
+			["Korean"] = "꿈틀거리는 선물상자",
+			["German"] = "Ein tickendes Geschenk",
+		},
+		["special_action"] = {
+			["Portuguese"] = "Começa com um presente debaixo da árvore de Natal",
+			["Russian"] = "Начинается с подарка под елку",
+			["Chinese"] = "从圣诞树下的礼物开始",
+			["Spanish"] = "Comienza desde un regalo debajo del árbol de Navidad",
+			["French"] = "Commence par un cadeau sous le sapin",
+			["English"] = "Starts from a present under the Christmas tree",
+			["Korean"] = "크리스마스 트리 아래 선물에서 시작",
+			["German"] = "Beginnt mit einem Geschenk unter dem Weihnachtsbaum",
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8798,
@@ -1547,7 +1705,50 @@ MTSL_DATA["quests"] = {
 			["German"] = "Euer eigener Yeti",
 		},
 		["npcs"] = {
-			10305, -- [1]
+			10305,
 		},
-	}, -- [86]
+	},
+	{
+		["phase"] =6,
+		["id"] = 9236,
+		["min_xp_level"] = 60,
+		["name"] = {
+			["Portuguese"] = "Icebane Breastplate",
+			["Russian"] = "Кираса ледяной погибели",
+			["Chinese"] = "破冰胸甲",
+			["Spanish"] = "La coraza Deliriohelado",
+			["French"] = "La cuirasse plaie-de-glace",
+			["English"] = "Icebane Breastplate",
+			["Korean"] = "[Icebane Breastplate]",
+			["German"] = "Eisfluchbrustplatte",
+		},
+		-- Special reference to Darkmoon faire NPCs
+		["npcs"] = {
+			16376,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+	},
+	{
+		["phase"] = 1,
+		["id"] = 9249,
+		["min_xp_level"] = 45,
+		["name"] = {
+			["Portuguese"] = "40 Cupons – Diagrama: Controlador de Tonque a Vapor",
+			["Russian"] = "40 купонов – пульт управления паровым танком",
+			["Chinese"] = "40张奖券 - 结构图：蒸汽坦克控制器",
+			["Spanish"] = "40 vales: esquema (mando de tonque de vapor)",
+			["French"] = "40 bons - Schéma : Commande de chariotte à vapeur",
+			["English"] = "40 Tickets - Schematic: Steam Tonk Controller",
+			["Korean"] = "상품권 40매 - 설계도: 통통 전차 조종기",
+			["German"] = "40 Lose - Bauplan: Dampfpanzersteuerung",
+		},
+		-- Special reference to Darkmoon faire NPCs
+		["npcs"] = {
+			909909,
+			909910,
+		},
+	},
 }

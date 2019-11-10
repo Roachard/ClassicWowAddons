@@ -22,7 +22,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runed Copper Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2882,
@@ -43,7 +43,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Silvered Bronze Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2883,
@@ -64,7 +64,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Deadly Bronze Poniard",
 		},
 		["quality"] = "uncommon",
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3608,
@@ -85,7 +85,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Mighty Iron Hammer",
 		},
 		["quality"] = "uncommon",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3609,
@@ -106,7 +106,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Copper Chain Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3610,
@@ -127,7 +127,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Gemmed Copper Gauntlets",
 		},
 		["quality"] = "uncommon",
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3611,
@@ -148,7 +148,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Green Iron Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3612,
@@ -169,7 +169,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Green Iron Gauntlets",
 		},
 		["quality"] = "uncommon",
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3866,
@@ -190,7 +190,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Jade Serpentblade",
 		},
 		["quality"] = "uncommon",
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3867,
@@ -211,7 +211,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Golden Iron Destroyer",
 		},
 		["quality"] = "uncommon",
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3868,
@@ -232,7 +232,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Frost Tiger Blade",
 		},
 		["quality"] = "uncommon",
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3869,
@@ -253,7 +253,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Shadow Crescent Axe",
 		},
 		["quality"] = "uncommon",
-	}, -- [12]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3870,
@@ -274,7 +274,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Green Iron Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [13]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3871,
@@ -295,7 +295,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Golden Scale Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [14]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3872,
@@ -316,7 +316,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Golden Scale Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3873,
@@ -337,7 +337,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Golden Scale Cuirass",
 		},
 		["quality"] = "uncommon",
-	}, -- [16]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3874,
@@ -358,7 +358,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Polished Steel Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 3875,
@@ -379,7 +379,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Golden Scale Boots",
 		},
 		["quality"] = "rare",
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5543,
@@ -400,7 +400,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Iridescent Hammer",
 		},
 		["quality"] = "uncommon",
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5578,
@@ -421,7 +421,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Silvered Bronze Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6044,
@@ -442,7 +442,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Iron Shield Spike",
 		},
 		["quality"] = "uncommon",
-	}, -- [21]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6045,
@@ -463,7 +463,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Iron Counterweight",
 		},
 		["quality"] = "uncommon",
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6046,
@@ -484,11 +484,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Steel Weapon Chain",
 		},
 		["quality"] = "uncommon",
-	}, -- [23]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5411, -- [1]
+				5411,
 			},
 			["price"] = 4400,
 		},
@@ -505,10 +505,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [24]
+	},
 	{
 		["quests"] = {
-			1618, -- [1]
+			1618,
 		},
 		["phase"] = 1,
 		["id"] = 6735,
@@ -523,7 +523,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 아이언포지 흉갑",
 			["English"] = "Plans: Ironforge Breastplate",
 		},
-	}, -- [25]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7975,
@@ -544,7 +544,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Heavy Mithril Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [26]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7976,
@@ -565,10 +565,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Mithril Shield Spike",
 		},
 		["quality"] = "rare",
-	}, -- [27]
+	},
 	{
 		["quests"] = {
-			2752, -- [1]
+			2752,
 		},
 		["phase"] = 1,
 		["id"] = 7978,
@@ -583,10 +583,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 야만전사의 철제 어깨보호구",
 			["English"] = "Plans: Barbaric Iron Shoulders",
 		},
-	}, -- [28]
+	},
 	{
 		["quests"] = {
-			2751, -- [1]
+			2751,
 		},
 		["phase"] = 1,
 		["id"] = 7979,
@@ -601,10 +601,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 야만전사의 철제 흉갑",
 			["English"] = "Plans: Barbaric Iron Breastplate",
 		},
-	}, -- [29]
+	},
 	{
 		["quests"] = {
-			2754, -- [1]
+			2754,
 		},
 		["phase"] = 1,
 		["id"] = 7980,
@@ -619,10 +619,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 야만전사의 철제 투구",
 			["English"] = "Plans: Barbaric Iron Helm",
 		},
-	}, -- [30]
+	},
 	{
 		["quests"] = {
-			2753, -- [1]
+			2753,
 		},
 		["phase"] = 1,
 		["id"] = 7981,
@@ -637,10 +637,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 야만전사의 철제 장화",
 			["English"] = "Plans: Barbaric Iron Boots",
 		},
-	}, -- [31]
+	},
 	{
 		["quests"] = {
-			2755, -- [1]
+			2755,
 		},
 		["phase"] = 1,
 		["id"] = 7982,
@@ -655,10 +655,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 야만전사의 철제 장갑",
 			["English"] = "Plans: Barbaric Iron Gloves",
 		},
-	}, -- [32]
+	},
 	{
 		["quests"] = {
-			2761, -- [1]
+			2761,
 		},
 		["phase"] = 1,
 		["id"] = 7983,
@@ -673,10 +673,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 화려한 미스릴 바지",
 			["English"] = "Plans: Ornate Mithril Pants",
 		},
-	}, -- [33]
+	},
 	{
 		["quests"] = {
-			2762, -- [1]
+			2762,
 		},
 		["phase"] = 1,
 		["id"] = 7984,
@@ -691,10 +691,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 화려한 미스릴 장갑",
 			["English"] = "Plans: Ornate Mithril Gloves",
 		},
-	}, -- [34]
+	},
 	{
 		["quests"] = {
-			2763, -- [1]
+			2763,
 		},
 		["phase"] = 1,
 		["id"] = 7985,
@@ -709,7 +709,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 화려한 미스릴 어깨보호구",
 			["English"] = "Plans: Ornate Mithril Shoulder",
 		},
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7989,
@@ -730,7 +730,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Mithril Spurs",
 		},
 		["quality"] = "uncommon",
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7990,
@@ -751,7 +751,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Heavy Mithril Helm",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7991,
@@ -772,7 +772,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Mithril Scale Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7992,
@@ -793,7 +793,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Blue Glittering Axe",
 		},
 		["quality"] = "uncommon",
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7993,
@@ -814,12 +814,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dazzling Mithril Rapier",
 		},
 		["quality"] = "uncommon",
-	}, -- [40]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8161, -- [1]
-				8176, -- [2]
+				8161,
+				8176,
 			},
 			["price"] = 6000,
 		},
@@ -836,7 +836,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8028,
@@ -857,7 +857,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runed Mithril Hammer",
 		},
 		["quality"] = "rare",
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8029,
@@ -878,7 +878,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Wicked Mithril Blade",
 		},
 		["quality"] = "uncommon",
-	}, -- [43]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: эбеновый нож",
@@ -893,10 +893,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 8030,
-	}, -- [44]
+	},
 	{
 		["quests"] = {
-			2758, -- [1]
+			2758,
 		},
 		["phase"] = 1,
 		["id"] = 9367,
@@ -911,7 +911,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황금 미늘 건틀릿",
 			["English"] = "Plans: Golden Scale Gauntlets",
 		},
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10424,
@@ -932,7 +932,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Silvered Bronze Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [46]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: инкрустированный мифриловый цилиндр",
@@ -947,13 +947,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 10713,
-	}, -- [47]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1471, -- [1]
-				8878, -- [2]
-				9179, -- [3]
+				1471,
+				8878,
+				9179,
 			},
 			["price"] = 3000,
 		},
@@ -970,13 +970,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11610,
 		["drops"] = {
 			["mobs"] = {
-				9028, -- [1]
+				9028,
 			},
 		},
 		["name"] = {
@@ -990,14 +990,14 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dark Iron Pulverizer",
 		},
 		["quality"] = "rare",
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11611,
 		["drops"] = {
 			["mobs"] = {
-				9554, -- [1]
-				10043, -- [2]
+				9554,
+				10043,
 			},
 		},
 		["name"] = {
@@ -1011,13 +1011,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dark Iron Sunderer",
 		},
 		["quality"] = "rare",
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11612,
 		["drops"] = {
 			["mobs"] = {
-				9543, -- [1]
+				9543,
 			},
 		},
 		["name"] = {
@@ -1031,7 +1031,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dark Iron Plate",
 		},
 		["quality"] = "rare",
-	}, -- [51]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11614,
@@ -1052,7 +1052,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dark Iron Mail",
 		},
 		["quality"] = "uncommon",
-	}, -- [52]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 11615,
@@ -1073,13 +1073,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dark Iron Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [53]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2843, -- [1]
-				3356, -- [2]
-				5512, -- [3]
+				2843,
+				3356,
+				5512,
 			},
 			["price"] = 3000,
 		},
@@ -1096,11 +1096,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [54]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2482, -- [1]
+				2482,
 			},
 			["price"] = 4400,
 		},
@@ -1117,12 +1117,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [55]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1146, -- [1]
-				2483, -- [2]
+				1146,
+				2483,
 			},
 			["price"] = 4400,
 		},
@@ -1139,7 +1139,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12261,
@@ -1160,7 +1160,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Searing Golden Blade",
 		},
 		["quality"] = "uncommon",
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12682,
@@ -1181,7 +1181,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [58]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12683,
@@ -1202,7 +1202,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [59]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12684,
@@ -1223,7 +1223,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Bracers",
 		},
 		["quality"] = "uncommon",
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12685,
@@ -1244,10 +1244,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [61]
+	},
 	{
 		["quests"] = {
-			7659, -- [1]
+			7659,
 		},
 		["phase"] = 1,
 		["id"] = 12687,
@@ -1262,10 +1262,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 어깨보호구",
 			["English"] = "Plans: Imperial Plate Shoulders",
 		},
-	}, -- [62]
+	},
 	{
 		["quests"] = {
-			7653, -- [1]
+			7653,
 		},
 		["phase"] = 1,
 		["id"] = 12688,
@@ -1280,7 +1280,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 허리띠",
 			["English"] = "Plans: Imperial Plate Belt",
 		},
-	}, -- [63]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12689,
@@ -1301,10 +1301,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [64]
+	},
 	{
 		["quests"] = {
-			7655, -- [1]
+			7655,
 		},
 		["phase"] = 1,
 		["id"] = 12690,
@@ -1319,7 +1319,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 팔보호구",
 			["English"] = "Plans: Imperial Plate Bracers",
 		},
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12691,
@@ -1340,7 +1340,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Wildthorn Mail",
 		},
 		["quality"] = "uncommon",
-	}, -- [66]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12692,
@@ -1361,7 +1361,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Shield Spike",
 		},
 		["quality"] = "uncommon",
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12693,
@@ -1382,7 +1382,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12694,
@@ -1403,7 +1403,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Helm",
 		},
 		["quality"] = "uncommon",
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12695,
@@ -1424,10 +1424,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [70]
+	},
 	{
 		["quests"] = {
-			5127, -- [1]
+			5127,
 		},
 		["phase"] = 1,
 		["id"] = 12696,
@@ -1442,7 +1442,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 악마의 룬 흉갑",
 			["English"] = "Plans: Demon Forged Breastplate",
 		},
-	}, -- [71]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12697,
@@ -1463,7 +1463,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [72]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12698,
@@ -1484,10 +1484,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Dawnbringer Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [73]
+	},
 	{
 		["quests"] = {
-			5124, -- [1]
+			5124,
 		},
 		["phase"] = 1,
 		["id"] = 12699,
@@ -1502,10 +1502,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 불꽃의 판금 건틀릿",
 			["English"] = "Plans: Fiery Plate Gauntlets",
 		},
-	}, -- [74]
+	},
 	{
 		["quests"] = {
-			7654, -- [1]
+			7654,
 		},
 		["phase"] = 1,
 		["id"] = 12700,
@@ -1520,10 +1520,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 장화",
 			["English"] = "Plans: Imperial Plate Boots",
 		},
-	}, -- [75]
+	},
 	{
 		["quests"] = {
-			7657, -- [1]
+			7657,
 		},
 		["phase"] = 1,
 		["id"] = 12701,
@@ -1538,7 +1538,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 투구",
 			["English"] = "Plans: Imperial Plate Helm",
 		},
-	}, -- [76]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12702,
@@ -1559,7 +1559,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Circlet",
 		},
 		["quality"] = "uncommon",
-	}, -- [77]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12703,
@@ -1580,7 +1580,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Storm Gauntlets",
 		},
 		["quality"] = "rare",
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12704,
@@ -1601,10 +1601,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thorium Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [79]
+	},
 	{
 		["quests"] = {
-			7656, -- [1]
+			7656,
 		},
 		["phase"] = 1,
 		["id"] = 12705,
@@ -1619,13 +1619,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 흉갑",
 			["English"] = "Plans: Imperial Plate Chest",
 		},
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12706,
 		["drops"] = {
 			["mobs"] = {
-				4366, -- [1]
+				4366,
 			},
 		},
 		["name"] = {
@@ -1639,13 +1639,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runic Plate Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12707,
 		["drops"] = {
 			["mobs"] = {
-				1836, -- [1]
+				1836,
 			},
 		},
 		["name"] = {
@@ -1659,7 +1659,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runic Plate Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12711,
@@ -1680,7 +1680,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Whitesoul Helm",
 		},
 		["quality"] = "rare",
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12713,
@@ -1701,13 +1701,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Radiant Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12714,
 		["drops"] = {
 			["mobs"] = {
-				4364, -- [1]
+				4364,
 			},
 		},
 		["name"] = {
@@ -1721,10 +1721,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runic Plate Helm",
 		},
 		["quality"] = "uncommon",
-	}, -- [85]
+	},
 	{
 		["quests"] = {
-			7658, -- [1]
+			7658,
 		},
 		["phase"] = 1,
 		["id"] = 12715,
@@ -1739,7 +1739,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 황제의 판금 다리보호구",
 			["English"] = "Plans: Imperial Plate Leggings",
 		},
-	}, -- [86]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12716,
@@ -1760,7 +1760,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Helm of the Great Chief",
 		},
 		["quality"] = "rare",
-	}, -- [87]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12717,
@@ -1781,14 +1781,14 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Lionheart Helm",
 		},
 		["quality"] = "epic",
-	}, -- [88]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12718,
 		["drops"] = {
 			["mobs"] = {
-				4368, -- [1]
-				16072, -- [2]
+				4368,
+				16072,
 			},
 		},
 		["name"] = {
@@ -1802,13 +1802,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runic Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [89]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12719,
 		["drops"] = {
 			["mobs"] = {
-				1885, -- [1]
+				1885,
 			},
 		},
 		["name"] = {
@@ -1822,7 +1822,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Runic Plate Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [90]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12720,
@@ -1843,10 +1843,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Stronghold Gauntlets",
 		},
 		["quality"] = "epic",
-	}, -- [91]
+	},
 	{
 		["quests"] = {
-			7651, -- [1]
+			7651,
 		},
 		["phase"] = 2,
 		["id"] = 12725,
@@ -1861,10 +1861,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 마력 깃든 토륨 투구",
 			["English"] = "Plans: Enchanted Thorium Helm",
 		},
-	}, -- [92]
+	},
 	{
 		["quests"] = {
-			7650, -- [1]
+			7650,
 		},
 		["phase"] = 2,
 		["id"] = 12726,
@@ -1879,10 +1879,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 마력 깃든 토륨 다리보호구",
 			["English"] = "Plans: Enchanted Thorium Leggings",
 		},
-	}, -- [93]
+	},
 	{
 		["quests"] = {
-			7649, -- [1]
+			7649,
 		},
 		["phase"] = 2,
 		["id"] = 12727,
@@ -1897,7 +1897,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 마력 깃든 토륨 흉갑",
 			["English"] = "Plans: Enchanted Thorium Breastplate",
 		},
-	}, -- [94]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12728,
@@ -1918,7 +1918,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Invulnerable Mail",
 		},
 		["quality"] = "epic",
-	}, -- [95]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: изысканный ториевый секач",
@@ -1933,10 +1933,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 12819,
-	}, -- [96]
+	},
 	{
 		["quests"] = {
-			5306, -- [1]
+			5306,
 		},
 		["phase"] = 1,
 		["id"] = 12821,
@@ -1951,7 +1951,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 여명의 도끼",
 			["English"] = "Plans: Dawn's Edge",
 		},
-	}, -- [97]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: огромный ториевый боевой топор",
@@ -1966,10 +1966,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 12823,
-	}, -- [98]
+	},
 	{
 		["quests"] = {
-			5305, -- [1]
+			5305,
 		},
 		["phase"] = 1,
 		["id"] = 12824,
@@ -1984,10 +1984,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 마력 깃든 전투망치",
 			["English"] = "Plans: Enchanted Battlehammer",
 		},
-	}, -- [99]
+	},
 	{
 		["quests"] = {
-			5307, -- [1]
+			5307,
 		},
 		["phase"] = 1,
 		["id"] = 12825,
@@ -2002,7 +2002,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 불타는 레이피어",
 			["English"] = "Plans: Blazing Rapier",
 		},
-	}, -- [100]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12827,
@@ -2023,13 +2023,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Serenity",
 		},
 		["quality"] = "uncommon",
-	}, -- [101]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12828,
 		["drops"] = {
 			["mobs"] = {
-				10119, -- [1]
+				10119,
 			},
 		},
 		["name"] = {
@@ -2043,7 +2043,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Volcanic Hammer",
 		},
 		["quality"] = "uncommon",
-	}, -- [102]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12830,
@@ -2064,13 +2064,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Corruption",
 		},
 		["quality"] = "common",
-	}, -- [103]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12833,
 		["drops"] = {
 			["mobs"] = {
-				10438, -- [1]
+				10438,
 			},
 		},
 		["name"] = {
@@ -2084,13 +2084,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Hammer of the Titans",
 		},
 		["quality"] = "rare",
-	}, -- [104]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12834,
 		["drops"] = {
 			["mobs"] = {
-				10899, -- [1]
+				10899,
 			},
 		},
 		["name"] = {
@@ -2104,13 +2104,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Arcanite Champion",
 		},
 		["quality"] = "rare",
-	}, -- [105]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12835,
 		["drops"] = {
 			["mobs"] = {
-				9736, -- [1]
+				9736,
 			},
 		},
 		["name"] = {
@@ -2124,13 +2124,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Annihilator",
 		},
 		["quality"] = "rare",
-	}, -- [106]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12836,
 		["drops"] = {
 			["mobs"] = {
-				1844, -- [1]
+				1844,
 			},
 		},
 		["name"] = {
@@ -2144,13 +2144,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Frostguard",
 		},
 		["quality"] = "rare",
-	}, -- [107]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12837,
 		["drops"] = {
 			["mobs"] = {
-				10899, -- [1]
+				10899,
 			},
 		},
 		["name"] = {
@@ -2164,13 +2164,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Masterwork Stormhammer",
 		},
 		["quality"] = "rare",
-	}, -- [108]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12838,
 		["drops"] = {
 			["mobs"] = {
-				9596, -- [1]
+				9596,
 			},
 		},
 		["name"] = {
@@ -2184,13 +2184,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Arcanite Reaper",
 		},
 		["quality"] = "rare",
-	}, -- [109]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 12839,
 		["drops"] = {
 			["mobs"] = {
-				10997, -- [1]
+				10997,
 			},
 		},
 		["name"] = {
@@ -2204,11 +2204,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Heartseeker",
 		},
 		["quality"] = "rare",
-	}, -- [110]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 90000,
 		},
@@ -2225,11 +2225,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [111]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 70000,
 		},
@@ -2246,11 +2246,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [112]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 180000,
 		},
@@ -2267,11 +2267,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [113]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 200000,
 		},
@@ -2288,11 +2288,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [114]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 220000,
 		},
@@ -2309,11 +2309,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [115]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 220000,
 		},
@@ -2330,15 +2330,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "rare",
 		["phase"] = 1,
-	}, -- [116]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 17706,
-		["drops"] = {
-			["mobs"] = {
-				445, -- [1]
-			},
-		},
 		["name"] = {
 			["Russian"] = "Чертеж: лезвие Зимы",
 			["Portuguese"] = "Instruções: Limiar do Inverno",
@@ -2350,7 +2345,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Edge of Winter",
 		},
 		["quality"] = "uncommon",
-	}, -- [117]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18264,
@@ -2371,10 +2371,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Elemental Sharpening Stone",
 		},
 		["quality"] = "rare",
-	}, -- [118]
+	},
 	{
 		["quests"] = {
-			7604, -- [1]
+			7604,
 		},
 		["phase"] = 1,
 		["id"] = 18592,
@@ -2389,7 +2389,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["Korean"] = "도면: 설퍼론 망치",
 			["English"] = "Plans: Sulfuron Hammer",
 		},
-	}, -- [119]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Контракт братства Тория",
@@ -2406,11 +2406,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["id"] = 18628,
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 0,
 		},
-	}, -- [120]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Зачарованная ториевая броня",
@@ -2425,7 +2425,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "rare",
 		["id"] = 18769,
-	}, -- [121]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Зачарованная ториевая броня",
@@ -2440,7 +2440,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "rare",
 		["id"] = 18770,
-	}, -- [122]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Зачарованная ториевая броня",
@@ -2455,11 +2455,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "rare",
 		["id"] = 18771,
-	}, -- [123]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 20000,
 		},
@@ -2476,13 +2476,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [124]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 20000,
 		},
@@ -2499,11 +2499,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [125]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 40000,
 		},
@@ -2520,13 +2520,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [126]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 40000,
 		},
@@ -2543,11 +2543,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [127]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 60000,
 		},
@@ -2564,11 +2564,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [128]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 80000,
 		},
@@ -2585,11 +2585,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [129]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 70000,
 		},
@@ -2606,11 +2606,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [130]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 70000,
 		},
@@ -2627,11 +2627,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [131]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 120000,
 		},
@@ -2648,11 +2648,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [132]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 120000,
 		},
@@ -2669,11 +2669,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [133]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 120000,
 		},
@@ -2690,11 +2690,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [134]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2711,11 +2711,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [135]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2732,11 +2732,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [136]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2753,11 +2753,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [137]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2774,11 +2774,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [138]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2795,11 +2795,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [139]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2816,11 +2816,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [140]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 80000,
 		},
@@ -2837,7 +2837,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [141]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: темнорунические рукавицы",
@@ -2852,7 +2852,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20553,
-	}, -- [142]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: темноруническая кираса",
@@ -2867,7 +2867,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20554,
-	}, -- [143]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: темнорунический шлем",
@@ -2882,11 +2882,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20555,
-	}, -- [144]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15176, -- [1]
+				15176,
 			},
 			["price"] = 50000,
 		},
@@ -2903,11 +2903,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [145]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15176, -- [1]
+				15176,
 			},
 			["price"] = 50000,
 		},
@@ -2924,7 +2924,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [146]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: звездчатый обсидиановый щит",
@@ -2939,13 +2939,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 5,
 		["quality"] = "common",
 		["id"] = 22219,
-	}, -- [147]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22220,
 		["drops"] = {
 			["mobs"] = {
-				15340, -- [1]
+				15340,
 			},
 		},
 		["name"] = {
@@ -2959,7 +2959,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Black Grasp of the Destroyer",
 		},
 		["quality"] = "rare",
-	}, -- [148]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: обсидиановый кольчужный мундир",
@@ -2974,13 +2974,13 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 5,
 		["quality"] = "common",
 		["id"] = 22221,
-	}, -- [149]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22222,
 		["drops"] = {
 			["mobs"] = {
-				15263, -- [1]
+				15263,
 			},
 		},
 		["name"] = {
@@ -2994,7 +2994,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Thick Obsidian Breastplate",
 		},
 		["quality"] = "rare",
-	}, -- [150]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22388,
@@ -3015,7 +3015,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Titanic Leggings",
 		},
 		["quality"] = "epic",
-	}, -- [151]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22389,
@@ -3036,7 +3036,7 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Sageblade",
 		},
 		["quality"] = "epic",
-	}, -- [152]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 22390,
@@ -3057,11 +3057,27 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Persuader",
 		},
 		["quality"] = "epic",
-	}, -- [153]
+	},
+	{
+		["quest"] = 9236,
+		["id"] = 22703,
+		["name"] = {
+			["Russian"] = "Чертеж: кираса Ледяной погибели",
+			["Portuguese"] = "Instruções: Peitoral da Perdição Gélida",
+			["Chinese"] = "图样：破冰胸甲",
+			["Spanish"] = "Diseño: coraza Deliriohelado",
+			["French"] = "Plans : Cuirasse plaie-de-glace",
+			["German"] = "Muster: Eisfluchbrustplatte",
+			["Korean"] = "도면: 얼음막이 흉갑",
+			["English"] = "Plans: Icebane Breastplate",
+		},
+		["quality"] = "common",
+		["phase"] = 6,
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15176, -- [1]
+				15176,
 			},
 			["price"] = 50000,
 		},
@@ -3078,11 +3094,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [154]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15176, -- [1]
+				15176,
 			},
 			["price"] = 50000,
 		},
@@ -3099,11 +3115,11 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [155]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15176, -- [1]
+				15176,
 			},
 			["price"] = 50000,
 		},
@@ -3120,5 +3136,5 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [156]
+	},
 }

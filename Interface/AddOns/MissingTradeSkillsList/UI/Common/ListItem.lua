@@ -38,7 +38,7 @@ MTSLUI_LIST_ITEM = {
         self.ui_frame:SetHighlightTexture(self.TEXTURES.HIGHLIGHTED)
 
         self.ui_frame.text = self.ui_frame:CreateFontString()
-        self.ui_frame.text:SetFont(MTSLUI_FONTS.FONTS.NORMAL:GetFont())
+        self.ui_frame.text:SetFont(MTSLUI_FONTS.FONTS.LABEL:GetFont())
         self.ui_frame.text:SetPoint("LEFT",5,0)
 
         self.is_selected = 0

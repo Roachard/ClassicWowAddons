@@ -22,7 +22,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Mechanical Squirrel",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4409,
@@ -43,7 +43,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Small Seaforium Charge",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4410,
@@ -64,13 +64,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Shadow Goggles",
 		},
 		["quality"] = "uncommon",
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4411,
 		["drops"] = {
 			["mobs"] = {
-				7800, -- [1]
+				7800,
 			},
 		},
 		["name"] = {
@@ -84,7 +84,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Flame Deflector",
 		},
 		["quality"] = "uncommon",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4412,
@@ -105,13 +105,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Moonsight Rifle",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4413,
 		["drops"] = {
 			["mobs"] = {
-				7800, -- [1]
+				7800,
 			},
 		},
 		["name"] = {
@@ -125,7 +125,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Discombobulator Ray",
 		},
 		["quality"] = "uncommon",
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4414,
@@ -146,7 +146,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Portable Bronze Mortar",
 		},
 		["quality"] = "uncommon",
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4415,
@@ -167,7 +167,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Craftsman's Monocle",
 		},
 		["quality"] = "rare",
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4416,
@@ -188,7 +188,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Goblin Land Mine",
 		},
 		["quality"] = "uncommon",
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4417,
@@ -209,10 +209,10 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Large Seaforium Charge",
 		},
 		["quality"] = "uncommon",
-	}, -- [10]
+	},
 	{
 		["quests"] = {
-			1559, -- [1]
+			1559,
 		},
 		["phase"] = 1,
 		["id"] = 6672,
@@ -227,7 +227,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["Korean"] = "설계도: 섬광탄",
 			["English"] = "Schematic: Flash Bomb",
 		},
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6716,
@@ -248,12 +248,12 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: EZ-Thro Dynamite",
 		},
 		["quality"] = "uncommon",
-	}, -- [12]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5175, -- [1]
-				6730, -- [2]
+				5175,
+				6730,
 			},
 			["price"] = 1200,
 		},
@@ -270,14 +270,14 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [13]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3134, -- [1]
-				3537, -- [2]
-				4086, -- [3]
-				12246, -- [4]
+				3134,
+				3537,
+				4086,
+				12246,
 			},
 			["price"] = 2000,
 		},
@@ -294,11 +294,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [14]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				6777, -- [1]
+				6777,
 			},
 			["price"] = 2400,
 		},
@@ -315,12 +315,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				7800, -- [1]
+				7800,
 			},
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [15]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10601,
@@ -341,12 +341,12 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Bright-Eye Goggles",
 		},
 		["quality"] = "uncommon",
-	}, -- [16]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8679, -- [1]
-				9544, -- [2]
+				8679,
+				9544,
 			},
 			["price"] = 3000,
 		},
@@ -363,7 +363,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10603,
@@ -384,7 +384,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Catseye Ultra Goggles",
 		},
 		["quality"] = "uncommon",
-	}, -- [18]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10604,
@@ -405,7 +405,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Mithril Heavy-bore Rifle",
 		},
 		["quality"] = "uncommon",
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10605,
@@ -426,7 +426,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Spellpower Goggles Xtreme",
 		},
 		["quality"] = "rare",
-	}, -- [20]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10606,
@@ -447,11 +447,11 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Parachute Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [21]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8678, -- [1]
+				8678,
 			},
 			["price"] = 3600,
 		},
@@ -468,7 +468,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [22]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 10608,
@@ -489,11 +489,11 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Sniper Scope",
 		},
 		["quality"] = "rare",
-	}, -- [23]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2688, -- [1]
+				2688,
 			},
 			["price"] = 4000,
 		},
@@ -510,7 +510,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [24]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: Крошка Дымок",
@@ -525,7 +525,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 11827,
-	}, -- [25]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: зверюшка-бомбист",
@@ -540,12 +540,14 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 11828,
-	}, -- [26]
+		-- [The only known way to obtain this is by renewing your goblin engineering membership]
+		-- [The only known way to obtain this is by renewing your goblin engineering membership]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2684, -- [1]
-				12246, -- [2]
+				2684,
+				12246,
 			},
 			["price"] = 1800,
 		},
@@ -562,12 +564,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [27]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2682, -- [1]
-				6730, -- [2]
+				2682,
+				6730,
 			},
 			["price"] = 1000,
 		},
@@ -584,12 +586,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [28]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2685, -- [1]
-				12246, -- [2]
+				2685,
+				12246,
 			},
 			["price"] = 2000,
 		},
@@ -606,11 +608,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [29]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2687, -- [1]
+				2687,
 			},
 			["price"] = 10000,
 		},
@@ -627,12 +629,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [30]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2682, -- [1]
-				3495, -- [2]
+				2682,
+				3495,
 			},
 			["price"] = 1500,
 		},
@@ -649,7 +651,51 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [31]
+	},
+	{
+		["vendors"] = {
+			["sources"] = {
+				3413,
+				5175,
+			},
+			["price"] = 10800,
+		},
+		["id"] = 16041,
+		["name"] = {
+			["Russian"] = "Чертеж: ториевая граната",
+			["Portuguese"] = "Diagrama: Granada de Tório",
+			["Chinese"] = "结构图：瑟银手榴弹",
+			["Spanish"] = "Esquema: granada de torio",
+			["French"] = "Schéma : Grenade en thorium",
+			["German"] = "Bauplan: Thoriumgranate",
+			["Korean"] = "설계도: 토륨 수류탄",
+			["English"] = "Schematic: Thorium Grenade",
+		},
+		["quality"] = "common",
+		["phase"] = 1,
+	},
+	{
+		["vendors"] = {
+			["sources"] = {
+				3413,
+				5175,
+			},
+			["price"] = 10800,
+		},
+		["id"] = 16042,
+		["name"] = {
+			["Russian"] = "Чертеж: ториевое устройство",
+			["Portuguese"] = "Diagrama: Treco de Tório",
+			["Chinese"] = "结构图：瑟银零件",
+			["Spanish"] = "Esquema: trastos wow de torio",
+			["French"] = "Schéma : Rouages en thorium",
+			["German"] = "Bauplan: Thoriumapparat",
+			["Korean"] = "설계도: 토륨 부품",
+			["English"] = "Schematic: Thorium Widget",
+		},
+		["quality"] = "common",
+		["phase"] = 1,
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16043,
@@ -670,7 +716,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Thorium Rifle",
 		},
 		["quality"] = "uncommon",
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16044,
@@ -691,13 +737,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Lifelike Mechanical Toad",
 		},
 		["quality"] = "uncommon",
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16045,
 		["drops"] = {
 			["mobs"] = {
-				6195, -- [1]
+				6195,
 			},
 		},
 		["name"] = {
@@ -711,11 +757,11 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Spellpower Goggles Xtreme Plus",
 		},
 		["quality"] = "uncommon",
-	}, -- [34]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11185, -- [1]
+				11185,
 			},
 			["price"] = 10000,
 		},
@@ -732,11 +778,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [35]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11185, -- [1]
+				11185,
 			},
 			["price"] = 10000,
 		},
@@ -753,13 +799,13 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16048,
 		["drops"] = {
 			["mobs"] = {
-				8897, -- [1]
+				8897,
 			},
 		},
 		["name"] = {
@@ -773,13 +819,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Dark Iron Rifle",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16049,
 		["drops"] = {
 			["mobs"] = {
-				8920, -- [1]
+				8920,
 			},
 		},
 		["name"] = {
@@ -793,11 +839,11 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Dark Iron Bomb",
 		},
 		["quality"] = "uncommon",
-	}, -- [38]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11185, -- [1]
+				11185,
 			},
 			["price"] = 20000,
 		},
@@ -814,7 +860,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [39]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16051,
@@ -835,13 +881,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Thorium Shells",
 		},
 		["quality"] = "uncommon",
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16052,
 		["drops"] = {
 			["mobs"] = {
-				10426, -- [1]
+				10426,
 			},
 		},
 		["name"] = {
@@ -855,13 +901,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Voice Amplification Modulator",
 		},
 		["quality"] = "uncommon",
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16053,
 		["drops"] = {
 			["mobs"] = {
-				8900, -- [1]
+				8900,
 			},
 		},
 		["name"] = {
@@ -875,13 +921,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Master Engineer's Goggles",
 		},
 		["quality"] = "uncommon",
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16054,
 		["drops"] = {
 			["mobs"] = {
-				7437, -- [1]
+				7437,
 			},
 		},
 		["name"] = {
@@ -895,7 +941,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Arcanite Dragonling",
 		},
 		["quality"] = "uncommon",
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16055,
@@ -916,13 +962,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Arcane Bomb",
 		},
 		["quality"] = "uncommon",
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 16056,
 		["drops"] = {
 			["mobs"] = {
-				8561, -- [1]
+				8561,
 			},
 		},
 		["name"] = {
@@ -936,7 +982,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Flawless Arcanite Rifle",
 		},
 		["quality"] = "uncommon",
-	}, -- [45]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: \"Снегодел-9000\"",
@@ -951,7 +997,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 17720,
-	}, -- [46]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: полевой ремонтный робот 74A",
@@ -966,7 +1016,7 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 18235,
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18290,
@@ -987,7 +1037,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Biznicks 247x128 Accurascope",
 		},
 		["quality"] = "rare",
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18291,
@@ -1008,7 +1058,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Force Reactive Disk",
 		},
 		["quality"] = "rare",
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18292,
@@ -1029,7 +1079,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Core Marksman Rifle",
 		},
 		["quality"] = "rare",
-	}, -- [50]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: красная петарда",
@@ -1044,12 +1094,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 18647,
-	}, -- [51]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2838, -- [1]
-				3495, -- [2]
+				2838,
+				3495,
 			},
 			["price"] = 1800,
 		},
@@ -1066,12 +1116,12 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [52]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1304, -- [1]
-				5175, -- [2]
+				1304,
+				5175,
 			},
 			["price"] = 1800,
 		},
@@ -1088,11 +1138,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [53]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8131, -- [1]
+				8131,
 			},
 			["price"] = 5000,
 		},
@@ -1109,11 +1159,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [54]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2685, -- [1]
+				2685,
 			},
 			["price"] = 10000,
 		},
@@ -1130,11 +1180,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [55]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11185, -- [1]
+				11185,
 			},
 			["price"] = 10000,
 		},
@@ -1151,13 +1201,13 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [56]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18653,
 		["drops"] = {
 			["mobs"] = {
-				9499, -- [1]
+				9499,
 			},
 		},
 		["name"] = {
@@ -1171,13 +1221,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Goblin Jumper Cables XL",
 		},
 		["quality"] = "uncommon",
-	}, -- [57]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18654,
 		["drops"] = {
 			["mobs"] = {
-				8920, -- [1]
+				8920,
 			},
 		},
 		["name"] = {
@@ -1191,7 +1241,7 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Gnomish Alarm-O-Bot",
 		},
 		["quality"] = "uncommon",
-	}, -- [58]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Чертеж: большой атомарный перенаправлятор",
@@ -1206,11 +1256,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "uncommon",
 		["id"] = 18655,
-	}, -- [59]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11185, -- [1]
+				11185,
 			},
 			["price"] = 10000,
 		},
@@ -1227,13 +1277,13 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [60]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18657,
 		["drops"] = {
 			["mobs"] = {
-				10264, -- [1]
+				10264,
 			},
 		},
 		["name"] = {
@@ -1247,13 +1297,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Hyper-Radiant Flame Reflector",
 		},
 		["quality"] = "uncommon",
-	}, -- [61]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18658,
 		["drops"] = {
 			["mobs"] = {
-				10426, -- [1]
+				10426,
 			},
 		},
 		["name"] = {
@@ -1267,13 +1317,13 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: Ultra-Flash Shadow Reflector",
 		},
 		["quality"] = "uncommon",
-	}, -- [62]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18661,
 		["drops"] = {
 			["mobs"] = {
-				8920, -- [1]
+				8920,
 			},
 		},
 		["name"] = {
@@ -1287,11 +1337,11 @@ MTSL_DATA["Engineering"]["items"] = {
 			["English"] = "Schematic: World Enlarger",
 		},
 		["quality"] = "uncommon",
-	}, -- [63]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14637, -- [1]
+				14637,
 			},
 			["price"] = 5000,
 		},
@@ -1308,11 +1358,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [64]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 120000,
 		},
@@ -1329,11 +1379,11 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [65]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -1350,8 +1400,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [66]
+	},
 	{
+		["holiday"] = 327,
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: маленькая синяя ракета",
 			["Portuguese"] = "Diagrama: Foguete Azul Pequeno",
@@ -1365,8 +1422,14 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21724,
-	}, -- [67]
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: маленькая зеленая ракета",
 			["Portuguese"] = "Diagrama: Foguete Verde Pequeno",
@@ -1380,8 +1443,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21725,
-	}, -- [68]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: маленькая красная ракета",
 			["Portuguese"] = "Diagrama: Foguete Vermelho Pequeno",
@@ -1395,8 +1465,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21726,
-	}, -- [69]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая синяя ракета",
 			["Portuguese"] = "Diagrama: Foguete Azul Grande",
@@ -1410,8 +1487,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21727,
-	}, -- [70]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая зеленая ракета",
 			["Portuguese"] = "Diagrama: Foguete Verde Grande",
@@ -1425,8 +1509,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21728,
-	}, -- [71]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая красная ракета",
 			["Portuguese"] = "Diagrama: Foguete Vermelho Grande",
@@ -1440,8 +1531,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21729,
-	}, -- [72]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: батарея синих фейерверков",
 			["Portuguese"] = "Diagrama: Salva de Foguetes Azuis",
@@ -1455,8 +1553,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21730,
-	}, -- [73]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: батарея зеленых фейерверков",
 			["Portuguese"] = "Diagrama: Salva de Foguetes Verdes",
@@ -1470,8 +1575,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21731,
-	}, -- [74]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: батарея красных фейерверков",
 			["Portuguese"] = "Diagrama: Salva de Foguetes Vermelhos",
@@ -1485,8 +1597,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21732,
-	}, -- [75]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая батарея синих фейерверков",
 			["Portuguese"] = "Diagrama: Grande Salva de Foguetes Azuis",
@@ -1500,8 +1619,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21733,
-	}, -- [76]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая батарея зеленых фейерверков",
 			["Portuguese"] = "Diagrama: Grande Salva de Foguetes Verdes",
@@ -1515,8 +1641,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21734,
-	}, -- [77]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: большая батарея красных фейерверков",
 			["Portuguese"] = "Diagrama: Grande Salva de Foguetes Vermelhos",
@@ -1530,8 +1663,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21735,
-	}, -- [78]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: пусковая установка для батарей фейерверков",
 			["Portuguese"] = "Diagrama: Lançador de Salva de Fogos de Artifício",
@@ -1545,8 +1685,15 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21737,
-	}, -- [79]
+		["holiday"] = 327,
+	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				15909,
+			},
+			["price"] = 0,
+		},
 		["name"] = {
 			["Russian"] = "Чертеж: пусковая установка для фейерверков",
 			["Portuguese"] = "Diagrama: Lançador de Fogos de Artifício",
@@ -1560,5 +1707,24 @@ MTSL_DATA["Engineering"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 21738,
-	}, -- [80]
+		["holiday"] = 327,
+	},
+    {
+        ["quests"] = {
+            9249,
+        },
+        ["name"] = {
+            ["Russian"] = "Чертеж: пульт управления паровым танком",
+            ["Portuguese"] = "Diagrama: Controlador de Tonque a Vapor",
+            ["Chinese"] = "结构图：蒸汽车控制器",
+            ["Spanish"] = "Esquema: mando de tanque a vapor",
+            ["French"] = "Schéma : Commande de chariotte à vapeur",
+            ["German"] = "Bauplan: Dampfpanzersteuerung",
+            ["Korean"] = "설계도: 통통 전차 조종기",
+            ["English"] = "Schematic: Steam Tonk Controller",
+        },
+        ["phase"] = 1,
+        ["quality"] = "uncommon",
+        ["id"] = 22729,
+    },
 }

@@ -4,11 +4,11 @@
 MTSL_DATA["Cooking"]["items"] = {
 	{
 		["quests"] = {
-			38, -- [1]
+			38,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 200,
 		},
@@ -25,14 +25,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [1]
+	},
 	{
 		["quests"] = {
-			22, -- [1]
+			22,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 400,
 		},
@@ -49,11 +49,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [2]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 400,
 		},
@@ -76,14 +76,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [3]
+	},
 	{
 		["quests"] = {
-			92, -- [1]
+			92,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 800,
 		},
@@ -100,11 +100,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [4]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 400,
 		},
@@ -127,14 +127,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [5]
+	},
 	{
 		["quests"] = {
-			90, -- [1]
+			90,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 1600,
 		},
@@ -151,14 +151,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [6]
+	},
 	{
 		["quests"] = {
-			384, -- [1]
+			384,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 200,
 		},
@@ -175,14 +175,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [7]
+	},
 	{
 		["quests"] = {
-			385, -- [1]
+			385,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 400,
 		},
@@ -199,14 +199,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [8]
+	},
 	{
 		["quests"] = {
-			418, -- [1]
+			418,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 400,
 		},
@@ -223,14 +223,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [9]
+	},
 	{
 		["quests"] = {
-			127, -- [1]
+			127,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 1600,
 		},
@@ -247,14 +247,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [10]
+	},
 	{
 		["quests"] = {
-			471, -- [1]
+			471,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 1600,
 		},
@@ -271,16 +271,16 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [11]
+	},
 	{
 		["quests"] = {
-			296, -- [1]
+			296,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
-				1148, -- [2]
-				2821, -- [3]
+				340,
+				1148,
+				2821,
 			},
 			["price"] = 1600,
 		},
@@ -297,14 +297,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [12]
+	},
 	{
 		["quests"] = {
-			93, -- [1]
+			93,
 		},
 		["vendors"] = {
 			["sources"] = {
-				340, -- [1]
+				340,
 			},
 			["price"] = 1600,
 		},
@@ -321,15 +321,15 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [13]
+	},
 	{
 		["quests"] = {
-			498, -- [1]
+			498,
 		},
 		["vendors"] = {
 			["sources"] = {
-				3960, -- [1]
-				12246, -- [2]
+				3960,
+				12246,
 			},
 			["price"] = 1600,
 		},
@@ -346,15 +346,15 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [14]
+	},
 	{
 		["quests"] = {
-			501, -- [1]
+			501,
 		},
 		["vendors"] = {
 			["sources"] = {
-				3489, -- [1]
-				12245, -- [2]
+				3489,
+				12245,
 			},
 			["price"] = 1800,
 		},
@@ -371,10 +371,10 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [15]
+	},
 	{
 		["quests"] = {
-			564, -- [1]
+			564,
 		},
 		["phase"] = 1,
 		["id"] = 3736,
@@ -389,11 +389,11 @@ MTSL_DATA["Cooking"]["items"] = {
 			["Korean"] = "조리법: 맛있는 사자 스테이크",
 			["English"] = "Recipe: Tasty Lion Steak",
 		},
-	}, -- [16]
+	},
 	{
 		["quests"] = {
-			555, -- [1]
-			7321, -- [2]
+			555,
+			7321,
 		},
 		["phase"] = 1,
 		["id"] = 3737,
@@ -408,15 +408,15 @@ MTSL_DATA["Cooking"]["items"] = {
 			["Korean"] = "조리법: 독특한 거북 비스크",
 			["English"] = "Recipe: Soothing Turtle Bisque",
 		},
-	}, -- [17]
+	},
 	{
 		["quests"] = {
-			703, -- [1]
+			703,
 		},
 		["vendors"] = {
 			["sources"] = {
-				2814, -- [1]
-				12246, -- [2]
+				2814,
+				12246,
 			},
 			["price"] = 1000,
 		},
@@ -433,10 +433,10 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [18]
+	},
 	{
 		["quests"] = {
-			4161, -- [1]
+			4161,
 		},
 		["phase"] = 1,
 		["id"] = 5482,
@@ -451,11 +451,11 @@ MTSL_DATA["Cooking"]["items"] = {
 			["Korean"] = "조리법: 나이트 엘프 거미 케밥",
 			["English"] = "Recipe: Kaldorei Spider Kabob",
 		},
-	}, -- [19]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3881, -- [1]
+				3881,
 			},
 			["price"] = 100,
 		},
@@ -472,11 +472,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [20]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3081, -- [1]
+				3081,
 			},
 			["price"] = 200,
 		},
@@ -493,11 +493,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [21]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4200, -- [1]
+				4200,
 			},
 			["price"] = 400,
 		},
@@ -514,14 +514,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [22]
+	},
 	{
 		["quests"] = {
-			2178, -- [1]
+			2178,
 		},
 		["vendors"] = {
 			["sources"] = {
-				3482, -- [1]
+				3482,
 			},
 			["price"] = 400,
 		},
@@ -538,10 +538,10 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [23]
+	},
 	{
 		["quests"] = {
-			862, -- [1]
+			862,
 		},
 		["phase"] = 1,
 		["id"] = 5487,
@@ -556,11 +556,11 @@ MTSL_DATA["Cooking"]["items"] = {
 			["Korean"] = "조리법: 들쥐 스튜",
 			["English"] = "Recipe: Dig Rat Stew",
 		},
-	}, -- [24]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3482, -- [1]
+				3482,
 			},
 			["price"] = 400,
 		},
@@ -577,12 +577,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [25]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3960, -- [1]
-				12245, -- [2]
+				3960,
+				12245,
 			},
 			["price"] = 1200,
 		},
@@ -599,12 +599,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [26]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4305, -- [1]
-				4307, -- [2]
+				4305,
+				4307,
 			},
 			["price"] = 800,
 		},
@@ -621,11 +621,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [27]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2664, -- [1]
+				2664,
 			},
 			["price"] = 5000,
 		},
@@ -642,19 +642,19 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [28]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				66, -- [1]
-				1684, -- [2]
-				3029, -- [3]
-				3550, -- [4]
-				4265, -- [5]
-				4574, -- [6]
-				5494, -- [7]
-				5940, -- [8]
-				8508, -- [9]
+				66,
+				1684,
+				3029,
+				3550,
+				4265,
+				4574,
+				5494,
+				5940,
+				8508,
 			},
 			["price"] = 40,
 		},
@@ -671,15 +671,15 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [29]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3550, -- [1]
-				4305, -- [2]
-				5162, -- [3]
-				5942, -- [4]
-				10118, -- [5]
+				3550,
+				4305,
+				5162,
+				5942,
+				10118,
 			},
 			["price"] = 40,
 		},
@@ -696,18 +696,18 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [30]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				66, -- [1]
-				1684, -- [2]
-				3027, -- [3]
-				4265, -- [4]
-				4574, -- [5]
-				5162, -- [6]
-				5748, -- [7]
-				5940, -- [8]
+				66,
+				1684,
+				3027,
+				4265,
+				4574,
+				5162,
+				5748,
+				5940,
 			},
 			["price"] = 400,
 		},
@@ -724,11 +724,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [31]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1684, -- [1]
+				1684,
 			},
 			["price"] = 400,
 		},
@@ -745,17 +745,17 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [32]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2383, -- [1]
-				2397, -- [2]
-				3027, -- [3]
-				3029, -- [4]
-				3497, -- [5]
-				4553, -- [6]
-				5494, -- [7]
+				2383,
+				2397,
+				3027,
+				3029,
+				3497,
+				4553,
+				5494,
 			},
 			["price"] = 1200,
 		},
@@ -772,20 +772,20 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [33]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3178, -- [1]
-				3333, -- [2]
-				3497, -- [3]
-				4305, -- [4]
-				4307, -- [5]
-				4553, -- [6]
-				5494, -- [7]
-				5748, -- [8]
-				5942, -- [9]
-				10118, -- [10]
+				3178,
+				3333,
+				3497,
+				4305,
+				4307,
+				4553,
+				5494,
+				5748,
+				5942,
+				10118,
 			},
 			["price"] = 400,
 		},
@@ -802,19 +802,19 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [34]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2383, -- [1]
-				2664, -- [2]
-				3178, -- [3]
-				3333, -- [4]
-				4307, -- [5]
-				4574, -- [6]
-				5162, -- [7]
-				12033, -- [8]
-				12962, -- [9]
+				2383,
+				2664,
+				3178,
+				3333,
+				4307,
+				4574,
+				5162,
+				12033,
+				12962,
 			},
 			["price"] = 2200,
 		},
@@ -831,7 +831,7 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 6661,
@@ -852,12 +852,12 @@ MTSL_DATA["Cooking"]["items"] = {
 			["English"] = "Recipe: Savory Deviate Delight",
 		},
 		["quality"] = "uncommon",
-	}, -- [36]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				1465, -- [1]
-				3556, -- [2]
+				1465,
+				3556,
 			},
 			["price"] = 200,
 		},
@@ -874,7 +874,7 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [37]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Рецепт: артишоковый чай",
@@ -889,11 +889,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 7678,
-	}, -- [38]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2118, -- [1]
+				2118,
 			},
 			["price"] = 25,
 		},
@@ -910,11 +910,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [39]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12246, -- [1]
+				12246,
 			},
 			["price"] = 1600,
 		},
@@ -931,17 +931,17 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [40]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				734, -- [1]
-				1148, -- [2]
-				2810, -- [3]
-				2821, -- [4]
-				4879, -- [5]
-				4897, -- [6]
-				12245, -- [7]
+				734,
+				1148,
+				2810,
+				2821,
+				4879,
+				4897,
+				12245,
 			},
 			["price"] = 5000,
 		},
@@ -958,13 +958,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [41]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7947, -- [1]
-				8145, -- [2]
-				12246, -- [3]
+				7947,
+				8145,
+				12246,
 			},
 			["price"] = 5000,
 		},
@@ -981,13 +981,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [42]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				734, -- [1]
-				1148, -- [2]
-				12245, -- [3]
+				734,
+				1148,
+				12245,
 			},
 			["price"] = 3000,
 		},
@@ -1004,14 +1004,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [43]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				989, -- [1]
-				4879, -- [2]
-				9636, -- [3]
-				12245, -- [4]
+				989,
+				4879,
+				9636,
+				12245,
 			},
 			["price"] = 5000,
 		},
@@ -1028,13 +1028,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [44]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4897, -- [1]
-				8150, -- [2]
-				12246, -- [3]
+				4897,
+				8150,
+				12246,
 			},
 			["price"] = 3000,
 		},
@@ -1051,13 +1051,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [45]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4879, -- [1]
-				4897, -- [2]
-				12246, -- [3]
+				4879,
+				4897,
+				12246,
 			},
 			["price"] = 7000,
 		},
@@ -1074,13 +1074,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [46]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8150, -- [1]
-				9636, -- [2]
-				12245, -- [3]
+				8150,
+				9636,
+				12245,
 			},
 			["price"] = 7000,
 		},
@@ -1097,11 +1097,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [47]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8137, -- [1]
+				8137,
 			},
 			["price"] = 10000,
 		},
@@ -1118,11 +1118,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [48]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2664, -- [1]
+				2664,
 			},
 			["price"] = 10000,
 		},
@@ -1139,11 +1139,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [49]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2664, -- [1]
+				2664,
 			},
 			["price"] = 10000,
 		},
@@ -1160,11 +1160,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [50]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8137, -- [1]
+				8137,
 			},
 			["price"] = 10000,
 		},
@@ -1181,11 +1181,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [51]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2664, -- [1]
+				2664,
 			},
 			["price"] = 10000,
 		},
@@ -1202,11 +1202,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [52]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8137, -- [1]
+				8137,
 			},
 			["price"] = 20000,
 		},
@@ -1223,11 +1223,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [53]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8137, -- [1]
+				8137,
 			},
 			["price"] = 20000,
 		},
@@ -1244,12 +1244,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [54]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7947, -- [1]
-				8145, -- [2]
+				7947,
+				8145,
 			},
 			["price"] = 20000,
 		},
@@ -1266,12 +1266,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [55]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7947, -- [1]
-				8145, -- [2]
+				7947,
+				8145,
 			},
 			["price"] = 20000,
 		},
@@ -1288,12 +1288,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [56]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7947, -- [1]
-				8145, -- [2]
+				7947,
+				8145,
 			},
 			["price"] = 20000,
 		},
@@ -1310,12 +1310,12 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [57]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3955, -- [1]
-				12033, -- [2]
+				3955,
+				12033,
 			},
 			["price"] = 10000,
 		},
@@ -1332,13 +1332,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [58]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2803, -- [1]
-				2806, -- [2]
-				11187, -- [3]
+				2803,
+				2806,
+				11187,
 			},
 			["price"] = 10000,
 		},
@@ -1355,13 +1355,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [59]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				989, -- [1]
-				1149, -- [2]
-				4305, -- [3]
+				989,
+				1149,
+				4305,
 			},
 			["price"] = 10000,
 		},
@@ -1378,11 +1378,11 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [60]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				8139, -- [1]
+				8139,
 			},
 			["price"] = 3000,
 		},
@@ -1399,19 +1399,19 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [61]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2383, -- [1]
-				2664, -- [2]
-				3178, -- [3]
-				3333, -- [4]
-				4307, -- [5]
-				4574, -- [6]
-				5162, -- [7]
-				12033, -- [8]
-				12962, -- [9]
+				2383,
+				2664,
+				3178,
+				3333,
+				4307,
+				4574,
+				5162,
+				12033,
+				12962,
 			},
 			["price"] = 2200,
 		},
@@ -1428,14 +1428,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [62]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				13420, -- [1]
-				13429, -- [2]
-				13433, -- [3]
-				13435, -- [4]
+				13420,
+				13429,
+				13433,
+				13435,
 			},
 			["price"] = 25,
 		},
@@ -1452,14 +1452,15 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [63]
+		["holiday"] = 141,
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				13420, -- [1]
-				13429, -- [2]
-				13433, -- [3]
-				13435, -- [4]
+				13420,
+				13429,
+				13433,
+				13435,
 			},
 			["price"] = 200,
 		},
@@ -1476,13 +1477,14 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [64]
+		["holiday"] = 141,
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4782, -- [1]
-				7733, -- [2]
-				8125, -- [3]
+				4782,
+				7733,
+				8125,
 			},
 			["price"] = 10000,
 		},
@@ -1499,15 +1501,15 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [65]
+	},
 	{
 		["quests"] = {
-			2359, -- [1]
-			2478, -- [2]
+			2359,
+			2478,
 		},
 		["vendors"] = {
 			["sources"] = {
-				6779, -- [1]
+				6779,
 			},
 			["price"] = 200,
 		},
@@ -1524,13 +1526,13 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [66]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18267,
 		["drops"] = {
 			["mobs"] = {
-				14354, -- [1]
+				14354,
 			},
 		},
 		["name"] = {
@@ -1544,11 +1546,11 @@ MTSL_DATA["Cooking"]["items"] = {
 			["English"] = "Recipe: Runn Tum Tuber Surprise",
 		},
 		["quality"] = "uncommon",
-	}, -- [67]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4879, -- [1]
+				4879,
 			},
 			["price"] = 2000,
 		},
@@ -1565,10 +1567,10 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [68]
+	},
 	{
 		["quests"] = {
-			8586, -- [1]
+			8586,
 		},
 		["phase"] = 5,
 		["id"] = 21025,
@@ -1583,24 +1585,24 @@ MTSL_DATA["Cooking"]["items"] = {
 			["Korean"] = "조리법: 더지의 기똥찬 키메로크 찹스테이크",
 			["English"] = "Recipe: Dirge's Kickin' Chimaerok Chops",
 		},
-	}, -- [69]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2381, -- [1]
-				2397, -- [2]
-				2664, -- [3]
-				3027, -- [4]
-				3085, -- [5]
-				3400, -- [6]
-				4223, -- [7]
-				4265, -- [8]
-				4553, -- [9]
-				5160, -- [10]
-				5483, -- [11]
-				8307, -- [12]
-				12033, -- [13]
-				14738, -- [14]
+				2381,
+				2397,
+				2664,
+				3027,
+				3085,
+				3400,
+				4223,
+				4265,
+				4553,
+				5160,
+				5483,
+				8307,
+				12033,
+				14738,
 			},
 			["price"] = 500,
 		},
@@ -1617,24 +1619,24 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [70]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2381, -- [1]
-				2397, -- [2]
-				2664, -- [3]
-				3027, -- [4]
-				3085, -- [5]
-				3400, -- [6]
-				4223, -- [7]
-				4265, -- [8]
-				4553, -- [9]
-				5160, -- [10]
-				5483, -- [11]
-				8307, -- [12]
-				12033, -- [13]
-				14738, -- [14]
+				2381,
+				2397,
+				2664,
+				3027,
+				3085,
+				3400,
+				4223,
+				4265,
+				4553,
+				5160,
+				5483,
+				8307,
+				12033,
+				14738,
 			},
 			["price"] = 5000,
 		},
@@ -1651,5 +1653,5 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [71]
+	},
 }

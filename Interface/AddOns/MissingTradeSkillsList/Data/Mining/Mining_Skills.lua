@@ -7,19 +7,19 @@ MTSL_DATA["Mining"]["skills"] = {
 		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 0,
 		},
@@ -34,25 +34,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Copper",
 		},
 		["id"] = 2657,
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 75,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 180,
 		},
@@ -67,25 +67,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Silver",
 		},
 		["id"] = 2658,
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 65,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 200,
 		},
@@ -100,25 +100,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Bronze",
 		},
 		["id"] = 2659,
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 65,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 50,
 		},
@@ -133,25 +133,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Tin",
 		},
 		["id"] = 3304,
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 125,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 450,
 		},
@@ -166,25 +166,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Iron",
 		},
 		["id"] = 3307,
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 155,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 2250,
 		},
@@ -199,25 +199,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Gold",
 		},
 		["id"] = 3308,
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 165,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 2250,
 		},
@@ -232,25 +232,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Steel",
 		},
 		["id"] = 3569,
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 175,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 4500,
 		},
@@ -265,25 +265,25 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Mithril",
 		},
 		["id"] = 10097,
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 9000,
 		},
@@ -298,10 +298,10 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Truesilver",
 		},
 		["id"] = 10098,
-	}, -- [9]
+	},
 	{
 		["quests"] = {
-			4083, -- [1]
+			4083,
 		},
 		["phase"] = 1,
 		["min_skill"] = 230,
@@ -317,27 +317,34 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Dark Iron",
 		},
 		["special_action"] = {
-			["English"] = "Talk to NPC after completing quest",
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
 		},
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 250,
 		["trainers"] = {
 			["sources"] = {
-				1681, -- [1]
-				1701, -- [2]
-				3001, -- [3]
-				3137, -- [4]
-				3175, -- [5]
-				3357, -- [6]
-				3555, -- [7]
-				4254, -- [8]
-				4598, -- [9]
-				5392, -- [10]
-				5513, -- [11]
-				6297, -- [12]
-				8128, -- [13]
+				1681,
+				1701,
+				3001,
+				3137,
+				3175,
+				3357,
+				3555,
+				4254,
+				4598,
+				5392,
+				5513,
+				6297,
+				8128,
 			},
 			["price"] = 18000,
 		},
@@ -352,13 +359,13 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Thorium",
 		},
 		["id"] = 16153,
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
-				14401, -- [1]
+				14401,
 			},
 			["price"] = 0,
 		},
@@ -374,7 +381,14 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Elementium",
 		},
 		["special_action"] = {
-			["English"] = "Talk to Master Elemental Shaper Krikix while he is mindcontrolled",
+			["English"] = "Talk to Master Elemental Shaper Krixix while he is mindcontrolled",
+			["Portuguese"] = "Fale com Mestre Moldador Elemental Krixix enquanto ele é controlado pela mente",
+			["Russian"] = "Поговорите с Ваятель стихий Криксикс пока он находится под контролем ума",
+			["Chinese"] = "受到精神控制时与大元素师克里希克交谈",
+			["Spanish"] = "Habla con Maestro de los elementos Formacio Krixix mientras él está controlado mentalmente",
+			["French"] = "Parlez à Maître élémentaire Krixix le Sculpteur alors qu'il est contrôlé par l'esprit",
+			["Korean"] = "수석 원소구현술사 크릭시스",
+			["German"] = "Sprich mit Meisterelementarformer Krixix während er den Verstand kontrolliert",
 		},
-	}, -- [12]
+	},
 }

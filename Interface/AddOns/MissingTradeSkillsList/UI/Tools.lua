@@ -174,20 +174,23 @@ MTSLUI_TOOLS = {
 	------------------------------------------------------------------------------------------------
 	CreateWayPoint = function(self, label_text, item_name)
 		-- parse the text: build up as <name npc/oject> - <name zone> (coord x, coord y)
-		local name_npc, label_text = strsplit("-", label_text, 2)
+		local _, label_text = strsplit("\\	] ", label_text, 2)
 		if label_text ~= nil and label_text ~= "" then
-			local zone, label_text = strsplit("(", label_text, 2)
+			local name_npc, label_text = strsplit("-", label_text, 2)
 			if label_text ~= nil and label_text ~= "" then
-				local x_coord, label_text = strsplit(",", label_text, 2)
+				local zone, label_text = strsplit("(", label_text, 2)
 				if label_text ~= nil and label_text ~= "" then
-					local y_coord, label_text = strsplit(")", label_text, 2)
-					if y_coord ~= nil and y_coord ~= "" then
-						-- only add waypoint is tom tom is installed
-						if IsAddOnLoaded("TomTom") and SlashCmdList["TOMTOM_WAY"] ~= nil then
-							SlashCmdList["TOMTOM_WAY"](zone .. x_coord .. y_coord .. " " .. name_npc .. " (" .. item_name .. ")")
-						elseif not self.tomtom_warned then
-							print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: You need to install TomTom to add waypoints!")
-							self.tomtom_warned = true
+					local x_coord, label_text = strsplit(",", label_text, 2)
+					if label_text ~= nil and label_text ~= "" then
+						local y_coord, label_text = strsplit(")", label_text, 2)
+						if y_coord ~= nil and y_coord ~= "" then
+							-- only add waypoint is tom tom is installed
+							if IsAddOnLoaded("TomTom") and SlashCmdList["TOMTOM_WAY"] ~= nil then
+								SlashCmdList["TOMTOM_WAY"](zone .. x_coord .. y_coord .. " " .. name_npc .. " (" .. item_name .. ")")
+							elseif not self.tomtom_warned then
+								print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: You need to install TomTom to add waypoints!")
+								self.tomtom_warned = true
+							end
 						end
 					end
 				end

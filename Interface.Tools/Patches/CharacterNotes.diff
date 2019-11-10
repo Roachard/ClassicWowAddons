@@ -1,0 +1,42 @@
+diff --git a/Interface/AddOns/CharacterNotes/CharacterNotes.lua b/Interface/AddOns/CharacterNotes/CharacterNotes.lua
+index 2513bc0..6f58407 100644
+--- a/Interface/AddOns/CharacterNotes/CharacterNotes.lua
++++ b/Interface/AddOns/CharacterNotes/CharacterNotes.lua
+@@ -51,7 +51,7 @@ local tooltipNoteWithMainFormat = "%s"..L["Note"].." (%s): "..WHITE.."%s".."|r"
+ local defaults = {
+ 	profile = {
+ 		minimap = {
+-			hide = true,
++			hide = false,
+ 		},
+ 		verbose = true,
+ 		debug = false,
+@@ -1027,7 +1027,7 @@ function CharacterNotes:CreateNotesFrame()
+ 
+ 	local searchterm = _G.CreateFrame("EditBox", nil, noteswindow, "InputBoxTemplate")
+ 	searchterm:SetFontObject(_G.ChatFontNormal)
+-	searchterm:SetWidth(300)
++	searchterm:SetWidth(200)
+ 	searchterm:SetHeight(35)
+ 	searchterm:SetPoint("TOPLEFT", noteswindow, "TOPLEFT", 25, -50)
+ 	searchterm:SetScript("OnShow", function(this) this:SetFocus() end)
+@@ -1059,6 +1059,19 @@ function CharacterNotes:CreateNotesFrame()
+ 	        this:GetParent().table:SortData()
+ 	    end)
+ 
++	local addbutton = _G.CreateFrame("Button", nil, noteswindow, "UIPanelButtonTemplate")
++	addbutton:SetText(L["Add"])
++	addbutton:SetWidth(100)
++	addbutton:SetHeight(20)
++	addbutton:SetPoint("LEFT", clearbutton, "RIGHT", 10, 0)
++	addbutton:SetScript("OnClick",
++		function(this)
++			local name = searchterm:GetText()
++			if name and #name > 0 then
++				self:EditNoteHandler(name)
++			end
++		end)
++
+ 	local closebutton = _G.CreateFrame("Button", nil, noteswindow, "UIPanelButtonTemplate")
+ 	closebutton:SetText(L["Close"])
+ 	closebutton:SetWidth(90)

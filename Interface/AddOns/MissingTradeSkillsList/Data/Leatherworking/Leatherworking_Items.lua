@@ -22,7 +22,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Fine Leather Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2407,
@@ -43,7 +43,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: White Leather Jerkin",
 		},
 		["quality"] = "uncommon",
-	}, -- [2]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2408,
@@ -64,7 +64,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Fine Leather Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [3]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 2409,
@@ -85,7 +85,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Dark Leather Tunic",
 		},
 		["quality"] = "uncommon",
-	}, -- [4]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4293,
@@ -106,7 +106,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Hillman's Leather Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [5]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4294,
@@ -127,7 +127,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Hillman's Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [6]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4296,
@@ -148,7 +148,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Dark Leather Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [7]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4297,
@@ -169,7 +169,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Barbaric Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [8]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4298,
@@ -190,7 +190,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Guardian Belt",
 		},
 		["quality"] = "rare",
-	}, -- [9]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4299,
@@ -211,7 +211,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Guardian Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [10]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4300,
@@ -232,7 +232,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Guardian Leather Bracers",
 		},
 		["quality"] = "uncommon",
-	}, -- [11]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 4301,
@@ -253,10 +253,10 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Barbaric Belt",
 		},
 		["quality"] = "rare",
-	}, -- [12]
+	},
 	{
 		["quests"] = {
-			769, -- [1]
+			769,
 		},
 		["phase"] = 1,
 		["id"] = 5083,
@@ -271,13 +271,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 코도 가죽 가방",
 			["English"] = "Pattern: Kodo Hide Bag",
 		},
-	}, -- [13]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				843, -- [1]
-				3556, -- [2]
-				4186, -- [3]
+				843,
+				3556,
+				4186,
 			},
 			["price"] = 500,
 		},
@@ -294,19 +294,19 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				1732, -- [1]
-				3385, -- [2]
+				1732,
+				3385,
 			},
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [14]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				843, -- [1]
-				3556, -- [2]
-				4186, -- [3]
+				843,
+				3556,
+				4186,
 			},
 			["price"] = 600,
 		},
@@ -323,19 +323,19 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				657, -- [1]
-				3386, -- [2]
+				657,
+				3386,
 			},
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [15]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2381, -- [1]
-				2393, -- [2]
-				2846, -- [3]
+				2381,
+				2393,
+				2846,
 			},
 			["price"] = 600,
 		},
@@ -352,17 +352,17 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				938, -- [1]
+				938,
 			},
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [16]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2846, -- [1]
-				4897, -- [2]
+				2846,
+				4897,
 			},
 			["price"] = 2800,
 		},
@@ -379,13 +379,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["drops"] = {
 			["mobs"] = {
-				1561, -- [1]
-				2636, -- [2]
+				1561,
+				2636,
 			},
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [17]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5972,
@@ -406,13 +406,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Fine Leather Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [18]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2810, -- [1]
-				3958, -- [2]
-				4877, -- [3]
+				2810,
+				3958,
+				4877,
 			},
 			["price"] = 600,
 		},
@@ -429,7 +429,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [19]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 5974,
@@ -450,11 +450,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Guardian Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [20]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5783, -- [1]
+				5783,
 			},
 			["price"] = 500,
 		},
@@ -471,11 +471,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [21]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				5783, -- [1]
+				5783,
 			},
 			["price"] = 1500,
 		},
@@ -492,10 +492,10 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [22]
+	},
 	{
 		["quests"] = {
-			1487, -- [1]
+			1487,
 		},
 		["phase"] = 1,
 		["id"] = 6476,
@@ -510,10 +510,10 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 돌연변이 비늘 허리띠",
 			["English"] = "Pattern: Deviate Scale Belt",
 		},
-	}, -- [23]
+	},
 	{
 		["quests"] = {
-			1582, -- [1]
+			1582,
 		},
 		["phase"] = 1,
 		["id"] = 6710,
@@ -528,7 +528,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 달빛 조끼",
 			["English"] = "Pattern: Moonglow Vest",
 		},
-	}, -- [24]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7288,
@@ -549,11 +549,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Rugged Leather Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [25]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2697, -- [1]
+				2697,
 			},
 			["price"] = 600,
 		},
@@ -570,11 +570,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [26]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2679, -- [1]
+				2679,
 			},
 			["price"] = 1600,
 		},
@@ -591,7 +591,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [27]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7360,
@@ -612,11 +612,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Dark Leather Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [28]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				6731, -- [1]
+				6731,
 			},
 			["price"] = 1800,
 		},
@@ -633,11 +633,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [29]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3537, -- [1]
+				3537,
 			},
 			["price"] = 2000,
 		},
@@ -654,7 +654,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [30]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7363,
@@ -675,7 +675,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Pilferer's Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [31]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7364,
@@ -696,7 +696,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Earthen Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [32]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7449,
@@ -717,7 +717,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Dusky Leather Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [33]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7450,
@@ -738,13 +738,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Green Whelp Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [34]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4225, -- [1]
-				7852, -- [2]
-				7854, -- [3]
+				4225,
+				7852,
+				7854,
 			},
 			["price"] = 2800,
 		},
@@ -761,7 +761,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [35]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7452,
@@ -782,7 +782,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Dusky Boots",
 		},
 		["quality"] = "rare",
-	}, -- [36]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 7453,
@@ -803,12 +803,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Swift Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [37]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2679, -- [1]
-				2698, -- [2]
+				2679,
+				2698,
 			},
 			["price"] = 2000,
 		},
@@ -825,7 +825,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [38]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8384,
@@ -846,12 +846,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Comfortable Leather Hat",
 		},
 		["quality"] = "rare",
-	}, -- [39]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7852, -- [1]
-				7854, -- [2]
+				7852,
+				7854,
 			},
 			["price"] = 3500,
 		},
@@ -874,7 +874,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [40]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8386,
@@ -895,7 +895,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Big Voodoo Robe",
 		},
 		["quality"] = "uncommon",
-	}, -- [41]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8387,
@@ -916,7 +916,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Big Voodoo Mask",
 		},
 		["quality"] = "uncommon",
-	}, -- [42]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8389,
@@ -937,7 +937,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Big Voodoo Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [43]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8390,
@@ -958,13 +958,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Big Voodoo Cloak",
 		},
 		["quality"] = "uncommon",
-	}, -- [44]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8395,
 		["drops"] = {
 			["mobs"] = {
-				5618, -- [1]
+				5618,
 			},
 		},
 		["name"] = {
@@ -978,13 +978,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [45]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8397,
 		["drops"] = {
 			["mobs"] = {
-				5617, -- [1]
+				5617,
 			},
 		},
 		["name"] = {
@@ -998,13 +998,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Bracers",
 		},
 		["quality"] = "uncommon",
-	}, -- [46]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8398,
 		["drops"] = {
 			["mobs"] = {
-				5616, -- [1]
+				5616,
 			},
 		},
 		["name"] = {
@@ -1018,13 +1018,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [47]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8399,
 		["drops"] = {
 			["mobs"] = {
-				5615, -- [1]
+				5615,
 			},
 		},
 		["name"] = {
@@ -1038,15 +1038,15 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [48]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8400,
 		["drops"] = {
 			["mobs"] = {
-				5623, -- [1]
-				7805, -- [2]
-				7883, -- [3]
+				5623,
+				7805,
+				7883,
 			},
 		},
 		["name"] = {
@@ -1060,13 +1060,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [49]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8401,
 		["drops"] = {
 			["mobs"] = {
-				5615, -- [1]
+				5615,
 			},
 		},
 		["name"] = {
@@ -1080,15 +1080,15 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [50]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 8402,
 		["drops"] = {
 			["mobs"] = {
-				5623, -- [1]
-				7805, -- [2]
-				7883, -- [3]
+				5623,
+				7805,
+				7883,
 			},
 		},
 		["name"] = {
@@ -1102,11 +1102,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Tough Scorpid Helm",
 		},
 		["quality"] = "uncommon",
-	}, -- [51]
+	},
 	{
 		["quests"] = {
-			2848, -- [1]
-			2855, -- [2]
+			2848,
+			2855,
 		},
 		["phase"] = 1,
 		["id"] = 8403,
@@ -1121,11 +1121,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 어깨보호구",
 			["English"] = "Pattern: Wild Leather Shoulders",
 		},
-	}, -- [52]
+	},
 	{
 		["quests"] = {
-			2849, -- [1]
-			2856, -- [2]
+			2849,
+			2856,
 		},
 		["phase"] = 1,
 		["id"] = 8404,
@@ -1140,11 +1140,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 조끼",
 			["English"] = "Pattern: Wild Leather Vest",
 		},
-	}, -- [53]
+	},
 	{
 		["quests"] = {
-			2850, -- [1]
-			2857, -- [2]
+			2850,
+			2857,
 		},
 		["phase"] = 1,
 		["id"] = 8405,
@@ -1159,11 +1159,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 투구",
 			["English"] = "Pattern: Wild Leather Helmet",
 		},
-	}, -- [54]
+	},
 	{
 		["quests"] = {
-			2851, -- [1]
-			2858, -- [2]
+			2851,
+			2858,
 		},
 		["phase"] = 1,
 		["id"] = 8406,
@@ -1178,11 +1178,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 장화",
 			["English"] = "Pattern: Wild Leather Boots",
 		},
-	}, -- [55]
+	},
 	{
 		["quests"] = {
-			2852, -- [1]
-			2859, -- [2]
+			2852,
+			2859,
 		},
 		["phase"] = 1,
 		["id"] = 8407,
@@ -1197,11 +1197,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 다리보호구",
 			["English"] = "Pattern: Wild Leather Leggings",
 		},
-	}, -- [56]
+	},
 	{
 		["quests"] = {
-			2853, -- [1]
-			2860, -- [2]
+			2853,
+			2860,
 		},
 		["phase"] = 1,
 		["id"] = 8408,
@@ -1216,12 +1216,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["Korean"] = "도안: 야생 가죽 망토",
 			["English"] = "Pattern: Wild Leather Cloak",
 		},
-	}, -- [57]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7854, -- [1]
-				8160, -- [2]
+				7854,
+				8160,
 			},
 			["price"] = 4000,
 		},
@@ -1238,11 +1238,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [58]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2819, -- [1]
+				2819,
 			},
 			["price"] = 2500,
 		},
@@ -1259,11 +1259,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [59]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2816, -- [1]
+				2816,
 			},
 			["price"] = 2500,
 		},
@@ -1280,11 +1280,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
-	}, -- [60]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2699, -- [1]
+				2699,
 			},
 			["price"] = 3000,
 		},
@@ -1301,11 +1301,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [61]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12956, -- [1]
+				12956,
 			},
 			["price"] = 10000,
 		},
@@ -1322,12 +1322,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [62]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12942, -- [1]
-				12943, -- [2]
+				12942,
+				12943,
 			},
 			["price"] = 10000,
 		},
@@ -1344,11 +1344,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [63]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11874, -- [1]
+				11874,
 			},
 			["price"] = 10000,
 		},
@@ -1365,13 +1365,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [64]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15727,
 		["drops"] = {
 			["mobs"] = {
-				5981, -- [1]
+				5981,
 			},
 		},
 		["name"] = {
@@ -1385,13 +1385,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Scorpid Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [65]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15728,
 		["drops"] = {
 			["mobs"] = {
-				6201, -- [1]
+				6201,
 			},
 		},
 		["name"] = {
@@ -1405,11 +1405,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Wicked Leather Bracers",
 		},
 		["quality"] = "uncommon",
-	}, -- [66]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12957, -- [1]
+				12957,
 			},
 			["price"] = 10000,
 		},
@@ -1426,13 +1426,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [67]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15730,
 		["drops"] = {
 			["mobs"] = {
-				10363, -- [1]
+				10363,
 			},
 		},
 		["name"] = {
@@ -1446,7 +1446,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Red Dragonscale Breastplate",
 		},
 		["quality"] = "rare",
-	}, -- [68]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15731,
@@ -1467,13 +1467,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Gauntlets",
 		},
 		["quality"] = "uncommon",
-	}, -- [69]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15732,
 		["drops"] = {
 			["mobs"] = {
-				7035, -- [1]
+				7035,
 			},
 		},
 		["name"] = {
@@ -1487,13 +1487,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Volcanic Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [70]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15733,
 		["drops"] = {
 			["mobs"] = {
-				5226, -- [1]
+				5226,
 			},
 		},
 		["name"] = {
@@ -1507,12 +1507,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Green Dragonscale Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [71]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				7852, -- [1]
-				7854, -- [2]
+				7852,
+				7854,
 			},
 			["price"] = 10000,
 		},
@@ -1529,11 +1529,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [72]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12958, -- [1]
+				12958,
 			},
 			["price"] = 10000,
 		},
@@ -1550,7 +1550,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [73]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15737,
@@ -1571,13 +1571,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Chimeric Boots",
 		},
 		["quality"] = "uncommon",
-	}, -- [74]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15738,
 		["drops"] = {
 			["mobs"] = {
-				7025, -- [1]
+				7025,
 			},
 		},
 		["name"] = {
@@ -1591,13 +1591,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Scorpid Gauntlets",
 		},
 		["quality"] = "uncommon",
-	}, -- [75]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15739,
 		["drops"] = {
 			["mobs"] = {
-				7112, -- [1]
+				7112,
 			},
 		},
 		["name"] = {
@@ -1611,11 +1611,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Bracers",
 		},
 		["quality"] = "uncommon",
-	}, -- [76]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11189, -- [1]
+				11189,
 			},
 			["price"] = 10000,
 		},
@@ -1632,12 +1632,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [77]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12942, -- [1]
-				12943, -- [2]
+				12942,
+				12943,
 			},
 			["price"] = 10000,
 		},
@@ -1654,7 +1654,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [78]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15743,
@@ -1675,13 +1675,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Scorpid Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [79]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15744,
 		["drops"] = {
 			["mobs"] = {
-				7107, -- [1]
+				7107,
 			},
 		},
 		["name"] = {
@@ -1695,7 +1695,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Wicked Leather Headband",
 		},
 		["quality"] = "uncommon",
-	}, -- [80]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15745,
@@ -1716,7 +1716,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [81]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15746,
@@ -1737,13 +1737,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Chimeric Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [82]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15747,
 		["drops"] = {
 			["mobs"] = {
-				7440, -- [1]
+				7440,
 			},
 		},
 		["name"] = {
@@ -1757,13 +1757,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Frostsaber Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [83]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15748,
 		["drops"] = {
 			["mobs"] = {
-				7027, -- [1]
+				7027,
 			},
 		},
 		["name"] = {
@@ -1777,13 +1777,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Scorpid Leggings",
 		},
 		["quality"] = "uncommon",
-	}, -- [84]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15749,
 		["drops"] = {
 			["mobs"] = {
-				9259, -- [1]
+				9259,
 			},
 		},
 		["name"] = {
@@ -1797,11 +1797,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Volcanic Breastplate",
 		},
 		["quality"] = "uncommon",
-	}, -- [85]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12957, -- [1]
+				12957,
 			},
 			["price"] = 20000,
 		},
@@ -1818,13 +1818,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [86]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15752,
 		["drops"] = {
 			["mobs"] = {
-				7158, -- [1]
+				7158,
 			},
 		},
 		["name"] = {
@@ -1838,13 +1838,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Living Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [87]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15753,
 		["drops"] = {
 			["mobs"] = {
-				6138, -- [1]
+				6138,
 			},
 		},
 		["name"] = {
@@ -1858,7 +1858,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Stormshroud Armor",
 		},
 		["quality"] = "rare",
-	}, -- [88]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15755,
@@ -1879,7 +1879,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Chimeric Vest",
 		},
 		["quality"] = "uncommon",
-	}, -- [89]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: руническая кожаная головная повязка",
@@ -1893,8 +1893,14 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["phase"] = 1,
 		["quality"] = "common",
-		["id"] = 15756,
-	}, -- [90]
+		["id"] = 12941,
+		["vendors"] = {
+			["sources"] = {
+				12959,
+			},
+			["price"] = 25000,
+		},
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15757,
@@ -1915,11 +1921,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Wicked Leather Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [91]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12959, -- [1]
+				12959,
 			},
 			["price"] = 20000,
 		},
@@ -1936,11 +1942,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [92]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				9499, -- [1]
+				9499,
 			},
 			["price"] = 20000,
 		},
@@ -1957,13 +1963,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [93]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15760,
 		["drops"] = {
 			["mobs"] = {
-				2644, -- [1]
+				2644,
 			},
 		},
 		["name"] = {
@@ -1977,13 +1983,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Ironfeather Breastplate",
 		},
 		["quality"] = "rare",
-	}, -- [94]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15761,
 		["drops"] = {
 			["mobs"] = {
-				7441, -- [1]
+				7441,
 			},
 		},
 		["name"] = {
@@ -1997,11 +2003,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Frostsaber Gloves",
 		},
 		["quality"] = "uncommon",
-	}, -- [95]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12956, -- [1]
+				12956,
 			},
 			["price"] = 20000,
 		},
@@ -2018,13 +2024,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [96]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15763,
 		["drops"] = {
 			["mobs"] = {
-				6146, -- [1]
+				6146,
 			},
 		},
 		["name"] = {
@@ -2038,13 +2044,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Blue Dragonscale Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [97]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15764,
 		["drops"] = {
 			["mobs"] = {
-				6144, -- [1]
+				6144,
 			},
 		},
 		["name"] = {
@@ -2058,7 +2064,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Stormshroud Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [98]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15765,
@@ -2079,13 +2085,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Pants",
 		},
 		["quality"] = "uncommon",
-	}, -- [99]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15768,
 		["drops"] = {
 			["mobs"] = {
-				10406, -- [1]
+				10406,
 			},
 		},
 		["name"] = {
@@ -2099,13 +2105,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Wicked Leather Belt",
 		},
 		["quality"] = "uncommon",
-	}, -- [100]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15770,
 		["drops"] = {
 			["mobs"] = {
-				8898, -- [1]
+				8898,
 			},
 		},
 		["name"] = {
@@ -2119,13 +2125,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Black Dragonscale Shoulders",
 		},
 		["quality"] = "rare",
-	}, -- [101]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15771,
 		["drops"] = {
 			["mobs"] = {
-				1813, -- [1]
+				1813,
 			},
 		},
 		["name"] = {
@@ -2139,16 +2145,16 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Living Breastplate",
 		},
 		["quality"] = "rare",
-	}, -- [102]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15772,
 		["drops"] = {
 			["mobs"] = {
-				6556, -- [1]
-				6557, -- [2]
-				6559, -- [3]
-				9477, -- [4]
+				6556,
+				6557,
+				6559,
+				9477,
 			},
 		},
 		["name"] = {
@@ -2162,13 +2168,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Devilsaur Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [103]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15773,
 		["drops"] = {
 			["mobs"] = {
-				10499, -- [1]
+				10499,
 			},
 		},
 		["name"] = {
@@ -2182,13 +2188,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Wicked Leather Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [104]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15774,
 		["drops"] = {
 			["mobs"] = {
-				7029, -- [1]
+				7029,
 			},
 		},
 		["name"] = {
@@ -2202,13 +2208,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Heavy Scorpid Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [105]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15775,
 		["drops"] = {
 			["mobs"] = {
-				9260, -- [1]
+				9260,
 			},
 		},
 		["name"] = {
@@ -2222,13 +2228,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Volcanic Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [106]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15776,
 		["drops"] = {
 			["mobs"] = {
-				11582, -- [1]
+				11582,
 			},
 		},
 		["name"] = {
@@ -2242,13 +2248,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Armor",
 		},
 		["quality"] = "uncommon",
-	}, -- [107]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15777,
 		["drops"] = {
 			["mobs"] = {
-				10425, -- [1]
+				10425,
 			},
 		},
 		["name"] = {
@@ -2262,13 +2268,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Runic Leather Shoulders",
 		},
 		["quality"] = "uncommon",
-	}, -- [108]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15779,
 		["drops"] = {
 			["mobs"] = {
-				7438, -- [1]
+				7438,
 			},
 		},
 		["name"] = {
@@ -2282,13 +2288,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Frostsaber Tunic",
 		},
 		["quality"] = "uncommon",
-	}, -- [109]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 15781,
 		["drops"] = {
 			["mobs"] = {
-				8903, -- [1]
+				8903,
 			},
 		},
 		["name"] = {
@@ -2302,11 +2308,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Black Dragonscale Leggings",
 		},
 		["quality"] = "rare",
-	}, -- [110]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 150000,
 		},
@@ -2323,11 +2329,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [111]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 160000,
 		},
@@ -2344,11 +2350,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [112]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 160000,
 		},
@@ -2365,15 +2371,10 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [113]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 17722,
-		["drops"] = {
-			["mobs"] = {
-				7856, -- [1]
-			},
-		},
 		["name"] = {
 			["Russian"] = "Выкройка: перчатки Великого отца",
 			["Portuguese"] = "Molde: Luvas do Grande Pai",
@@ -2385,11 +2386,15 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Gloves of the Greatfather",
 		},
 		["quality"] = "uncommon",
-	}, -- [114]
+		["holiday"] = 141,
+		["quests"] = {
+			8769
+		},
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2699, -- [1]
+				2699,
 			},
 			["price"] = 3500,
 		},
@@ -2406,7 +2411,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 2,
-	}, -- [115]
+	},
 	{
 		["phase"] = 1,
 		["id"] = 18252,
@@ -2427,14 +2432,14 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Core Armor Kit",
 		},
 		["quality"] = "rare",
-	}, -- [116]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18514,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
+				417,
+				11448,
 			},
 		},
 		["name"] = {
@@ -2448,7 +2453,7 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Girdle of Insight",
 		},
 		["quality"] = "rare",
-	}, -- [117]
+	},
 	{
 		["name"] = {
 			["Russian"] = "Выкройка: мангустовые сапоги",
@@ -2463,16 +2468,17 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		["phase"] = 2,
 		["quality"] = "rare",
 		["id"] = 18515,
-	}, -- [118]
+		["object"] = 179501
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18516,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
-				11450, -- [3]
-				14351, -- [4]
+				417,
+				11448,
+				11450,
+				14351,
 			},
 		},
 		["name"] = {
@@ -2486,13 +2492,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Swift Flight Bracers",
 		},
 		["quality"] = "rare",
-	}, -- [119]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18517,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
+				417,
 			},
 		},
 		["name"] = {
@@ -2506,14 +2512,14 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Chromatic Cloak",
 		},
 		["quality"] = "epic",
-	}, -- [120]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18518,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
-				11448, -- [2]
+				417,
+				11448,
 			},
 		},
 		["name"] = {
@@ -2527,13 +2533,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Hide of the Wild",
 		},
 		["quality"] = "epic",
-	}, -- [121]
+	},
 	{
 		["phase"] = 2,
 		["id"] = 18519,
 		["drops"] = {
 			["mobs"] = {
-				417, -- [1]
+				417,
 			},
 		},
 		["name"] = {
@@ -2547,12 +2553,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Shifting Cloak",
 		},
 		["quality"] = "epic",
-	}, -- [122]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				3366, -- [1]
-				5128, -- [2]
+				3366,
+				5128,
 			},
 			["price"] = 2000,
 		},
@@ -2569,12 +2575,12 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 2,
-	}, -- [123]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				4225, -- [1]
-				4589, -- [2]
+				4225,
+				4589,
 			},
 			["price"] = 2000,
 		},
@@ -2591,11 +2597,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [124]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 20000,
 		},
@@ -2612,11 +2618,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [125]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 40000,
 		},
@@ -2633,13 +2639,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [126]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 20000,
 		},
@@ -2656,13 +2662,13 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [127]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 40000,
 		},
@@ -2679,11 +2685,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [128]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 60000,
 		},
@@ -2700,11 +2706,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [129]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 90000,
 		},
@@ -2721,11 +2727,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [130]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 90000,
 		},
@@ -2742,11 +2748,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [131]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				12944, -- [1]
+				12944,
 			},
 			["price"] = 90000,
 		},
@@ -2763,11 +2769,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [132]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2784,11 +2790,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [133]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2805,11 +2811,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [134]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2826,11 +2832,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [135]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2847,11 +2853,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [136]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				14921, -- [1]
+				14921,
 			},
 			["price"] = 50000,
 		},
@@ -2868,11 +2874,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
-	}, -- [137]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 10000,
 		},
@@ -2893,11 +2899,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Warbear Harness",
 		},
 		["phase"] = 1,
-	}, -- [138]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				11557, -- [1]
+				11557,
 			},
 			["price"] = 20000,
 		},
@@ -2918,11 +2924,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Warbear Woolies",
 		},
 		["phase"] = 1,
-	}, -- [139]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 60000,
 		},
@@ -2939,11 +2945,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [140]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -2960,11 +2966,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [141]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -2981,11 +2987,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [142]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -3002,11 +3008,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [143]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -3023,11 +3029,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [144]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -3044,11 +3050,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [145]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 40000,
 		},
@@ -3065,11 +3071,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [146]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				777, -- [1]
+				777,
 			},
 			["price"] = 1400,
 		},
@@ -3086,14 +3092,14 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [147]
+	},
 	{
 		["phase"] = 5,
 		["id"] = 21548,
 		["drops"] = {
 			["mobs"] = {
-				14454, -- [1]
-				14457, -- [2]
+				14454,
+				14457,
 			},
 		},
 		["name"] = {
@@ -3107,11 +3113,36 @@ MTSL_DATA["Leatherworking"]["items"] = {
 			["English"] = "Pattern: Stormshroud Gloves",
 		},
 		["quality"] = "rare",
-	}, -- [148]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				16365,
+			},
+			["price"] = 0,
+		},
+		["id"] = 22694,
+		["name"] = {
+			["Russian"] = "Выкройка: снежные перчатки",
+			["Portuguese"] = "Molde: Luvas Polares",
+			["Chinese"] = "图样：北极手套",
+			["Spanish"] = "Patrón: guantes polares",
+			["French"] = "Patron : Gants polaires",
+			["German"] = "Muster: Polarhandschuhe",
+			["Korean"] = "도안: 북극의 장갑",
+			["English"] = "Pattern: Polar Gloves",
+		},
+		["quality"] = "common",
+		["phase"] = 6,
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+	},
+	{
+		["vendors"] = {
+			["sources"] = {
+				15293,
 			},
 			["price"] = 50000,
 		},
@@ -3128,11 +3159,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [149]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 50000,
 		},
@@ -3149,11 +3180,11 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [150]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				15293, -- [1]
+				15293,
 			},
 			["price"] = 50000,
 		},
@@ -3170,5 +3201,5 @@ MTSL_DATA["Leatherworking"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
-	}, -- [151]
+	},
 }

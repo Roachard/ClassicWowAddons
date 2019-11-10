@@ -115,7 +115,7 @@ local key = {
 };
 local default = {
 	_version				 = 190830.0,
-	_overrideVersion		 = 190830.0,
+	_overrideVersion		 = 190925.0,
 
 	position				 = "ABOVE_EDITOBX",
 	scale					 = 1.0,
@@ -131,7 +131,7 @@ local default = {
 	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
 	channelBarStyle			 = "CHAR",
 
-	bfWorld_Ignore_Switch	 = false,
+	bfWorld_Ignore_Switch	 = true,
 	bfWorld_Ignore			 = false,
 	bfWorld_Ignore_BtnSize	 = 28,
 
@@ -158,9 +158,11 @@ local default = {
 	keyWord					 = "",
 };
 local override = {
-	_version				 = 190921.0,
-	level					 = false,
-	copy					 = false,
+	_version				 = 190927.0,
+	barStyle				 = 'blz',
+	--level					 = false,
+	--copy					 = false,
+	hyperLinkHoverShow		 = true,
 };
 local buttons = {
 	--[[1]]	{ 				name = "position"				,type = "DropDownMenu"	,label = LCONFIG.position				,key = "position"				,value = { "BELOW_EDITBOX", "ABOVE_EDITOBX", "ABOVE_CHATFRAME" }, },
@@ -906,7 +908,8 @@ local function alaC_Init()
 
 	config = alaChatConfig;
 
-	if not config._overrideVersion or (config._overrideVersion and config._overrideVersion < override._version) then
+	local overriding = not config._overrideVersion or (config._overrideVersion and config._overrideVersion < override._version);
+	if overriding then
 		for k, v in pairs(override) do
 			config[k] = v;
 		end
@@ -945,7 +948,7 @@ local function alaC_Init()
 				FUNC_CALL("SETVALUE", k, unpack(config[k]));
 			end
 		else
-			FUNC_CALL("SETVALUE", k, config[k], true);
+			FUNC_CALL("SETVALUE", k, config[k], true, overriding);
 		end
 	end
 
@@ -1014,8 +1017,8 @@ end
 
 alaChatConfigFrame.FUNC = FUNC;
 
-FUNC.SETVALUE.position = function(pos, init)
-	if not init then
+FUNC.SETVALUE.position = function(pos, init, override)
+	if not init or override then
 		alaBaseBtn:Pos(pos);
 		-- if pos == 1 then
 		-- 	alaBaseBtn:Pos("BELOW_EDITBOX");
@@ -1027,18 +1030,18 @@ FUNC.SETVALUE.position = function(pos, init)
 		--config.position = pos;
 	end
 end
-FUNC.SETVALUE.scale = function(scale, init)
-	if not init then
+FUNC.SETVALUE.scale = function(scale, init, override)
+	if not init or override then
 		alaBaseBtn:Scale(scale);
 	end
 end
-FUNC.SETVALUE.alpha = function(alpha, init)
-	if not init then
+FUNC.SETVALUE.alpha = function(alpha, init, override)
+	if not init or override then
 		alaBaseBtn:Alpha(alpha);
 	end
 end
-FUNC.SETVALUE.barStyle = function(style, init)
-	if not init then
+FUNC.SETVALUE.barStyle = function(style, init, override)
+	if not init or override then
 		alaBaseBtn:Style(style);
 	end
 	for _, v in pairs(FUNC.SETSTYLE) do

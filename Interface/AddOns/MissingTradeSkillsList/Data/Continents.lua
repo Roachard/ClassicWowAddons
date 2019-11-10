@@ -23,7 +23,7 @@ MTSL_DATA["continents"] = {
             ["Spanish"] = "Los Reinos del Este",
             ["Russian"] = "Восточные королевства",
             ["Portuguese"] = "Os Reinos do Leste",
-            ["French"] = "Les Royaumes de l'est",
+            ["French"] = "Royaumes de l'est",
             ["Korean"] = "동부 왕국",
             ["Chinese"] = "东部王国",
         }

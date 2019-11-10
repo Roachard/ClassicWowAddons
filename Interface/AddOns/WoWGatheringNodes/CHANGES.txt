@@ -1,0 +1,12 @@
+tag 34d8cb9a5a39c30708a23ad830dca27434816003 WoWGatheringNodes_Classic_v1.0
+Author:	SLOKnightfall <SLOKnightfall@gmail.com>
+Date:	Wed Oct 9 17:29:23 2019 -0700
+
+Initial Classic Release
+
+commit 6a3ba652a5a1555c0e45fb534ed8342dc5fb638c
+Author: SLOKnightfall <SLOKnightfall@gmail.com>
+Date:   Wed Oct 9 17:28:30 2019 -0700
+
+    Pulled initial node data for Classic
+

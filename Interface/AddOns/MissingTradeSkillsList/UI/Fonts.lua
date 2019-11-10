@@ -51,10 +51,83 @@ MTSLUI_FONTS = {
 	},
 	-- our saved fonts
 	FONTS = {
-		SMALL,
-		NORMAL,
-		LARGE,
+		TEXT,
+		LABEL,
+		TITLE,
 	},
+	-- list of all fonts that can be used in addon
+	AVAILABLE_FONT_NAMES =  {
+		{
+			["name"] = "2002",
+			["id"] = "2002.ttf",
+		},
+		{
+			["name"] = "Arial Narrow",
+			["id"] = "ARIALN.ttf",
+		},
+		{
+			["name"] = "Arkai",
+			["id"] = "ARKai_T.ttf",
+		},
+		{
+			["name"] = "Friz Quadrata",
+			["id"] = "FRIZQT__.ttf",
+		},
+		{
+			["name"] = "Friz Quadrata (Cyrilic)",
+			["id"] = "FRIZQT___CYR.ttf",
+		},
+		{
+			["name"] = "Morpheus",
+			["id"] = "morpheus.ttf",
+		},
+		{
+			["name"] = "Skurri",
+			["id"] = "skurri.ttf",
+		},
+	},
+	AVAILABLE_FONT_SIZES =  {
+		{
+			["name"] = "8",
+			["id"] = 8,
+		},
+		{
+			["name"] = "9",
+			["id"] = 9,
+		},
+		{
+			["name"] = "10",
+			["id"] = 10,
+		},
+		{
+			["name"] = "11",
+			["id"] = 11,
+		},
+		{
+			["name"] = "12",
+			["id"] = 12,
+		},
+		{
+			["name"] = "13",
+			["id"] = 13,
+		},
+		{
+			["name"] = "14",
+			["id"] = 14,
+		},
+		{
+			["name"] = "15",
+			["id"] = 15,
+		},
+		{
+			["name"] = "16",
+			["id"] = 16,
+		},
+	},
+	-- Min and max size of font
+	MIN_SIZE = 8,
+	MAX_SIZE = 16,
+
     -- Simulates a "tab"
     TAB = "     ",
 
@@ -62,33 +135,13 @@ MTSLUI_FONTS = {
 	-- Initialise the Fonts used in addon (only call after locale is set)
 	-------------------------------------------------------------------------
 	Initialise = function(self)
-		local SIZE_SMALL = 10
-		local SIZE_NORMAL = 11
-		local SIZE_LARGE = 13
-		self.FONTS.SMALL = CreateFont("MTSL_SmallText")
-		self.FONTS.NORMAL = CreateFont("MTSL_NormalText")
-		self.FONTS.LARGE = CreateFont("MTSL_LargeText")
+		self.FONTS.TEXT = CreateFont("MTSL_TextText")
+		self.FONTS.LABEL = CreateFont("MTSL_LabelText")
+		self.FONTS.TITLE = CreateFont("MTSL_TitleText")
 
-		local font_names = {
-			["frFR"] = "FRIZQT__",
-			["enGB"] = "FRIZQT__",
-			["enUS"] = "FRIZQT__",
-			["deDE"] = "FRIZQT__",
-			["ruRU"] = "FRIZQT___CYR",
-			["esES"] = "FRIZQT__",
-			["esMX"] = "FRIZQT__",
-			["ptBR"] = "FRIZQT__",
-			["koKR"] = "2002",
-			["zhCN"] = "ARKai_T",
-		}
-		local font_name = font_names[GetLocale()]
-		-- fall back to default
-		if font_name == nil then
-			font_name = "FRITZQ__"
-		end
-		self.FONTS.SMALL:SetFont("Fonts\\" .. font_name .. ".TTF", SIZE_SMALL, "OUTLINE")
-		self.FONTS.NORMAL:SetFont("Fonts\\" .. font_name .. ".TTF", SIZE_NORMAL, "OUTLINE")
-		self.FONTS.LARGE:SetFont("Fonts\\" .. font_name .. ".TTF", SIZE_LARGE, "OUTLINE")
+		self.FONTS.TEXT:SetFont("Fonts\\" .. MTSLUI_PLAYER.FONT.NAME, MTSLUI_PLAYER.FONT.SIZE.TEXT, "OUTLINE")
+		self.FONTS.LABEL:SetFont("Fonts\\" .. MTSLUI_PLAYER.FONT.NAME, MTSLUI_PLAYER.FONT.SIZE.LABEL, "OUTLINE")
+		self.FONTS.TITLE:SetFont("Fonts\\" .. MTSLUI_PLAYER.FONT.NAME, MTSLUI_PLAYER.FONT.SIZE.TITLE, "OUTLINE")
 	end,
 
 	-------------------------------------------------------------------------

@@ -50,7 +50,7 @@ MTSLUI_PROFESSION_LIST_FRAME = {
             table.insert(self.PROF_BUTTONS, skill_button)
             -- Show label with amount of skills for this profession
             local title_text = MTSL_DATA.AMOUNT_SKILLS[self.shown_professions[i]]
-            skill_button.text = MTSLUI_TOOLS:CreateLabel(skill_button, title_text, 0, -12, "NORMAL", "BOTTOM")
+            skill_button.text = MTSLUI_TOOLS:CreateLabel(skill_button, title_text, 0, -12, "LABEL", "BOTTOM")
 
             i = i + 1
         end
@@ -182,6 +182,9 @@ MTSLUI_PROFESSION_LIST_FRAME = {
             -- get the known skills for the current player
             else
                 prof_skills = MTSL_LOGIC_PLAYER_NPC:GetLearnedSkillsForPlayerForProfession(self.current_player.NAME, self.current_player.REALM, self.shown_professions[index])
+            end
+            if self.filter_frame ~= nil then
+                self.filter_frame:ChangeProfession(self.shown_professions[index])
             end
             self.list_item_frame:ChangeProfession(self.shown_professions[index], prof_skills)
         end

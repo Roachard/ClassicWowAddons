@@ -26,7 +26,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [1]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -51,7 +51,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "23",
 			["is_elite"] = 0,
 		},
-	}, -- [2]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -76,7 +76,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [3]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -101,7 +101,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [4]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -126,7 +126,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [5]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -151,7 +151,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "19",
 			["is_elite"] = 0,
 		},
-	}, -- [6]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -176,7 +176,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [7]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -201,7 +201,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [8]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -226,7 +226,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "21",
 			["is_elite"] = 0,
 		},
-	}, -- [9]
+	},
 	{
 		["zone_id"] = 1581,
 		["phase"] = 1,
@@ -251,7 +251,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [10]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -276,7 +276,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [11]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -301,7 +301,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "13",
 			["is_elite"] = 0,
 		},
-	}, -- [12]
+	},
 	{
 		["zone_id"] = 1581,
 		["phase"] = 1,
@@ -322,7 +322,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 1,
 		},
-	}, -- [13]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -347,7 +347,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [14]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -372,7 +372,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [15]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -397,7 +397,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "38",
 			["is_elite"] = 0,
 		},
-	}, -- [16]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -422,7 +422,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "39",
 			["is_elite"] = 0,
 		},
-	}, -- [17]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -447,7 +447,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [18]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -472,7 +472,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [19]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -497,7 +497,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [20]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -522,7 +522,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 1,
 		},
-	}, -- [21]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -547,7 +547,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "33",
 			["is_elite"] = 0,
 		},
-	}, -- [22]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -572,7 +572,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [23]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -597,7 +597,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [24]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -622,7 +622,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 1,
 		},
-	}, -- [25]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -647,7 +647,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 1,
 		},
-	}, -- [26]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -672,7 +672,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "29",
 			["is_elite"] = 1,
 		},
-	}, -- [27]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -697,7 +697,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 1,
 		},
-	}, -- [28]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -722,7 +722,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [29]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -747,7 +747,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [30]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -772,7 +772,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [31]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -797,7 +797,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [32]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -822,7 +822,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [33]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -847,7 +847,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [34]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -872,7 +872,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [35]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -897,7 +897,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [36]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -922,7 +922,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [37]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -947,7 +947,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [38]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -972,7 +972,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [39]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -997,7 +997,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [40]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1022,7 +1022,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [41]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1047,7 +1047,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [42]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1072,7 +1072,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [43]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1097,7 +1097,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [44]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1122,7 +1122,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [45]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1147,7 +1147,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [46]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -1172,7 +1172,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [47]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -1197,7 +1197,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "9",
 			["is_elite"] = 0,
 		},
-	}, -- [48]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -1222,7 +1222,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 1,
 		},
-	}, -- [49]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -1247,7 +1247,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [50]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -1272,7 +1272,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [51]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -1297,7 +1297,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [52]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -1322,7 +1322,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 0,
 		},
-	}, -- [53]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -1347,7 +1347,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [54]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -1372,7 +1372,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [55]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1397,7 +1397,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [56]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -1422,7 +1422,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [57]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1447,7 +1447,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [58]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -1472,7 +1472,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [59]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1497,7 +1497,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [60]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -1523,7 +1523,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "39",
 			["is_elite"] = 0,
 		},
-	}, -- [61]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -1548,7 +1548,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [62]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -1573,7 +1573,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [63]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -1598,7 +1598,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [64]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1623,7 +1623,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [65]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1648,7 +1648,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [66]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -1673,7 +1673,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [67]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -1698,7 +1698,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [68]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -1723,7 +1723,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [69]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -1748,7 +1748,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [70]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -1773,7 +1773,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [71]
+	},
 	{
 		["zone_id"] = 1581,
 		["phase"] = 1,
@@ -1794,7 +1794,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "19",
 			["is_elite"] = 1,
 		},
-	}, -- [72]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1819,7 +1819,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [73]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1844,7 +1844,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [74]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1869,7 +1869,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [75]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1894,7 +1894,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 0,
 		},
-	}, -- [76]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1919,7 +1919,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 1,
 		},
-	}, -- [77]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1944,7 +1944,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [78]
+	},
 	{
 		["zone_id"] = 2057,
 		["phase"] = 1,
@@ -1969,7 +1969,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [79]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -1994,7 +1994,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [80]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -2019,7 +2019,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [81]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -2044,7 +2044,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [82]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -2069,7 +2069,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [83]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -2094,7 +2094,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "9",
 			["is_elite"] = 0,
 		},
-	}, -- [84]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -2119,7 +2119,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [85]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2144,7 +2144,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [86]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2169,7 +2169,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [87]
+	},
 	{
 		["zone_id"] = 36,
 		["phase"] = 1,
@@ -2195,7 +2195,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [88]
+	},
 	{
 		["zone_id"] = 36,
 		["phase"] = 1,
@@ -2221,7 +2221,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "38",
 			["is_elite"] = 0,
 		},
-	}, -- [89]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2246,7 +2246,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [90]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -2271,7 +2271,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "8",
 			["is_elite"] = 0,
 		},
-	}, -- [91]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -2296,7 +2296,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [92]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -2321,7 +2321,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "11",
 			["is_elite"] = 0,
 		},
-	}, -- [93]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -2346,7 +2346,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [94]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2371,7 +2371,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [95]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2396,7 +2396,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "29",
 			["is_elite"] = 0,
 		},
-	}, -- [96]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2421,7 +2421,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [97]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2446,7 +2446,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [98]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2471,7 +2471,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 0,
 		},
-	}, -- [99]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2496,7 +2496,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [100]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2521,7 +2521,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [101]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2546,7 +2546,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "29",
 			["is_elite"] = 0,
 		},
-	}, -- [102]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2571,7 +2571,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [103]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2596,7 +2596,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [104]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2621,7 +2621,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [105]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2646,7 +2646,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [106]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2671,7 +2671,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 0,
 		},
-	}, -- [107]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2696,7 +2696,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [108]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -2721,7 +2721,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [109]
+	},
 	{
 		["zone_id"] = 36,
 		["phase"] = 1,
@@ -2746,7 +2746,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "49",
 			["is_elite"] = 0,
 		},
-	}, -- [110]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -2771,7 +2771,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [111]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -2796,7 +2796,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [112]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -2821,7 +2821,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "39",
 			["is_elite"] = 0,
 		},
-	}, -- [113]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -2846,7 +2846,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 0,
 		},
-	}, -- [114]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -2871,7 +2871,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [115]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -2896,12 +2896,19 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 1,
 		},
-	}, -- [116]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
 		["special_action"] = {
-			["English"] = "Any Troll Camp Around The Lake",
+			["English"] = "Any troll camp around the lake",
+			["Portuguese"] = "Qualquer acampamento de trolls ao redor do lago",
+			["Russian"] = "Любой тролль в лагере вокруг озера",
+			["Chinese"] = "湖周围的任何巨魔营地",
+			["Spanish"] = "Cualquier campamento de trolls alrededor del lago",
+			["French"] = "Tout camp de trolls autour du lac",
+			["Korean"] = "호수 주변의 트롤 캠프",
+			["German"] = "Jedes Trollcamp rund um den See",
 		},
 		["id"] = 2606,
 		["location"] = {
@@ -2924,7 +2931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 1,
 		},
-	}, -- [117]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -2949,7 +2956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 0,
 		},
-	}, -- [118]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -2974,7 +2981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "38",
 			["is_elite"] = 0,
 		},
-	}, -- [119]
+	},
 	{
 		["zone_id"] = 47,
 		["phase"] = 1,
@@ -2999,7 +3006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "47",
 			["is_elite"] = 1,
 		},
-	}, -- [120]
+	},
 	{
 		["zone_id"] = 47,
 		["phase"] = 1,
@@ -3024,7 +3031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 1,
 		},
-	}, -- [121]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3049,7 +3056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [122]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3074,7 +3081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [123]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -3099,7 +3106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [124]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -3124,7 +3131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [125]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3149,7 +3156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [126]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3174,7 +3181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [127]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -3199,7 +3206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [128]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -3224,7 +3231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [129]
+	},
 	{
 		["zone_id"] = 36,
 		["phase"] = 1,
@@ -3249,7 +3256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [130]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3274,7 +3281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [131]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3299,7 +3306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [132]
+	},
 	{
 		["zone_id"] = 47,
 		["phase"] = 1,
@@ -3324,7 +3331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [133]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -3349,7 +3356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [134]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -3374,7 +3381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [135]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3399,7 +3406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [136]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -3424,7 +3431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [137]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -3449,7 +3456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [138]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3474,7 +3481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [139]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -3499,7 +3506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [140]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3524,7 +3531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [141]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3549,7 +3556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [142]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3574,7 +3581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "39",
 			["is_elite"] = 0,
 		},
-	}, -- [143]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3599,7 +3606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [144]
+	},
 	{
 		["zone_id"] = 3,
 		["phase"] = 1,
@@ -3624,7 +3631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [145]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3649,7 +3656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 0,
 		},
-	}, -- [146]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -3674,7 +3681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "33",
 			["is_elite"] = 0,
 		},
-	}, -- [147]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3699,7 +3706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [148]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3724,7 +3731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [149]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3749,7 +3756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [150]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3774,7 +3781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [151]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3799,7 +3806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [152]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -3824,7 +3831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [153]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -3849,7 +3856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [154]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -3874,7 +3881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "23",
 			["is_elite"] = 0,
 		},
-	}, -- [155]
+	},
 	{
 		["zone_id"] = 3,
 		["phase"] = 1,
@@ -3899,7 +3906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [156]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -3924,7 +3931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [157]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -3949,7 +3956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [158]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -3974,7 +3981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [159]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -3999,7 +4006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [160]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4024,7 +4031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [161]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4049,7 +4056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [162]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4074,7 +4081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [163]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4099,7 +4106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [164]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4124,7 +4131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [165]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4149,7 +4156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [166]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4174,7 +4181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [167]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4199,7 +4206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [168]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -4224,7 +4231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "21",
 			["is_elite"] = 0,
 		},
-	}, -- [169]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -4249,7 +4256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "12",
 			["is_elite"] = 0,
 		},
-	}, -- [170]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -4274,7 +4281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "23",
 			["is_elite"] = 0,
 		},
-	}, -- [171]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -4299,7 +4306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [172]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -4324,7 +4331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [173]
+	},
 	{
 		["zone_id"] = 44,
 		["phase"] = 1,
@@ -4349,7 +4356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [174]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -4374,7 +4381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [175]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -4399,7 +4406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [176]
+	},
 	{
 		["zone_id"] = 10,
 		["phase"] = 1,
@@ -4424,7 +4431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [177]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -4449,7 +4456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [178]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -4474,7 +4481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "16",
 			["is_elite"] = 0,
 		},
-	}, -- [179]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -4499,7 +4506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [180]
+	},
 	{
 		["zone_id"] = 11,
 		["phase"] = 1,
@@ -4524,7 +4531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [181]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -4549,7 +4556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [182]
+	},
 	{
 		["zone_id"] = 38,
 		["phase"] = 1,
@@ -4574,7 +4581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [183]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4599,7 +4606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [184]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4624,7 +4631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [185]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4649,7 +4656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [186]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4674,7 +4681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [187]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4699,7 +4706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [188]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4724,7 +4731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [189]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4749,7 +4756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [190]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4774,7 +4781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [191]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4799,7 +4806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [192]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4824,7 +4831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [193]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4849,7 +4856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [194]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4874,7 +4881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [195]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4899,7 +4906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [196]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4924,7 +4931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [197]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -4949,7 +4956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [198]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -4974,7 +4981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "16",
 			["is_elite"] = 0,
 		},
-	}, -- [199]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -4999,7 +5006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [200]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -5024,7 +5031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [201]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -5049,7 +5056,32 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [202]
+	},
+	{
+		["zone_id"] = 1637,
+		["phase"] = 1,
+		["id"] = 3413,
+		["location"] = {
+			["y"] = "75.60",
+			["x"] = "25.20",
+		},
+		["name"] = {
+			["Portuguese"] = "Sovik",
+			["Russian"] = "Совик",
+			["Chinese"] = "索维克",
+			["Spanish"] = "Sovik",
+			["French"] = "Sovik'",
+			["English"] = "Sovik",
+			["Korean"] = "소빅",
+			["German"] = "Sovik",
+		},
+		["reacts"] = "Horde",
+		["xp_level"] = {
+			["max"] = "30",
+			["min"] = "30",
+			["is_elite"] = 0,
+		},
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5074,7 +5106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "13",
 			["is_elite"] = 0,
 		},
-	}, -- [203]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5099,7 +5131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [204]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5124,7 +5156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [205]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5149,7 +5181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [206]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5174,7 +5206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [207]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5199,7 +5231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "16",
 			["is_elite"] = 0,
 		},
-	}, -- [208]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5224,7 +5256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [209]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5249,7 +5281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [210]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5274,7 +5306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [211]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5299,7 +5331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [212]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5324,7 +5356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [213]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -5349,7 +5381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [214]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -5374,7 +5406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [215]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -5399,7 +5431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "12",
 			["is_elite"] = 1,
 		},
-	}, -- [216]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -5424,7 +5456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 1,
 		},
-	}, -- [217]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -5449,7 +5481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [218]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -5474,7 +5506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [219]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -5499,7 +5531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [220]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -5524,7 +5556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "19",
 			["is_elite"] = 0,
 		},
-	}, -- [221]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -5549,7 +5581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [222]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -5574,7 +5606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [223]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -5599,7 +5631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [224]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -5624,7 +5656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [225]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -5649,7 +5681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "29",
 			["is_elite"] = 0,
 		},
-	}, -- [226]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5674,7 +5706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [227]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -5699,7 +5731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "19",
 			["is_elite"] = 0,
 		},
-	}, -- [228]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5724,7 +5756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [229]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -5749,7 +5781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [230]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5774,7 +5806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [231]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -5799,7 +5831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [232]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -5824,7 +5856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [233]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5849,7 +5881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [234]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5874,7 +5906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [235]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5899,7 +5931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [236]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5924,7 +5956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [237]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5949,7 +5981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [238]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5974,7 +6006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [239]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -5999,7 +6031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [240]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -6024,7 +6056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [241]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -6049,7 +6081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [242]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -6074,7 +6106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 1,
 		},
-	}, -- [243]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -6099,7 +6131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [244]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -6124,7 +6156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [245]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6149,7 +6181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [246]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6174,7 +6206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [247]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6199,7 +6231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [248]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -6224,7 +6256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [249]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -6249,7 +6281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [250]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -6274,7 +6306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "29",
 			["is_elite"] = 0,
 		},
-	}, -- [251]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -6299,7 +6331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [252]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6324,7 +6356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [253]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6349,7 +6381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [254]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6374,7 +6406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [255]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6399,7 +6431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [256]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6424,7 +6456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [257]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6449,7 +6481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [258]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6474,7 +6506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [259]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6499,7 +6531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [260]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -6524,7 +6556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [261]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -6549,7 +6581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [262]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -6574,7 +6606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [263]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -6599,7 +6631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "20",
 			["is_elite"] = 0,
 		},
-	}, -- [264]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -6624,7 +6656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [265]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -6649,7 +6681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [266]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -6674,7 +6706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [267]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -6699,7 +6731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [268]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -6724,7 +6756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [269]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -6749,7 +6781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [270]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6774,7 +6806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [271]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6799,7 +6831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [272]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6824,7 +6856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [273]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6849,7 +6881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [274]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6874,7 +6906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [275]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6899,7 +6931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [276]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6924,7 +6956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [277]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6949,7 +6981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [278]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6974,7 +7006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [279]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -6999,7 +7031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [280]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7024,7 +7056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [281]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7049,7 +7081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [282]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7074,7 +7106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [283]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7099,7 +7131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [284]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7124,7 +7156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [285]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7149,7 +7181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [286]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7174,7 +7206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [287]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7199,7 +7231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [288]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -7224,7 +7256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [289]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -7249,7 +7281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [290]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -7274,7 +7306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [291]
+	},
 	{
 		["zone_id"] = 400,
 		["phase"] = 1,
@@ -7299,7 +7331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [292]
+	},
 	{
 		["zone_id"] = 400,
 		["phase"] = 1,
@@ -7324,7 +7356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [293]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -7349,7 +7381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [294]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -7374,7 +7406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 0,
 		},
-	}, -- [295]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -7399,7 +7431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "37",
 			["is_elite"] = 0,
 		},
-	}, -- [296]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7424,7 +7456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [297]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7449,7 +7481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [298]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7474,7 +7506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [299]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7499,7 +7531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [300]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7524,7 +7556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 1,
 		},
-	}, -- [301]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7549,7 +7581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [302]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7574,7 +7606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [303]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7599,7 +7631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [304]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7624,7 +7656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [305]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7649,7 +7681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [306]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7674,7 +7706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [307]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7699,7 +7731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [308]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7724,7 +7756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [309]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -7749,7 +7781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [310]
+	},
 	{
 		["zone_id"] = 1417,
 		["phase"] = 1,
@@ -7774,7 +7806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "47",
 			["is_elite"] = 1,
 		},
-	}, -- [311]
+	},
 	{
 		["zone_id"] = 1417,
 		["phase"] = 1,
@@ -7799,7 +7831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 1,
 		},
-	}, -- [312]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -7824,7 +7856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [313]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -7849,7 +7881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [314]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7874,7 +7906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [315]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7899,7 +7931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [316]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7924,7 +7956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [317]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7949,7 +7981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [318]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7974,7 +8006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [319]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -7999,7 +8031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "33",
 			["is_elite"] = 0,
 		},
-	}, -- [320]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -8024,7 +8056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [321]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -8049,7 +8081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [322]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -8074,7 +8106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [323]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -8099,7 +8131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [324]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -8124,7 +8156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [325]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8149,7 +8181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [326]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8174,7 +8206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [327]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8199,7 +8231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [328]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8224,7 +8256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "41",
 			["is_elite"] = 0,
 		},
-	}, -- [329]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8249,7 +8281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "41",
 			["is_elite"] = 0,
 		},
-	}, -- [330]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -8274,7 +8306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "44",
 			["is_elite"] = 0,
 		},
-	}, -- [331]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -8299,7 +8331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [332]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -8324,7 +8356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [333]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -8349,7 +8381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "19",
 			["is_elite"] = 0,
 		},
-	}, -- [334]
+	},
 	{
 		["zone_id"] = 130,
 		["phase"] = 1,
@@ -8374,7 +8406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [335]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -8399,7 +8431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [336]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -8424,7 +8456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [337]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -8449,7 +8481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [338]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -8474,7 +8506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "28",
 			["is_elite"] = 0,
 		},
-	}, -- [339]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -8499,7 +8531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [340]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -8524,7 +8556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [341]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -8549,7 +8581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "47",
 			["is_elite"] = 0,
 		},
-	}, -- [342]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -8574,7 +8606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 1,
 		},
-	}, -- [343]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -8599,7 +8631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "13",
 			["is_elite"] = 0,
 		},
-	}, -- [344]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -8624,7 +8656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "9",
 			["is_elite"] = 0,
 		},
-	}, -- [345]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -8649,7 +8681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "14",
 			["is_elite"] = 0,
 		},
-	}, -- [346]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -8674,7 +8706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "15",
 			["is_elite"] = 0,
 		},
-	}, -- [347]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -8699,7 +8731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [348]
+	},
 	{
 		["zone_id"] = 4,
 		["phase"] = 1,
@@ -8724,7 +8756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [349]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -8749,7 +8781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [350]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -8774,7 +8806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [351]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -8799,7 +8831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [352]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -8824,7 +8856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [353]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -8849,7 +8881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [354]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -8874,7 +8906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [355]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -8899,7 +8931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [356]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -8924,7 +8956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [357]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -8949,7 +8981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "13",
 			["is_elite"] = 0,
 		},
-	}, -- [358]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -8974,7 +9006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [359]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -8999,7 +9031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [360]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -9024,7 +9056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 0,
 		},
-	}, -- [361]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -9049,7 +9081,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [362]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -9074,7 +9106,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [363]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -9099,7 +9131,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [364]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -9124,7 +9156,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [365]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -9149,7 +9181,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [366]
+	},
 	{
 		["zone_id"] = 400,
 		["phase"] = 1,
@@ -9174,7 +9206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [367]
+	},
 	{
 		["zone_id"] = 400,
 		["phase"] = 1,
@@ -9199,7 +9231,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [368]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -9224,7 +9256,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [369]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -9249,7 +9281,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [370]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -9274,7 +9306,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [371]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -9299,7 +9331,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [372]
+	},
 	{
 		["zone_id"] = 40,
 		["phase"] = 1,
@@ -9324,7 +9356,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [373]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -9349,7 +9381,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [374]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -9374,7 +9406,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 0,
 		},
-	}, -- [375]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -9399,7 +9431,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [376]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -9424,7 +9456,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [377]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -9449,7 +9481,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 0,
 		},
-	}, -- [378]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -9474,7 +9506,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [379]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -9499,7 +9531,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [380]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -9524,7 +9556,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [381]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -9549,7 +9581,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 0,
 		},
-	}, -- [382]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -9574,7 +9606,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 0,
 		},
-	}, -- [383]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -9599,7 +9631,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [384]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -9624,7 +9656,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [385]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -9649,7 +9681,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [386]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -9674,7 +9706,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 1,
 		},
-	}, -- [387]
+	},
 	{
 		["zone_id"] = 41,
 		["phase"] = 1,
@@ -9699,7 +9731,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [388]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -9724,7 +9756,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [389]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9749,7 +9781,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [390]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9774,7 +9806,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 1,
 		},
-	}, -- [391]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9799,7 +9831,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [392]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9824,7 +9856,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [393]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9849,7 +9881,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [394]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -9874,7 +9906,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [395]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -9899,7 +9931,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [396]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -9924,7 +9956,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [397]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -9949,7 +9981,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [398]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -9974,7 +10006,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [399]
+	},
 	{
 		["zone_id"] = 721,
 		["phase"] = 1,
@@ -9999,7 +10031,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "34",
 			["is_elite"] = 1,
 		},
-	}, -- [400]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -10024,7 +10056,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [401]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10049,12 +10081,19 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [402]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
-		["special_action"] = {
-			["English"] = "Spawns during quest to escort Robot Chicken",
+			["special_action"] = {
+			["English"] = "Spawns during quest to escort robot chicken",
+			["Portuguese"] = "Nasce durante a missão de escoltar frango robô",
+			["Russian"] = "Появляется во время квеста на сопровождение робота-курицы",
+			["Chinese"] = "在寻找护卫机器人鸡的过程中产生",
+			["Spanish"] = "Aparece durante la búsqueda para escoltar a un pollo robot",
+			["French"] = "Apparaît pendant la quête pour escorter un poulet robot",
+			["Korean"] = "로봇 치킨을 호위하기 위해 퀘스트 중 생성",
+			["German"] = "Erscheint während der Suche nach einem Roboterhuhn",
 		},
 		["id"] = 7805,
 		["location"] = {
@@ -10077,7 +10116,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [403]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10102,7 +10141,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [404]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10127,7 +10166,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "49",
 			["is_elite"] = 0,
 		},
-	}, -- [405]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10152,7 +10191,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "44",
 			["is_elite"] = 0,
 		},
-	}, -- [406]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -10177,7 +10216,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 0,
 		},
-	}, -- [407]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -10202,7 +10241,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [408]
+	},
 	{
 		["zone_id"] = 3,
 		["phase"] = 1,
@@ -10227,7 +10266,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [409]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -10252,7 +10291,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [410]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -10277,7 +10316,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [411]
+	},
 	{
 		["zone_id"] = 400,
 		["phase"] = 1,
@@ -10302,7 +10341,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [412]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -10327,7 +10366,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [413]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10352,7 +10391,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [414]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -10377,7 +10416,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [415]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10402,7 +10441,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [416]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10427,7 +10466,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [417]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10452,7 +10491,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [418]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10477,7 +10516,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [419]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10502,7 +10541,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [420]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10527,7 +10566,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [421]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10552,7 +10591,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [422]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10577,7 +10616,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [423]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -10602,7 +10641,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [424]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10627,7 +10666,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [425]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -10652,7 +10691,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [426]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -10677,7 +10716,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [427]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10702,7 +10741,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [428]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -10727,7 +10766,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "49",
 			["is_elite"] = 0,
 		},
-	}, -- [429]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -10752,7 +10791,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [430]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -10777,7 +10816,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "49",
 			["is_elite"] = 0,
 		},
-	}, -- [431]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -10802,7 +10841,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [432]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -10827,7 +10866,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [433]
+	},
 	{
 		["zone_id"] = 4,
 		["phase"] = 1,
@@ -10852,7 +10891,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "49",
 			["is_elite"] = 0,
 		},
-	}, -- [434]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -10877,7 +10916,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "18",
 			["is_elite"] = 0,
 		},
-	}, -- [435]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -10902,7 +10941,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "22",
 			["is_elite"] = 0,
 		},
-	}, -- [436]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -10927,7 +10966,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 0,
 		},
-	}, -- [437]
+	},
 	{
 		["zone_id"] = 1,
 		["phase"] = 1,
@@ -10952,7 +10991,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "10",
 			["is_elite"] = 0,
 		},
-	}, -- [438]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -10977,7 +11016,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 0,
 		},
-	}, -- [439]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11002,7 +11041,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [440]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11027,7 +11066,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 0,
 		},
-	}, -- [441]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11052,7 +11091,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 0,
 		},
-	}, -- [442]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11077,7 +11116,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [443]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11102,7 +11141,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [444]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11127,7 +11166,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [445]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -11152,7 +11191,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "44",
 			["is_elite"] = 0,
 		},
-	}, -- [446]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -11177,7 +11216,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [447]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -11202,7 +11241,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 0,
 		},
-	}, -- [448]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -11227,7 +11266,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "35",
 			["is_elite"] = 0,
 		},
-	}, -- [449]
+	},
 	{
 		["zone_id"] = 722,
 		["phase"] = 1,
@@ -11252,7 +11291,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [450]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -11277,7 +11316,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 0,
 		},
-	}, -- [451]
+	},
 	{
 		["zone_id"] = 17,
 		["phase"] = 1,
@@ -11302,7 +11341,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [452]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -11327,7 +11366,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [453]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11348,7 +11387,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [454]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11369,7 +11408,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [455]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11390,7 +11429,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [456]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11411,7 +11450,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [457]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11432,7 +11471,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [458]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11453,7 +11492,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 1,
 		},
-	}, -- [459]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11474,7 +11513,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 1,
 		},
-	}, -- [460]
+	},
 	{
 		["zone_id"] = 51,
 		["phase"] = 1,
@@ -11499,12 +11538,19 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 1,
 		},
-	}, -- [461]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
 		["special_action"] = {
 			["English"] = "Boss in arena event",
+			["Chinese"] = "舞台上的老板事件",
+			["Spanish"] = "Jefe en evento de arena",
+			["Portuguese"] = "Chefe no evento de arena",
+			["Russian"] = "Босс на арене",
+			["French"] = "Boss dans l'arène",
+			["Korean"] = "경기장 이벤트에서 보스",
+			["German"] = "Boss im Arena-Event",
 		},
 		["id"] = 9028,
 		["location"] = {
@@ -11527,7 +11573,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [462]
+	},
 	{
 		["zone_id"] = 3,
 		["phase"] = 1,
@@ -11552,7 +11598,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "38",
 			["is_elite"] = 0,
 		},
-	}, -- [463]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11577,7 +11623,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [464]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11602,7 +11648,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 1,
 		},
-	}, -- [465]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11627,7 +11673,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 1,
 		},
-	}, -- [466]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11652,7 +11698,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 1,
 		},
-	}, -- [467]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11677,7 +11723,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "56",
 			["is_elite"] = 1,
 		},
-	}, -- [468]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -11702,7 +11748,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 1,
 		},
-	}, -- [469]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -11727,7 +11773,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [470]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11752,7 +11798,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 1,
 		},
-	}, -- [471]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11777,7 +11823,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 1,
 		},
-	}, -- [472]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11802,7 +11848,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 1,
 		},
-	}, -- [473]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11827,7 +11873,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 1,
 		},
-	}, -- [474]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -11852,7 +11898,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "53",
 			["is_elite"] = 1,
 		},
-	}, -- [475]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -11877,7 +11923,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [476]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11898,7 +11944,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 1,
 		},
-	}, -- [477]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11919,7 +11965,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 1,
 		},
-	}, -- [478]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -11944,7 +11990,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [479]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -11965,7 +12011,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 1,
 		},
-	}, -- [480]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -11990,7 +12036,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "45",
 			["is_elite"] = 0,
 		},
-	}, -- [481]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12015,7 +12061,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [482]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -12040,7 +12086,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "41",
 			["is_elite"] = 0,
 		},
-	}, -- [483]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12065,7 +12111,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [484]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -12086,7 +12132,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "47",
 			["is_elite"] = 1,
 		},
-	}, -- [485]
+	},
 	{
 		["zone_id"] = 141,
 		["phase"] = 1,
@@ -12111,7 +12157,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [486]
+	},
 	{
 		["zone_id"] = 46,
 		["phase"] = 1,
@@ -12136,12 +12182,19 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [487]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
 		["special_action"] = {
 			["English"] = "Spawns during father flame event",
+			["Portuguese"] = "Nasce durante evento de chama do pai",
+			["Russian"] = "Появляется во время пламени отца",
+			["Chinese"] = "父亲火焰事件期间产生",
+			["Spanish"] = "Engendra durante el evento de la llama del padre",
+			["French"] = "Fraye pendant la flamme du père",
+			["Korean"] = "아버지 불꽃 이벤트 중 산란",
+			["German"] = "Erscheint während des Vaterflammenereignisses",
 		},
 		["id"] = 10264,
 		["location"] = {
@@ -12164,7 +12217,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [488]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -12189,7 +12242,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [489]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -12214,7 +12267,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [490]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -12239,7 +12292,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [491]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -12264,7 +12317,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [492]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -12289,7 +12342,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [493]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12314,7 +12367,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [494]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12339,7 +12392,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [495]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12364,7 +12417,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [496]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12389,7 +12442,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 1,
 		},
-	}, -- [497]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12414,7 +12467,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [498]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12439,7 +12492,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [499]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12464,7 +12517,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [500]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12489,7 +12542,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [501]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12514,7 +12567,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [502]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12539,7 +12592,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 1,
 		},
-	}, -- [503]
+	},
 	{
 		["zone_id"] = 2057,
 		["phase"] = 1,
@@ -12564,7 +12617,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [504]
+	},
 	{
 		["zone_id"] = 2057,
 		["phase"] = 1,
@@ -12589,7 +12642,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [505]
+	},
 	{
 		["zone_id"] = 2057,
 		["phase"] = 1,
@@ -12614,7 +12667,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 1,
 		},
-	}, -- [506]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -12639,7 +12692,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 0,
 		},
-	}, -- [507]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12664,7 +12717,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 1,
 		},
-	}, -- [508]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -12689,7 +12742,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [509]
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -12714,7 +12767,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [510]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -12739,7 +12792,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 1,
 		},
-	}, -- [511]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -12764,7 +12817,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 0,
 		},
-	}, -- [512]
+	},
 	{
 		["zone_id"] = 215,
 		["phase"] = 1,
@@ -12789,7 +12842,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [513]
+	},
 	{
 		["zone_id"] = 2017,
 		["phase"] = 1,
@@ -12814,7 +12867,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [514]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -12839,7 +12892,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [515]
+	},
 	{
 		["zone_id"] = 14,
 		["phase"] = 1,
@@ -12864,7 +12917,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [516]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -12889,7 +12942,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [517]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -12914,7 +12967,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [518]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -12939,7 +12992,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "31",
 			["is_elite"] = 0,
 		},
-	}, -- [519]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -12964,7 +13017,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "33",
 			["is_elite"] = 0,
 		},
-	}, -- [520]
+	},
 	{
 		["zone_id"] = 148,
 		["phase"] = 1,
@@ -12989,7 +13042,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [521]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13014,7 +13067,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [522]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13039,7 +13092,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [523]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -13064,7 +13117,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [524]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -13089,7 +13142,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "23",
 			["is_elite"] = 0,
 		},
-	}, -- [525]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -13114,7 +13167,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [526]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -13139,7 +13192,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [527]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -13164,7 +13217,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [528]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13189,7 +13242,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [529]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -13214,7 +13267,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [530]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -13239,7 +13292,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [531]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -13264,7 +13317,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [532]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -13289,7 +13342,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "26",
 			["is_elite"] = 0,
 		},
-	}, -- [533]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -13314,7 +13367,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "23",
 			["is_elite"] = 0,
 		},
-	}, -- [534]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -13339,7 +13392,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "25",
 			["is_elite"] = 0,
 		},
-	}, -- [535]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13364,7 +13417,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "27",
 			["is_elite"] = 0,
 		},
-	}, -- [536]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -13389,7 +13442,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "21",
 			["is_elite"] = 0,
 		},
-	}, -- [537]
+	},
 	{
 		["zone_id"] = 12,
 		["phase"] = 1,
@@ -13414,7 +13467,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "44",
 			["is_elite"] = 0,
 		},
-	}, -- [538]
+	},
 	{
 		["zone_id"] = 1337,
 		["phase"] = 1,
@@ -13439,7 +13492,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [539]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -13464,7 +13517,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "46",
 			["is_elite"] = 0,
 		},
-	}, -- [540]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13489,7 +13542,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [541]
+	},
 	{
 		["zone_id"] = 1657,
 		["phase"] = 1,
@@ -13514,7 +13567,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [542]
+	},
 	{
 		["zone_id"] = 1638,
 		["phase"] = 1,
@@ -13539,7 +13592,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [543]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -13564,7 +13617,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "24",
 			["is_elite"] = 0,
 		},
-	}, -- [544]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -13589,7 +13642,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [545]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -13614,7 +13667,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [546]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -13639,7 +13692,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [547]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -13664,7 +13717,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [548]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -13689,7 +13742,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [549]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13714,7 +13767,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [550]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13739,7 +13792,32 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [551]
+	},
+	{
+		["zone_id"] = 618,
+		["phase"] = 1,
+		["id"] = 11188,
+		["location"] = {
+			["y"] = "37.80",
+			["x"] = "60.80",
+		},
+		["name"] = {
+			["Portuguese"] = "Evie Rodacerva",
+			["Russian"] = "Иви Бурноварка",
+			["Chinese"] = "埃文·维布鲁",
+			["Spanish"] = "Evie Brebegira",
+			["French"] = "Evie Whirlbrew",
+			["English"] = "Evie Whirlbrew",
+			["Korean"] = "에비 휠브루",
+			["German"] = "Evie Whirlbrew",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "58",
+			["min"] = "58",
+			["is_elite"] = 0,
+		},
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13764,7 +13842,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [552]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13789,7 +13867,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [553]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13814,7 +13892,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [554]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -13839,7 +13917,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [555]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -13864,7 +13942,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [556]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -13889,7 +13967,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [557]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -13914,7 +13992,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 1,
 		},
-	}, -- [558]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -13939,7 +14017,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [559]
+	},
 	{
 		["zone_id"] = 361,
 		["phase"] = 1,
@@ -13965,7 +14043,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [560]
+	},
 	{
 		["zone_id"] = 2057,
 		["phase"] = 1,
@@ -13990,7 +14068,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [561]
+	},
 	{
 		["zone_id"] = 1583,
 		["phase"] = 1,
@@ -14015,7 +14093,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [562]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -14040,7 +14118,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [563]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -14065,7 +14143,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [564]
+	},
 	{
 		["zone_id"] = 493,
 		["phase"] = 1,
@@ -14090,7 +14168,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "51",
 			["is_elite"] = 0,
 		},
-	}, -- [565]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -14115,7 +14193,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [566]
+	},
 	{
 		["zone_id"] = 406,
 		["phase"] = 1,
@@ -14140,7 +14218,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "32",
 			["is_elite"] = 0,
 		},
-	}, -- [567]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -14165,7 +14243,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "38",
 			["is_elite"] = 0,
 		},
-	}, -- [568]
+	},
 	{
 		["zone_id"] = 405,
 		["phase"] = 1,
@@ -14190,7 +14268,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "36",
 			["is_elite"] = 0,
 		},
-	}, -- [569]
+	},
 	{
 		["zone_id"] = 4,
 		["phase"] = 1,
@@ -14215,7 +14293,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [570]
+	},
 	{
 		["zone_id"] = 45,
 		["phase"] = 1,
@@ -14240,7 +14318,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 0,
 		},
-	}, -- [571]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -14265,7 +14343,32 @@ MTSL_DATA["npcs"] = {
 			["min"] = "48",
 			["is_elite"] = 0,
 		},
-	}, -- [572]
+	},
+	{
+		["zone_id"] = 139,
+		["phase"] = 1,
+		["id"] = 12941,
+		["location"] = {
+			["y"] = "80.60",
+			["x"] = "57.6",
+		},
+		["name"] = {
+			["Portuguese"] = "Jessé Viálgures",
+			["Russian"] = "Джез Фарлен",
+			["Chinese"] = "贾斯·法拉恩",
+			["Spanish"] = "Jase Farlane",
+			["French"] = "Jase Farlane",
+			["English"] = "Jase Farlane",
+			["Korean"] = "제이스 파레인",
+			["German"] = "Jase Farlane",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "56",
+			["min"] = "56",
+			["is_elite"] = 0,
+		},
+	},
 	{
 		["zone_id"] = 28,
 		["phase"] = 1,
@@ -14290,7 +14393,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [573]
+	},
 	{
 		["zone_id"] = 85,
 		["phase"] = 1,
@@ -14315,7 +14418,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [574]
+	},
 	{
 		["zone_id"] = 1584,
 		["phase"] = 1,
@@ -14336,7 +14439,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [575]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -14361,7 +14464,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "59",
 			["is_elite"] = 0,
 		},
-	}, -- [576]
+	},
 	{
 		["zone_id"] = 16,
 		["phase"] = 1,
@@ -14386,7 +14489,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 0,
 		},
-	}, -- [577]
+	},
 	{
 		["zone_id"] = 47,
 		["phase"] = 1,
@@ -14411,7 +14514,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [578]
+	},
 	{
 		["zone_id"] = 490,
 		["phase"] = 1,
@@ -14436,7 +14539,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [579]
+	},
 	{
 		["zone_id"] = 331,
 		["phase"] = 1,
@@ -14461,7 +14564,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [580]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -14486,7 +14589,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "55",
 			["is_elite"] = 1,
 		},
-	}, -- [581]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -14511,7 +14614,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [582]
+	},
 	{
 		["zone_id"] = 1497,
 		["phase"] = 1,
@@ -14536,7 +14639,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [583]
+	},
 	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
@@ -14561,7 +14664,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [584]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -14586,7 +14689,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 0,
 		},
-	}, -- [585]
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -14611,7 +14714,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "43",
 			["is_elite"] = 0,
 		},
-	}, -- [586]
+	},
 	{
 		["zone_id"] = 267,
 		["phase"] = 1,
@@ -14636,7 +14739,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "30",
 			["is_elite"] = 1,
 		},
-	}, -- [587]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -14661,7 +14764,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "50",
 			["is_elite"] = 0,
 		},
-	}, -- [588]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -14686,7 +14789,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 1,
 		},
-	}, -- [589]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -14711,7 +14814,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 1,
 		},
-	}, -- [590]
+	},
 	{
 		["zone_id"] = 2557,
 		["phase"] = 1,
@@ -14736,7 +14839,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 1,
 		},
-	}, -- [591]
+	},
 	{
 		["zone_id"] = 1637,
 		["phase"] = 1,
@@ -14761,7 +14864,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [592]
+	},
 	{
 		["zone_id"] = 1519,
 		["phase"] = 1,
@@ -14786,7 +14889,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [593]
+	},
 	{
 		["zone_id"] = 2677,
 		["phase"] = 1,
@@ -14811,7 +14914,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [594]
+	},
 	{
 		["zone_id"] = 8,
 		["phase"] = 1,
@@ -14836,7 +14939,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "42",
 			["is_elite"] = 1,
 		},
-	}, -- [595]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -14861,7 +14964,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [596]
+	},
 	{
 		["zone_id"] = 618,
 		["phase"] = 1,
@@ -14886,7 +14989,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 1,
 		},
-	}, -- [597]
+	},
 	{
 		["zone_id"] = 440,
 		["phase"] = 1,
@@ -14911,7 +15014,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "52",
 			["is_elite"] = 0,
 		},
-	}, -- [598]
+	},
 	{
 		["zone_id"] = 357,
 		["phase"] = 1,
@@ -14936,7 +15039,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [599]
+	},
 	{
 		["zone_id"] = 47,
 		["phase"] = 1,
@@ -14961,7 +15064,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "40",
 			["is_elite"] = 0,
 		},
-	}, -- [600]
+	},
 	{
 		["zone_id"] = 33,
 		["phase"] = 1,
@@ -14986,7 +15089,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "63",
 			["is_elite"] = 1,
 		},
-	}, -- [601]
+	},
 	{
 		["zone_id"] = 139,
 		["phase"] = 1,
@@ -15011,7 +15114,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "61",
 			["is_elite"] = 0,
 		},
-	}, -- [602]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -15036,7 +15139,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "57",
 			["is_elite"] = 0,
 		},
-	}, -- [603]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -15061,7 +15164,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "58",
 			["is_elite"] = 0,
 		},
-	}, -- [604]
+	},
 	{
 		["zone_id"] = 3428,
 		["phase"] = 1,
@@ -15082,7 +15185,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [605]
+	},
 	{
 		["zone_id"] = 3428,
 		["phase"] = 1,
@@ -15103,7 +15206,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [606]
+	},
 	{
 		["zone_id"] = 3428,
 		["phase"] = 1,
@@ -15124,7 +15227,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "??",
 			["is_elite"] = 0,
 		},
-	}, -- [607]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -15149,7 +15252,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [608]
+	},
 	{
 		["zone_id"] = 3429,
 		["phase"] = 1,
@@ -15170,7 +15273,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "63",
 			["is_elite"] = 1,
 		},
-	}, -- [609]
+	},
 	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
@@ -15195,7 +15298,32 @@ MTSL_DATA["npcs"] = {
 			["min"] = "54",
 			["is_elite"] = 0,
 		},
-	}, -- [610]
+	},
+	{
+		["zone_id"] = 493,
+		["phase"] = 1,
+		["id"] = 15909,
+		["location"] = {
+			["y"] = "53.80",
+			["x"] = "35.30",
+		},
+		["name"] = {
+			["Portuguese"] = "Fariel Stelacanto",
+			["Russian"] = "Фариэль Песнь Звезд",
+			["Chinese"] = "法蕾尔·星歌",
+			["Spanish"] = "Fariel Cantoestelar",
+			["French"] = "Fariel Starsong",
+			["English"] = "Fariel Starsong",
+			["Korean"] = "파리엘 스타송",
+			["German"] = "Fariel Starsong",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "60",
+			["min"] = "60",
+			["is_elite"] = 0,
+		},
+	},
 	{
 		["zone_id"] = 15,
 		["phase"] = 1,
@@ -15220,7 +15348,7 @@ MTSL_DATA["npcs"] = {
 			["min"] = "62",
 			["is_elite"] = 0,
 		},
-	}, -- [611]
+	},
 	{
 		["zone_id"] = 3456,
 		["phase"] = 1,
@@ -15245,5 +15373,81 @@ MTSL_DATA["npcs"] = {
 			["min"] = "60",
 			["is_elite"] = 0,
 		},
-	}, -- [612]
+	},
+	{
+		["zone_id"] = 3456,
+		["phase"] = 1,
+		["id"] = 16376,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"] = {
+			["Portuguese"] = "Artesão Wilhelm",
+			["Russian"] = "Pемесленник Вильгельм",
+			["Chinese"] = "工匠威尔海姆",
+			["Spanish"] = "Artesano Wilhelm",
+			["French"] = "Artisan Wilhelm",
+			["English"] = "Craftsman Wilhelm",
+			["Korean"] = "기능공 빌헬름",
+			["German"] = "Handwerker Wilhelm",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "60",
+			["min"] = "60",
+			["is_elite"] = 0,
+		},
+	},
+	-- special NPCs to mrk Darkmoon Faire (one for Alliance in Elwynn forest, one in for Horde)
+	{
+		["zone_id"] = 12,
+		["id"] = 909909,
+		["phase"] = 1,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"]  = {
+			["English"] = "Darkmoon Faire",
+			["Russian"] = "Ярмарка Новолуния",
+			["French"] = "Foire de Sombrelune",
+			["Portuguese"] = "Feira de Negraluna",
+			["Korean"] = "다크문 유랑단",
+			["Chinese"] = "暗月马戏团",
+			["German"] = "Dunkelmond-Jahrmarkt",
+			["Spanish"] = "Feria de la Luna Negra",
+		},
+		["reacts"] = "Alliance",
+		["xp_level"] = {
+			["max"] = "60",
+			["min"] = "60",
+			["is_elite"] = 0,
+		},
+	},	-- [613]
+	{
+		["zone_id"] = 215,
+		["id"] = 909910,
+		["phase"] = 1,
+		["location"] = {
+			["y"] = "-",
+			["x"] = "-",
+		},
+		["name"]  = {
+			["English"] = "Darkmoon Faire",
+			["Russian"] = "Ярмарка Новолуния",
+			["French"] = "Foire de Sombrelune",
+			["Portuguese"] = "Feira de Negraluna",
+			["Korean"] = "다크문 유랑단",
+			["Chinese"] = "暗月马戏团",
+			["German"] = "Dunkelmond-Jahrmarkt",
+			["Spanish"] = "Feria de la Luna Negra",
+		},
+		["reacts"] = "Horde",
+		["xp_level"] = {
+			["max"] = "60",
+			["min"] = "60",
+			["is_elite"] = 0,
+		},
+	},
 }

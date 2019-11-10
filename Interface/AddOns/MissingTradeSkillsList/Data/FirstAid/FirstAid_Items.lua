@@ -22,12 +22,12 @@ MTSL_DATA["First Aid"]["items"] = {
 			["English"] = "Manual: Strong Anti-Venom",
 		},
 		["quality"] = "uncommon",
-	}, -- [1]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2805, -- [1]
-				13476, -- [2]
+				2805,
+				13476,
 			},
 			["price"] = 10000,
 		},
@@ -44,12 +44,12 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [2]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2805, -- [1]
-				13476, -- [2]
+				2805,
+				13476,
 			},
 			["price"] = 2200,
 		},
@@ -66,12 +66,12 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [3]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				2805, -- [1]
-				13476, -- [2]
+				2805,
+				13476,
 			},
 			["price"] = 5000,
 		},
@@ -88,13 +88,13 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 1,
-	}, -- [4]
+	},
 	{
 		["vendors"] = {
 			["sources"] = {
-				10856, -- [1]
-				10857, -- [2]
-				11536, -- [3]
+				10856,
+				10857,
+				11536,
 			},
 			["price"] = 100000,
 		},
@@ -111,5 +111,5 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 3,
-	}, -- [5]
+	},
 }
