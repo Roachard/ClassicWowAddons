@@ -1,10 +1,16 @@
-tag 135eb3660000d99436e0c2b3211860960f9fa26f Release-1-14
+tag 6008a18b42c3dd570dab7c378eb856e5aea99cd6 Release-1-15
 Author:	Stefan Pedersen <sp@ceptu.com>
-Date:	Sun Oct 13 02:00:09 2019 +0200
+Date:	Tue Nov 5 08:42:51 2019 +0100
 
-commit 2dccc5dcc08645b6eea93c8ebbb2b93280a338cd
+commit 95dab7be07289bb96630f5cba3995bb554ccd0df
 Author: Stefan Pedersen <sp@ceptu.com>
-Date:   Sun Oct 13 01:59:53 2019 +0200
+Date:   Tue Nov 5 08:42:35 2019 +0100
 
-    Tick validation significantly simplified. Running average increased to 10 ticks. Running average and average tick stored between reloads for stability. Release 1.14.
+    Reduce size of running average to 5.
+
+commit 352811a534c39394be7d4e7635f0d0c1b2abe304
+Author: Stefan Pedersen <sp@ceptu.com>
+Date:   Tue Nov 5 08:42:23 2019 +0100
+
+    Fix callback issues with using multiple color pickers in the options panel.
 
