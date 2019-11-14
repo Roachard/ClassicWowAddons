@@ -7,9 +7,22 @@ NS.FUNC = NS.FUNC or { ON = { }, OFF = { }, INIT = { }, TOOLTIPS = { }, SETVALUE
 local FUNC = NS.FUNC;
 local L = NS.L;
 if not L then return;end
+----------------------------------------------------------------------------------------------------upvalue LUA
+local math, table, string, bit = math, table, string, bit;
+local type = type;
+local assert, collectgarbage, date, difftime, error, getfenv, getmetatable, loadstring, next, newproxy, pcall, select, setfenv, setmetatable, time, type, unpack, xpcall, rawequal, rawget, rawset =
+		assert, collectgarbage, date, difftime, error, getfenv, getmetatable, loadstring, next, newproxy, pcall, select, setfenv, setmetatable, time, type, unpack, xpcall, rawequal, rawget, rawset;
+local abs, acos, asin, atan, atan2, ceil, cos, deg, exp, floor, fmod, frexp,ldexp, log, log10, max, min, mod, rad, random, sin, sqrt, tan, fastrandom =
+		abs, acos, asin, atan, atan2, ceil, cos, deg, exp, floor, fmod or math.fmod, frexp,ldexp, log, log10, max, min, mod, rad, random, sin, sqrt, tan, fastrandom;
+local format, gmatch, gsub, strbyte, strchar, strfind, strlen, strlower, strmatch, strrep, strrev, strsub, strupper, tonumber, tostring =
+		format, gmatch, gsub, strbyte, strchar, strfind, strlen, strlower, strmatch, strrep, strrev, strsub, strupper, tonumber, tostring;
+local strcmputf8i, strlenutf8, strtrim, strsplit, strjoin, strconcat, tostringall =  strcmputf8i, strlenutf8, strtrim, strsplit, strjoin, strconcat, tostringall;
+local ipairs, pairs, sort, tContains, tinsert, tremove, wipe = ipairs, pairs, sort, tContains, tinsert, tremove, wipe;
+local gcinfo, foreach, foreachi, getn = gcinfo, foreach, foreachi, getn;	-- Deprecated
 ----------------------------------------------------------------------------------------------------
-local math, table, string, pairs, type, select, tonumber, unpack = math, table, string, pairs, type, select, tonumber, unpack;
 local _G = _G;
+local _ = nil;
+----------------------------------------------------------------------------------------------------
 local GameTooltip = GameTooltip;
 ----------------------------------------------------------------------------------------------------
 local LCONFIG = L.CONFIG;
@@ -77,11 +90,13 @@ local config = nil;
 
 local key = {
 	"position",
+	"direction",
 	"scale",
 	"alpha",
 	"barStyle",
 	
 	"shortChannelName",
+	"shortChannelNameFormat",
 	"hyperLinkEnhanced",
 	"chatEmote",
 	"ColorNameByClass",
@@ -90,13 +105,16 @@ local key = {
 	"channelBarChannel",
 	"channelBarStyle",
 	
+	"channel_Ignore_Switch",
+	"channel_Ignore",
 	"bfWorld_Ignore_Switch",
 	"bfWorld_Ignore",
-	"bfWorld_Ignore_BtnSize",
+	"channel_Ignore_BtnSize",
 	
 	"welcomeToGuild",
 	"welcometoGuildMsg",
 	"broadCastNewMember",
+	"statReport",
 	"roll",
 	"DBMCountDown",
 	"ReadyCheck",
@@ -112,28 +130,36 @@ local key = {
 	"keyWordHighlight",
 	"keyWordColor",
 	"keyWord",
+	"keyWordHighlight_Exc",
+	"chat_filter",
+	"chat_filter_word",
+	"chat_filter_reverse",
 };
 local default = {
 	_version				 = 190830.0,
 	_overrideVersion		 = 190925.0,
 
-	position				 = "ABOVE_EDITOBX",
+	position				 = "BELOW_EDITBOX",
+	direction				 = "HORIZONTAL",
 	scale					 = 1.0,
 	alpha					 = 1.0,
-	barStyle				 = "blz",
+	barStyle				 = "ala",
 
 	shortChannelName		 = true,
+	shortChannelNameFormat	 = "NW",
 	hyperLinkEnhanced		 = true,
 	chatEmote				 = true,
 	ColorNameByClass		 = true,
-	shamanColor				 = true,
+	shamanColor				 = false,
 	filterQuestAnn			 = false,
-	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
+	channelBarChannel		 = { true,true,true,true,true,true,true,true,true,true,true,true,true,true },
 	channelBarStyle			 = "CHAR",
 
+	channel_Ignore_Switch 	 = true,
+	channel_Ignore			 = false,
 	bfWorld_Ignore_Switch	 = true,
 	bfWorld_Ignore			 = false,
-	bfWorld_Ignore_BtnSize	 = 28,
+	channel_Ignore_BtnSize	 = 28,
 
 	--chatFrameScroll			 = false,
 	welcomeToGuild			 = false,
@@ -142,81 +168,111 @@ local default = {
 	roll 					 = true,
 	DBMCountDown			 = true,
 	ReadyCheck				 = true,
-	--statReport				 = true,
+	statReport				 = true,
 	level					 = false,
-	copy					 = true,
+	copy					 = false,
 	copyTagColor			 = { 0.25, 0.25, 1.00 },
 	copyTagFormat			 = "#s";
 
 	--hideConfBtn				 = true,
 	editBoxTab				 = true,
-	restoreAfterWhisper		 = true,
+	restoreAfterWhisper		 = false,
 	hyperLinkHoverShow		 = true,
 
 	keyWordHighlight		 = true,
 	keyWordColor			 = { 0.00, 1.00, 0.00 },
 	keyWord					 = "",
+	keyWordHighlight_Exc	 = false,
+	chat_filter				 = false,
+	chat_filter_word		 = "",
+	chat_filter_reverse		 = false,
 };
 local override = {
 	_version				 = 190927.0,
-	barStyle				 = 'blz',
-	--level					 = false,
-	--copy					 = false,
-	hyperLinkHoverShow		 = true,
+	-- barStyle				 = 'blz',
+	-- level					 = false,
+	-- copy					 = false,
+	-- hyperLinkHoverShow		 = true,
 };
 local buttons = {
 	--[[1]]	{ 				name = "position"				,type = "DropDownMenu"	,label = LCONFIG.position				,key = "position"				,value = { "BELOW_EDITBOX", "ABOVE_EDITOBX", "ABOVE_CHATFRAME" }, },
+	--[[1]]	{ sub = true,	name = "direction"				,type = "DropDownMenu"	,label = LCONFIG.direction				,key = "direction"				,value = { "HORIZONTAL", "VERTICAL" }, },
 	--[[2]]	{ 				name = "scale"					,type = "Slider"		,label = LCONFIG.scale					,key = "scale"					,minRange = 0.1	,maxRange = 2.0	,stepSize = 0.1	, },
 	--[[3]]	{ sub = true,	name = "alpha"					,type = "Slider"		,label = LCONFIG.alpha					,key = "alpha"					,minRange = 0.0	,maxRange = 1.0	,stepSize = 0.05	, },
 	--[[4]] { sub = true,	name = "barStyle"				,type = "DropDownMenu"	,label = LCONFIG.barStyle				,key = "barStyle"				,value = { "ala", "blz" }, },
 
 	--[[5]]	{ 				name = "shortChannelName"		,type = "CheckButton"	,label = LCONFIG.shortChannelName		,key = "shortChannelName"		, },
+	--[[5]]	{ sub = true,	name = "shortChannelNameFormat"	,type = "DropDownMenu"	,label = LCONFIG.shortChannelNameFormat	,key = "shortChannelNameFormat"	,value = { "NW", "N", "W", }, },
 	--[[6]]	{ 				name = "hyperLinkEnhanced"		,type = "CheckButton"	,label = LCONFIG.hyperLinkEnhanced		,key = "hyperLinkEnhanced"		, },
 	--[[7]]	{ 				name = "chatEmote"				,type = "CheckButton"	,label = LCONFIG.chatEmote				,key = "chatEmote"				, },
+	--[[17]]{ sub = true,	name = "statReport"				,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
 	--[[8]]	{ 				name = "ColorNameByClass"		,type = "CheckButton"	,label = LCONFIG.ColorNameByClass		,key = "ColorNameByClass"		, },
 	--[[9]]	{ sub = true,	name = "shamanColor"			,type = "CheckButton"	,label = LCONFIG.shamanColor			,key = "shamanColor"			, },
 	--      { 				name = "filterQuestAnn"			,type = "CheckButton"	,label = LCONFIG.filterQuestAnn			,key = "filterQuestAnn"			, },
 	--[[10]]{ 				name = "channelBarStyle"		,type = "DropDownMenu"	,label = LCONFIG.channelBarStyle		,key = "channelBarStyle"			,value = { "CHAR", "CIRCLE", "SQUARE" }, },
 	--[[11]]{ 				name = "channelBarChannel"		,type = "MultiCB"		,label = LCONFIG.channelBarChannel		,key = "channelBarChannel"		, },
-	--[[12]]{ 				name = "bfWorld_Ignore_Switch"	,type = "CheckButton"	,label = LCONFIG.bfWorld_Ignore_Switch	,key = "bfWorld_Ignore_Switch"	, },
-	--[[13]]{ sub = true,	name = "bfWorld_Ignore_BtnSize"	,type = "Slider"		,label = LCONFIG.bfWorld_Ignore_BtnSize	,key = "bfWorld_Ignore_BtnSize"	,minRange = 12	,maxRange = 96	,stepSize = 4		, },
+	--[[12]]{ 				name = "channel_Ignore_Switch"	,type = "CheckButton"	,label = LCONFIG.channel_Ignore_Switch	,key = "channel_Ignore_Switch"	, },
+	--[[12]]{ sub = true,	name = "bfWorld_Ignore_Switch"	,type = "CheckButton"	,label = LCONFIG.bfWorld_Ignore_Switch	,key = "bfWorld_Ignore_Switch"	, },
+	--[[13]]{ sub = true,	name = "channel_Ignore_BtnSize"	,type = "Slider"		,label = LCONFIG.channel_Ignore_BtnSize	,key = "channel_Ignore_BtnSize"	,minRange = 12	,maxRange = 96	,stepSize = 4		, },
 
+	--[[21]]{ 				name = "copy"					,type = "CheckButton"	,label = LCONFIG.copy					,key = "copy"					, },
+	--[[22]]{ sub = true,	name = "copyTagColor"			,type = "ColorSelect"	,label = LCONFIG.copyTagColor			,key = "copyTagColor"			, },
+	--[[23]]{ sub = true,	name = "copyTagFormat"			,type = "Input"			,label = LCONFIG.copyTagFormat			,key = "copyTagFormat"			,note = LCONFIG.copyTagFormat		,multiLine = false	,width = 240,  },
 	--[[14]]{ 				name = "broadCastNewMember"		,type = "CheckButton"	,label = LCONFIG.broadCastNewMember		,key = "broadCastNewMember"		, },
 	--[[15]]{ sub = true,	name = "welcomeToGuild"			,type = "CheckButton"	,label = LCONFIG.welcomeToGuild			,key = "welcomeToGuild"			, },
 	--[[16]]{ sub = true,	name = "welcometoGuildMsg"		,type = "Input"			,label = LCONFIG.welcometoGuildMsg		,key = "welcometoGuildMsg"		,note = L.WTG_STRING.WELCOME_NOTES	,multiLine = true	,width = 640,  },
-	--[[17]]{ 				name = "roll"					,type = "CheckButton"	,label = LCONFIG.roll					,key = "roll"					, },
-	--[[18]]{ sub = true,	name = "DBMCountDown"			,type = "CheckButton"	,label = LCONFIG.DBMCountDown			,key = "DBMCountDown"			, },
-	--[[19]]{ sub = true,	name = "ReadyCheck"				,type = "CheckButton"	,label = LCONFIG.ReadyCheck				,key = "ReadyCheck"				, },
-	--      { 				name = "statReport"				,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
-	--[[20]]{ 				name = "copy"					,type = "CheckButton"	,label = LCONFIG.copy					,key = "copy"					, },
-	--[[21]]{ sub = true,	name = "copyTagColor"			,type = "ColorSelect"	,label = LCONFIG.copyTagColor			,key = "copyTagColor"			, },
-	--[[22]]{ sub = true,	name = "copyTagFormat"			,type = "Input"			,label = LCONFIG.copyTagFormat			,key = "copyTagFormat"			,note = LCONFIG.copyTagFormat		,multiLine = false	,width = 240,  },
-	--[[23]]{ 				name = "level"					,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
-	--[[24]]{ 				name = "editBoxTab"				,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
-	--[[25]]{ 				name = "restoreAfterWhisper"	,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
-	--[[26]]{ 				name = "hyperLinkHoverShow"		,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
-	--[[27]]{ 				name = "keyWordHighlight"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
-	--[[28]]{ sub = true,	name = "keyWordColor"			,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },
+	--[[18]]{ 				name = "roll"					,type = "CheckButton"	,label = LCONFIG.roll					,key = "roll"					, },
+	--[[19]]{ sub = true,	name = "DBMCountDown"			,type = "CheckButton"	,label = LCONFIG.DBMCountDown			,key = "DBMCountDown"			, },
+	--[[20]]{ sub = true,	name = "ReadyCheck"				,type = "CheckButton"	,label = LCONFIG.ReadyCheck				,key = "ReadyCheck"				, },
+	--[[24]]{ 				name = "level"					,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
+	--[[25]]{ 				name = "editBoxTab"				,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
+	--[[26]]{ sub = true,	name = "restoreAfterWhisper"	,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
+	--[[27]]{ 				name = "hyperLinkHoverShow"		,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
+	--[[28]]{ 				name = "keyWordHighlight"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
+	--[[29]]{ sub = true,	name = "keyWordColor"			,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },
+	--[[28]]{ sub = true,	name = "keyWordHighlight_Exc"	,type = "CheckButton"	,label = LCONFIG.keyWordHighlight_Exc	,key = "keyWordHighlight_Exc"	, },
 
+	--[[28]]{ 				name = "chat_filter"			,type = "CheckButton"	,label = LCONFIG.chat_filter			,key = "chat_filter"			, },
+	--[[29]]{ sub = true,	name = "chat_filter_word"		,type = "Input"			,label = LCONFIG.chat_filter_word		,key = "chat_filter_word"		,note = LCONFIG.chat_filter_word_NOTES, multiLine = true	,width = 320,  },
+	--[[28]]{ sub = true,	name = "chat_filter_reverse"	,type = "CheckButton"	,label = LCONFIG.chat_filter_reverse	,key = "chat_filter_reverse"	, },
 	--{ name = "hideConfBtn"				,type = "CheckButton"	,label = LCONFIG.hideConfBtn				,key = "hideConfBtn"				, },
 };
+local config_zh = {
+	channel_Ignore_BtnSize = 1,
+	bfWorld_Ignore_Switch = 1,
+	bfWorld_Ignore = 1,
+};
 if GetLocale() ~= "zhCN" and GetLocale() ~= "zhTW" then
-	table.remove(buttons, 13);
-	default.bfWorld_Ignore_BtnSize = nil;
-	override.bfWorld_Ignore_BtnSize = nil;
-	--key.bfWorld_Ignore_BtnSize = nil;
-	table.remove(key, 15);
-	table.remove(buttons, 12);
-	default.bfWorld_Ignore_Switch = nil;
-	override.bfWorld_Ignore_Switch = nil;
-	--key.bfWorld_Ignore_Switch = nil;
-	table.remove(key, 14);
-	default.bfWorld_Ignore = nil;
-	override.bfWorld_Ignore = nil;
-	--key.bfWorld_Ignore = nil;
-	table.remove(key, 13);
-	--table.remove(buttons, 9);
-	--default.filterQuestAnn = nil;
+	for i = #key, 1, -1 do
+		if config_zh[key[i]] then
+			tremove(key, i);
+		end
+	end
+	for key, _ in pairs(config_zh) do
+		default[key] = nil;
+		override[key] = nil;
+	end
+	for i = #buttons, 1, -1 do
+		if config_zh[buttons[i].key] then
+			tremove(buttons, i);
+		end
+	end
+	-- tremove(buttons, 13);
+	-- default.channel_Ignore_BtnSize = nil;
+	-- override.channel_Ignore_BtnSize = nil;
+	-- --key.channel_Ignore_BtnSize = nil;
+	-- tremove(key, 15);
+	-- tremove(buttons, 12);
+	-- default.bfWorld_Ignore_Switch = nil;
+	-- override.bfWorld_Ignore_Switch = nil;
+	-- --key.bfWorld_Ignore_Switch = nil;
+	-- tremove(key, 14);
+	-- default.bfWorld_Ignore = nil;
+	-- override.bfWorld_Ignore = nil;
+	-- --key.bfWorld_Ignore = nil;
+	-- tremove(key, 13);
+	-- --tremove(buttons, 9);
+	-- --default.filterQuestAnn = nil;
 end
 
 local function resetButtonOnClick()
@@ -380,12 +436,12 @@ local function configFrame_Init(configFrame)
 			if t.sub and prevAnchorObj then
 				cb:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				cb:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 				yOfs = yOfs + CBLineHeight;
 				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
 			prevAnchorObj = label;
 		elseif t.type == "MultiCB" then
@@ -409,13 +465,13 @@ local function configFrame_Init(configFrame)
 				anchor = { "LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0 };
 				xOfs = space_SubConfig;
 				prevWidth = prevWidth + space_SubConfig + MCWidth * num + MCInter * (num - 1) + 30;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				anchor = { "TOPLEFT", configFrame, "TOPLEFT", 30 + borderWidth, - yOfs - MCLineHeight0 - MCLineHeight1 };
 				xOfs = 0;
 				yOfs = yOfs + (MCLineHeight0 + MCLineHeight1 + MCLineHeight2 + MCLineHeight3);
 				prevWidth = MCWidth * num + MCInter * (num - 1) + 30;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
 
 			for i = 1, num do
@@ -517,12 +573,12 @@ local function configFrame_Init(configFrame)
 			if t.sub and prevAnchorObj then
 				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 				prevWidth = prevWidth + space_Header_Label + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 				yOfs = yOfs + SLLineHeight;
 				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
 			prevAnchorObj = slider;
 		elseif t.type == "DropDownMenu" then
@@ -560,7 +616,7 @@ local function configFrame_Init(configFrame)
 					text = t.value[i];
 				 };
 				dropfs:SetText(t.value[i]);
-				dropfsWidth = math.max(dropfsWidth, dropfs:GetWidth());
+				dropfsWidth = max(dropfsWidth, dropfs:GetWidth());
 			end
 			dropfs:SetText(config and config[t.key] or "");
 			drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
@@ -573,14 +629,14 @@ local function configFrame_Init(configFrame)
 			if t.sub and prevAnchorObj then
 				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 				yOfs = yOfs + DDLineHeight;
 				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
-			prevAnchorObj = button;
+			prevAnchorObj = dropfs;
 		elseif t.type == "Input" then
 			local texture = configFrame:CreateTexture(nil, "ARTWORK");
 			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
@@ -646,7 +702,7 @@ local function configFrame_Init(configFrame)
 			--end);
 			if not t.multiLine then
 				editBox:SetScript("OnEnterPressed", function(self)
-					self:SetText(string.gsub(self:GetText(), "\n", ""));
+					self:SetText(gsub(self:GetText(), "\n", ""));
 				end);
 			end
 			editBox:SetScript("OnEscapePressed", function(self)
@@ -655,7 +711,7 @@ local function configFrame_Init(configFrame)
 				self:Hide();
 			end);
 			-- editBox:SetScript("OnChar", function()
-			-- 	editBox:SetText(string.gsub(editBox:GetText(), "%%", ""));
+			-- 	editBox:SetText(gsub(editBox:GetText(), "%%", ""));
 			-- end);
 			editBox:SetPoint("LEFT", button, "RIGHT", 4, 0);
 			editBox:SetBackdrop({
@@ -681,7 +737,7 @@ local function configFrame_Init(configFrame)
 			eOK:SetPoint("BOTTOMLEFT", editBox, "TOPLEFT", 4, 0);
 			eOK:SetScript("OnClick", function(self)
 				editBox:Hide();
-				local text = string.gsub(editBox:GetText(), "%%", "%%%%");
+				local text = gsub(editBox:GetText(), "%%", "%%%%");
 				config[t.key] = editBox:GetText();
 				FUNC.SETVALUE[t.key](editBox:GetText());
 			end);
@@ -713,12 +769,12 @@ local function configFrame_Init(configFrame)
 			if t.sub and prevAnchorObj then
 				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 				yOfs = yOfs + INLineHeight;
 				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
 			prevAnchorObj = button;
 		elseif t.type == "ColorSelect" then
@@ -784,12 +840,12 @@ local function configFrame_Init(configFrame)
 			if t.sub and prevAnchorObj then
 				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			else
 				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 				yOfs = yOfs + INLineHeight;
 				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = math.max(maxWidth, prevWidth);
+				maxWidth = max(maxWidth, prevWidth);
 			end
 			prevAnchorObj = button;
 		end
@@ -1030,6 +1086,11 @@ FUNC.SETVALUE.position = function(pos, init, override)
 		--config.position = pos;
 	end
 end
+FUNC.SETVALUE.direction = function(dir, init, override)
+	if not init or override then
+		alaBaseBtn:Dir(dir);
+	end
+end
 FUNC.SETVALUE.scale = function(scale, init, override)
 	if not init or override then
 		alaBaseBtn:Scale(scale);
@@ -1083,3 +1144,24 @@ SlashCmdList["ALACHAT"] = function()
     __OnClick();
 end
 
+_G.alac_func = FUNC;
+function alac_GetConfig(key)
+	if config then
+		return config[key];
+	else
+		return default[key];
+	end
+end
+function alac_SetConfig(key, value)
+	if type(value) == 'boolean' then
+		config[key] = value;
+		if value then
+			FUNC.ON[key]();
+		else
+			FUNC.OFF[key]();
+		end
+	else
+		config[key] = value;
+		FUNC.SETVALUE[key](value);
+	end
+end

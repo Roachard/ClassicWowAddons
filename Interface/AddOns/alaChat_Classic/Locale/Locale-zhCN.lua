@@ -124,9 +124,12 @@ L.CHATBAR = {
 	LINE_DBM3 = "\124cff80ffff右键点击取消倒计时\124r",
 	T_STAT = "属性通报",
 	LINE_STAT1 = "属性报告",
+	LINE_STAT2 = "左键生成全面报告",
+	LINE_STAT3 = "右键生成偏DPS报告",
 	KEYWORDHEIGHLIGHT_0 = "关键词高亮",
 	KEYWORDHEIGHLIGHT_1 = "左键编辑关键词",
 	KEYWORDHEIGHLIGHT_2 = "右键清空关键词",
+	KEYWORDHEIGHLIGHT_3 = "按回车输入多个关键词",
 	READYCHECK = "就位确认",
 };
 L.EMOTE_STRING = {
@@ -149,11 +152,13 @@ L.CONFIG = {
 	title					 = "设置",
 
 	position				 = "位置",
+	direction				 = "方向",
 	scale					 = "缩放",
 	alpha					 = "透明度",
 	barStyle				 = "图标风格",
 
 	shortChannelName		 = "短频道名",
+	shortChannelNameFormat	 = "短频道名格式",
 	hyperLinkEnhanced		 = "聊天超链接(同时允许shift点击发送技能书技能)",
 	chatEmote				 = "聊天表情",
 	ColorNameByClass		 = "聊天职业着色",
@@ -178,7 +183,8 @@ L.CONFIG = {
 		label				 = "频道切换栏",
 	},
 	filterQuestAnn			 = "屏蔽任务进度通报(大脚、有爱)",
-	bfWorld_Ignore_Switch	 = "启用\"屏蔽世界频道按钮\"",
+	channel_Ignore_Switch	 = "公共频道开关",
+	bfWorld_Ignore_Switch	 = "世界频道开关",
 	bfWorld_Ignore_BtnSize	 = "按钮大小",
 	--chatFrameScroll			 = "聊天框左侧滚动到底部按钮",
 	roll					 = "Roll",
@@ -198,6 +204,11 @@ L.CONFIG = {
 	hyperLinkHoverShow		 = "鼠标指向聊天框物品链接时显示提示",
 	keyWordHighlight		 = "关键词高亮",
 	keyWordColor			 = "高亮颜色",
+	keyWordHighlight_Exc	 = "只显示匹配的聊天",
+	chat_filter				 = "聊天过滤",
+	chat_filter_word		 = "过滤关键词",
+	chat_filter_reverse		 = "反向过滤(显示匹配关键词的聊天)",
+	chat_filter_word_NOTES	 = "回车换行，每行一个关键词",
 };
 L.REPORT = {
 	neckLevel			 = "项链",

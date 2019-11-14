@@ -11,10 +11,6 @@ if not L then return;end
 local math,table,string,pairs,type,select,tonumber,unpack=math,table,string,pairs,type,select,tonumber,unpack;
 local _G=_G;
 ----------------------------------------------------------------------------------------------------
-local alaBaseBtn=__alaBaseBtn;
-if not alaBaseBtn then
-	return;
-end
 --------------------------------------------------copy
 local control_copy=false;
 local function insertEditBox(text)

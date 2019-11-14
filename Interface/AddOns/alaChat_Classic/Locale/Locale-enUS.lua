@@ -124,9 +124,12 @@ L.CHATBAR = {
 	LINE_DBM3 = "\124cff80ffffRight click to cancel countdown\124r",
 	T_STAT = "Stat Report",
 	LINE_STAT1 = "Stat Report",
+	LINE_STAT2 = "Left Click to build a comprehensive report",
+	LINE_STAT3 = "Right Click to build a DPS report",
 	KEYWORDHEIGHLIGHT_0 = "Key Word Highlight",
 	KEYWORDHEIGHLIGHT_1 = "Left Click to Edit Key Word",
 	KEYWORDHEIGHLIGHT_2 = "Right Click to Clear All Key Words",
+	KEYWORDHEIGHLIGHT_3 = "Press Enter to input more keys",
 	READYCHECK = "Do Ready Check",
 };
 L.EMOTE_STRING = {
@@ -149,11 +152,13 @@ L.CONFIG = {
 	title				 = "Settings",
 
 	position			 = "Position",
+	direction			 = "Direction",
 	scale				 = "Bar Scale",
 	alpha				 = "ALPHA",
 	barStyle			 = "Style of button",
 
 	shortChannelName	 = "Short channel name",
+	shortChannelNameFormat = "Short channel name format",
 	hyperLinkEnhanced	 = "Hyperlink in chat msg.(Shift click spell in the spellbook also works)",
 	chatEmote			 = "Emote",
 	ColorNameByClass	 = "Color Name By Class In ChatFrame",
@@ -177,8 +182,9 @@ L.CONFIG = {
 		label			 = "Channel bar",
 	},
 	filterQuestAnn		 = "NONE",
+	channel_Ignore_Switch	 = "Switcher for channels",
 	--
-	--
+	bfWorld_Ignore_BtnSize	 = "Size of button",
 	--chatFrameScroll		 = "Add a scroll to bottom button to the left of chatFrame",
 	roll				 = "Roll",
 	DBMCountDown		 = "Count down(need DBM)",
@@ -197,6 +203,11 @@ L.CONFIG = {
 	hyperLinkHoverShow	 = "Show tooltip when mouse hovered hyperlink in chat frame",
 	keyWordHighlight	 = "Highlight key word",
 	keyWordColor		 = "Highlight color",
+	keyWordHighlight_Exc = "Show matched msg only",
+	chat_filter				 = "Filter Chat",
+	chat_filter_word		 = "Filter key words",
+	chat_filter_reverse		 = "Reverse filter",
+	chat_filter_word_NOTES	 = "Press RETURN to enter multi words",
 };
 L.REPORT = {
 	neckLevel			 = "neck",
