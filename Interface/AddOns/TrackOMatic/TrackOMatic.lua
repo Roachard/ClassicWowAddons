@@ -183,7 +183,7 @@ StaticPopupDialogs["TRACKOMATIC_TRACK_ITEM"] = {
 --========================================
 function TrackOMatic_OnLoad(self)
     self.Version = GetAddOnMetadata("TrackOMatic", "Version");
-    self.VersionID = 10002;
+    self.VersionID = 10101;
     self.PluginCompatibility = 0x89f;
     self.IsBeingDragged = false;
     self.AutoHide = false;

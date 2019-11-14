@@ -1,8 +1,8 @@
 ## Interface: 11302
-## Title: Track-O-Matic |cffa335ee[Classic Edition]|r |cffffffffv1.1.0
+## Title: Track-O-Matic |cffa335ee[Classic Edition]|r |cffffffffv1.1.1
 ## Author: Germbread
 ## Notes: On-screen tracking of reputation, profession skills and other information.
-## Version: 1.1.0
+## Version: 1.1.1
 ## SavedVariables: TRACKOMATIC_VARS
 ## X-Email: germbread@gmail.com
 
