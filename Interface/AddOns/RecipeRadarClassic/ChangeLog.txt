@@ -1,4 +1,8 @@
 Recipe Radar Classic ChangeLog
+v 1.0.0.23
+- Add esMX support (Issue #33)
+- Update frFR translations
+- Don't scan for recipes in a zone while flying (Issue #35)
 v 1.0.0.22
 - Fix dependent library location (Issue #31)
 v 1.0.0.21

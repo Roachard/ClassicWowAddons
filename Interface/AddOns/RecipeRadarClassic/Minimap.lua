@@ -16,6 +16,8 @@ end
 
 function RecipeRadar_Minimap_OnNewRegion()
 
+   if UnitOnTaxi("player") then return end
+
    local mapID = C_Map.GetBestMapForUnit("player")
    if mapID ~= nil then
      WorldMapFrame:SetMapID(mapID)
