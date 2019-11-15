@@ -125,6 +125,7 @@ local key = {
 	
 	"editBoxTab",
 	"restoreAfterWhisper",
+	"restoreAfterChannel",
 	"hyperLinkHoverShow",
 
 	"keyWordHighlight",
@@ -139,20 +140,20 @@ local default = {
 	_version				 = 190830.0,
 	_overrideVersion		 = 190925.0,
 
-	position				 = "BELOW_EDITBOX",
+	position				 = "ABOVE_EDITOBX",
 	direction				 = "HORIZONTAL",
 	scale					 = 1.0,
 	alpha					 = 1.0,
-	barStyle				 = "ala",
+	barStyle				 = "blz",
 
 	shortChannelName		 = true,
 	shortChannelNameFormat	 = "NW",
 	hyperLinkEnhanced		 = true,
 	chatEmote				 = true,
 	ColorNameByClass		 = true,
-	shamanColor				 = false,
+	shamanColor				 = true,
 	filterQuestAnn			 = false,
-	channelBarChannel		 = { true,true,true,true,true,true,true,true,true,true,true,true,true,true },
+	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
 	channelBarStyle			 = "CHAR",
 
 	channel_Ignore_Switch 	 = true,
@@ -169,14 +170,15 @@ local default = {
 	DBMCountDown			 = true,
 	ReadyCheck				 = true,
 	statReport				 = true,
-	level					 = false,
-	copy					 = false,
+	level					 = true,
+	copy					 = true,
 	copyTagColor			 = { 0.25, 0.25, 1.00 },
 	copyTagFormat			 = "#s";
 
 	--hideConfBtn				 = true,
 	editBoxTab				 = true,
-	restoreAfterWhisper		 = false,
+	restoreAfterWhisper		 = true,
+	restoreAfterChannel		 = false,
 	hyperLinkHoverShow		 = true,
 
 	keyWordHighlight		 = true,
@@ -227,6 +229,7 @@ local buttons = {
 	--[[24]]{ 				name = "level"					,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
 	--[[25]]{ 				name = "editBoxTab"				,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
 	--[[26]]{ sub = true,	name = "restoreAfterWhisper"	,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
+	--[[26]]{ sub = true,	name = "restoreAfterChannel"	,type = "CheckButton"	,label = LCONFIG.restoreAfterChannel	,key = "restoreAfterChannel"	, },
 	--[[27]]{ 				name = "hyperLinkHoverShow"		,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
 	--[[28]]{ 				name = "keyWordHighlight"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
 	--[[29]]{ sub = true,	name = "keyWordColor"			,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },

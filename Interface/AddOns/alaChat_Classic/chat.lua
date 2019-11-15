@@ -432,12 +432,16 @@ FUNC.ON.restoreAfterWhisper = function()
 	--control_restoreAfterWhisper = true;
 	ChatTypeInfo["WHISPER"].sticky = 0;
 	ChatTypeInfo["BN_WHISPER"].sticky = 0;
-	ChatTypeInfo["CHANNEL"].sticky = 0;
 end
 FUNC.OFF.restoreAfterWhisper = function()
 	--control_restoreAfterWhisper = false;
 	ChatTypeInfo["WHISPER"].sticky = 1;
 	ChatTypeInfo["BN_WHISPER"].sticky = 1;
+end
+FUNC.ON.restoreAfterChannel = function()
+	ChatTypeInfo["CHANNEL"].sticky = 0;
+end
+FUNC.OFF.restoreAfterChannel = function()
 	ChatTypeInfo["CHANNEL"].sticky	= 1;
 end
 ----------------------------------------------------------------------------------------------------shamanColor

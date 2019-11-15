@@ -1,19 +1,43 @@
+diff --git a/Interface/AddOns/alaChat_Classic/Locale/Locale-zhCN.lua b/Interface/AddOns/alaChat_Classic/Locale/Locale-zhCN.lua
+index 19b6f56..9ccf883 100644
+--- a/Interface/AddOns/alaChat_Classic/Locale/Locale-zhCN.lua
++++ b/Interface/AddOns/alaChat_Classic/Locale/Locale-zhCN.lua
+@@ -200,7 +200,8 @@ L.CONFIG = {
+ 	level					 = "聊天框显示公会成员等级",
+ 	--hideConfBtn				 = "隐藏设置按钮",
+ 	editBoxTab				 = "聊天框Tab键切换频道",
+-	restoreAfterWhisper		 = "密语和频道聊天之后恢复原来的频道",
++	restoreAfterWhisper		 = "密语后恢复原来的频道",
++	restoreAfterChannel		 = "频道聊天后恢复原来的频道",
+ 	hyperLinkHoverShow		 = "鼠标指向聊天框物品链接时显示提示",
+ 	keyWordHighlight		 = "关键词高亮",
+ 	keyWordColor			 = "高亮颜色",
 diff --git a/Interface/AddOns/alaChat_Classic/addon.lua b/Interface/AddOns/alaChat_Classic/addon.lua
-index cbb3b90..75f4440 100644
+index 40002b0..fa57cf4 100644
 --- a/Interface/AddOns/alaChat_Classic/addon.lua
 +++ b/Interface/AddOns/alaChat_Classic/addon.lua
-@@ -117,18 +117,18 @@ local default = {
+@@ -125,6 +125,7 @@ local key = {
+ 	
+ 	"editBoxTab",
+ 	"restoreAfterWhisper",
++	"restoreAfterChannel",
+ 	"hyperLinkHoverShow",
+ 
+ 	"keyWordHighlight",
+@@ -139,20 +140,20 @@ local default = {
  	_version				 = 190830.0,
- 	_overrideVersion		 = 190830.0,
+ 	_overrideVersion		 = 190925.0,
  
 -	position				 = "BELOW_EDITBOX",
 +	position				 = "ABOVE_EDITOBX",
+ 	direction				 = "HORIZONTAL",
  	scale					 = 1.0,
  	alpha					 = 1.0,
 -	barStyle				 = "ala",
 +	barStyle				 = "blz",
  
  	shortChannelName		 = true,
+ 	shortChannelNameFormat	 = "NW",
  	hyperLinkEnhanced		 = true,
  	chatEmote				 = true,
  	ColorNameByClass		 = true,
@@ -24,21 +48,53 @@ index cbb3b90..75f4440 100644
 +	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
  	channelBarStyle			 = "CHAR",
  
- 	bfWorld_Ignore_Switch	 = false,
-@@ -144,14 +144,14 @@ local default = {
+ 	channel_Ignore_Switch 	 = true,
+@@ -169,14 +170,15 @@ local default = {
+ 	DBMCountDown			 = true,
  	ReadyCheck				 = true,
- 	--statReport				 = true,
- 	level					 = false,
+ 	statReport				 = true,
+-	level					 = false,
 -	copy					 = false,
++	level					 = true,
 +	copy					 = true,
  	copyTagColor			 = { 0.25, 0.25, 1.00 },
  	copyTagFormat			 = "#s";
  
  	--hideConfBtn				 = true,
  	editBoxTab				 = true,
- 	restoreAfterWhisper		 = true,
--	hyperLinkHoverShow		 = false,
-+	hyperLinkHoverShow		 = true,
+-	restoreAfterWhisper		 = false,
++	restoreAfterWhisper		 = true,
++	restoreAfterChannel		 = false,
+ 	hyperLinkHoverShow		 = true,
  
  	keyWordHighlight		 = true,
- 	keyWordColor			 = { 0.00, 1.00, 0.00 },
+@@ -227,6 +229,7 @@ local buttons = {
+ 	--[[24]]{ 				name = "level"					,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
+ 	--[[25]]{ 				name = "editBoxTab"				,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
+ 	--[[26]]{ sub = true,	name = "restoreAfterWhisper"	,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
++	--[[26]]{ sub = true,	name = "restoreAfterChannel"	,type = "CheckButton"	,label = LCONFIG.restoreAfterChannel	,key = "restoreAfterChannel"	, },
+ 	--[[27]]{ 				name = "hyperLinkHoverShow"		,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
+ 	--[[28]]{ 				name = "keyWordHighlight"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
+ 	--[[29]]{ sub = true,	name = "keyWordColor"			,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },
+diff --git a/Interface/AddOns/alaChat_Classic/chat.lua b/Interface/AddOns/alaChat_Classic/chat.lua
+index 7575075..7179b31 100644
+--- a/Interface/AddOns/alaChat_Classic/chat.lua
++++ b/Interface/AddOns/alaChat_Classic/chat.lua
+@@ -432,12 +432,16 @@ FUNC.ON.restoreAfterWhisper = function()
+ 	--control_restoreAfterWhisper = true;
+ 	ChatTypeInfo["WHISPER"].sticky = 0;
+ 	ChatTypeInfo["BN_WHISPER"].sticky = 0;
+-	ChatTypeInfo["CHANNEL"].sticky = 0;
+ end
+ FUNC.OFF.restoreAfterWhisper = function()
+ 	--control_restoreAfterWhisper = false;
+ 	ChatTypeInfo["WHISPER"].sticky = 1;
+ 	ChatTypeInfo["BN_WHISPER"].sticky = 1;
++end
++FUNC.ON.restoreAfterChannel = function()
++	ChatTypeInfo["CHANNEL"].sticky = 0;
++end
++FUNC.OFF.restoreAfterChannel = function()
+ 	ChatTypeInfo["CHANNEL"].sticky	= 1;
+ end
+ ----------------------------------------------------------------------------------------------------shamanColor
