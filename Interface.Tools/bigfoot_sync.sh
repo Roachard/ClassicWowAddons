@@ -1,4 +1,5 @@
 #!/bin/bash
+cd `dirname $0`
 if [ ! -d "$1/AddOns" ]; then
 	echo "Usage: $0 BigFootInterfaceDirectory"
 	exit 1
