@@ -4,7 +4,7 @@
 MTSL_DATA["Enchanting"]["skills"] = {
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 1,
 		["trainers"] = {
 			["sources"] = {
 				1317,
@@ -154,7 +154,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 80,
 		["trainers"] = {
 			["sources"] = {
 				3011,
@@ -1220,7 +1220,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 165,
 		["trainers"] = {
 			["sources"] = {
 				11072,
@@ -1849,7 +1849,7 @@ MTSL_DATA["Enchanting"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
 				11073,

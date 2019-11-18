@@ -1126,24 +1126,6 @@ MTSL_DATA["quests"] = {
 		["min_xp_level"] = 40,
 	},
 	{
-		["id"] = 5144,
-		["name"]  = {
-			["English"] = "Elemental leatherworking",
-			["Russian"] = "Кожевничество: сила стихий",
-			["French"] = "Travail du cuir élémentaire",
-			["Portuguese"] = "Couraria Elemental",
-			["Korean"] = "원소 가죽세공",
-			["Chinese"] = "元素制皮",
-			["German"] = "Elementarlederverarbeitung",
-			["Spanish"] = "Peletería elemental",
-		},
-		["npcs"] = {
-			7868,
-			7869,
-		},
-		["min_xp_level"] = 40,
-	},
-	{
 		["id"] = 5143,
 		["name"]  = {
 			["English"] = "Tribal leatherworking",
@@ -1158,6 +1140,24 @@ MTSL_DATA["quests"] = {
 		["npcs"] = {
 			7870,
 			7871,
+		},
+		["min_xp_level"] = 40,
+	},
+	{
+		["id"] = 5144,
+		["name"]  = {
+			["English"] = "Elemental leatherworking",
+			["Russian"] = "Кожевничество: сила стихий",
+			["French"] = "Travail du cuir élémentaire",
+			["Portuguese"] = "Couraria Elemental",
+			["Korean"] = "원소 가죽세공",
+			["Chinese"] = "元素制皮",
+			["German"] = "Elementarlederverarbeitung",
+			["Spanish"] = "Peletería elemental",
+		},
+		["npcs"] = {
+			7868,
+			7869,
 		},
 		["min_xp_level"] = 40,
 	},
@@ -1649,6 +1649,24 @@ MTSL_DATA["quests"] = {
 	},
 	{
 		["phase"] = 1,
+		["id"] = 8323,
+		["min_xp_level"] = 40,
+		["name"] = {
+			["German"] = "Wahrer Glauben",
+			["English"] = "True Believers",
+			["Spanish"] = "El creyente verdadero",
+			["French"] = "Les vrais croyants",
+			["Portuguese"] = "Crentes Fiéis",
+			["Russian"] = "Истинно верующие",
+			["Korean"] = "진정한 신봉자",
+			["Chinese"] = "真正的信徒",
+		},
+		["npcs"] = {
+			15194,
+		},
+	},
+	{
+		["phase"] = 1,
 		["id"] = 8586,
 		["min_xp_level"] = 60,
 		["name"] = {
@@ -1709,27 +1727,27 @@ MTSL_DATA["quests"] = {
 		},
 	},
 	{
-		["phase"] =6,
-		["id"] = 9236,
+		["phase"] = 6,
+		["id"] = 9233,
 		["min_xp_level"] = 60,
 		["name"] = {
-			["Portuguese"] = "Icebane Breastplate",
-			["Russian"] = "Кираса ледяной погибели",
-			["Chinese"] = "破冰胸甲",
-			["Spanish"] = "La coraza Deliriohelado",
-			["French"] = "La cuirasse plaie-de-glace",
-			["English"] = "Icebane Breastplate",
-			["Korean"] = "[Icebane Breastplate]",
-			["German"] = "Eisfluchbrustplatte",
+			["German"] = "Omarions Leitfaden",
+			["English"] = "Omarion's Handbook",
+			["Spanish"] = "Vademécum de Omarion",
+			["French"] = "Le recueil d'Omarion",
+			["Portuguese"] = "Omarion's Handbook",
+			["Russian"] = "Руководство Омариона",
+			["Korean"] = "[Omarion's Handbook]",
+			["Chinese"] = "奥玛里恩的手册",
 		},
-		-- Special reference to Darkmoon faire NPCs
 		["npcs"] = {
-			16376,
+			16365,
 		},
 		["reputation"] = {
 			["faction_id"] = 529,
-			["level_id"] = 8,
+			["level_id"] = 7,
 		},
+		["min_skill"] = 290,
 	},
 	{
 		["phase"] = 1,

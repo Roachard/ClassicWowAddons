@@ -23,7 +23,7 @@ MTSL_DATA = {
     ["AMOUNT_TRADESKILL_LEVELS"] = 4,
     -- Counters keeping track of total amount of skill (this includes AMOUNT_TRADESKILL_LEVELS)
     ["AMOUNT_SKILLS"] = {
-        ["Tailoring"] = 229,
+        ["Tailoring"] = 230,
         ["Blacksmithing"] = 258,
         ["Alchemy"] = 115,
         ["Mining"] = 16,
@@ -36,13 +36,13 @@ MTSL_DATA = {
     -- holds counters for how many skills can be learned up the current content phase (counted using DEV MODe of APP)
     ["AMOUNT_SKILLS_CURRENT_PHASE"] = {
         ["Tailoring"] = 203,
-        ["Blacksmithing"] = 224,
+        ["Blacksmithing"] = 222,
         ["Alchemy"] = 109,
         ["Mining"] = 16,
         ["First Aid"] = 16,
         ["Cooking"] = 83,
         ["Engineering"] = 168,
-        ["Leatherworking"] = 216,
+        ["Leatherworking"] = 211,
         ["Enchanting"] = 130,
     },
 }

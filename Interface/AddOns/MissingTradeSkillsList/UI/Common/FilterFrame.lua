@@ -89,7 +89,7 @@ MTSLUI_FILTER_FRAME = {
         self.ui_frame.phase_drop_down.filter_frame_name = filter_frame_name
         self.ui_frame.phase_drop_down.initialize = self.CreateDropDownPhases
         UIDropDownMenu_SetWidth(self.ui_frame.phase_drop_down, 95)
-        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, self.phases[self.current_phase]["name"])
+        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_CURRENT_PHASE .. ")")
         -- Specializations
         self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["specialization"][MTSLUI_CURRENT_LANGUAGE], 5, -64, "LABEL", "TOPLEFT")
         self.ui_frame.specs_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_SPECS", self.ui_frame, "UIDropDownMenuTemplate")

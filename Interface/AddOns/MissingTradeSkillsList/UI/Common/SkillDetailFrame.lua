@@ -481,14 +481,13 @@ MTSLUI_SKILL_DETAIL_FRAME = {
             self.labels.alt_type.value:Show()
             self.labels.alt_source.title:Show()
             self.labels.alt_source.value:Show()
+            self.labels.alt_sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["started by"][MTSLUI_CURRENT_LANGUAGE])
+        else
+            self.labels.sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["started by"][MTSLUI_CURRENT_LANGUAGE])
         end
 
         local quest = MTSL_LOGIC_QUEST:GetQuestByIds(quest_ids)
-        if is_alternative_source == 0 then
-            self.labels.sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["started by"][MTSLUI_CURRENT_LANGUAGE])
-        else
-            self.labels.alt_sources.title:SetText(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_LOCALES_LABELS["started by"][MTSLUI_CURRENT_LANGUAGE])
-        end
+
         -- check if quest is availbe to us
         if quest ~= nil then
             self:SetSourceType(MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_LOCALES_LABELS["quest"][MTSLUI_CURRENT_LANGUAGE] .. " : " .. quest["name"][MTSLUI_CURRENT_LANGUAGE], is_alternative_source, is_primary_type)

@@ -742,6 +742,16 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 10644,
+		["special_action"] = {
+			["English"] = "Made by goblin engineer",
+			["Portuguese"] = "Feito pelo engenheiro goblin",
+			["Russian"] = "Сделано инженером гоблином",
+			["Chinese"] = "由地精工程师制造",
+			["Spanish"] = "Hecho por el ingeniero duende",
+			["French"] = "Fabriqué par un ingénieur gobelin",
+			["Korean"] = "고블린 엔지니어가 제작",
+			["German"] = "Hergestellt vom Koboldingenieur",
+		},
 	},
 	{
 		["vendors"] = {
@@ -957,6 +967,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 15000,
+		},
 		["name"] = {
 			["Russian"] = "Рецепт: трансмутация воды в воздух",
 			["Portuguese"] = "Receita: Transmutar &Aacute;gua em Ar",
@@ -1249,6 +1265,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["mobs"] = {
 				1853,
 			},
+		},
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 30000,
 		},
 		["name"] = {
 			["Russian"] = "Рецепт: хорошее зелье маны",
@@ -1550,20 +1572,5 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Greater Firepower",
 		},
 		["quality"] = "uncommon",
-	},
-	{
-		["quality"] = "common",
-		["phase"] = 1,
-		["name"] = {
-			["Russian"] = "Предметы",
-			["Portuguese"] = "Itens",
-			["Chinese"] = "物品",
-			["Spanish"] = "Objetos",
-			["French"] = "Objets",
-			["German"] = "Gegenstände",
-			["Korean"] = "아이템",
-			["English"] = "Items",
-		},
-		["id"] = 180368,
 	},
 }

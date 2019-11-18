@@ -5299,9 +5299,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["specialization"] = 17039,
 	},
 	{
-		["phase"] = 1,
-		["min_skill"] = 300,
-		["item"] = 22703,
+		["phase"] = 6,
 		["name"] = {
 			["Russian"] = "Кираса Ледяной погибели",
 			["Portuguese"] = "Peitoral da Perdição Gélida",
@@ -5313,32 +5311,23 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Icebane Breastplate",
 		},
 		["id"] = 28242,
-	},
-	{
-		["phase"] = 1,
 		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
-				514,
-				957,
-				1241,
-				1383,
-				2836,
-				2998,
-				3174,
-				3355,
-				3557,
-				4258,
-				4605,
-				5511,
-				6299,
-				10266,
-				10276,
-				10277,
-				10278,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
 		["name"] = {
 			["Russian"] = "Рукавицы Ледяной погибели",
 			["Portuguese"] = "Manoplas da Perdição Gélida",
@@ -5350,32 +5339,23 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Icebane Gauntlets",
 		},
 		["id"] = 28243,
-	},
-	{
-		["phase"] = 1,
 		["min_skill"] = 300,
 		["trainers"] = {
 			["sources"] = {
-				514,
-				957,
-				1241,
-				1383,
-				2836,
-				2998,
-				3174,
-				3355,
-				3557,
-				4258,
-				4605,
-				5511,
-				6299,
-				10266,
-				10276,
-				10277,
-				10278,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
 		["name"] = {
 			["Russian"] = "Наручи Ледяной погибели",
 			["Portuguese"] = "Braçadeiras da Perdição Gélida",
@@ -5387,6 +5367,20 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Icebane Bracers",
 		},
 		["id"] = 28244,
+		["min_skill"] = 300,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
 		["phase"] = 1,

@@ -2362,7 +2362,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
 				223,
@@ -2611,13 +2611,13 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
 				7866,
 				7867,
 			},
-			["price"] = 0,
+			["price"] = 9000,
 		},
 		["name"] = {
 			["Russian"] = "Рукавицы из драконьей чешуи",
@@ -2633,13 +2633,14 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_xp_level"] = 40,
+		["min_skill"] = 225,
 		["trainers"] = {
 			["sources"] = {
 				7870,
 				7871,
 			},
-			["price"] = 0,
+			["price"] = 9000,
 		},
 		["name"] = {
 			["Russian"] = "Волкоголовый шлем",
@@ -2655,13 +2656,13 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 0,
+		["min_skill"] = 230,
 		["trainers"] = {
 			["sources"] = {
 				7868,
 				7869,
 			},
-			["price"] = 0,
+			["price"] = 9000,
 		},
 		["name"] = {
 			["Russian"] = "Рукавицы Моря",
@@ -3957,7 +3958,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			5518,
 		},
 		["phase"] = 1,
-		["min_skill"] = 1,
+		["min_skill"] = 285,
 		["id"] = 22815,
 		["name"] = {
 			["Russian"] = "Броня огров Гордока",
@@ -4514,29 +4515,8 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 		["specialization"] = 10658,
 	},
 	{
-		["phase"] = 1,
-		["min_skill"] = 0,
-		["trainers"] = {
-			["sources"] = {
-				223,
-				1466,
-				1632,
-				3008,
-				3069,
-				3549,
-				3605,
-				5784,
-				5811,
-				7866,
-				7867,
-				7868,
-				7869,
-				7870,
-				11083,
-				11096,
-			},
-			["price"] = 0,
-		},
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Снежный мундир",
 			["Portuguese"] = "Túnica Polar",
@@ -4548,11 +4528,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Tunic",
 		},
 		["id"] = 28219,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
-		["phase"] = 1,
-		["min_skill"] = 0,
-		["item"] = 22694,
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Снежные перчатки",
 			["Portuguese"] = "Luvas Polares",
@@ -4564,31 +4556,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Gloves",
 		},
 		["id"] = 28220,
-	},
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223,
-				1466,
-				1632,
-				3008,
-				3069,
-				3549,
-				3605,
-				5784,
-				5811,
-				7866,
-				7867,
-				7868,
-				7869,
-				7870,
-				11083,
-				11096,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Снежные наручи",
 			["Portuguese"] = "Braçadeiras Polares",
@@ -4600,31 +4584,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Polar Bracers",
 		},
 		["id"] = 28221,
-	},
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223,
-				1466,
-				1632,
-				3008,
-				3069,
-				3549,
-				3605,
-				5784,
-				5811,
-				7866,
-				7867,
-				7868,
-				7869,
-				7870,
-				11083,
-				11096,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Кираса Ледяной чешуи",
 			["Portuguese"] = "Peitoral de Escama Gelada",
@@ -4636,31 +4612,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Breastplate",
 		},
 		["id"] = 28222,
-	},
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223,
-				1466,
-				1632,
-				3008,
-				3069,
-				3549,
-				3605,
-				5784,
-				5811,
-				7866,
-				7867,
-				7868,
-				7869,
-				7870,
-				11083,
-				11096,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Рукавицы Ледяной чешуи",
 			["Portuguese"] = "Manoplas de Escama Gelada",
@@ -4672,31 +4640,23 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Gauntlets",
 		},
 		["id"] = 28223,
-	},
-	{
-		["phase"] = 1,
-		["min_skill"] = 0,
 		["trainers"] = {
 			["sources"] = {
-				223,
-				1466,
-				1632,
-				3008,
-				3069,
-				3549,
-				3605,
-				5784,
-				5811,
-				7866,
-				7867,
-				7868,
-				7869,
-				7870,
-				11083,
-				11096,
+				16365,
 			},
 			["price"] = 0,
 		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
+		["min_skill"] = 300,
 		["name"] = {
 			["Russian"] = "Наручи Ледяной чешуи",
 			["Portuguese"] = "Braçadeiras de Escama Gelada",
@@ -4708,6 +4668,19 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			["English"] = "Icy Scale Bracers",
 		},
 		["id"] = 28224,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
 		["phase"] = 1,

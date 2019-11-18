@@ -523,7 +523,7 @@ MTSL_DATA["zones"] = {
     {
         ["id"] = 493,
         ["name"]  = {
-            ["English"] = "Moonglade",
+            ["English"] = "Fzade",
             ["Russian"] = "Лунная поляна",
             ["French"] = "Reflet-de-Lune",
             ["Portuguese"] = "Clareira da Lua",

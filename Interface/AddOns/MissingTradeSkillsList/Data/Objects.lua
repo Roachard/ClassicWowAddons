@@ -37,6 +37,25 @@ MTSL_DATA["objects"] = {
 		},
 	},
 	{
+		["zone_id"] = 1977,
+		["phase"] = 1,
+		["id"] = 180368,
+		["location"] = {
+			["y"] = "45.31",
+			["x"] = "37.94",
+		},
+		["name"] = {
+			["German"] = "Schrifttafel des Wahnsinns",
+			["English"] = "Tablet of Madness",
+			["Spanish"] = "Tablilla de Locura",
+			["French"] = "Tablette de la Folie",
+			["Portuguese"] = "Tabuleta da Loucura",
+			["Russian"] = "Табличка Безумия",
+			["Korean"] = "광기의 정제",
+			["Chinese"] = "疯狂平板电脑",
+		},
+	},
+	{
 		["zone_id"] = 1377,
 		["phase"] = 1,
 		["id"] = 180503,

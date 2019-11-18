@@ -171,7 +171,7 @@ MTSLUI_PLAYER_LIST_FRAME = {
             current_player = current_player + 1
         end
         -- hide the remaining buttons not shown when using horizontal split
-        for i=showed_players + 1,self.MAX_ITEMS_SHOWN_HORIZONTAL do
+        for i=showed_players + 1,self.MAX_ITEMS_SHOWN_CURRENTLY do
             self.LIST_BUITTONS[i]:Hide()
         end
     end,
@@ -361,11 +361,10 @@ MTSLUI_PLAYER_LIST_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     ChangeProfessionSkill = function(self, profession_name, skill)
         -- Only change if new one
-        if self.profession_name ~= profession_name and self.current_skill ~= nil and self.current_skill.min_skill ~= skill.min_skill then
+        if self.profession_name ~= profession_name or self.current_skill ~= nil and self.current_skill.min_skill ~= skill.min_skill then
             self.profession_name = profession_name
             self.current_skill = skill
             self:UpdateList()
-            -- Auto select first player of the profession
             self:RefreshList()
         else
             self.current_skill = skill
