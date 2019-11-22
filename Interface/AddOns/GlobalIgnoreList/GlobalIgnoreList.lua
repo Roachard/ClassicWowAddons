@@ -650,7 +650,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=专] or [contains=票] or [contains=达] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运]))"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=专] or [contains=票] or [contains=达] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运]))"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
