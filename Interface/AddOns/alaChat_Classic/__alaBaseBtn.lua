@@ -62,13 +62,13 @@ local function onEnter(self)
 			GameTooltip:AddLine(v());
 		end
 	end
-	if locale == "zhCN" or locale == "zhTW" then
-		GameTooltip:AddLine("\124cffff40ff按住ctrl拖动移动位置\124r");
-		GameTooltip:AddLine("\124cffff40ff按住ctrl右击重置位置\124r");
-	else
-		GameTooltip:AddLine("\124cffff40ffHolding ctrl and left-drag to move\124r");
-		GameTooltip:AddLine("\124cffff40ffHolding ctrl and right-click to reset pos\124r");
-	end
+	-- if locale == "zhCN" or locale == "zhTW" then
+	-- 	GameTooltip:AddLine("\124cffff40ff按住ctrl拖动移动位置\124r");
+	-- 	GameTooltip:AddLine("\124cffff40ff按住ctrl右击重置位置\124r");
+	-- else
+	-- 	GameTooltip:AddLine("\124cffff40ffHolding ctrl and left-drag to move\124r");
+	-- 	GameTooltip:AddLine("\124cffff40ffHolding ctrl and right-click to reset pos\124r");
+	-- end
 	GameTooltip:Show();
 end
 local function onLeave(self)

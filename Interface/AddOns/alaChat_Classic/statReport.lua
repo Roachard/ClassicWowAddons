@@ -64,12 +64,11 @@ function genReport(set)
 	--
 	local ap, apmod = UnitAttackPower('player');
 	ap = ap + apmod;
-	local sd = GetSpellBonusDamage(1);
+	local sp = GetSpellBonusDamage(1);
 	local rp, rpmod = UnitRangedAttackPower('player');
 	rp = rp + rpmod;
 	--1 physical 2 holy 3 fire 4 nature 5 frost 6 shadow 7 arcane
-	local sh = GetSpellBonusHealing();
-	local hp = GetSpellBonusHealing();
+	local heal = GetSpellBonusHealing();
 	local health = UnitHealthMax('player');
 	local mana = UnitPowerMax('player', 0);
 	local _, armor = UnitArmor('player');
@@ -194,7 +193,7 @@ function genReport(set)
 				LEVEL, uLevel,locale_class,
 				HEALTH, health,
 				MANA, mana,
-				STAT_SPELLHEALING, hp,
+				STAT_SPELLHEALING, heal,
 				STAT_SPELLPOWER, sp,
 				COMBAT_RATING_NAME6, shit,
 				COMBAT_RATING_NAME9, sCrit,
@@ -230,7 +229,7 @@ function genReport(set)
 				LEVEL, uLevel,locale_class,
 				HEALTH, health,
 				MANA, mana,
-				STAT_SPELLHEALING, hp,
+				STAT_SPELLHEALING, heal,
 				COMBAT_RATING_NAME9, sCrit,
 				COMBAT_RATING_NAME2, def,
 				ARMOR, armor,
@@ -261,7 +260,7 @@ function genReport(set)
 				LEVEL, uLevel,locale_class,
 				HEALTH, health,
 				MANA, mana,
-				STAT_SPELLHEALING, hp,
+				STAT_SPELLHEALING, heal,
 				STAT_SPELLPOWER, sp,
 				COMBAT_RATING_NAME6, shit,
 				COMBAT_RATING_NAME9, sCrit
@@ -329,7 +328,7 @@ function genReport(set)
 				LEVEL, uLevel,locale_class,
 				HEALTH, health,
 				MANA, mana,
-				STAT_SPELLHEALING, hp,
+				STAT_SPELLHEALING, heal,
 				COMBAT_RATING_NAME9, sCrit,
 				COMBAT_RATING_NAME2, def,
 				ARMOR, armor,

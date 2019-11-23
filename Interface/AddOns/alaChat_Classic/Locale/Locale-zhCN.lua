@@ -151,7 +151,7 @@ L.CONFIG = {
 	wel						 = "\124cffff3f3falaChat\124r已加载,/alac或/alachat打开设置。\n设置窗口移动到【ESC - 界面设置 - 插件(右上角) - alaChat_Classic】",
 	title					 = "设置",
 
-	position				 = "位置",
+	position				 = "位置(按住CTRL可拖动)",
 	direction				 = "方向",
 	scale					 = "缩放",
 	alpha					 = "透明度",

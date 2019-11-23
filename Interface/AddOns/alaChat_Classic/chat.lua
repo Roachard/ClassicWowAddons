@@ -438,10 +438,14 @@ FUNC.OFF.restoreAfterWhisper = function()
 	ChatTypeInfo["WHISPER"].sticky = 1;
 	ChatTypeInfo["BN_WHISPER"].sticky = 1;
 end
+----------------------------------------------------------------------------------------------------
+-- local restoreAfterChannel = false;
 FUNC.ON.restoreAfterChannel = function()
+	--restoreAfterChannel = true;
 	ChatTypeInfo["CHANNEL"].sticky = 0;
 end
 FUNC.OFF.restoreAfterChannel = function()
+	--restoreAfterChannel = false;
 	ChatTypeInfo["CHANNEL"].sticky	= 1;
 end
 ----------------------------------------------------------------------------------------------------shamanColor
@@ -614,11 +618,9 @@ FUNC.OFF.channel_Ignore = channel_Ignore_ToggleOff;
 local locale_match = GetLocale() == "zhCN" or GetLocale() == "zhTW";
 local bfwBtn = nil;
 if locale_match then
-
 	--大脚世界频道开关按钮
 	local control_bfWorld_Ignore_Switch = false;
 	local control_bfWorld_Ignore = false;
-	local bfwBtn = nil;
 	local function _cf_bgWorld_Toggle(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
 		--if control_bfWorld_Ignore and control_bfWorld_Ignore_Switch then
 			if arg8 == find_bfw() then
