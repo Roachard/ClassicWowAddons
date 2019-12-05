@@ -7,6 +7,7 @@ local FUNC = NS.FUNC;
 if not FUNC then return;end
 local L = NS.L;
 if not L then return;end
+local STR = L.MISC;
 ----------------------------------------------------------------------------------------------------
 local math, table, string, pairs, type, select, tonumber, unpack = math, table, string, pairs, type, select, tonumber, unpack;
 local _G = _G;
@@ -24,27 +25,188 @@ if not alaBaseBtn then
 	return;
 end
 ----------------------------------------------------------------------------------------------------chat filter
-local control_chat_filter = false;
 local control_chat_filter_reverse = false;
+local control_chat_rep_interval = nil;
+local control_chat_repeated = false;
+local control_chat_repeated_info = false;
+local chatFilter_btn = nil;
+local chatFilter_btnPackIndex = 3;
+local chatFilter_editBox = nil;
 local filterWord = {  };
 
-local function chat_filter_Filter(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
-	if #filterWord == 0 then
-		return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
-	end
-	for i = 1, #filterWord do
-		if string.find(arg1, filterWord[i]) then
-			return not control_chat_filter_reverse, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+
+-- [msg] = { time, lineId, filtered, actually_displayed_msg, }
+local caches = {  };
+local function cache_updater()
+	if control_chat_rep_interval then
+		local t = time() - control_chat_rep_interval;
+		for k, v in pairs(caches) do
+			if v[3] ~= true and v[1] <= t then
+				caches[k] = nil;
+			end
 		end
 	end
-	return control_chat_filter_reverse, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+end
+C_Timer.NewTicker(1.0, cache_updater);
+local function chat_filter_Filter(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
+	local cache = caches[arg1];
+	if cache then
+		if cache[2] == arg11 then
+			return cache[3], cache[4] or arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+		else
+			-- print("|cffff0000REP FILTERED|r", arg1);
+			if control_chat_rep_interval then
+				return true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+			else
+				return cache[3], cache[4] or arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+			end
+		end
+	end
+	local filtered = control_chat_filter_reverse;
+	if #filterWord == 0 then
+		filtered = false;
+	else
+		for i = 1, #filterWord do
+			if strfind(arg1, filterWord[i]) then
+				filtered = not control_chat_filter_reverse;
+				-- print("|cffff0000FILTERED|r", filterWord[i], arg1);
+				break;
+			end
+		end
+	end
+	if control_chat_rep_interval or filtered then
+		caches[arg1] = { time(), arg11, filtered, };
+	end
+	if control_chat_repeated and not filtered then
+		if strlen(arg1) > 48 then
+			local msg = gsub(arg1, "^[ ]+", "");
+			local pos = nil;
+			for i = 18, 24 do
+				local c = strbyte(strsub(msg, i, i));
+				if c < 0x80 then
+					pos = i;
+					break;
+				elseif c > 0xc0 then	-- 110x xxxx
+					pos = i - 1;
+					break;
+				end
+			end
+			if pos then
+				local pattern = gsub(strsub(msg, 1, pos), "[%%%.%+%-%*%[%]%(%)]", "%%%1");
+				local temp = strfind(msg, pattern, pos);
+				local temp2 = -1;
+				if temp then
+					pattern = gsub(strsub(msg, 1, temp - 1), "[ ]+$", "");
+					local pattern2 = gsub(pattern, "[%%%.%+%-%*%[%]%(%)]","%%%1");
+					temp, temp2 = gsub(msg, pattern2, "");
+					if temp2 > 1 then
+						-- print(temp2, arg1, pattern)
+						temp = gsub(temp, "^[ ]+", "");
+						msg = pattern .. temp;
+						if control_chat_repeated_info then
+							temp = "\124cffff00ff\124Halacfilter:" .. arg11 .. "\124h[R]\124h\124r" .. msg;
+						else
+							temp = msg;
+						end
+						if control_chat_rep_interval then
+							if caches[msg] then
+								caches[arg1][3] = 1;
+								return true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+							end
+							caches[msg] = { time(), -1, filtered, };
+							caches[arg1][4] = temp;
+						end
+						arg1 = temp;
+					end
+				end
+			end
+		end
+	end
+	return filtered, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+end
+local function CHATFILTER_ONCLICK(button, mouse)
+	if not chatFilter_editBox then
+		chatFilter_editBox = CreateFrame("EditBox", nil, UIParent);
+		button:HookScript("OnHide", function() chatFilter_editBox:Hide(); end)
+		chatFilter_editBox:SetWidth(min(320, GetScreenWidth()));
+		chatFilter_editBox:SetFontObject(GameFontHighlightSmall);
+		chatFilter_editBox:SetAutoFocus(false);
+		chatFilter_editBox:SetJustifyH("LEFT");
+		chatFilter_editBox:Hide();
+		chatFilter_editBox:SetMultiLine(true);
+		chatFilter_editBox:EnableMouse(true);
+		--chatFilter_editBox:SetScript("OnEnterPressed", function(self)
+			--self:SetText(self:GetText().."\n");
+		--end);
+		chatFilter_editBox:SetScript("OnEscapePressed", function(self)
+			self:ClearFocus();
+			--self:SetText(alaChatConfig and alaChatConfig["chat_filter_word"] or "");
+			self:Hide();
+		end);
+		chatFilter_editBox:SetPoint("TOPLEFT", button, "BOTTOMRIGHT", 4, 4);
+		chatFilter_editBox:SetBackdrop({
+			bgFile = "Interface\\Buttons\\WHITE8X8";	-- "Interface\\Tooltips\\UI-Tooltip-Background", 
+			edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
+			tile = true, 
+			tileSize = 2, 
+			edgeSize = 2, 
+			insets = { left = 2, right = 2, top = 2, bottom = 2 }
+		});
+		chatFilter_editBox:SetBackdropColor(0.05, 0.05, 0.05, 1.0);
+		chatFilter_editBox:SetFrameStrata("FULLSCREEN_DIALOG");
+		chatFilter_editBox:SetClampedToScreen(true);
+
+		-- f:SetPoint("TOPLEFT", chatFilter_editBox, "TOPLEFT", - 4, 28);
+		-- f:SetPoint("BOTTOMRIGHT", chatFilter_editBox, "BOTTOMRIGHT", 4, - 28);
+		-- f:Hide();
+		-- f:SetFrameStrata("FULLSCREEN_DIALOG");
+
+		local eOK = CreateFrame("Button", nil, chatFilter_editBox);
+		eOK:SetSize(20, 20);
+		eOK:SetNormalTexture("Interface\\Buttons\\ui-checkbox-check");
+		eOK:SetPushedTexture("Interface\\Buttons\\ui-checkbox-check");
+		eOK:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
+		eOK:SetPoint("BOTTOMLEFT", chatFilter_editBox, "TOPLEFT", 4, 0);
+		eOK:SetScript("OnClick", function(self)
+			chatFilter_editBox:Hide();
+			alaChatConfig["chat_filter_word"] = chatFilter_editBox:GetText();
+			FUNC.SETVALUE["chat_filter_word"](chatFilter_editBox:GetText());
+		end);
+		chatFilter_editBox.OK = eOK;
+
+		local eClose = CreateFrame("Button", nil, chatFilter_editBox);
+		eClose:SetSize(20, 20);
+		eClose:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
+		eClose:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
+		eClose:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
+		eClose:SetPoint("LEFT", eOK, "RIGHT", 4, 0);
+		eClose:SetScript("OnClick", function(self) chatFilter_editBox:Hide(); end);
+		chatFilter_editBox.close = eClose;
+
+		button:HookScript("OnHide", function() chatFilter_editBox:Hide(); end);
+	end
+	if mouse == "LeftButton" then
+		if chatFilter_editBox:IsShown() then
+			chatFilter_editBox:Hide();
+		else
+			chatFilter_editBox:Show();
+			chatFilter_editBox:SetText(alaChatConfig["chat_filter_word"] and alaChatConfig["chat_filter_word"] or "");
+		end
+	else
+		-- alaChatConfig["keyWord"] = "";
+		-- keyWordHighlight_SetVal("");
+		-- chatFilter_editBox:Hide();
+	end
 end
 local function chat_filter_On()
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "chat_filter", chat_filter_Filter)
+	ala_add_message_event_filter("CHAT_MSG_SAY", "chat_filter", chat_filter_Filter)
+	ala_add_message_event_filter("CHAT_MSG_YELL", "chat_filter", chat_filter_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", chat_filter_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", chat_filter_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", chat_filter_Filter)
@@ -60,13 +222,38 @@ local function chat_filter_On()
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", chat_filter_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", chat_filter_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", chat_filter_Filter)
+	if chatFilter_btn then
+		alaBaseBtn:AddBtn(chatFilter_btnPackIndex,-1,chatFilter_btn,true,false,true);
+	else
+		chatFilter_btn=alaBaseBtn:CreateBtn(
+				chatFilter_btnPackIndex,
+				-1,
+				"chatFilter_btn",
+				"char",
+				"F",
+				nil,
+				function(self,button)
+					CHATFILTER_ONCLICK(self, button);
+				end,
+				{
+					CB_DATA.CHATFILTER_0,
+					"",
+					CB_DATA.CHATFILTER_1,
+					CB_DATA.CHATFILTER_2,
+					CB_DATA.CHATFILTER_3,
+				}
+		);
+	end
 end
 local function chat_filter_Off()
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "chat_filter")
+	ala_remove_message_event_filter("CHAT_MSG_SAY", "chat_filter")
+	ala_remove_message_event_filter("CHAT_MSG_YELL", "chat_filter")
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", chat_filter_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", chat_filter_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", chat_filter_Filter)
@@ -82,17 +269,37 @@ local function chat_filter_Off()
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", chat_filter_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", chat_filter_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", chat_filter_Filter)
+	alaBaseBtn:RemoveBtn(chatFilter_btn,true);
 end
 
 local function chat_filter_Init()
 end
 
 local function chat_filter_word_SetVal(val)
+	if chatFilter_editBox and chatFilter_editBox:IsShown() then
+		chatFilter_editBox:SetText(val);
+	end
 	val = val .. "\n\n";
-	val = string.gsub(val, "%%", "%%%%");
+	val = gsub(val, "%%", "%%%%");
+	val = gsub(val, "%+", "%%%+");
+	val = gsub(val, "%-", "%%%-");
+	val = gsub(val, "%.", "%%%.");
+	val = gsub(val, "%*", "%%%*");
+	val = gsub(val, "%(", "%%%(");
+	val = gsub(val, "%)", "%%%)");
+	val = gsub(val, "%[", "%%%[");
+	val = gsub(val, "%]", "%%%]");
 	wipe(filterWord);
-	for v in string.gmatch(val,"%s*([^\n]+)\n") do
-		table.insert(filterWord,v);
+	for v in gmatch(val,"%s*([^\n]+)\n") do
+		tinsert(filterWord, v);
+		local v1 = strupper(v);
+		local v2 = strlower(v);
+		if v1 ~= v then
+			tinsert(filterWord,v1);
+		end
+		if v2 ~= v then
+			tinsert(filterWord,v2);
+		end
 	end
 end
 FUNC.ON.chat_filter = chat_filter_On;
@@ -100,15 +307,61 @@ FUNC.OFF.chat_filter = chat_filter_Off;
 
 FUNC.SETVALUE.chat_filter_word = chat_filter_word_SetVal;
 
-FUNC.ON.chat_filter_reverse = function() control_chat_filter_reverse = true; end;
-FUNC.OFF.chat_filter_reverse = function() control_chat_filter_reverse = false; end;
+FUNC.ON.chat_filter_repeated_words = function() control_chat_repeated = true; end;
+FUNC.OFF.chat_filter_repeated_words = function() control_chat_repeated = false; end;
+FUNC.ON.chat_filter_repeated_words_info = function() control_chat_repeated_info = true; end;
+FUNC.OFF.chat_filter_repeated_words_info = function() control_chat_repeated_info = false; end;
+
+-- FUNC.ON.chat_filter_reverse = function() control_chat_filter_reverse = true; end;
+-- FUNC.OFF.chat_filter_reverse = function() control_chat_filter_reverse = false; end;
+FUNC.SETVALUE.chat_filter_rep_interval = function(interval)
+	if interval > 0 then
+		control_chat_rep_interval = interval;
+	else
+		control_chat_rep_interval = nil;
+		for k, v in pairs(caches) do
+			if not v[3] then
+				caches[k] = nil;
+			end
+		end
+	end
+end
+
+----------------
+local _ChatFrame_OnHyperlinkShow = ChatFrame_OnHyperlinkShow;
+_G.ChatFrame_OnHyperlinkShow = function(frame, ref, link, button, ...)
+	local _, _, lineId = strfind(link, "alacfilter:(%d+)");
+	lineId = tonumber(lineId);
+	-- print(ref, link, lineId)
+	if lineId then
+		for msg, v in pairs(caches) do
+			if v[2] == lineId then
+				if not ItemRefTooltip:IsShown() then
+					ItemRefTooltip:SetOwner(UIParent, "ANCHOR_PRESERVE");
+				end
+				ItemRefTooltip:SetText(STR.chat_filter_repeated_words_info_details);
+				ItemRefTooltip:AddLine(STR.chat_filter_repeated_words_info_orig);
+				ItemRefTooltip:AddLine(msg);
+				if v[4] then
+					ItemRefTooltip:AddLine(STR.chat_filter_repeated_words_info_disp);
+					ItemRefTooltip:AddLine(v[4]);
+				end
+				ItemRefTooltip:Show();
+				break;
+			end
+		end
+		return true;
+	else
+		return _ChatFrame_OnHyperlinkShow(frame, ref, link, button, ...)
+	end
+end
 
 ----------------------------------------------------------------------------------------------------highlight
 local control_keyWordHighlight = false;
 local control_keyWordHighlight_Exc = false;
-local btn_keyWordHighlight = nil;
-local btnPackIndex = 3;
-local editBox = nil;
+local keyWordHighlight_btn = nil;
+local keyWordHighlight_btnPackIndex = 3;
+local keyWordHighlight_editBox = nil;
 local highlight_color = "00ff00";
 local keyWord = {};
 local repKeyWord = {};
@@ -121,89 +374,122 @@ local function updateRepKeyWord()
 end
 
 local function keyWordHighlight_SetColor(r, g, b)
-	highlight_color = string.format("%.2x%.2x%.2x", r * 255, g * 255, b* 255);
+	highlight_color = format("%.2x%.2x%.2x", r * 255, g * 255, b* 255);
 	updateRepKeyWord();
 end
 local function keyWordHighlight_SetVal(val)
+	if keyWordHighlight_editBox and keyWordHighlight_editBox:IsShown() then
+		keyWordHighlight_editBox:SetText(val);
+	end
 	val = val .. "\n\n";
-	val = string.gsub(val, "%%", "%%%%");
+	val = gsub(val, "%%", "%%%%");
+	val = gsub(val, "%+", "%%%+");
+	val = gsub(val, "%-", "%%%-");
+	val = gsub(val, "%.", "%%%.");
+	val = gsub(val, "%*", "%%%*");
+	val = gsub(val, "%(", "%%%(");
+	val = gsub(val, "%)", "%%%)");
+	val = gsub(val, "%[", "%%%[");
+	val = gsub(val, "%]", "%%%]");
 	wipe(keyWord);
-	for v in string.gmatch(val,"%s*([^\n]+)\n") do
-		table.insert(keyWord,v);
+	for v in gmatch(val,"%s*([^\n]+)\n") do
+		tinsert(keyWord,v);
+		local v1 = strupper(v);
+		local v2 = strlower(v);
+		if v1 ~= v then
+			tinsert(keyWord,v1);
+		end
+		if v2 ~= v then
+			tinsert(keyWord,v2);
+		end
 	end
 	updateRepKeyWord();
 end
 
 local function KEYWORDHEIGHLIGHT_ONCLICK(button, mouse)
-	if not editBox then
-		editBox = CreateFrame("EditBox", "alaChatConfigFrame_Input_keyWordHighlight");
-		editBox:SetWidth(min(320, GetScreenWidth()));
-		editBox:SetFontObject(GameFontHighlightSmall);
-		editBox:SetAutoFocus(false);
-		editBox:SetJustifyH("LEFT");
-		editBox:Hide();
-		editBox:SetMultiLine(true);
-		editBox:EnableMouse(true);
-		--editBox:SetScript("OnEnterPressed", function(self)
+	if not keyWordHighlight_editBox then
+		keyWordHighlight_editBox = CreateFrame("EditBox", nil, UIParent);
+		button:HookScript("OnHide", function() keyWordHighlight_editBox:Hide(); end)
+		keyWordHighlight_editBox:SetWidth(min(320, GetScreenWidth()));
+		keyWordHighlight_editBox:SetFontObject(GameFontHighlightSmall);
+		keyWordHighlight_editBox:SetAutoFocus(false);
+		keyWordHighlight_editBox:SetJustifyH("LEFT");
+		keyWordHighlight_editBox:Hide();
+		keyWordHighlight_editBox:SetMultiLine(true);
+		keyWordHighlight_editBox:EnableMouse(true);
+		--keyWordHighlight_editBox:SetScript("OnEnterPressed", function(self)
 			--self:SetText(self:GetText().."\n");
 		--end);
-		editBox:SetScript("OnEscapePressed", function(self)
+		keyWordHighlight_editBox:SetScript("OnEscapePressed", function(self)
 			self:ClearFocus();
 			--self:SetText(alaChatConfig and alaChatConfig["keyWord"] or "");
 			self:Hide();
 		end);
-		editBox:SetPoint("TOPLEFT", button, "BOTTOMRIGHT", 4, 4);
-		editBox:SetBackdrop({
-			bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
+		keyWordHighlight_editBox:SetPoint("TOPLEFT", button, "BOTTOMRIGHT", 4, 4);
+		keyWordHighlight_editBox:SetBackdrop({
+			bgFile = "Interface\\Buttons\\WHITE8X8";	-- "Interface\\Tooltips\\UI-Tooltip-Background", 
 			edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
 			tile = true, 
 			tileSize = 2, 
 			edgeSize = 2, 
 			insets = { left = 2, right = 2, top = 2, bottom = 2 }
 		});
-		editBox:SetFrameStrata("FULLSCREEN_DIALOG");
-		editBox:SetClampedToScreen(true);
+		keyWordHighlight_editBox:SetBackdropColor(0.05, 0.05, 0.05, 1.0);
+		keyWordHighlight_editBox:SetFrameStrata("FULLSCREEN_DIALOG");
+		keyWordHighlight_editBox:SetClampedToScreen(true);
 
-		-- f:SetPoint("TOPLEFT", editBox, "TOPLEFT", - 4, 28);
-		-- f:SetPoint("BOTTOMRIGHT", editBox, "BOTTOMRIGHT", 4, - 28);
+		-- f:SetPoint("TOPLEFT", keyWordHighlight_editBox, "TOPLEFT", - 4, 28);
+		-- f:SetPoint("BOTTOMRIGHT", keyWordHighlight_editBox, "BOTTOMRIGHT", 4, - 28);
 		-- f:Hide();
 		-- f:SetFrameStrata("FULLSCREEN_DIALOG");
 
-		local eOK = CreateFrame("Button", "alaChatConfigFrame_InputOK_keyWordHighlight", editBox);
+		local eOK = CreateFrame("Button", nil, keyWordHighlight_editBox);
 		eOK:SetSize(20, 20);
 		eOK:SetNormalTexture("Interface\\Buttons\\ui-checkbox-check");
 		eOK:SetPushedTexture("Interface\\Buttons\\ui-checkbox-check");
 		eOK:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
-		eOK:SetPoint("BOTTOMLEFT", editBox, "TOPLEFT", 4, 0);
+		eOK:SetPoint("BOTTOMLEFT", keyWordHighlight_editBox, "TOPLEFT", 4, 0);
 		eOK:SetScript("OnClick", function(self)
-			editBox:Hide();
-			alaChatConfig["keyWord"] = editBox:GetText();
-			FUNC.SETVALUE["keyWord"](editBox:GetText());
+			keyWordHighlight_editBox:Hide();
+			alaChatConfig["keyWord"] = keyWordHighlight_editBox:GetText();
+			FUNC.SETVALUE["keyWord"](keyWordHighlight_editBox:GetText());
 		end);
-		editBox.OK = eOK;
+		keyWordHighlight_editBox.OK = eOK;
 
-		local eClose = CreateFrame("Button", "alaChatConfigFrame_InputClose_keyWordHighlight", editBox);
+		local eClose = CreateFrame("Button", nil, keyWordHighlight_editBox);
 		eClose:SetSize(20, 20);
 		eClose:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
 		eClose:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
 		eClose:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
 		eClose:SetPoint("LEFT", eOK, "RIGHT", 4, 0);
-		eClose:SetScript("OnClick", function(self) editBox:Hide(); end);
-		editBox.close = eClose;
+		eClose:SetScript("OnClick", function(self) keyWordHighlight_editBox:Hide(); end);
+		keyWordHighlight_editBox.close = eClose;
 
-		button:HookScript("OnHide", function() editBox:Hide(); end);
+		button:HookScript("OnHide", function() keyWordHighlight_editBox:Hide(); end);
 	end
 	if mouse == "LeftButton" then
-		if editBox:IsShown() then
-			editBox:Hide();
+		if keyWordHighlight_editBox:IsShown() then
+			keyWordHighlight_editBox:Hide();
 		else
-			editBox:Show();
-			editBox:SetText(alaChatConfig["keyWord"] and alaChatConfig["keyWord"] or "");
+			keyWordHighlight_editBox:Show();
+			keyWordHighlight_editBox:SetText(alaChatConfig["keyWord"] and alaChatConfig["keyWord"] or "");
 		end
 	else
-		alaChatConfig["keyWord"] = "";
-		keyWordHighlight_SetVal("");
-		editBox:Hide();
+		-- alaChatConfig["keyWord"] = "";
+		-- keyWordHighlight_SetVal("");
+		-- keyWordHighlight_editBox:Hide();
+		alaChatConfig["keyWordHighlight_Exc"] = not alaChatConfig["keyWordHighlight_Exc"];
+		if alaChatConfig["keyWordHighlight_Exc"] then
+			FUNC.ON.keyWordHighlight_Exc();
+			if GetMouseFocus() == keyWordHighlight_btn then
+				keyWordHighlight_btn:GetScript("OnEnter")(keyWordHighlight_btn);
+			end
+		else
+			FUNC.OFF.keyWordHighlight_Exc();
+			if GetMouseFocus() == keyWordHighlight_btn then
+				keyWordHighlight_btn:GetScript("OnEnter")(keyWordHighlight_btn);
+			end
+		end
 	end
 end
 
@@ -213,8 +499,8 @@ local function keyWordHighlight_Filter(self, event, arg1, arg2, arg3, arg4, arg5
 	end
 	local found = false;
 	for i = 1, #keyWord do
-		if string.find(arg1, keyWord[i]) then
-			arg1 = string.gsub(arg1, keyWord[i], repKeyWord[i]);
+		if strfind(arg1, keyWord[i]) then
+			arg1 = gsub(arg1, keyWord[i], repKeyWord[i]);
 			found = true;
 		end
 	end
@@ -222,9 +508,29 @@ local function keyWordHighlight_Filter(self, event, arg1, arg2, arg3, arg4, arg5
 end
 
 local function keyWordHighlight_On()
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_JOIN", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", "keyWordHighlight", keyWordHighlight_Filter)
+	ala_add_message_event_filter("CHAT_MSG_SAY", "keyWordHighlight", keyWordHighlight_Filter)
+	ala_add_message_event_filter("CHAT_MSG_YELL", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_WHISPER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_BN_WHISPER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_WHISPER_INFORM", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_RAID", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_RAID_LEADER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_RAID_WARNING", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_PARTY", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_PARTY_LEADER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_GUILD", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_OFFICER", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_AFK", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_EMOTE", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ala_add_message_event_filter("CHAT_MSG_DND", "keyWordHighlight", keyWordHighlight_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", keyWordHighlight_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", keyWordHighlight_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", keyWordHighlight_Filter)
@@ -243,13 +549,13 @@ local function keyWordHighlight_On()
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", keyWordHighlight_Filter)
 	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", keyWordHighlight_Filter)
 
-	if btn_keyWordHighlight then
-		alaBaseBtn:AddBtn(btnPackIndex,-1,btn_keyWordHighlight,true,false,true);
+	if keyWordHighlight_btn then
+		alaBaseBtn:AddBtn(keyWordHighlight_btnPackIndex,-1,keyWordHighlight_btn,true,false,true);
 	else
-		btn_keyWordHighlight=alaBaseBtn:CreateBtn(
-				btnPackIndex,
+		keyWordHighlight_btn=alaBaseBtn:CreateBtn(
+				keyWordHighlight_btnPackIndex,
 				-1,
-				"btn_keyWordHighlight",
+				"keyWordHighlight_btn",
 				"char",
 				"K",
 				nil,
@@ -264,12 +570,39 @@ local function keyWordHighlight_On()
 					CB_DATA.KEYWORDHEIGHLIGHT_3,
 				}
 		);
+		local glow = keyWordHighlight_btn:CreateTexture(nil, "OVERLAY");
+		glow:SetTexture("interface\\characterframe\\disconnect-icon");
+		glow:SetTexCoord(50 / 64, 14 / 64, 12 / 64, 48 / 64);
+		-- glow:SetBlendMode("ADD");
+		glow:SetPoint("TOPLEFT", keyWordHighlight_btn, "TOPLEFT");
+		glow:SetPoint("BOTTOMRIGHT", keyWordHighlight_btn, "BOTTOMRIGHT");
+		keyWordHighlight_btn.glow = glow;
 	end
 end
 local function keyWordHighlight_Off()
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_CHANNEL_JOIN", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", "keyWordHighlight")
+	ala_remove_message_event_filter("CHAT_MSG_SAY", "keyWordHighlight")
+	ala_remove_message_event_filter("CHAT_MSG_YELL", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_WHISPER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_BN_WHISPER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_WHISPER_INFORM", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_RAID", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_RAID_LEADER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_RAID_WARNING", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_PARTY", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_PARTY_LEADER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_GUILD", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_OFFICER", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_AFK", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_EMOTE", "keyWordHighlight")
+	-- ala_remove_message_event_filter("CHAT_MSG_DND", "keyWordHighlight")
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", keyWordHighlight_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", keyWordHighlight_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", keyWordHighlight_Filter)
@@ -287,7 +620,7 @@ local function keyWordHighlight_Off()
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", keyWordHighlight_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", keyWordHighlight_Filter)
 	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", keyWordHighlight_Filter)
-	alaBaseBtn:RemoveBtn(btn_keyWordHighlight,true);
+	alaBaseBtn:RemoveBtn(keyWordHighlight_btn,true);
 end
 
 local function keyWordHighlight_Init()
@@ -299,5 +632,15 @@ FUNC.OFF.keyWordHighlight = keyWordHighlight_Off;
 FUNC.SETVALUE.keyWord = keyWordHighlight_SetVal;
 FUNC.SETVALUE.keyWordColor = keyWordHighlight_SetColor;
 
-FUNC.ON.keyWordHighlight_Exc = function() control_keyWordHighlight_Exc = true; end;
-FUNC.OFF.keyWordHighlight_Exc = function() control_keyWordHighlight_Exc = false; end;
+FUNC.ON.keyWordHighlight_Exc = function()
+	control_keyWordHighlight_Exc = true;
+	keyWordHighlight_btn.glow:Show()
+	-- keyWordHighlight_btn.glow:SetVertexColor(1, 0, 0);
+	keyWordHighlight_btn.gtLine[6] = CB_DATA.KEYWORDHEIGHLIGHT_B;
+end;
+FUNC.OFF.keyWordHighlight_Exc = function()
+	control_keyWordHighlight_Exc = false;
+	keyWordHighlight_btn.glow:Hide()
+	-- keyWordHighlight_btn.glow:SetVertexColor(0, 1, 0);
+	keyWordHighlight_btn.gtLine[6] = CB_DATA.KEYWORDHEIGHLIGHT_A;
+end;

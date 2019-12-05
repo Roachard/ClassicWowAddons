@@ -63,8 +63,8 @@ local function SetEditBoxHeader(idx)
 					return;
 				end
 			end
-			if select(2, JoinPermanentChannel(SC_DATA2[dataIdx][1], nil, DEFAULT_CHAT_FRAME:GetID(), 1)) then
-				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, SC_DATA2[dataIdx][1]);
+			if select(2, JoinPermanentChannel(SC_DATA2[dataIdx][1], nil, DEFAULT_CHAT_FRAME:GetID())) then
+				-- ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, SC_DATA2[dataIdx][1]);
 				C_Timer.After(channelJoinDelay, function()
 					t = {GetChannelList()};
 					for i = 1,#t,3 do

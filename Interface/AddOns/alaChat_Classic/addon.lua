@@ -134,7 +134,10 @@ local key = {
 	"keyWordHighlight_Exc",
 	"chat_filter",
 	"chat_filter_word",
-	"chat_filter_reverse",
+	"chat_filter_repeated_words",
+	"chat_filter_repeated_words_info",
+	-- "chat_filter_reverse",
+	"chat_filter_rep_interval",
 };
 local default = {
 	_version				 = 190830.0,
@@ -185,9 +188,12 @@ local default = {
 	keyWordColor			 = { 0.00, 1.00, 0.00 },
 	keyWord					 = "",
 	keyWordHighlight_Exc	 = false,
-	chat_filter				 = false,
+	chat_filter				 = true,
 	chat_filter_word		 = "",
-	chat_filter_reverse		 = false,
+	chat_filter_repeated_words = true,
+	chat_filter_repeated_words_info = false,
+	-- chat_filter_reverse		 = false,
+	chat_filter_rep_interval = 15,
 };
 local override = {
 	_version				 = 190927.0,
@@ -197,47 +203,52 @@ local override = {
 	-- hyperLinkHoverShow		 = true,
 };
 local buttons = {
-	--[[1]]	{ 				name = "position"				,type = "DropDownMenu"	,label = LCONFIG.position				,key = "position"				,value = { "BELOW_EDITBOX", "ABOVE_EDITOBX", "ABOVE_CHATFRAME" }, },
-	--[[1]]	{ sub = true,	name = "direction"				,type = "DropDownMenu"	,label = LCONFIG.direction				,key = "direction"				,value = { "HORIZONTAL", "VERTICAL" }, },
-	--[[2]]	{ 				name = "scale"					,type = "Slider"		,label = LCONFIG.scale					,key = "scale"					,minRange = 0.1	,maxRange = 2.0	,stepSize = 0.1	, },
-	--[[3]]	{ sub = true,	name = "alpha"					,type = "Slider"		,label = LCONFIG.alpha					,key = "alpha"					,minRange = 0.0	,maxRange = 1.0	,stepSize = 0.05	, },
-	--[[4]] { sub = true,	name = "barStyle"				,type = "DropDownMenu"	,label = LCONFIG.barStyle				,key = "barStyle"				,value = { "ala", "blz" }, },
+	--[[1]]	{ 				name = "position"					,type = "DropDownMenu"	,label = LCONFIG.position				,key = "position"				,value = { "BELOW_EDITBOX", "ABOVE_EDITOBX", "ABOVE_CHATFRAME" }, },
+	--[[1]]	{ sub = true,	name = "direction"					,type = "DropDownMenu"	,label = LCONFIG.direction				,key = "direction"				,value = { "HORIZONTAL", "VERTICAL" }, },
+	--[[2]]	{ 				name = "scale"						,type = "Slider"		,label = LCONFIG.scale					,key = "scale"					,minRange = 0.1	,maxRange = 2.0	,stepSize = 0.1	, },
+	--[[3]]	{ sub = true,	name = "alpha"						,type = "Slider"		,label = LCONFIG.alpha					,key = "alpha"					,minRange = 0.0	,maxRange = 1.0	,stepSize = 0.05	, },
+	--[[4]] { sub = true,	name = "barStyle"					,type = "DropDownMenu"	,label = LCONFIG.barStyle				,key = "barStyle"				,value = { "ala", "blz" }, },
 
-	--[[5]]	{ 				name = "shortChannelName"		,type = "CheckButton"	,label = LCONFIG.shortChannelName		,key = "shortChannelName"		, },
-	--[[5]]	{ sub = true,	name = "shortChannelNameFormat"	,type = "DropDownMenu"	,label = LCONFIG.shortChannelNameFormat	,key = "shortChannelNameFormat"	,value = { "NW", "N", "W", }, },
-	--[[6]]	{ 				name = "hyperLinkEnhanced"		,type = "CheckButton"	,label = LCONFIG.hyperLinkEnhanced		,key = "hyperLinkEnhanced"		, },
-	--[[7]]	{ 				name = "chatEmote"				,type = "CheckButton"	,label = LCONFIG.chatEmote				,key = "chatEmote"				, },
-	--[[17]]{ sub = true,	name = "statReport"				,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
-	--[[8]]	{ 				name = "ColorNameByClass"		,type = "CheckButton"	,label = LCONFIG.ColorNameByClass		,key = "ColorNameByClass"		, },
-	--[[9]]	{ sub = true,	name = "shamanColor"			,type = "CheckButton"	,label = LCONFIG.shamanColor			,key = "shamanColor"			, },
-	--      { 				name = "filterQuestAnn"			,type = "CheckButton"	,label = LCONFIG.filterQuestAnn			,key = "filterQuestAnn"			, },
-	--[[10]]{ 				name = "channelBarStyle"		,type = "DropDownMenu"	,label = LCONFIG.channelBarStyle		,key = "channelBarStyle"			,value = { "CHAR", "CIRCLE", "SQUARE" }, },
-	--[[11]]{ 				name = "channelBarChannel"		,type = "MultiCB"		,label = LCONFIG.channelBarChannel		,key = "channelBarChannel"		, },
-	--[[12]]{ 				name = "channel_Ignore_Switch"	,type = "CheckButton"	,label = LCONFIG.channel_Ignore_Switch	,key = "channel_Ignore_Switch"	, },
-	--[[12]]{ sub = true,	name = "bfWorld_Ignore_Switch"	,type = "CheckButton"	,label = LCONFIG.bfWorld_Ignore_Switch	,key = "bfWorld_Ignore_Switch"	, },
-	--[[13]]{ sub = true,	name = "channel_Ignore_BtnSize"	,type = "Slider"		,label = LCONFIG.channel_Ignore_BtnSize	,key = "channel_Ignore_BtnSize"	,minRange = 12	,maxRange = 96	,stepSize = 4		, },
+	--[[5]]	{ 				name = "shortChannelName"			,type = "CheckButton"	,label = LCONFIG.shortChannelName		,key = "shortChannelName"		, },
+	--[[5]]	{ sub = true,	name = "shortChannelNameFormat"		,type = "DropDownMenu"	,label = LCONFIG.shortChannelNameFormat	,key = "shortChannelNameFormat"	,value = { "NW", "N", "W", }, },
+	--[[6]]	{ 				name = "hyperLinkEnhanced"			,type = "CheckButton"	,label = LCONFIG.hyperLinkEnhanced		,key = "hyperLinkEnhanced"		, },
+	--[[7]]	{ 				name = "chatEmote"					,type = "CheckButton"	,label = LCONFIG.chatEmote				,key = "chatEmote"				, },
+	--[[17]]{ sub = true,	name = "statReport"					,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
+	--[[8]]	{ 				name = "ColorNameByClass"			,type = "CheckButton"	,label = LCONFIG.ColorNameByClass		,key = "ColorNameByClass"		, },
+	--[[9]]	{ sub = true,	name = "shamanColor"				,type = "CheckButton"	,label = LCONFIG.shamanColor			,key = "shamanColor"			, },
+	--      { 				name = "filterQuestAnn"				,type = "CheckButton"	,label = LCONFIG.filterQuestAnn			,key = "filterQuestAnn"			, },
+	--[[10]]{ 				name = "channelBarStyle"			,type = "DropDownMenu"	,label = LCONFIG.channelBarStyle		,key = "channelBarStyle"			,value = { "CHAR", "CIRCLE", "SQUARE" }, },
+	--[[11]]{ 				name = "channelBarChannel"			,type = "MultiCB"		,label = LCONFIG.channelBarChannel		,key = "channelBarChannel"		, },
+	--[[12]]{ 				name = "channel_Ignore_Switch"		,type = "CheckButton"	,label = LCONFIG.channel_Ignore_Switch	,key = "channel_Ignore_Switch"	, },
+	--[[12]]{ sub = true,	name = "bfWorld_Ignore_Switch"		,type = "CheckButton"	,label = LCONFIG.bfWorld_Ignore_Switch	,key = "bfWorld_Ignore_Switch"	, },
+	--[[13]]{ sub = true,	name = "channel_Ignore_BtnSize"		,type = "Slider"		,label = LCONFIG.channel_Ignore_BtnSize	,key = "channel_Ignore_BtnSize"	,minRange = 12	,maxRange = 96	,stepSize = 4		, },
 
-	--[[21]]{ 				name = "copy"					,type = "CheckButton"	,label = LCONFIG.copy					,key = "copy"					, },
-	--[[22]]{ sub = true,	name = "copyTagColor"			,type = "ColorSelect"	,label = LCONFIG.copyTagColor			,key = "copyTagColor"			, },
-	--[[23]]{ sub = true,	name = "copyTagFormat"			,type = "Input"			,label = LCONFIG.copyTagFormat			,key = "copyTagFormat"			,note = LCONFIG.copyTagFormat		,multiLine = false	,width = 240,  },
-	--[[14]]{ 				name = "broadCastNewMember"		,type = "CheckButton"	,label = LCONFIG.broadCastNewMember		,key = "broadCastNewMember"		, },
-	--[[15]]{ sub = true,	name = "welcomeToGuild"			,type = "CheckButton"	,label = LCONFIG.welcomeToGuild			,key = "welcomeToGuild"			, },
-	--[[16]]{ sub = true,	name = "welcometoGuildMsg"		,type = "Input"			,label = LCONFIG.welcometoGuildMsg		,key = "welcometoGuildMsg"		,note = L.WTG_STRING.WELCOME_NOTES	,multiLine = true	,width = 640,  },
-	--[[18]]{ 				name = "roll"					,type = "CheckButton"	,label = LCONFIG.roll					,key = "roll"					, },
-	--[[19]]{ sub = true,	name = "DBMCountDown"			,type = "CheckButton"	,label = LCONFIG.DBMCountDown			,key = "DBMCountDown"			, },
-	--[[20]]{ sub = true,	name = "ReadyCheck"				,type = "CheckButton"	,label = LCONFIG.ReadyCheck				,key = "ReadyCheck"				, },
-	--[[24]]{ 				name = "level"					,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
-	--[[25]]{ 				name = "editBoxTab"				,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
-	--[[26]]{ sub = true,	name = "restoreAfterWhisper"	,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
-	--[[26]]{ sub = true,	name = "restoreAfterChannel"	,type = "CheckButton"	,label = LCONFIG.restoreAfterChannel	,key = "restoreAfterChannel"	, },
-	--[[27]]{ 				name = "hyperLinkHoverShow"		,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
-	--[[28]]{ 				name = "keyWordHighlight"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
-	--[[29]]{ sub = true,	name = "keyWordColor"			,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },
-	--[[28]]{ sub = true,	name = "keyWordHighlight_Exc"	,type = "CheckButton"	,label = LCONFIG.keyWordHighlight_Exc	,key = "keyWordHighlight_Exc"	, },
+	--[[21]]{ 				name = "copy"						,type = "CheckButton"	,label = LCONFIG.copy					,key = "copy"					, },
+	--[[22]]{ sub = true,	name = "copyTagColor"				,type = "ColorSelect"	,label = LCONFIG.copyTagColor			,key = "copyTagColor"			, },
+	--[[23]]{ sub = true,	name = "copyTagFormat"				,type = "Input"			,label = LCONFIG.copyTagFormat			,key = "copyTagFormat"			,note = LCONFIG.copyTagFormat		,multiLine = false	,width = 240,  },
+	--[[14]]{ 				name = "broadCastNewMember"			,type = "CheckButton"	,label = LCONFIG.broadCastNewMember		,key = "broadCastNewMember"		, },
+	--[[15]]{ sub = true,	name = "welcomeToGuild"				,type = "CheckButton"	,label = LCONFIG.welcomeToGuild			,key = "welcomeToGuild"			, },
+	--[[16]]{ sub = true,	name = "welcometoGuildMsg"			,type = "Input"			,label = LCONFIG.welcometoGuildMsg		,key = "welcometoGuildMsg"		,note = L.WTG_STRING.WELCOME_NOTES	,multiLine = true	,width = 640,  },
+	--[[18]]{ 				name = "roll"						,type = "CheckButton"	,label = LCONFIG.roll					,key = "roll"					, },
+	--[[19]]{ sub = true,	name = "DBMCountDown"				,type = "CheckButton"	,label = LCONFIG.DBMCountDown			,key = "DBMCountDown"			, },
+	--[[20]]{ sub = true,	name = "ReadyCheck"					,type = "CheckButton"	,label = LCONFIG.ReadyCheck				,key = "ReadyCheck"				, },
+	--[[24]]{ 				name = "level"						,type = "CheckButton"	,label = LCONFIG.level					,key = "level"					, },
+	--[[25]]{ 				name = "editBoxTab"					,type = "CheckButton"	,label = LCONFIG.editBoxTab				,key = "editBoxTab"				, },
+	--[[26]]{ sub = true,	name = "restoreAfterWhisper"		,type = "CheckButton"	,label = LCONFIG.restoreAfterWhisper	,key = "restoreAfterWhisper"	, },
+	--[[26]]{ sub = true,	name = "restoreAfterChannel"		,type = "CheckButton"	,label = LCONFIG.restoreAfterChannel	,key = "restoreAfterChannel"	, },
+	--[[27]]{ 				name = "hyperLinkHoverShow"			,type = "CheckButton"	,label = LCONFIG.hyperLinkHoverShow		,key = "hyperLinkHoverShow"		, },
 
-	--[[28]]{ 				name = "chat_filter"			,type = "CheckButton"	,label = LCONFIG.chat_filter			,key = "chat_filter"			, },
-	--[[29]]{ sub = true,	name = "chat_filter_word"		,type = "Input"			,label = LCONFIG.chat_filter_word		,key = "chat_filter_word"		,note = LCONFIG.chat_filter_word_NOTES, multiLine = true	,width = 320,  },
-	--[[28]]{ sub = true,	name = "chat_filter_reverse"	,type = "CheckButton"	,label = LCONFIG.chat_filter_reverse	,key = "chat_filter_reverse"	, },
+	--[[28]]{ 				name = "keyWordHighlight"			,type = "CheckButton"	,label = LCONFIG.keyWordHighlight		,key = "keyWordHighlight"		, },
+	--[[28]]{ sub = true,	name = "keyWord"					,type = "Input"			,label = LCONFIG.keyWord				,key = "keyWord"		, },
+	--[[29]]{ sub = true,	name = "keyWordColor"				,type = "ColorSelect"	,label = LCONFIG.keyWordColor			,key = "keyWordColor"			, },
+	--[[28]]{ sub = true,	name = "keyWordHighlight_Exc"		,type = "CheckButton"	,label = LCONFIG.keyWordHighlight_Exc	,key = "keyWordHighlight_Exc"	, },
+
+	--[[28]]{ 				name = "chat_filter"				,type = "CheckButton"	,label = LCONFIG.chat_filter			,key = "chat_filter"			, },
+	--[[29]]{ sub = true,	name = "chat_filter_word"			,type = "Input"			,label = LCONFIG.chat_filter_word		,key = "chat_filter_word"		,note = LCONFIG.chat_filter_word_NOTES, multiLine = true	,width = 320,  },
+	--[[28]]{ sub = true,	name = "chat_filter_repeated_words"	,type = "CheckButton"	,label = LCONFIG.chat_filter_repeated_words	,key = "chat_filter_repeated_words"	, },
+	--[[28]]{ sub = true,	name = "chat_filter_repeated_words_info"	,type = "CheckButton"	,label = LCONFIG.chat_filter_repeated_words_info	,key = "chat_filter_repeated_words_info"	, },
+	-- --[[28]]{ sub = true,	name = "chat_filter_reverse"		,type = "CheckButton"	,label = LCONFIG.chat_filter_reverse	,key = "chat_filter_reverse"	, },
+	--[[13]]{ 				name = "chat_filter_rep_interval"	,type = "Slider"		,label = LCONFIG.chat_filter_rep_interval	,key = "chat_filter_rep_interval"	,minRange = 0	,maxRange = 3600	,stepSize = 5		, },
 	--{ name = "hideConfBtn"				,type = "CheckButton"	,label = LCONFIG.hideConfBtn				,key = "hideConfBtn"				, },
 };
 local config_zh = {
@@ -260,670 +271,653 @@ if GetLocale() ~= "zhCN" and GetLocale() ~= "zhTW" then
 			tremove(buttons, i);
 		end
 	end
-	-- tremove(buttons, 13);
-	-- default.channel_Ignore_BtnSize = nil;
-	-- override.channel_Ignore_BtnSize = nil;
-	-- --key.channel_Ignore_BtnSize = nil;
-	-- tremove(key, 15);
-	-- tremove(buttons, 12);
-	-- default.bfWorld_Ignore_Switch = nil;
-	-- override.bfWorld_Ignore_Switch = nil;
-	-- --key.bfWorld_Ignore_Switch = nil;
-	-- tremove(key, 14);
-	-- default.bfWorld_Ignore = nil;
-	-- override.bfWorld_Ignore = nil;
-	-- --key.bfWorld_Ignore = nil;
-	-- tremove(key, 13);
-	-- --tremove(buttons, 9);
-	-- --default.filterQuestAnn = nil;
+end
+if GetLocale() == "zhCN" then
+	default.chat_filter_word = "HclubTicket:\n航空\n航班\n飞机\n专机\n直达\n直飞\n3G\n安全便捷\n拉人\n收米\n出米\n托管\n包团\n实惠\n公众号\nG团\n老板\n++++++\n————\n~~~~~~\n------\n======\n``````\n!!!!!!!!!!\n！！！！！！！！！！\n。。。。。。。。。。\n，，，，，，，，，，\n··········\n；；；；；；；；；；\n、、、、、、、、、、\nMMMMMM\n";
+else
+	default.chat_filter_word = "HclubTicket:\n\n++++++\n——————\n~~~~~~\n------\n======\n``````\nMMMMMM\n"
 end
 
-local function resetButtonOnClick()
-	for k, v in pairs(default) do
-		if config[k] ~= v then
-			if type(v) == "boolean" then
-				config[k] = v;
-				if v then
-					FUNC_CALL("ON", k);
-				else
-					FUNC_CALL("OFF", k);
-				end
-			elseif type(v) == "table" then
-				config[k] = { };
-				for k1, v1 in pairs(v) do
-					config[k][k1] = v1;
-					if type(v1) == "boolean" then
-						if v1 then
-							FUNC_CALL("ON", k, k1);
-						else
-							FUNC_CALL("OFF", k, k1);
-						end
+do
+	local function resetButtonOnClick()
+		for k, v in pairs(default) do
+			if config[k] ~= v then
+				if type(v) == "boolean" then
+					config[k] = v;
+					if v then
+						FUNC_CALL("ON", k);
 					else
-						FUNC_CALL("SETVALUE", k, k1, v1);
+						FUNC_CALL("OFF", k);
 					end
+				elseif type(v) == "table" then
+					config[k] = { };
+					for k1, v1 in pairs(v) do
+						config[k][k1] = v1;
+						if type(v1) == "boolean" then
+							if v1 then
+								FUNC_CALL("ON", k, k1);
+							else
+								FUNC_CALL("OFF", k, k1);
+							end
+						else
+							FUNC_CALL("SETVALUE", k, k1, v1);
+						end
+					end
+				else
+					config[k] = v;
+					FUNC_CALL("SETVALUE", k, v);
 				end
-			else
-				config[k] = v;
-				FUNC_CALL("SETVALUE", k, v);
-			end
-			local object = configFrame.objects[k];
-			if object then
-				if object.type == "CheckButton" then
-					object.object:SetChecked(config[k]);
-				elseif object.type == "MultiCB" then
-					for i = 1, #v.object do
-						object.object[i]:SetChecked(config[k][i]);
+				local object = configFrame.objects[k];
+				if object then
+					if object.type == "CheckButton" then
+						object.object:SetChecked(config[k]);
+					elseif object.type == "MultiCB" then
+						for i = 1, #v.object do
+							object.object[i]:SetChecked(config[k][i]);
+						end
+					elseif object.type == "Slider" or object.type == "DropDownMenu" then
+						object.object:SetValue(config[k]);
 					end
-				elseif object.type == "Slider" or object.type == "DropDownMenu" then
-					object.object:SetValue(config[k]);
 				end
 			end
 		end
 	end
-end
-local function closeButtonOnClick()
-	configFrame:Hide();
-end
-
-
-local function MultiCheckButtonOnClick(self)
-	if config[self.key][self.idx] then
-		config[self.key][self.idx] = false;
-		FUNC_CALL("OFF", self.key, self.idx);
-	else
-		config[self.key][self.idx] = true;
-		FUNC_CALL("ON", self.key, self.idx);
+	local function closeButtonOnClick()
+		configFrame:Hide();
 	end
-end
-local function CheckButtonOnClick(self)
-	if config[self.key] then
-		config[self.key] = false;
-		FUNC_CALL("OFF", self.key);
-	else
-		config[self.key] = true;
-		FUNC_CALL("ON", self.key);
-	end
-end
-local function CheckButtonOnEnter(self)
-	if self.tooltipText then
-		GameTooltip:SetOwner(self, self.tooltipOwnerPoint or "ANCHOR_RIGHT");
-		if type(self.tooltipText) == "string" then
-			GameTooltip:SetText(self.tooltipText, nil, nil, nil, nil, true);
-		elseif type(self.tooltipText) == "function" then
-			GameTooltip:SetText(self.tooltipText(), nil, nil, nil, nil, true);
+
+	local function MultiCheckButtonOnClick(self)
+		if config[self.key][self.idx] then
+			config[self.key][self.idx] = false;
+			FUNC_CALL("OFF", self.key, self.idx);
+		else
+			config[self.key][self.idx] = true;
+			FUNC_CALL("ON", self.key, self.idx);
 		end
 	end
-end
-local function sliderDisable(self)
-	self.text:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-	self.minText:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-	self.maxText:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-	self.valueBox:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
-	self.valueBox:SetEnabled(false)
-end
-local function sliderEnable(self)
-	self.text:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-	self.minText:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-	self.maxText:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-	self.valueBox:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
-	self.valueBox:SetEnabled(true)
-end
-local function sliderRefresh(self)
-	self:SetValue(config[self.key]);
-	self.valueBox:SetText(config[self.key]);
-end
-local function sliderOnValueChanged(self, value, userInput)
-	local value = floor(value / self.stepSize + 0.5) * self.stepSize;
-	if userInput then
-		config[self.key] = value;
-		FUNC_CALL("SETVALUE", self.key, value);
+	local function CheckButtonOnClick(self)
+		if config[self.key] then
+			config[self.key] = false;
+			FUNC_CALL("OFF", self.key);
+		else
+			config[self.key] = true;
+			FUNC_CALL("ON", self.key);
+		end
 	end
-	self.valueBox:SetText(value);
-end
-local function sliderValueBoxOnEscapePressed(self)
-	self:SetText(config[self.parent.key]);
-	self:ClearFocus();
-end
-local function sliderValueBoxOnEnterPressed(self)
-	local value = tonumber(self:GetText()) or 0.0
-	value = floor(value / self.parent.stepSize + 0.5) * self.parent.stepSize
-	value = max(self.parent.minRange, min(self.parent.maxRange, value))
-	self.parent:SetValue(value)
-	config[self.parent.key] = value;
-	self:SetText(value);
-	FUNC_CALL("SETVALUE", self.parent.key, value);
-	self:ClearFocus();
-end
-local function sliderValueBoxOnOnChar(self)
-	self:SetText(self:GetText():gsub("[^%.0-9]+", ""):gsub("(%..*)%.", "%1"))
-end
-local function dropOnClick(button, drop, funcIndex, key, val, ...)
-	drop.label:SetText(val);
-	config[key] = val;
-	FUNC_CALL(funcIndex, key, val, ...);
-end
-
-local function configFrame_Init(configFrame)
-
-	local objects = { };
-	configFrame.objects = objects;
-
-	local maxWidth = - 1;
-
-	local yOfs = 10;
-
-	local prevAnchorObj = nil;
-	local prevWidth = 0;
-
-	for _, t in pairs(buttons) do
-		if t.type == "CheckButton" then
-			local cb = CreateFrame("CheckButton", "alaChatConfigFrame_CheckButton_"..t.name, configFrame, "OptionsBaseCheckButtonTemplate");
-			cb:SetHitRectInsets(0, 0, 0, 0);
-			cb:GetNormalTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
-			cb:GetPushedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
-			cb:GetCheckedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
-			cb.key = t.key;
-			cb.tooltipText = t.text;
-
-			cb:ClearAllPoints();
-
-			cb:SetScript("OnClick", CheckButtonOnClick);
-
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label);
-			cb.label = label;
-
-			label:SetPoint("LEFT", cb, "RIGHT", space_Header_Label, 0);
-
-			objects[t.key] = { type = t.type, head = cb, object = cb, label = label, };
-			if t.sub and prevAnchorObj then
-				cb:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				cb:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-				yOfs = yOfs + CBLineHeight;
-				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
-				maxWidth = max(maxWidth, prevWidth);
+	local function CheckButtonOnEnter(self)
+		if self.tooltipText then
+			GameTooltip:SetOwner(self, self.tooltipOwnerPoint or "ANCHOR_RIGHT");
+			if type(self.tooltipText) == "string" then
+				GameTooltip:SetText(self.tooltipText, nil, nil, nil, nil, true);
+			elseif type(self.tooltipText) == "function" then
+				GameTooltip:SetText(self.tooltipText(), nil, nil, nil, nil, true);
 			end
-			prevAnchorObj = label;
-		elseif t.type == "MultiCB" then
-			local cfg = config[t.key];
-			local num = #cfg;
+		end
+	end
+	local function sliderDisable(self)
+		self.text:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
+		self.minText:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
+		self.maxText:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
+		self.valueBox:SetTextColor(GRAY_FONT_COLOR.r, GRAY_FONT_COLOR.g, GRAY_FONT_COLOR.b)
+		self.valueBox:SetEnabled(false)
+	end
+	local function sliderEnable(self)
+		self.text:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
+		self.minText:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
+		self.maxText:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
+		self.valueBox:SetTextColor(HIGHLIGHT_FONT_COLOR.r, HIGHLIGHT_FONT_COLOR.g, HIGHLIGHT_FONT_COLOR.b)
+		self.valueBox:SetEnabled(true)
+	end
+	local function sliderRefresh(self)
+		self:SetValue(config[self.key]);
+		self.valueBox:SetText(config[self.key]);
+	end
+	local function sliderOnValueChanged(self, value, userInput)
+		local value = floor(value / self.stepSize + 0.5) * self.stepSize;
+		if userInput then
+			config[self.key] = value;
+			FUNC_CALL("SETVALUE", self.key, value);
+		end
+		self.valueBox:SetText(value);
+	end
+	local function sliderValueBoxOnEscapePressed(self)
+		self:SetText(config[self.parent.key]);
+		self:ClearFocus();
+	end
+	local function sliderValueBoxOnEnterPressed(self)
+		local value = tonumber(self:GetText()) or 0.0
+		value = floor(value / self.parent.stepSize + 0.5) * self.parent.stepSize
+		value = max(self.parent.minRange, min(self.parent.maxRange, value))
+		self.parent:SetValue(value)
+		config[self.parent.key] = value;
+		self:SetText(value);
+		FUNC_CALL("SETVALUE", self.parent.key, value);
+		self:ClearFocus();
+	end
+	local function sliderValueBoxOnOnChar(self)
+		self:SetText(self:GetText():gsub("[^%.0-9]+", ""):gsub("(%..*)%.", "%1"))
+	end
+	local function dropOnClick(button, drop, funcIndex, key, val, ...)
+		drop.label:SetText(val);
+		config[key] = val;
+		FUNC_CALL(funcIndex, key, val, ...);
+	end
 
-			local texture = configFrame:CreateTexture(nil, "ARTWORK");
-			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-			texture:SetTexture(labelTexture);
-			texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+	local function configFrame_Init(configFrame)
 
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label.label);
-			label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+		local objects = { };
+		configFrame.objects = objects;
 
-			objects[t.key] = { type = t.type, object = { }, label = label, }
+		local maxWidth = - 1;
 
-			local xOfs = 0;
-			local anchor = nil;
-			if t.sub and prevAnchorObj then
-				anchor = { "LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0 };
-				xOfs = space_SubConfig;
-				prevWidth = prevWidth + space_SubConfig + MCWidth * num + MCInter * (num - 1) + 30;
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				anchor = { "TOPLEFT", configFrame, "TOPLEFT", 30 + borderWidth, - yOfs - MCLineHeight0 - MCLineHeight1 };
-				xOfs = 0;
-				yOfs = yOfs + (MCLineHeight0 + MCLineHeight1 + MCLineHeight2 + MCLineHeight3);
-				prevWidth = MCWidth * num + MCInter * (num - 1) + 30;
-				maxWidth = max(maxWidth, prevWidth);
-			end
+		local yOfs = 10;
 
-			for i = 1, num do
+		local prevAnchorObj = nil;
+		local prevWidth = 0;
 
-				local cb = CreateFrame("CheckButton", "alaChatConfigFrame_MultiCheckButton_"..t.name..i, configFrame, "OptionsBaseCheckButtonTemplate");
+		for _, t in pairs(buttons) do
+			if t.type == "CheckButton" then
+				local cb = CreateFrame("CheckButton", "alaChatConfigFrame_CheckButton_"..t.name, configFrame, "OptionsBaseCheckButtonTemplate");
+				cb:SetHitRectInsets(0, 0, 0, 0);
 				cb:GetNormalTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
 				cb:GetPushedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
 				cb:GetCheckedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
-				cb:SetHitRectInsets(0, 0, 0, 0);
 				cb.key = t.key;
-				cb.idx = i;
 				cb.tooltipText = t.text;
 
 				cb:ClearAllPoints();
-				if i == 1 then
-					cb:SetPoint(unpack(anchor));
+
+				cb:SetScript("OnClick", CheckButtonOnClick);
+
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label);
+				cb.label = label;
+
+				label:SetPoint("LEFT", cb, "RIGHT", space_Header_Label, 0);
+
+				objects[t.key] = { type = t.type, head = cb, object = cb, label = label, };
+				if t.sub and prevAnchorObj then
+					cb:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
+					maxWidth = max(maxWidth, prevWidth);
 				else
-					cb:SetPoint("LEFT", objects[t.key].object[i - 1], "RIGHT", MCInter, 0);
+					cb:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+					yOfs = yOfs + CBLineHeight;
+					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth();
+					maxWidth = max(maxWidth, prevWidth);
 				end
+				prevAnchorObj = label;
+			elseif t.type == "MultiCB" then
+				local cfg = config[t.key];
+				local num = #cfg;
 
-				cb:SetScript("OnClick", MultiCheckButtonOnClick);
+				local texture = configFrame:CreateTexture(nil, "ARTWORK");
+				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+				texture:SetTexture(labelTexture);
+				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
 
-				local subLabel = configFrame:CreateFontString(nil, "ARTWORK");
-				local font, size = GameFontHighlight:GetFont();
-				subLabel:SetFont(font, size - 2, "OUTLINE");
-				subLabel:SetText(t.label[i]);
-				cb.label = subLabel;
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label.label);
+				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
 
-				if i%2 == 0 then
-					subLabel:SetPoint("TOP", cb, "BOTTOM", 0, space_Header_Label);
+				objects[t.key] = { type = t.type, object = { }, label = label, }
+
+				local xOfs = 0;
+				local anchor = nil;
+				if t.sub and prevAnchorObj then
+					anchor = { "LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0 };
+					xOfs = space_SubConfig;
+					prevWidth = prevWidth + space_SubConfig + MCWidth * num + MCInter * (num - 1) + 30;
+					maxWidth = max(maxWidth, prevWidth);
 				else
-					subLabel:SetPoint("BOTTOM", cb, "TOP", 0, space_Header_Label);
+					anchor = { "TOPLEFT", configFrame, "TOPLEFT", 30 + borderWidth, - yOfs - MCLineHeight0 - MCLineHeight1 };
+					xOfs = 0;
+					yOfs = yOfs + (MCLineHeight0 + MCLineHeight1 + MCLineHeight2 + MCLineHeight3);
+					prevWidth = MCWidth * num + MCInter * (num - 1) + 30;
+					maxWidth = max(maxWidth, prevWidth);
 				end
 
-				objects[t.key].object[i] = cb;
-			end
+				for i = 1, num do
 
-			prevAnchorObj = objects[t.key].object[num];
-			objects[t.key].head = objects[t.key].object[1];
-		elseif t.type == "Slider" then
-			local texture = configFrame:CreateTexture(nil, "ARTWORK");
-			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-			texture:SetTexture(labelTexture);
+					local cb = CreateFrame("CheckButton", "alaChatConfigFrame_MultiCheckButton_"..t.name..i, configFrame, "OptionsBaseCheckButtonTemplate");
+					cb:GetNormalTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
+					cb:GetPushedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
+					cb:GetCheckedTexture():SetVertexColor(0.0, 1.0, 0.0, 1.0);
+					cb:SetHitRectInsets(0, 0, 0, 0);
+					cb.key = t.key;
+					cb.idx = i;
+					cb.tooltipText = t.text;
 
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label);
+					cb:ClearAllPoints();
+					if i == 1 then
+						cb:SetPoint(unpack(anchor));
+					else
+						cb:SetPoint("LEFT", objects[t.key].object[i - 1], "RIGHT", MCInter, 0);
+					end
 
-			label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+					cb:SetScript("OnClick", MultiCheckButtonOnClick);
 
-			local slider = CreateFrame("Slider", "alaChatConfigFrame_CheckButton_" .. t.name, configFrame, "OptionsSliderTemplate");
-			slider.key = t.key;
+					local subLabel = configFrame:CreateFontString(nil, "ARTWORK");
+					local font, size = GameFontHighlight:GetFont();
+					subLabel:SetFont(font, size - 2, "OUTLINE");
+					subLabel:SetText(t.label[i]);
+					cb.label = subLabel;
 
-			slider:ClearAllPoints();
-			slider:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
-			slider:SetWidth(SLWidth);
-			slider:SetHeight(20);
+					if i%2 == 0 then
+						subLabel:SetPoint("TOP", cb, "BOTTOM", 0, space_Header_Label);
+					else
+						subLabel:SetPoint("BOTTOM", cb, "TOP", 0, space_Header_Label);
+					end
 
-			slider:SetScript("OnShow", sliderRefresh);
-			slider:HookScript("OnValueChanged", sliderOnValueChanged)
-			slider:HookScript("OnDisable", sliderDisable)
-			slider:HookScript("OnEnable", sliderEnable)
-			slider.stepSize = t.stepSize;
-			slider:SetValueStep(t.stepSize);
-			slider:SetObeyStepOnDrag(true);
-
-			slider:SetMinMaxValues(t.minRange, t.maxRange)
-			slider.minRange = t.minRange;
-			slider.maxRange = t.maxRange;
-			slider.minText = _G[slider:GetName() .. "Low"];
-			slider.maxText = _G[slider:GetName() .. "High"];
-			slider.text = _G[slider:GetName() .. "Text"];
-			slider.minText:SetText(t.minRange)
-			slider.maxText:SetText(t.maxRange)
-			--slider.text:SetText(t.label);
-
-			local valueBox = CreateFrame("EditBox", nil, slider);
-			valueBox:SetPoint("TOP", slider, "BOTTOM", 0, 0);
-			valueBox:SetSize(60, 14);
-			valueBox:SetFontObject(GameFontHighlightSmall);
-			valueBox:SetAutoFocus(false);
-			valueBox:SetJustifyH("CENTER");
-			valueBox:SetScript("OnEscapePressed", sliderValueBoxOnEscapePressed);
-			valueBox:SetScript("OnEnterPressed", sliderValueBoxOnEnterPressed);
-			valueBox:SetScript("OnChar", sliderValueBoxOnOnChar);
-			valueBox:SetMaxLetters(5)
-
-			valueBox:SetBackdrop({
-				bgFile = "Interface/ChatFrame/ChatFrameBackground", 
-				edgeFile = "Interface/ChatFrame/ChatFrameBackground", 
-				tile = true, edgeSize = 1, tileSize = 5, 
-			 })
-			valueBox:SetBackdropColor(0, 0, 0, 0.5)
-			valueBox:SetBackdropBorderColor(0.3, 0.3, 0.3, 0.8)
-			valueBox.parent = slider;
-
-			slider.valueBox = valueBox
-
-			objects[t.key] = { type = t.type, head = texture, object = slider, label = label, object2 = valueBox, };
-			if t.sub and prevAnchorObj then
-				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-				prevWidth = prevWidth + space_Header_Label + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-				yOfs = yOfs + SLLineHeight;
-				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
-				maxWidth = max(maxWidth, prevWidth);
-			end
-			prevAnchorObj = slider;
-		elseif t.type == "DropDownMenu" then
-			local texture = configFrame:CreateTexture(nil, "ARTWORK");
-			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-			texture:SetTexture(labelTexture);
-			--texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label);
-
-			label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
-
-			local drop = CreateFrame("Button", "alaChatConfigFrame_Drop_" .. t.name, configFrame);
-			drop:SetSize(28, 28)
-			drop:EnableMouse(true);
-			drop:SetNormalTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-up")
-			--drop:GetNormalTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
-			drop:SetPushedTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-down")
-			--drop:GetPushedTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
-			drop:SetHighlightTexture("Interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-highlight");
-			drop:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
-			local dropfs = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			dropfs:SetPoint("LEFT", drop, "RIGHT", 0, 0);
-			drop.label = dropfs;
-			drop.key = t.key;
-			local db = {
-				handler = dropOnClick, 
-				elements = { }, 
-			};
-			local dropfsWidth = 0;
-			for i = 1, #t.value do
-				db.elements[i] = {
-					para = { drop, "SETVALUE", t.key, t.value[i], };
-					text = t.value[i];
-				 };
-				dropfs:SetText(t.value[i]);
-				dropfsWidth = max(dropfsWidth, dropfs:GetWidth());
-			end
-			dropfs:SetText(config and config[t.key] or "");
-			drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
-			function drop:SetValue(val)
-				self.label:SetText(val);
-			end
-
-			objects[t.key] = { type = t.type, head = texture, object = drop, label = label, object2 = dropfs, };
-
-			if t.sub and prevAnchorObj then
-				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-				yOfs = yOfs + DDLineHeight;
-				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
-				maxWidth = max(maxWidth, prevWidth);
-			end
-			prevAnchorObj = dropfs;
-		elseif t.type == "Input" then
-			local texture = configFrame:CreateTexture(nil, "ARTWORK");
-			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-			texture:SetTexture(labelTexture);
-
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label);
-			label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
-
-			local button = CreateFrame("Button", "alaChatConfigFrame_InputButton_"..t.name, configFrame);
-			button:SetSize(OptionsSetButtonWidth, 20);
-			button:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
-
-			button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
-			button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
-			button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-			button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-			button:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
-			button:SetScript("OnEnter", function(self)
-				if self.note then
-					GameTooltip:ClearAllPoints();
-					GameTooltip:SetOwner(self, "ANCHOR_LEFT");
-					GameTooltip:SetText(self.note, 1.0, 1.0, 1.0);
+					objects[t.key].object[i] = cb;
 				end
-			end);
-			button:SetScript("OnLeave", function(self)	if GameTooltip:IsOwned(self) then GameTooltip:Hide();end end);
-			button.note = t.note;
-			local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			fontString:SetText("\124cff00ff00SET\124r");
-			fontString:SetPoint("CENTER");
-			button.fontString = fontString;
 
-			-- local f = CreateFrame("Frame", nil, configFrame);
-			-- f:EnableMouse(true);
-			-- f:SetBackdrop({
-			-- 	bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
-			-- 	edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
-			-- 	tile = true, 
-			-- 	tileSize = 2, 
-			-- 	edgeSize = 2, 
-			-- 	insets = { left = 2, right = 2, top = 2, bottom = 2 }
-			-- });
-			-- f:SetBackdropColor(1, 1, 1, 1)
+				prevAnchorObj = objects[t.key].object[num];
+				objects[t.key].head = objects[t.key].object[1];
+			elseif t.type == "Slider" then
+				local texture = configFrame:CreateTexture(nil, "ARTWORK");
+				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+				texture:SetTexture(labelTexture);
 
-			local editBox = CreateFrame("EditBox", nil, configFrame);
-			editBox:SetWidth(min(t.width or 320, GetScreenWidth()));
-			editBox:SetFontObject(GameFontHighlightSmall);
-			editBox:SetAutoFocus(false);
-			editBox:SetJustifyH("LEFT");
-			editBox:Hide();
-			editBox:SetMultiLine(true);
-			editBox:EnableMouse(true);
-			editBox:SetBackdrop({
-				bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
-				edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
-				tile = true, 
-				tileSize = 2, 
-				edgeSize = 2, 
-				insets = { left = 2, right = 2, top = 2, bottom = 2 }
-			});
-			--editBox:SetScript("OnEnterPressed", function(self)
-				--self:SetText(self:GetText().."\n");
-			--end);
-			if not t.multiLine then
-				editBox:SetScript("OnEnterPressed", function(self)
-					self:SetText(gsub(self:GetText(), "\n", ""));
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label);
+
+				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+
+				local slider = CreateFrame("Slider", "alaChatConfigFrame_CheckButton_" .. t.name, configFrame, "OptionsSliderTemplate");
+				slider.key = t.key;
+
+				slider:ClearAllPoints();
+				slider:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
+				slider:SetWidth(SLWidth);
+				slider:SetHeight(20);
+
+				slider:SetScript("OnShow", sliderRefresh);
+				slider:HookScript("OnValueChanged", sliderOnValueChanged)
+				slider:HookScript("OnDisable", sliderDisable)
+				slider:HookScript("OnEnable", sliderEnable)
+				slider.stepSize = t.stepSize;
+				slider:SetValueStep(t.stepSize);
+				slider:SetObeyStepOnDrag(true);
+
+				slider:SetMinMaxValues(t.minRange, t.maxRange)
+				slider.minRange = t.minRange;
+				slider.maxRange = t.maxRange;
+				slider.minText = _G[slider:GetName() .. "Low"];
+				slider.maxText = _G[slider:GetName() .. "High"];
+				slider.text = _G[slider:GetName() .. "Text"];
+				slider.minText:SetText(t.minRange)
+				slider.maxText:SetText(t.maxRange)
+				--slider.text:SetText(t.label);
+
+				local valueBox = CreateFrame("EditBox", nil, slider);
+				valueBox:SetPoint("TOP", slider, "BOTTOM", 0, 0);
+				valueBox:SetSize(60, 14);
+				valueBox:SetFontObject(GameFontHighlightSmall);
+				valueBox:SetAutoFocus(false);
+				valueBox:SetJustifyH("CENTER");
+				valueBox:SetScript("OnEscapePressed", sliderValueBoxOnEscapePressed);
+				valueBox:SetScript("OnEnterPressed", sliderValueBoxOnEnterPressed);
+				valueBox:SetScript("OnChar", sliderValueBoxOnOnChar);
+				valueBox:SetMaxLetters(5)
+
+				valueBox:SetBackdrop({
+					bgFile = "Interface/ChatFrame/ChatFrameBackground", 
+					edgeFile = "Interface/ChatFrame/ChatFrameBackground", 
+					tile = true, edgeSize = 1, tileSize = 5, 
+				})
+				valueBox:SetBackdropColor(0, 0, 0, 0.5)
+				valueBox:SetBackdropBorderColor(0.3, 0.3, 0.3, 0.8)
+				valueBox.parent = slider;
+
+				slider.valueBox = valueBox
+
+				objects[t.key] = { type = t.type, head = texture, object = slider, label = label, object2 = valueBox, };
+				if t.sub and prevAnchorObj then
+					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_Header_Label + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
+					maxWidth = max(maxWidth, prevWidth);
+				else
+					texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+					yOfs = yOfs + SLLineHeight;
+					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + slider:GetWidth();
+					maxWidth = max(maxWidth, prevWidth);
+				end
+				prevAnchorObj = slider;
+			elseif t.type == "DropDownMenu" then
+				local texture = configFrame:CreateTexture(nil, "ARTWORK");
+				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+				texture:SetTexture(labelTexture);
+				--texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label);
+
+				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+
+				local drop = CreateFrame("Button", "alaChatConfigFrame_Drop_" .. t.name, configFrame);
+				drop:SetSize(28, 28)
+				drop:EnableMouse(true);
+				drop:SetNormalTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-up")
+				--drop:GetNormalTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+				drop:SetPushedTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-down")
+				--drop:GetPushedTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+				drop:SetHighlightTexture("Interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-highlight");
+				drop:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
+				local dropfs = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				dropfs:SetPoint("LEFT", drop, "RIGHT", 0, 0);
+				drop.label = dropfs;
+				drop.key = t.key;
+				local db = {
+					handler = dropOnClick, 
+					elements = { }, 
+				};
+				local dropfsWidth = 0;
+				for i = 1, #t.value do
+					db.elements[i] = {
+						para = { drop, "SETVALUE", t.key, t.value[i], };
+						text = t.value[i];
+					};
+					dropfs:SetText(t.value[i]);
+					dropfsWidth = max(dropfsWidth, dropfs:GetWidth());
+				end
+				dropfs:SetText(config and config[t.key] or "");
+				drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
+				function drop:SetValue(val)
+					self.label:SetText(val);
+				end
+
+				objects[t.key] = { type = t.type, head = texture, object = drop, label = label, object2 = dropfs, };
+
+				if t.sub and prevAnchorObj then
+					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
+					maxWidth = max(maxWidth, prevWidth);
+				else
+					texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+					yOfs = yOfs + DDLineHeight;
+					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
+					maxWidth = max(maxWidth, prevWidth);
+				end
+				prevAnchorObj = dropfs;
+			elseif t.type == "Input" then
+				local texture = configFrame:CreateTexture(nil, "ARTWORK");
+				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+				texture:SetTexture(labelTexture);
+
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label);
+				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+
+				local button = CreateFrame("Button", "alaChatConfigFrame_InputButton_"..t.name, configFrame);
+				button:SetSize(OptionsSetButtonWidth, 20);
+				button:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
+
+				button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
+				button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
+				button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+				button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+				button:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
+				button:SetScript("OnEnter", function(self)
+					if self.note then
+						GameTooltip:ClearAllPoints();
+						GameTooltip:SetOwner(self, "ANCHOR_LEFT");
+						GameTooltip:SetText(self.note, 1.0, 1.0, 1.0);
+					end
 				end);
-			end
-			editBox:SetScript("OnEscapePressed", function(self)
-				self:ClearFocus();
-				self:SetText(config[t.key] or "");
-				self:Hide();
-			end);
-			-- editBox:SetScript("OnChar", function()
-			-- 	editBox:SetText(gsub(editBox:GetText(), "%%", ""));
-			-- end);
-			editBox:SetPoint("LEFT", button, "RIGHT", 4, 0);
-			editBox:SetBackdrop({
-				bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
-				edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
-				tile = true, 
-				tileSize = 2, 
-				edgeSize = 2, 
-				insets = { left = 2, right = 2, top = 2, bottom = 2 }
-			 });
-			editBox:SetFrameStrata("FULLSCREEN_DIALOG");
+				button:SetScript("OnLeave", function(self)	if GameTooltip:IsOwned(self) then GameTooltip:Hide();end end);
+				button.note = t.note;
+				local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				fontString:SetText("\124cff00ff00SET\124r");
+				fontString:SetPoint("CENTER");
+				button.fontString = fontString;
 
-			-- f:SetPoint("TOPLEFT", editBox, "TOPLEFT", - 4, 28);
-			-- f:SetPoint("BOTTOMRIGHT", editBox, "BOTTOMRIGHT", 4, - 28);
-			-- f:Hide();
-			-- f:SetFrameStrata("FULLSCREEN_DIALOG");
+				-- local f = CreateFrame("Frame", nil, configFrame);
+				-- f:EnableMouse(true);
+				-- f:SetBackdrop({
+				-- 	bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
+				-- 	edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
+				-- 	tile = true, 
+				-- 	tileSize = 2, 
+				-- 	edgeSize = 2, 
+				-- 	insets = { left = 2, right = 2, top = 2, bottom = 2 }
+				-- });
+				-- f:SetBackdropColor(1, 1, 1, 1)
 
-			local eOK = CreateFrame("Button", "alaChatConfigFrame_InputButtonOK_"..t.name, editBox);
-			eOK:SetSize(20, 20);
-			eOK:SetNormalTexture("Interface\\Buttons\\ui-checkbox-check");
-			eOK:SetPushedTexture("Interface\\Buttons\\ui-checkbox-check");
-			eOK:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
-			eOK:SetPoint("BOTTOMLEFT", editBox, "TOPLEFT", 4, 0);
-			eOK:SetScript("OnClick", function(self)
+				local editBox = CreateFrame("EditBox", nil, configFrame);
+				editBox:SetWidth(min(t.width or 320, GetScreenWidth()));
+				editBox:SetFontObject(GameFontHighlightSmall);
+				editBox:SetAutoFocus(false);
+				editBox:SetJustifyH("LEFT");
 				editBox:Hide();
-				local text = gsub(editBox:GetText(), "%%", "%%%%");
-				config[t.key] = editBox:GetText();
-				FUNC.SETVALUE[t.key](editBox:GetText());
-			end);
-			editBox.OK = eOK;
+				editBox:SetMultiLine(true);
+				editBox:EnableMouse(true);
+				editBox:SetBackdrop({
+					bgFile = "Interface\\Buttons\\WHITE8X8";	-- "Interface\\Tooltips\\UI-Tooltip-Background", 
+					edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
+					tile = true, 
+					tileSize = 2, 
+					edgeSize = 2, 
+					insets = { left = 2, right = 2, top = 2, bottom = 2 }
+				});
+				editBox:SetBackdropColor(0.05, 0.05, 0.05, 1.0);
+				--editBox:SetScript("OnEnterPressed", function(self)
+					--self:SetText(self:GetText().."\n");
+				--end);
+				if not t.multiLine then
+					editBox:SetScript("OnEnterPressed", function(self)
+						self:SetText(gsub(self:GetText(), "\n", ""));
+					end);
+				end
+				editBox:SetScript("OnEscapePressed", function(self)
+					self:ClearFocus();
+					self:SetText(config[t.key] or "");
+					self:Hide();
+				end);
+				-- editBox:SetScript("OnChar", function()
+				-- 	editBox:SetText(gsub(editBox:GetText(), "%%", ""));
+				-- end);
+				editBox:SetPoint("LEFT", button, "RIGHT", 4, 0);
+				editBox:SetFrameStrata("FULLSCREEN_DIALOG");
 
-			local eClose = CreateFrame("Button", "alaChatConfigFrame_InputButtonClose_"..t.name, editBox);
-			eClose:SetSize(20, 20);
-			eClose:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
-			eClose:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
-			eClose:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
-			eClose:SetPoint("LEFT", eOK, "RIGHT", 4, 0);
-			eClose:SetScript("OnClick", function(self) editBox:Hide(); end);
-			editBox.close = eClose;
+				-- f:SetPoint("TOPLEFT", editBox, "TOPLEFT", - 4, 28);
+				-- f:SetPoint("BOTTOMRIGHT", editBox, "BOTTOMRIGHT", 4, - 28);
+				-- f:Hide();
+				-- f:SetFrameStrata("FULLSCREEN_DIALOG");
 
-			button.editBox = editBox;
-			button:SetScript("OnClick", function(self)
-				if editBox:IsShown() then
+				local eOK = CreateFrame("Button", "alaChatConfigFrame_InputButtonOK_"..t.name, editBox);
+				eOK:SetSize(20, 20);
+				eOK:SetNormalTexture("Interface\\Buttons\\ui-checkbox-check");
+				eOK:SetPushedTexture("Interface\\Buttons\\ui-checkbox-check");
+				eOK:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
+				eOK:SetPoint("BOTTOMLEFT", editBox, "TOPLEFT", 4, 0);
+				eOK:SetScript("OnClick", function(self)
 					editBox:Hide();
+					local text = gsub(editBox:GetText(), "%%", "%%%%");
+					config[t.key] = editBox:GetText();
+					FUNC.SETVALUE[t.key](editBox:GetText());
+				end);
+				editBox.OK = eOK;
+
+				local eClose = CreateFrame("Button", "alaChatConfigFrame_InputButtonClose_"..t.name, editBox);
+				eClose:SetSize(20, 20);
+				eClose:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
+				eClose:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
+				eClose:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
+				eClose:SetPoint("LEFT", eOK, "RIGHT", 4, 0);
+				eClose:SetScript("OnClick", function(self) editBox:Hide(); end);
+				editBox.close = eClose;
+
+				button.editBox = editBox;
+				button:SetScript("OnClick", function(self)
+					if editBox:IsShown() then
+						editBox:Hide();
+					else
+						editBox:Show();
+						editBox:SetText(config[t.key] or "");
+					end
+				end);
+				button:SetScript("OnHide", function(self)
+					editBox:Hide();
+				end)
+			
+				objects[t.key] = { type = t.type, head = texture, object = button, label = label, };
+				if t.sub and prevAnchorObj then
+					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
+					maxWidth = max(maxWidth, prevWidth);
 				else
-					editBox:Show();
-					editBox:SetText(config[t.key] or "");
+					texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+					yOfs = yOfs + INLineHeight;
+					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
+					maxWidth = max(maxWidth, prevWidth);
 				end
-			end);
-			button:SetScript("OnHide", function(self)
-				editBox:Hide();
-			end)
-		
-			objects[t.key] = { type = t.type, head = texture, object = button, label = label, };
-			if t.sub and prevAnchorObj then
-				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-				yOfs = yOfs + INLineHeight;
-				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = max(maxWidth, prevWidth);
-			end
-			prevAnchorObj = button;
-		elseif t.type == "ColorSelect" then
-			local texture = configFrame:CreateTexture(nil, "ARTWORK");
-			texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-			texture:SetTexture(labelTexture);
+				prevAnchorObj = button;
+			elseif t.type == "ColorSelect" then
+				local texture = configFrame:CreateTexture(nil, "ARTWORK");
+				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+				texture:SetTexture(labelTexture);
 
-			local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			label:SetText(t.label);
-			label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				label:SetText(t.label);
+				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
 
-			local button = CreateFrame("Button", "alaChatConfigFrame_ColorSelect"..t.name, configFrame);
-			button:SetSize(OptionsSetButtonWidth, 20);
-			button:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
+				local button = CreateFrame("Button", "alaChatConfigFrame_ColorSelect"..t.name, configFrame);
+				button:SetSize(OptionsSetButtonWidth, 20);
+				button:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
 
-			button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
-			button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
-			button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-			button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
-			button:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
-			button:SetScript("OnEnter", function(self)
-				if self.note then
-					GameTooltip:ClearAllPoints();
-					GameTooltip:SetOwner(self, "ANCHOR_LEFT");
-					GameTooltip:SetText(self.note, 1.0, 1.0, 1.0);
-				end
-			end);
-			button:SetScript("OnLeave", function(self)	if GameTooltip:IsOwned(self) then GameTooltip:Hide();end end);
-			button.note = t.note;
-			local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-			fontString:SetText("\124cff00ff00SET\124r");
-			fontString:SetPoint("CENTER");
-			button.fontString = fontString;
+				button:SetNormalTexture("Interface\\Buttons\\ui-panel-button-up");
+				button:SetPushedTexture("Interface\\Buttons\\ui-panel-button-up");
+				button:GetNormalTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+				button:GetPushedTexture():SetTexCoord(1 / 128, 79 / 128, 1 / 32, 22 / 32);
+				button:SetHighlightTexture("Interface\\Buttons\\ui-panel-minimizebutton-highlight");
+				button:SetScript("OnEnter", function(self)
+					if self.note then
+						GameTooltip:ClearAllPoints();
+						GameTooltip:SetOwner(self, "ANCHOR_LEFT");
+						GameTooltip:SetText(self.note, 1.0, 1.0, 1.0);
+					end
+				end);
+				button:SetScript("OnLeave", function(self)	if GameTooltip:IsOwned(self) then GameTooltip:Hide();end end);
+				button.note = t.note;
+				local fontString = button:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+				fontString:SetText("\124cff00ff00SET\124r");
+				fontString:SetPoint("CENTER");
+				button.fontString = fontString;
 
-			button:SetScript("OnClick", function(self)
-				if ColorPickerFrame:IsShown() then
-					ColorPickerFrame:Hide();
-				else
-					ColorPickerFrame.func = nil;
-					ColorPickerFrame.cancelFunc = nil;
-					ColorPickerFrame:SetColorRGB(unpack(config[t.key]));
-					--ColorPickerFrame:SetText(config[t.key] or "");
-					--ColorPickerFrame.opacity(1);
-					ColorPickerFrame.func = function()
+				button:SetScript("OnClick", function(self)
+					if ColorPickerFrame:IsShown() then
+						ColorPickerFrame:Hide();
+					else
+						ColorPickerFrame.func = nil;
+						ColorPickerFrame.cancelFunc = nil;
+						ColorPickerFrame:SetColorRGB(unpack(config[t.key]));
+						--ColorPickerFrame:SetText(config[t.key] or "");
+						--ColorPickerFrame.opacity(1);
+						ColorPickerFrame.func = function()
+								local r, g, b = ColorPickerFrame:GetColorRGB();
+								config[t.key] = { r, g, b, };
+								FUNC_CALL("SETVALUE", t.key, r, g, b);
+						end
+						ColorPickerFrame.cancelFunc = function()
 							local r, g, b = ColorPickerFrame:GetColorRGB();
 							config[t.key] = { r, g, b, };
 							FUNC_CALL("SETVALUE", t.key, r, g, b);
+						end
+						ColorPickerFrame:SetPoint("BOTTOMLEFT", button, "TOPRIGHT", 12, 12);
+						ColorPickerFrame:Show();
 					end
-					ColorPickerFrame.cancelFunc = function()
-						local r, g, b = ColorPickerFrame:GetColorRGB();
-						config[t.key] = { r, g, b, };
-						FUNC_CALL("SETVALUE", t.key, r, g, b);
-					end
-					ColorPickerFrame:SetPoint("BOTTOMLEFT", button, "TOPRIGHT", 12, 12);
-					ColorPickerFrame:Show();
-				end
-			end);
-			button:SetScript("OnHide", function(self)
-				--colorSelect:Hide();
-			end)
+				end);
+				button:SetScript("OnHide", function(self)
+					--colorSelect:Hide();
+				end)
 
-			objects[t.key] = { type = t.type, head = texture, object = button, label = label, object2 = colorSelect, };
-			if t.sub and prevAnchorObj then
-				texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-				prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = max(maxWidth, prevWidth);
-			else
-				texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-				yOfs = yOfs + INLineHeight;
-				prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
-				maxWidth = max(maxWidth, prevWidth);
+				objects[t.key] = { type = t.type, head = texture, object = button, label = label, object2 = colorSelect, };
+				if t.sub and prevAnchorObj then
+					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
+					maxWidth = max(maxWidth, prevWidth);
+				else
+					texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+					yOfs = yOfs + INLineHeight;
+					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
+					maxWidth = max(maxWidth, prevWidth);
+				end
+				prevAnchorObj = button;
 			end
-			prevAnchorObj = button;
 		end
+
+		configFrame:SetWidth(borderWidth + maxWidth + borderWidth);
+		configFrame:SetHeight(yOfs);
+
 	end
 
-	configFrame:SetWidth(borderWidth + maxWidth + borderWidth);
-	configFrame:SetHeight(yOfs);
+	function configFrame:configFrame_Create()
+		configFrame:SetPoint("CENTER");
+		configFrame:SetFrameStrata("HIGH");
+		--configFrame:SetToplevel(true);
+		configFrame:SetMovable(true);
+		--configFrame:SetClampedToScreen(true);
+		configFrame:SetBackdrop(
+			{
+				bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
+				edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
+				tile = true, 
+				tileSize = 16, 
+				edgeSize = 16, 
+				insets = { left = 5, right = 5, top = 5, bottom = 5 }
+			}
+		);
+		configFrame:SetBackdropColor(0, 0, 0);
+		--[[
+			--configFrame:EnableMouse(true);
+			--configFrame:RegisterForDrag("LeftButton");
+			--configFrame:SetScript("OnDragStart", function(self) self:StartMoving();end);
+			--configFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing();end);
+			-- local title = configFrame:CreateFontString("alaChatConfigFrame_Title", "ARTWORK", "GameFontHighlight");
+			-- title:SetPoint("CENTER", configFrame, "TOP", 0, * 0.5);
+			-- title:SetText(LCONFIG.title);
 
-end
+			-- configFrame.title = title;
 
-local function configFrame_Create()
-	configFrame:SetPoint("CENTER");
-	configFrame:SetFrameStrata("HIGH");
-	--configFrame:SetToplevel(true);
-	configFrame:SetMovable(true);
-	--configFrame:SetClampedToScreen(true);
-	configFrame:SetBackdrop(
-		{
-			bgFile = "Interface\\Tooltips\\UI-Tooltip-Background", 
-			edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", 
-			tile = true, 
-			tileSize = 16, 
-			edgeSize = 16, 
-			insets = { left = 5, right = 5, top = 5, bottom = 5 }
-		 }
-	);
-	configFrame:SetBackdropColor(0, 0, 0);
-	--[[
-		--configFrame:EnableMouse(true);
-		--configFrame:RegisterForDrag("LeftButton");
-		--configFrame:SetScript("OnDragStart", function(self) self:StartMoving();end);
-		--configFrame:SetScript("OnDragStop", function(self) self:StopMovingOrSizing();end);
-		-- local title = configFrame:CreateFontString("alaChatConfigFrame_Title", "ARTWORK", "GameFontHighlight");
-		-- title:SetPoint("CENTER", configFrame, "TOP", 0, * 0.5);
-		-- title:SetText(LCONFIG.title);
+			-- local closeButton = CreateFrame("Button", "alaChatConfigFrame_CloseButton", configFrame);
+			-- closeButton:SetSize(18, 18);
+			-- closeButton:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
+			-- closeButton:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
+			-- closeButton:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
+			-- closeButton:SetPoint("TOPRIGHT", - 6, - 6);
+			-- closeButton:SetScript("OnClick", closeButtonOnClick);
 
-		-- configFrame.title = title;
+			-- configFrame.closeButton = closeButton;
 
-		-- local closeButton = CreateFrame("Button", "alaChatConfigFrame_CloseButton", configFrame);
-		-- closeButton:SetSize(18, 18);
-		-- closeButton:SetNormalTexture("Interface\\Buttons\\UI-StopButton");
-		-- closeButton:SetPushedTexture("Interface\\Buttons\\UI-StopButton");
-		-- closeButton:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
-		-- closeButton:SetPoint("TOPRIGHT", - 6, - 6);
-		-- closeButton:SetScript("OnClick", closeButtonOnClick);
+			-- local resetButton = CreateFrame("Button", "alaChatConfigFrame_CloseButton", configFrame);
+			-- resetButton:SetSize(18, 18);
+			-- resetButton:SetNormalTexture("Interface\\Buttons\\UI-RefreshButton");
+			-- resetButton:SetPushedTexture("Interface\\Buttons\\UI-RefreshButton");
+			-- resetButton:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
+			-- resetButton:SetPoint("TOPLEFT", 6, - 6);
+			-- resetButton:SetScript("OnClick", resetButtonOnClick);
 
-		-- configFrame.closeButton = closeButton;
-
-		-- local resetButton = CreateFrame("Button", "alaChatConfigFrame_CloseButton", configFrame);
-		-- resetButton:SetSize(18, 18);
-		-- resetButton:SetNormalTexture("Interface\\Buttons\\UI-RefreshButton");
-		-- resetButton:SetPushedTexture("Interface\\Buttons\\UI-RefreshButton");
-		-- resetButton:SetHighlightTexture("Interface\\Buttons\\CheckButtonHilight");
-		-- resetButton:SetPoint("TOPLEFT", 6, - 6);
-		-- resetButton:SetScript("OnClick", resetButtonOnClick);
-
-		-- configFrame.resetButton = resetButton;
-	--]]
-	configFrame_Init(configFrame);
-	configFrame:SetSize(100, 100);
-	configFrame:SetScript("OnShow", function(self)
-		for k, v in pairs(self.objects) do
-			if v.type == "CheckButton" then
-				v.object:SetChecked(config[k]);
-			elseif v.type == "MultiCB" then
-				for i = 1, #v.object do
-					v.object[i]:SetChecked(config[k][i]);
+			-- configFrame.resetButton = resetButton;
+		--]]
+		configFrame_Init(configFrame);
+		configFrame:SetSize(100, 100);
+		configFrame:SetScript("OnShow", function(self)
+			for k, v in pairs(self.objects) do
+				if v.type == "CheckButton" then
+					v.object:SetChecked(config[k]);
+				elseif v.type == "MultiCB" then
+					for i = 1, #v.object do
+						v.object[i]:SetChecked(config[k][i]);
+					end
+				elseif v.type == "Slider" or v.type == "DropDownMenu" then
+					v.object:SetValue(config[k]);
 				end
-			elseif v.type == "Slider" or v.type == "DropDownMenu" then
-				v.object:SetValue(config[k]);
 			end
-		end
-	end);
-	configFrame.name = NAME;
-	InterfaceOptions_AddCategory(configFrame);
+		end);
+		configFrame.name = NAME;
+		InterfaceOptions_AddCategory(configFrame);
+	end
 end
 
 local function __ShowConfig()
@@ -1012,7 +1006,7 @@ local function alaC_Init()
 	end
 
 	alaChatConfigFrame.config = config;
-	configFrame_Create();
+	configFrame:configFrame_Create();
 	--[[if LibStub then
 		local icon = LibStub("LibDBIcon-1.0", true);
 		if icon then
@@ -1168,3 +1162,125 @@ function alac_SetConfig(key, value)
 		FUNC.SETVALUE[key](value);
 	end
 end
+
+
+do
+	local FILTER = {  };
+	local META = {  };
+	function FILTER.SET(e)
+		if META[e] then
+			return;
+		end
+		local F = {  };
+		local S = {  };
+		META[e] = { F, S, };
+		local function ala_chat_filter_func(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ...)
+			local filtered = false;
+			for i = 1, #F do
+				filtered, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17
+					= F[i](self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ...);
+				if filtered then
+					return true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ...;
+				end
+			end
+			return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ...;
+		end
+		ChatFrame_AddMessageEventFilter(e, ala_chat_filter_func);
+	end
+	do
+		local E = {
+			"CHAT_MSG_CHANNEL",
+			"CHAT_MSG_SAY",
+			"CHAT_MSG_YELL",
+			"CHAT_MSG_WHISPER",
+			"CHAT_MSG_BN_WHISPER",
+			"CHAT_MSG_WHISPER_INFORM",
+			"CHAT_MSG_RAID",
+			"CHAT_MSG_RAID_LEADER",
+			"CHAT_MSG_RAID_WARNING",
+			"CHAT_MSG_PARTY",
+			"CHAT_MSG_PARTY_LEADER",
+			-- "CHAT_MSG_INSTANCE_CHAT",
+			-- "CHAT_MSG_INSTANCE_CHAT_LEADER",
+			"CHAT_MSG_GUILD",
+			"CHAT_MSG_OFFICER",
+			"CHAT_MSG_AFK",
+			"CHAT_MSG_EMOTE",
+			"CHAT_MSG_DND",
+			"CHAT_MSG_COMMUNITIES_CHANNEL",
+		};
+		for _, e in pairs(E) do
+			FILTER.SET(e);
+		end
+	end
+	function FILTER.GET(e)
+		FILTER.SET(e);
+		return META[e][1], META[e][2];
+	end
+	function FILTER.ADD(e, s, f)
+		if type(s) ~= 'number' then
+			return;
+		end
+		if type(f) ~= 'function' then
+			return;
+		end
+		local F, S = FILTER.GET(e);
+		if #S == 0 or s > S[#S] then
+			tinsert(F, f);
+			tinsert(S, s);
+			-- print("ADD", e, s, #S - 1, table.concat(S, "-"))
+		else
+			for i = 1, #S do
+				if s == S[i] then
+					break;
+				elseif s < S[i] then
+					tinsert(F, i, f);
+					tinsert(S, i, s);
+					-- print("ADD", e, s, i, table.concat(S, "-"))
+					break;
+				end
+			end
+		end
+	end
+	function FILTER.REMOVE(e, s)
+		if type(s) ~= 'number' then
+			return;
+		end
+		local F, S = FILTER.GET(e);
+		for i = #F, 1, -1 do
+			if S[i] == s then
+				tremove(F, i);
+				tremove(S, i);
+				-- print("REMOVE", e, s, i, table.concat(S, "-"))
+				break;
+			end
+		end
+	end
+
+	local SL = {  };
+	do
+		local SN = {
+			"channel_Ignore",
+			"bfWorld_Ignore",
+			"chat_filter",
+			"hyperLinkEnhanced_item",
+			"hyperLinkEnhanced_spell",
+			"chatEmote",
+			"keyWordHighlight",
+			"shortChannelName",
+		};
+		for i = 1, #SN do
+			SL[SN[i]] = i;
+		end
+	end
+
+	function _G.ala_add_message_event_filter(e, s, f)
+		-- print("ADD", e, s)
+		FILTER.ADD(e, SL[s], f);
+	end
+	function _G.ala_remove_message_event_filter(e, s)
+		-- print("REMOVE", e, s)
+		FILTER.REMOVE(e, SL[s]);
+	end
+end
+

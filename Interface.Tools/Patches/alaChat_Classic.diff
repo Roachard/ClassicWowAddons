@@ -1,8 +1,8 @@
 diff --git a/Interface/AddOns/alaChat_Classic/addon.lua b/Interface/AddOns/alaChat_Classic/addon.lua
-index a456778..fa57cf4 100644
+index 741b246..4340fc4 100644
 --- a/Interface/AddOns/alaChat_Classic/addon.lua
 +++ b/Interface/AddOns/alaChat_Classic/addon.lua
-@@ -140,20 +140,20 @@ local default = {
+@@ -143,20 +143,20 @@ local default = {
  	_version				 = 190830.0,
  	_overrideVersion		 = 190925.0,
  
@@ -27,14 +27,13 @@ index a456778..fa57cf4 100644
  	channelBarStyle			 = "CHAR",
  
  	channel_Ignore_Switch 	 = true,
-@@ -170,14 +170,14 @@ local default = {
+@@ -173,14 +173,14 @@ local default = {
  	DBMCountDown			 = true,
  	ReadyCheck				 = true,
  	statReport				 = true,
 -	level					 = false,
--	copy					 = false,
 +	level					 = true,
-+	copy					 = true,
+ 	copy					 = true,
  	copyTagColor			 = { 0.25, 0.25, 1.00 },
  	copyTagFormat			 = "#s";
  
