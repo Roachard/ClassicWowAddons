@@ -1,8 +1,8 @@
-if GetLocale() ~= "zhTW" then return end
+if GetLocale() ~= "koKR" then return end
 
 -- Translate the strings here
-CSC_DEFENSE                 = DEFENSE;
-CSC_WEAPON_SKILLS_HEADER    = "Weapon Skills";
+CSC_DEFENSE                 = "방어";
+CSC_WEAPON_SKILLS_HEADER    = "무기 기술";
 CSC_WEAPON_AXE1H_TXT        = "Axes";
 CSC_WEAPON_AXE2H_TXT        = "Two-Handed Axes";
 CSC_WEAPON_MACE1H_TXT       = "Maces";

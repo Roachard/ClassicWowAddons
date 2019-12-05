@@ -1,4 +1,4 @@
-if GetLocale() ~= "zhTW" then return end
+if GetLocale() ~= "ptBR" then return end
 
 -- Translate the strings here
 CSC_DEFENSE                 = DEFENSE;
