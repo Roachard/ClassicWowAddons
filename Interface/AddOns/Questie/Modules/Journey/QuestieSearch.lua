@@ -1,4 +1,11 @@
-QuestieSearch = {} -- Global Functions
+---@class QuestieSearch
+local QuestieSearch = QuestieLoader:CreateModule("QuestieSearch");
+-------------------------
+--Import modules.
+-------------------------
+---@type QuestieDB
+local QuestieDB = QuestieLoader:ImportModule("QuestieDB");
+
 QuestieSearch.types = {"npc", "object", "item", "quest"}
 
 -- Save search results, so the next search has a smaller set to search
@@ -123,7 +130,7 @@ function QuestieSearch:Search(query, searchType, queryType)
             dbEntry = entryOrBoolean;
         end
         -- This condition does the actual comparison for the search
-        if  (dbEntry ~= nil)
+        if dbEntry
             and
             (
                 ( -- text search
