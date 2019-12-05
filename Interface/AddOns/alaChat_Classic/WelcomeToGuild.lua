@@ -49,19 +49,11 @@ local function updateMsg(_gName)
 	end
 end
 
-local function welcometoGuildMsg_SetValue(val)
-	val = gsub(val, "%%", "%%%%");
-	val = gsub(val, "%+", "%%%+");
-	val = gsub(val, "%-", "%%%-");
-	val = gsub(val, "%.", "%%%.");
-	val = gsub(val, "%*", "%%%*");
-	val = gsub(val, "%(", "%%%(");
-	val = gsub(val, "%)", "%%%)");
-	val = gsub(val, "%[", "%%%[");
-	val = gsub(val, "%]", "%%%]");
-	val = val .. "\n\n";
+local function welcometoGuildMsg_SetValue(msg)
+	msg = msg .. "\n\n";
 	WelcomeMsg_Format = {};
-	for v in string.gmatch(val,"%s*([^\n]+)\n") do
+	for v in string.gmatch(msg,"%s*([^\n]+)\n") do
+		v=string.gsub(v, "%%", "%%%%");
 		table.insert(WelcomeMsg_Format,v);
 	end
 	gName=GetGuildInfo("player");

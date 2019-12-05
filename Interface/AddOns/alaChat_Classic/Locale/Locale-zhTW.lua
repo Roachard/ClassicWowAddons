@@ -123,23 +123,18 @@ L.CHATBAR = {
 	LINE_DBM2 = "\124cff80ffffLeft click to start 6s countdown\124r",
 	LINE_DBM3 = "\124cff80ffffRight click to cancel countdown\124r",
 	T_STAT = "屬性通報",
-	LINE_STAT1 = "\124cffffffff属性报告\124r",
-	LINE_STAT2 = "\124cff00ff00左键生成全面报告\124r",
-	LINE_STAT3 = "\124cff00ff00右键生成偏DPS报告\124r",
-	KEYWORDHEIGHLIGHT_0 = "\124cffffffff关键词高亮\124r",
-	KEYWORDHEIGHLIGHT_1 = "\124cff00ff00按回车输入多个关键词\124r",
-	KEYWORDHEIGHLIGHT_2 = "\124cff00ff00左键编辑关键词\124r",
-	KEYWORDHEIGHLIGHT_3 = "\124cff00ff00右键切换只显示匹配的聊天\124r",
-	KEYWORDHEIGHLIGHT_A = "\124cff00ff00显示所有聊天\124r",
-	KEYWORDHEIGHLIGHT_B = "\124cffff0000只显示匹配的聊天\124r",
-	CHATFILTER_0 = "\124cffffffff聊天过滤\124r",
-	CHATFILTER_1 = "\124cff00ff00按回车输入多个关键词\124r",
-	CHATFILTER_2 = "\124cff00ff00左键编辑关键词\124r",
-	READYCHECK = "\124cff00ff00就位确认\124r",
+	LINE_STAT1 = "屬性報告",
+	LINE_STAT2 = "左键生成全面报告",
+	LINE_STAT3 = "右键生成偏DPS报告",
+	KEYWORDHEIGHLIGHT_0 = "關鍵字突出顯示",
+	KEYWORDHEIGHLIGHT_1 = "左鍵編輯關鍵字",
+	KEYWORDHEIGHLIGHT_2 = "右鍵清空關鍵字",
+	KEYWORDHEIGHLIGHT_3 = "按回车输入多个关键词",
+	READYCHECK = "就位確認",
 };
 L.EMOTE_STRING = {
-	Emote_Panel_STRING_1 = "\124cffffffffEmote Panel\124r",
-	Emote_Panel_STRING_2 = "\124cff00ff00Click to open panel\124r",
+	Emote_Panel_STRING_1 = "Emote Panel",
+	Emote_Panel_STRING_2 = "Click to open panel",
 	Emote_Panel_STRING_3 = "<Ctrl>Move Icon",
 };
 L.WTG_STRING = {
@@ -209,23 +204,14 @@ L.CONFIG = {
 	restoreAfterChannel	 = "頻道聊天後恢復到上次的聊天頻道",
 	hyperLinkHoverShow	 = "鼠標指向聊天框的物品鏈接時顯示提示",
 	keyWordHighlight	 = "關鍵字突出顯示",
-	keyWord					 = "关键词",
 	keyWordColor		 = "突出顯示顔色",
 	keyWordHighlight_Exc = "只显示匹配的聊天",
 	chat_filter				 = "聊天过滤",
 	chat_filter_word		 = "过滤关键词",
-	chat_filter_repeated_words = "过滤聊天中重复文字",
-	chat_filter_repeated_words_info = "刷屏细节",
 	chat_filter_reverse		 = "反向过滤(显示匹配关键词的聊天)",
 	chat_filter_word_NOTES	 = "回车换行，每行一个关键词",
-	chat_filter_rep_interval = "重复聊天信息的最短间隔(0为不限制)",
 };
 L.REPORT = {
 	neckLevel			 = "項鏈",
 	azLevel				 = "等級",
-};
-L.MISC = {
-	chat_filter_repeated_words_info_details = "\124cffffffff详细信息\124r";
-	chat_filter_repeated_words_info_orig = "\124cffff0000原始消息\124r";
-	chat_filter_repeated_words_info_disp = "\124cff00ff00显示信息\124r";
 };

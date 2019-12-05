@@ -210,8 +210,7 @@ local function shortChannelName_ToggleOn()
 		backup_shortChannelName[get] = _G[get];
 		_G[get] = str;
 	end
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
-	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName", _cf_short_channel_name);
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
 	return control_shortChannelName;
 end
 local function shortChannelName_ToggleOff()
@@ -234,8 +233,7 @@ local function shortChannelName_ToggleOff()
 	for get, str in pairs(backup_shortChannelName) do
 		_G[get] = str;
 	end
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
-	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName");
+	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
 	return control_shortChannelName;
 end
 FUNC.ON.shortChannelName = shortChannelName_ToggleOn;
@@ -507,8 +505,7 @@ local function channel_Ignore_ToggleOn()
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
-	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore", _cf_channel_Ignore);
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
 		if pcBtn then
 			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
 			-- pcBtn:SetPushedTexture(ICON_PATH.."pc");
@@ -522,8 +519,7 @@ local function channel_Ignore_ToggleOff(loading)
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
-	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore");
+	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
 	if not loading then
 		if pcBtn then
 			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
@@ -638,8 +634,7 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
-		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore", _cf_bgWorld_Toggle);
+		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 			if bfwBtn then
 				-- bfwBtn:SetNormalTexture(ICON_PATH.."bfw");
 				-- bfwBtn:SetPushedTexture(ICON_PATH.."bfw");
@@ -653,8 +648,7 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
-		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore");
+		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 		if not loading then
 			if find_bfw()<0 then
 				--JoinChannelByName(bfwName);

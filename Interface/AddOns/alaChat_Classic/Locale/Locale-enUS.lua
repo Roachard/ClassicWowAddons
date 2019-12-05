@@ -123,23 +123,18 @@ L.CHATBAR = {
 	LINE_DBM2 = "\124cff80ffffLeft click to start a 6s countdown\124r",
 	LINE_DBM3 = "\124cff80ffffRight click to cancel countdown\124r",
 	T_STAT = "Stat Report",
-	LINE_STAT1 = "\124cffffffffStat Report\124r",
-	LINE_STAT2 = "\124cff00ff00Left Click to build a comprehensive report\124r",
-	LINE_STAT3 = "\124cff00ff00Right Click to build a DPS report\124r",
-	KEYWORDHEIGHLIGHT_0 = "\124cffffffffKey Word Highlight\124r",
-	KEYWORDHEIGHLIGHT_1 = "\124cff00ff00Press Enter to input more keys\124r",
-	KEYWORDHEIGHLIGHT_2 = "\124cff00ff00Left Click to Edit Key Word\124r",
-	KEYWORDHEIGHLIGHT_3 = "\124cff00ff00Right Click to Toggle 'Show matched msg only'\124r",
-	KEYWORDHEIGHLIGHT_A = "\124cff00ff00Show all msg\124r",
-	KEYWORDHEIGHLIGHT_B = "\124cffff0000Show matched msg only\124r",
-	CHATFILTER_0 = "\124cffffffffChat filter\124r",
-	CHATFILTER_1 = "\124cff00ff00Press Enter to input more keys\124r",
-	CHATFILTER_2 = "\124cff00ff00Left Click to Edit Key Word\124r",
-	READYCHECK = "\124cffffffffDo Ready Check\124r",
+	LINE_STAT1 = "Stat Report",
+	LINE_STAT2 = "Left Click to build a comprehensive report",
+	LINE_STAT3 = "Right Click to build a DPS report",
+	KEYWORDHEIGHLIGHT_0 = "Key Word Highlight",
+	KEYWORDHEIGHLIGHT_1 = "Left Click to Edit Key Word",
+	KEYWORDHEIGHLIGHT_2 = "Right Click to Clear All Key Words",
+	KEYWORDHEIGHLIGHT_3 = "Press Enter to input more keys",
+	READYCHECK = "Do Ready Check",
 };
 L.EMOTE_STRING = {
-	Emote_Panel_STRING_1 = "\124cffffffffEmote Panel\124r",
-	Emote_Panel_STRING_2 = "\124cff00ff00Click to open panel\124r",
+	Emote_Panel_STRING_1 = "Emote Panel",
+	Emote_Panel_STRING_2 = "Click to open panel",
 	Emote_Panel_STRING_3 = "<Ctrl>Move Icon",
 };
 L.WTG_STRING = {
@@ -184,7 +179,6 @@ L.CONFIG = {
 		TRADE,
 		LOCAL_DEFENSE,
 		LOOK_FOR_GROUP,
-		-- "WORLD"
 		label			 = "Channel bar",
 	},
 	filterQuestAnn		 = "NONE",
@@ -208,24 +202,15 @@ L.CONFIG = {
 	restoreAfterWhisper	 = "Reset to previous channel after whisper",
 	restoreAfterChannel	 = "Reset to previous channel after channel chat",
 	hyperLinkHoverShow	 = "Show tooltip when mouse hovered hyperlink in chat frame",
-	keyWordHighlight	 = "Highlight key words",
-	keyWord					 = "Key words",
+	keyWordHighlight	 = "Highlight key word",
 	keyWordColor		 = "Highlight color",
 	keyWordHighlight_Exc = "Show matched msg only",
 	chat_filter				 = "Filter Chat",
 	chat_filter_word		 = "Filter key words",
 	chat_filter_reverse		 = "Reverse filter",
-	chat_filter_repeated_words = "Filter repeated words",
-	chat_filter_repeated_words_info = "Show info",
 	chat_filter_word_NOTES	 = "Press RETURN to enter multi words",
-	chat_filter_rep_interval = "Minium interval for repeated msg.(0 to disabled)",
 };
 L.REPORT = {
 	neckLevel			 = "neck",
 	azLevel				 = "Lv",
-};
-L.MISC = {
-	chat_filter_repeated_words_info_details = "\124cffffffffDetails\124r";
-	chat_filter_repeated_words_info_orig = "\124cffff0000Original msg\124r";
-	chat_filter_repeated_words_info_disp = "\124cff00ff00Displayed msg\124r";
 };
