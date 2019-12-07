@@ -1,0 +1,20 @@
+diff --git a/Interface/AddOns/Details/core/gears.lua b/Interface/AddOns/Details/core/gears.lua
+index 397c2ba..8dc83fb 100644
+--- a/Interface/AddOns/Details/core/gears.lua
++++ b/Interface/AddOns/Details/core/gears.lua
+@@ -2945,6 +2945,7 @@ function Details:ShowTalentsPanel()
+ 	end
+ end
+ 
++--[[
+ local LatestInspectFrameUpdate = 0
+ C_Timer.After (1, function()
+ 	hooksecurefunc ("InspectFrame_LoadUI", function()
+@@ -2958,6 +2959,7 @@ C_Timer.After (1, function()
+ 		end)
+ 	end)
+ end)
++]]
+ 
+ --------------------------------------------------------------------------------------------------------------------------------------------
+ --compress data
