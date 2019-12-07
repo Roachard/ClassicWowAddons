@@ -236,7 +236,6 @@ MTSLUI_SKILL_DETAIL_FRAME = {
         self:ToolTipShow(self.labels.name.tooltip_frame, self.tooltip_source_name)
     end,
 
-
     ToolTipShowAltSourceName = function(self)
         self:ToolTipShow(self.labels.name.tooltip_frame, self.tooltip_alt_source_name)
     end,

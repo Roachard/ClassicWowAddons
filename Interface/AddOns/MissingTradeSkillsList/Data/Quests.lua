@@ -311,7 +311,7 @@ MTSL_DATA["quests"] = {
 	{
 		["phase"] = 1,
 		["id"] = 715,
-		["min_xp_level"] = 36,
+		["min_xp_level"] = 35,
 		["name"] = {
 			["Portuguese"] = "Pedra líquida",
 			["Russian"] = "Жидкий камень",

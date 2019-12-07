@@ -1937,7 +1937,7 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 	},
 	{
 		["phase"] = 1,
-		["min_skill"] = 180,
+		["min_skill"] = 185,
 		["trainers"] = {
 			["sources"] = {
 				3007,

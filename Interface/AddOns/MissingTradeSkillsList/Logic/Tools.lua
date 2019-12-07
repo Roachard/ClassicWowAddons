@@ -305,6 +305,27 @@ MTSL_TOOLS = {
 		return false
 	end,
 
+    ------------------------------------------------------------------------------------------------
+    -- Searches an array to see if it contains a key (after spaces stripped) for given value
+    --
+    -- @list			Array		The list to search
+    -- @key				String		The key to search
+    --
+    -- return			boolean		Flag indicating if number is foundFound skill (nil if not  in list)
+    ------------------------------------------------------------------------------------------------
+    ListContainsKeyIngoreCasingAndSpaces = function(self, list, key)
+        if list == nil then
+            return false
+        end
+        for _, k in pairs(list) do
+            if self:StripSpacesAndLower(k) == self:StripSpacesAndLower(key) then
+                return true
+            end
+        end
+        -- not found
+        return false
+    end,
+
 	------------------------------------------------------------------------------------------------
 	-- Searches an named array to see if it contains a key for given value
 	--
@@ -325,4 +346,17 @@ MTSL_TOOLS = {
 		-- not found
 		return false
 	end,
+
+	------------------------------------------------------------------------------------------------
+    -- Trims all the spaces in a string and turn it to lowercase
+    --
+	-- @text			String		The text to convert
+	--
+	-- return			String		Text trimmed of spaces and put into lowercase
+	------------------------------------------------------------------------------------------------
+    StripSpacesAndLower = function (self, text)
+        local lowered = string.lower(text)
+        local stripped_text,_ = string.gsub(lowered, "%s", "")
+        return stripped_text
+    end
 }

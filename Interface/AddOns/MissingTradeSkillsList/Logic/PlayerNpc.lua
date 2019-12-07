@@ -120,7 +120,6 @@ MTSL_LOGIC_PLAYER_NPC = {
         return false
     end,
 
-
     ------------------------------------------------------------------------------------------------
     -- Returns the amount of missing skills of a player for a profession
     --
@@ -359,7 +358,7 @@ MTSL_LOGIC_PLAYER_NPC = {
         -- Loop all skills of the profession
         for _, skill in pairs(available_skills) do
             -- We learned the skill
-            if MTSL_TOOLS:ListContainsKey(known_skill_names, skill["name"][MTSLUI_CURRENT_LANGUAGE]) then
+            if MTSL_TOOLS:ListContainsKeyIngoreCasingAndSpaces(known_skill_names, skill["name"][MTSLUI_CURRENT_LANGUAGE]) then
                 table.insert(MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].LEARNED_SKILLS, skill.id)
                 MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED = MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED + 1
             else
