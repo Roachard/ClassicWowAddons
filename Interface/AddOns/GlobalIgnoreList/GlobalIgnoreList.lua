@@ -638,7 +638,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "位面"
-	filterDefFilter[#filterDefFilter + 1] = "[contains=位面] and ([contains=换] or [contains=组]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "[contains=位面] and ([contains=换] or [contains=组] or [contains=求]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
@@ -650,11 +650,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=专] or [contains=票] or [contains=达] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基森] or [contains=冬泉谷] or [contains=厄运] or [contains=斯坦索姆] or [contains=STSM]))"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=飛] or [contains=专] or [contains=票] or [contains=达] or [contains=達] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基森] or [contains=冬泉谷] or [contains=厄] or [contains=斯坦索姆] or [contains=STSM]))"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "赌博"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=RO] or [contains=R0]) and ([contains=铁] or [contains=暴风] or [contains=银行]) not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=骰] or [contains=RO] or [contains=R0]) and ([contains=铁] or [contains=暴风] or [contains=银行]) not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
