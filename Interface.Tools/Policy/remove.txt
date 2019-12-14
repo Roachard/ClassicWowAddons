@@ -10,4 +10,5 @@ HandyNotes_DungeonLocations (Classic)
 HandyNotes_TravelGuide (Classic)
 Mapster
 MobHealth
+Spy
 TUnitFrame
