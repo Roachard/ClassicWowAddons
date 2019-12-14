@@ -1,0 +1,24 @@
+commit 288fff99ced85d5d80c58d0777d39d3c4aeefa36
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Wed Dec 11 21:23:47 2019 -0800
+
+    add version to toc
+
+commit 47ea42accefcff507af80d1ad3d9ea1d764df128
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Wed Dec 11 21:21:45 2019 -0800
+
+    migrate old/new
+
+commit 0d9143da190ff60e00e040e3173f99a72569715a
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Wed Dec 11 20:36:01 2019 -0800
+
+    init
+
+commit 218a6ac20899d3b305a2c5faccd874073633f767
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Wed Dec 11 18:46:03 2019 -0800
+
+    Initial commit
+
