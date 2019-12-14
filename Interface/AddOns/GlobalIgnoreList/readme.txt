@@ -184,6 +184,12 @@ The following commands are accessible by typing /gignore or /gi in the chat box:
 
 => VERSION HISTORY
 
+=> 1.13.3 Classic
+
+Updated for the 1.13.3 battleground patch
+
+When receiving chat channel invites, GIL will now filter out the channel invite spam in the chat window.  When combined with turning on "Block chat channel invites" in Social options it means that you will never see any chat channel invite windows or text ever.
+
 => 8.2.2 retail (1.13.2 classic)
 
 Swapped the create and remove filter button in the chat filter editor, and added a confirmation dialog box when a filter is requested to be removed

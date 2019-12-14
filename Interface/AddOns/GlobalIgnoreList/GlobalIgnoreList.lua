@@ -974,14 +974,14 @@ end
 -- EVENT HANDLER --
 -------------------
 
-local function EventHandler (self, event, sender, ...)
+local function EventHandler (self, event, sender, arg1, ...)
 
 	--print ("DEBUG event=".. (event or "nil"))
 	--print ("DEBUG event=".. (event or "nil") .. " sender=" .. (sender or "nil"))
 	
-	if (event == "CHANNEL_INVITE_REQUEST") then
-		print ("DEBUG RECEIVED CHANNEL INVITE REQUEST")
-	end
+	--if (event == "CHANNEL_INVITE_REQUEST") or (event == "CHAT_MSG_CHANNEL_NOTICE_USER") then
+	--	print ("DEBUG RECEIVED CHANNEL INVITE REQUEST: " .. (arg1 or "nil"))
+	--end
 
 	if (event == "ADDON_LOADED") and (sender == "GlobalIgnoreList") then
 		gotLoaded = true
@@ -1684,9 +1684,9 @@ end
 local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5, chnum, chname, ...)
 
 	--if lastMsg ~= message then	
-		--t = string.gsub(message, "|", "!")
-		--print ("chatMsg evt=" .. (event or "nil") .. " msg=".. (t or "nil") .. " from=" .. (from or "nil"))
-		--lastMsg = message
+	--	t = string.gsub(message, "|", "!")
+	--	print ("chatMsg evt=" .. (event or "nil") .. " msg=".. (t or "nil") .. " from=" .. (from or "nil"))
+	--	lastMsg = message
 	--end
 
 	if event == "CHAT_MSG_SYSTEM" then	
@@ -1707,12 +1707,6 @@ local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5
 	elseif event == "CHAT_MSG_RAID" then chnum = "r"
 	elseif event == "CHAT_MSG_GUILD" then chnum = "g"
 	elseif event == "CHAT_MSG_OFFICER" then chnum = "o"
-	elseif GetCurrentRegion() == 5 and event == "CHAT_MSG_CHANNEL" and not(
-		chname:find("^综合") or
-		chname:find("^交易") or
-		chname:find("^本地防务") or
-		chname == "寻求组队" or
-		chname == "大脚世界频道") then return false
 	end
 			
 	if GIL_Loaded ~= true then
@@ -1756,6 +1750,10 @@ local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5
 			
 		return false
 
+	elseif event == "CHAT_MSG_CHANNEL_NOTICE_USER" and message == "INVITE" then
+	
+		return true
+	
 	elseif (from ~= nil) and (from ~= "") then
 			
 		local idx = string.find(from, "-", 1, true)
@@ -1845,13 +1843,13 @@ end
 
 local chatEvents = (
 		{
-		"CHANNEL_INVITE_REQUEST",
 		"CHAT_MSG_ACHIEVEMENT",
 		"CHAT_MSG_BATTLEGROUND",
 		"CHAT_MSG_BATTLEGROUND_LEADER",
 		"CHAT_MSG_CHANNEL",
 		"CHAT_MSG_CHANNEL_JOIN",
 		"CHAT_MSG_CHANNEL_LEAVE",
+		"CHAT_MSG_CHANNEL_NOTICE_USER",
 		"CHAT_MSG_EMOTE",
 		"CHAT_MSG_GUILD",
 		"CHAT_MSG_GUILD_ACHIEVEMENT",	
@@ -2489,6 +2487,7 @@ GILFRAME:RegisterEvent("IGNORELIST_UPDATE")
 GILFRAME:RegisterEvent("PARTY_INVITE_REQUEST")
 GILFRAME:RegisterEvent("DUEL_REQUESTED")
 GILFRAME:RegisterEvent("GROUP_ROSTER_UPDATE")
+GILFRAME:RegisterEvent("CHANNEL_INVITE_REQUEST")
 
 SLASH_GIGNORE1		= "/gignore"
 SLASH_GIGNORE2		= "/gi"
