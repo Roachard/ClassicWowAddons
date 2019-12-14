@@ -1,0 +1,12 @@
+tag fcdb847c704b1479a46bce5148e6a0aeb771e8d8 v1.0.8
+Author:	Shadowed <shadowed.wow@gmail.com>
+Date:	Fri Dec 13 22:01:30 2019 -0800
+
+Tagging as release v1.0.8
+
+commit bddf9e49c6fd57baf80bdf1a6144018fa4f6991e
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Fri Dec 13 22:01:20 2019 -0800
+
+    Properly filter out pass messages
+
