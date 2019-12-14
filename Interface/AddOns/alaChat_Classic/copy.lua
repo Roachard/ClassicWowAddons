@@ -26,13 +26,17 @@ local stamp_fmt = "#s";
 --local gsubfmt = "";
 
 local function set(fmt)
-	if fmt then
-		--\cffffff\Hcopy:id::::\h[time]\h\r
-		CHAT_TIMESTAMP_FORMAT="\124cff" .. copy_color .. "\124HalaCCopy:-1\124h" .. string.gsub(stamp_fmt, "#s", string.gsub(fmt, "%%", "%%%%")) .. "\124h\124r";
+	if stamp_fmt and stamp_fmt ~= "" then
+		if fmt then
+			--\cffffff\Hcopy:id::::\h[time]\h\r
+			CHAT_TIMESTAMP_FORMAT="\124cff" .. copy_color .. "\124HalaCCopy:-1\124h" .. string.gsub(stamp_fmt, "#s", string.gsub(fmt, "%%", "%%%%")) .. "\124h\124r";
+		else
+			CHAT_TIMESTAMP_FORMAT="\124cff" .. copy_color .. "\124HalaCCopy:-1\124h" .. string.gsub(stamp_fmt, "#s", "**") .. "\124h\124r";
+		end
+		--gsubfmt = "\124cff" .. copy_color .. "\124HalaCCopy:-1\124h**\124h\124r";
 	else
-		CHAT_TIMESTAMP_FORMAT="\124cff" .. copy_color .. "\124HalaCCopy:-1\124h" .. string.gsub(stamp_fmt, "#s", "**") .. "\124h\124r";
+		CHAT_TIMESTAMP_FORMAT=nil;
 	end
-	--gsubfmt = "\124cff" .. copy_color .. "\124HalaCCopy:-1\124h**\124h\124r";
 end
 local function setColor(r, g, b)
 	copy_color = string.format("%.2x%.2x%.2x", r * 255, g * 255, b* 255);
@@ -42,21 +46,15 @@ local function setColor(r, g, b)
 end
 local function setStamp(fmt)
 	fmt = string.gsub(fmt, "%%", "%%%%");
+	fmt = string.gsub(fmt, "\n", "");
 	stamp_fmt = fmt;
-	if fmt then
-		fmt = string.gsub(fmt, "\n", "");
-	end
-	if not fmt or fmt == "" then
-		CHAT_TIMESTAMP_FORMAT = nil;
-	else
-		if control_copy then
-			set(orig_timeStamp);
-		end
+	if control_copy then
+		set(orig_timeStamp);
 	end
 end
 
 local _SetHyperlink = ItemRefTooltip.SetHyperlink;
-local function hook_SetHyperlink(self,link)
+function ItemRefTooltip.SetHyperlink(self,link)
 	if link=="alaCCopy:-1" then
 		local m=GetMouseFocus();
 		if not m:IsObjectType("FontString") then
@@ -83,7 +81,7 @@ local function hook_SetHyperlink(self,link)
 end
 local function copy_Init()
 	orig_timeStamp=CHAT_TIMESTAMP_FORMAT;
-	hookfCall(InterfaceOptionsSocialPanelTimestamps,"SetValue",function(_,fmt)
+	hooksecurefunc(InterfaceOptionsSocialPanelTimestamps,"SetValue",function(_,fmt)
 			if fmt=="none" then
 				orig_timeStamp=nil;
 			else
@@ -99,7 +97,6 @@ local function copy_ToggleOn()
 	if control_copy then
 		return;
 	end
-	ItemRefTooltip.SetHyperlink = hook_SetHyperlink;
 	control_copy=true;
 	set(orig_timeStamp);
 	return control_copy;
@@ -108,7 +105,6 @@ local function copy_ToggleOff(loading)
 	if not control_copy or loading then
 		return;
 	end
-	ItemRefTooltip.SetHyperlink = _SetHyperlink;
 	control_copy=false;
 	CHAT_TIMESTAMP_FORMAT=orig_timeStamp;
 	return control_copy;

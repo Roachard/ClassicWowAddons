@@ -24,7 +24,8 @@ end
 local btnPackIndex = 2;
 local ICON_PATH = NS.ICON_PATH;
 --------------------------------------------------channel Bar
-local channelJoinDelay = 0.25;
+local channelJoinDelay = 0.5;
+local max_change_channel_wait = 6;
 
 local CHATTYPE;
 local COLOR;
@@ -38,54 +39,73 @@ local function insertEditBox(text)
 	ChatEdit_ActivateChat(editBox);
 	editBox:SetText(text);
 end
+local trying_to_join = false;
+local function try_to_join_action(channel)
+	JoinPermanentChannel(channel, nil, DEFAULT_CHAT_FRAME:GetID());
+	-- JoinPermanentChannel(channel, nil, DEFAULT_CHAT_FRAME:GetID());
+	C_Timer.After(channelJoinDelay, function()
+		local t = { GetChannelList() };
+		-- local str="" for _,v in pairs(t) do str=str..tostring(v);end print(str)
+		local editBox = ChatEdit_ChooseBoxForSend();
+		for i = 1,#t,3 do
+			if t[i+1] == channel then
+				if time() - trying_to_join < max_change_channel_wait then
+					if editBox:HasFocus() and _chatType == "CHANNEL" and _channelTarget == t[i] then
+						ChatEdit_DeactivateChat(editBox);
+					else
+						if editBox:HasFocus() then
+							local text = editBox:GetText():gsub("/[^%s]+%s", "");
+							ChatEdit_ActivateChat(editBox);
+							editBox:SetText("/"..t[i].." " .. text);
+						else
+							ChatEdit_ActivateChat(editBox);
+							editBox:SetText("/"..t[i].." ");
+						end
+					end
+				else
+					print("\124cffff0000JOINED " .. channel .. "\124r");
+				end
+				trying_to_join = false;
+				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, channel);
+				return;
+			end
+		end
+		try_to_join_action(channel);
+	end);
+end
+local function try_to_join(channel)
+	if trying_to_join then
+		return;
+	end
+	trying_to_join = time();
+	try_to_join_action(channel);
+end
 local function SetEditBoxHeader(idx)
 	local chatType = CHATTYPE[idx];
 	local editBox = ChatEdit_ChooseBoxForSend();
 	if chatType == "CHANNEL" then
 		local _chatType = editBox:GetAttribute("chatType");
 		local _channelTarget = editBox:GetAttribute("channelTarget");
-			local dataIdx = idx - 9;
-			local t = {GetChannelList()};
-			for i = 1,#t,3 do
-				if t[i+1] == SC_DATA2[dataIdx][1] then
-					if editBox:HasFocus() and _chatType == "CHANNEL" and _channelTarget == t[i] then
-						ChatEdit_DeactivateChat(editBox);
+		local dataIdx = idx - 9;
+		local t = {GetChannelList()};
+		for i = 1,#t,3 do
+			if t[i+1] == SC_DATA2[dataIdx][1] then
+				if editBox:HasFocus() and _chatType == "CHANNEL" and _channelTarget == t[i] then
+					ChatEdit_DeactivateChat(editBox);
+				else
+					if editBox:HasFocus() then
+						--local text = editBox:GetText():gsub("/[^%s]+%s", "");
+						--ChatEdit_ActivateChat(editBox);
+						editBox:SetText("/"..t[i].." " .. editBox:GetText():gsub("^/[^%s]+%s", ""));
 					else
-						if editBox:HasFocus() then
-							--local text = editBox:GetText():gsub("/[^%s]+%s", "");
-							--ChatEdit_ActivateChat(editBox);
-							editBox:SetText("/"..t[i].." " .. editBox:GetText():gsub("^/[^%s]+%s", ""));
-						else
-							ChatEdit_ActivateChat(editBox);
-							editBox:SetText("/"..t[i].." ");
-						end
+						ChatEdit_ActivateChat(editBox);
+						editBox:SetText("/"..t[i].." ");
 					end
-					return;
 				end
+				return;
 			end
-			if select(2, JoinPermanentChannel(SC_DATA2[dataIdx][1], nil, DEFAULT_CHAT_FRAME:GetID(), 1)) then
-				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, SC_DATA2[dataIdx][1]);
-				C_Timer.After(channelJoinDelay, function()
-					t = {GetChannelList()};
-					for i = 1,#t,3 do
-						if t[i+1] == SC_DATA2[dataIdx][1] then
-							if editBox:HasFocus() and _chatType == "CHANNEL" and _channelTarget == t[i] then
-								ChatEdit_DeactivateChat(editBox);
-							else
-								if editBox:HasFocus() then
-									local text = editBox:GetText():gsub("/[^%s]+%s", "");
-									ChatEdit_ActivateChat(editBox);
-									editBox:SetText("/"..t[i].." " .. text);
-								else
-									ChatEdit_ActivateChat(editBox);
-									editBox:SetText("/"..t[i].." ");
-								end
-							end
-							return;
-						end
-					end
-				end);
-			end
+		end
+		try_to_join(SC_DATA2[dataIdx][1]);
 	else
 		if chatType == "INSTANCE_CHAT" then
 			if C_PvP.IsPVPMap() then

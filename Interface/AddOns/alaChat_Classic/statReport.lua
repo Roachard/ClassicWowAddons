@@ -65,6 +65,12 @@ function genReport(set)
 	local ap, apmod = UnitAttackPower('player');
 	ap = ap + apmod;
 	local sp = GetSpellBonusDamage(1);
+	for i = 2, 7 do
+		local spi = GetSpellBonusDamage(i);
+		if spi > sp then
+			sp = spi;
+		end
+	end
 	local rp, rpmod = UnitRangedAttackPower('player');
 	rp = rp + rpmod;
 	--1 physical 2 holy 3 fire 4 nature 5 frost 6 shadow 7 arcane

@@ -16,10 +16,6 @@ local SC_DATA2 = L.SC_DATA2;
 local SC_DATA3 = L.SC_DATA3;
 if not SC_DATA1 or not SC_DATA2 or not SC_DATA3 then return;end
 ----------------------------------------------------------------------------------------------------
-local alaBase = __alaBase;
-if not alaBase then
-	return;
-end
 ----------------------------------------------------------------------------------------------------short Channel Name
 local control_shortChannelName = false;
 local backup_shortChannelName = {};
@@ -27,7 +23,8 @@ local chatFrame = {};
 for i = 1, NUM_CHAT_WINDOWS do
 	chatFrame[i] = _G["ChatFrame"..i];
 end
-eventCall("PLAYER_LOGOUT", 
+local f = CreateFrame("Frame");
+f:SetScript("OnEvent",
 	function(_, event)
 		if control_shortChannelName then
 			for i = 1, NUM_CHAT_WINDOWS do
@@ -45,6 +42,8 @@ eventCall("PLAYER_LOGOUT",
 		end
 	end
 );
+f:RegisterEvent("PLAYER_LOGOUT");
+
 hooksecurefunc(SlashCmdList, "JOIN", 
 	function(msg)
 		if  control_shortChannelName then
@@ -210,7 +209,8 @@ local function shortChannelName_ToggleOn()
 		backup_shortChannelName[get] = _G[get];
 		_G[get] = str;
 	end
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName", _cf_short_channel_name);
 	return control_shortChannelName;
 end
 local function shortChannelName_ToggleOff()
@@ -233,7 +233,8 @@ local function shortChannelName_ToggleOff()
 	for get, str in pairs(backup_shortChannelName) do
 		_G[get] = str;
 	end
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName");
 	return control_shortChannelName;
 end
 FUNC.ON.shortChannelName = shortChannelName_ToggleOn;
@@ -332,7 +333,6 @@ local function level_ToggleOn()
 		return;
 	end
 	control_level=true;
-	--repeat_cache=delayCall(cache_MemInfo, 1, true);
 	cache_MemInfo();
 	repeat_cache=C_Timer.NewTicker(4, cache_MemInfo);
 end
@@ -341,7 +341,6 @@ local function level_ToggleOff()
 		return;
 	end
 	control_level=false;
-	--editdCall(repeat_cache);
 	if repeat_cache then
 		repeat_cache:Cancel();
 		repeat_cache = nil;
@@ -480,6 +479,7 @@ FUNC.OFF.shamanColor = shamanColor_ToggleOff;
 local ICON_PATH = NS.ICON_PATH;
 
 local bfwName = "大脚世界频道";
+local bfwLen = strlen(bfwName);
 local function find_bfw()
 	local t = {GetChannelList()};
 	for i = 1, #t/3 do
@@ -495,7 +495,8 @@ local control_channel_Ignore = false;
 local pcBtn = nil;
 
 local function _cf_channel_Ignore(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
-	if arg8 ~= find_bfw() then
+	if strsub(arg9, 1, bfwLen) ~= bfwName then
+	-- if arg8 ~= find_bfw() then
 		return true;
 	end
 	return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
@@ -505,7 +506,8 @@ local function channel_Ignore_ToggleOn()
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore", _cf_channel_Ignore);
 		if pcBtn then
 			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
 			-- pcBtn:SetPushedTexture(ICON_PATH.."pc");
@@ -519,7 +521,8 @@ local function channel_Ignore_ToggleOff(loading)
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore");
 	if not loading then
 		if pcBtn then
 			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
@@ -623,7 +626,8 @@ if locale_match then
 	local control_bfWorld_Ignore = false;
 	local function _cf_bgWorld_Toggle(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
 		--if control_bfWorld_Ignore and control_bfWorld_Ignore_Switch then
-			if arg8 == find_bfw() then
+			if strsub(arg9, 1, bfwLen) == bfwName then
+			-- if arg8 == find_bfw() then
 				return true;
 			end
 		--end
@@ -634,7 +638,8 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore", _cf_bgWorld_Toggle);
 			if bfwBtn then
 				-- bfwBtn:SetNormalTexture(ICON_PATH.."bfw");
 				-- bfwBtn:SetPushedTexture(ICON_PATH.."bfw");
@@ -648,15 +653,23 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore");
 		if not loading then
 			if find_bfw()<0 then
 				--JoinChannelByName(bfwName);
 				--SlashCmdList["JOIN"](bfwName, ChatFrame1EditBox);
-				--delayCall(SlashCmdList["JOIN"], 4, false, bfwName, ChatFrame1EditBox);
-				if not select(2, JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID(), 1)) then
-					delayCall(JoinPermanentChannel, 4, false, bfwName, nil, DEFAULT_CHAT_FRAME:GetID(), 1);
-					delayCall(ChatFrame_AddChannel, 4.5, false, DEFAULT_CHAT_FRAME, bfwName);
+				JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+				-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+				if not find_bfw() then
+					local ticker = C_Timer.NewTicker(0.5, function()
+						JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+						-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+						if not find_bfw() then
+							ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, bfwName);
+							ticker:Cancel();
+						end
+					end);
 				end
 				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, bfwName);
 			end
