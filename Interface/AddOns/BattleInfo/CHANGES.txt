@@ -1,24 +1,34 @@
-commit 288fff99ced85d5d80c58d0777d39d3c4aeefa36
+lightweight tag b9d5ec21bad27134ed50edddd0dfbb42dee22ec0 v2.1.0
+Author:	GitHub <noreply@github.com>
+Date:	Sat Dec 14 02:12:09 2019 -0800
+
+commit b9d5ec21bad27134ed50edddd0dfbb42dee22ec0
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Wed Dec 11 21:23:47 2019 -0800
+Date:   Sat Dec 14 02:12:09 2019 -0800
 
-    add version to toc
+    Update README.md
 
-commit 47ea42accefcff507af80d1ad3d9ea1d764df128
+commit 29c8ae57d4e6f132647d8270f7d4ebef1da41e17
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Wed Dec 11 21:21:45 2019 -0800
+Date:   Sat Dec 14 02:06:28 2019 -0800
 
-    migrate old/new
+    add quick select editbox
 
-commit 0d9143da190ff60e00e040e3173f99a72569715a
+commit f5414fbe751ebe71122c352618bad2e60c3d29e8
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Wed Dec 11 20:36:01 2019 -0800
+Date:   Sat Dec 14 00:41:18 2019 -0800
 
-    init
+    add toc notes
 
-commit 218a6ac20899d3b305a2c5faccd874073633f767
+commit 7b50776d9df4dd35674ac3e7394ae6198555d5a9
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Wed Dec 11 18:46:03 2019 -0800
+Date:   Sat Dec 14 00:37:56 2019 -0800
 
-    Initial commit
+    change struct
+
+commit f950ded319ea51c4c2f644a702c52cd2754956af
+Author: Boshi Lian <farmer1992@gmail.com>
+Date:   Thu Dec 12 07:25:25 2019 -0800
+
+    hook battle update
 
