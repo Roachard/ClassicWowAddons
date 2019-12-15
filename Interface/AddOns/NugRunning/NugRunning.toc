@@ -1,11 +1,12 @@
-## Interface: 11302
+## Interface: 11303
 ## Title: NugRunning
 ## Notes: Spelltimers
 ## Author: d87
 ## SavedVariablesPerCharacter: NRunDB_Char
 ## SavedVariables: NRunDB_Global, NugRunningConfigCustom
-## Version: 1.13.28
-## X-WoWI-ID: 24936
+## Version: 1.13.31
+## X-WoWI-ID: 10440
+## X-Curse-Project-ID: 27470
 ## Dependencies: BigFoot
 ## X-Revision: BigFoot
 

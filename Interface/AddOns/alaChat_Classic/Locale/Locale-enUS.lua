@@ -123,15 +123,24 @@ L.CHATBAR = {
 	LINE_DBM2 = "\124cff80ffffLeft click to start a 6s countdown\124r",
 	LINE_DBM3 = "\124cff80ffffRight click to cancel countdown\124r",
 	T_STAT = "Stat Report",
-	LINE_STAT1 = "Stat Report",
-	KEYWORDHEIGHLIGHT_0 = "Key Word Highlight",
-	KEYWORDHEIGHLIGHT_1 = "Left Click to Edit Key Word",
-	KEYWORDHEIGHLIGHT_2 = "Right Click to Clear All Key Words",
-	READYCHECK = "Do Ready Check",
+	LINE_STAT1 = "\124cffffffffStat Report\124r",
+	LINE_STAT2 = "\124cff00ff00Left Click to build a comprehensive report\124r",
+	LINE_STAT3 = "\124cff00ff00Right Click to build a DPS report\124r",
+	KEYWORDHEIGHLIGHT_0 = "\124cffffffffKey Word Highlight\124r",
+	KEYWORDHEIGHLIGHT_1 = "\124cff00ff00Semicolon(;) or enter separates multiple keywords\124r",
+	KEYWORDHEIGHLIGHT_2 = "\124cff00ff00Left Click to Edit Key Word\124r",
+	KEYWORDHEIGHLIGHT_3 = "\124cff00ff00Right Click to Toggle 'Show matched msg only'\124r",
+	KEYWORDHEIGHLIGHT_A = "\124cff00ff00Show all msg\124r",
+	KEYWORDHEIGHLIGHT_B = "\124cffff0000Show matched msg only\124r",
+	CHATFILTER_0 = "\124cffffffffChat filter\124r",
+	CHATFILTER_1 = "\124cff00ff00Beginning with # means filter player's name\124r",
+	CHATFILTER_2 = "\124cff00ff00Semicolon(;) or enter separates multiple keywords\124r",
+	CHATFILTER_3 = "\124cff00ff00Left Click to Edit Key Word\124r",
+	READYCHECK = "\124cffffffffDo Ready Check\124r",
 };
 L.EMOTE_STRING = {
-	Emote_Panel_STRING_1 = "Emote Panel",
-	Emote_Panel_STRING_2 = "Click to open panel",
+	Emote_Panel_STRING_1 = "\124cffffffffEmote Panel\124r",
+	Emote_Panel_STRING_2 = "\124cff00ff00Click to open panel\124r",
 	Emote_Panel_STRING_3 = "<Ctrl>Move Icon",
 };
 L.WTG_STRING = {
@@ -148,16 +157,18 @@ L.CONFIG = {
 	wel					 = "\124cffff3f3falaChat\124r Loaded./alac or /alachat to open config window. \nConfig window is moved to [ESC - Interface Options - Addons(at topleft) - alaChat_Classic]",
 	title				 = "Settings",
 
-	position			 = "Position",
-	scale				 = "Bar Scale",
-	alpha				 = "ALPHA",
-	barStyle			 = "Style of button",
+	position			 = "Position(Hold ctrl drag)",
+	direction			 = "Direction",
+	scale				 = "Scale",
+	alpha				 = "Alpha",
+	barStyle			 = "Style",
 
 	shortChannelName	 = "Short channel name",
-	hyperLinkEnhanced	 = "Hyperlink in chat msg.(Shift click spell in the spellbook also works)",
+	shortChannelNameFormat = "Format",
+	hyperLinkEnhanced	 = "Hyperlink in chat msg.",
 	chatEmote			 = "Emote",
-	ColorNameByClass	 = "Color Name By Class In ChatFrame",
-	shamanColor			 = "Change color for \124cfff48cbashaman\124r to \124cff006fdcBLUE\124r.";
+	ColorNameByClass	 = "Color Name By Class",
+	shamanColor			 = "Change \124cfff48cbashaman\124r to \124cff006fdcshaman\124r.";
 	channelBarStyle		 = "Channel bar style",
 	channelBarChannel	 = 
 	{
@@ -174,31 +185,49 @@ L.CONFIG = {
 		TRADE,
 		LOCAL_DEFENSE,
 		LOOK_FOR_GROUP,
+		-- "WORLD"
 		label			 = "Channel bar",
 	},
 	filterQuestAnn		 = "NONE",
+	channel_Ignore_Switch	 = "Switcher for channels",
 	--
-	--
+	bfWorld_Ignore_BtnSize	 = "Size of button",
 	--chatFrameScroll		 = "Add a scroll to bottom button to the left of chatFrame",
 	roll				 = "Roll",
-	DBMCountDown		 = "Count down(need DBM)",
+	DBMCountDown		 = "Count down(Bigwigs/DBM)",
 	broadCastNewMember	 = "Broadcast new guild member",
 	welcomeToGuild		 = "Welcome",
 	welcometoGuildMsg	 = "Welcome Msg",
 	ReadyCheck			 = "Do Ready Check",
 	statReport			 = "Stat Report",
 	copy				 = "Copy chat",
-	copyTagColor		 = "Color for timestamp",
-	copyTagFormat		 = "Format of tag [#s for original format]",
-	level				 = "Show guild member's level in chat frame",
+	copyTagColor		 = "Color of timestamp",
+	copyTagFormat		 = "Format of tag",
+	copyTagFormatNotes	 = "[#s for original format]",
+	level				 = "Show guild member's level",
 	--hideConfBtn			 = "Hide conf wheel",
-	editBoxTab			 = "Press tab to switch channel when chatbox is shown",
-	restoreAfterWhisper	 = "Reset to previous channel after whisper and channel",
-	hyperLinkHoverShow	 = "Show tooltip when mouse hovered hyperlink in chat frame",
-	keyWordHighlight	 = "Highlight key word",
-	keyWordColor		 = "Highlight color",
+	editBoxTab			 = "Press tab to switch channel",
+	restoreAfterWhisper	 = "Reset to previous channel after whisper",
+	restoreAfterChannel	 = "after channel chat",
+	hyperLinkHoverShow	 = "Show tooltip when hovering hyperlink",
+	keyWordHighlight	 = "Highlight key words",
+	keyWord					 = "Words",
+	keyWordColor		 = "Color",
+	keyWordHighlight_Exc = "Show matched msg only",
+	chat_filter				 = "Filter Chat",
+	chat_filter_word		 = "Filter key words",
+	chat_filter_word_NOTES	 = "Beginning with # means filter player's name\nSemicolon(;) or enter separates multiple keywords",
+	chat_filter_rep_interval = "Minium interval for repeated msg.(0 to disabled)",
+	chat_filter_repeated_words = "Filter repeated words",
+	chat_filter_repeated_words_deep = "Stronger filter (spend more cpu)",
+	chat_filter_repeated_words_info = "Show info",
 };
 L.REPORT = {
 	neckLevel			 = "neck",
 	azLevel				 = "Lv",
+};
+L.MISC = {
+	chat_filter_repeated_words_info_details = "\124cffffffffDetails\124r";
+	chat_filter_repeated_words_info_orig = "\124cffff0000Original msg\124r";
+	chat_filter_repeated_words_info_disp = "\124cff00ff00Displayed msg\124r";
 };

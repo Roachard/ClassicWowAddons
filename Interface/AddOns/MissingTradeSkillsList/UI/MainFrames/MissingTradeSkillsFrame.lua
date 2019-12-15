@@ -143,6 +143,7 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:SetCurrentProfessionDetails(profession
     self.current_profession_name = profession_name
     self.current_skill_level = skill_level
     self.current_xp_level = xp_level
+    self.skill_list_filter_frame:ChangeProfession(profession_name)
     self.skill_list_frame:UpdatePlayerLevels(xp_level, skill_level)
     local list_skills = MTSL_LOGIC_PLAYER_NPC:GetMissingSkillsForProfessionCurrentPlayer(self.current_profession_name)
     self.skill_list_frame:ChangeProfession(profession_name, list_skills)

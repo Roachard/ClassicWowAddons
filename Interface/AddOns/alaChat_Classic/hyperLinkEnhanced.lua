@@ -14,9 +14,6 @@ local _G = _G;
 local SC_DATA3 = L.SC_DATA3;
 if not SC_DATA3 then return;end
 ----------------------------------------------------------------------------------------------------
-if not __alaBase then
-	return;
-end
 ----------------------------------------------------------------------------------------------------
 _G.ALA_GetSpellLink = _G.ALA_GetSpellLink or  function(id, name)
 	--\124cff71d5ff\124Hspell:355\124h[嘲讽]\124h\124r
@@ -53,10 +50,10 @@ function SpellButton_OnModifiedClick(self, button, ...)
 		local link = _GetSpellLink(spellId, spellName);
 		if link then
 			local editBox = ChatEdit_ChooseBoxForSend();
-			editBox:Show();
-			editBox:SetFocus();
-			editBox:Insert(link);
-			return;
+			if editBox:HasFocus() then
+				editBox:Insert(link);
+				return;
+			end
 		end
 	end
 	return Orig_SpellButton_OnModifiedClick(self, button, ...)
@@ -116,7 +113,7 @@ local function _cf__SendChatMessage_hyperLinkEnhanced(msg, ctype, lang, id, ...)
 	if control_hyperLinkEnhanced then
 		if ctype == "CHANNEL" then
 			local _, cn = GetChannelName(id);
-			if string.find(cn, SC_DATA3[1]) or string.find(cn, SC_DATA3[2]) then
+			if cn and string.find(cn, SC_DATA3[1]) or string.find(cn, SC_DATA3[2]) then
 				while true do
 					local s, e, c, n = string.find(msg, "\124cff%x%x%x%x%x%x\124Hitem([:0-9]+)\124h([[][^\124]+[]])\124h\124r");
 					if not s then break;end
@@ -148,55 +145,105 @@ _G.SendChatMessage = _cf__SendChatMessage_hyperLinkEnhanced;
 local function hyperLinkEnhanced_ToggleOn()
 	if not control_hyperLinkEnhanced then
 		control_hyperLinkEnhanced = true;
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_itemLinkEnhanced);
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_spellLinkEnhanced)
-		--ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", _cf_spellLinkEnhanced)
-		--ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_WARNING", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_spellLinkEnhanced)
-		--ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_spellLinkEnhanced)
-		--ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", _cf_spellLinkEnhanced)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", _cf_spellLinkEnhanced)
+		if ala_add_message_event_filter then
+			ala_add_message_event_filter("CHAT_MSG_CHANNEL", "hyperLinkEnhanced_item", _cf_itemLinkEnhanced);
+			ala_add_message_event_filter("CHAT_MSG_CHANNEL", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_JOIN", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_SAY", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_YELL", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_WHISPER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_BN_WHISPER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_WHISPER_INFORM", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_RAID", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_RAID_LEADER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_RAID_WARNING", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_PARTY", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_PARTY_LEADER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			--ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			--ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_GUILD", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_OFFICER", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_AFK", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_EMOTE", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_DND", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+			ala_add_message_event_filter("CHAT_MSG_COMMUNITIES_CHANNEL", "hyperLinkEnhanced_spell", _cf_spellLinkEnhanced)
+		else
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_itemLinkEnhanced);
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_spellLinkEnhanced)
+			-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", _cf_spellLinkEnhanced)
+			-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_WARNING", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_spellLinkEnhanced)
+			--ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_spellLinkEnhanced)
+			--ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", _cf_spellLinkEnhanced)
+			ChatFrame_AddMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", _cf_spellLinkEnhanced)
+		end
 	end
 end
 local function hyperLinkEnhanced_ToggleOff()
 	if control_hyperLinkEnhanced then
 		control_hyperLinkEnhanced = false;
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_itemLinkEnhanced);
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_spellLinkEnhanced)
-		--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", _cf_spellLinkEnhanced)
-		--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_spellLinkEnhanced)
-		--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_spellLinkEnhanced)
-		--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", _cf_spellLinkEnhanced)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", _cf_spellLinkEnhanced)
+		if ala_remove_message_event_filter then
+			ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "hyperLinkEnhanced_item");
+			ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "hyperLinkEnhanced_spell")
+			-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", "hyperLinkEnhanced_spell")
+			-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", "hyperLinkEnhanced_spell")
+			ala_remove_message_event_filter("CHAT_MSG_SAY", "hyperLinkEnhanced_spell")
+			ala_remove_message_event_filter("CHAT_MSG_YELL", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", "hyperLinkEnhanced_spell")
+			--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", "hyperLinkEnhanced_spell")
+			--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", "hyperLinkEnhanced_spell")
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", "hyperLinkEnhanced_spell")
+		else
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_itemLinkEnhanced);
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_spellLinkEnhanced)
+			-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", _cf_spellLinkEnhanced)
+			-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_spellLinkEnhanced)
+			--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_spellLinkEnhanced)
+			--ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", _cf_spellLinkEnhanced)
+			ChatFrame_RemoveMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", _cf_spellLinkEnhanced)
+		end
 	end
 end
 FUNC.ON.hyperLinkEnhanced = hyperLinkEnhanced_ToggleOn

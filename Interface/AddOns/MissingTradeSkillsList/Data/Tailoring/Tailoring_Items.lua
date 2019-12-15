@@ -1285,6 +1285,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14469,
+		["vendors"] = {
+			["sources"] = {
+				7940,
+			},
+			["price"] = 12000,
+		},
 	},
 	{
 		["phase"] = 1,
@@ -1341,6 +1347,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14472,
+		["vendors"] = {
+			["sources"] = {
+				7940,
+			},
+			["price"] = 12000,
+		},
 	},
 	{
 		["phase"] = 1,
@@ -1500,6 +1512,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14481,
+		["vendors"] = {
+			["sources"] = {
+				11189,
+			},
+			["price"] = 16000,
+		},
 	},
 	{
 		["phase"] = 1,
@@ -1617,6 +1635,12 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 14488,
+		["vendors"] = {
+			["sources"] = {
+				7940,
+			},
+			["price"] = 12000,
+		},
 	},
 	{
 		["phase"] = 1,
@@ -2599,6 +2623,19 @@ MTSL_DATA["Tailoring"]["items"] = {
 			["English"] = "Pattern: Runed Stygian Leggings",
 		},
 		["quality"] = "rare",
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["name"] = {
@@ -2614,6 +2651,19 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20547,
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["name"] = {
@@ -2629,6 +2679,19 @@ MTSL_DATA["Tailoring"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20548,
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["vendors"] = {

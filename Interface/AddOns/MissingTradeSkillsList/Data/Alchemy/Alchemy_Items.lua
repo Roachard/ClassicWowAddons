@@ -7,8 +7,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 2553,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 1,
-				["max_xp_level"] = 22,
+				["min_xp_level"] = 6,
+				["max_xp_level"] = 21,
 			},
 		},
 		["name"] = {
@@ -28,8 +28,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 2555,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 1,
-				["max_xp_level"] = 25,
+				["min_xp_level"] = 6,
+				["max_xp_level"] = 21,
 			},
 		},
 		["name"] = {
@@ -49,8 +49,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 3393,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 37,
+				["min_xp_level"] = 15,
+				["max_xp_level"] = 30,
 			},
 		},
 		["name"] = {
@@ -70,8 +70,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 3394,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 37,
+				["min_xp_level"] = 15,
+				["max_xp_level"] = 30,
 			},
 		},
 		["name"] = {
@@ -91,8 +91,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 3395,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 57,
+				["min_xp_level"] = 40,
+				["max_xp_level"] = 55,
 			},
 		},
 		["name"] = {
@@ -112,8 +112,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 3396,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 37,
+				["min_xp_level"] = 20,
+				["max_xp_level"] = 35,
 			},
 		},
 		["name"] = {
@@ -175,8 +175,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 3832,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 47,
+				["min_xp_level"] = 30,
+				["max_xp_level"] = 45,
 			},
 		},
 		["name"] = {
@@ -347,7 +347,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 				2380,
 				4083,
 			},
-			["price"] = 1500,
+			["price"] = 1350,
 		},
 		["id"] = 6055,
 		["name"] = {
@@ -436,8 +436,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 6211,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 58,
+				["min_xp_level"] = 20,
+				["max_xp_level"] = 35,
 			},
 		},
 		["name"] = {
@@ -458,7 +458,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["drops"] = {
 			["mobs_range"] = {
 				["min_xp_level"] = 10,
-				["max_xp_level"] = 57,
+				["max_xp_level"] = 26,
 			},
 		},
 		["name"] = {
@@ -478,8 +478,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 9293,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 62,
+				["min_xp_level"] = 35,
+				["max_xp_level"] = 50,
 			},
 		},
 		["name"] = {
@@ -520,8 +520,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 9295,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 60,
+				["min_xp_level"] = 40,
+				["max_xp_level"] = 55,
 			},
 		},
 		["name"] = {
@@ -562,7 +562,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 9297,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 40,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -583,8 +583,8 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 9298,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 59,
+				["min_xp_level"] = 40,
+				["max_xp_level"] = 55,
 			},
 		},
 		["name"] = {
@@ -742,6 +742,16 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 10644,
+		["special_action"] = {
+			["English"] = "Made by goblin engineer",
+			["Portuguese"] = "Feito pelo engenheiro goblin",
+			["Russian"] = "Сделано инженером гоблином",
+			["Chinese"] = "由地精工程师制造",
+			["Spanish"] = "Hecho por el ingeniero duende",
+			["French"] = "Fabriqué par un ingénieur gobelin",
+			["Korean"] = "고블린 엔지니어가 제작",
+			["German"] = "Hergestellt vom Koboldingenieur",
+		},
 	},
 	{
 		["vendors"] = {
@@ -803,7 +813,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 				4226,
 				4610,
 			},
-			["price"] = 12750,
+			["price"] = 12000,
 		},
 	},
 	{
@@ -812,7 +822,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 				3348,
 				5178,
 			},
-			["price"] = 10000,
+			["price"] = 13000,
 		},
 		["id"] = 13478,
 		["name"] = {
@@ -898,7 +908,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 				10857,
 				11536,
 			},
-			["price"] = 10000,
+			["price"] = 15000,
 		},
 		["id"] = 13482,
 		["name"] = {
@@ -913,13 +923,17 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 6,
+		},
 	},
 	{
 		["vendors"] = {
 			["sources"] = {
 				9499,
 			},
-			["price"] = 10000,
+			["price"] = 15000,
 		},
 		["id"] = 13483,
 		["name"] = {
@@ -940,7 +954,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["sources"] = {
 				11557,
 			},
-			["price"] = 10000,
+			["price"] = 15000,
 		},
 		["id"] = 13484,
 		["name"] = {
@@ -955,8 +969,18 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "uncommon",
 		["phase"] = 1,
+		["reputation"] = {
+			["faction_id"] = 576,
+			["level_id"] = 5,
+		},
 	},
 	{
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 15000,
+		},
 		["name"] = {
 			["Russian"] = "Рецепт: трансмутация воды в воздух",
 			["Portuguese"] = "Receita: Transmutar &Aacute;gua em Ar",
@@ -976,7 +1000,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13486,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -997,7 +1021,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13487,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1018,7 +1042,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13488,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1039,7 +1063,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13489,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1060,7 +1084,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13490,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1102,7 +1126,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13492,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 50,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1123,7 +1147,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13493,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 52,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1250,6 +1274,12 @@ MTSL_DATA["Alchemy"]["items"] = {
 				1853,
 			},
 		},
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 30000,
+		},
 		["name"] = {
 			["Russian"] = "Рецепт: хорошее зелье маны",
 			["Portuguese"] = "Receita: Poção Elevada de Mana",
@@ -1267,7 +1297,7 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["id"] = 13518,
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
+				["min_xp_level"] = 55,
 				["max_xp_level"] = 63,
 			},
 		},
@@ -1407,9 +1437,14 @@ MTSL_DATA["Alchemy"]["items"] = {
 		["phase"] = 1,
 		["id"] = 18257,
 		["drops"] = {
-			["mobs_range"] = {
-				["min_xp_level"] = 61,
-				["max_xp_level"] = 63,
+			["mobs"] = {
+				11982,
+				11988,
+				12056,
+                12057,
+                12118,
+                12259,
+                12264,
 			},
 		},
 		["name"] = {
@@ -1444,6 +1479,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
+		["reputation"] = {
+			["faction_id"] = 270,
+			["level_id"] = 7,
+		},
 	},
 	{
 		["vendors"] = {
@@ -1465,6 +1504,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
+		["reputation"] = {
+			["faction_id"] = 270,
+			["level_id"] = 5,
+		},
 	},
 	{
 		["vendors"] = {
@@ -1486,6 +1529,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
+		["reputation"] = {
+			["faction_id"] = 270,
+			["level_id"] = 8,
+		},
 	},
 	{
 		["vendors"] = {
@@ -1507,13 +1554,17 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 4,
+		["reputation"] = {
+			["faction_id"] = 270,
+			["level_id"] = 6,
+		},
 	},
 	{
 		["vendors"] = {
 			["sources"] = {
 				12944,
 			},
-			["price"] = 12000,
+			["price"] = 120000,
 		},
 		["id"] = 20761,
 		["name"] = {
@@ -1528,6 +1579,10 @@ MTSL_DATA["Alchemy"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
+		["reputation"] = {
+			["faction_id"] = 59,
+			["level_id"] = 5,
+		},
 	},
 	{
 		["phase"] = 5,
@@ -1550,20 +1605,5 @@ MTSL_DATA["Alchemy"]["items"] = {
 			["English"] = "Recipe: Elixir of Greater Firepower",
 		},
 		["quality"] = "uncommon",
-	},
-	{
-		["quality"] = "common",
-		["phase"] = 1,
-		["name"] = {
-			["Russian"] = "Предметы",
-			["Portuguese"] = "Itens",
-			["Chinese"] = "物品",
-			["Spanish"] = "Objetos",
-			["French"] = "Objets",
-			["German"] = "Gegenstände",
-			["Korean"] = "아이템",
-			["English"] = "Items",
-		},
-		["id"] = 180368,
 	},
 }

@@ -1,22 +1,34 @@
-lightweight tag ba5543566ca5cf18e5912203836da8ba73cbe2e1 1.0.0.22
+lightweight tag 747875f8f11c4a3eef7bfbbd8ab02c277b83e076 1.0.0.23
 Author:	Yunohu <kernighan@gmail.com>
-Date:	Sat Oct 12 15:58:13 2019 +0000
+Date:	Sat Nov 9 20:47:21 2019 +0000
 
-commit ba5543566ca5cf18e5912203836da8ba73cbe2e1
+commit 747875f8f11c4a3eef7bfbbd8ab02c277b83e076
 Author: Yunohu <kernighan@gmail.com>
-Date:   Sat Oct 12 15:58:13 2019 +0000
+Date:   Sat Nov 9 20:47:21 2019 +0000
 
-    Fix missing :
+    Version 1.0.0.23
 
-commit 51c28ef7cdb5aa821aca5d722f4a4279186aa438
+commit c9fb25b47a9d1f2acb7d606cccd0858578bd93ee
 Author: Yunohu <kernighan@gmail.com>
-Date:   Sat Oct 12 15:53:09 2019 +0000
+Date:   Sat Nov 9 20:42:49 2019 +0000
 
-    Version 1.0.0.22
+    Fix #35 - If flying, don't scan the zone
 
-commit 3171d944772cb16f9a4b7b7a8d7851840a050351
+commit 6de19ae40e546f577a2df86726bf36ae56ad1f67
+Author: Hantunaar <daxterminator@ctqlmjd.fr>
+Date:   Fri Oct 25 05:07:07 2019 +0000
+
+    frFR.lua edited online with Bitbucket
+
+commit 6de19ae40e546f577a2df86726bf36ae56ad1f67
+Author: Hantunaar <daxterminator@ctqlmjd.fr>
+Date:   Fri Oct 25 05:07:07 2019 +0000
+
+    frFR.lua edited online with Bitbucket
+
+commit 56b6652e7c484eaae00fad9b646ebc39cfac47db
 Author: Yunohu <kernighan@gmail.com>
-Date:   Sat Oct 12 15:52:12 2019 +0000
+Date:   Thu Oct 17 20:38:37 2019 +0000
 
-    Fix callbackhander library location (Sync with upstream)
+    Fix #33 - Add esMX support
 

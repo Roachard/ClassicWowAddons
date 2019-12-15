@@ -9,6 +9,7 @@
     <script file = "Locale\zhTW.lua" />
     <script file = "Locale\enUS.lua" />
     <script file = "alaDropMenu.lua" />
+    <script file = "alaScrollList.lua" />
     <script file = "alaTalentData.lua" />
     <script file = "alaTalentEmu.lua" />
 

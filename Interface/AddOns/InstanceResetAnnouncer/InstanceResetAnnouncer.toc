@@ -1,0 +1,7 @@
+## Interface: 11302
+## Notes: Announce in party or raid when you reset an instance.
+## Title: InstanceResetAnnouncer
+## Author: Novaspark-Firemaw EU
+## Version: 1.0
+
+InstanceResetAnnouncer.lua

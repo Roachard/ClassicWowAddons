@@ -5,41 +5,41 @@ if not L then return end
 L["Recipe Radar Classic"] = true
 
 L["Left-click to open RecipeRadar."] = "Clic gauche pour ouvrir Recipe Radar."
-L["Right-click and drag to move this button."] = "Faites un clic droit et faites glisser pour déplacer ce bouton."
+L["Right-click and drag to move this button."] = "Maintenir clic droit pour déplacer ce bouton."
 
    -- these show up in the game's Key Bindings screen
-L["Recipe Radar Bindings"] = "Attaches De Recipe Radar"
-L["Toggle Recipe Radar"] = "Recipe Radar À bascule"
+L["Recipe Radar Bindings"] = "Raccourcis de Recipe Radar"
+L["Toggle Recipe Radar"] = "Ouvrir/fermer la fenêtre principale"
 
    -- options button and corresponding options frame
-L["Options"] = "Les options"
-L["Auto-map Contributive Vendors"] = "Recettes Disponibles d'affichage"
-L["Auto-select Current Region"] = "Sélection automatique de la région courante"
-L["Check Availability for Alts"] = "Examinez la disponibilité pour les alts"
-L["Minimap Button Position"] = "Position du bouton sur la Minimap"
-L["Show Minimap Button"] = "Montrez le Bouton sur la Minimap"
+L["Options"] = "Options"
+L["Auto-map Contributive Vendors"] = "Cartographie automatique des marchands utiles"
+L["Auto-select Current Region"] = "Sélection automatique de la région actuelle"
+L["Check Availability for Alts"] = "Vérifier la disponibilité pour les alts"
+L["Minimap Button Position"] = "Position du bouton sur la mini-carte"
+L["Show Minimap Button"] = "Affichr le bouton sur la mini-carte"
 
    -- format strings used in the map tooltips
 L["1 recipe"] = "1 recette"
-L["%d learnable"] = "%d utilisables"
+L["%d learnable"] = "%d utilisable(s)"
 L["%d recipes"] = "%d recettes"
 
    -- this appears when the recipe is not in your local database
-L["Uncached Recipe"] = "Recette Non présente"
+L["Uncached Recipe"] = "Recette absente du cache"
 
    -- uncached recipe tooltip - see RecipeRadar_Availability_CreateTooltip()
 L["You may mouse over the"] = "Vous devez passer la souris sur l'icône pour"
-L["icon to lookup this recipe."] = "ajouter cette recette à votre base de donnèe."
-L["Warning: if your server has"] = "Avertissement: si votre serveur n'a"
+L["icon to lookup this recipe."] = "ajouter cette recette à votre base de données."
+L["Warning: if your server has"] = "Avertissement : si votre serveur n'a"
 L["not yet seen this item, you"] = "pas encore vu cet article, vous serez"
-L["will be disconnected!"] = "déconnecté!"
+L["will be disconnected!"] = "déconnecté !"
 
    -- some regions don't have any recipes for sale
 L["No recipes for sale in this region."] = "Aucune recette à vendre dans cette région."
 
    -- radio button (and tooltip) that indicates a mapped vendor
 L["Locate Vendor on Map"] = "Localiser le marchand"
-L["Shift-click a vendor to add or remove her location on the world map."] = "Shift-clic sur un marchand pour  ajouter ou enlever sa position sur la carte du monde."
+L["Shift-click a vendor to add or remove her location on the world map."] = "Shift-clic sur un marchand pour ajouter ou enlever sa position sur la carte du monde."
 
    -- strings in the faction filtering dropdown; we don't need 'Horde' or 'Alliance' because Blizzard provides them for us
 L["Factions"] = true
@@ -63,42 +63,42 @@ L["Tailoring"] = "Couture"
 
    -- strings in the availability filtering dropdown
 L["Availability"] = "Disponibilité"
-L["Already Known (Alts)"] = "Déjà Connu (Alts)"
-L["Already Known (Player)"] = "Déjà Connu (Joueur)"
-L["Available Now (Alts)"] = "Disponible Maintenant (Alts)"
-L["Available Now (Player)"] = "Disponible Maintenant (Joueur) "
+L["Already Known (Alts)"] = "Déjà connu (Alts)"
+L["Already Known (Player)"] = "Déjà connu (Joueur)"
+L["Available Now (Alts)"] = "Disponible maintenant (Alts)"
+L["Available Now (Player)"] = "Disponible maintenant (Joueur) "
 L["Future Prospect (Alts)"] = "Bientôt disponible (Alts)"
 L["Future Prospect (Player)"] = "Bientôt disponible (Joueur)"
 L["Inapplicable"] = "Innaplicable"
 
    -- headings for the availability tooltip
-L["Available For:"] = "Disponible Pour:"
-L["Already Known By:"] = "Déjà Connu Par:"
-L["Future Prospect For:"] = "Bientôt disponible pour:"
+L["Available For:"] = "Disponible pour :"
+L["Already Known By:"] = "Déjà connu par :"
+L["Future Prospect For:"] = "Bientôt disponible pour :"
 
    -- format string for rank indicator for future prospects; that is, it tells you how soon you can learn the recipe - eg. "163 of 175"
-L["%d of %d"] = "%d de %d"
+L["%d of %d"] = "%d sur %d"
 
    -- special notes for vendor requirements follow vendor names (eg. "Seasonal Vendor")
-L["%s Vendor"] = "%s Marchand"
-L["Intermittent"] = true
-L["Quest"] = "Quête"
-L["Roving"] = "Boudinage"
-L["Seasonal"] = "Saisonnier"
+L["%s Vendor"] = "Marchand %s "
+L["Intermittent"] = "intermittent"
+L["Quest"] = "de quête"
+L["Roving"] = "itinérant"
+L["Seasonal"] = "saisonnier"
 
    -- other recipe requirements
-L["Rogue Only"] = "Voleur Seulement"
-L["%s Only"] = "%s Seulement"
+L["Rogue Only"] = "Voleur seulement"
+L["%s Only"] = "%s seulement"
 L["Rogue"] = "Voleur"
 L["Special"] = "Spécial"
 
    -- menu item in the right-click context menu for mapped vendor buttons
-L["Unmap Vendor"] = "Enlevez Marchand"
+L["Unmap Vendor"] = "Retirer la position du marchand sur la carte"
 L["Collapse"] = "Réduire"
-L["Collapse All"] = "Réduire Tout"
-L["Expand"] = "Etendre"
-L["Expand All"] = "Etendre Tout"
-L["Map Vendor"] = "Indique la position du marchand sur la carte"
+L["Collapse All"] = "Tout réduire"
+L["Expand"] = "Étendre"
+L["Expand All"] = "Tout étendre"
+L["Map Vendor"] = "Ajouter la position du marchand sur la carte"
 
    -- trade skill specialties
 L["Gnomish Engineer"] = "Ingénieur gnome"

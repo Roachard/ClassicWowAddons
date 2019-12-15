@@ -8,6 +8,11 @@ U1RegisterAddon("alaTalentEmu", {
     minimap = 'LibDBIcon10_alaTalentEmu', 
     icon = [[interface\buttons\ui-microbutton-talents-up]],
 
+    runBeforeLoad = function(info, name)
+        if emu_set_config then
+            emu_set_config("show_equipment", true);
+        end
+    end,
     -- {
     --     text = "配置选项",
     --     callback = function(cfg, v, loading)

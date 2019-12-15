@@ -893,6 +893,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 8030,
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 10000,
+		},
 	},
 	{
 		["quests"] = {
@@ -947,6 +953,16 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 10713,
+		["special_action"] = {
+			["English"] = "Made by gnomish engineer",
+			["Portuguese"] = "Feito pelo engenheiro gnômico",
+			["Russian"] = "Сделано гномским инженером",
+			["Chinese"] = "由侏儒工程师制造",
+			["Spanish"] = "Hecho por el ingeniero gnomo",
+			["French"] = "Fabriqué par un ingénieur gnome",
+			["Korean"] = "그놈 엔지니어가 제작",
+			["German"] = "Hergestellt vom einem gnomischen Ingenieur",
+		},
 	},
 	{
 		["vendors"] = {
@@ -1580,6 +1596,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Storm Gauntlets",
 		},
 		["quality"] = "rare",
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 40000,
+		},
 	},
 	{
 		["phase"] = 1,
@@ -1933,6 +1955,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "uncommon",
 		["id"] = 12819,
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 16000,
+		},
 	},
 	{
 		["quests"] = {
@@ -1966,6 +1994,12 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 1,
 		["quality"] = "common",
 		["id"] = 12823,
+		["vendors"] = {
+			["sources"] = {
+				11278,
+			},
+			["price"] = 20000,
+		},
 	},
 	{
 		["quests"] = {
@@ -2852,6 +2886,19 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20553,
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["name"] = {
@@ -2867,6 +2914,19 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20554,
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["name"] = {
@@ -2882,6 +2942,19 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 4,
 		["quality"] = "rare",
 		["id"] = 20555,
+		["quests"] = {
+			8323
+		},
+		["special_action"] = {
+			["English"] = MTSLUI_LOCALES_LABELS["random reward"]["English"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["random reward"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["random reward"]["Russian"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["random reward"]["Chinese"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["random reward"]["Spanish"],
+			["French"] = MTSLUI_LOCALES_LABELS["random reward"]["French"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["random reward"]["Korean"],
+			["German"] = MTSLUI_LOCALES_LABELS["random reward"]["German"],
+		},
 	},
 	{
 		["vendors"] = {
@@ -2903,6 +2976,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 5,
+		},
 	},
 	{
 		["vendors"] = {
@@ -2924,6 +3001,10 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		},
 		["quality"] = "common",
 		["phase"] = 5,
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 6,
+		},
 	},
 	{
 		["name"] = {
@@ -2939,6 +3020,16 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 5,
 		["quality"] = "common",
 		["id"] = 22219,
+		["vendors"] = {
+			["sources"] = {
+				15471,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 7,
+		},
 	},
 	{
 		["phase"] = 5,
@@ -2974,6 +3065,16 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 		["phase"] = 5,
 		["quality"] = "common",
 		["id"] = 22221,
+		["vendors"] = {
+			["sources"] = {
+				15471,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 609,
+			["level_id"] = 8,
+		},
 	},
 	{
 		["phase"] = 5,
@@ -3057,22 +3158,6 @@ MTSL_DATA["Blacksmithing"]["items"] = {
 			["English"] = "Plans: Persuader",
 		},
 		["quality"] = "epic",
-	},
-	{
-		["quest"] = 9236,
-		["id"] = 22703,
-		["name"] = {
-			["Russian"] = "Чертеж: кираса Ледяной погибели",
-			["Portuguese"] = "Instruções: Peitoral da Perdição Gélida",
-			["Chinese"] = "图样：破冰胸甲",
-			["Spanish"] = "Diseño: coraza Deliriohelado",
-			["French"] = "Plans : Cuirasse plaie-de-glace",
-			["German"] = "Muster: Eisfluchbrustplatte",
-			["Korean"] = "도면: 얼음막이 흉갑",
-			["English"] = "Plans: Icebane Breastplate",
-		},
-		["quality"] = "common",
-		["phase"] = 6,
 	},
 	{
 		["vendors"] = {

@@ -3,8 +3,19 @@
 --]]--
 ----------------------------------------------------------------------------------------------------
 local ADDON, NS = ...;
+----------------------------------------------------------------------------------------------------upvalue LUA
+local math, table, string, bit = math, table, string, bit;
+local type = type;
+local assert, collectgarbage, date, difftime, error, getfenv, getmetatable, loadstring, next, newproxy, pcall, select, setfenv, setmetatable, time, type, unpack, xpcall, rawequal, rawget, rawset =
+		assert, collectgarbage, date, difftime, error, getfenv, getmetatable, loadstring, next, newproxy, pcall, select, setfenv, setmetatable, time, type, unpack, xpcall, rawequal, rawget, rawset;
+local abs, acos, asin, atan, atan2, ceil, cos, deg, exp, floor, fmod, frexp,ldexp, log, log10, max, min, mod, rad, random, sin, sqrt, tan, fastrandom =
+		abs, acos, asin, atan, atan2, ceil, cos, deg, exp, floor, fmod or math.fmod, frexp,ldexp, log, log10, max, min, mod, rad, random, sin, sqrt, tan, fastrandom;
+local format, gmatch, gsub, strbyte, strchar, strfind, strlen, strlower, strmatch, strrep, strrev, strsub, strupper, tonumber, tostring =
+		format, gmatch, gsub, strbyte, strchar, strfind, strlen, strlower, strmatch, strrep, strrev, strsub, strupper, tonumber, tostring;
+local strcmputf8i, strlenutf8, strtrim, strsplit, strjoin, strconcat, tostringall =  strcmputf8i, strlenutf8, strtrim, strsplit, strjoin, strconcat, tostringall;
+local ipairs, pairs, sort, tContains, tinsert, tremove, wipe = ipairs, pairs, sort, tContains, tinsert, tremove, wipe;
+local gcinfo, foreach, foreachi, getn = gcinfo, foreach, foreachi, getn;	-- Deprecated
 ----------------------------------------------------------------------------------------------------
-local math, table, string, pairs, type, select, tonumber, tostring, unpack = math, table, string, pairs, type, select, tonumber, tostring, unpack;
 local _G = _G;
 local _ = nil;
 ----------------------------------------------------------------------------------------------------
@@ -21,20 +32,20 @@ alaDropMenu = {};
 local DropMenu = alaDropMenu;
 local NAME = "alaDropMenu";
 local dropMenuBackdrop = {
-	bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
+	bgFile = "Interface\\Buttons\\WHITE8X8";	-- "Interface\\Tooltips\\UI-Tooltip-Background",
 	edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
 	tile = true,
 	tileSize = 2,
 	edgeSize = 2,
 	insets = { left = 2, right = 2, top = 2, bottom = 2 }
 };
-local dropMenuBackdropColor = { 0.25, 0.25, 0.25, 0.9 };
+local dropMenuBackdropColor = { 0.05, 0.05, 0.05, 1.0 };
 local COUNTING_DOWN_TIMER_PERIOD = 1.5;
 local dropMenuButtonHeight = 20;
 local dropMenuButtonInterval = 0;
 local dropMenuButtonTopBottomInterval = 2;
 --------------------------------------------------
-local menus = { total = 0, used = 0, };
+local menus = { total = 0, used = 0, prev = nil, };
 local frameToMenu = {  };
 --------------------------------------------------
 --local showMenu;
@@ -45,7 +56,7 @@ local frameToMenu = {  };
 										handler		(function)optional
 										para		(table)for parameter
 										text		(string)
-										info		(string)
+										--info		(string)
 ]]
 --------------------------------------------------
 local function CreateMenu()
@@ -89,8 +100,19 @@ local function CreateMenu()
 					break;
 				end
 			end
+			if self == menus.prev then
+				menus.prev = nil;
+			end
 		end
 	);
+	menu:SetScript("OnShow", function(self)
+		if menus.prev ~= self then
+			if menus.prev then
+				menus.prev:Hide();
+			end
+			menus.prev = self;
+		end
+	end);
 	menu.buttons = {  };
 
 	return menu;
@@ -111,16 +133,21 @@ local function GetMenu(parent, anchor)
 	menu.parent = parent;
 	frameToMenu[parent] = menu;
 	menu:ClearAllPoints();
+	local cx, cy = GetCursorPosition();
+	local px, py = parent:GetCenter();
+	local s = parent:GetEffectiveScale();
+	local x = cx / s - px;
+	local y = cy / s - py;
 	if anchor == "TOPRIGHT" then
-		menu:SetPoint("BOTTOMLEFT", parent, "TOPRIGHT", 0, 0);
+		menu:SetPoint("BOTTOMLEFT", parent, "CENTER", x, y);
 	elseif anchor == "TOPLEFT" then
-		menu:SetPoint("BOTTOMRIGHT", parent, "TOPLEFT", 0, 0);
+		menu:SetPoint("BOTTOMRIGHT", parent, "CENTER", x, y);
 	elseif anchor == "BOTTOMRIGHT" then
-		menu:SetPoint("TOPLEFT", parent, "BOTTOMRIGHT", 0, 0);
+		menu:SetPoint("TOPLEFT", parent, "CENTER", x, y);
 	elseif anchor == "BOTTOMLEFT" then
-		menu:SetPoint("TOPRIGHT", parent, "BOTTOMLEFT", 0, 0);
+		menu:SetPoint("TOPRIGHT", parent, "CENTER", x, y);
 	else
-		menu:SetPoint("BOTTOMLEFT", parent, "TOPRIGHT", 0, 0);
+		menu:SetPoint("BOTTOMLEFT", parent, "CENTER", x, y);
 	end
 	menu.isCountingDown = true;
 	menu.countingDownTimer = COUNTING_DOWN_TIMER_PERIOD + 1.0;
@@ -176,12 +203,12 @@ local function CreateMenuButton(menu, x, y)
 	return button;
 end
 local function showMenu(parent, anchor, data)
-	if type(data) ~= "table" or (type(data) == "table" and (type(data.elements) ~= "table" or type(data.handler) ~= "function")) then
-		return;
-	end
 	if frameToMenu[parent] and frameToMenu[parent]:IsShown() then
 		frameToMenu[parent]:Hide();
 		frameToMenu[parent] = nil;
+		return;
+	end
+	if type(data) ~= "table" or (type(data) == "table" and (type(data.elements) ~= "table" or type(data.handler) ~= "function")) then
 		return;
 	end
 	local menu = GetMenu(parent, anchor);
@@ -217,7 +244,7 @@ local function showMenu(parent, anchor, data)
 	button.handler = closeMenu_Handler;
 	button.para = { menu, };
 	button:Show();
-	button.text:SetText("Close");
+	button.text:SetText("close");
 	local w = button.text:GetWidth();
 	if w > width then
 		width = w;

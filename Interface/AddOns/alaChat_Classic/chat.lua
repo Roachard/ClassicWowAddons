@@ -16,9 +16,6 @@ local SC_DATA2 = L.SC_DATA2;
 local SC_DATA3 = L.SC_DATA3;
 if not SC_DATA1 or not SC_DATA2 or not SC_DATA3 then return;end
 ----------------------------------------------------------------------------------------------------
-if not __alaBase then
-	return;
-end
 ----------------------------------------------------------------------------------------------------short Channel Name
 local control_shortChannelName = false;
 local backup_shortChannelName = {};
@@ -26,7 +23,8 @@ local chatFrame = {};
 for i = 1, NUM_CHAT_WINDOWS do
 	chatFrame[i] = _G["ChatFrame"..i];
 end
-eventCall("PLAYER_LOGOUT", 
+local f = CreateFrame("Frame");
+f:SetScript("OnEvent",
 	function(_, event)
 		if control_shortChannelName then
 			for i = 1, NUM_CHAT_WINDOWS do
@@ -44,6 +42,8 @@ eventCall("PLAYER_LOGOUT",
 		end
 	end
 );
+f:RegisterEvent("PLAYER_LOGOUT");
+
 hooksecurefunc(SlashCmdList, "JOIN", 
 	function(msg)
 		if  control_shortChannelName then
@@ -209,7 +209,8 @@ local function shortChannelName_ToggleOn()
 		backup_shortChannelName[get] = _G[get];
 		_G[get] = str;
 	end
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName", _cf_short_channel_name);
 	return control_shortChannelName;
 end
 local function shortChannelName_ToggleOff()
@@ -232,11 +233,34 @@ local function shortChannelName_ToggleOff()
 	for get, str in pairs(backup_shortChannelName) do
 		_G[get] = str;
 	end
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName");
 	return control_shortChannelName;
 end
 FUNC.ON.shortChannelName = shortChannelName_ToggleOn;
 FUNC.OFF.shortChannelName = shortChannelName_ToggleOff;
+----------------------------------------------------------------------------------------------------short Channel Name Format
+local control_shortChannelName = false;
+
+local _ChatFrame_ResolvePrefixedChannelName_NW = _G.ChatFrame_ResolvePrefixedChannelName;
+local function _ChatFrame_ResolvePrefixedChannelName_N(communityChannel)
+	local prefix, communityChannel = communityChannel:match("(%d+). (.*)");
+	return prefix;
+end
+local function _ChatFrame_ResolvePrefixedChannelName_W(communityChannel)
+	local prefix, communityChannel = communityChannel:match("(%d+). (.*)");
+	return communityChannel;
+end
+local function set_shortChannelNameFormat(value)
+	if value == "NW" then
+		_G.ChatFrame_ResolvePrefixedChannelName = _ChatFrame_ResolvePrefixedChannelName_NW;
+	elseif value == "N" then
+		_G.ChatFrame_ResolvePrefixedChannelName = _ChatFrame_ResolvePrefixedChannelName_N;
+	elseif value == "W" then
+		_G.ChatFrame_ResolvePrefixedChannelName = _ChatFrame_ResolvePrefixedChannelName_W;
+	end
+end
+FUNC.SETVALUE.shortChannelNameFormat = set_shortChannelNameFormat;
 ----------------------------------------------------------------------------------------------------filter questAnn
 local control_filterQuestAnn = false;
 local function _cf_filter_quest_ann(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
@@ -309,7 +333,6 @@ local function level_ToggleOn()
 		return;
 	end
 	control_level=true;
-	--repeat_cache=delayCall(cache_MemInfo, 1, true);
 	cache_MemInfo();
 	repeat_cache=C_Timer.NewTicker(4, cache_MemInfo);
 end
@@ -318,7 +341,6 @@ local function level_ToggleOff()
 		return;
 	end
 	control_level=false;
-	--editdCall(repeat_cache);
 	if repeat_cache then
 		repeat_cache:Cancel();
 		repeat_cache = nil;
@@ -409,12 +431,20 @@ FUNC.ON.restoreAfterWhisper = function()
 	--control_restoreAfterWhisper = true;
 	ChatTypeInfo["WHISPER"].sticky = 0;
 	ChatTypeInfo["BN_WHISPER"].sticky = 0;
-	ChatTypeInfo["CHANNEL"].sticky = 0;
 end
 FUNC.OFF.restoreAfterWhisper = function()
 	--control_restoreAfterWhisper = false;
 	ChatTypeInfo["WHISPER"].sticky = 1;
 	ChatTypeInfo["BN_WHISPER"].sticky = 1;
+end
+----------------------------------------------------------------------------------------------------
+-- local restoreAfterChannel = false;
+FUNC.ON.restoreAfterChannel = function()
+	--restoreAfterChannel = true;
+	ChatTypeInfo["CHANNEL"].sticky = 0;
+end
+FUNC.OFF.restoreAfterChannel = function()
+	--restoreAfterChannel = false;
 	ChatTypeInfo["CHANNEL"].sticky	= 1;
 end
 ----------------------------------------------------------------------------------------------------shamanColor
@@ -446,28 +476,158 @@ end
 FUNC.ON.shamanColor = shamanColor_ToggleOn;
 FUNC.OFF.shamanColor = shamanColor_ToggleOff;
 ----------------------------------------------------------------------------------------------------
+local ICON_PATH = NS.ICON_PATH;
+
+local bfwName = "大脚世界频道";
+local bfwLen = strlen(bfwName);
+local function find_bfw()
+	local t = {GetChannelList()};
+	for i = 1, #t/3 do
+		if t[i*3-1] == bfwName then
+			return t[i*3-2];
+		end
+	end
+	return -1;
+end
+
+local control_channel_Ignore_Switch = false;
+local control_channel_Ignore = false;
+local pcBtn = nil;
+
+local function _cf_channel_Ignore(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
+	if strsub(arg9, 1, bfwLen) ~= bfwName then
+	-- if arg8 ~= find_bfw() then
+		return true;
+	end
+	return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
+end
+local function channel_Ignore_ToggleOn()
+	control_channel_Ignore = true;
+	if not control_channel_Ignore_Switch then
+		return;
+	end
+	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore", _cf_channel_Ignore);
+		if pcBtn then
+			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
+			-- pcBtn:SetPushedTexture(ICON_PATH.."pc");
+			pcBtn:GetNormalTexture():SetVertexColor(1.0, 0.0, 0.0, 1.0);
+			pcBtn:GetPushedTexture():SetVertexColor(0.25, 0.0, 0.0, 0.5);
+			pcBtn:GetHighlightTexture():SetVertexColor(1.0, 0.0, 0.0, 1.0);
+		end
+end
+local function channel_Ignore_ToggleOff(loading)
+	control_channel_Ignore = false;
+	if not control_channel_Ignore_Switch then
+		return;
+	end
+	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore");
+	if not loading then
+		if pcBtn then
+			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
+			-- pcBtn:SetPushedTexture(ICON_PATH.."pc");
+			pcBtn:GetNormalTexture():SetVertexColor(1.0, 1.0, 1.0, 1.0);
+			pcBtn:GetPushedTexture():SetVertexColor(0.25, 0.25, 0.25, 0.5);
+			pcBtn:GetHighlightTexture():SetVertexColor(1.0, 1.0, 1.0, 1.0);
+		end
+	end
+end
+local function channel_Ignore_Init()
+	pcBtn = CreateFrame("Button", "_alaChat_pcBtn_Toggle", GeneralDockManager);
+	pcBtn:SetWidth(28);
+	pcBtn:SetHeight(28);
+	pcBtn:SetNormalTexture(ICON_PATH.."pc");
+	pcBtn:SetPushedTexture(ICON_PATH.."pc");
+	pcBtn:GetPushedTexture():SetVertexColor(0.25, 0.25, 0.25, 0.25);
+	pcBtn:SetHighlightTexture(ICON_PATH.."pc");
+	pcBtn:GetHighlightTexture():SetBlendMode("ADD");
+	pcBtn:SetAlpha(0.75);
+	pcBtn:SetFrameLevel(ChatFrame1:GetFrameLevel()+1);
+	pcBtn:SetMovable(false);
+	pcBtn:EnableMouse(true);
+	pcBtn:ClearAllPoints();
+	pcBtn:SetPoint("TOPRIGHT", ChatFrame1, "TOPRIGHT", -4, -4);
+	pcBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp");
+	pcBtn:SetScript("OnClick", function()
+			if control_channel_Ignore then
+				channel_Ignore_ToggleOff();
+				FUNC._CONFIGSET("channel_Ignore", false);
+			else
+				channel_Ignore_ToggleOn();
+				FUNC._CONFIGSET("channel_Ignore", true);
+			end
+		end);
+	pcBtn._timer = 0;
+	pcBtn._counting = false;
+	pcBtn._fadding = false;
+	pcBtn._faddingAlpha = 0.75;
+	pcBtn:SetScript("OnUpdate", function(_, elapsed)
+			if pcBtn._counting then
+				pcBtn._timer = pcBtn._timer-elapsed;
+				if pcBtn._timer <= 0 then
+					pcBtn._fadding = true;
+					pcBtn._counting = false;
+				end
+			end
+			if pcBtn._fadding then
+				pcBtn._faddingAlpha = pcBtn._faddingAlpha-elapsed*0.5;
+				if pcBtn._faddingAlpha <= 0.25 then
+					pcBtn:SetAlpha(0.25);
+					pcBtn._fadding = false;
+				else
+					pcBtn:SetAlpha(pcBtn._faddingAlpha);
+				end
+			end
+		end)
+	pcBtn:SetScript("OnEnter", function()
+			pcBtn._timer = 1;
+			pcBtn._counting = false;
+			pcBtn:SetAlpha(0.75);
+			pcBtn._fadding = false;
+			pcBtn._faddingAlpha = 0.75;
+		end)
+	pcBtn:SetScript("OnLeave", function()
+			pcBtn._timer = 1;
+			pcBtn._counting = true;
+			pcBtn._fadding = false;
+			pcBtn._faddingAlpha = 0.75
+		end)
+	pcBtn:Show();
+end
+FUNC.INIT.channel_Ignore_Switch = channel_Ignore_Init;
+FUNC.ON.channel_Ignore_Switch = function(loading)
+	if pcBtn then
+		pcBtn:Show();
+		control_channel_Ignore_Switch = true;
+		if control_channel_Ignore then
+			channel_Ignore_ToggleOn(loading);
+		else
+			channel_Ignore_ToggleOff(loading);
+		end
+	end
+end;
+FUNC.OFF.channel_Ignore_Switch = function(loading)
+	if pcBtn then
+		pcBtn:Hide();
+		control_channel_Ignore_Switch = false;
+	end
+	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+end
+
+FUNC.ON.channel_Ignore = channel_Ignore_ToggleOn;
+FUNC.OFF.channel_Ignore = channel_Ignore_ToggleOff;
+
 local locale_match = GetLocale() == "zhCN" or GetLocale() == "zhTW";
+local bfwBtn = nil;
 if locale_match then
-
-	local ICON_PATH = NS.ICON_PATH;
-	local bfwName = "大脚世界频道";
-
 	--大脚世界频道开关按钮
 	local control_bfWorld_Ignore_Switch = false;
 	local control_bfWorld_Ignore = false;
-	local bfwBtn = nil;
-	local function find_bfw()
-		local t = {GetChannelList()};
-		for i = 1, #t/3 do
-			if t[i*3-1] == bfwName then
-				return t[i*3-2];
-			end
-		end
-		return -1;
-	end
 	local function _cf_bgWorld_Toggle(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
 		--if control_bfWorld_Ignore and control_bfWorld_Ignore_Switch then
-			if arg8 == find_bfw() then
+			if strsub(arg9, 1, bfwLen) == bfwName then
+			-- if arg8 == find_bfw() then
 				return true;
 			end
 		--end
@@ -478,7 +638,8 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore", _cf_bgWorld_Toggle);
 			if bfwBtn then
 				-- bfwBtn:SetNormalTexture(ICON_PATH.."bfw");
 				-- bfwBtn:SetPushedTexture(ICON_PATH.."bfw");
@@ -492,15 +653,23 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore");
 		if not loading then
 			if find_bfw()<0 then
 				--JoinChannelByName(bfwName);
 				--SlashCmdList["JOIN"](bfwName, ChatFrame1EditBox);
-				--delayCall(SlashCmdList["JOIN"], 4, false, bfwName, ChatFrame1EditBox);
-				if not select(2, JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID(), 1)) then
-					delayCall(JoinPermanentChannel, 4, false, bfwName, nil, DEFAULT_CHAT_FRAME:GetID(), 1);
-					delayCall(ChatFrame_AddChannel, 4.5, false, DEFAULT_CHAT_FRAME, bfwName);
+				JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+				-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+				if not find_bfw() then
+					local ticker = C_Timer.NewTicker(0.5, function()
+						JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+						-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
+						if not find_bfw() then
+							ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, bfwName);
+							ticker:Cancel();
+						end
+					end);
 				end
 				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, bfwName);
 			end
@@ -529,7 +698,7 @@ if locale_match then
 		bfwBtn:SetMovable(false);
 		bfwBtn:EnableMouse(true);
 		bfwBtn:ClearAllPoints();
-		bfwBtn:SetPoint("TOPRIGHT", ChatFrame1, "TOPRIGHT", -4, -4);
+		bfwBtn:SetPoint("RIGHT", pcBtn, "LEFT", -4, 0);
 		bfwBtn:RegisterForClicks("LeftButtonUp", "RightButtonUp");
 		bfwBtn:SetScript("OnClick", function()
 				if control_bfWorld_Ignore then
@@ -578,10 +747,7 @@ if locale_match then
 		bfwBtn:Show();
 	end
 
-	FUNC.ON.bfWorld_Ignore = bfWorld_Ignore_ToggleOn;
-	FUNC.OFF.bfWorld_Ignore = bfWorld_Ignore_ToggleOff;
-	FUNC.INIT.bfWorld_Ignore = bfWorld_Ignore_Init;
-
+	FUNC.INIT.bfWorld_Ignore_Switch = bfWorld_Ignore_Init;
 	FUNC.ON.bfWorld_Ignore_Switch = function(loading)
 		if bfwBtn then
 			bfwBtn:Show();
@@ -600,12 +766,18 @@ if locale_match then
 		end
 		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 	end
-	--FUNC.INIT.bfWorld_Ignore_Switch;
-	FUNC.SETVALUE.bfWorld_Ignore_BtnSize = function(size, init)
-		if bfwBtn then
-			bfwBtn:SetSize(size, size);
-		end
-	end
 
+	FUNC.ON.bfWorld_Ignore = bfWorld_Ignore_ToggleOn;
+	FUNC.OFF.bfWorld_Ignore = bfWorld_Ignore_ToggleOff;
+	--FUNC.INIT.bfWorld_Ignore_Switch;
+end
+FUNC.SETVALUE.channel_Ignore_BtnSize = function(size, init)
+	if pcBtn then
+		pcBtn:SetSize(size, size);
+	end
+		
+	if bfwBtn then
+		bfwBtn:SetSize(size, size);
+	end
 end
 ----------------------------------------------------------------------------------------------------

@@ -3,8 +3,7 @@
 ## Author: Thumbkin
 ## Notes: Shows missing skills & recipes for a profession and where to get them.
 ## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER
-## Version: 1.13.25
-
+## Version: 1.13.27
 
 ##
 ## Load all global variables, saved variables & locale
@@ -127,4 +126,3 @@ UI\MainFrames\MissingTradeSkillsFrame.lua
 
 ## Initialise the frames & start the addon
 MissingTradeSkillsList.lua
-

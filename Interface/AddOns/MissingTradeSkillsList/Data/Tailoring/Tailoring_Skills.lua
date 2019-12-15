@@ -4313,7 +4313,7 @@ MTSL_DATA["Tailoring"]["skills"] = {
 			5519,
 		},
 		["phase"] = 1,
-		["min_skill"] = 1,
+		["min_skill"] = 285,
 		["id"] = 22813,
 		["name"] = {
 			["Russian"] = "Броня огров Гордока",
@@ -4643,7 +4643,7 @@ MTSL_DATA["Tailoring"]["skills"] = {
 	{
 		["object"] = 180794,
 		["phase"] = 1,
-		["min_skill"] = 1,
+		["min_skill"] = 285,
 		["id"] = 26086,
 		["name"] = {
 			["Russian"] = "Сумка из ткани Скверны",
@@ -4795,9 +4795,8 @@ MTSL_DATA["Tailoring"]["skills"] = {
 		["id"] = 27725,
 	},
 	{
-		["phase"] = 1,
+		["phase"] = 6,
 		["id"] = 28205,
-		["item"] = 22684,
 		["name"] = {
 			["Russian"] = "Ледовые перчатки",
 			["Portuguese"] = "Luvas Glaciais",
@@ -4809,11 +4808,23 @@ MTSL_DATA["Tailoring"]["skills"] = {
 			["English"] = "Glacial Gloves",
 		},
 		["min_skill"] = 300,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
-		["phase"] = 1,
+		["phase"] = 6,
 		["id"] = 28207,
-		["item"] = 22686,
 		["name"] = {
 			["Russian"] = "Ледовый жилет",
 			["Portuguese"] = "Colete Glacial",
@@ -4825,11 +4836,51 @@ MTSL_DATA["Tailoring"]["skills"] = {
 			["English"] = "Glacial Vest",
 		},
 		["min_skill"] = 300,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 8,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
-		["phase"] = 1,
+		["phase"] = 6,
+		["id"] = 28208,
+		["name"] = {
+			["Russian"] = "Ледовый плащ",
+			["Portuguese"] = "Manto Glacial",
+			["Chinese"] = "冰川披风",
+			["Spanish"] = "Capa glacial",
+			["French"] = "Cape glaciaire",
+			["German"] = "Gletscherumhang",
+			["Korean"] = "빙하의 망토",
+			["English"] = "GGlacial Cloak",
+		},
+		["min_skill"] = 300,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
+	},
+	{
+		["phase"] = 6,
 		["id"] = 28209,
-		["item"] = 22687,
 		["name"] = {
 			["Russian"] = "Ледовые накулачники",
 			["Portuguese"] = "Pulsos Glaciais",
@@ -4841,6 +4892,20 @@ MTSL_DATA["Tailoring"]["skills"] = {
 			["English"] = "Glacial Wrists",
 		},
 		["min_skill"] = 300,
+		["min_skill"] = 300,
+		["trainers"] = {
+			["sources"] = {
+				16365,
+			},
+			["price"] = 0,
+		},
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 7,
+		},
+		["quests"] = {
+			9233,
+		}
 	},
 	{
 		["phase"] = 1,

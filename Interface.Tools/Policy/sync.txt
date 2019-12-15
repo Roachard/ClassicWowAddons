@@ -16,12 +16,12 @@ BFCooldown
 BFGadgets
 BFGoldFrame
 BFQuest
+BigDebuffs
 BigFoot
 BigFootBar
 BigFootBot
 BubbleChat
 ChannelFilter
-CharacterStatsClassic
 ClassicAuraDurations
 ClassicCastbars
 ClassicCastbars_Options

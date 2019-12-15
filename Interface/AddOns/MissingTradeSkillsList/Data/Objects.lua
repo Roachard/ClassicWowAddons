@@ -8,8 +8,8 @@ MTSL_DATA["objects"] = {
 		["name"] = {
 			["Portuguese"] = "Cálice Espectral",
 			["Russian"] = "Призрачный кубок",
-			["Chinese"] = "[Spectral Chalice]",
-			["Spanish"] = "[Spectral Chalice]",
+			["Chinese"] = "鬼魂之杯",
+			["Spanish"] = "Cáliz espectral",
 			["French"] = "Calice spectral",
 			["English"] = "Spectral Chalice",
 			["Korean"] = "유령의 성배",
@@ -28,12 +28,31 @@ MTSL_DATA["objects"] = {
 		["name"] = {
 			["Portuguese"] = "Esconderijo de Knot Thimblejack",
 			["Russian"] = "Тайник Уззла Наперстяка",
-			["Chinese"] = "[Knot Thimblejack's Cache]",
+			["Chinese"] = "诺特·希姆加克的储物箱",
 			["Spanish"] = "Alijo de Knot Thimblejack",
 			["French"] = "Réserve de Knot Thimblejack",
 			["English"] = "Knot Thimblejack's Cache",
-			["Korean"] = "[Knot Thimblejack's Cache]",
+			["Korean"] = "노트 팀블잭의 은닉품",
 			["German"] = "Knot Thimblejacks Behälter",
+		},
+	},
+	{
+		["zone_id"] = 1977,
+		["phase"] = 1,
+		["id"] = 180368,
+		["location"] = {
+			["y"] = "45.31",
+			["x"] = "37.94",
+		},
+		["name"] = {
+			["German"] = "Schrifttafel des Wahnsinns",
+			["English"] = "Tablet of Madness",
+			["Spanish"] = "Tablilla de Locura",
+			["French"] = "Tablette de la Folie",
+			["Portuguese"] = "Tabuleta da Loucura",
+			["Russian"] = "Табличка Безумия",
+			["Korean"] = "광기의 정제",
+			["Chinese"] = "疯狂平板电脑",
 		},
 	},
 	{
@@ -66,7 +85,7 @@ MTSL_DATA["objects"] = {
 		["name"] = {
 			["Portuguese"] = "Diário de Jandice Barov",
 			["Russian"] = "Дневник Джандис Баров",
-			["Chinese"] = "[Journal of Jandice Barov]",
+			["Chinese"] = "詹迪斯·巴罗夫的日记",
 			["Spanish"] = "Diario de Jandice Barov",
 			["French"] = "Journal de Jandice Barov",
 			["English"] = "Journal of Jandice Barov",
