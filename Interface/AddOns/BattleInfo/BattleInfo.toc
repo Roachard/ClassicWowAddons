@@ -8,5 +8,7 @@
 
 locales.lua
 event.lua
+utils.lua
 quickjoin.lua
 newbattle.lua
+widgetbar.lua
