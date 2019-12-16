@@ -1,12 +1,18 @@
-tag fcdb847c704b1479a46bce5148e6a0aeb771e8d8 v1.0.8
+tag 2a2c00fb01d11db28739dffecfd88fda3f39c6fd v1.1.1
 Author:	Shadowed <shadowed.wow@gmail.com>
-Date:	Fri Dec 13 22:01:30 2019 -0800
+Date:	Sat Dec 14 21:57:52 2019 -0800
 
-Tagging as release v1.0.8
+Tagging as release v1.1.1
 
-commit bddf9e49c6fd57baf80bdf1a6144018fa4f6991e
+commit 7d89da00d0c8d64b8ea8233d958aa5a7ccb023f7
 Author: Shadowed <shadowed.wow@gmail.com>
-Date:   Fri Dec 13 22:01:20 2019 -0800
+Date:   Sat Dec 14 21:57:40 2019 -0800
 
-    Properly filter out pass messages
+    Fixed cross server targeting in WSG
+
+commit d901af43fb980bd849bd17430b35d3b8279bd9c5
+Author: Shadowed <shadowed.wow@gmail.com>
+Date:   Sat Dec 14 21:54:15 2019 -0800
+
+    Remove capture/held time for WSG
 
