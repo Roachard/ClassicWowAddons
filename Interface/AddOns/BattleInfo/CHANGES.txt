@@ -1,22 +1,10 @@
-lightweight tag 5d8cdc2c2f10e0092c3e240ca68171a311c666d2 v2.2.1
+lightweight tag d56b3a4f544ff59c34fb1214a195557e40658e64 v2.2.2
 Author:	Boshi Lian <farmer1992@gmail.com>
-Date:	Mon Dec 16 02:15:51 2019 -0800
+Date:	Mon Dec 16 04:07:41 2019 -0800
 
-commit 5d8cdc2c2f10e0092c3e240ca68171a311c666d2
+commit d56b3a4f544ff59c34fb1214a195557e40658e64
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Mon Dec 16 02:15:51 2019 -0800
+Date:   Mon Dec 16 04:07:41 2019 -0800
 
-    fix layout
-
-commit 59d0adbe36299f2d3e5d471ce07d1efd6dbec47e
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Mon Dec 16 02:12:21 2019 -0800
-
-    fix number to -
-
-commit 5ff3e895331fb6e39a23158889ea510ba80b6c6d
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Mon Dec 16 01:00:50 2019 -0800
-
-    fix align top text
+    add alterac tower indicator
 
