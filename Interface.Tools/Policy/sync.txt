@@ -41,6 +41,7 @@ DBM-MC
 DBM-Naxx
 DBM-Onyxia
 DBM-Party-Classic
+DBM-PvP
 DBM-StatusBarTimers
 DBM-VPYike
 DBM-ZG

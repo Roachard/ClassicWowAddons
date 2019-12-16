@@ -2945,6 +2945,7 @@ function Details:ShowTalentsPanel()
 	end
 end
 
+--[[
 local LatestInspectFrameUpdate = 0
 C_Timer.After (1, function()
 	hooksecurefunc ("InspectFrame_LoadUI", function()
@@ -2958,6 +2959,7 @@ C_Timer.After (1, function()
 		end)
 	end)
 end)
+]]
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 --compress data
