@@ -1,18 +1,12 @@
-tag 2a2c00fb01d11db28739dffecfd88fda3f39c6fd v1.1.1
+tag 9d73811ca307b058fa763ef60d2ee7cd7f15629a v1.1.2
 Author:	Shadowed <shadowed.wow@gmail.com>
-Date:	Sat Dec 14 21:57:52 2019 -0800
+Date:	Tue Dec 17 18:15:04 2019 -0800
 
-Tagging as release v1.1.1
+Tagging as release v1.1.2
 
-commit 7d89da00d0c8d64b8ea8233d958aa5a7ccb023f7
+commit a3e1c8d898f1d6328d7bdad388b9aad8f0eea9d6
 Author: Shadowed <shadowed.wow@gmail.com>
-Date:   Sat Dec 14 21:57:40 2019 -0800
+Date:   Tue Dec 17 18:14:53 2019 -0800
 
-    Fixed cross server targeting in WSG
-
-commit d901af43fb980bd849bd17430b35d3b8279bd9c5
-Author: Shadowed <shadowed.wow@gmail.com>
-Date:   Sat Dec 14 21:54:15 2019 -0800
-
-    Remove capture/held time for WSG
+    Fixed Ivus and Lokholar timer prints not working
 
