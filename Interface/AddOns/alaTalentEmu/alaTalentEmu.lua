@@ -397,6 +397,13 @@ local curPhase = 2;
 	local ADDON_MSG_QUERY_EQUIPMENTS = "_q_equ";
 	local ADDON_MSG_REPLY_EQUIPMENTS = "_r_equ";
 	local ADDON_MSG_REPLY_ADDON_PACK = "_r_pak";
+	----------------
+	local ADDON_MSG_QUERY_TALENTS_ = "_query";
+	local ADDON_MSG_REPLY_TALENTS_ = "_reply";
+	--
+	local ADDON_MSG_QUERY_EQUIPMENTS_ = "_queeq";
+	local ADDON_MSG_REPLY_EQUIPMENTS_ = "_repeq";
+	local ADDON_MSG_REPLY_ADDON_PACK_ = "_reppk";
 	--------------------------------------------------
 	local _talentDB = NS._talentDB;
 	local _indexToClass = NS._indexToClass;
@@ -2422,7 +2429,7 @@ do	-- communication func
 						msg = "";
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_TALENTS then
+			elseif control_code == ADDON_MSG_REPLY_TALENTS or control_code == ADDON_MSG_REPLY_TALENTS_ then
 				local code = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
 				if code and code ~= "" then
 					emu.queryCache[sender] = emu.queryCache[sender] or {  };
@@ -2458,7 +2465,7 @@ do	-- communication func
 						end
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_EQUIPMENTS then
+			elseif control_code == ADDON_MSG_REPLY_EQUIPMENTS or control_code == ADDON_MSG_REPLY_EQUIPMENTS_ then
 				local code = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
 				-- queryCache
 				-- emu.specializedMainFrameInspect
@@ -2506,7 +2513,7 @@ do	-- communication func
 						end
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_ADDON_PACK then
+			elseif control_code == ADDON_MSG_REPLY_ADDON_PACK or control_code == ADDON_MSG_REPLY_ADDON_PACK_ then
 				emu.queryCache[sender] = emu.queryCache[sender] or {  };
 				emu.queryCache[sender][0] = time();
 				local meta = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
@@ -2561,9 +2568,11 @@ do	-- communication func
 			else
 				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS, "WHISPER", name);
 				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS, "WHISPER", name);
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS_, "WHISPER", name);
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS_, "WHISPER", name);
 			end
 			for _, val in pairs(extern.addon) do
-				if UnitInBattleground('player') then
+				if UnitInBattleground('player') and realm ~= emu.realm then
 				else
 					SendAddonMessage(val.prefix, val.msg, "WHISPER", name);
 				end
