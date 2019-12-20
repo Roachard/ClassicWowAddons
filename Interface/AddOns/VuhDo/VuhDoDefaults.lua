@@ -1361,9 +1361,9 @@ function VUHDO_loadDefaultPanelSetup()
 	for tPanelNum = 1, 10 do -- VUHDO_MAX_PANELS
 		if not VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] and tPanelNum == 1 then
 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = {
-				["x"] = 200,
-				["y"] = 100,
-				["relativePoint"] = "CENTER",
+				["x"] = 130,
+				["y"] = 650,
+				["relativePoint"] = "BOTTOMLEFT",
 				["orientation"] = "TOPLEFT",
 				["growth"] = "TOPLEFT",
 				["width"] = 200,
