@@ -812,7 +812,7 @@ function VUHDO_slashCmd(aCommand)
 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = nil;
 		end
 		VUHDO_BUFF_SETTINGS["CONFIG"]["POSITION"] = {
-			["x"] = 100, ["y"] = -100, ["point"] = "TOPLEFT", ["relativePoint"] = "TOPLEFT",
+			["x"] = 0, ["y"] = 0, ["point"] = "BOTTOMRIGHT", ["relativePoint"] = "BOTTOMRIGHT",
 		};
 		VUHDO_loadDefaultPanelSetup();
 		VUHDO_reloadUI(false);

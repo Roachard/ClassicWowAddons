@@ -212,3 +212,16 @@ index 15f3a0d..43aa34f 100644
  		["MOUSEOVER_HIGHLIGHT"] = "",
  		["SWIFTMEND_INDICATOR"] = "",
  		["THREAT_BAR"] = "",
+diff --git a/Interface/AddOns/VuhDo/VuhDoEventHandler.lua b/Interface/AddOns/VuhDo/VuhDoEventHandler.lua
+index 3b0f754..372d36a 100644
+--- a/Interface/AddOns/VuhDo/VuhDoEventHandler.lua
++++ b/Interface/AddOns/VuhDo/VuhDoEventHandler.lua
+@@ -812,7 +812,7 @@ function VUHDO_slashCmd(aCommand)
+ 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = nil;
+ 		end
+ 		VUHDO_BUFF_SETTINGS["CONFIG"]["POSITION"] = {
+-			["x"] = 100, ["y"] = -100, ["point"] = "TOPLEFT", ["relativePoint"] = "TOPLEFT",
++			["x"] = 0, ["y"] = 0, ["point"] = "BOTTOMRIGHT", ["relativePoint"] = "BOTTOMRIGHT",
+ 		};
+ 		VUHDO_loadDefaultPanelSetup();
+ 		VUHDO_reloadUI(false);
