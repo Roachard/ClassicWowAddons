@@ -1,6 +1,7 @@
 ﻿--[[--
 	alex@0
 --]]--
+-- do return; end
 ----------------------------------------------------------------------------------------------------
 local ADDON, NS = ...;
 local FUNC = NS.FUNC;
@@ -270,26 +271,6 @@ local function chat_filter_On()
 	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "chat_filter", chat_filter_Filter)
 	ala_add_message_event_filter("CHAT_MSG_SAY", "chat_filter", chat_filter_Filter)
 	ala_add_message_event_filter("CHAT_MSG_YELL", "chat_filter", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_WARNING", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", chat_filter_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", chat_filter_Filter)
 	if chatFilter_btn then
 		alaBaseBtn:AddBtn(chatFilter_btnPackIndex,-1,chatFilter_btn,true,false,true);
 	else
@@ -317,26 +298,6 @@ local function chat_filter_Off()
 	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "chat_filter")
 	ala_remove_message_event_filter("CHAT_MSG_SAY", "chat_filter")
 	ala_remove_message_event_filter("CHAT_MSG_YELL", "chat_filter")
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", chat_filter_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", chat_filter_Filter)
 	alaBaseBtn:RemoveBtn(chatFilter_btn,true);
 end
 
@@ -347,9 +308,12 @@ local function chat_filter_word_SetVal(val)
 	if chatFilter_editBox and chatFilter_editBox:IsShown() then
 		chatFilter_editBox:SetText(val);
 	end
-	val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]","%%%1").. "\n\n";
 	wipe(filterWord);
 	wipe(nameFilter);
+	if val == "" then
+		return;
+	end
+	val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]","%%%1").. "\n\n";
 	for v in gmatch(val,"%s*([^\n^;]+)[\n;]") do
 		local _, _, v0 = strfind(v, "^#(.+)");
 		if v0 then
@@ -468,8 +432,11 @@ local function keyWordHighlight_SetVal(val)
 	if keyWordHighlight_editBox and keyWordHighlight_editBox:IsShown() then
 		keyWordHighlight_editBox:SetText(val);
 	end
-	val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]","%%%1").. "\n\n";
 	wipe(keyWord);
+	if val == "" then
+		return;
+	end
+	val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]","%%%1").. "\n\n";
 	for v in gmatch(val,"%s*([^\n^;]+)[\n;]") do
 		tinsert(keyWord,v);
 		local v1 = strupper(v);
@@ -606,26 +573,6 @@ local function keyWordHighlight_On()
 	-- ala_add_message_event_filter("CHAT_MSG_AFK", "keyWordHighlight", keyWordHighlight_Filter)
 	-- ala_add_message_event_filter("CHAT_MSG_EMOTE", "keyWordHighlight", keyWordHighlight_Filter)
 	-- ala_add_message_event_filter("CHAT_MSG_DND", "keyWordHighlight", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_WARNING", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", keyWordHighlight_Filter)
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", keyWordHighlight_Filter)
 
 	if keyWordHighlight_btn then
 		alaBaseBtn:AddBtn(keyWordHighlight_btnPackIndex,-1,keyWordHighlight_btn,true,false,true);
@@ -683,26 +630,6 @@ local function keyWordHighlight_Off()
 	-- ala_remove_message_event_filter("CHAT_MSG_AFK", "keyWordHighlight")
 	-- ala_remove_message_event_filter("CHAT_MSG_EMOTE", "keyWordHighlight")
 	-- ala_remove_message_event_filter("CHAT_MSG_DND", "keyWordHighlight")
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", keyWordHighlight_Filter)
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", keyWordHighlight_Filter)
 	alaBaseBtn:RemoveBtn(keyWordHighlight_btn,true);
 end
 

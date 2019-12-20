@@ -1,10 +1,10 @@
 diff --git a/Interface/AddOns/alaChat_Classic/addon.lua b/Interface/AddOns/alaChat_Classic/addon.lua
-index f7a7707..dad4d58 100644
+index 7fa6226..0fde7e4 100644
 --- a/Interface/AddOns/alaChat_Classic/addon.lua
 +++ b/Interface/AddOns/alaChat_Classic/addon.lua
-@@ -143,20 +143,20 @@ local default = {
+@@ -143,11 +143,11 @@ local default = {
  	_version				 = 190830.0,
- 	_overrideVersion		 = 190925.0,
+ 	_overrideVersion		 = 191217.0,
  
 -	position				 = "BELOW_EDITBOX",
 +	position				 = "ABOVE_EDITOBX",
@@ -16,13 +16,13 @@ index f7a7707..dad4d58 100644
  
  	shortChannelName		 = true,
  	shortChannelNameFormat	 = "NW",
- 	hyperLinkEnhanced		 = true,
- 	chatEmote				 = true,
+@@ -155,8 +155,8 @@ local default = {
+ 	chatEmote				 = false,
+ 	chatEmote_channel		 = false,
  	ColorNameByClass		 = true,
 -	shamanColor				 = false,
-+	shamanColor				 = true,
- 	filterQuestAnn			 = false,
 -	channelBarChannel		 = { true,true,true,true,true,true,true,true,true,true,true,true,true,true },
++	shamanColor				 = true,
 +	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
  	channelBarStyle			 = "CHAR",
  
@@ -35,7 +35,7 @@ index f7a7707..dad4d58 100644
 +	level					 = true,
  	copy					 = true,
  	copyTagColor			 = { 0.25, 0.25, 1.00 },
- 	copyTagFormat			 = "#s";
+ 	copyTagFormat			 = "[%H:%M:%S]";
  
  	--hideConfBtn				 = true,
  	editBoxTab				 = true,

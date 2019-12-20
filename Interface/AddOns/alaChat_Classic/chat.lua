@@ -1,6 +1,7 @@
 ﻿--[[--
 	alex@0
 --]]--
+-- do return; end
 ----------------------------------------------------------------------------------------------------
 local ADDON, NS = ...;
 local FUNC = NS.FUNC;
@@ -17,241 +18,30 @@ local SC_DATA3 = L.SC_DATA3;
 if not SC_DATA1 or not SC_DATA2 or not SC_DATA3 then return;end
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------short Channel Name
-local control_shortChannelName = false;
-local backup_shortChannelName = {};
-local chatFrame = {};
-for i = 1, NUM_CHAT_WINDOWS do
-	chatFrame[i] = _G["ChatFrame"..i];
-end
-local f = CreateFrame("Frame");
-f:SetScript("OnEvent",
-	function(_, event)
-		if control_shortChannelName then
-			for i = 1, NUM_CHAT_WINDOWS do
-				if i ~= 2 then
-					local f = chatFrame[i];
-					for _, c in pairs(SC_DATA2) do
-						for k, v in pairs(f.channelList) do
-							if v == c[4] then
-								f.channelList[k] = c[1];
-							end
-						end
-					end
-				end
-			end
-		end
-	end
-);
-f:RegisterEvent("PLAYER_LOGOUT");
-
-hooksecurefunc(SlashCmdList, "JOIN", 
-	function(msg)
-		if  control_shortChannelName then
-			local c = string.gsub(msg, "%s*([^%s]+).*", "%1");
-			for i = 1, NUM_CHAT_WINDOWS do
-				if i ~= 2 then
-					for k, v in pairs(chatFrame[i].channelList) do
-						if v == c then
-							for _, ct in pairs(SC_DATA2) do
-								if string.sub(c, ct[2], ct[3]) == ct[1] then
-									chatFrame[i].channelList[k] = ct[4];
-								end
-							end
-							break;
-						end
-					end
-				end
-			end
-		end
-	end
-);
-hooksecurefunc(SlashCmdList, "LEAVE", 
-	function(msg)
-		local c = string.gsub(msg, "%s*([^%s]+).*", "%1");
-		if  control_shortChannelName then
-			local s = nil;
-			for k, v in pairs(SC_DATA2) do
-				if c == v[1] then
-					s = v[4];
-				end
-			end
-			for i = 1, NUM_CHAT_WINDOWS do
-				if i ~= 2 then
-					local f = chatFrame[i];
-					for k, v in pairs(f.channelList) do
-						if v == s or v == c then
-							table.remove(f.channelList, k);
-							break;
-						end
-					end
-				end
-			end
-		else
-			for i = 1, NUM_CHAT_WINDOWS do
-				if i ~= 2 then
-					local f = chatFrame[i];
-					for k, v in pairs(f.channelList) do
-						if v == c then
-							table.remove(f.channelList, k);
-							break;
-						end
-					end
-				end
-			end
-		end
-	end
-);
-hooksecurefunc("ChatFrame_AddChannel", 
-	function(self, c)
-		if control_shortChannelName then
-			for k, v in pairs(self.channelList) do
-				if v == c then
-					for _, ct in pairs(SC_DATA2) do
-						if string.sub(c, ct[2], ct[3]) == ct[1] then
-							local sc = ct[4];
-							for i = 1, k do
-								if self.channelList[i] == ct[4] then
-									sc = nil;
-									break;
-								end
-							end
-							self.channelList[k] = sc;
-							break;
-						end
-					end
-					break;
-				end
-			end
-		end
-	end
-);
-hooksecurefunc("ChatFrame_RemoveChannel", 
-	function(self, c)
-		if control_shortChannelName then
-			for k, v in pairs(SC_DATA2) do
-				if string.sub(c, v[2], v[3]) == v[1] then
-					c = v[4];
-					break;
-				end
-			end
-			for k, v in pairs(self.channelList) do
-				if v == c then
-					self.channelList[k] = nil;
-					break;
-				end
-			end
-		end
-	end
-);
-hooksecurefunc("CreateChatChannelList", 
-	function(self, ...)
-		if control_shortChannelName then
-			local channelList = FCF_GetCurrentChatFrame().channelList;
-			local zoneChannelList = FCF_GetCurrentChatFrame().zoneChannelList;
-			for _, v in pairs(CHAT_CONFIG_CHANNEL_LIST) do
-				for _, c in pairs(SC_DATA2) do
-				    if v.channelName and string.sub(v.channelName, c[2], c[3]) == c[1] then
-					    --v.channelName = c[4];
-						--v.text = string.sub(v.text, 1, 2)..c[4];
-						local checked = nil;
-					    if (channelList) then
-					    	for _, v2 in pairs(channelList) do
-					    		if (v2 == c[4] or v2 == c[1]) then
-					    			checked = 1;
-									break;
-					    		end
-					    	end
-					    end
-					    if (zoneChannelList) then
-					    	for _, v2 in pairs(zoneChannelList) do
-					    		if (v2 == c[4] or v2 == c[1]) then
-					    			checked = 1;
-									break;
-					    		end
-					    	end
-					    end
-						v.checked = checked;
-						break;
-					end
-				end
-			end
-		end
-	end
-);
-local function _cf_short_channel_name(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)--main function
-	for k, v in pairs(SC_DATA2) do
-		if arg9 == v[1] or string.sub(arg9, v[2], v[3]) == v[1] then
-			arg9 = v[4];
-			arg4 = arg8..". "..arg9;
-			break;
-		end
-	end
-	return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
-end
-local function shortChannelName_ToggleOn()
-	if control_shortChannelName then
-		return;
-	end
-	control_shortChannelName = true;
-	for i = 1, NUM_CHAT_WINDOWS do
-		if i ~= 2 then
-			local f = chatFrame[i];
-			for _, c in pairs(SC_DATA2) do
-				for k, v in pairs(f.channelList) do
-					if string.sub(v, c[2], c[3]) == c[1] then
-						f.channelList[k] = c[4];
-					end
-				end
-			end
-		end
-	end
-	for get, str in pairs(SC_DATA1) do
-		backup_shortChannelName[get] = _G[get];
-		_G[get] = str;
-	end
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
-	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName", _cf_short_channel_name);
-	return control_shortChannelName;
-end
-local function shortChannelName_ToggleOff()
-	if not control_shortChannelName then
-		return;
-	end
-	control_shortChannelName = false;
-	for i = 1, NUM_CHAT_WINDOWS do
-		if i ~= 2 then
-			local f = chatFrame[i];
-			for _, c in pairs(SC_DATA2) do
-				for k, v in pairs(f.channelList) do
-					if v == c[4] then
-						f.channelList[k] = c[1];
-					end
-				end
-			end
-		end
-	end
-	for get, str in pairs(backup_shortChannelName) do
-		_G[get] = str;
-	end
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_short_channel_name);
-	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "shortChannelName");
-	return control_shortChannelName;
-end
-FUNC.ON.shortChannelName = shortChannelName_ToggleOn;
-FUNC.OFF.shortChannelName = shortChannelName_ToggleOff;
 ----------------------------------------------------------------------------------------------------short Channel Name Format
 local control_shortChannelName = false;
+local backup_shortChannelName = {  };
 
-local _ChatFrame_ResolvePrefixedChannelName_NW = _G.ChatFrame_ResolvePrefixedChannelName;
+local short_name_hash = {  };
+for _, v in pairs(SC_DATA2) do
+	short_name_hash[v[1]] = v[4];
+end
+local function _ChatFrame_ResolvePrefixedChannelName_NW(communityChannel)
+	local prefix, communityChannel = communityChannel:match("(%d+). ([^ ]*)");
+	communityChannel = control_shortChannelName and short_name_hash[communityChannel] or communityChannel;
+	return prefix .. "." .. ChatFrame_ResolveChannelName(communityChannel);
+end
 local function _ChatFrame_ResolvePrefixedChannelName_N(communityChannel)
-	local prefix, communityChannel = communityChannel:match("(%d+). (.*)");
+	local prefix, communityChannel = communityChannel:match("(%d+). ([^ ]*)");
 	return prefix;
 end
 local function _ChatFrame_ResolvePrefixedChannelName_W(communityChannel)
-	local prefix, communityChannel = communityChannel:match("(%d+). (.*)");
-	return communityChannel;
+	local prefix, communityChannel = communityChannel:match("(%d+). ([^ ]*)");
+	communityChannel = control_shortChannelName and short_name_hash[communityChannel] or communityChannel;
+	return ChatFrame_ResolveChannelName(communityChannel);
 end
 local function set_shortChannelNameFormat(value)
+	-- do return end
 	if value == "NW" then
 		_G.ChatFrame_ResolvePrefixedChannelName = _ChatFrame_ResolvePrefixedChannelName_NW;
 	elseif value == "N" then
@@ -261,51 +51,41 @@ local function set_shortChannelNameFormat(value)
 	end
 end
 FUNC.SETVALUE.shortChannelNameFormat = set_shortChannelNameFormat;
-----------------------------------------------------------------------------------------------------filter questAnn
-local control_filterQuestAnn = false;
-local function _cf_filter_quest_ann(self, event, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...)
-	local msg, sender, line = arg1, arg2, arg11;
-	if string.find(msg, "^大脚任务进度提示:") or string.find(msg, "^【网.易.有.爱】") then
-		return true;
-	end
-	return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, ...;
-end
-local function filterQuestAnn_ToggleOn()
-	if control_filterQuestAnn then
+
+local function shortChannelName_ToggleOn()
+	if control_shortChannelName then
 		return;
 	end
-	control_filterQuestAnn = true;
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_filter_quest_ann);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_filter_quest_ann);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", _cf_filter_quest_ann);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_filter_quest_ann);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", _cf_filter_quest_ann);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_filter_quest_ann);
-	return control_filterQuestAnn;
+	control_shortChannelName = true;
+	for get, str in pairs(SC_DATA1) do
+		backup_shortChannelName[get] = _G[get];
+		_G[get] = str;
+	end
+	return control_shortChannelName;
 end
-local function filterQuestAnn_ToggleOff()
-	if not control_filterQuestAnn then
+local function shortChannelName_ToggleOff()
+	if not control_shortChannelName then
 		return;
 	end
-	control_filterQuestAnn = false;
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", _cf_filter_quest_ann);
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", _cf_filter_quest_ann);
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", _cf_filter_quest_ann);
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", _cf_filter_quest_ann);
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", _cf_filter_quest_ann);
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", _cf_filter_quest_ann);
-	return control_filterQuestAnn;
+	control_shortChannelName = false;
+	for get, str in pairs(backup_shortChannelName) do
+		_G[get] = str;
+	end
+	return control_shortChannelName;
 end
-FUNC.ON.filterQuestAnn = filterQuestAnn_ToggleOn;
-FUNC.OFF.filterQuestAnn = filterQuestAnn_ToggleOff;
+FUNC.ON.shortChannelName = shortChannelName_ToggleOn;
+FUNC.OFF.shortChannelName = shortChannelName_ToggleOff;
 ----------------------------------------------------------------------------------------------------level
+-- do return end
 local control_level = false;
 local memCache = {  };
 local function cache_MemInfo()
 	for i=1,GetNumGuildMembers() do
 		local name,rank,rankindex0,level,class,area,_,_,_,_,eClass,ach=GetGuildRosterInfo(i);
-		name=string.split("-",name);
-		memCache[name]=level;
+		if name then
+			name=string.split("-",name);
+			memCache[name]=level;
+		end
 	end
 end
 
@@ -327,6 +107,7 @@ _G.GetPlayerLink = function(fullName, nameApp, lineId, cType, cTarget)
 		return _GetPlayerLink(fullName, nameApp, lineId, cType, cTarget);
 	end
 end
+
 local repeat_cache=nil;
 local function level_ToggleOn()
 	if control_level then
@@ -349,22 +130,6 @@ end
 FUNC.ON.level=level_ToggleOn;
 FUNC.OFF.level=level_ToggleOff;
 ----------------------------------------------------------------------------------------------------colored name
--- --colorNameByClass
--- --Chat_ShouldColorChatByClass
--- -- local __Chat_ShouldColorChatByClass = Chat_ShouldColorChatByClass;
--- -- local Chat_ShouldColorChatByClass_AlywaysOn = function() return true; end
--- -- local __ChatClassColorOverrideShown = ChatClassColorOverrideShown;
--- -- local ChatClassColorOverrideShown_AlwaysOn = function() return true; end
--- local function ColorNameByClass_ToggleOn()
--- 	-- Chat_ShouldColorChatByClass = Chat_ShouldColorChatByClass_AlywaysOn;
--- 	-- ChatClassColorOverrideShown = ChatClassColorOverrideShown_AlwaysOn;
--- 	SetCVar("chatClassColorOverride", "0");
--- end
--- local function ColorNameByClass_ToggleOff()
--- 	-- Chat_ShouldColorChatByClass = __Chat_ShouldColorChatByClass;
--- 	-- ChatClassColorOverrideShown = __ChatClassColorOverrideShown;
--- 	SetCVar("chatClassColorOverride", "1");
--- end
 FUNC.ON.ColorNameByClass = function()
 	SetCVar("chatClassColorOverride", "0");
 end
@@ -387,12 +152,12 @@ local function OnTabPressed(self)
 				if i == #chatType then
 					self:SetAttribute("chatType", chatType[1]);
 					ChatEdit_UpdateHeader(self);
-					--self:SetText(chatHeader[1]);
+					--self:Insert(chatHeader[1]);
 					--print(chatType[1]);
 				else
 					self:SetAttribute("chatType", chatType[i + 1]);
 					ChatEdit_UpdateHeader(self);
-					--self:SetText(chatHeader[i + 1]);
+					--self:Insert(chatHeader[i + 1]);
 					--print(chatType[i + 1]);
 				end
 				return true;
@@ -506,7 +271,6 @@ local function channel_Ignore_ToggleOn()
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
 	ala_add_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore", _cf_channel_Ignore);
 		if pcBtn then
 			-- pcBtn:SetNormalTexture(ICON_PATH.."pc");
@@ -521,7 +285,6 @@ local function channel_Ignore_ToggleOff(loading)
 	if not control_channel_Ignore_Switch then
 		return;
 	end
-	-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
 	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "channel_Ignore");
 	if not loading then
 		if pcBtn then
@@ -612,7 +375,7 @@ FUNC.OFF.channel_Ignore_Switch = function(loading)
 		pcBtn:Hide();
 		control_channel_Ignore_Switch = false;
 	end
-	ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", _cf_channel_Ignore);
 end
 
 FUNC.ON.channel_Ignore = channel_Ignore_ToggleOn;
@@ -638,7 +401,6 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore", _cf_bgWorld_Toggle);
 			if bfwBtn then
 				-- bfwBtn:SetNormalTexture(ICON_PATH.."bfw");
@@ -653,18 +415,13 @@ if locale_match then
 		if not control_bfWorld_Ignore_Switch then
 			return;
 		end
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "bfWorld_Ignore");
 		if not loading then
 			if find_bfw()<0 then
-				--JoinChannelByName(bfwName);
-				--SlashCmdList["JOIN"](bfwName, ChatFrame1EditBox);
 				JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
-				-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
 				if not find_bfw() then
 					local ticker = C_Timer.NewTicker(0.5, function()
 						JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
-						-- JoinPermanentChannel(bfwName, nil, DEFAULT_CHAT_FRAME:GetID());
 						if not find_bfw() then
 							ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, bfwName);
 							ticker:Cancel();
@@ -764,7 +521,7 @@ if locale_match then
 			bfwBtn:Hide();
 			control_bfWorld_Ignore_Switch = false;
 		end
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
+		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", _cf_bgWorld_Toggle);
 	end
 
 	FUNC.ON.bfWorld_Ignore = bfWorld_Ignore_ToggleOn;

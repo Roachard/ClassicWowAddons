@@ -1,6 +1,7 @@
 ﻿--[[--
 	alex@0
 --]]--
+-- do return; end
 ----------------------------------------------------------------------------------------------------
 local ADDON,NS = ...;
 local FUNC = NS.FUNC;
@@ -26,6 +27,7 @@ local ICON_PATH = NS.ICON_PATH;
 --------------------------------------------------channel Bar
 local channelJoinDelay = 0.5;
 local max_change_channel_wait = 6;
+local max_try_times = 8;
 
 local CHATTYPE;
 local COLOR;
@@ -40,6 +42,7 @@ local function insertEditBox(text)
 	editBox:SetText(text);
 end
 local trying_to_join = false;
+local try_times = 0;
 local function try_to_join_action(channel)
 	JoinPermanentChannel(channel, nil, DEFAULT_CHAT_FRAME:GetID());
 	-- JoinPermanentChannel(channel, nil, DEFAULT_CHAT_FRAME:GetID());
@@ -66,18 +69,27 @@ local function try_to_join_action(channel)
 					print("\124cffff0000JOINED " .. channel .. "\124r");
 				end
 				trying_to_join = false;
+				try_times = 0;
 				ChatFrame_AddChannel(DEFAULT_CHAT_FRAME, channel);
 				return;
 			end
 		end
-		try_to_join_action(channel);
+		try_times = try_times + 1;
+		if try_times <= max_try_times then
+			try_to_join_action(channel);
+		else
+			trying_to_join = false;
+			try_times = 0;
+		end
 	end);
 end
 local function try_to_join(channel)
+	-- JoinPermanentChannel(channel, nil, DEFAULT_CHAT_FRAME:GetID());
 	if trying_to_join then
 		return;
 	end
 	trying_to_join = time();
+	try_times = 0;
 	try_to_join_action(channel);
 end
 local function SetEditBoxHeader(idx)
@@ -87,7 +99,7 @@ local function SetEditBoxHeader(idx)
 		local _chatType = editBox:GetAttribute("chatType");
 		local _channelTarget = editBox:GetAttribute("channelTarget");
 		local dataIdx = idx - 9;
-		local t = {GetChannelList()};
+		local t = { GetChannelList() };
 		for i = 1,#t,3 do
 			if t[i+1] == SC_DATA2[dataIdx][1] then
 				if editBox:HasFocus() and _chatType == "CHANNEL" and _channelTarget == t[i] then
@@ -96,11 +108,14 @@ local function SetEditBoxHeader(idx)
 					if editBox:HasFocus() then
 						--local text = editBox:GetText():gsub("/[^%s]+%s", "");
 						--ChatEdit_ActivateChat(editBox);
-						editBox:SetText("/"..t[i].." " .. editBox:GetText():gsub("^/[^%s]+%s", ""));
-					else
-						ChatEdit_ActivateChat(editBox);
-						editBox:SetText("/"..t[i].." ");
+						-- editBox:SetText("/"..t[i].." " .. editBox:GetText():gsub("^/[^%s]+%s", ""));
+						ChatEdit_DeactivateChat(editBox);
+					-- else
+						-- ChatEdit_ActivateChat(editBox);
+						-- editBox:SetText("/"..t[i].." ");
 					end
+					ChatEdit_ActivateChat(editBox);
+					editBox:Insert("/" .. t[i] .. " ");
 				end
 				return;
 			end
@@ -123,11 +138,14 @@ local function SetEditBoxHeader(idx)
 			if editBox:HasFocus() then
 				--local text = editBox:GetText():gsub("^/[^%s]+%s", "");
 				--ChatEdit_ActivateChat(editBox);
-				editBox:SetText(PREF[idx] .. editBox:GetText():gsub("^/[^%s]+%s", ""));
-			else
-				ChatEdit_ActivateChat(editBox);
-				editBox:SetText(PREF[idx]);
+				-- editBox:SetText(PREF[idx] .. editBox:GetText():gsub("^/[^%s]+%s", ""));
+				ChatEdit_DeactivateChat(editBox);
+			-- else
+			-- 	ChatEdit_ActivateChat(editBox);
+			-- 	editBox:SetText(PREF[idx]);
 			end
+			ChatEdit_ActivateChat(editBox);
+			editBox:Insert(PREF[idx]);
 		end
 	end
 end

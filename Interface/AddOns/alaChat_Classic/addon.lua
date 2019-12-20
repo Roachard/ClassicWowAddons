@@ -45,7 +45,7 @@ local function FUNC_CALL(t,k,...)
 	if FUNC[t] then
 		if FUNC[t][k] then
 			return FUNC[t][k](...);
-		elseif k ~= "_version" then
+		elseif t ~= "INIT" and k ~= "_version" then
 			debug("Missing FUNC handler",t,k);
 		end
 	elseif t ~= "_version" then
@@ -99,9 +99,9 @@ local key = {
 	"shortChannelNameFormat",
 	"hyperLinkEnhanced",
 	"chatEmote",
+	-- "chatEmote_channel",
 	"ColorNameByClass",
 	"shamanColor",
-	"filterQuestAnn",
 	"channelBarChannel",
 	"channelBarStyle",
 	
@@ -141,7 +141,7 @@ local key = {
 };
 local default = {
 	_version				 = 190830.0,
-	_overrideVersion		 = 190925.0,
+	_overrideVersion		 = 191217.0,
 
 	position				 = "ABOVE_EDITOBX",
 	direction				 = "HORIZONTAL",
@@ -152,10 +152,10 @@ local default = {
 	shortChannelName		 = true,
 	shortChannelNameFormat	 = "NW",
 	hyperLinkEnhanced		 = true,
-	chatEmote				 = true,
+	chatEmote				 = false,
+	chatEmote_channel		 = false,
 	ColorNameByClass		 = true,
 	shamanColor				 = true,
-	filterQuestAnn			 = false,
 	channelBarChannel		 = { true,true,true,false,false,true,true,false,false,false,false,false,false,false },
 	channelBarStyle			 = "CHAR",
 
@@ -176,7 +176,7 @@ local default = {
 	level					 = true,
 	copy					 = true,
 	copyTagColor			 = { 0.25, 0.25, 1.00 },
-	copyTagFormat			 = "#s";
+	copyTagFormat			 = "[%H:%M:%S]";
 
 	--hideConfBtn				 = true,
 	editBoxTab				 = true,
@@ -196,14 +196,16 @@ local default = {
 	chat_filter_rep_interval = 15,
 };
 local override = {
-	_version				 = 191209.0,
+	_version				 = 191217.0,
 	-- barStyle				 = 'blz',
 	-- level					 = false,
 	-- copy					 = false,
 	-- hyperLinkHoverShow		 = true,
-	chat_filter_repeated_words = false,
-	chat_filter_repeated_words_deep = false;
-	chat_filter_repeated_words_info = false,
+	-- chat_filter_repeated_words = false,
+	-- chat_filter_repeated_words_deep = false,
+	-- chat_filter_repeated_words_info = false,
+	chatEmote				 = false,
+	copyTagFormat			 = "[%H:%M:%S]",
 };
 local buttons = {
 	--[[1]]	{ 				name = "position"					,type = "DropDownMenu"	,label = LCONFIG.position				,key = "position"				,value = { "BELOW_EDITBOX", "ABOVE_EDITOBX", "ABOVE_CHATFRAME" }, },
@@ -214,12 +216,12 @@ local buttons = {
 
 	--[[5]]	{ 				name = "shortChannelName"			,type = "CheckButton"	,label = LCONFIG.shortChannelName		,key = "shortChannelName"		, },
 	--[[5]]	{ sub = true,	name = "shortChannelNameFormat"		,type = "DropDownMenu"	,label = LCONFIG.shortChannelNameFormat	,key = "shortChannelNameFormat"	,value = { "NW", "N", "W", }, },
-	--[[7]]	{ 				name = "chatEmote"					,type = "CheckButton"	,label = LCONFIG.chatEmote				,key = "chatEmote"				, },
-	--[[17]]{ sub = true,	name = "statReport"					,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
+	--[[7]]	{ sub = true,	name = "chatEmote"					,type = "CheckButton"	,label = LCONFIG.chatEmote				,key = "chatEmote"				, },
+	--[[7]]	{ sub = true,	name = "chatEmote_channel"			,type = "CheckButton"	,label = LCONFIG.chatEmote_channel		,key = "chatEmote_channel"				, },
+	--[[17]]{				name = "statReport"					,type = "CheckButton"	,label = LCONFIG.statReport				,key = "statReport"				, },
 	--[[6]]	{ sub = true,	name = "hyperLinkEnhanced"			,type = "CheckButton"	,label = LCONFIG.hyperLinkEnhanced		,key = "hyperLinkEnhanced"		, },
 	--[[8]]	{ 				name = "ColorNameByClass"			,type = "CheckButton"	,label = LCONFIG.ColorNameByClass		,key = "ColorNameByClass"		, },
 	--[[9]]	{ sub = true,	name = "shamanColor"				,type = "CheckButton"	,label = LCONFIG.shamanColor			,key = "shamanColor"			, },
-	--      { 				name = "filterQuestAnn"				,type = "CheckButton"	,label = LCONFIG.filterQuestAnn			,key = "filterQuestAnn"			, },
 	--[[10]]{ 				name = "channelBarStyle"			,type = "DropDownMenu"	,label = LCONFIG.channelBarStyle		,key = "channelBarStyle"			,value = { "CHAR", "CIRCLE", "SQUARE" }, },
 	--[[11]]{ 				name = "channelBarChannel"			,type = "MultiCB"		,label = LCONFIG.channelBarChannel		,key = "channelBarChannel"		, },
 	--[[12]]{ 				name = "channel_Ignore_Switch"		,type = "CheckButton"	,label = LCONFIG.channel_Ignore_Switch	,key = "channel_Ignore_Switch"	, },
@@ -229,6 +231,7 @@ local buttons = {
 	--[[21]]{ 				name = "copy"						,type = "CheckButton"	,label = LCONFIG.copy					,key = "copy"					, },
 	--[[22]]{ sub = true,	name = "copyTagColor"				,type = "ColorSelect"	,label = LCONFIG.copyTagColor			,key = "copyTagColor"			, },
 	--[[23]]{ sub = true,	name = "copyTagFormat"				,type = "Input"			,label = LCONFIG.copyTagFormat			,key = "copyTagFormat"			,note = LCONFIG.copyTagFormatNotes		,multiLine = false	,width = 240,  },
+			{ sub = true,	name = "copyTagFormat2"				,type = "DropDownMenu"	,label = LCONFIG.copyTagFormat			,key = "copyTagFormat", value = { "%I:%M", "%I:%M:%S", "%I:%M %p", "%I:%M:%S %p", "%H:%M", "%H:%M:%S", }, text = { "03:27", "03:27:32", "03:27 PM", "03:27:32 PM", "15:27", "15:27:32", }, list = true, },
 	--[[14]]{ 				name = "broadCastNewMember"			,type = "CheckButton"	,label = LCONFIG.broadCastNewMember		,key = "broadCastNewMember"		, },
 	--[[15]]{ sub = true,	name = "welcomeToGuild"				,type = "CheckButton"	,label = LCONFIG.welcomeToGuild			,key = "welcomeToGuild"			, },
 	--[[16]]{ sub = true,	name = "welcometoGuildMsg"			,type = "Input"			,label = LCONFIG.welcometoGuildMsg		,key = "welcometoGuildMsg"		,note = L.WTG_STRING.WELCOME_NOTES	,multiLine = true	,width = 640,  },
@@ -342,12 +345,12 @@ do
 		end
 	end
 	local function CheckButtonOnClick(self)
-		if config[self.key] then
-			config[self.key] = false;
-			FUNC_CALL("OFF", self.key);
-		else
+		if self:GetChecked() then
 			config[self.key] = true;
 			FUNC_CALL("ON", self.key);
+		else
+			config[self.key] = false;
+			FUNC_CALL("OFF", self.key);
 		end
 	end
 	local function CheckButtonOnEnter(self)
@@ -404,7 +407,9 @@ do
 		self:SetText(self:GetText():gsub("[^%.0-9]+", ""):gsub("(%..*)%.", "%1"))
 	end
 	local function dropOnClick(button, drop, funcIndex, key, val, ...)
-		drop.label:SetText(val);
+		if drop.label then
+			drop.label:SetText(val);
+		end
 		config[key] = val;
 		FUNC_CALL(funcIndex, key, val, ...);
 	end
@@ -591,61 +596,98 @@ do
 				end
 				prevAnchorObj = slider;
 			elseif t.type == "DropDownMenu" then
-				local texture = configFrame:CreateTexture(nil, "ARTWORK");
-				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
-				texture:SetTexture(labelTexture);
-				--texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+				if t.list then
+					local drop = CreateFrame("Button", "alaChatConfigFrame_Drop_" .. t.name, configFrame);
+					drop:SetSize(28, 28)
+					drop:EnableMouse(true);
+					drop:SetNormalTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-up")
+					--drop:GetNormalTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+					drop:SetPushedTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-down")
+					--drop:GetPushedTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+					drop:SetHighlightTexture("Interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-highlight");
+					drop:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
 
-				local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-				label:SetText(t.label);
-
-				label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
-
-				local drop = CreateFrame("Button", "alaChatConfigFrame_Drop_" .. t.name, configFrame);
-				drop:SetSize(28, 28)
-				drop:EnableMouse(true);
-				drop:SetNormalTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-up")
-				--drop:GetNormalTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
-				drop:SetPushedTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-down")
-				--drop:GetPushedTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
-				drop:SetHighlightTexture("Interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-highlight");
-				drop:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
-				local dropfs = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
-				dropfs:SetPoint("LEFT", drop, "RIGHT", 0, 0);
-				drop.label = dropfs;
-				drop.key = t.key;
-				local db = {
-					handler = dropOnClick, 
-					elements = { }, 
-				};
-				local dropfsWidth = 0;
-				for i = 1, #t.value do
-					db.elements[i] = {
-						para = { drop, "SETVALUE", t.key, t.value[i], };
-						text = t.value[i];
+					drop.key = t.key;
+					local db = {
+						handler = dropOnClick, 
+						elements = { }, 
 					};
-					dropfs:SetText(t.value[i]);
-					dropfsWidth = max(dropfsWidth, dropfs:GetWidth());
-				end
-				dropfs:SetText(config and config[t.key] or "");
-				drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
-				function drop:SetValue(val)
-					self.label:SetText(val);
-				end
+					for i = 1, #t.value do
+						db.elements[i] = {
+							para = { drop, "SETVALUE", t.key, t.value[i], };
+							text = t.text and t.text[i] or t.value[i];
+						};
+					end
+					drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
+					function drop:SetValue(val)
+					end
 
-				objects[t.key] = { type = t.type, head = texture, object = drop, label = label, object2 = dropfs, };
+					objects[t.key] = objects[t.key] or {  };
+					objects[t.key].list = drop;
 
-				if t.sub and prevAnchorObj then
-					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
-					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
+					drop:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+					prevWidth = prevWidth + space_SubConfig + 28;
 					maxWidth = max(maxWidth, prevWidth);
+					prevAnchorObj = drop;
 				else
-					texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
-					yOfs = yOfs + DDLineHeight;
-					prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
-					maxWidth = max(maxWidth, prevWidth);
+					local texture = configFrame:CreateTexture(nil, "ARTWORK");
+					texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
+					texture:SetTexture(labelTexture);
+					--texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+
+					local label = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+					label:SetText(t.label);
+
+					label:SetPoint("LEFT", texture, "RIGHT", space_Header_Label, 0);
+
+					local drop = CreateFrame("Button", "alaChatConfigFrame_Drop_" .. t.name, configFrame);
+					drop:SetSize(28, 28)
+					drop:EnableMouse(true);
+					drop:SetNormalTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-up")
+					--drop:GetNormalTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+					drop:SetPushedTexture("interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-down")
+					--drop:GetPushedTexture():SetTexCoord(0.0, 1.0, 0.0, 0.5);
+					drop:SetHighlightTexture("Interface\\mainmenubar\\ui-mainmenu-scrolldownbutton-highlight");
+					drop:SetPoint("LEFT", label, "RIGHT", space_Label_Obejct, 0);
+
+					local dropfs = configFrame:CreateFontString(nil, "ARTWORK", "GameFontHighlight");
+					dropfs:SetPoint("LEFT", drop, "RIGHT", 0, 0);
+					drop.label = dropfs;
+
+					drop.key = t.key;
+					local db = {
+						handler = dropOnClick, 
+						elements = { }, 
+					};
+					local dropfsWidth = 0;
+					for i = 1, #t.value do
+						db.elements[i] = {
+							para = { drop, "SETVALUE", t.key, t.value[i], };
+							text = t.text and t.text[i] or t.value[i];
+						};
+						dropfs:SetText(t.value[i]);
+						dropfsWidth = max(dropfsWidth, dropfs:GetWidth());
+					end
+					dropfs:SetText(config and config[t.key] or "");
+					drop:SetScript("OnClick", function(self) ALADROP(self, "BOTTOMRIGHT", db); end);
+					function drop:SetValue(val)
+						self.label:SetText(val);
+					end
+
+					objects[t.key] = { type = t.type, head = texture, object = drop, label = label, object2 = dropfs, };
+
+					if t.sub and prevAnchorObj then
+						texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
+						prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
+						maxWidth = max(maxWidth, prevWidth);
+					else
+						texture:SetPoint("TOPLEFT", configFrame, "TOPLEFT", borderWidth, - yOfs);
+						yOfs = yOfs + DDLineHeight;
+						prevWidth = OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + 28 + dropfsWidth;
+						maxWidth = max(maxWidth, prevWidth);
+					end
+					prevAnchorObj = dropfs;
 				end
-				prevAnchorObj = dropfs;
 			elseif t.type == "Input" then
 				local texture = configFrame:CreateTexture(nil, "ARTWORK");
 				texture:SetSize(OptionsCheckButtonSize, OptionsCheckButtonSize);
@@ -766,8 +808,13 @@ do
 				button:SetScript("OnHide", function(self)
 					editBox:Hide();
 				end)
-			
-				objects[t.key] = { type = t.type, head = texture, object = button, label = label, };
+
+				if objects[t.key] then
+					objects[t.key] = Mixin(objects[t.key], { type = t.type, head = texture, object = button, label = label, input = editBox, });
+				else
+					objects[t.key] = { type = t.type, head = texture, object = button, label = label, input = editBox, };
+				end
+
 				if t.sub and prevAnchorObj then
 					texture:SetPoint("LEFT", prevAnchorObj, "RIGHT", space_SubConfig, 0);
 					prevWidth = prevWidth + space_SubConfig + OptionsCheckButtonSize + space_Header_Label + label:GetWidth() + space_Label_Obejct + OptionsSetButtonWidth;
@@ -982,12 +1029,10 @@ local function alaC_Init()
 		config.channelBarChannel[14] = nil;
 	end
 
-	for k, v in pairs(FUNC.INIT) do
-		v();
-	end
 	for i = 1, #key do
 		local k = key[i];
 		local v = default[k];
+		FUNC_CALL("INIT", k);
 		if type(v) == "boolean" then
 			if config[k] then
 				FUNC_CALL("ON", k, true);
@@ -1033,6 +1078,16 @@ local function alaC_Init()
 			);
 		end
 	end]]
+
+	for k, v in pairs(FUNC.SETVALUE) do
+		if configFrame.objects[k] and configFrame.objects[k].type == "Input" then
+			hooksecurefunc(FUNC.SETVALUE, k, function(value)
+				if configFrame.objects[k].input.input and configFrame.objects[k].input:IsShown() then
+					configFrame.objects[k].input:SetText(value);
+				end
+			end);
+		end
+	end
 	print(LCONFIG.wel);
 end
 
@@ -1048,37 +1103,6 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD");
 FUNC._CONFIGSET = function(config, set)
 	alaChatConfig[config] = set;
 end
-
-
-function _gp(f)
-	local a, b, c, d, e = f:GetPoint();
-	if type(a) == "table" then
-		print(a:GetName(), b, c, d, e);
-	elseif type(b) == "table" then
-		print(a, b:GetName(), c, d, e);
-	else
-		print(a, b, c, d, e);
-	end
-end
-function _gi(f, p)
-	if type(f) ~= "table" then
-		print("not table");
-	end
-	p = p or f:GetParent();
-	if p then
-		for k, v in pairs(p) do
-			if v == f then
-				print("KEY", k);
-				return;
-			end
-		end
-	else
-		print("no parent");
-	end
-end
-
-
-alaChatConfigFrame.FUNC = FUNC;
 
 FUNC.SETVALUE.position = function(pos, init, override)
 	if not init or override then
@@ -1179,7 +1203,7 @@ do
 	local META = {  };
 	function FILTER.SET(e)
 		if META[e] then
-			return;
+			return META[e][1], META[e][2];
 		end
 		local F = {  };
 		local S = {  };
@@ -1196,6 +1220,7 @@ do
 			return false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, arg17, ...;
 		end
 		ChatFrame_AddMessageEventFilter(e, ala_chat_filter_func);
+		return F, S;
 	end
 	do
 		local E = {
@@ -1224,8 +1249,8 @@ do
 		end
 	end
 	function FILTER.GET(e)
-		FILTER.SET(e);
-		return META[e][1], META[e][2];
+		return FILTER.SET(e);
+		-- return META[e][1], META[e][2];
 	end
 	function FILTER.ADD(e, s, f)
 		if type(s) ~= 'number' then
@@ -1257,7 +1282,7 @@ do
 			return;
 		end
 		local F, S = FILTER.GET(e);
-		for i = #F, 1, -1 do
+		for i = #S, 1, -1 do
 			if S[i] == s then
 				tremove(F, i);
 				tremove(S, i);
@@ -1270,8 +1295,8 @@ do
 	local SL = {  };
 	do
 		local SN = {
-			"channel_Ignore",
 			"bfWorld_Ignore",
+			"channel_Ignore",
 			"chat_filter",
 			"hyperLinkEnhanced_item",
 			"hyperLinkEnhanced_spell",
@@ -1294,3 +1319,40 @@ do
 	end
 end
 
+do return end
+do
+	local chatFrames = {  };
+	local backups = {  };
+	local funcs = {  };
+	for i = 1, 10 do
+		local chatFrame = _G["ChatFrame" .. i];
+		chatFrames[i] = chatFrame;
+		if i ~= 2 and chatFrame then
+			local backup = chatFrame.AddMessage;
+			chatFrame.AddMessage = function(self, msg, ...)
+				if #funcs > 0 then
+					for i = 1, #funcs do
+						msg = funcs[i](msg);
+					end
+				end
+				return backup(self, msg, ...);
+			end
+			backups[i] = backup;
+		end
+	end
+	function _G.ala_add_AddMessage_filter(func)
+		for i = 1, #funcs do
+			if func == funcs[i] then
+				return;
+			end
+		end
+		tinsert(funcs, func);
+	end
+	function _G.ala_sub_AddMessage_filter(func)
+		for i = #funcs, 1, -1 do
+			if func == funcs[i] then
+				tremove(funcs, i);
+			end
+		end
+	end
+end

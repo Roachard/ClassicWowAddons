@@ -1,6 +1,7 @@
 ﻿--[[--
 	alex@0
 --]]--
+-- do return; end
 ----------------------------------------------------------------------------------------------------
 local ADDON,NS=...;
 local FUNC=NS.FUNC;
@@ -20,7 +21,7 @@ local WTG_STRING_OFF=WTG_STRING.WTG_STRING_OFF or ""
 local control_welcome=false;
 local control_broadCast=false;
 local WTG_delayMin=2;
-local WTG_delayAdd=10;
+local WTG_delayAdd=6;
 ----------------------------------------------------------------------------------------------------
 local math,table,string,pairs,type,select,tonumber,unpack=math,table,string,pairs,type,select,tonumber,unpack;
 ----------------------------------------------------------------------------------------------------
@@ -50,7 +51,11 @@ local function updateMsg(_gName)
 end
 
 local function welcometoGuildMsg_SetValue(val)
-	val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]", "%%%1");
+	-- val = gsub(val, "[%%%.%+%-%*%?%[%]%(%)]", "%%%1");
+				val = gsub(val,"#name#","#NAME#");
+				val = gsub(val,"#class#","#CLASS#");
+				val = gsub(val,"#level#","#LEVEL#");
+				val = gsub(val,"#area","#AREA#");
 	val = val .. "\n\n";
 	WelcomeMsg_Format = {};
 	for v in gmatch(val,"%s*([^\n]+)\n") do
@@ -108,10 +113,11 @@ local function processMsg(_,event,arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,a
 				local msg=nil;
 				if control_welcome and #WelcomeMsg > 0 then
 					local ind=random(1,#WelcomeMsg);
-					msg=format(WelcomeMsg[ind],name);
+					msg=WelcomeMsg[ind];
 				end
 				if control_broadCast or control_welcome then
-					local delay=WTG_delayMin+WTG_delayAdd*random();
+					local delay = min(WTG_delayMin + WTG_delayAdd * random(0, 100) / 100, WTG_delayMin + WTG_delayAdd);
+					print(delay)
 					periodicScanAfterNewMem(name,msg,delay);
 				end
 			end
@@ -143,7 +149,7 @@ f:RegisterEvent("CHAT_MSG_SYSTEM");
 
 local function WelcomeToGuild_Init()
 	pName=UnitName("player") or "";
-	pName=strmatch(pName,"(.+)%-") or pName;
+	pName=strsplit("-", pName);
 	rName=GetRealmName() or "";
 	fName=pName.."-"..rName;
 end
