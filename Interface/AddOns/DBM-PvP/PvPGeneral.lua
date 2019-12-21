@@ -5,7 +5,7 @@ local ipairs, math = ipairs, math
 local IsInInstance, CreateFrame = IsInInstance, CreateFrame
 local GetPlayerFactionGroup = GetPlayerFactionGroup or UnitFactionGroup--Classic Compat fix
 
-mod:SetRevision("@file-date-integer@")
+mod:SetRevision("20191216225502")
 mod:SetZone(DBM_DISABLE_ZONE_DETECTION)
 
 --mod:AddBoolOption("ColorByClass", true)

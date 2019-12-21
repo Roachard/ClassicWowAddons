@@ -2,7 +2,7 @@ local mod	= DBM:NewMod("z30", "DBM-PvP")
 
 local pairs, ipairs, type, tonumber, select, math = pairs, ipairs, type, tonumber, select, math
 
-mod:SetRevision("@file-date-integer@")
+mod:SetRevision("20191218211922")
 mod:SetZone(DBM_DISABLE_ZONE_DETECTION)
 
 mod:AddBoolOption("AutoTurnIn")

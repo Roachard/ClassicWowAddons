@@ -3,7 +3,7 @@
 end
 local mod	= DBM:NewMod("z726", "DBM-PvP")
 
-mod:SetRevision("@file-date-integer@")
+mod:SetRevision("20190825030134")
 mod:SetZone(DBM_DISABLE_ZONE_DETECTION)
 
 mod:RegisterEvents(

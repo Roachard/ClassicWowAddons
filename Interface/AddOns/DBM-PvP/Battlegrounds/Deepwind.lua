@@ -3,7 +3,7 @@ if WOW_PROJECT_ID == WOW_PROJECT_CLASSIC then
 end
 local mod	= DBM:NewMod("z1105", "DBM-PvP")
 
-mod:SetRevision("@file-date-integer@")
+mod:SetRevision("20190908160650")
 mod:SetZone(DBM_DISABLE_ZONE_DETECTION)
 
 mod:RegisterEvents(

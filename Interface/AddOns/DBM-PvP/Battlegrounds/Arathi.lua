@@ -5,7 +5,7 @@ else
 	mod	= DBM:NewMod("z2107", "DBM-PvP")
 end
 
-mod:SetRevision("@file-date-integer@")
+mod:SetRevision("20190908191948")
 mod:SetZone(DBM_DISABLE_ZONE_DETECTION)
 
 mod:RegisterEvents(
