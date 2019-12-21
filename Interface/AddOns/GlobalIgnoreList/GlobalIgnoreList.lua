@@ -637,9 +637,17 @@ local function ApplicationStartup(self)
 	filterDefFilter[#filterDefFilter + 1] = "([contains=MMMMMM] or [contains=++++++] or [contains=------] or [contains=``````] or [contains=~~~~~~] or [contains=!!!!!!] or [contains=！！！！！！] or [contains=。。。。。。。] or [contains=111111] or [contains=222222] or [contains=333333]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
 
+	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收] or [contains=补充] or [contains=欢迎] or [contains=加入]) and ([contains=公会] or [contains=工会] or [contains=开荒] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "交流群"
+	filterDefFilter[#filterDefFilter + 1] = "[community] or ([contains=群] and ([contains=交流] or [contains=全区] or [contains=全服]))"
+	filterDefActive[#filterDefActive + 1] = true
+
 	filterDefDesc[#filterDefDesc + 1]     = "位面"
 	filterDefFilter[#filterDefFilter + 1] = "[contains=位面] and ([contains=换] or [contains=组] or [contains=求]) and not [channel=s]"
-	filterDefActive[#filterDefActive + 1] = false
+	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "AA队"
 	filterDefFilter[#filterDefFilter + 1] = "([contains=AA] or [contains=A\\ A]) and not [channel=s]"
@@ -650,7 +658,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=飛] or [contains=专] or [contains=票] or [contains=达] or [contains=達] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基森] or [contains=冬泉谷] or [contains=厄] or [contains=斯坦索姆] or [contains=STSM]))"
+	filterDefFilter[#filterDefFilter + 1] = "(([contains=飞] or [contains=飛] or [contains=专] or [contains=票] or [contains=达] or [contains=達] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基] or [contains=冬泉] or [contains=厄] or [contains=斯坦] or [contains=STSM]))"
+	filterDefActive[#filterDefActive + 1] = true
+
+	filterDefDesc[#filterDefDesc + 1]     = "飞机2"
+	filterDefFilter[#filterDefFilter + 1] = "([name=直达] or [name=直飞] or [name=起飞] or [name=飞船] or [name=起航] or [name=航空] or [name=航线] or [name=列车] or [name=加基] or [name=冬泉] or [name=东瘟] or [name=斯坦]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "赌博"
@@ -796,14 +808,6 @@ local function ApplicationStartup(self)
 	filterDefDesc[#filterDefDesc + 1]     = "怒焰裂谷"
 	filterDefFilter[#filterDefFilter + 1] = "[contains=怒焰] and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = false
-
-	filterDefDesc[#filterDefDesc + 1]     = "公会招募"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=招] or [contains=募] or [contains=收] or [contains=补充] or [contains=欢迎] or [contains=加入]) and ([contains=公会] or [contains=工会] or [contains=开荒] or [contains=活动] or [contains=时间] or [contains=DKP]) and not [channel=s]"
-	filterDefActive[#filterDefActive + 1] = true
-
-	filterDefDesc[#filterDefDesc + 1]     = "交流群"
-	filterDefFilter[#filterDefFilter + 1] = "[community] or ([contains=群] and ([contains=交流] or [contains=全区] or [contains=全服]))"
-	filterDefActive[#filterDefActive + 1] = true
 
 	faction = UnitFactionGroup("player")
 		
@@ -1090,7 +1094,7 @@ end
 -- SPAM FILTER ENGINE --
 ------------------------
 
-function filterComplex (filterStr, chatStr, chNum)
+function filterComplex (filterStr, chatStr, chNum, from)
 	-- true=should be filtered
 	-- chatStr should be convered to all lower
 	
@@ -1429,6 +1433,12 @@ function filterComplex (filterStr, chatStr, chNum)
 								result = result .. "T"						
 							else
 								result = result .. "F"									
+							end
+						elseif token == "[name]" then
+							if from ~= nil and string.find(from, tokenData, 1, true) ~= nil then
+								result = result .. "T"
+							else
+								result = result .. "F"
 							end
 						elseif token == "[channel]" then
 							if tokenData == tostring(chNum) then
@@ -1810,7 +1820,7 @@ local function chatMessageFilter (self, event, message, from, t1, t2, t3, t4, t5
 					
 					message = string.lower(message)
 					
-					lastFilterResult, filterNum = filterComplex(nil, message, chnum)
+					lastFilterResult, filterNum = filterComplex(nil, message, chnum, from)
 				
 					if lastFilterResult == true then
 						
