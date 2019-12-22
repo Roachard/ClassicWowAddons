@@ -1202,7 +1202,7 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["sideLeftWidth"] = 6,
 		["sideRightWidth"] = 6,
 
-		["maxColumnsWhenStructured"] = 5,
+		["maxColumnsWhenStructured"] = 6,
 		["maxRowsWhenLoose"] = 5,
 		["ommitEmptyWhenStructured"] = true,
 		["isPlayerOnTop"] = true,
@@ -1362,8 +1362,8 @@ function VUHDO_loadDefaultPanelSetup()
 		if not VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] and tPanelNum == 1 then
 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = {
 				["x"] = 130,
-				["y"] = 650,
-				["relativePoint"] = "BOTTOMLEFT",
+				["y"] = -130,
+				["relativePoint"] = "TOPLEFT",
 				["orientation"] = "TOPLEFT",
 				["growth"] = "TOPLEFT",
 				["width"] = 200,

@@ -1,5 +1,5 @@
 diff --git a/Interface/AddOns/VuhDo/VuhDoDefaults.lua b/Interface/AddOns/VuhDo/VuhDoDefaults.lua
-index 7cbd05d..91ca2c7 100644
+index 7cbd05d..1b22d54 100644
 --- a/Interface/AddOns/VuhDo/VuhDoDefaults.lua
 +++ b/Interface/AddOns/VuhDo/VuhDoDefaults.lua
 @@ -111,7 +111,7 @@ end
@@ -122,7 +122,7 @@ index 7cbd05d..91ca2c7 100644
  		["sideRightWidth"] = 6,
  
 -		["maxColumnsWhenStructured"] = 10,
-+		["maxColumnsWhenStructured"] = 5,
++		["maxColumnsWhenStructured"] = 6,
  		["maxRowsWhenLoose"] = 5,
  		["ommitEmptyWhenStructured"] = true,
  		["isPlayerOnTop"] = true,
@@ -157,6 +157,17 @@ index 7cbd05d..91ca2c7 100644
  	},
  
  	["OVERHEAL_TEXT"] = {
+@@ -1353,8 +1362,8 @@ function VUHDO_loadDefaultPanelSetup()
+ 		if not VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] and tPanelNum == 1 then
+ 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = {
+ 				["x"] = 130,
+-				["y"] = 650,
+-				["relativePoint"] = "BOTTOMLEFT",
++				["y"] = -130,
++				["relativePoint"] = "TOPLEFT",
+ 				["orientation"] = "TOPLEFT",
+ 				["growth"] = "TOPLEFT",
+ 				["width"] = 200,
 @@ -1408,10 +1417,10 @@ local VUHDO_DEFAULT_BUFF_CONFIG = {
  	["HIDE_CHARGES"] = false,
  	["REFRESH_SECS"] = 1,
