@@ -1,0 +1,22 @@
+------------------------------------------------------------------------
+r253 | Dyaxler | 2019-12-17 20:21:09 +0000 (Tue, 17 Dec 2019) | 13 lines
+Changed paths:
+   M /trunk/PallyPower.lua
+   M /trunk/PallyPower.toc
+   M /trunk/PallyPowerValues.lua
+
+* Updated TOC / Interface version
+
+* Updated Auto-Assign Battleground Template and moved Blessing of Sanctuary to a higher priority above Blessing of Light. When 4 or more Paladins are present then Blessing of Sanctuary becomes priority #1 over Kings since Blessing of Kings is FAR more common than Blessing of Sanctuary and ensures that in most ALL cases both Blessing of Kings and Sanctuary are assigned and used effectively.
+
+I've spent the past week grinding rep and honor in AV. 95% of all games I've played; the Raid Leader would grant the entire group Raid Assist to allow tanks to mark themselves and allow marking priority targets on the fly. Since PallyPowers Auto-Assign and Blessings Report features were typically reserved for Raid Leaders and Raid Assistants, I've had to rethink their use. I have personally experienced both features being used to "grief" other Paladins and the group with unnecessary information/spam and changing other Paladins assignments mid-game. The following changes have been done to address these issues:
+
+* Blessings Report is now disabled in Battlegrounds.
+
+* A Paladin's Blessing assignment in Battlegrounds can only be changed by themselves or other Paladin's if they enable the Free Assignment setting. (Check Box in the bottom Left-Hand corner of the Blessing Assignment panel) - As such the Auto-Assign will only work effectively if all Paladins opt into this feature. At the very least it will properly Auto-Assign buffs based on the Battlegrounds priority template for those Paladins that have opted in. This is the same behavior in 5m groups when the party leader isn't a Paladin and more than 1 Paladin is present.
+
+* What about Battleground Pre-Made groups? Before entering a Battleground, typically Guilds form a Raid Group. In this case, PallyPower will function like it does for a Raid Group BEFORE entering the Battleground. Just do your normal assignments before entering and you can choose to ignore other Paladin assignments in the Battleground group. Obviously, the Auto-Assign button will assign blessings as if it were a raid group prioritizing Fire Resist Aura and Blessing of Salvation. To account for this edge case, I've made the following change...
+
+* Added a SHIFT-LEFT-CLICK modifier to the Auto-Assign button. Holding SHIFT while clicking this button will use the Battleground assignment template instead of using the Raid assignment template. This modifier is ONLY necessary when forming a pre-made group outside a Battleground. Once inside a Battleground instance then Paladin's will have to opt into Free Assignment. So set everything up before queueing up! If you have tooltips enabled, there is an added notation indicating what the SHIFT-LEFT-CLICK modifier does.
+------------------------------------------------------------------------
+
