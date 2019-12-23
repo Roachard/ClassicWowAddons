@@ -62,7 +62,7 @@ MTSLUI_LIST_FRAME = {
         -- default sort by name
         self.current_sort = 1
         -- default select current phase
-        self.current_phase = MTSL_CURRENT_PHASE
+        self.current_phase = MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL()
         -- Default database wide
         self:UpdatePlayerLevels(0, 0)
         self.profession_skills = {}

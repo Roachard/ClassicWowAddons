@@ -82,14 +82,14 @@ MTSLUI_FILTER_FRAME = {
         UIDropDownMenu_SetWidth(self.ui_frame.source_drop_down, 95)
         UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE])
         -- default select the "current" phase
-        self.current_phase = MTSL_CURRENT_PHASE
+        self.current_phase = MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL()
         -- create a filter for content phase
         self.ui_frame.phase_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["phase"][MTSLUI_CURRENT_LANGUAGE], 215, -34, "LABEL", "TOPLEFT")
         self.ui_frame.phase_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_PHASES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.phase_drop_down.filter_frame_name = filter_frame_name
         self.ui_frame.phase_drop_down.initialize = self.CreateDropDownPhases
         UIDropDownMenu_SetWidth(self.ui_frame.phase_drop_down, 95)
-        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_CURRENT_PHASE .. ")")
+        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")")
         -- Specializations
         self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["specialization"][MTSLUI_CURRENT_LANGUAGE], 5, -64, "LABEL", "TOPLEFT")
         self.ui_frame.specs_drop_down = CreateFrame("Frame", filter_frame_name .. "_DD_SPECS", self.ui_frame, "UIDropDownMenuTemplate")
@@ -136,8 +136,8 @@ MTSLUI_FILTER_FRAME = {
         self.current_source_id = "any"
         UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE])
         -- reset phase to current
-        self.current_phase = 1
-        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_CURRENT_PHASE .. ")")
+        self.current_phase = MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL()
+        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")")
         -- reset specialization
         self.current_spec_id = 0
         UIDropDownMenu_SetText(self.ui_frame.specs_drop_down, MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE])
@@ -151,11 +151,12 @@ MTSLUI_FILTER_FRAME = {
     UseOnlyCurrentPhase = function(self)
         self.phases = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_CURRENT_PHASE .. ")",
+                ["name"] = MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")",
                 ["id"] = 1,
             }
         }
     end,
+
 
     ----------------------------------------------------------------------------------------------------------
     -- Sets the list frame to handle the changes in filter
@@ -175,15 +176,24 @@ MTSLUI_FILTER_FRAME = {
         self:BuildZones()
     end,
 
+    -- Refresh the label of the current phase (Called after changing in the menu option)
+    RefreshCurrentPhaseLabel = function(self)
+        self.phases[1]["name"] = MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")"
+        -- update text in dropdown itself if not any is picked
+        if UIDropDownMenu_GetText(self.ui_frame.phase_drop_down) ~= MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE] then
+            UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")")
+        end
+    end,
+
     BuildPhases = function(self)
         self.phases = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_CURRENT_PHASE .. ")",
-                ["id"] = 1,
+                ["name"] = MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() .. ")",
+                ["id"] = MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(),
             },
             {
                 ["name"] = MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE],
-                ["id"] = 2,
+                ["id"] = MTSL_DATA.MAX_PATCH_LEVEL,
             }
         }
         self.current_phase = 1
@@ -447,10 +457,7 @@ MTSLUI_FILTER_FRAME = {
         self.current_phase = id
         UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, text)
         -- change filter to new phase
-        local phase = MTSL_CURRENT_PHASE
-        if id > 1 then
-            phase = MTSL_MAX_PHASE
-        end
+        local phase = MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL()
         -- Apply filter if we may
         if self:IsFilteringEnabled() then
             self.list_frame:ChangePhase(phase)

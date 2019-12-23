@@ -1,5 +1,5 @@
 # MissingTradeSkillsList
-Addon For World Of Warcraft Classic v1.13  
+Addon for World Of Warcraft Classic v1.13  
 Shows the missing recipes/skills for a tradeskill and where to get them  
 Addon only works **all** languages now! (MTSL Options menu still only shown in English only)  
 
@@ -10,15 +10,15 @@ Thumbkin (Retail: EU-Burning Steppes, Classic: EU-Pyrewood Village)
 
 ### Screenshots
 MTSL - Vertical split (Change using options menu)
-![alt text](https://media.forgecdn.net/attachments/266/746/mtsl_main.png "Missing TradeSkills List - Vertical Split")
+![alt text](http://mtsl.ddns.net/images/mtsl_main.png "Missing TradeSkills List - Vertical Split")
 MTSL - Horizontal split (Change using options menu)
-![alt text](https://media.forgecdn.net/attachments/265/614/mtsl_main_horizontal.png "Missing TradeSkills List - Horizontal Split")
+![alt text](http://mtsl.ddns.net/images/mtsl_main_horizontal.png "Missing TradeSkills List - Horizontal Split")
 Account explorer (/mtsl acc or /mtsl account)
-![alt text](https://media.forgecdn.net/attachments/265/616/mtsl_account.png "Missing TradeSkills List - Account explorer")
+![alt text](http://mtsl.ddns.net/images/mtsl_account.png "Missing TradeSkills List - Account explorer")
 Database explorer (/mtsl db or /mtsl database)
-![alt text](https://media.forgecdn.net/attachments/265/615/mtsl_database.png "Missing TradeSkills List - Database explorer")
+![alt text](http://mtsl.ddns.net/images/mtsl_database.png "Missing TradeSkills List - Database explorer")
 Options menu (/mtsl or /mtsl config or /mtsl options)
-![alt text](https://media.forgecdn.net/attachments/266/869/mtsl_options.png "Missing TradeSkills List - Options menu")
+![alt text](http://mtsl.ddns.net/images/mtsl_options.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
 
@@ -36,13 +36,10 @@ Options menu (/mtsl or /mtsl config or /mtsl options)
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
 ### Latest version 
-v1.13.27&nbsp;&nbsp;&nbsp;&nbsp;Checked and fixed all Alchemy data  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added some missing translations, almost all ingame items done  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comparing known skills by name without spaces to avoid conflicts with number of spaces  
-v1.13.26&nbsp;&nbsp;&nbsp;&nbsp;Fixed wrong quest data  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong translations    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong profession data   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed all remaining spells with minimum skill of 0 to have correct minimum skill needed to learn  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed bug that prevented correct update of player list frame  
-
+v1.13.28&nbsp;&nbsp;&nbsp;&nbsp;Compatible game version 1.13.3  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added an option to directly show MTSL when opening a profession window  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added an option to set the current content patch level used to show data  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong Korean translations  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added translations for Mexican Spanish for all skills, recipes, items & specialisations. Other data is copied from Spanish    
+  
 [Full Version History](VERSION_HISTORY.md)

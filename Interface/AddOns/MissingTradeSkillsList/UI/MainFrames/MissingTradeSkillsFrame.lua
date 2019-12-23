@@ -44,6 +44,9 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:Initialise()
     self:LinkFrames()
 end
 
+----------------------------------------------------------------------------------------------------------
+-- Create and place the componentframes for the parent frame
+----------------------------------------------------------------------------------------------------------
 function MTSLUI_MISSING_TRADESKILLS_FRAME:CreateCompontentFrames()
     -- initialise the components of the frame
     self.title_frame = MTSL_TOOLS:CopyObject(MTSLUI_TITLE_FRAME)
@@ -70,7 +73,9 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:CreateCompontentFrames()
     self.progressbar.ui_frame:SetPoint("BOTTOMLEFT", self.ui_frame, "BOTTOMLEFT", 4, 2)
 end
 
+----------------------------------------------------------------------------------------------------------
 -- link the frames to correct event frames
+----------------------------------------------------------------------------------------------------------
 function MTSLUI_MISSING_TRADESKILLS_FRAME:LinkFrames()
     self.skill_list_filter_frame:SetListFrame(self.skill_list_frame)
     self.skill_list_frame:SetDetailSelectedItemFrame(self.skill_detail_frame)

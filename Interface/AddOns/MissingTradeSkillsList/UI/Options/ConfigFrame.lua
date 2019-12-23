@@ -6,7 +6,7 @@
 
 MTSLOPTUI_CONFIG_FRAME = {
     FRAME_WIDTH = 715,
-    FRAME_HEIGHT = 225,
+    FRAME_HEIGHT = 275,
     MARGIN_LEFT = 25,
     MARGIN_RIGHT = 175,
     split_modes = {
@@ -32,24 +32,67 @@ MTSLOPTUI_CONFIG_FRAME = {
         -- below title frame
         self.ui_frame:SetPoint("TOPLEFT", parent_frame, "BOTTOMLEFT", 0, -5)
 
-        self:InitialiseCheckBoxWelcomeMessage()
-        self:InitialiseDropDownsMTSLFrameLocation()
-        self:InitialiseDropDownsUISplitOrientation()
-        self:InitialiseDropDownsUISplitScale()
-        self:InitialiseDropDownsFonts()
+        local margin_top = -3
+        self:InitialiseCheckBoxWelcomeMessage(margin_top)
+        margin_top = margin_top - 25
+        self:InitialiseCheckBoxAutoShowMTSL(margin_top)
+        margin_top = margin_top - 35
+        self:InitialiseDropDownMTSLPatchLevel(margin_top)
+        margin_top = margin_top - 30
+        self:InitialiseDropDownMTSLFrameLocation(margin_top)
+        margin_top = margin_top - 50
+        self:InitialiseDropDownsUISplitOrientation(margin_top)
+        margin_top = margin_top - 50
+        self:InitialiseDropDownsUISplitScale(margin_top)
+        margin_top = margin_top - 50
+        self:InitialiseDropDownsFonts(margin_top)
     end,
 
-    InitialiseCheckBoxWelcomeMessage = function(self)
-        self.ui_frame.welcome_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Display addon loaded message", self.MARGIN_LEFT, -3, "LABEL", "TOPLEFT")
+    InitialiseCheckBoxWelcomeMessage = function(self, margin_top)
+        self.ui_frame.welcome_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Display addon loaded message", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.welcome_check = CreateFrame("CheckButton", "MTSLOPTUI_ConfigFrame_Welcome", self.ui_frame, "ChatConfigCheckButtonTemplate");
-        self.welcome_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 100, 0)
+        self.welcome_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 110, margin_top + 5)
         -- ignore the event for ticking checkbox
         self.welcome_check:SetScript("OnClick", function() end)
         self.welcome_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetShowWelcomeMessage())
     end,
 
-    InitialiseDropDownsMTSLFrameLocation = function (self)
+    InitialiseCheckBoxAutoShowMTSL = function(self, margin_top)
+        self.ui_frame.autoshow_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Auto show MTSL", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
+
+        self.autoshow_check = CreateFrame("CheckButton", "MTSLOPTUI_ConfigFrame_Welcome", self.ui_frame, "ChatConfigCheckButtonTemplate");
+        self.autoshow_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 110, margin_top + 5)
+        -- ignore the event for ticking checkbox
+        self.autoshow_check:SetScript("OnClick", function() end)
+        self.autoshow_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetAutoShowMTSL())
+    end,
+
+    InitialiseDropDownMTSLPatchLevel = function (self, margin_top)
+        self.patch_levels = {}
+
+        local current_patch_level = MTSL_DATA.MIN_PATCH_LEVEL
+
+        while current_patch_level <= MTSL_DATA.MAX_PATCH_LEVEL do
+            local patch_level = {
+                ["id"] = current_patch_level,
+                ["name"] =  current_patch_level,
+            }
+            current_patch_level = current_patch_level + 1
+            table.insert(self.patch_levels, patch_level)
+        end
+
+        -- drop downs split orientation
+        self.ui_frame.patch_level_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Content patch level", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
+
+        self.ui_frame.patch_level_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_PATCH_LEVEL_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
+        self.ui_frame.patch_level_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, margin_top + 7)
+        self.ui_frame.patch_level_mtsl_drop_down.initialize = self.CreateDropDownPatchLevelMTSL
+        UIDropDownMenu_SetWidth(self.ui_frame.patch_level_mtsl_drop_down, self.WIDTH_DD)
+        UIDropDownMenu_SetText(self.ui_frame.patch_level_mtsl_drop_down, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL())
+    end,
+
+    InitialiseDropDownMTSLFrameLocation = function (self, margin_top)
         -- UI Split Orientation
         self.locations = {
             {
@@ -63,16 +106,16 @@ MTSLOPTUI_CONFIG_FRAME = {
         }
 
         -- drop downs split orientation
-        self.ui_frame.location_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "MTSL frame location", self.MARGIN_LEFT, -40, "LABEL", "TOPLEFT")
+        self.ui_frame.location_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "MTSL frame location", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.ui_frame.location_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
-        self.ui_frame.location_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, -33)
+        self.ui_frame.location_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, margin_top + 7)
         self.ui_frame.location_mtsl_drop_down.initialize = self.CreateDropDownLocationMTSL
         UIDropDownMenu_SetWidth(self.ui_frame.location_mtsl_drop_down, self.WIDTH_DD)
         UIDropDownMenu_SetText(self.ui_frame.location_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetMTSLLocation())][MTSLUI_CURRENT_LANGUAGE])
     end,
 
-    InitialiseDropDownsUISplitOrientation = function (self)
+    InitialiseDropDownsUISplitOrientation = function (self, margin_top)
         -- UI Split Orientation
         self.orientations = {
             {
@@ -86,7 +129,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         }
 
         -- drop downs split orientation
-        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, -90, "LABEL", "TOPLEFT")
+        self.ui_frame.orientation_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Split orientation", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.ui_frame.orientation_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_ORIENTATION_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.orientation_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.location_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -113,7 +156,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.orientation_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_database_drop_down, "Database Explorer", 0, 22, "LABEL", "CENTER")
     end,
 
-    InitialiseDropDownsUISplitScale = function (self)
+    InitialiseDropDownsUISplitScale = function (self, margin_top)
         self.scales = {}
 
         local current_scale = tonumber(MTSLUI_SAVED_VARIABLES.MIN_UI_SCALE)
@@ -128,7 +171,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             table.insert(self.scales, new_scale)
         end
 
-        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, -141, "LABEL", "TOPLEFT")
+        self.ui_frame.scale_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "UI Scale", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.ui_frame.scale_mtsl_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_SCALE_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.scale_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -163,7 +206,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.scale_options_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.scale_optionsmenu_drop_down, "Options menu", 0, 22, "LABEL", "CENTER")
     end,
 
-    InitialiseDropDownsFonts = function (self)
+    InitialiseDropDownsFonts = function (self, margin_top)
         -- Fonts
         self.font_names = MTSLUI_FONTS.AVAILABLE_FONT_NAMES
         self.font_name =  MTSLUI_PLAYER.FONT.NAME
@@ -174,7 +217,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             text = MTSLUI_PLAYER.FONT.SIZE.TEXT,
         }
 
-        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["font"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_LOCALES_LABELS["reload UI"][MTSLUI_CURRENT_LANGUAGE] .. ")", self.MARGIN_LEFT, -192, "LABEL", "TOPLEFT")
+        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["font"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_LOCALES_LABELS["reload UI"][MTSLUI_CURRENT_LANGUAGE] .. ")", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.ui_frame.font_type_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.font_type_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -207,6 +250,13 @@ MTSLOPTUI_CONFIG_FRAME = {
         UIDropDownMenu_SetText(self.ui_frame.font_text_drop_down, self.font_size.text)
         -- center text above the dropdown
         self.ui_frame.font_options_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.font_text_drop_down, "Text", 0, 22, "LABEL", "CENTER")
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Intialises drop down for patch level mtsl
+    ----------------------------------------------------------------------------------------------------------
+    CreateDropDownPatchLevelMTSL = function(self, level)
+        MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.patch_levels, MTSLOPTUI_CONFIG_FRAME.ChangePatchLevelMTSLHandler)
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -267,6 +317,18 @@ MTSLOPTUI_CONFIG_FRAME = {
 
     CreateDropDownSizeText = function(self, level)
         MTSLUI_TOOLS:FillDropDown(MTSLOPTUI_CONFIG_FRAME.font_sizes, MTSLOPTUI_CONFIG_FRAME.ChangeFontSizeTextHandler)
+    end,
+
+    ----------------------------------------------------------------------------------------------------------
+    -- Handles DropDown Change event after changing the patch level
+    ----------------------------------------------------------------------------------------------------------
+    ChangePatchLevelMTSLHandler = function(value, text)
+        MTSLOPTUI_CONFIG_FRAME:ChangePatchLevel(value, text)
+    end,
+
+    ChangePatchLevel = function(self, value, text)
+        self.patch_level_mtsl = value
+        UIDropDownMenu_SetText(self.ui_frame.patch_level_mtsl_drop_down, text)
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -355,10 +417,17 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Save the current valures
+    -- Save the current values
     ----------------------------------------------------------------------------------------------------------
     Save = function(self)
         MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetAutoShowMTSL(self.autoshow_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetPatchLevelMTSL(self.patch_level_mtsl)
+        -- Refresh the text shown for current phase on each filter frame
+        MTSLUI_MISSING_TRADESKILLS_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
+        MTSLUI_ACCOUNT_EXPLORER_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
+        MTSLUI_DATABASE_EXPLORER_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
+
         MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
 
         MTSLUI_SAVED_VARIABLES:SetSplitModes(self.split_modes)
@@ -372,10 +441,12 @@ MTSLOPTUI_CONFIG_FRAME = {
     end,
 
     ----------------------------------------------------------------------------------------------------------
-    -- Reset the current valures
+    -- Reset the current values
     ----------------------------------------------------------------------------------------------------------
     ResetUI = function(self)
         MTSLUI_SAVED_VARIABLES:SetShowWelcomeMessage(self.welcome_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetAutoShowMTSL(self.autoshow_check:GetChecked())
+        MTSLUI_SAVED_VARIABLES:SetPatchLevelMTSL(self.patch_level_mtsl)
         MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
 
         UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])

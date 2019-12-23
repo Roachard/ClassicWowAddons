@@ -178,7 +178,7 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     GetAllSkillsAndLevelsForProfessionForCurrentPhase = function(self, profession_name)
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSL_CURRENT_PHASE, 0)
+        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -190,7 +190,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Array		All the skills for one profession sorted by name or minimim skill
     ------------------------------------------------------------------------------------------------
     GetAllSkillsAndLevelsForProfessionForCurrentPhaseInZone = function(self, profession_name, zone_id)
-        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSL_CURRENT_PHASE, zone_id)
+        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), zone_id)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -242,7 +242,7 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     GetAllSkillsForProfessionForCurrentPhase = function(self, profession_name)
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSL_CURRENT_PHASE, 0)
+        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -254,7 +254,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Array		All the skills for one profession sorted by name or minimim skill
     ------------------------------------------------------------------------------------------------
     GetAllSkillsForProfessionForCurrentPhaseInZone = function(self, profession_name, zone_id)
-        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSL_CURRENT_PHASE, zone_id)
+        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), zone_id)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -340,7 +340,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Number		the number
     ------------------------------------------------------------------------------------------------
     GetTotalNumberOfAvailableSkillsForProfession = function(self, profession_name, max_phase)
-        if max_phase == MTSL_CURRENT_PHASE then
+        if max_phase == MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() then
             return MTSL_DATA["AMOUNT_SKILLS_CURRENT_PHASE"][profession_name]
         else
             return MTSL_DATA["AMOUNT_SKILLS"][profession_name]

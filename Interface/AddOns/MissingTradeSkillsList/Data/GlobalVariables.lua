@@ -45,4 +45,6 @@ MTSL_DATA = {
         ["Leatherworking"] = 211,
         ["Enchanting"] = 130,
     },
+    MIN_PATCH_LEVEL = 1,
+    MAX_PATCH_LEVEL = 6,
 }

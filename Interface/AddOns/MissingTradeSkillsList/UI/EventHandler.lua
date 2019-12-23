@@ -279,5 +279,10 @@ MTSLUI_EVENT_HANDLER = {
 		MTSL_LOGIC_PLAYER_NPC:UpdateMissingSkillsForProfessionCurrentPlayer(profession_name, current_skill_level, max_level)
 		MTSLUI_MISSING_TRADESKILLS_FRAME:SetCurrentProfessionDetails(profession_name, current_skill_level, MTSL_CURRENT_PLAYER.XP_LEVEL)
 		MTSLUI_MISSING_TRADESKILLS_FRAME:NoSkillSelected()
+		-- Show the frame if option is selected "auto"
+		if MTSLUI_SAVED_VARIABLES:GetAutoShowMTSL() == 1 then
+		    MTSLUI_MISSING_TRADESKILLS_FRAME:Show()
+		    MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI()
+		end
 	end,
 }

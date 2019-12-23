@@ -24,6 +24,8 @@ MTSLUI_PLAYER = {
     },
     WELCOME_MSG,
     MTSL_LOCATION,
+    AUTO_SHOW_MTSL,
+    PATCH_LEVEL_MTSL,
 }
 
 MTSLUI_SAVED_VARIABLES = {
@@ -43,8 +45,10 @@ MTSLUI_SAVED_VARIABLES = {
             MTSLUI_PLAYER = {}
             self:ResetUIScales()
             self:ResetSplitModes()
-            MTSLUI_PLAYER.FONT = "Default"
+            self:ResetFont()
             MTSLUI_PLAYER.WELCOME_MSG = 1
+            MTSLUI_PLAYER.AUTO_SHOW_MTSL = 1
+            MTSLUI_PLAYER.PATCH_LEVEL_MTSL = MTSL_DATA.MIN_PATCH_LEVEL
         else
             -- reset/remove the old splitmode
             if MTSLUI_PLAYER.SPLIT_MODE ~= nil then
@@ -64,6 +68,8 @@ MTSLUI_SAVED_VARIABLES = {
             end
 
             self:SetShowWelcomeMessage(MTSLUI_PLAYER.WELCOME_MSG)
+            self:SetAutoShowMTSL(MTSLUI_PLAYER.AUTO_SHOW_MTSL)
+            self:SetPatchLevelMTSL(MTSLUI_PLAYER.PATCH_LEVEL_MTSL)
 
             if MTSLUI_PLAYER.FONT == nil or type(MTSLUI_PLAYER.FONT) ~= "table" or
                     MTSLUI_PLAYER.FONT.SIZE == nil or type(MTSLUI_PLAYER.FONT.SIZE) ~= "table" then
@@ -421,6 +427,27 @@ MTSLUI_SAVED_VARIABLES = {
     end,
 
     ------------------------------------------------------------------------------------------------
+    -- Sets the flag to show MTSL when opening a tradeskillframe/craftframe
+    --
+    -- @auto_show_mtsl        Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    SetAutoShowMTSL = function(self, auto_show_mtsl)
+        MTSLUI_PLAYER.AUTO_SHOW_MTSL = 1
+        if auto_show_mtsl == nil or auto_show_mtsl == 0 or auto_show_mtsl == false then
+            MTSLUI_PLAYER.AUTO_SHOW_MTSL = 0
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the flag to show MTSL when opening a tradeskillframe/craftframe
+    --
+    -- return			Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    GetAutoShowMTSL = function(self)
+        return MTSLUI_PLAYER.AUTO_SHOW_MTSL
+    end,
+
+    ------------------------------------------------------------------------------------------------
     -- Sets  the location where MTSL is hooked (left or right)
     --
     -- @frame_location        String         The location (default = right)
@@ -443,5 +470,29 @@ MTSLUI_SAVED_VARIABLES = {
     ------------------------------------------------------------------------------------------------
     GetMTSLLocation = function(self)
         return MTSLUI_PLAYER.MTSL_LOCATION
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the number of content patch used to show data
+    --
+    -- @patch_level        Number          Number between MTSL_DATA.MIN_PATCH_LEVEL and MTSL_DATA.MAX_PATCH_LEVEL
+    ------------------------------------------------------------------------------------------------
+    SetPatchLevelMTSL = function(self, patch_level)
+        MTSLUI_PLAYER.PATCH_LEVEL_MTSL = 1
+        if patch_level ~= nil and tonumber(patch_level) < tonumber(MTSL_DATA.MAX_PATCH_LEVEL) then
+            MTSLUI_PLAYER.PATCH_LEVEL_MTSL = patch_level
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the number of content patch used to show data
+    --
+    -- return			Number          The number of content patch
+    ------------------------------------------------------------------------------------------------
+    GetPatchLevelMTSL = function(self)
+        if MTSLUI_PLAYER.PATCH_LEVEL_MTSL == nil then
+            MTSLUI_PLAYER.PATCH_LEVEL_MTSL = 1
+        end
+        return MTSLUI_PLAYER.PATCH_LEVEL_MTSL
     end,
 }

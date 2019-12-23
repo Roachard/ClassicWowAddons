@@ -353,7 +353,7 @@ MTSL_LOGIC_PLAYER_NPC = {
         end
         -- get the list of available skills in the current phase for the profession (= English names)
         -- zone = 0 for all zones
-        local available_skills = MTSL_LOGIC_PROFESSION:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSL_CURRENT_PHASE, 0)
+        local available_skills = MTSL_LOGIC_PROFESSION:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), 0)
 
         -- Loop all skills of the profession
         for _, skill in pairs(available_skills) do
