@@ -140,7 +140,7 @@ function Frame:ListMenuButtons()
 	end
 
 	if self:HasSortButton() then
-		tinsert(self.menuButtons, self.sortButton or self:CreateSortButton())
+		-- tinsert(self.menuButtons, self.sortButton or self:CreateSortButton())
 	end
 
 	if self:HasSearchToggle() then

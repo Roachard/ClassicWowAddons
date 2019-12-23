@@ -1,0 +1,13 @@
+diff --git a/Interface/AddOns/Bagnon/addons/main/frame.lua b/Interface/AddOns/Bagnon/addons/main/frame.lua
+index 384c156..1a051ad 100644
+--- a/Interface/AddOns/Bagnon/addons/main/frame.lua
++++ b/Interface/AddOns/Bagnon/addons/main/frame.lua
+@@ -140,7 +140,7 @@ function Frame:ListMenuButtons()
+ 	end
+ 
+ 	if self:HasSortButton() then
+-		tinsert(self.menuButtons, self.sortButton or self:CreateSortButton())
++		-- tinsert(self.menuButtons, self.sortButton or self:CreateSortButton())
+ 	end
+ 
+ 	if self:HasSearchToggle() then
