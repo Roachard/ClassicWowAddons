@@ -1,7 +1,7 @@
 ----------------------------------------------------------
 -- Name: SkillListFrame									--
 -- Description: Shows all the skills for one profession --
--- Parent Frame: DatabaseFrame							--
+-- Parent Frame: DatabaseFrame, AccountFrame, MTSL		--
 ----------------------------------------------------------
 
 MTSLUI_LIST_FRAME = {

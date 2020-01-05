@@ -2,8 +2,8 @@
 ## Title: Missing TradeSkills List
 ## Author: Thumbkin
 ## Notes: Shows missing skills & recipes for a profession and where to get them.
-## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER, MTSL_DATA_DEVELOPER
-## Version: 1.13.28
+## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER
+## Version: 1.13.29
 
 #
 # Load all global variables, saved variables & locale
@@ -123,6 +123,9 @@ UI\MainFrames\DatabaseExplorerFrame.lua
 UI\MainFrames\OptionsMenuFrame.lua
 UI\MainFrames\ToggleButton.lua
 UI\MainFrames\MissingTradeSkillsFrame.lua
+
+# MinimapButton
+UI\MinimapButton.lua
 
 # Initialise the frames & start the addon
 MissingTradeSkillsList.lua

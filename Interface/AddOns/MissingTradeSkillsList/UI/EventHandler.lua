@@ -22,6 +22,9 @@ MTSLUI_EVENT_HANDLER = {
 				-- load the data for the player
 				MTSL_LOGIC_PLAYER_NPC:LoadPlayer()
 
+				-- Initialise the minimap button
+				MTSLUI_MINIMAP:Initialise()
+
 				-- Try to load the saved variables
 				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- make the data for dropdowns in sort frames
@@ -40,6 +43,8 @@ MTSLUI_EVENT_HANDLER = {
 				-- Load the saved variables for UI
                 MTSLUI_SAVED_VARIABLES:LoadSavedUIScales()
 				MTSLUI_SAVED_VARIABLES:LoadSavedSplitModes()
+
+
 				self.addon_loaded = 1
 			else
 				print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Your locale " .. GetLocale() .. " is not supported!")

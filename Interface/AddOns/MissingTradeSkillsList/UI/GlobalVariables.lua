@@ -6,7 +6,7 @@
 MTSLUI_ADDON = {
     AUTHOR = "Thumbkin",
     NAME = "Missing TradeSkills List",
-    VERSION = "1.13.28",
+    VERSION = "1.13.29",
 }
 
 -- holds the icons of the professions
@@ -22,3 +22,5 @@ MTSLUI_ICONS_PROFESSION = {
     ["Cooking"] = "133971",
     ["First Aid"] = "135966",
 }
+
+MTSLUI_ADDON_PATH = "Interface\\AddOns\\MissingTradeSkillsList"

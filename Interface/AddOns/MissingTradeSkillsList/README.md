@@ -19,6 +19,8 @@ Database explorer (/mtsl db or /mtsl database)
 ![alt text](http://mtsl.ddns.net/images/mtsl_database.png "Missing TradeSkills List - Database explorer")
 Options menu (/mtsl or /mtsl config or /mtsl options)
 ![alt text](http://mtsl.ddns.net/images/mtsl_options.png "Missing TradeSkills List - Options menu")
+Minimap button
+![alt text](http://mtsl.ddns.net/images/mtsl_minimap.png "Missing TradeSkills List - Options menu")
 
 ### Missing / Work in Progress
 
@@ -35,11 +37,16 @@ Options menu (/mtsl or /mtsl config or /mtsl options)
 3: Reputation required not yet shown for items  
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
-### Latest version 
-v1.13.28&nbsp;&nbsp;&nbsp;&nbsp;Compatible game version 1.13.3  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added an option to directly show MTSL when opening a profession window  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added an option to set the current content patch level used to show data  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fixed some wrong Korean translations  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Added translations for Mexican Spanish for all skills, recipes, items & specialisations. Other data is copied from Spanish    
+### Latest version (v1.13.29)
+
+* Fixed some wrong Chinese translations
+* Added minimap button (Default on and shown at top of minimap)
+    * Left Click: opens MTSL options menu
+    * Ctrl + Left Click opens MTSL account explorer
+    * Shift + Left Click: opens MTSL database explorer
+* Added options to configure minimap button
+    * Activate/Deactivate the minimap button (Default on)
+    * Button radius compared to minimap edge (Default 0)
+    * Shape of the minimap (Default circle)
   
-[Full Version History](VERSION_HISTORY.md)
+View full version history [here](http://mtsl.ddns.net/VERSION_HISTORY.html) or VERSION_HISTORY.md inside zip addon
