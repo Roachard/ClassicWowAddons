@@ -1,40 +1,10 @@
-lightweight tag 4f9fb4a4a5078deeb1f94719246cf5fca2cb792f v2.2.5
+lightweight tag 366362cfacb46ba85b9a4e20550f36915cfdd09d v2.3.1
 Author:	Boshi Lian <farmer1992@gmail.com>
-Date:	Sat Dec 21 05:56:44 2019 -0800
+Date:	Tue Dec 31 22:52:24 2019 -0800
 
-commit 4f9fb4a4a5078deeb1f94719246cf5fca2cb792f
+commit 366362cfacb46ba85b9a4e20550f36915cfdd09d
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 21 05:56:44 2019 -0800
+Date:   Tue Dec 31 22:52:24 2019 -0800
 
-    flash when ready to join
-
-commit 6ff7926d0eb7002d6a9df4ccbe0303b2818d393a
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 21 05:33:30 2019 -0800
-
-    add quick leave
-
-commit e0b259c329b32b0ca3ba3ca66c9136bf96e12886
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Fri Dec 20 12:41:50 2019 -0800
-
-    Update README.md
-
-commit bc1e0f77beaae903c7a6af1d6ffb89a2d2b54f67
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Thu Dec 19 20:36:35 2019 -0800
-
-    fmt
-
-commit c29f362f5d013fcce9ed425d02c75071cb66acf6
-Author: Falseen <hurxyill@163.com>
-Date:   Thu Dec 19 18:18:19 2019 +0800
-
-    add SetVerticalScroll
-
-commit c29f362f5d013fcce9ed425d02c75071cb66acf6
-Author: Falseen <hurxyill@163.com>
-Date:   Thu Dec 19 18:18:19 2019 +0800
-
-    add SetVerticalScroll
+    try to fix death diag conflict
 

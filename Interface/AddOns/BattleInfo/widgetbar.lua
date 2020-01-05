@@ -2,7 +2,7 @@ local _, ADDONSELF = ...
 local L = ADDONSELF.L
 local RegEvent = ADDONSELF.regevent
 local BattleZoneHelper = ADDONSELF.BattleZoneHelper
-
+local RegisterKeyChangedCallback = ADDONSELF.RegisterKeyChangedCallback 
 
 local f = CreateFrame("Frame", nil, UIWidgetTopCenterContainerFrame)
 f:SetAllPoints()
@@ -11,7 +11,12 @@ do
     local av = CreateFrame("Frame", nil, f)
     av:SetAllPoints()
     f.av = av
+    av.forcehide = false
     av.nums = {}
+
+    RegisterKeyChangedCallback("show_alterac", function(v)
+        av.forcehide = not v
+    end)
 end
 
 local spirittime
@@ -200,7 +205,7 @@ end
 local function ShowAll()
     f:Show()
 
-    if BattleZoneHelper:IsInAlterac() then
+    if BattleZoneHelper:IsInAlterac() and not f.av.forcehide then
         f.av:Show()
     else
         f.av:Hide()
@@ -226,6 +231,8 @@ RegEvent("AREA_POIS_UPDATED", function()
 end)
 
 RegEvent("PLAYER_ENTERING_WORLD", function()
+    spirittime = nil
+    
     f.num.alliance:SetText("")
     f.num.horde:SetText("")
     f.num.stat = nil
@@ -239,22 +246,49 @@ local FACTION_ALLIANCE = 1
 RegEvent("UPDATE_BATTLEFIELD_SCORE", function()
 
     local stat = {}
-    stat[FACTION_ALLIANCE] = {}
-    stat[FACTION_HORDE] = {}
+    stat[FACTION_ALLIANCE] = {
+        class = {},
+        realm = {},
+        maxrealm = "",
+        maxrealmc = 0,
+    }
+    stat[FACTION_HORDE] = {
+        class = {},
+        realm = {},
+        maxrealm = "",
+        maxrealmc = 0,
+    }
 
     for i = 1, 80 do
         local playerName, _, _, _, _, faction, _, _, _, filename = GetBattlefieldScore(i)
         if filename then
-            if not stat[faction][filename] then
-                stat[faction][filename] = 0
+            if not stat[faction].class[filename] then
+                stat[faction].class[filename] = 0
             end
 
-            stat[faction][filename] = stat[faction][filename] + 1
+            stat[faction].class[filename] = stat[faction].class[filename] + 1
+
+            local _, realm = strsplit("-", playerName)
+            realm = realm or GetRealmName()
+
+            if not stat[faction].realm[realm] then
+                stat[faction].realm[realm] = 0
+            end
+            
+            stat[faction].realm[realm] = stat[faction].realm[realm] + 1
+
+            if stat[faction].maxrealmc < stat[faction].realm[realm] then
+                stat[faction].maxrealmc = stat[faction].realm[realm]
+                stat[faction].maxrealm  = realm
+            end
         end
     end
 
     local _, _, _, _, numHorde = GetBattlefieldTeamInfo(FACTION_HORDE)
-	local _, _, _, _, numAlliance = GetBattlefieldTeamInfo(FACTION_ALLIANCE)
+    local _, _, _, _, numAlliance = GetBattlefieldTeamInfo(FACTION_ALLIANCE)
+    
+    stat[FACTION_HORDE].count = numHorde
+    stat[FACTION_ALLIANCE].count = numAlliance
 
     f.num.alliance:SetText(numAlliance)
     f.num.horde:SetText(numHorde)
@@ -277,7 +311,13 @@ RegEvent("ADDON_LOADED", function()
         local l = f:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
         l:SetPoint("TOPLEFT", f, -15, 12)
         f.spiritlabel = l
-
+        RegisterKeyChangedCallback("show_spirit_heal", function(v)
+            if v then
+                l:Show()
+            else
+                l:Hide()
+            end
+        end)
     end
 
 
@@ -321,11 +361,18 @@ RegEvent("ADDON_LOADED", function()
                 return
             end
 
+            local stat = num.stat[faction]
+
             tooltip:SetOwner(num, "ANCHOR_LEFT")
             tooltip:SetText(factionLoc[faction])
             tooltip:AddLine(" ")
 
-            for c, n in pairs(num.stat[faction]) do
+            if stat.maxrealmc / stat.count  > 0.15 and stat.maxrealmc > 1 then
+                tooltip:AddDoubleLine(stat.maxrealm, string.format("%d/%d", stat.maxrealmc, stat.count))
+                tooltip:AddLine(" ")
+            end
+
+            for c, n in pairs(stat.class) do
                 local color = GetClassColorObj(c)
                 tooltip:AddDoubleLine(color:WrapTextInColorCode(classLoc[c]), n)
             end
@@ -336,12 +383,37 @@ RegEvent("ADDON_LOADED", function()
         local hideTooltip = function()
             tooltip:Hide()
             tooltip:SetOwner(UIParent, "ANCHOR_NONE")
-        end        
+        end  
+
+        local yellComposition = function(faction)
+            if not num.stat then
+                return
+            end
+            if #num.stat == 0 then
+                return
+            end
+
+            local stat = num.stat[faction]
+            local text = factionLoc[faction]
+
+            for c, n in pairs(stat.class) do
+                text = text .. " " .. classLoc[c] .. ":" .. n
+            end
+
+            if stat.maxrealmc / stat.count  > 0.15 and stat.maxrealmc > 1 then
+                text = text .. " " .. stat.maxrealm .. ":" .. string.format("%d/%d", stat.maxrealmc, stat.count)
+            end
+
+            SendChatMessage(text, "INSTANCE_CHAT")
+        end
 
         do
             local t =  CreateFrame("Frame", nil, num)
             t:SetPoint("TOPLEFT", num, 0, -7)
             t:SetSize(35, 10)
+            t:SetScript("OnMouseUp", function()
+                yellComposition(FACTION_ALLIANCE)
+            end)
             t:SetScript("OnEnter", function()
                 showTooltip(FACTION_ALLIANCE)
             end)
@@ -360,6 +432,9 @@ RegEvent("ADDON_LOADED", function()
             local t =  CreateFrame("Frame", nil, num)
             t:SetPoint("TOPLEFT", num, 0, -30)
             t:SetSize(35, 21)
+            t:SetScript("OnMouseUp", function()
+                yellComposition(FACTION_HORDE)
+            end)
             t:SetScript("OnEnter", function()
                 showTooltip(FACTION_HORDE)
             end)
@@ -373,12 +448,27 @@ RegEvent("ADDON_LOADED", function()
             f.num.horde = l
             -- l:SetText("20")
         end
+
+        RegisterKeyChangedCallback("show_number", function(v)
+            if v then
+                f.num:Show()
+            else
+                f.num:Hide()
+            end
+        end)
     end
 
     do
         local l = f:CreateFontString(nil, "ARTWORK", "GameFontNormalSmall")
         l:SetPoint("TOPLEFT", f, -15, -50)
         f.elapselabel = l
+        RegisterKeyChangedCallback("show_time_elapsed", function(v)
+            if v then
+                l:Show()
+            else
+                l:Hide()
+            end
+        end)
     end
 
     UIWidgetTopCenterContainerFrame:HookScript("OnUpdate", OnUpdate)
