@@ -9,10 +9,13 @@ L["AURATRACKER_DESC"] = "추적하려는 오라를 선택하세요."
 L["AUTO"] = "자동 버프 버튼"
 L["AUTO_DESC"] = "자동 버프 버튼 [|cffffd200사용|r/|cffffd200사용안함|r] 또는 플레이어 기다림 [|cffffd200사용|r/|cffffd200사용안함|r]"
 L["AUTOASSIGN"] = "자동 지정"
-L["AUTOASSIGN_DESC"] = [=[사용 가능한 성기사 
-수와 사용 가능한 
-축복을 기반으로 모든 
-축복을 자동 지정합니다.]=]
+L["AUTOASSIGN_DESC"] = [=[이용 가능한 성기사의 수와
+사용 가능한 축복을 기반으로
+모든 축복을 자동 지정합니다.
+
+|cffffffff[쉬프트 + 좌클릭]|r 공격대 지정
+템플릿을 대신해 전장 지정
+템플릿을 사용합니다.]=]
 L["AUTOBTN"] = "자동 버프 버튼"
 L["AUTOBTN_DESC"] = "자동 버프 버튼 [사용/사용안함]"
 L["AUTOKEY1"] = "자동 일반 축복 단축키"
@@ -20,9 +23,9 @@ L["AUTOKEY1_DESC"] = "일반 축복의 자동 버프를 위한 단축키"
 L["AUTOKEY2"] = "자동 상급 축복 단축키"
 L["AUTOKEY2_DESC"] = "상급 축복의 자동 버프를 위한 단축키"
 L["BRPT"] = "축복 알리미"
-L["BRPT_DESC"] = [=[모든 축복의 할당을 
-공격대 및 파티 
-채널에 알립니다.]=]
+L["BRPT_DESC"] = [=[공격대 또는 파티 
+채널에 모든 축복 
+지정을 알립니다.]=]
 L["BSC"] = "버프 크기"
 L["BSC_DESC"] = "버프 바 크기 설정"
 L["BUTTONS"] = "버튼"
@@ -41,7 +44,7 @@ L["DRAGHANDLE"] = [=[|cffffffff[좌-클릭]|r PallyPower |cffff0000잠금|r/|cff
 |cffffffff[쉬프트 + 우클릭]|r 설정 열기]=]
 L["DRAGHANDLE_ENABLED"] = "드래그 손잡이"
 L["DRAGHANDLE_ENABLED_DESC"] = "드래그 손잡이 [사용/사용안함]"
-L["FREEASSIGN"] = "자유 할당"
+L["FREEASSIGN"] = "자유 지정"
 L["FREEASSIGN_DESC"] = [=[파티장 / 공격대 관리자가 아닌 
 다른 사람들이 당신의 축복을 
 바꿀 수 있도록 허용합니다.]=]
