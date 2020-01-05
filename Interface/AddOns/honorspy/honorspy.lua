@@ -8,6 +8,8 @@ local commPrefix = addonName .. "4";
 local paused = false; -- pause all inspections when user opens inspect frame
 local playerName = UnitName("player");
 local callback = nil
+local nameToTest = nil
+local startRemovingFakes = false
 
 function HonorSpy:OnInitialize()
 	self.db = LibStub("AceDB-3.0"):New("HonorSpyDB", {
@@ -15,7 +17,9 @@ function HonorSpy:OnInitialize()
 			currentStandings = {},
 			last_reset = 0,
 			minimapButton = {hide = false},
-			actualCommPrefix = ""
+			actualCommPrefix = "",
+			fakePlayers = {},
+			goodPlayers = {}
 		},
 		char = {
 			today_kills = {},
@@ -31,9 +35,10 @@ function HonorSpy:OnInitialize()
 	self:RegisterEvent("UPDATE_MOUSEOVER_UNIT");
 	self:RegisterEvent("INSPECT_HONOR_UPDATE");
 	self:RegisterEvent("CHAT_MSG_COMBAT_HONOR_GAIN", CHAT_MSG_COMBAT_HONOR_GAIN_EVENT);
-	ChatFrame_AddMessageEventFilter("CHAT_MSG_COMBAT_HONOR_GAIN", CHAT_MSG_COMBAT_HONOR_GAIN_FILTER)
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_COMBAT_HONOR_GAIN", CHAT_MSG_COMBAT_HONOR_GAIN_FILTER);
 	self:RegisterComm(commPrefix, "OnCommReceive")
 	self:RegisterEvent("PLAYER_DEAD");
+	ChatFrame_AddMessageEventFilter("CHAT_MSG_SYSTEM", FAKE_PLAYERS_FILTER);
 
 	DrawMinimapIcon();
 	HS_wait(5, function() HonorSpy:CheckNeedReset() end)
@@ -374,13 +379,21 @@ function playerIsValid(player)
 	return true
 end
 
+function isFakePlayer(playerName)
+	if (HonorSpy.db.factionrealm.fakePlayers[playerName]) then
+		return true
+	end
+	return false
+end
+
 function store_player(playerName, player)
-	if (player == nil or playerName == nil or playerName:find("[%d%p%s%c%z]") or not playerIsValid(player)) then return end
+	if (player == nil or playerName == nil or playerName:find("[%d%p%s%c%z]") or isFakePlayer(playerName) or not playerIsValid(player)) then return end
 	
 	local player = table.copy(player);
 	local localPlayer = HonorSpy.db.factionrealm.currentStandings[playerName];
 	if (localPlayer == nil or localPlayer.last_checked < player.last_checked) then
 		HonorSpy.db.factionrealm.currentStandings[playerName] = player;
+		HonorSpy:TestNextFakePlayer();
 	end
 end
 
@@ -435,16 +448,74 @@ function HonorSpy:PLAYER_DEAD()
 	end
 end
 
+function FAKE_PLAYERS_FILTER(_s, e, msg, ...)
+	-- not found, fake
+	if (msg == ERR_FRIEND_NOT_FOUND) then
+		if (not nameToTest) then
+			return true
+		end
+		HonorSpy.db.factionrealm.currentStandings[nameToTest] = nil
+		HonorSpy.db.factionrealm.fakePlayers[nameToTest] = true
+		HonorSpy.db.factionrealm.goodPlayers[nameToTest] = nil
+		-- HonorSpy:Print("removed non-existing player", nameToTest)
+		nameToTest = nil
+		return true
+	end
+	-- added or was in friends already, not fake
+    local friend = msg:match(string.gsub(ERR_FRIEND_ADDED_S, "(%%s)", "(.+)"))
+    if (not friend) then
+    	friend = msg:match(string.gsub(ERR_FRIEND_ALREADY_S, "(%%s)", "(.+)"))
+    end
+    if (friend) then
+    	HonorSpy.db.factionrealm.goodPlayers[friend] = true
+    	HonorSpy.db.factionrealm.fakePlayers[friend] = nil
+    	if (friend == nameToTest) then
+    		HonorSpy:removeTestedFriends()
+    		nameToTest = nil
+    	end
+    	return true
+    end
+end
+
+function HonorSpy:removeTestedFriends()
+	local limit = C_FriendList.GetNumFriends()
+	if (type(limit) ~= "number") then
+		return
+	end
+	for i = 1, limit do
+		local f = C_FriendList.GetFriendInfoByIndex(i)
+		if (f.notes == "HonorSpy testing") then
+			C_FriendList.RemoveFriend(f.name)
+		end
+	end
+end
+
+function HonorSpy:TestNextFakePlayer()
+	if (nameToTest or not startRemovingFakes) then return end
+
+	for playerName, player in pairs(HonorSpy.db.factionrealm.currentStandings) do
+		if (not HonorSpy.db.factionrealm.fakePlayers[playerName] and not HonorSpy.db.factionrealm.goodPlayers[playerName] and playerName ~= UnitName("player")) then
+			nameToTest = playerName
+			break
+		end
+	end
+	if (nameToTest) then
+		C_FriendList.AddFriend(nameToTest, "HonorSpy testing")
+		HS_wait(1, function() HonorSpy:TestNextFakePlayer() end) 
+	end
+end
+
 -- RESET WEEK
 function HonorSpy:Purge()
 	inspectedPlayers = {};
 	HonorSpy.db.factionrealm.currentStandings={};
+	HonorSpy.db.factionrealm.fakePlayers={};
 	HonorSpy.db.char.original_honor = 0;
 	HonorSpyGUI:Reset();
 	HonorSpy:Print(L["All data was purged"]);
 end
 
-function resetWeek()
+function getResetTime()
 	local currentUnixTime = GetServerTime()
 	local regionId = GetCurrentRegion()
 	local resetDay = 3 -- wed
@@ -453,8 +524,8 @@ function resetWeek()
 	if (regionId == 1) then -- US + BR + Oceania: 3 PM UTC Tue (7 AM PST Tue)
 		resetDay = 2
 		resetHour = 15
-	elseif (regionId == 2 or regionId == 4 or regionId == 5) then -- Korea, Taiwan, China: 10 PM UTC Wed (7 AM KST Thu)
-		resetDay = 3
+	elseif (regionId == 2 or regionId == 4 or regionId == 5) then -- Korea, Taiwan, China: 10 PM UTC Mon (7 AM KST Tue)
+		resetDay = 1
 		resetHour = 22
 	elseif (regionId == 3) then -- EU + RU: 7 AM UTC Wed (7 AM UTC Wed)
 	end
@@ -476,7 +547,11 @@ function resetWeek()
 		must_reset_on = week_start - 7*24*60*60 + reset_seconds
 	end
 
-	HonorSpy.db.factionrealm.last_reset = must_reset_on;
+	return must_reset_on
+end
+
+function HonorSpy:ResetWeek()
+	HonorSpy.db.factionrealm.last_reset = getResetTime();
 	HonorSpy:Purge()
 	HonorSpy:Print(L["Weekly data was reset"]);
 end
@@ -487,8 +562,9 @@ function HonorSpy:CheckNeedReset(skipUpdate)
 	end
 
 	-- reset weekly standings
-	if (HonorSpy.db.factionrealm.currentStandings[playerName] == nil and HonorSpy.db.char.original_honor > 0) then
-		resetWeek()
+	local must_reset_on = getResetTime()
+	if (HonorSpy.db.factionrealm.last_reset ~= must_reset_on) then
+		HonorSpy:ResetWeek()
 		HonorSpy.db.char.original_honor = 0
 		HonorSpy.db.char.estimated_honor = 0
 		HonorSpy.db.char.today_kills = {}
@@ -551,6 +627,9 @@ function DBHealthCheck()
 		HonorSpy:Purge()
 		HonorSpy.db.factionrealm.actualCommPrefix = commPrefix
 	end
+
+	HonorSpy:removeTestedFriends()
+	HS_wait(5, function() startRemovingFakes = true; HonorSpy:TestNextFakePlayer(); end)
 end
 
 local waitTable = {};
