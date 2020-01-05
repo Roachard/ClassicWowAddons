@@ -26,7 +26,6 @@ ClassicAuraDurations
 ClassicCastbars
 ClassicCastbars_Options
 ClassicCodex
-ClassicThreatMeter
 Clique
 CombatIndicator
 CoolLine
@@ -59,6 +58,7 @@ HandyNotes_NPCs (Classic)
 HunterAssist
 ItemInfo
 MailMod
+MeetingHorn
 MonkeyBuddy
 MonkeyLibrary
 MonkeyQuest
