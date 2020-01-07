@@ -11,7 +11,7 @@ local LibStub = _G.LibStub
 local CharacterNotes = LibStub("AceAddon-3.0"):NewAddon("CharacterNotes", "AceConsole-3.0", "AceHook-3.0", "AceEvent-3.0", "AceTimer-3.0")
 
 local ADDON_NAME, AddonData = ...
-local ADDON_VERSION = "8.2.1"
+local ADDON_VERSION = "8.2.5"
 
 local NotesDB = AddonData.NotesDB
 
@@ -61,6 +61,7 @@ local defaults = {
 		showNotesInTooltips = true,
 		noteLinksInChat = true,
 		useLibAlts = true,
+		addMenuItems = false,
 		wrapTooltip = true,
 		wrapTooltipLength = 50,
 		notesForRaidMembers = false,
@@ -220,6 +221,14 @@ function CharacterNotes:GetOptions()
                             set = function(info, val) self.db.profile.multilineNotes = val end,
                             get = function(info) return self.db.profile.multilineNotes end,
                 			order = 50
+                        },
+                	    addMenuItems = {
+                            name = L["Add Menu Items"],
+                            desc = L["AddMenuItems_OptionDesc"],
+                            type = "toggle",
+                            set = function(info, val) self.db.profile.addMenuItems = val end,
+                            get = function(info) return self.db.profile.addMenuItems end,
+                			order = 60
                         },
 
                         headerNoteDisplay = {
@@ -1559,7 +1568,9 @@ function CharacterNotes:OnEnable()
 	confirmDeleteFrame = self:CreateConfirmDeleteFrame()
 
 	-- Add the Edit Note menu item on unit frames
-	self:AddToUnitPopupMenu()
+	if self.db.profile.addMenuItems then
+		self:AddToUnitPopupMenu()
+	end
 
   -- Enable note links
   self:EnableNoteLinks()
