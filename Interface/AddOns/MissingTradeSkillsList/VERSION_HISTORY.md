@@ -1,5 +1,12 @@
 ## Version History
 
+### v1.13.30
+
+* Fixed the help text with wrong slashcommand text
+* Added lots of missing Korean & Chinese quest names
+* Added poisons
+* Fixed bug where Current Zone of player did not update/display correct in the filter frame
+
 ### v1.13.29
 
 * Fixed some wrong Chinese translations

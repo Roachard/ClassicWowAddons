@@ -16,14 +16,15 @@ local smed = LibStub("LibSharedMedia-3.0")
 local debug = InFlight.debug
 local Print, PrintD = InFlight.Print, InFlight.PrintD
 local vars, db												-- addon databases
-local taxiSrc, taxiDst, endTime								-- location data
-local porttaken, takeoff, inworld, ontaxi					-- flags
+local taxiSrc, taxiSrcName, taxiDst, taxiDstName, endTime	-- location data
+local porttaken, takeoff, inworld, outworld, ontaxi			-- flags
 local ratio, endText = 0, "??"								-- cache variables
 local sb, spark, timeText, locText, bord					-- frame elements
 local totalTime, startTime, elapsed, throt = 0, 0, 0, 0		-- throttle vars
 
 -- LOCALIZATION
 local L = LibStub("AceLocale-3.0"):GetLocale("InFlight", not debug)
+local FL = LibStub("AceLocale-3.0"):GetLocale("InFlightLoc", not debug)
 InFlight.L = L
 
 -- LOCAL FUNCTIONS
@@ -118,7 +119,7 @@ local function postTaxiNodeOnButtonEnter(button) -- adds duration info to taxi n
 		return
 	end
 
-	local duration = vars[taxiSrc] and vars[taxiSrc][ShortenName(TaxiNodeName(id))]
+	local duration = vars[taxiSrc] and vars[taxiSrc][L[ShortenName(TaxiNodeName(id))]]
 	if duration then
 		addDuration(duration)
 	else
@@ -145,7 +146,7 @@ PrintD = InFlight.PrintD
 ----------------------------------
 function InFlight:GetDestination()
 ----------------------------------
-	return taxiDst
+	return taxiDstName
 end
 
 ---------------------------------
@@ -168,39 +169,23 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 		InFlightDB = { profiles = { Default = tempDB }}
 	end
 
-	-- Check that this is the right version of the client and database to avoid corruption
-	local client = select(4, GetBuildInfo()) < 20000 and "classic"
-	if InFlightDB.version ~= client or InFlightDB.version ~= "classic" then
+	-- Check that this is the right version of the client
+	if select(4, GetBuildInfo()) > 20000 then
+		Print(L["AddonDisabled"])
+		DisableAddOn("InFlight")
+		return
+	end
+
+	-- Check that this is the right version of the database to avoid corruption
+	if InFlightDB.version ~= "classic" then
 		InFlightDB.global = nil
 		InFlightDB.version = "classic"
-		if client ~= "classic" then
-			Print(L["AddonDisabled"])
-			DisableAddOn("InFlight")
-			return
-		end
 	end
 
 	-- Update default data
-	local gameLocale = GetLocale()
-	gameLocale = gameLocale == "enGB" and "enUS" or gameLocale
-	if gameLocale == "enUS" and InFlightDB.dbinit ~= 1133 or debug then
-		InFlightDB.dbinit = 1133
+	if InFlightDB.dbinit ~= 1134 or debug then
+		InFlightDB.dbinit = 1134
 		InFlightDB.upload = nil
-
-		if InFlightDB.global then
-			local defaults = self.defaults.global
-			for faction, t in pairs(InFlightDB.global) do
-				for src, dt in pairs(t) do
-					if defaults[faction][src] then
-						for dst, dtime in pairs(dt) do
-							if dst ~= "name" and defaults[faction][src][dst] and abs(dtime - defaults[faction][src][dst]) < (debug and 2 or 5) then
-								InFlightDB.global[faction][src][dst] = defaults[faction][src][dst]
-							end
-						end
-					end
-				end
-			end
-		end
 		Print(L["DefaultsUpdated"])
 
 		if debug then
@@ -208,16 +193,50 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 				local count = 0
 				for src, dt in pairs(t) do
 					for dst, dtime in pairs(dt) do
-						if dst ~= "name" then
-							count = count + 1
-						end
+						count = count + 1
 					end
 				end
 
-				PrintD(faction, "|cff208020-|r", count, "|cff208020flghts|r")
+				PrintD(faction, "|cff208020-|r", count, "|cff208020flights|r")
+			end
+		else
+			InFlightDB.global = nil
+		end
+	end
+
+	-- Set up flight point translations
+	for key, value in pairs(FL) do
+		L[value] = key
+	end
+
+	-- Sanitise data
+	if InFlightDB.global then
+		local defaults = self.defaults.global
+		for faction, t in pairs(InFlightDB.global) do
+			for src, dt in pairs(t) do
+				if L[src] ~= src and FL[L[src]] ~= L[src] then
+					InFlightDB.global[faction][L[src]] = dt
+					InFlightDB.global[faction][src] = nil
+					src = L[src]
+				end
+
+				for dst, dtime in pairs(dt) do
+					if L[dst] ~= dst and FL[L[dst]] ~= L[dst] then
+						InFlightDB.global[faction][src][L[dst]] = dtime
+						InFlightDB.global[faction][src][dst] = nil
+						dst = L[dst]
+					end
+
+					if defaults[faction][src] and defaults[faction][src][dst]
+							and abs(dtime - defaults[faction][src][dst]) < (debug and 2 or 5) then
+						InFlightDB.global[faction][src][dst] = defaults[faction][src][dst]
+					end
+				end
 			end
 		end
 	end
+
+	FL = nil
 
 	-- Check every 2 weeks if there are new flight times that could be uploaded
 	if not InFlightDB.upload or InFlightDB.upload < time() then
@@ -227,14 +246,12 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 				local found = 0
 				for src, dt in pairs(t) do
 					for dst, dtime in pairs(dt) do
-						if dst ~= "name" then
-							if not defaults[faction][src] or not defaults[faction][src][dst] then
-								found = found + 1
-								PrintD(faction, "|cff208020-|r", src, "-->", dst, "|cff208020found:|r", FormatTime(dtime))
-							elseif abs(dtime - defaults[faction][src][dst]) >= (debug and 2 or 5) then
-								found = found + 1
-								PrintD(faction, "|cff208020-|r", src, "-->", dst, "|cff208020updated:|r", FormatTime(defaults[faction][src][dst]), "-->", FormatTime(dtime))
-							end
+						if not defaults[faction][src] or not defaults[faction][src][dst] then
+							found = found + 1
+							PrintD(faction, "|cff208020-|r", src, "-->", dst, "|cff208020found:|r", FormatTime(dtime))
+						elseif defaults[faction][src][dst] - dtime >= (debug and 2 or 5) then
+							found = found + 1
+							PrintD(faction, "|cff208020-|r", src, "-->", dst, "|cff208020updated:|r", FormatTime(defaults[faction][src][dst]), "-->", FormatTime(dtime))
 						end
 					end
 				end
@@ -268,7 +285,8 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 		if not taxiSrc then
 			for i = 1, NumTaxiNodes(), 1 do
 				if TaxiNodeGetType(i) == "CURRENT" then
-					taxiSrc = ShortenName(TaxiNodeName(i))
+					taxiSrcName = ShortenName(TaxiNodeName(i))
+					taxiSrc = L[taxiSrcName]
 					break
 				end
 			end
@@ -279,7 +297,8 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 			end
 		end
 
-		taxiDst = ShortenName(TaxiNodeName(slot))
+		taxiDstName = ShortenName(TaxiNodeName(slot))
+		taxiDst = L[taxiDstName]
 		local t = vars[taxiSrc]
 		if t and t[taxiDst] and t[taxiDst] > 0 then  -- saved variables lookup
 			endTime = t[taxiDst]
@@ -295,7 +314,7 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 				OnAccept = function(this, data) InFlight:StartTimer(data) end,
 				timeout = 0, exclusive = 1, hideOnEscape = 1,
 			}
-			StaticPopupDialogs.INFLIGHTCONFIRM.text = format(L["ConfirmPopup"], "|cffffff00"..taxiDst..(endTime and " ("..endText..")" or "").."|r")
+			StaticPopupDialogs.INFLIGHTCONFIRM.text = format(L["ConfirmPopup"], "|cffffff00"..taxiDstName..(endTime and " ("..endText..")" or "").."|r")
 
 			local dialog = StaticPopup_Show("INFLIGHTCONFIRM")
 			if dialog then
@@ -317,7 +336,7 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 		PrintD("|cffff8080Battlefield port|cff208080, porttaken -|r", porttaken)
 	end)
 
-	hooksecurefunc("ConfirmSummon", function()
+	hooksecurefunc(C_SummonInfo, "ConfirmSummon", function()
 		porttaken = true
 		PrintD("|cffff8080Summon|cff208080, porttaken -|r", porttaken)
 	end)
@@ -329,6 +348,7 @@ end
 ---------------------------------------
 function InFlight:InitSource(isTaxiMap)  -- cache source location and hook tooltips
 ---------------------------------------
+	taxiSrcName = nil
 	taxiSrc = nil
 
 	for i = 1, NumTaxiNodes(), 1 do
@@ -339,7 +359,8 @@ function InFlight:InitSource(isTaxiMap)  -- cache source location and hook toolt
 		end
 
 		if TaxiNodeGetType(i) == "CURRENT" then
-			taxiSrc = ShortenName(TaxiNodeName(i))
+			taxiSrcName = ShortenName(TaxiNodeName(i))
+			taxiSrc = L[taxiSrcName]
 		end
 	end
 end
@@ -385,8 +406,10 @@ end
 -------------------------------------------
 function InFlight:StartMiscFlight(src, dst)  -- called from InFlight_Load for special flights
 -------------------------------------------
-	taxiSrc = L[src]
-	taxiDst = L[dst]
+	taxiSrcName = L[src]
+	taxiSrc = src
+	taxiDstName = L[dst]
+	taxiDst = dst
 	endTime = vars[src] and vars[src][dst]
 	endText = FormatTime(endTime)
 	self:StartTimer()
@@ -466,6 +489,10 @@ do  -- timer bar
 				return
 			end
 
+			if ontaxi and not inworld then
+				return
+			end
+
 			if not UnitOnTaxi("player") then  -- event bug fix
 				ontaxi = nil
 			end
@@ -476,7 +503,7 @@ do  -- timer bar
 					vars[taxiSrc] = vars[taxiSrc] or {}
 					local oldTime = vars[taxiSrc][taxiDst]
 					local newTime = floor(totalTime + 0.5)
-					local msg = strjoin(" ", taxiSrc, db.totext, taxiDst, "|cff208080")
+					local msg = strjoin(" ", taxiSrcName, db.totext, taxiDstName, "|cff208080")
 					if not oldTime then
 						msg = msg..L["FlightTimeAdded"].."|r "..FormatTime(newTime)
 					elseif abs(newTime - oldTime) >= 5 then
@@ -499,7 +526,9 @@ do  -- timer bar
 					end
 				end
 
+				taxiSrcName = nil
 				taxiSrc = nil
+				taxiDstName = nil
 				taxiDst = nil
 				endTime = nil
 				endText = FormatTime(endTime)
@@ -537,11 +566,17 @@ do  -- timer bar
 		function self:PLAYER_LEAVING_WORLD()
 			PrintD('PLAYER_LEAVING_WORLD')
 			inworld = nil
+			outworld = GetTime()
 		end
 
 		function self:PLAYER_ENTERING_WORLD()
 			PrintD('PLAYER_ENTERING_WORLD')
 			inworld = true
+			if outworld then
+				startTime = startTime - (outworld - GetTime())
+			end
+
+			outworld = nil
 		end
 
 		function self:PLAYER_CONTROL_GAINED()
@@ -618,7 +653,7 @@ do  -- timer bar
 			locText:SetJustifyH("LEFT")
 			locText:SetJustifyV("CENTER")
 			SetPoints(locText, "LEFT", sb, "LEFT", 4, 0, "RIGHT", timeText, "LEFT", -2, 0)
-			locText:SetText(taxiDst or "??")
+			locText:SetText(taxiDstName or "??")
 		else
 			timeText:SetJustifyH("CENTER")
 			timeText:SetJustifyV("CENTER")
@@ -626,7 +661,7 @@ do  -- timer bar
 			locText:SetJustifyH("CENTER")
 			locText:SetJustifyV("BOTTOM")
 			SetPoints(locText, "TOPLEFT", sb, "TOPLEFT", -24, db.fontsize*2.5, "BOTTOMRIGHT", sb, "TOPRIGHT", 24, (db.border=="None" and 1) or 3)
-			locText:SetFormattedText("%s %s %s", taxiSrc or "??", db.totext, taxiDst or "??")
+			locText:SetFormattedText("%s %s %s", taxiSrcName or "??", db.totext, taxiDstName or "??")
 		end
 	end
 end
@@ -959,43 +994,40 @@ function inflightupdate(updateExistingTimes)
 		updates[1] = InFlightDB.global
 		ownData = true
 	end
-	local InFlightVars = self.defaults.global
+	local defaults = self.defaults.global
 	for _, flightPaths in ipairs(updates) do
 
 		-- Set updateExistingTimes to true to update and add new times (for updates based
 		--   on the current default db)
 		-- Set updateExistingTimes to false to only add new unknown times (use for updates
 		--   not based on current default db to avoid re-adding old/incorrect times)
-		updateExistingTimes = updateExistingTimes ~= nil and updateExistingTimes or ownData
+		if updateExistingTimes == nil then
+			updateExistingTimes = ownData
+		end
 
 		for faction, t in pairs(flightPaths) do
 			if faction == "Horde" or faction == "Alliance" then
 				local found = false
 				local updated, added = 0, 0
 				for src, dt in pairs(t) do
-					if not InFlightVars[faction][src] then
-						InFlightVars[faction][src] = {}
+					if not defaults[faction][src] then
+						defaults[faction][src] = {}
 						PrintD(faction, "|cff208080New source:|r", src)
 					end
 
 					for dst, utime in pairs(dt) do
-						if dst == "name" then
-							if InFlightVars[faction][src][dst] ~= utime then
-								InFlightVars[faction][src][dst] = utime
-								PrintD(faction, "|cff208080New source name:|r", utime, src)
-							end
-						elseif src ~= dst and type(utime) == "number" then
-							local vtime = InFlightVars[faction][src][dst]
-							if utime >= 5 and (not vtime or ownData or abs(utime - vtime) >= 5) then
+						if src ~= dst and type(utime) == "number" then
+							local vtime = defaults[faction][src][dst]
+							if utime >= 5 and (not vtime or ownData or vtime - utime >= 5) then
 								if vtime then
-									if updateExistingTimes and InFlightVars[faction][src][dst] ~= utime then
-										InFlightVars[faction][src][dst] = utime
+									if updateExistingTimes and defaults[faction][src][dst] ~= utime then
+										defaults[faction][src][dst] = utime
 										found = true
 										updated = updated + 1
-										PrintD(faction, "|cff208020Update time:|r", InFlightVars[faction][src].name, src, "|cff208020-->|r", dst, "|cff208020- old:|r", vtime, "|cff208020new:|r", utime)
+										PrintD(faction, "|cff208020Update time:|r", src, "|cff208020-->|r", dst, "|cff208020- old:|r", vtime, "|cff208020new:|r", utime)
 									end
 								else
-									InFlightVars[faction][src][dst] = utime
+									defaults[faction][src][dst] = utime
 									found = true
 									added = added + 1
 									PrintD(faction, "|cff208080New time:|r", src, "|cff208020-->|r", dst, "|cff208020- new:|r", utime)
@@ -1012,12 +1044,12 @@ function inflightupdate(updateExistingTimes)
 					PrintD(faction, "|cff208020-|r No time updates found.")
 				end
 			else
-				InFlightVars[faction] = nil
+				defaults[faction] = nil
 				Print("Unknown faction removed:", faction)
 			end
 		end
 
-		InFlightDB.defaults = InFlightVars
+		InFlightDB.defaults = defaults
 	end
 end
 

@@ -11,7 +11,8 @@ MTSL_NAME_PROFESSIONS = {
     "Mining",
     "Tailoring",
     "Cooking",
-    "First Aid"
+    "First Aid",
+    "Poisons",
 }
 
 MTSL_LOGIC_PROFESSION = {
@@ -29,8 +30,8 @@ MTSL_LOGIC_PROFESSION = {
                 return v.rank
             end
         end
-
-        return 0
+        -- always return lowest possible rank (for poisons)
+        return 1
     end,
 
     ----------------------------------------------------------------------------------------
@@ -166,7 +167,7 @@ MTSL_LOGIC_PROFESSION = {
     GetAllSkillsAndLevelsForProfession = function(self, profession_name)
         -- MAX_PHASE to allow all skills to be considered
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSL_MAX_PHASE, 0)
+        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSL_DATA.MAX_PATCH_LEVEL, 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -230,7 +231,7 @@ MTSL_LOGIC_PROFESSION = {
     GetAllSkillsForProfession = function(self, profession_name)
         -- MAX_PHASE to allow all skills to be considered
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSL_MAX_PHASE, 0)
+        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSL_DATA.MAX_PATCH_LEVEL, 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -306,7 +307,7 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     IsSkillKnownForPlayer = function(self, player, profession_name, skill_id)
         local trade_skill = player.TRADESKILLS[profession_name]
-        -- returns 0 if tade_skill not trained, 1 if trained but skill not learned and current skill to low, 2 if skill is learnable, 4 if skill learned
+        -- returns 0 if tadeskill not trained, 1 if trained but skill not learned and current skill to low, 2 if skill is learnable, 3 if skill learned
         local known_status
         if trade_skill == nil or trade_skill == 0 then
             known_status = 0
@@ -357,8 +358,8 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     CountTotalNumberOfAvailableSkillsForProfession = function(self, profession_name, max_phase)
         -- levels are always availble so start counter there
-        local counter = MTSL_DATA.AMOUNT_TRADESKILL_LEVELS
-        -- loop all skills for the profssion and check if its availble
+        local counter = MTSL_TOOLS:CountItemsInArray(MTSL_DATA[profession_name]["levels"])
+        -- loop all skills for the profession and check if its available
         for t, s in pairs(MTSL_DATA[profession_name]["skills"]) do
             if MTSL_LOGIC_SKILL:IsSkillAvailableInPhase(s, profession_name, max_phase) then
                 counter = counter + 1

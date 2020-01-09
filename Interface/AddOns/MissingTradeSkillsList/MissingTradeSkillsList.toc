@@ -3,7 +3,7 @@
 ## Author: Thumbkin
 ## Notes: Shows missing skills & recipes for a profession and where to get them.
 ## SavedVariables: MTSL_PLAYERS, MTSLUI_PLAYER
-## Version: 1.13.29
+## Version: 1.13.30
 
 #
 # Load all global variables, saved variables & locale
@@ -71,6 +71,11 @@ Data\Leatherworking\Leatherworking_Items.lua
 Data\Mining\Mining_Levels.lua
 Data\Mining\Mining_Skills.lua
 Data\Mining\Mining_Items.lua
+
+# Poisons
+Data\Poisons\Poisons_Levels.lua
+Data\Poisons\Poisons_Skills.lua
+Data\Poisons\Poisons_Items.lua
 
 # Tailoring
 Data\Tailoring\Tailoring_Levels.lua

@@ -528,9 +528,9 @@ MTSLOPTUI_CONFIG_FRAME = {
 
         MTSLUI_SAVED_VARIABLES:SetPatchLevelMTSL(self.patch_level_mtsl)
         -- Refresh the text shown for current phase on each filter frame
-        MTSLUI_MISSING_TRADESKILLS_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
-        MTSLUI_ACCOUNT_EXPLORER_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
-        MTSLUI_DATABASE_EXPLORER_FRAME.skill_list_filter_frame:RefreshCurrentPhaseLabel()
+        MTSLUI_MISSING_TRADESKILLS_FRAME.skill_list_filter_frame:UpdateCurrentPhase(MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL())
+        MTSLUI_ACCOUNT_EXPLORER_FRAME.skill_list_filter_frame:UpdateCurrentPhase(MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL())
+        MTSLUI_DATABASE_EXPLORER_FRAME.skill_list_filter_frame:UpdateCurrentPhase(MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL())
 
         MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
 

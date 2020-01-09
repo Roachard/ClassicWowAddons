@@ -16,8 +16,8 @@ MTSL_LOGIC_SKILL = {
         local available = true
         if skill.phase ~= nil and skill.phase > max_phase then
             available = false
-        -- Ignore checks if we check for MTSL_MAX_PHASE cause then all are available
-        elseif max_phase < MTSL_MAX_PHASE then
+        -- Ignore checks if we check for MTSL_DATA.MAX_PATCH_LEVEL cause then all are available
+        elseif max_phase < MTSL_DATA.MAX_PATCH_LEVEL then
             -- check if at least one of the sources is available in the current or previous phases
             -- With trainers, quest or object a skill is always available
             -- Check for the content phase of the item

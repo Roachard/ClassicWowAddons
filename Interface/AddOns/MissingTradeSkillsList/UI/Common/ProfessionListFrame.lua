@@ -12,7 +12,7 @@ MTSLUI_PROFESSION_LIST_FRAME = {
     -- width of the frame
     FRAME_WIDTH = 45,
     -- height of the frame
-    FRAME_HEIGHT = 415,
+    FRAME_HEIGHT = 465,
     selected_index,
 
 ----------------------------------------------------------------------------------------------------------

@@ -12,6 +12,6 @@ function SlashCmdList.MTSL (msg, editbox)
     if MTSLUI_EVENT_HANDLER:IsAddonLoaded() then
         MTSLUI_EVENT_HANDLER:SLASH_COMMAND(msg)
     else
-        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Addon dit not load correctly!")
+        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: " .. MTSLUI_LOCALES_LABELS["addon not loaded"][MTSLUI_CURRENT_LANGUAGE])
     end
 end

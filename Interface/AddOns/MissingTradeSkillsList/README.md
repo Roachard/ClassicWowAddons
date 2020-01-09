@@ -37,16 +37,11 @@ Minimap button
 3: Reputation required not yet shown for items  
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
-### Latest version (v1.13.29)
+### Latest version (v1.13.30)
 
-* Fixed some wrong Chinese translations
-* Added minimap button (Default on and shown at top of minimap)
-    * Left Click: opens MTSL options menu
-    * Ctrl + Left Click opens MTSL account explorer
-    * Shift + Left Click: opens MTSL database explorer
-* Added options to configure minimap button
-    * Activate/Deactivate the minimap button (Default on)
-    * Button radius compared to minimap edge (Default 0)
-    * Shape of the minimap (Default circle)
+* Fixed the help text with wrong slashcommand text
+* Added lots of missing Korean & Chinese quest names
+* Added poisons
+* Fixed bug where Current Zone of player did not update/display correct
   
 View full version history [here](http://mtsl.ddns.net/VERSION_HISTORY.html) or VERSION_HISTORY.md inside zip addon
