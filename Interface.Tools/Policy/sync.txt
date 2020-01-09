@@ -49,7 +49,6 @@ dct_damage
 dct_options
 dct_spellAlert
 Decursive
-DruidBarClassic
 EventAlertMod
 Ex_AutoEquip
 GDKP
