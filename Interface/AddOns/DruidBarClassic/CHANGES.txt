@@ -1,16 +1,28 @@
-lightweight tag 6b254cc85f6c5b132d264f7c8742a906c70a2c65 0.7.4
+lightweight tag 780ef184eb8eaf9ffb1e83a5b5e01b8f5ebff23a 0.7.6
 Author:	Tek Hudson <tek.hudson@gmail.com>
-Date:	Wed Jan 8 18:19:52 2020 -0800
+Date:	Fri Jan 10 08:03:35 2020 -0800
 
-commit 6b254cc85f6c5b132d264f7c8742a906c70a2c65
+commit 780ef184eb8eaf9ffb1e83a5b5e01b8f5ebff23a
 Author: Tek Hudson <tek.hudson@gmail.com>
-Date:   Wed Jan 8 18:19:52 2020 -0800
+Date:   Fri Jan 10 08:03:35 2020 -0800
 
-    Update version info
+    Update Changelog and TOC
 
-commit ad5f0938fcf3453da4144de60e1af0e10db1c0ec
+commit 40b4898304526f495c8b717676ab07fa0b89f421
 Author: Tek Hudson <tek.hudson@gmail.com>
-Date:   Wed Jan 8 18:18:48 2020 -0800
+Date:   Fri Jan 10 08:00:31 2020 -0800
 
-    Bug fix for minimap icon
+    Remove deprecated DruidBarDontMove
+
+commit 40b4898304526f495c8b717676ab07fa0b89f421
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Fri Jan 10 08:00:31 2020 -0800
+
+    Remove deprecated DruidBarDontMove
+
+commit 1cca159c1f1ae1164b98104003b8b21b0097d33b
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Fri Jan 10 07:58:54 2020 -0800
+
+    Bar is resetting due to set movablew removing data from player's layout-local
 

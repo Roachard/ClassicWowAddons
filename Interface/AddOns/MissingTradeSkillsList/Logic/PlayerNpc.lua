@@ -66,6 +66,17 @@ MTSL_LOGIC_PLAYER_NPC = {
     end,
 
     ------------------------------------------------------------------------------------------------
+    --- Update the XP level & faction of a player (called after a "ding")
+    ------------------------------------------------------------------------------------------------
+    UpdatePlayerInfo = function(self)
+        local faction = UnitFactionGroup("player")
+        local xp_level = UnitLevel("player")
+
+        MTSL_CURRENT_PLAYER.XP_LEVEL = xp_level
+        MTSL_CURRENT_PLAYER.FACTION = faction
+    end,
+
+    ------------------------------------------------------------------------------------------------
     -- Returns the number of characters
     --
     -- returns 	Number		The number of chars (on that realm)
@@ -313,10 +324,10 @@ MTSL_LOGIC_PLAYER_NPC = {
         local known_professions = {}
         if player ~= nil then
             for k, v in pairs(player.TRADESKILLS) do
-                -- only add if actualy initiallised
+                -- only add if initialised
                 if v ~= 0 then
-                    -- add english name to list
-                    table.insert(known_professions, MTSLUI_LOCALES_PROFESSIONS[MTSLUI_CURRENT_LANGUAGE][k])
+                    -- add english name to list (should already be localised when saved)
+                    table.insert(known_professions, k)
                 end
             end
         end

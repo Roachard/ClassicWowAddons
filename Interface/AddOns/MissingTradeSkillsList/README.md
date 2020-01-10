@@ -3,7 +3,7 @@ Addon for World Of Warcraft Classic v1.13
 Shows the missing recipes/skills for a tradeskill and where to get them  
 Addon only works **all** languages now! (MTSL Options menu still only shown in English only)  
 
-Please donate if you want to support this addon!
+Please **donate** (paypal to thumbkin83@gmail.com) if you want to support this addon!
 
 ### Author
 Thumbkin (Retail: EU-Burning Steppes, Classic: EU-Pyrewood Village)
@@ -37,11 +37,12 @@ Minimap button
 3: Reputation required not yet shown for items  
 4: Drop down for filtering on zone does not fill correct for Eastern Kingdoms  
 
-### Latest version (v1.13.30)
+### Latest version (v1.13.31)
 
-* Fixed the help text with wrong slashcommand text
-* Added lots of missing Korean & Chinese quest names
-* Added poisons
-* Fixed bug where Current Zone of player did not update/display correct
+* Fixed bug that always opened MTSL window even if option was disabled
+* Fixed bug in options menu where checkboxes were always shown as checked even if they were not
+* Added an event to capture "ding" of player to update XP level while playing
+* Fixed bug where MTSL account explorer did not work for other locales then English
+* Fixed a refresh bug in MTSL account explorer when changing characters, the list did not update
   
 View full version history [here](http://mtsl.ddns.net/VERSION_HISTORY.html) or VERSION_HISTORY.md inside zip addon

@@ -156,8 +156,8 @@ MTSLUI_PLAYER_LIST_FRAME = {
                         text_for_button = MTSLUI_FONTS.COLORS.AVAILABLE.NO .. "[" .. skill_level.. "] "
                     end
                 end
-                -- show player name in faction color
-                if v.FACTION == MTSLUI_LOCALES_HORDE[MTSLUI_CURRENT_LANGUAGE] then
+                -- show player name in faction color (Always in English so need to check localised)
+                if v.FACTION == "Horde" then
                     text_for_button = text_for_button .. MTSLUI_FONTS.COLORS.FACTION.HORDE .. v.NAME
                 else
                     text_for_button = text_for_button .. MTSLUI_FONTS.COLORS.FACTION.ALLIANCE .. v.NAME

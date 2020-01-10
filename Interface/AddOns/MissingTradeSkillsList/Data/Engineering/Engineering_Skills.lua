@@ -1500,13 +1500,7 @@ MTSL_DATA["Engineering"]["skills"] = {
 		["phase"] = 1,
 	}, -- [56]
 	{
-		["trainers"] = {
-			["price"] = 0,
-			["sources"] = {
-				8126, -- [1]
-				8738, -- [2]
-			},
-		},
+		["item"] = 7192,
 		["name"] = {
 			["German"] = "Goblin-Raketenstiefel",
 			["Spanish"] = "Botas cohete goblin",
@@ -1518,10 +1512,9 @@ MTSL_DATA["Engineering"]["skills"] = {
 			["Russian"] = "Гоблинские реактивные сапоги",
 			["English"] = "Goblin Rocket Boots",
 		},
-		["min_skill"] = 225,
+		["min_skill"] = 130,
 		["phase"] = 1,
-		["id"] = 8895,
-		["specialization"] = 20222,
+		["id"] = 8896,
 	}, -- [57]
 	{
 		["item"] = 7560,

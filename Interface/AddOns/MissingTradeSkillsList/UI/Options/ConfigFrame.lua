@@ -57,17 +57,29 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.welcome_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 110, margin_top + 5)
         -- ignore the event for ticking checkbox
         self.welcome_check:SetScript("OnClick", function() end)
-        self.welcome_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetShowWelcomeMessage())
+
+        if MTSLUI_SAVED_VARIABLES:GetShowWelcomeMessage() == 1 then
+            self.welcome_check:SetChecked(true)
+            -- using false or 0 does not work, has to be nil
+        else
+            self.welcome_check:SetChecked(nil)
+        end
     end,
 
     InitialiseCheckBoxAutoShowMTSL = function(self, margin_top)
         self.ui_frame.autoshow_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, "Auto show MTSL", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
-        self.autoshow_check = CreateFrame("CheckButton", "MTSLOPTUI_ConfigFrame_Welcome", self.ui_frame, "ChatConfigCheckButtonTemplate");
+        self.autoshow_check = CreateFrame("CheckButton", "MTSLOPTUI_ConfigFrame_AutoShow", self.ui_frame, "ChatConfigCheckButtonTemplate");
         self.autoshow_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 110, margin_top + 5)
         -- ignore the event for ticking checkbox
         self.autoshow_check:SetScript("OnClick", function() end)
-        self.autoshow_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetAutoShowMTSL())
+
+        if MTSLUI_SAVED_VARIABLES:GetAutoShowMTSL() == 1 then
+            self.autoshow_check:SetChecked(true)
+        -- using false or 0 does not work, has to be nil
+        else
+            self.autoshow_check:SetChecked(nil)
+        end
     end,
 
     InitialiseDropDownsMinimap = function(self, margin_top)
@@ -77,7 +89,13 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.minimap_button_check:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT + 110, margin_top + 5)
         -- ignore the event for ticking checkbox
         self.minimap_button_check:SetScript("OnClick", function() end)
-        self.minimap_button_check:SetChecked(MTSLUI_SAVED_VARIABLES:GetMinimapButtonActive())
+
+        if MTSLUI_SAVED_VARIABLES:GetMinimapButtonActive() == 1 then
+            self.minimap_button_check:SetChecked(true)
+            -- using false or 0 does not work, has to be nil
+        else
+            self.minimap_button_check:SetChecked(nil)
+        end
 
         -- UI Split Orientation
         self.minimap_shapes = {

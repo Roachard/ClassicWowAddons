@@ -1,5 +1,13 @@
 ## Version History
 
+### v1.13.31
+
+* Fixed bug that always opened MTSL window even if option was disabled
+* Fixed bug in options menu where checkboxes were always shown as checked even if they were not
+* Added an event to capture "ding" of player to update XP level while playing
+* Fixed bug where MTSL account explorer did not work for other locales then English
+* Fixed a refresh bug in MTSL account explorer when changing characters, the list did not update
+
 ### v1.13.30
 
 * Fixed the help text with wrong slashcommand text

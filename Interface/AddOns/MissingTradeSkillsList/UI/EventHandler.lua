@@ -142,7 +142,6 @@ MTSLUI_EVENT_HANDLER = {
 			-- only trigger event if its a trade_skill supported by the addon
 			if profession_name ~= nil then
 				self:SwapToProfession(profession_name, current_skill_level, max_level)
-				MTSLUI_MISSING_TRADESKILLS_FRAME:Show()
 				MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI()
 			end
 		end
@@ -217,11 +216,23 @@ MTSLUI_EVENT_HANDLER = {
 	end,
 
 	---------------------------------------------------------------------------------------
+	-- Update the current XP level of the char when he "dings"
+	---------------------------------------------------------------------------------------
+	CHARACTER_POINTS_CHANGED = function (self)
+		MTSL_LOGIC_PLAYER_NPC:UpdatePlayerInfo()
+		-- TODO refresh player info show in ACC or DB explorer
+	end,
+
+	---------------------------------------------------------------------------------------
 	-- Handles a slash command for this addon
 	--
 	-- @msg:			string		The argument for the slash command
 	---------------------------------------------------------------------------------------
     SLASH_COMMAND = function (self, msg)
+		-- remove case sensitive options by setting all passed text to lowercase
+		if msg ~= nil then
+			msg = string.lower(msg)
+		end
 		if msg == "acc" or msg == "account" then
 			-- only execute if not yet shown
 			if not MTSLUI_ACCOUNT_EXPLORER_FRAME:IsShown() then
@@ -229,7 +240,11 @@ MTSLUI_EVENT_HANDLER = {
 				MTSLUI_ACCOUNT_EXPLORER_FRAME:RefreshUI()
 			end
 		elseif msg == "db" or msg == "database" then
-			MTSLUI_DATABASE_EXPLORER_FRAME:Show()
+			-- only execute if not yet shown
+			if not MTSLUI_DATABASE_EXPLORER_FRAME:IsShown() then
+				MTSLUI_DATABASE_EXPLORER_FRAME:Show()
+				MTSLUI_DATABASE_EXPLORER_FRAME:RefreshUI()
+			end
 		elseif msg == "about" then
             MTSLUI_TOOLS:PrintAboutMessage()
 		elseif msg == nil or msg == "" or msg == "options" or msg == "config" then
@@ -269,6 +284,8 @@ MTSLUI_EVENT_HANDLER = {
 		event_frame:RegisterEvent("TRAINER_UPDATE")
 		-- Event to update current zone in filterframe
 		event_frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+		-- Capture a "ding" of a player
+		event_frame:RegisterEvent("CHARACTER_POINTS_CHANGED")
 	end,
 
 	---------------------------------------------------------------------------------------
@@ -302,8 +319,8 @@ MTSLUI_EVENT_HANDLER = {
 		MTSLUI_MISSING_TRADESKILLS_FRAME:NoSkillSelected()
 		-- Show the frame if option is selected "auto"
 		if MTSLUI_SAVED_VARIABLES:GetAutoShowMTSL() == 1 then
-		    MTSLUI_MISSING_TRADESKILLS_FRAME:Show()
-		    MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI(1)
+			MTSLUI_MISSING_TRADESKILLS_FRAME:Show()
+			MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI(1)
 		end
 	end,
 }

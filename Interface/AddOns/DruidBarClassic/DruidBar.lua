@@ -39,11 +39,13 @@ function EventRegistration(event)
 		if event == "PLAYER_ENTERING_WORLD" then
 		--Thanks to Tigerheart from Argent Dawn for this little piece of work, as well as fireball and prudence for bringing it up!
 		DruidBarUpdateFrame:RegisterEvent("UNIT_AURA");
+		DruidBarUpdateFrame:RegisterEvent("UNIT_STATS");
 		DruidBarUpdateFrame:RegisterEvent("UNIT_POWER_UPDATE");
 		DruidBarUpdateFrame:RegisterEvent("UPDATE_SHAPESHIFT_FORMS");
 		return;
 	elseif event == "PLAYER_LEAVING_WORLD" then
 		DruidBarUpdateFrame:UnregisterEvent("UNIT_AURA");
+		DruidBarUpdateFrame:UnregisterEvent("UNIT_STATS");
 		DruidBarUpdateFrame:UnregisterEvent("UNIT_POWER_UPDATE");
 		DruidBarUpdateFrame:UnregisterEvent("UPDATE_SHAPESHIFT_FORMS");
 		return;
@@ -66,6 +68,8 @@ function DruidBar_OnEvent(self, event,...)
 		EventRegistration(event)
 	elseif event == "ADDON_LOADED" then
 		Load_Variables(className);
+		-- Now that we have loaded variables (including icon position), refresh the poisition of the icon
+		DruidBar_MinimapButton:Refresh("DruidBarMinimapIcon", DruidBarKey);
 	elseif className and className == "DRUID" and DruidBarKey.Enabled then
 		-- Show DruidBarUpdateFrame if hidden
 		if not DruidBarUpdateFrame:IsVisible() then DruidBarUpdateFrame:Show(); end
@@ -150,8 +154,22 @@ function Load_Variables(className)
 	if not DruidBarKey.color then DruidBarKey.color = {0,0,1,1}; end
 	if not DruidBarKey.bordercolor then DruidBarKey.bordercolor = {1,1,1,1}; end
 	if not DruidBarKey.bgcolor then DruidBarKey.bgcolor = {0,0,0,0.5}; end
-	if(not DruidBarKey.tempW or DruidBarKey.tempW == 0) then DruidBarKey.tempW = DruidBarKey.xvar; end
-	if(not DruidBarKey.tempH or DruidBarKey.tempH == 0) then DruidBarKey.tempH = DruidBarKey.yvar; end
+	if(not DruidBarKey.tempW or DruidBarKey.tempW == 0) then
+		if DruidBarKey.width < 0 then
+			DruidBarKey.tempW = DruidBarKey.width;
+		else
+			DruidBarKey.width = DruidBarKey.xvar;
+			DruidBarKey.tempW = DruidBarKey.xvar;
+		end
+	end
+	if(not DruidBarKey.tempH or DruidBarKey.tempH == 0) then
+		if DruidBarKey.height < 0 then
+			DruidBarKey.tempW = DruidBarKey.height;
+		else
+			DruidBarKey.height = DruidBarKey.yvar;
+			DruidBarKey.tempW = DruidBarKey.yvar;
+		end
+	end
 	if(not DruidBarKey.DontShiftBack) then DruidBarKey.DontShiftBack = false; end
 	if not DruidBarKey.bgstrata then DruidBarKey.bgstrata = "BORDER" end
 	if not DruidBarKey.manatexture then DruidBarKey.manatexture = "Interface\\TargetingFrame\\UI-StatusBar"; end
@@ -244,29 +262,27 @@ function dbarShow(frame)
 end
 
 function dbarLength()
-	if not DruidBarKey.xvar then DruidBarKey.xvar = 170; end
+	if not DruidBarKey.width then DruidBarKey.width = 170; end
 
-	if DruidBarFrame:GetWidth() ~= DruidBarKey.xvar then
-		DruidBarFrame:SetWidth(DruidBarKey.xvar);
-		DruidBarKey.xvar = DruidBarFrame:GetWidth();
+	if DruidBarFrame:GetWidth() ~= DruidBarKey.width then
+		DruidBarFrame:SetWidth(DruidBarKey.width);
+		DruidBarKey.width = DruidBarFrame:GetWidth();
 	end
 
-	DruidBarMana:SetWidth(DruidBarKey.xvar*0.95);
-	DruidBarManaBackground:SetWidth(DruidBarKey.xvar*0.95);
-	DruidBarDontMove:SetWidth(DruidBarKey.xvar*0.95);
+	DruidBarMana:SetWidth(DruidBarKey.width*0.95);
+	DruidBarManaBackground:SetWidth(DruidBarKey.width*0.95);
 end
 
 function dbarHeight()
-	if not DruidBarKey.yvar then DruidBarKey.yvar = 18; end
+	if not DruidBarKey.height then DruidBarKey.height = 18; end
 
-	if DruidBarFrame:GetHeight() ~= DruidBarKey.yvar then
-		DruidBarFrame:SetHeight(DruidBarKey.yvar);
-		DruidBarKey.yvar = DruidBarFrame:GetHeight();
+	if DruidBarFrame:GetHeight() ~= DruidBarKey.height then
+		DruidBarFrame:SetHeight(DruidBarKey.height);
+		DruidBarKey.height = DruidBarFrame:GetHeight();
 	end
 
-	DruidBarMana:SetHeight(DruidBarKey.yvar*(2/3));
-	DruidBarManaBackground:SetHeight(DruidBarKey.yvar*(2/3));
-	DruidBarDontMove:SetHeight(DruidBarKey.yvar*(2/3));
+	DruidBarMana:SetHeight(DruidBarKey.height*(2/3));
+	DruidBarManaBackground:SetHeight(DruidBarKey.height*(2/3));
 end
 
 function Minimap_Button_Renderer()
@@ -309,21 +325,16 @@ function DruidBar_MainGraphics()
 
 		-- Set the position lock and dragability
 		if DruidBarKey.Lock then
-			dbarShow(DruidBarDontMove);
 			DruidBarFrame:EnableMouse(0);
-			DruidBarFrame:SetMovable(false)
-			DruidBarFrame:RegisterForDrag()
+			DruidBarFrame:RegisterForDrag();
 		else
-			dbarHide(DruidBarDontMove);
 			DruidBarFrame:EnableMouse(1);
-			DruidBarFrame:SetMovable(true)
-			DruidBarFrame:RegisterForDrag("LeftButton")
-			DruidBarFrame:SetScript("OnDragStart", DruidBarFrame.StartMoving)
-			DruidBarFrame:SetScript("OnDragStop", DruidBarFrame.StopMovingOrSizing)
+			DruidBarFrame:RegisterForDrag("LeftButton");
+			DruidBarFrame:SetScript("OnDragStart", DruidBarFrame.StartMoving);
+			DruidBarFrame:SetScript("OnDragStop", DruidBarFrame.StopMovingOrSizing);
 		end
 	else
 		dbarHide(DruidBarFrame);
-		dbarHide(DruidBarDontMove);
 	end
 end
 
@@ -333,7 +344,7 @@ function DruidBar_TextRenderer()
 	dbarHide(DruidBarTextRight);
 
 	-- Text options --
-	if DruidBarKey.Text or (not DruidBarKey.Text and MouseIsOver(DruidBarDontMove)) then
+	if DruidBarKey.Text or (not DruidBarKey.Text) then
 		if DruidBarKey.Percent then
 			if DruidBarKey.Percent == 0 then -- Numbers
 				dbarShow(DruidBarTextCenter);
@@ -347,7 +358,7 @@ function DruidBar_TextRenderer()
 			dbarShow(DruidBarTextLeft);
 			dbarShow(DruidBarTextRight);
 			DruidBarTextLeft:SetText(ManaPercentage());
-			DruidBarTextRight:SetText(ManaValues());
+			DruidBarTextRight:SetText(CurrentMana());
 			DruidBarTextLeft:SetTextColor(1,1,1,1);
 			DruidBarTextRight:SetTextColor(1,1,1,1);
 			end
@@ -377,6 +388,10 @@ function ManaValues()
 	return floor(DruidBarKey.currentmana).."/"..floor(DruidBarKey.maxmana);
 end
 
+function CurrentMana()
+	return floor(DruidBarKey.currentmana);
+end
+
 function ManaPercentage()
 	return floor(DruidBarKey.currentmana / DruidBarKey.maxmana * 100).."%";
 end
@@ -385,7 +400,6 @@ function DruidBar_ReplaceGraphics()
 	if UnitPowerType("player") ~= 0 then
 		dbarShow(DruidBarFrame);
 		dbarHide(DruidBarManaBackground);
-		dbarHide(DruidBarDontMove);
 		dbarHide(DruidBarBorder);
 		dbarHide(DruidBarTextLeft);
 		dbarHide(DruidBarTextCenter);
@@ -578,11 +592,11 @@ function DruidBar_Enable_ChatCommandHandler(text)
 		DruidBarKey.Graphics = DruidBar_Toggle(DruidBarKey.Graphics, "DruidBar's visual data is");
 		DRUIDBAR_FrameSet();
 	elseif msg[1] == "width" and msg[2] and tonumber(msg[2]) then
-		DruidBarKey.xvar = tonumber(msg[2]);
+		DruidBarKey.width = tonumber(msg[2]);
 		DruidBar_Print("Width is now set to "..msg[2]);
 		DRUIDBAR_FrameSet();
 	elseif msg[1] == "height" and msg[2] and tonumber(msg[2]) then
-		DruidBarKey.yvar = tonumber(msg[2]);
+		DruidBarKey.height = tonumber(msg[2]);
 		DruidBar_Print("Height is now set to "..msg[2]);
 		DRUIDBAR_FrameSet();
 	elseif msg[1] == "hide" then
@@ -602,7 +616,7 @@ function DruidBar_Enable_ChatCommandHandler(text)
 		DRUIDBAR_FrameSet();
 	elseif msg[1] == "player" then
 		DruidBarKey.Player = DruidBar_Toggle(DruidBarKey.Player, "Showing the bar below the Player Frame is");
-		if DruidBarKey.Player then DruidBarKey.xvar = 150; DruidBarKey.yvar = 18; else DruidBarKey.xvar = 170; DruidBarKey.yvar = 18; end
+		if DruidBarKey.Player then DruidBarKey.width = 150; DruidBarKey.height = 18; else DruidBarKey.width = 170; DruidBarKey.height = 18; end
 		DRUIDBAR_FrameSet();
 	elseif msg[1] == "text" then
 		if not DruidBarKey.Text then DruidBarKey.Text = 0; DruidBar_Print("Original-Style text on!"); elseif DruidBarKey.Text == 0 then DruidBarKey.Text = 1; DruidBar_Print("New-Style text on!"); elseif DruidBarKey.Text == 1 then DruidBarKey.Text = nil; DruidBar_Print("Text removed."); end
