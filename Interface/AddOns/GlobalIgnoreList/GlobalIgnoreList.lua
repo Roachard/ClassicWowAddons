@@ -654,11 +654,11 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "带刷"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=接] or [contains=法] or [contains=次] or [contains=波] or [contains=小时] or [contains=拾取] or [contains=托管] or [contains=脱机] or [contains=消费] or [contains=老板] or [contains=有偿]) and ([contains=监狱] or [contains=JY] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=玛拉顿] or [contains=MLD] or [contains=祖尔] or [contains=ZUL] or [contains=深渊] or [contains=斯坦] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=经验] or [contains=升级] or [contains=效率])"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=带] or [contains=接] or [contains=法] or [contains=次] or [contains=波] or [contains=小时] or [contains=双F] or [contains=托管] or [contains=脱机] or [contains=消费] or [contains=老板] or [contains=有偿]) and ([contains=监狱] or [contains=JY] or [contains=血色] or [contains=墓地] or [contains=教堂] or [contains=玛拉顿] or [contains=MLD] or [contains=祖尔] or [contains=ZUL] or [contains=深渊] or [contains=斯坦] or [contains=STSM] or [contains=后门] or [contains=厄运] or [contains=经验] or [contains=升级] or [contains=效率])"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机"
-	filterDefFilter[#filterDefFilter + 1] = "((([contains=飞] or [contains=飛] or [contains=专] or [contains=票] or [contains=达] or [contains=達] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金] or [contains=鑫] or [contains=晶] or [contains=传送]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基] or [contains=冬泉] or [contains=厄] or [contains=血色] or [contains=斯坦] or [contains=STSM]))) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "((([contains=飞] or [contains=飛] or [contains=专] or [contains=票] or [contains=达] or [contains=達] or [contains=通]) and ([contains=机] or [contains=直])) or ([contains=航] and ([contains=空] or [contains=班])) or (([contains=G] or [contains=金] or [contains=釒] or [contains=鑫] or [contains=晶] or [contains=米] or [contains=传送]) and ([contains=拉] or [contains=啦] or [contains=秒到] or [contains=加基] or [contains=冬泉] or [contains=厄] or [contains=血色] or [contains=斯坦] or [contains=STSM]))) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "飞机2"
