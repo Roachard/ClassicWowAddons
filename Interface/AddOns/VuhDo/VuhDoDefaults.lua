@@ -1190,15 +1190,15 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["borderGapX"] = 0,
 		["borderGapY"] = 0,
 
-		["barWidth"] = 60,
-		["barHeight"] = 30,
+		["barWidth"] = 64,
+		["barHeight"] = 32,
 
 		["showHeaders"] = true,
 		["headerHeight"] = 12,
 		["headerWidth"] = 100,
 		["headerSpacing"] = 5,
 
-		["manaBarHeight"] = 4,
+		["manaBarHeight"] = 3,
 		["sideLeftWidth"] = 6,
 		["sideRightWidth"] = 6,
 
@@ -1243,12 +1243,12 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["showTags"] = true,
 		["showPetOwners"] = true,
 		["position"] = "CENTER+CENTER",
-		["xAdjust"] = 0.000001,
-		["yAdjust"] = 0.000001,
+		["xAdjust"] = 0,
+		["yAdjust"] = -3,
 	},
 
 	["PANEL_COLOR"] = {
-		["barTexture"] = "VuhDo - Polished Wood",
+		["barTexture"] = "VuhDo - Convex",
 
 		["BACK"] = {
 			["R"] = 0, ["G"] = 0, ["B"] = 0, ["O"] = 0.35,
