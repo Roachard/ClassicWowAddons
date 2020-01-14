@@ -68,9 +68,9 @@ local function showRealDate(curseDate)
 end
 
 DBM = {
-	Revision = parseCurseDate("20200103232253"),
-	DisplayVersion = "1.13.28", -- the string that is shown as version
-	ReleaseRevision = releaseDate(2020, 1, 3) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
+	Revision = parseCurseDate("20200113231617"),
+	DisplayVersion = "1.13.30", -- the string that is shown as version
+	ReleaseRevision = releaseDate(2020, 1, 11) -- the date of the latest stable version that is available, optionally pass hours, minutes, and seconds for multiple releases in one day
 }
 DBM.HighestRelease = DBM.ReleaseRevision --Updated if newer version is detected, used by update nags to reflect critical fixes user is missing on boss pulls
 
@@ -126,10 +126,10 @@ DBM.DefaultOptions = {
 	SpecialWarningSound4 = "Interface\\AddOns\\DBM-Core\\sounds\\ClassicSupport\\HoodWolfTransformPlayer01.ogg",
 	SpecialWarningSound5 = "Interface\\AddOns\\DBM-Core\\sounds\\ClassicSupport\\LOA_NAXX_AGGRO02.ogg",
 	ModelSoundValue = "Short",
-	CountdownVoice = "VP:Yike",					--bf@178.com
-	CountdownVoice2 = "VP:Yike",				--bf@178.com
-	CountdownVoice3 = "VP:Yike",				--bf@178.com
-	ChosenVoicePack = "Yike",					--bf@178.com
+	CountdownVoice = "VP:Yike",
+	CountdownVoice2 = "VP:Yike",
+	CountdownVoice3 = "VP:Yike",
+	ChosenVoicePack = "Yike",
 	VoiceOverSpecW2 = "DefaultOnly",
 	AlwaysPlayVoice = false,
 	EventSoundVictory2 = "None",
@@ -149,7 +149,7 @@ DBM.DefaultOptions = {
 	WarningIconChat = true,
 	WarningAlphabetical = true,
 	StripServerName = true,
-	ShowAllVersions = false,					--bf@178.com
+	ShowAllVersions = true,
 	ShowPizzaMessage = true,
 	ShowEngageMessage = true,
 	ShowDefeatMessage = true,
@@ -262,7 +262,7 @@ DBM.DefaultOptions = {
 	DontPlayCountdowns = false,
 	DontSendYells = false,
 	BlockNoteShare = false,
-	DontShowReminders = true,		-- bf@178.com
+	DontShowReminders = false,
 	DontShowPT2 = false,
 	DontPlayPTCountdown = false,
 	DontShowPTText = false,
@@ -1984,7 +1984,7 @@ end
 do
 	local trackedHudMarkers = {}
 	local function Pull(timer)
-		if (DBM:GetRaidRank(playerName) == 0 and IsInGroup()) or select(2, IsInInstance()) == "pvp" or IsEncounterInProgress() or timer < 3 then
+		if (DBM:GetRaidRank(playerName) == 0 and IsInGroup()) or select(2, IsInInstance()) == "pvp" or IsEncounterInProgress() or (timer > 0 and timer < 3) then
 			return DBM:AddMsg(DBM_ERROR_NO_PERMISSION)
 		end
 		local targetName = (UnitExists("target") and UnitIsEnemy("player", "target")) and UnitName("target") or nil--Filter non enemies in case player isn't targetting bos but another player/pet
@@ -3742,6 +3742,18 @@ end
 --  Load Boss Mods on Demand  --
 --------------------------------
 do
+	local modAdvertisementShown = false
+	local pvpZones = {[30]=true,[489]=true,[529]=true,[559]=true,[562]=true,[566]=true,[572]=true,[617]=true,[618]=true,[628]=true,[726]=true,[727]=true,[761]=true,[968]=true,[980]=true,[998]=true,[1105]=true,[1134]=true,[1681]=true,[1803]=true,[2107]=true,[2118]=true,[2177]=true,[2197]=true}
+	--This never wants to spam you to use mods for trivial content you don't need mods for.
+	--It's intended to suggest mods for content that's relevant to your level (TW, leveling up in dungeons, or even older raids you can't just shit on)
+	function DBM:CheckAvailableMods()
+		if BigWigs or modAdvertisementShown then return end--If they are running two boss mods at once, lets assume they are only using DBM for a specific feature (such as brawlers) and not nag
+		if pvpZones[LastInstanceMapID] and not GetAddOnInfo("DBM-PvP") then
+			AddMsg(self, DBM_CORE_MOD_AVAILABLE:format("DBM-PvP"))
+			modAdvertisementShown = true
+		end
+	end
+
 	function DBM:TransitionToDungeonBGM(force, cleanup)
 		if cleanup then--Runs on zone change (first load delay) and combat end
 			self:Unschedule(self.TransitionToDungeonBGM)
@@ -3817,6 +3829,9 @@ do
 		end
 		-- LoadMod
 		self:LoadModsOnDemand("mapId", mapID)
+		if not self.Options.DontShowReminders then
+			self:CheckAvailableMods()
+		end
 		if DBM:HasMapRestrictions() then
 			DBM.Arrow:Hide()
 			DBMHudMap:Disable()
@@ -4154,7 +4169,7 @@ do
 		end
 		if (lastMapID and tonumber(lastMapID) ~= LastInstanceMapID) or (not lastMapID and DBM.Options.DontShowPTNoID) then return end
 		timer = tonumber(timer or 0)
-		if timer > 60 or timer < 3 then
+		if timer > 60 or (timer > 0 and timer < 3) then
 			return
 		end
 		if not dummyMod then

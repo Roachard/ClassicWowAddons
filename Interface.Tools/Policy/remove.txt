@@ -19,6 +19,21 @@ BuffMaster
 CharacterStatsClassic
 ClassicThreatMeter
 Combuctor
+DBM-AQ20
+DBM-AQ40
+DBM-Azeroth
+DBM-BWL
+DBM-Core
+DBM-DefaultSkin
+DBM-GUI
+DBM-MC
+DBM-Naxx
+DBM-Onyxia
+DBM-Party-Classic
+DBM-PvP
+DBM-StatusBarTimers
+DBM-VPYike
+DBM-ZG
 DruidBarClassic
 HandyNotes_DungeonLocations (Classic)
 HandyNotes_TravelGuide (Classic)
