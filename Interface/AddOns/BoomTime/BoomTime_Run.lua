@@ -9,7 +9,7 @@ local function PLAYER_ENTERING_WORLD()
             target_warn_sv = {  },
         };
     else
-        boomTimeSv.instance_timer_sv.on=true;
+        -- boomTimeSv.instance_timer_sv.on=true;
     end
     
     boomTimeSv.target_warn_sv[UnitGUID('player')] = boomTimeSv.target_warn_sv[UnitGUID('player')] or { on = true, locked = false, };
