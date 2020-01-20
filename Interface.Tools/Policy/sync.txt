@@ -37,6 +37,7 @@ Decursive
 EventAlertMod
 Ex_AutoEquip
 GDKP
+GoodLeader
 HandyNotes
 HandyNotes_NPCs (Classic)
 HunterAssist
