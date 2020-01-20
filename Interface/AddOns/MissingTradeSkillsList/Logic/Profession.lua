@@ -70,8 +70,7 @@ MTSL_LOGIC_PROFESSION = {
     -- returns              Array       The array with levels
     -----------------------------------------------------------------------------------------------
     GetLevelsForProfession = function(self, profession_name)
-        table.sort(MTSL_DATA[profession_name]["levels"], function (a, b) return a.rank < b.rank end)
-        return MTSL_DATA[profession_name]["levels"]
+        return MTSL_TOOLS:SortArrayByProperty(MTSL_DATA[profession_name]["levels"], "rank")
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -81,13 +80,14 @@ MTSL_LOGIC_PROFESSION = {
     -- @profession_name     String      The name of the profession
     -- @skill_name          String      The (partial) name of the skill
     -- @source_type         String      The sourcetype for the skill
-    -- @specialization      String      The name of the specialization
+    -- @specialisation      String      The name of the specialisation
     -- @max_phase			Number		The maximum content phase for skill to be included (default = current)
     -- @zone_id				Number		The id of the zone in which we must be able to learn skill (0 = all)
+    -- @faction_id			Number		The id of the faction from which we must be able to learn skill (0 = all)
     --
     -- returns              Array       The skills passed the filter
     -----------------------------------------------------------------------------------------------
-    FilterListOfSkills = function(self, list_skills, profession_name, skill_name, source_type, specialization, max_phase, zone_id)
+    FilterListOfSkills = function(self, list_skills, profession_name, skill_name, source_type, specialisation, max_phase, zone_id, faction_id)
         local filtered_list = {}
         -- add all the skills
         if list_skills ~= nil then
@@ -97,13 +97,14 @@ MTSL_LOGIC_PROFESSION = {
                 if skill_name ~= nil and skill_name ~= "" then
                     local name = string.lower(v["name"][MTSLUI_CURRENT_LANGUAGE])
                     local contains = string.lower(skill_name)
-                    -- if we cant match the full text it didnt pass the filter
-                    if string.match(name, contains) ~= contains then
+                    local start_index, _ = string.find(name, contains)
+                    -- if we dont have a start index, the name does not contain the pattern
+                    if start_index == nil then
                         skill_passed_filter = false
                     end
                 end
-                --  check specialization
-                if skill_passed_filter == true and specialization ~= nil and specialization > 0 and v.specialization ~= specialization then
+                --  check specialisation (added check for no specialisation = -1)
+                if skill_passed_filter == true and specialisation ~= nil and (specialisation > 0 and v.specialisation ~= specialisation) or (specialisation < 0 and v.specialisation ~= nil) then
                     skill_passed_filter = false
                 end
                 -- Check availability in zone & phase
@@ -112,6 +113,10 @@ MTSL_LOGIC_PROFESSION = {
                 end
                 -- check if source type is ok
                 if skill_passed_filter == true and source_type ~= "any" and source_type ~= nil and source_type ~= "" and MTSL_LOGIC_SKILL:IsAvailableForSourceType(v.id, profession_name, source_type) == false then
+                    skill_passed_filter = false
+                end
+                -- check if faction is ok
+                if skill_passed_filter == true and faction_id ~= 0 and faction_id ~= nil and faction_id ~= "" and MTSL_LOGIC_SKILL:IsAvailableForFaction(v.id, profession_name, faction_id) == false then
                     skill_passed_filter = false
                 end
                 -- passed all filters so add it to list
@@ -150,7 +155,7 @@ MTSL_LOGIC_PROFESSION = {
                 end
             end
             -- sort the array by minimum skill
-            table.sort(profession_skills, function(a, b) return a.min_skill < b.min_skill end)
+            MTSL_TOOLS:SortArrayByProperty(profession_skills, "min_skill")
         end
         return profession_skills
     end,
@@ -179,7 +184,7 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     GetAllSkillsAndLevelsForProfessionForCurrentPhase = function(self, profession_name)
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), 0)
+        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name,MTSL_DATA.CURRENT_PATCH_LEVEL, 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -191,7 +196,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Array		All the skills for one profession sorted by name or minimim skill
     ------------------------------------------------------------------------------------------------
     GetAllSkillsAndLevelsForProfessionForCurrentPhaseInZone = function(self, profession_name, zone_id)
-        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), zone_id)
+        return self:GetAllAvailableSkillsAndLevelsForProfessionInZone(profession_name,MTSL_DATA.CURRENT_PATCH_LEVEL, zone_id)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -214,7 +219,7 @@ MTSL_LOGIC_PROFESSION = {
                 end
             end
             -- sort the array by minimum skill
-            table.sort(profession_skills, function(a, b) return a.min_skill < b.min_skill end)
+            MTSL_TOOLS:SortArrayByProperty(profession_skills, "min_skill")
         end
         return profession_skills
     end,
@@ -243,7 +248,7 @@ MTSL_LOGIC_PROFESSION = {
     ------------------------------------------------------------------------------------------------
     GetAllSkillsForProfessionForCurrentPhase = function(self, profession_name)
         -- pass 0 as zone_id for all zones
-        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), 0)
+        return self:GetAllAvailableSkillsForProfessionInZone(profession_name,MTSL_DATA.CURRENT_PATCH_LEVEL, 0)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -255,7 +260,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Array		All the skills for one profession sorted by name or minimim skill
     ------------------------------------------------------------------------------------------------
     GetAllSkillsForProfessionForCurrentPhaseInZone = function(self, profession_name, zone_id)
-        return self:GetAllAvailableSkillsForProfessionInZone(profession_name, MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL(), zone_id)
+        return self:GetAllAvailableSkillsForProfessionInZone(profession_name,MTSL_DATA.CURRENT_PATCH_LEVEL, zone_id)
     end,
 
     -----------------------------------------------------------------------------------------------
@@ -313,7 +318,7 @@ MTSL_LOGIC_PROFESSION = {
             known_status = 0
         else
             local skill_known = MTSL_TOOLS:ListContainsNumber(trade_skill.MISSING_SKILLS, skill_id)
-            if skill_known  then
+            if skill_known == true then
                 known_status = 3
             else
                 -- try to find the skill
@@ -341,7 +346,7 @@ MTSL_LOGIC_PROFESSION = {
     -- return				Number		the number
     ------------------------------------------------------------------------------------------------
     GetTotalNumberOfAvailableSkillsForProfession = function(self, profession_name, max_phase)
-        if max_phase == MTSLUI_SAVED_VARIABLES:GetPatchLevelMTSL() then
+        if max_phase ==MTSL_DATA.CURRENT_PATCH_LEVEL then
             return MTSL_DATA["AMOUNT_SKILLS_CURRENT_PHASE"][profession_name]
         else
             return MTSL_DATA["AMOUNT_SKILLS"][profession_name]
@@ -370,26 +375,26 @@ MTSL_LOGIC_PROFESSION = {
     end,
 
     -----------------------------------------------------------------------------------------------
-    -- Get list of specializations for a profession
+    -- Get list of specialisations for a profession
     --
     -- @profession_name		String		The name of the profession
     --
     -- return				Array		List or {}
     ------------------------------------------------------------------------------------------------
-    GetSpecializationsForProfession = function(self, profession_name)
-        return MTSL_DATA["specializations"][profession_name] or {}
+    GetSpecialisationsForProfession = function(self, profession_name)
+        return MTSL_DATA["specialisations"][profession_name] or {}
     end,
 
     -----------------------------------------------------------------------------------------------
-    -- Get list of specializations for a profession
+    -- Get list of specialisations for a profession
     --
     -- @profession_name		    String		The name of the profession
-    -- @specialization_id	    Number		The id of the specialization
+    -- @specialisation_id	    Number		The id of the specialisation
     --
     -- return				    String		Name or nil
     ------------------------------------------------------------------------------------------------
-    GetNameSpecialization = function(self, profession_name, specialization_id)
-        local spec = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["specializations"][profession_name], "id", specialization_id)
+    GetNameSpecialisation = function(self, profession_name, specialisation_id)
+        local spec = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["specialisations"][profession_name], "id", specialisation_id)
         if spec ~= nil then
             return spec["name"][MTSLUI_CURRENT_LANGUAGE]
         end

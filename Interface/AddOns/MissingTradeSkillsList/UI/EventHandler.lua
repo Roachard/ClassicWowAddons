@@ -24,7 +24,7 @@ MTSLUI_EVENT_HANDLER = {
 
 				-- Initialise the minimap button
 				MTSLUI_MINIMAP:Initialise()
-
+				
 				-- Try to load the saved variables
 				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- make the data for dropdowns in sort frames

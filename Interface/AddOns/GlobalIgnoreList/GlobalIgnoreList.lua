@@ -670,7 +670,7 @@ local function ApplicationStartup(self)
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "金商"
-	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖] or [contains=屯] or [contains=囤] or [contains=手工]) and ([contains=G] or [contains=金] or [contains=米] or [contains=菜] or [contains=粮] or [contains=稻]) and not [channel=s]"
+	filterDefFilter[#filterDefFilter + 1] = "([contains=收] or [contains=出] or [contains=卖] or [contains=屯] or [contains=囤] or [contains=手工]) and ([contains=金] or [contains=米] or [contains=菜] or [contains=粮] or [contains=稻]) and not [channel=s]"
 	filterDefActive[#filterDefActive + 1] = true
 
 	filterDefDesc[#filterDefDesc + 1]     = "奸商"

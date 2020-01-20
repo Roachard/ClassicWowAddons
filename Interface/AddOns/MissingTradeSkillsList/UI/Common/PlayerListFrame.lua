@@ -319,17 +319,9 @@ MTSLUI_PLAYER_LIST_FRAME = {
     -- Sort players
     ----------------------------------------------------------------------------------------------------------
     SortPlayers = function(self)
-        -- Only sort if list is not empty
-        if self.amount_shown_players > 0 then
-            -- 1 = level, 2 = name, 3 = realm
-            if self.current_sort == 1 then
-                table.sort(self.shown_players, function(a, b) return a.XP_LEVEL < b.XP_LEVEL end)
-            elseif self.current_sort == 2 then
-                table.sort(self.shown_players, function(a, b) return a.NAME < b.NAME end)
-            else
-                table.sort(self.shown_players, function(a, b) return a.REALM < b.REALM end)
-            end
-        end
+        -- 1 = level, 2 = name, 3 = realm
+        local sort_property = { "XP_LEVEL", "NAME", "REALM" }
+        MTSL_TOOLS:SortArrayByProperty(self.shown_players, sort_property[self.current_sort])
     end,
 
     ----------------------------------------------------------------------------------------------------------

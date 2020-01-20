@@ -61,9 +61,9 @@ local function GetEstimatedTime(slot)  -- estimates flight times based on hops
 		return
 	end
 
-	local taxiNodes = {[1] = taxiSrc, [numRoutes + 1] = ShortenName(TaxiNodeName(slot))}
+	local taxiNodes = {[1] = taxiSrc, [numRoutes + 1] = L[ShortenName(TaxiNodeName(slot))]}
 	for hop = 2, numRoutes, 1 do
-		taxiNodes[hop] = ShortenName(TaxiNodeName(TaxiGetNodeSlot(slot, hop, true)))
+		taxiNodes[hop] = L[ShortenName(TaxiNodeName(TaxiGetNodeSlot(slot, hop, true)))]
 	end
 
 	local etimes = { 0 }
@@ -214,17 +214,19 @@ function InFlight:LoadBulk()  -- called from InFlight_Load
 		local defaults = self.defaults.global
 		for faction, t in pairs(InFlightDB.global) do
 			for src, dt in pairs(t) do
-				if L[src] ~= src and FL[L[src]] ~= L[src] then
-					InFlightDB.global[faction][L[src]] = dt
+				local lsrc = L[ShortenName(src)]
+				if lsrc ~= src and FL[lsrc] ~= L[src] then
+					InFlightDB.global[faction][lsrc] = dt
 					InFlightDB.global[faction][src] = nil
-					src = L[src]
+					src = lsrc
 				end
 
 				for dst, dtime in pairs(dt) do
-					if L[dst] ~= dst and FL[L[dst]] ~= L[dst] then
-						InFlightDB.global[faction][src][L[dst]] = dtime
+					local ldst = L[ShortenName(dst)]
+					if ldst ~= dst and FL[ldst] ~= L[dst] then
+						InFlightDB.global[faction][src][ldst] = dtime
 						InFlightDB.global[faction][src][dst] = nil
-						dst = L[dst]
+						dst = ldst
 					end
 
 					if defaults[faction][src] and defaults[faction][src][dst]
@@ -358,6 +360,7 @@ function InFlight:InitSource(isTaxiMap)  -- cache source location and hook toolt
 			tb.inflighted = true
 		end
 
+--		PrintD(L[ShortenName(TaxiNodeName(i))], ShortenName(TaxiNodeName(i)))
 		if TaxiNodeGetType(i) == "CURRENT" then
 			taxiSrcName = ShortenName(TaxiNodeName(i))
 			taxiSrc = L[taxiSrcName]

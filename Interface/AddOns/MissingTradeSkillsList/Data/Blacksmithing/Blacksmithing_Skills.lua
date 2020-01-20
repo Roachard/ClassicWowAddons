@@ -2603,7 +2603,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["min_skill"] = 240,
 		["phase"] = 1,
 		["id"] = 9954,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [100]
 	{
 		["name"] = {
@@ -2785,7 +2785,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["min_skill"] = 245,
 		["phase"] = 1,
 		["id"] = 9974,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [109]
 	{
 		["name"] = {
@@ -3066,7 +3066,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["min_skill"] = 235,
 		["phase"] = 1,
 		["id"] = 10003,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [120]
 	{
 		["item"] = 7993,
@@ -3109,7 +3109,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["min_skill"] = 245,
 		["phase"] = 1,
 		["id"] = 10007,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [122]
 	{
 		["item"] = 8028,
@@ -3194,7 +3194,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["min_skill"] = 260,
 		["phase"] = 1,
 		["id"] = 10015,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [126]
 	{
 		["item"] = 10713,
@@ -3359,7 +3359,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Pulverizer",
 		},
 		["id"] = 15292,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [133]
 	{
 		["item"] = 11614,
@@ -3394,7 +3394,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Sunderer",
 		},
 		["id"] = 15294,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [135]
 	{
 		["item"] = 11615,
@@ -3429,7 +3429,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Plate",
 		},
 		["id"] = 15296,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [137]
 	{
 		["trainers"] = {
@@ -3690,7 +3690,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Wildthorn Mail",
 		},
 		["id"] = 16650,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [151]
 	{
 		["item"] = 12692,
@@ -3776,7 +3776,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Fiery Plate Gauntlets",
 		},
 		["id"] = 16655,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [156]
 	{
 		["item"] = 12697,
@@ -3862,7 +3862,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dawnbringer Shoulders",
 		},
 		["id"] = 16660,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [161]
 	{
 		["item"] = 12703,
@@ -3880,7 +3880,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Storm Gauntlets",
 		},
 		["id"] = 16661,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [162]
 	{
 		["item"] = 12704,
@@ -3966,7 +3966,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Demon Forged Breastplate",
 		},
 		["id"] = 16667,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [167]
 	{
 		["item"] = 12711,
@@ -3984,7 +3984,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Whitesoul Helm",
 		},
 		["id"] = 16724,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [168]
 	{
 		["item"] = 12713,
@@ -4036,7 +4036,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Helm of the Great Chief",
 		},
 		["id"] = 16728,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [171]
 	{
 		["item"] = 12717,
@@ -4054,7 +4054,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Lionheart Helm",
 		},
 		["id"] = 16729,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [172]
 	{
 		["item"] = 12715,
@@ -4123,7 +4123,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Stronghold Gauntlets",
 		},
 		["id"] = 16741,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [176]
 	{
 		["item"] = 12725,
@@ -4141,7 +4141,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Enchanted Thorium Helm",
 		},
 		["id"] = 16742,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [177]
 	{
 		["item"] = 12726,
@@ -4159,7 +4159,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Enchanted Thorium Leggings",
 		},
 		["id"] = 16744,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [178]
 	{
 		["item"] = 12727,
@@ -4177,7 +4177,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Enchanted Thorium Breastplate",
 		},
 		["id"] = 16745,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [179]
 	{
 		["item"] = 12728,
@@ -4195,7 +4195,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Invulnerable Mail",
 		},
 		["id"] = 16746,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [180]
 	{
 		["trainers"] = {
@@ -4344,7 +4344,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dawn's Edge",
 		},
 		["id"] = 16970,
-		["specialization"] = 17041,
+		["specialisation"] = 17041,
 	}, -- [185]
 	{
 		["item"] = 12823,
@@ -4379,7 +4379,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Enchanted Battlehammer",
 		},
 		["id"] = 16973,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [187]
 	{
 		["item"] = 12825,
@@ -4397,7 +4397,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Blazing Rapier",
 		},
 		["id"] = 16978,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [188]
 	{
 		["trainers"] = {
@@ -4453,7 +4453,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Serenity",
 		},
 		["id"] = 16983,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [190]
 	{
 		["item"] = 12828,
@@ -4488,7 +4488,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Corruption",
 		},
 		["id"] = 16985,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [192]
 	{
 		["trainers"] = {
@@ -4582,7 +4582,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Hammer of the Titans",
 		},
 		["id"] = 16988,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [195]
 	{
 		["item"] = 12834,
@@ -4600,7 +4600,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Arcanite Champion",
 		},
 		["id"] = 16990,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [196]
 	{
 		["item"] = 12835,
@@ -4618,7 +4618,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Annihilator",
 		},
 		["id"] = 16991,
-		["specialization"] = 17041,
+		["specialisation"] = 17041,
 	}, -- [197]
 	{
 		["item"] = 12836,
@@ -4636,7 +4636,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Frostguard",
 		},
 		["id"] = 16992,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [198]
 	{
 		["item"] = 12837,
@@ -4654,7 +4654,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Masterwork Stormhammer",
 		},
 		["id"] = 16993,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [199]
 	{
 		["item"] = 12838,
@@ -4672,7 +4672,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Arcanite Reaper",
 		},
 		["id"] = 16994,
-		["specialization"] = 17041,
+		["specialisation"] = 17041,
 	}, -- [200]
 	{
 		["item"] = 12839,
@@ -4690,7 +4690,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Heartseeker",
 		},
 		["id"] = 16995,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [201]
 	{
 		["name"] = {
@@ -4709,7 +4709,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["quests"] = {
 			5307, -- [1]
 		},
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [202]
 	{
 		["name"] = {
@@ -4728,7 +4728,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["quests"] = {
 			5305, -- [1]
 		},
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [203]
 	{
 		["name"] = {
@@ -4747,7 +4747,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 		["quests"] = {
 			5306, -- [1]
 		},
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [204]
 	{
 		["trainers"] = {
@@ -4895,7 +4895,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Fiery Chain Girdle",
 		},
 		["id"] = 20872,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [210]
 	{
 		["item"] = 17053,
@@ -4913,7 +4913,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Fiery Chain Shoulders",
 		},
 		["id"] = 20873,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [211]
 	{
 		["item"] = 17051,
@@ -4931,7 +4931,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Bracers",
 		},
 		["id"] = 20874,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [212]
 	{
 		["item"] = 17052,
@@ -4949,7 +4949,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Leggings",
 		},
 		["id"] = 20876,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [213]
 	{
 		["item"] = 17059,
@@ -4967,7 +4967,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Reaver",
 		},
 		["id"] = 20890,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [214]
 	{
 		["item"] = 17060,
@@ -4985,7 +4985,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Destroyer",
 		},
 		["id"] = 20897,
-		["specialization"] = 17041,
+		["specialisation"] = 17041,
 	}, -- [215]
 	{
 		["item"] = 18592,
@@ -5122,7 +5122,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Helm",
 		},
 		["id"] = 23636,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [223]
 	{
 		["item"] = 19207,
@@ -5140,7 +5140,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Gauntlets",
 		},
 		["id"] = 23637,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [224]
 	{
 		["item"] = 19208,
@@ -5158,7 +5158,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Black Amnesty",
 		},
 		["id"] = 23638,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [225]
 	{
 		["item"] = 19209,
@@ -5176,7 +5176,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Blackfury",
 		},
 		["id"] = 23639,
-		["specialization"] = 9787,
+		["specialisation"] = 9787,
 	}, -- [226]
 	{
 		["item"] = 19210,
@@ -5194,7 +5194,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Ebon Hand",
 		},
 		["id"] = 23650,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [227]
 	{
 		["item"] = 19211,
@@ -5212,7 +5212,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Blackguard",
 		},
 		["id"] = 23652,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [228]
 	{
 		["item"] = 19212,
@@ -5230,7 +5230,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Nightfall",
 		},
 		["id"] = 23653,
-		["specialization"] = 17041,
+		["specialisation"] = 17041,
 	}, -- [229]
 	{
 		["item"] = 19776,
@@ -5350,7 +5350,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Dark Iron Boots",
 		},
 		["id"] = 24399,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [236]
 	{
 		["item"] = 20553,
@@ -5521,7 +5521,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Titanic Leggings",
 		},
 		["id"] = 27829,
-		["specialization"] = 9788,
+		["specialisation"] = 9788,
 	}, -- [246]
 	{
 		["item"] = 22390,
@@ -5539,7 +5539,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Persuader",
 		},
 		["id"] = 27830,
-		["specialization"] = 17040,
+		["specialisation"] = 17040,
 	}, -- [247]
 	{
 		["item"] = 22389,
@@ -5557,7 +5557,7 @@ MTSL_DATA["Blacksmithing"]["skills"] = {
 			["English"] = "Sageblade",
 		},
 		["id"] = 27832,
-		["specialization"] = 17039,
+		["specialisation"] = 17039,
 	}, -- [248]
 	{
 		["trainers"] = {

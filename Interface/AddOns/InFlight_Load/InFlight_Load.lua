@@ -52,7 +52,6 @@ if GetAddOnEnableState(UnitName("player"), "InFlight") == 2 then
 	t = {
 		[L["Nighthaven"]]					= {{ find = L["NighthavenGossipA"],			s = "Nighthaven", 					d = "Rut'theran Village" },
 											   { find = L["NighthavenGossipH"],			s = "Nighthaven", 					d = "Thunder Bluff" }},
-		[L["Stormwind City"]]				= {{ find = L["StormwindCityGossip"],		s = "Stormwind City",				d = "Return" }},
 	}
 	end
 
@@ -65,6 +64,8 @@ if GetAddOnEnableState(UnitName("player"), "InFlight") == 2 then
 		local subzone = GetMinimapZoneText()
 		local tsz = t[subzone]
 		if not tsz then
+--			print("|cff00ff40In|cff00aaffFlight|r: zone - ", L[GetMinimapZoneText()], GetMinimapZoneText())
+--			print("|cff00ff40In|cff00aaffFlight|r: gossip - ", this:GetText())
 			return
 		end
 
@@ -72,6 +73,7 @@ if GetAddOnEnableState(UnitName("player"), "InFlight") == 2 then
 		if not text or text == "" then
 			return
 		end
+--		print("|cff00ff40In|cff00aaffFlight|r: gossip - ", text)
 
 		local source, destination
 		for _, sz in ipairs(tsz) do

@@ -36,6 +36,7 @@ MTSL_DATA["Poisons"]["skills"] = {
 			["Spanish"] = "Veneno mortal",
 			["Mexican"] = "Veneno mortal",
 			["French"] = "Poison mortel",
+			["French"] = "Poison mortel",
 			["Portuguese"] = "Veneno Mortal",
 			["Russian"] = "Смертельный яд",
 			["Korean"] = "맹독",
