@@ -186,7 +186,7 @@ MTSL_LOGIC_PLAYER_NPC = {
         -- loop all players on the current realm
         for k, v in pairs (other_players) do
             -- skip if he doesnt know the profession
-            if v.TRADESKILLS ~= nil and v.TRADESKILLS[profession_name] ~= nil then
+            if v.TRADESKILLS ~= nil and v.TRADESKILLS[profession_name] ~= nil and v.TRADESKILLS[profession_name] ~= 0 then
                 table.insert(players, v)
             end
         end
@@ -443,7 +443,7 @@ MTSL_LOGIC_PLAYER_NPC = {
         -- Loop all skills of the profession
         for _, skill in pairs(available_skills) do
             -- We learned the skill
-            if MTSL_TOOLS:ListContainsKeyIngoreCasingAndSpaces(known_skill_names, skill["name"][MTSLUI_CURRENT_LANGUAGE]) then
+            if MTSL_TOOLS:ListContainsKeyIngoreCasingAndSpaces(known_skill_names, MTSLUI_TOOLS:GetLocalisedData(skill)) then
                 table.insert(MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].LEARNED_SKILLS, skill.id)
                 MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED = MTSL_CURRENT_PLAYER.TRADESKILLS[profession_name].AMOUNT_LEARNED + 1
             else

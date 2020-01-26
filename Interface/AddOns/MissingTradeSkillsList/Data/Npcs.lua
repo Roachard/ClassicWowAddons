@@ -16047,6 +16047,32 @@ MTSL_DATA["npcs"] = {
 		},
 	},
 	{
+		["zone_id"] = 1497,
+		["phase"] = 1,
+		["id"] = 13432,
+		["location"] = {
+			["y"] = "38.86",
+			["x"] = "68.24",
+		},
+		["name"] = {
+			["Portuguese"] = "Amerijanas Pechisbeque",
+			["Russian"] = "Лигерфа Меднокноп",
+			["Chinese"] = "希尔萨",
+			["Spanish"] = "Seersa Cobrellizco",
+			["Mexican"] = "Seersa Cobrellizco",
+			["French"] = "Seersa Copperpinch",
+			["English"] = "Seersa Copperpinch",
+			["Korean"] = "시르사 코퍼핀치",
+			["German"] = "Seersa Copperpinch",
+		},
+		["reacts"] = "Neutral",
+		["xp_level"] = {
+			["max"] = "30",
+			["min"] = "30",
+			["is_elite"] = 0,
+		},
+	},
+	{
 		["zone_id"] = 1537,
 		["phase"] = 1,
 		["id"] = 13433,

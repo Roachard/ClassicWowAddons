@@ -87,7 +87,7 @@ MTSLUI_FILTER_FRAME = {
         -- search by pressing "enter"
         self.ui_frame.search_box:SetScript("OnEnterPressed", function() _G[self.filter_frame_name]:SearchRecipes() end)
         self.ui_frame.search_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "", self.ui_frame, "UIPanelButtonTemplate", 118, 25)
-        self.ui_frame.search_btn:SetText(MTSLUI_LOCALES_LABELS["search"][MTSLUI_CURRENT_LANGUAGE])
+        self.ui_frame.search_btn:SetText(MTSLUI_TOOLS:GetLocalisedLabel("search"))
         self.ui_frame.search_btn:SetScript("OnClick", function() _G[self.filter_frame_name]:SearchRecipes() end)
         -- Position the elements
         self.ui_frame.search_box:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", 0, 0)
@@ -99,21 +99,21 @@ MTSLUI_FILTER_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     InitialiseSecondRow = function (self)
         -- create a filter for source type
-        -- self.ui_frame.source_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["learned from"][MTSLUI_CURRENT_LANGUAGE], 5, -34, "LABEL", "TOPLEFT")
+        -- self.ui_frame.source_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("learned from"), 5, -34, "LABEL", "TOPLEFT")
         self.ui_frame.source_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_SOURCES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.source_drop_down:SetPoint("TOPLEFT", self.ui_frame.search_box, "BOTTOMLEFT", -15, -2)
         self.ui_frame.source_drop_down.filter_frame_name = self.filter_frame_name
         self.ui_frame.source_drop_down.initialize = self.CreateDropDownSources
-        UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_LOCALES_LABELS["any source"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any source"))
         -- default select the "current" phase
         self.current_phase = MTSL_DATA.CURRENT_PATCH_LEVEL
         -- create a filter for content phase
-        -- self.ui_frame.phase_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["phase"][MTSLUI_CURRENT_LANGUAGE], 215, -34, "LABEL", "TOPLEFT")
+        -- self.ui_frame.phase_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("phase"), 215, -34, "LABEL", "TOPLEFT")
         self.ui_frame.phase_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_PHASES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.phase_drop_down:SetPoint("TOPLEFT", self.ui_frame.source_drop_down, "TOPRIGHT", -31, 0)
         self.ui_frame.phase_drop_down.filter_frame_name = self.filter_frame_name
         self.ui_frame.phase_drop_down.initialize = self.CreateDropDownPhases
-        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current phase"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")")
+        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("current phase") .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")")
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -121,19 +121,19 @@ MTSLUI_FILTER_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     InitialiseThirdRow = function (self)
         -- Factions drop down
-        -- self.ui_frame.factions_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["faction"][MTSLUI_CURRENT_LANGUAGE], 215, -34, "LABEL", "TOPLEFT")
+        -- self.ui_frame.factions_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("faction"), 215, -34, "LABEL", "TOPLEFT")
         self.ui_frame.faction_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_FACTIONS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.faction_drop_down:SetPoint("TOPLEFT", self.ui_frame.source_drop_down, "BOTTOMLEFT", 0, 2)
         self.ui_frame.faction_drop_down.filter_frame_name = self.filter_frame_name
         self.ui_frame.faction_drop_down.initialize = self.CreateDropDownFactions
-        UIDropDownMenu_SetText(self.ui_frame.faction_drop_down, MTSLUI_LOCALES_LABELS["any faction"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.faction_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any faction"))
         -- Specialisations
-        -- self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["specialisation"][MTSLUI_CURRENT_LANGUAGE], 5, -64, "LABEL", "TOPLEFT")
+        -- self.ui_frame.specs_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("specialisation"), 5, -64, "LABEL", "TOPLEFT")
         self.ui_frame.specialisation_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_SPECS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.specialisation_drop_down:SetPoint("TOPLEFT", self.ui_frame.faction_drop_down, "TOPRIGHT", -31, 0)
         self.ui_frame.specialisation_drop_down.filter_frame_name = self.filter_frame_name
         self.ui_frame.specialisation_drop_down.initialize = self.CreateDropDownSpecialisations
-        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_LOCALES_LABELS["any specialisation"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any specialisation"))
     end,
 
     ----------------------------------------------------------------------------------------------------------
@@ -141,13 +141,13 @@ MTSLUI_FILTER_FRAME = {
     ----------------------------------------------------------------------------------------------------------
     InitialiseFourthRow = function (self)
         -- Contintents & zones
-        -- self.ui_frame.zone_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["zone"][MTSLUI_CURRENT_LANGUAGE], 5, -94, "LABEL", "TOPLEFT")
+        -- self.ui_frame.zone_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("zone"), 5, -94, "LABEL", "TOPLEFT")
         -- Continent more split up with types as well, to reduce number of items shown
         self.ui_frame.continent_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_CONTS", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.continent_drop_down:SetPoint("TOPLEFT", self.ui_frame.faction_drop_down, "BOTTOMLEFT", 0, 2)
         self.ui_frame.continent_drop_down.filter_frame_name = self.filter_frame_name
         self.ui_frame.continent_drop_down.initialize = self.CreateDropDownContinents
-        UIDropDownMenu_SetText(self.ui_frame.continent_drop_down, MTSLUI_LOCALES_LABELS["any zone"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.continent_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any zone"))
         -- default contintent "any" so no need for sub zone to show
         self.ui_frame.zone_drop_down = CreateFrame("Frame", self.filter_frame_name .. "_DD_ZONES", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.zone_drop_down:SetPoint("TOPLEFT", self.ui_frame.continent_drop_down, "TOPRIGHT", -31, 0)
@@ -165,16 +165,16 @@ MTSLUI_FILTER_FRAME = {
         self.ui_frame.search_box:ClearFocus()
         -- reset source type
         self.current_source_id = "any"
-        UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.source_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any"))
         -- reset phase to current
         self.current_phase = MTSL_DATA.CURRENT_PATCH_LEVEL
-        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_LOCALES_LABELS["current"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")")
+        UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("current") .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")")
         -- reset specialisation
         self.current_spec_id = 0
-        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_LOCALES_LABELS["any specialisation"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any specialisation"))
         -- reset contintent & zone
         self.current_continent_id = 0
-        UIDropDownMenu_SetText(self.ui_frame.continent_drop_down, MTSLUI_LOCALES_LABELS["any zone"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.continent_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any zone"))
         UIDropDownMenu_SetText(self.ui_frame.zone_drop_down, "")
     end,
 
@@ -182,7 +182,7 @@ MTSLUI_FILTER_FRAME = {
     UseOnlyCurrentPhase = function(self)
         self.phases = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["current phase"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")",
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current phase") .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")",
                 ["id"] = MTSL_DATA.CURRENT_PATCH_LEVEL,
             }
         }
@@ -209,10 +209,10 @@ MTSLUI_FILTER_FRAME = {
 
     -- Refresh the label of the current phase (Called after changing in the menu option)
     UpdateCurrentPhase = function(self, new_phase)
-        self.phases[1]["name"] = MTSLUI_LOCALES_LABELS["current phase"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. new_phase .. ")"
+        self.phases[1]["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current phase") .. " (" .. new_phase .. ")"
         self.phases[1]["id"] = new_phase
         -- update text in dropdown itself if not any is picked
-        if UIDropDownMenu_GetText(self.ui_frame.phase_drop_down) ~= MTSLUI_LOCALES_LABELS["any phase"][MTSLUI_CURRENT_LANGUAGE] then
+        if UIDropDownMenu_GetText(self.ui_frame.phase_drop_down) ~= MTSLUI_TOOLS:GetLocalisedLabel("any phase") then
             UIDropDownMenu_SetText(self.ui_frame.phase_drop_down, self.phases[1]["name"])
             -- Trigger Refresh
             self:ChangePhase(new_phase)
@@ -222,12 +222,12 @@ MTSLUI_FILTER_FRAME = {
     -- Refresh the label of the current zone (Called after changing zone to a new area in the game EVENT ZONE_NEW_AREA)
     UpdateCurrentZone = function(self, new_zone_name)
         local new_zone = MTSL_LOGIC_WORLD:GetZoneByName(new_zone_name)
-        -- only update if we actualy found a zone
+        -- only update if we actually found a zone
         if new_zone ~= nil then
-            self.continents[2]["name"] = MTSLUI_LOCALES_LABELS["current zone"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. new_zone_name .. ")"
+            self.continents[2]["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current zone") .. " (" .. new_zone_name .. ")"
             self.continents[2]["id"] = (-1 * new_zone.id)
             -- update text in dropdown itself if current is picked
-            if self.current_continent_id == nil and UIDropDownMenu_GetText(self.ui_frame.continent_drop_down) ~= MTSLUI_LOCALES_LABELS["any zone"][MTSLUI_CURRENT_LANGUAGE] then
+            if self.current_continent_id == nil and UIDropDownMenu_GetText(self.ui_frame.continent_drop_down) ~= MTSLUI_TOOLS:GetLocalisedLabel("any zone") then
                 UIDropDownMenu_SetText(self.ui_frame.continent_drop_down, self.continents[2]["name"])
                 self.current_zone_id = new_zone.id
                 -- Trigger Refresh
@@ -239,14 +239,24 @@ MTSLUI_FILTER_FRAME = {
     BuildPhases = function(self)
         self.phases = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["current phase"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")",
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current phase") .. " (" .. MTSL_DATA.CURRENT_PATCH_LEVEL .. ")",
                 ["id"] = MTSL_DATA.CURRENT_PATCH_LEVEL,
             },
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["any phase"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("any phase"),
                 ["id"] = MTSL_DATA.MAX_PATCH_LEVEL,
             }
         }
+        -- add any phase between current and max level
+        local patch_level = MTSL_DATA.CURRENT_PATCH_LEVEL + 1
+        while patch_level < MTSL_DATA.MAX_PATCH_LEVEL do
+            local new_phase = {
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("phase") .. " " .. patch_level,
+                ["id"] = patch_level,
+            }
+            table.insert(self.phases, new_phase)
+            patch_level = patch_level + 1
+        end
         self.current_phase = MTSL_DATA.CURRENT_PATCH_LEVEL
     end,
 
@@ -255,7 +265,7 @@ MTSLUI_FILTER_FRAME = {
         self.sources = {}
         for _, v in pairs(source_types) do
             local new_source = {
-                ["name"] = MTSLUI_LOCALES_LABELS[v][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel(v),
                 ["id"] = v,
             }
             table.insert(self.sources, new_source)
@@ -269,7 +279,7 @@ MTSLUI_FILTER_FRAME = {
     BuildFactions = function(self)
         self.factions = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["any faction"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("any faction"),
                 ["id"] = 0,
             },
             -- Alliance (id: 469)
@@ -308,7 +318,7 @@ MTSLUI_FILTER_FRAME = {
     BuildSpecialisations = function(self)
         self.specialisations = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["any specialisation"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("any specialisation"),
                 ["id"] = 0,
             },
         }
@@ -318,7 +328,7 @@ MTSLUI_FILTER_FRAME = {
         if MTSL_TOOLS:CountItemsInNamedArray(specs) > 0 then
             -- if there are specialisations add an option for "no specialisation" too
             local new_specialisation = {
-                ["name"] = MTSLUI_LOCALES_LABELS["no specialisation"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("no specialisation"),
                 ["id"] = -1,
             }
             table.insert(self.specialisations, new_specialisation)
@@ -326,7 +336,7 @@ MTSLUI_FILTER_FRAME = {
             -- add each type of "continent
             for k, v in pairs(specs) do
                 local new_specialisation = {
-                    ["name"] = v["name"][MTSLUI_CURRENT_LANGUAGE],
+                    ["name"] = MTSLUI_TOOLS:GetLocalisedData(v),
                     ["id"] = v.id,
                 }
                 table.insert(self.specialisations, new_specialisation)
@@ -342,7 +352,7 @@ MTSLUI_FILTER_FRAME = {
         -- build the arrays with continents and zones
         self.continents = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["any zone"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("any zone"),
                 ["id"] = 0,
             },
         }
@@ -351,7 +361,7 @@ MTSLUI_FILTER_FRAME = {
         local current_zone = MTSL_LOGIC_WORLD:GetZoneByName(current_zone_name)
         if current_zone ~= nil then
             local zone_filter = {
-                ["name"] = MTSLUI_LOCALES_LABELS["current zone"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. current_zone_name .. ")",
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current zone") .. " (" .. current_zone_name .. ")",
                 -- make id negative for filter later on
                 ["id"] = (-1 * current_zone.id),
             }
@@ -360,7 +370,7 @@ MTSLUI_FILTER_FRAME = {
         -- add each type of "continent
         for k, v in pairs(MTSL_DATA["continents"]) do
             local new_continent = {
-                ["name"] = v["name"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedData(v),
                 ["id"] = v.id,
             }
             table.insert(self.continents, new_continent)
@@ -380,7 +390,7 @@ MTSLUI_FILTER_FRAME = {
             self.zones_in_continent[c.id] = {}
             for l, z in pairs(MTSL_LOGIC_WORLD:GetZonesInContinentById(c.id)) do
                 local new_zone = {
-                    ["name"] = z["name"][MTSLUI_CURRENT_LANGUAGE],
+                    ["name"] = MTSLUI_TOOLS:GetLocalisedData(z),
                     ["id"] = z.id,
                 }
                 table.insert(self.zones_in_continent[c.id], new_zone)
@@ -623,7 +633,7 @@ MTSLUI_FILTER_FRAME = {
     ChangeProfession = function(self, profession_name)
         self.current_profession = profession_name
         self.current_spec_id = 0
-        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_LOCALES_LABELS["any specialisation"][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.specialisation_drop_down, MTSLUI_TOOLS:GetLocalisedLabel("any specialisation"))
         -- Update the list of specialisations for the current profession
         self:BuildSpecialisations()
         self:CreateDropDownSpecialisations()

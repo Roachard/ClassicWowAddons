@@ -50,6 +50,6 @@ MTSL_DATA = {
         ["Enchanting"] = 130,
     },
     MIN_PATCH_LEVEL = 1,
-    CURRENT_PATCH_LEVEL = 3,
+    CURRENT_PATCH_LEVEL = 2,
     MAX_PATCH_LEVEL = 6,
 }

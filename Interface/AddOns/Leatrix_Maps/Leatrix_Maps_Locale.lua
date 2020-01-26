@@ -1301,6 +1301,7 @@ L["If checked, you will be able to scale and move the map.|n|nScale the map by d
 L["If checked, you will be able to set the opacity of the map."] = "지도의 불투명도를 설정할 수 있습니다."
 L["If checked, zone, dungeon and fishing skill levels will be shown."] = "지역, 던전 및 낚시 레벨이 표시됩니다."
 L["Invalid command.  Enter /ltm help for help."] = "잘못된 명령입니다.도움말을 확인하세요. /ltm help"
+L["Invalid map ID."] = "잘못된 지도 ID입니다."
 L["Iron Docks"] = "강철 선착장"
 L["Ironforge"] = "아이언포지"
 L["Karazhan"] = "카라잔"

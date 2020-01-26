@@ -16,8 +16,8 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 10,
-				["max_xp_level"] = 37,
+				["min_xp_level"] = 20,
+				["max_xp_level"] = 35,
 			},
 		},
 		["id"] = 6454,
@@ -116,5 +116,9 @@ MTSL_DATA["First Aid"]["items"] = {
 		},
 		["id"] = 19442,
 		["quality"] = "common",
+		["reputation"] = {
+			["faction_id"] = 529,
+			["level_id"] = 6,
+		},
 	}, -- [5]
 }

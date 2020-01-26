@@ -1,6 +1,6 @@
 
 	----------------------------------------------------------------------
-	-- 	Leatrix Maps 1.13.44 (15th January 2020)
+	-- 	Leatrix Maps 1.13.45 (23rd January 2020)
 	----------------------------------------------------------------------
 
 	-- 10:Func, 20:Comm, 30:Evnt, 40:Panl
@@ -12,7 +12,7 @@
 	local LeaMapsLC, LeaMapsCB, LeaConfigList = {}, {}, {}
 
 	-- Version
-	LeaMapsLC["AddonVer"] = "1.13.44"
+	LeaMapsLC["AddonVer"] = "1.13.45"
 	LeaMapsLC["RestartReq"] = nil
 
 	-- Get locale table
@@ -2233,7 +2233,7 @@
 
 	-- Slash command function
 	local function SlashFunc(str)
-		local str = string.lower(str)
+		local str, arg1, arg2, arg3 = strsplit(" ", string.lower(str:gsub("%s+", " ")))
 		if str and str ~= "" then
 			-- Traverse parameters
 			if str == "reset" then
@@ -2246,6 +2246,24 @@
 				wipe(LeaMapsDB)
 				LeaMapsLC["NoSaveSettings"] = true
 				ReloadUI()
+			elseif str == "setmap" then
+				-- Set map to map ID
+				arg1 = tonumber(arg1)
+				if arg1 and arg1 > 0 and arg1 < 99999 and C_Map.GetMapArtLayers(arg1) then
+					WorldMapFrame:SetMapID(arg1)
+				else
+					LeaMapsLC:Print("Invalid map ID.")
+				end
+				return
+			elseif str == "hadmin" then
+				-- List all commands
+				LeaMapsLC:Print("reset - Reset panel position")
+				LeaMapsLC:Print("wipe - Wipe addon settings")
+				LeaMapsLC:Print("setmap <id> - Set map to map ID <id>")
+				LeaMapsLC:Print("admin - Load admin settings")
+				LeaMapsLC:Print("hadmin - Show admin help")
+				LeaMapsLC:Print("help - Show help")
+				return
 			elseif str == "admin" then
 				-- Preset profile (reload required)
 				LeaMapsLC["NoSaveSettings"] = true

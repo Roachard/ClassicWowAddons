@@ -1,6 +1,17 @@
 ## Version History
 
-### Latest version (v1.13.32)
+### v1.13.33 (Jan 24, 2020)
+
+* Fixed bug that prevented minimap settings from being saved
+* Fixed bug that prevented enhanced tooltip settings from being saved
+* Added patch levels between current and max for filtering in Database & Account explorer
+* Added correct XP level needed to train each rank for each profession
+* Checked, Corrected & Verified all skills/items/levels of Cooking, First Aid, Mining & Poisons
+* Added more localisation strings
+* Fixed bug where addon frames sometimes where not always shown on top
+* Improved moving minimap button code, it should move smoothly now
+
+### v1.13.32 (Jan 19, 2020)
 
 * Added enhancement to tooltip to show status of your other characters (on same realm) for the recipe
     * Green = learned
@@ -18,8 +29,7 @@
 * Added an option to filter by faction (Alliance, Horde or any faction that uses reputation)
 * Removed labels in filter frame to save space => added text to the "Any" option for each filter
  
-
-### v1.13.31
+### v1.13.31 (Jan 9, 2020)
 
 * Fixed bug that always opened MTSL window even if option was disabled
 * Fixed bug in options menu where checkboxes were always shown as checked even if they were not
@@ -28,14 +38,14 @@
 * Fixed a refresh bug in MTSL account explorer when changing characters, the list did not update
 * Slashcommands now work case insensitive
 
-### v1.13.30
+### v1.13.30 (Jan 8, 2020)
 
 * Fixed the help text with wrong slashcommand text
 * Added lots of missing Korean & Chinese quest names
 * Added poisons
 * Fixed bug where Current Zone of player did not update/display correct in the filter frame
 
-### v1.13.29
+### v1.13.29 (Jan 3, 2020)
 
 * Fixed some wrong Chinese translations
 * Added minimap button (Default on and shown at top of minimap)
@@ -47,7 +57,7 @@
     * Button radius compared to minimap edge (Default 0)
     * Shape of the minimap (Default circle)
 
-### v1.13.28
+### v1.13.28 (Dec 23, 2019)
 
 *   Compatible game version 1.13.3
 *   Added an option to directly show MTSL when opening a profession window
@@ -55,13 +65,13 @@
 *   Fixed some wrong Korean translations
 *   Added translations for Mexican Spanish for all skills, recipes, items & specialisations. Other data is copied from Spanish
 
-### v1.13.27
+### v1.13.27 (Dec 7, 2019)
 
 *   Checked and fixed all Alchemy data
-*   Added some missing translations, almost all ingame items done
+*   Added some missing translations, almost all in-game items done
 *   Comparing known skills by name without spaces to avoid conflicts with number of spaces
 
-### v1.13.26
+### v1.13.26 (Nov 17, 2019)
 
 *   Fixed wrong quest data
 *   Fixed some wrong translations
@@ -69,7 +79,7 @@
 *   Fixed all remaining spells with minimum skill of 0 to have correct minimum skill needed to learn
 *   Fixed bug that prevented correct update of player list frame
 
-### v1.13.25
+### v1.13.25 (Nov 8, 2019)
 
 *   Added specialisations as skills too
 *   Fixed some wrong recipes
@@ -79,7 +89,7 @@
 *   Fixed bug when using the sourcetype filter
 *   Fixed bug when using the phase filter
 
-### v1.13.24
+### v1.13.24 (Oct 27, 2019)
 
 *   Fixed some Blacksmithing data
 *   Added translations to some of the options menu labels/buttons
@@ -87,19 +97,19 @@
 *   Improved French localization
 *   Translated all special actions to each locale
 
-### v1.13.23
+### v1.13.23 (Oct 26, 2019)
 
 *   Added option to change font type & size of Titles, labels & text
     *   UI will auto reload if changed
     *   Does not affect buttons & dropdowns
 *   Improved French localization
 
-### v1.13.22
+### v1.13.22 (Oct 25, 2019)
 
 *   Fixed bug for addon not working for engineering by adding ranks to the levels
 *   Default selected current character in mtsl options screen
 
-### v1.13.21
+### v1.13.21 (Oct 24, 2019)
 
 *   Added specialisations to spells (Blacksmithing, Engineering & Leatherworking)
 *   Fixed some engineering recipes
@@ -109,7 +119,7 @@
 *   Added filter option for source type of skill (Trainer, Quest, Vendor, Drop, Object)
 *   Added filter option for specialisations
 
-### v1.13.20
+### v1.13.20 (Oct 13, 2019)
 
 *   Fixed wrong translations
 *   Fixed some lua errrors
@@ -117,7 +127,7 @@
 *   Added menu option to hook MTSL button left or right on TradeSkillFrame/CraftFrame
 *   Support for SkilletFrame for CraftFrame as well
 
-### v1.13.19
+### v1.13.19 (Oct 12, 2019)
 
 *   Account Explorer uses different code to show learned skills (**resave all players/professions**)
 *   Colored skill level in Account Explorer to show status
@@ -136,12 +146,12 @@
 *   Sort players by name/realm in Account Explorer & Database explorer view
 *   Filters players by realm in Account Explorer & Database explorer view
 
-### v1.13.18
+### v1.13.18 (Oct 1, 2019)
 
 *   Changed way options/config is saved so current saved scale will be reset first time!
 *   Fixed scaling bug
 *   Fixed some wrong translations
-*   Splitted the location filter up into 2 dropdowns (1 for continent & 1 for subzone)
+*   Split the location filter up into 2 dropdowns (1 for continent & 1 for subzone)
 *   Added "continents" for Dungeon, Raid & BG to "lighten" the mount of subzones in each drop down
 *   Added a configuration menu (/mtsl or /mtsl config or /mtsl options) to allow more user UI tweaking
     *   Choose splitdirection (Horizontal/Vertical) for MTSL main window (NOT Account or Database explorer)
@@ -151,16 +161,16 @@
     *   Clear all saved data and restore default values
 *   Slash commands for user config have been removed
 
-### v1.13.17
+### v1.13.17 (Sep 29, 2019)
 
 *   Translated all built-in MTSL labels (Report mistakes or improvements in opened Issues tickets)
 *   Added support for Skillet-Classic addon
 
-### v1.13.16
+### v1.13.16 (Sep 29, 2019)
 
 *   Added check to only add "current zone" to list of zone filter when possible (does not always find the zone)
 
-### v1.13.15
+### v1.13.15 (Sep 29, 2019)
 
 *   Added content phases to items
     *   Only shows obtainable (current in game) skills next to tradeskill/craft window
@@ -171,38 +181,38 @@
 *   Ability to filter on zone (All, current) in MTSL window
 *   Translated some of the MTSL labels
 
-### v1.13.14
+### v1.13.14 (Sep 27, 2019)
 
 *   Added support for Chinese & Korean locales
 *   Translated all the NPC's, objects & quests to have their localised name
 *   Changed default font to Arial Narrow to save space
 
-### v1.13.13
+### v1.13.13 (Sep 24, 2019)
 
 *   Added checks for hunter beast training
 
-### v1.13.12
+### v1.13.12 (Sep 22, 2019)
 
 *   Fixed some wrong translations
 *   Fixed Account explorer when a character has no known tradeskills
 *   Fixed width of selected/hoovered listitems to fill the frame
-*   Exanded width of listframes to show all text (French text was sometimes outside frame)
+*   Expanded width of listframes to show all text (French text was sometimes outside frame)
 *   Added localised names for factions
 
-### v1.13.11
+### v1.13.11 (Sep 22, 2019)
 
 *   Added localised names for zones (TomTom waypoints should now work in all supported languages)
 *   Fixed bug where Enchanting was no longer available for addon
 *   Fixed some wrong data
 
-### v1.13.10
+### v1.13.10 (Sep 20, 2019)
 
-*   Added Account epxlorer window (/mtsl acc or /mtsl account)
+*   Added Account explorer window (/mtsl acc or /mtsl account)
 *   Added colors for factions (red = Horde, blue = Alliance)
 *   Added frames to visible see which profession is selected in Database & Account explorer
 *   Added extra check for craftwindows, only "Enchanting" will trigger MTSL
 
-### v1.13.09
+### v1.13.09 (Sep 16, 2019)
 
 *   Added integration for TomTom waypoints. (Needs TomTom installed)
     *   Click on a name of NPC/object to get add a waypoint
@@ -214,21 +224,21 @@
 *   Fixed a bug in code for event "TRAINER_UPDATE"
 *   Fixed some wrong data
 
-### v1.13.08
+### v1.13.08 (Sep 16, 2019)
 
 *   Russian characters are now shown properly
 *   Added additional check for poisons of rogues
 *   Removed debugging prints
 
-### v1.13.07
+### v1.13.07 (Sep 15, 2019)
 
 *   Fixed bug that Poisons frame of rogue was seen as Tradeskill (TradeSkill might be added later on)
 *   Characters are once again saved!
 *   Added conversion for old saved data to new structure
-*   Able to remove saveddata for a character (use /mtsl remove <name char> <name realm>)
-*   Able to reset the saveddata (use /mtsl reset)
+*   Able to remove saved data for a character (use /mtsl remove <name char> <name realm>)
+*   Able to reset the saved data (use /mtsl reset)
 
-### v1.13.06
+### v1.13.06 (Sep 15, 2019)
 
 *   Added support all languages (Built-in labels & texts still in English)
 *   Added scaling of Database Explorer.
@@ -237,7 +247,7 @@
 *   Trainer update event only triggers refresh of skills if trainer of the current shown profession is opened
 *   Crafting items should not trigger update/refresh of UI
 
-### v1.13.05
+### v1.13.05 (Sep 13, 2019)
 
 *   Added tooltips on mouse over for skills & recipes
 *   Added message if quest not available for your faction
@@ -245,23 +255,23 @@
 *   Database Explorer window is draggable
 *   Automatic selecting first skill (if one is available) when opening/showing the window
 
-### v1.13.04
+### v1.13.04 (Sep 13, 2019)
 
 *   Added Database explorer window:
     *   Check out any skill for any profession
     *   to open: use /mtsl db or /mstl database
 
-### v1.13.03
+### v1.13.03 (Sep 11, 2019)
 
 *   Fixed UI for main scrollbar
 *   Changed scrolling to 5 items at a time
 *   Moved the MTSL button above the tradeskill/craft window to avoid overlap other addons
 *   Fixed the layout when a skill has multiple sources (Bug nr 2)
 
-### v1.13.02
+### v1.13.02 (Sep 9, 2019)
 
 *   Added check for locales. Only enUS or enGB are supported and will load
 
-### v1.13.01
+### v1.13.01 (Sep 9, 2019)
 
 *   Initial version

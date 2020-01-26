@@ -39,7 +39,7 @@ MTSL_DATA["Cooking"]["skills"] = {
 	}, -- [1]
 	{
 		["trainers"] = {
-			["price"] = 10,
+			["price"] = 50,
 			["sources"] = {
 				1355, -- [1]
 				1382, -- [2]

@@ -77,6 +77,7 @@ MTSL_DATA["Leatherworking"]["levels"] = {
 		["id"] = 3104,
 		["max_skill"] = 150,
 		["rank"] = 2,
+		["min_xp_level"] = 10,
 	},
 	{
 		["trainers"] = {
@@ -102,6 +103,7 @@ MTSL_DATA["Leatherworking"]["levels"] = {
 		["id"] = 3811,
 		["max_skill"] = 225,
 		["rank"] = 3,
+		["min_xp_level"] = 20,
 	},
 	{
 		["min_xp_level"] = 35,
@@ -127,5 +129,6 @@ MTSL_DATA["Leatherworking"]["levels"] = {
 		["id"] = 10662,
 		["max_skill"] = 300,
 		["rank"] = 4,
+		["min_xp_level"] = 35,
 	},
 }

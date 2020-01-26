@@ -16,7 +16,7 @@ MTSLUI_ACCOUNT_EXPLORER_FRAME.FRAME_HEIGHT_HORIZONTAL_SPLIT = 738
 function MTSLUI_ACCOUNT_EXPLORER_FRAME:Show()
     -- only show if not options menu open
     if MTSLUI_OPTIONS_MENU_FRAME:IsShown() then
-        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: Please close options menu first!")
+        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: " .. MTSLUI_TOOLS:GetLocalisedLabel("close options menu"))
     else
         -- hide database viewer
         MTSLUI_DATABASE_EXPLORER_FRAME:Hide()
@@ -33,6 +33,8 @@ end
 ----------------------------------------------------------------------------------------------------------
 function MTSLUI_ACCOUNT_EXPLORER_FRAME:Initialise()
     self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLUI_AccountFrame", nil, nil, self.FRAME_WIDTH_VERTICAL_SPLIT, self.FRAME_HEIGHT_VERTICAL_SPLIT, true)
+        self.ui_frame:SetFrameLevel(10)
+        self.ui_frame:SetToplevel(true)
     -- Set Position to center of screen
     self.ui_frame:SetPoint("CENTER", nil, "CENTER", 0, 0)
     -- Dummy operation to do nothing, discarding the zooming in/out

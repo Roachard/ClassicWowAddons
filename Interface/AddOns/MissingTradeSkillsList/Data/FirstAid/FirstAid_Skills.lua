@@ -106,7 +106,7 @@ MTSL_DATA["First Aid"]["skills"] = {
 	}, -- [3]
 	{
 		["trainers"] = {
-			["price"] = 10000,
+			["price"] = 1000,
 			["sources"] = {
 				2326, -- [1]
 				2327, -- [2]

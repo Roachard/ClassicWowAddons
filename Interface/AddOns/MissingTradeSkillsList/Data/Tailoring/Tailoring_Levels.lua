@@ -80,6 +80,7 @@ MTSL_DATA["Tailoring"]["levels"] = {
 		["id"] = 3909,
 		["max_skill"] = 150,
 		["rank"] = 2,
+		["min_xp_level"] = 10,
 	},
 	{
 		["trainers"] = {
@@ -107,6 +108,7 @@ MTSL_DATA["Tailoring"]["levels"] = {
 		["id"] = 3910,
 		["max_skill"] = 225,
 		["rank"] = 3,
+		["min_xp_level"] = 20,
 	},
 	{
 		["min_xp_level"] = 35,
@@ -133,5 +135,6 @@ MTSL_DATA["Tailoring"]["levels"] = {
 		["id"] = 12180,
 		["max_skill"] = 300,
 		["rank"] = 4,
+		["min_xp_level"] = 35,
 	},
 }

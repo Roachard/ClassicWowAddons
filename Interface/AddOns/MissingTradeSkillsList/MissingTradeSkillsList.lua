@@ -17,6 +17,6 @@ function SlashCmdList.MTSL (msg, editbox)
         if MTSLUI_CURRENT_LANGUAGE == nil then
             MTSLUI_CURRENT_LANGUAGE = "English"
         end
-        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: " .. MTSLUI_LOCALES_LABELS["addon not loaded"][MTSLUI_CURRENT_LANGUAGE])
+        print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: " .. MTSLUI_TOOLS:GetLocalisedLabel("addon not loaded"))
     end
 end

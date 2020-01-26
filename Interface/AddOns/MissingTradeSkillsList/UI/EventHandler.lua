@@ -24,7 +24,7 @@ MTSLUI_EVENT_HANDLER = {
 
 				-- Initialise the minimap button
 				MTSLUI_MINIMAP:Initialise()
-				
+
 				-- Try to load the saved variables
 				MTSLUI_SAVED_VARIABLES:Initialise()
 				-- make the data for dropdowns in sort frames
@@ -207,7 +207,7 @@ MTSLUI_EVENT_HANDLER = {
     ZONE_CHANGED_NEW_AREA = function(self)
         -- Get the text of the new zone
         local zone_name = GetRealZoneText()
-        -- if we actualy fond one, update the filter frames
+        -- if we actually fond one, update the filter frames
         if zone_name ~= nil then
             MTSLUI_MISSING_TRADESKILLS_FRAME.skill_list_filter_frame:UpdateCurrentZone(zone_name)
             MTSLUI_ACCOUNT_EXPLORER_FRAME.skill_list_filter_frame:UpdateCurrentZone(zone_name)

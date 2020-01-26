@@ -61,8 +61,8 @@ MTSL_DATA["Cooking"]["items"] = {
 		},
 		["drops"] = {
 			["mobs_range"] = {
-				["min_xp_level"] = 9,
-				["max_xp_level"] = 26,
+				["min_xp_level"] = 10,
+				["max_xp_level"] = 20,
 			},
 		},
 		["phase"] = 1,
@@ -115,7 +115,7 @@ MTSL_DATA["Cooking"]["items"] = {
 		["drops"] = {
 			["mobs_range"] = {
 				["min_xp_level"] = 10,
-				["max_xp_level"] = 26,
+				["max_xp_level"] = 25,
 			},
 		},
 		["phase"] = 1,
@@ -495,7 +495,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [20]
 	{
 		["vendors"] = {
-			["price"] = 200,
+			["price"] = 240,
 			["sources"] = {
 				3081, -- [1]
 			},
@@ -882,7 +882,7 @@ MTSL_DATA["Cooking"]["items"] = {
 		["drops"] = {
 			["mobs_range"] = {
 				["min_xp_level"] = 10,
-				["max_xp_level"] = 27,
+				["max_xp_level"] = 25,
 			},
 		},
 		["id"] = 6661,
@@ -891,7 +891,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [36]
 	{
 		["vendors"] = {
-			["price"] = 200,
+			["price"] = 250,
 			["sources"] = {
 				1465, -- [1]
 				3556, -- [2]
@@ -1147,7 +1147,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [47]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 16000,
 			["sources"] = {
 				8137, -- [1]
 			},
@@ -1169,7 +1169,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [48]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 16000,
 			["sources"] = {
 				2664, -- [1]
 			},
@@ -1191,7 +1191,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [49]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 16000,
 			["sources"] = {
 				2664, -- [1]
 			},
@@ -1213,7 +1213,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [50]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 16000,
 			["sources"] = {
 				8137, -- [1]
 			},
@@ -1235,7 +1235,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [51]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 16000,
 			["sources"] = {
 				2664, -- [1]
 			},
@@ -1393,7 +1393,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [58]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 12000,
 			["sources"] = {
 				2803, -- [1]
 				2806, -- [2]
@@ -1417,7 +1417,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [59]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 12000,
 			["sources"] = {
 				989, -- [1]
 				1149, -- [2]
@@ -1497,8 +1497,9 @@ MTSL_DATA["Cooking"]["items"] = {
 			["sources"] = {
 				13420, -- [1]
 				13429, -- [2]
-				13433, -- [3]
-				13435, -- [4]
+				13432, -- [3]
+				13433, -- [4]
+				13435, -- [5]
 			},
 		},
 		["name"] = {
@@ -1523,8 +1524,9 @@ MTSL_DATA["Cooking"]["items"] = {
 			["sources"] = {
 				13420, -- [1]
 				13429, -- [2]
-				13433, -- [3]
-				13435, -- [4]
+				13432, -- [3]
+				13433, -- [4]
+				13435, -- [5]
 			},
 		},
 		["name"] = {
@@ -1545,7 +1547,7 @@ MTSL_DATA["Cooking"]["items"] = {
 	}, -- [64]
 	{
 		["vendors"] = {
-			["price"] = 10000,
+			["price"] = 12000,
 			["sources"] = {
 				4782, -- [1]
 				7733, -- [2]

@@ -89,14 +89,14 @@ MTSLUI_SAVED_VARIABLES = {
             MTSLUI_FONTS:Initialise()
 
             -- only reset the minimap
-            if MTSLUI_PLAYER.MINIMAP == nil or MTSLUI_PLAYER.MINIMAP ~= {} then
+            if MTSLUI_PLAYER.MINIMAP == nil or MTSLUI_PLAYER.MINIMAP == {} then
                 self:ResetMinimap()
             else
                 self:ValidateMinimap()
             end
 
             -- only reset the tooltip
-            if MTSLUI_PLAYER.TOOLTIP == nil or MTSLUI_PLAYER.TOOLTIP ~= {} then
+            if MTSLUI_PLAYER.TOOLTIP == nil or MTSLUI_PLAYER.TOOLTIP == {} then
                 self:ResetEnhancedTooltip()
             else
                 self:ValidateEnhancedTooltip()
@@ -169,6 +169,7 @@ MTSLUI_SAVED_VARIABLES = {
             ["ptBR"] = "FRIZQT__",
             ["koKR"] = "2002",
             ["zhCN"] = "ARKai_T",
+            ["zhTW"] = "ARKai_T",
         }
         local font_name = font_names[GetLocale()]
         -- fall back to default
@@ -437,7 +438,7 @@ MTSLUI_SAVED_VARIABLES = {
     -- @font_name           String          The name of the font
     -- @font_sizes          Array           List containing the sizes for the 3 font_sizes used
     --
-    -- returns              Boolean         Flag indication if font actualy was updated/changed
+    -- returns              Boolean         Flag indication if font actually was updated/changed
     ------------------------------------------------------------------------------------------------
     SetFont = function(self, font_name, font_sizes)
         local font_changed = false

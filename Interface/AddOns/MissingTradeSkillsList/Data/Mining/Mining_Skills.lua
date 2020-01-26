@@ -38,7 +38,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [1]
 	{
 		["trainers"] = {
-			["price"] = 180,
+			["price"] = 200,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -140,7 +140,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [4]
 	{
 		["trainers"] = {
-			["price"] = 450,
+			["price"] = 500,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -174,7 +174,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [5]
 	{
 		["trainers"] = {
-			["price"] = 2250,
+			["price"] = 2500,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -208,7 +208,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [6]
 	{
 		["trainers"] = {
-			["price"] = 2250,
+			["price"] = 2500,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -242,7 +242,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [7]
 	{
 		["trainers"] = {
-			["price"] = 4500,
+			["price"] = 5000,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -276,7 +276,7 @@ MTSL_DATA["Mining"]["skills"] = {
 	}, -- [8]
 	{
 		["trainers"] = {
-			["price"] = 9000,
+			["price"] = 10000,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -327,19 +327,20 @@ MTSL_DATA["Mining"]["skills"] = {
 			4083, -- [1]
 		},
 		["special_action"] = {
-			["German"] = "Sprecht nach Abschluss der Quest mit dem NPC",
-			["Spanish"] = "Habla con el NPC después de completar la misión",
-			["English"] = "Talk to NPC after completing quest",
-			["Chinese"] = "完成任务后与NPC对话",
-			["Russian"] = "Поговорите с NPC после выполнения квеста",
-			["Korean"] = "퀘스트 완료 후 NPC와 대화",
-			["French"] = "Parlez au PNJ après avoir terminé la quête",
-			["Portuguese"] = "Fale com o NPC após completar a missão",
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["Mexican"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Mexican"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
 		},
 	}, -- [10]
 	{
 		["trainers"] = {
-			["price"] = 18000,
+			["price"] = 20000,
 			["sources"] = {
 				1681, -- [1]
 				1701, -- [2]
@@ -390,17 +391,18 @@ MTSL_DATA["Mining"]["skills"] = {
 			["English"] = "Smelt Elementium",
 		},
 		["min_skill"] = 300,
-		["phase"] = 1,
+		["phase"] = 3,
 		["id"] = 22967,
 		["special_action"] = {
 			["German"] = "Sprich mit Meisterelementarformer Krixix während er den Verstand kontrolliert",
-			["Spanish"] = "Habla con Maestro de los elementos Formacio Krixix mientras él está controlado mentalmente",
 			["English"] = "Talk to Master Elemental Shaper Krixix while he is mindcontrolled",
-			["Chinese"] = "受到精神控制时与大元素师克里希克交谈",
-			["Russian"] = "Поговорите с Ваятель стихий Криксикс пока он находится под контролем ума",
-			["Korean"] = "수석 원소구현술사 크릭시스",
+			["Spanish"] = "Habla con Maestro de los elementos Formacio Krixix mientras él está controlado mentalmente",
+			["Mexican"] = "Habla con Maestro de los elementos Formacio Krixix mientras él está controlado mentalmente",
 			["French"] = "Parlez à Maître élémentaire Krixix le Sculpteur alors qu'il est contrôlé par l'esprit",
 			["Portuguese"] = "Fale com Mestre Moldador Elemental Krixix enquanto ele é controlado pela mente",
+			["Russian"] = "Поговорите с Ваятель стихий Криксикс пока он находится под контролем ума",
+			["Korean"] = "수석 원소구현술사 크릭시스",
+			["Chinese"] = "受到精神控制时与大元素师克里希克交谈",
 		},
 	}, -- [12]
 }

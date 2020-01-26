@@ -95,7 +95,7 @@ MTSL_LOGIC_PROFESSION = {
                 local skill_passed_filter = true
                 -- Check if name is ok
                 if skill_name ~= nil and skill_name ~= "" then
-                    local name = string.lower(v["name"][MTSLUI_CURRENT_LANGUAGE])
+                    local name = string.lower(MTSLUI_TOOLS:GetLocalisedData(v))
                     local contains = string.lower(skill_name)
                     local start_index, _ = string.find(name, contains)
                     -- if we dont have a start index, the name does not contain the pattern
@@ -396,7 +396,7 @@ MTSL_LOGIC_PROFESSION = {
     GetNameSpecialisation = function(self, profession_name, specialisation_id)
         local spec = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["specialisations"][profession_name], "id", specialisation_id)
         if spec ~= nil then
-            return spec["name"][MTSLUI_CURRENT_LANGUAGE]
+            return MTSLUI_TOOLS:GetLocalisedData(spec)
         end
         return ""
     end

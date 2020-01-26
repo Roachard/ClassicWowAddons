@@ -3,7 +3,7 @@
 ----------------
 
 MTSL_RECIPE_PROFESSION_TYPES  = {
-    "Leatherworking",   -- _G.LE_ITEM_RECIPE_LEATHERWORKING	= 1
+    "Leatherworking",   -- _G.LE_ITEM_RECIPE_LEATHERWORKING	   = 1
     "Tailoring",        -- _G.LE_ITEM_RECIPE_TAILORING         = 2
     "Engineering",      -- _G.LE_ITEM_RECIPE_ENGINEERING       = 3
     "Blacksmithing",    -- _G.LE_ITEM_RECIPE_BLACKSMITHING     = 4
@@ -13,7 +13,7 @@ MTSL_RECIPE_PROFESSION_TYPES  = {
     "Enchanting",       -- _G.LE_ITEM_RECIPE_ENCHANTING        = 8
 }
 
--- variable to avoid add the info more than once to the tooltip
+-- variable to avoid adding the info more than once to the tooltip
 local MTSL_TOOLTIP_SHOWN = 0
 
 -- Enrich the tooltip with alts info
@@ -46,7 +46,7 @@ GameTooltip:HookScript("OnTooltipSetItem", function(self)
                 if skill ~= nil then
                     -- Empty line
                     GameTooltip:AddLine(" ")
-                    GameTooltip:AddLine("Status other characters:", true)
+                    GameTooltip:AddLine(MTSLUI_TOOLS:GetLocalisedLabel("status other characters"), true)
                     for k, v in pairs(other_players) do
                         -- Check if learned or not
                         -- default color = learned (green)
