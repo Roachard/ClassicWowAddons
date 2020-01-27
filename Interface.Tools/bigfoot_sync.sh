@@ -9,7 +9,7 @@ BIGFOOT_DIR="$1/AddOns"
 ADDONS_DIR=../Interface/AddOns
 POLICY_DIR=Policy
 
-cat "$POLICY_DIR/remove.txt" "$POLICY_DIR/custom.txt" | while read ADDON; do
+cat "$POLICY_DIR/remove.txt" | while read ADDON; do
 	ADDON=`echo $ADDON | tr -d '\r\n'`
 	SRC_DIR="$BIGFOOT_DIR/$ADDON"
 	if [ -d "$SRC_DIR" ]; then

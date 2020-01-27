@@ -44,6 +44,9 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:Initialise()
     self:LinkFrames()
 end
 
+----------------------------------------------------------------------------------------------------------
+-- Create and place the componentframes for the parent frame
+----------------------------------------------------------------------------------------------------------
 function MTSLUI_MISSING_TRADESKILLS_FRAME:CreateCompontentFrames()
     -- initialise the components of the frame
     self.title_frame = MTSL_TOOLS:CopyObject(MTSLUI_TITLE_FRAME)
@@ -70,7 +73,9 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:CreateCompontentFrames()
     self.progressbar.ui_frame:SetPoint("BOTTOMLEFT", self.ui_frame, "BOTTOMLEFT", 4, 2)
 end
 
+----------------------------------------------------------------------------------------------------------
 -- link the frames to correct event frames
+----------------------------------------------------------------------------------------------------------
 function MTSLUI_MISSING_TRADESKILLS_FRAME:LinkFrames()
     self.skill_list_filter_frame:SetListFrame(self.skill_list_frame)
     self.skill_list_frame:SetDetailSelectedItemFrame(self.skill_detail_frame)
@@ -113,9 +118,9 @@ end
 ----------------------------------------------------------------------------------------------------------
 -- Refresh the ui of the MTSLUI_MISSING_TRADESKILLS_FRAME
 ----------------------------------------------------------------------------------------------------------
-function MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI ()
+function MTSLUI_MISSING_TRADESKILLS_FRAME:RefreshUI (force)
     -- only refresh if this window is visible
-    if self:IsShown() then
+    if self:IsShown() or force == 1 then
         -- Get the list of skills which are found by the filters
         local list_skills = MTSL_LOGIC_PLAYER_NPC:GetMissingSkillsForProfessionCurrentPlayer(self.current_profession_name)
         -- Refresh the UI frame showing the list of skill

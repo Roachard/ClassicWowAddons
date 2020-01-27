@@ -2,6 +2,8 @@ local L = LibStub("AceLocale-3.0"):NewLocale("CharacterNotes", "enUS", true)
 
 if not L then return end
 
+L["Add Menu Items"] = true
+L["AddMenuItems_OptionDesc"] = "Add options to unit pop up menus for editing notes.  May cause errors.  Disable if so."
 L["Are you sure you wish to delete the note for:"] = true
 L["Cancel"] = true
 L["Character Name"] = true

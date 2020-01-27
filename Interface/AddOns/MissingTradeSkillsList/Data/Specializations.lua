@@ -12,6 +12,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "护甲锻造师",
                 ["German"] = "Rüstungsschmied",
                 ["Spanish"] = "Forjador de armaduras",
+                ["Mexican"] = "Forjador de armaduras",
             },
         },
         {
@@ -25,6 +26,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "武器锻造师",
                 ["German"] = "Waffenschmied",
                 ["Spanish"] = "Forjador de armas",
+                ["Mexican"] = "Forjador de armas",
             },
         },
         -- 3 subspecializations for Weaponsmith
@@ -39,6 +41,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "铸斧大师",
                 ["German"] = "Axtschmiedemeister",
                 ["Spanish"] = "Maestro forjador de hachas",
+                ["Mexican"] = "Maestro forjador de hachas",
             },
         },
         {
@@ -52,6 +55,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "铸锤大师",
                 ["German"] = "Hammerschmiedemeister",
                 ["Spanish"] = "Maestro forjador de martillos",
+                ["Mexican"] = "Maestro forjador de martillos",
             },
         },
         {
@@ -65,6 +69,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "铸剑大师",
                 ["German"] = "Schwertschmiedemeister",
                 ["Spanish"] = "Maestro invocador",
+                ["Mexican"] = "Maestro forjador de espadas",
             },
         },
     },
@@ -82,6 +87,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "侏儒工程学",
                 ["German"] = "Gnomen-Ingenieur",
                 ["Spanish"] = "Ingeniero gnomo",
+                ["Mexican"] = "Ingeniero gnómico",
             },
         },
         {
@@ -95,6 +101,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "地精工程师",
                 ["German"] = "Goblin-Ingenieur",
                 ["Spanish"] = "Ingeniero goblin",
+                ["Mexican"] = "Ingeniero goblin",
             },
         },
     },
@@ -111,6 +118,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "龙鳞制皮",
                 ["German"] = "Drachenlederverarbeitung",
                 ["Spanish"] = "Peletería dragontina",
+                ["Mexican"] = "Peletería dragontina",
             },
         },
         {
@@ -124,6 +132,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "元素制皮",
                 ["German"] = "Elementarlederverarbeitung",
                 ["Spanish"] = "Peletería elemental",
+                ["Mexican"] = "Peletería elemental",
             },
         },
         {
@@ -137,6 +146,7 @@ MTSL_DATA["specializations"] = {
                 ["Chinese"] = "部族制皮",
                 ["German"] = "Stammeslederverarbeitung",
                 ["Spanish"] = "Peletería tribal",
+                ["Mexican"] = "Peletería tribal",
             },
         },
     },

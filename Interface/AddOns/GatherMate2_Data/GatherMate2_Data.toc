@@ -1,9 +1,8 @@
-## Interface: 11302
-## Notes: Wowhead Data dump for GatherMate2 - Converted for Classic from Pre-Cata by TheSpanishInquisition
+## Interface: 11303
+## Notes: GatherMate2 data fetched from Wowhead
 ## Title: GatherMate2Data
-## Author: kagaro, Xinhuan, Spinx
-## X-Category: Map
-## Version: v2019-11-21
+## Author: kagaro, Xinhuan, Spinx, Marrtin
+## Version: v2020-01-07
 ## LoadOnDemand: 1
 ## Dependencies: GatherMate2
 

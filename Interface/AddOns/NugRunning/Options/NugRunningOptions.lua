@@ -1831,6 +1831,21 @@ local function MakeGeneralOptions()
                         set = function(info, v) NugRunning.Commands.cooldowns() end,
                         order = 6,
                     },
+                    totems = {
+                        name = L"Totems",
+                        type = "toggle",
+                        desc = L"Display timers for totems (or other similar summons)",
+                        get = function(info) return NugRunning.db.totems end,
+                        set = function(info, v) NugRunning.db.totems = not NugRunning.db.totems end,
+                        order = 7,
+                    },
+                    drs = {
+                        name = L"Diminishing Returns",
+                        type = "toggle",
+                        get = function(info) return NugRunning.db.drEnabled end,
+                        set = function(info, v) NugRunning.db.drEnabled = not NugRunning.db.drEnabled end,
+                        order = 7.5,
+                    },
                     swapTargets = {
                         name = L"Fixed Target Group"..newFeatureIcon,
                         type = "toggle",

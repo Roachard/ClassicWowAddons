@@ -1,0 +1,34 @@
+lightweight tag ff7f0745ca71690c424d9cfc5a0ac14a20819da6 0.7.7
+Author:	GitHub <noreply@github.com>
+Date:	Mon Jan 13 07:50:30 2020 -0800
+
+commit a3550d46fea7a19fde64e77be0156c12467af60e
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Sat Jan 11 16:50:13 2020 -0800
+
+    update version
+
+commit a3550d46fea7a19fde64e77be0156c12467af60e
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Sat Jan 11 16:50:13 2020 -0800
+
+    update version
+
+commit 834f7ea9889d7147e82946f086c4b6f96c87dc88
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Sat Jan 11 16:43:47 2020 -0800
+
+    Add missing parens
+
+commit 077254f5b1efb94ba634026201eab6f854ea7203
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Fri Jan 10 18:21:38 2020 -0800
+
+    Fix replace text garbage, stage 1
+
+commit d170e3e73ff13de6d388ce139552cafcd4d70aa9
+Author: Tek Hudson <tek.hudson@gmail.com>
+Date:   Fri Jan 10 17:30:26 2020 -0800
+
+    Fix mouse over issue
+

@@ -4,7 +4,7 @@
 ----------------------------------------------------------------------------------------------------
 local ADDON, NS = ...;
 ----------------------------------------------------------------------------------------------------
-NS.L = NS.L or {EMOTE = {}, };
+NS.L = NS.L or { EMOTE = {}, };
 local L = NS.L;
 ----------------------------------------------------------------------------------------------------
 L.EMOTE["enUS"] = {
@@ -77,17 +77,19 @@ L.SC_DATA1 = {
 	CHAT_MONSTER_SAY_GET = "[S]%s: ",
 	CHAT_YELL_GET = "[Y]%s: ",
 	CHAT_MONSTER_YELL_GET = "[Y]%s: ",
-	CHAT_GUILD_GET = "|Hchannel:Guild|h[G]|h%s: ",
+	CHAT_GUILD_GET = "|Hchannel:GUILD|h[G]|h%s: ",
 	CHAT_OFFICER_GET = "|Hchannel:OFFICER|h[O]|h%s: ",
-	CHAT_PARTY_GET = "|Hchannel:Party|h[P]|h%s: ",
+	CHAT_PARTY_GET = "|Hchannel:PARTY|h[P]|h%s: ",
 	CHAT_PARTY_LEADER_GET = "|Hchannel:PARTY|h[P]|h%s: ",
-	CHAT_MONSTER_PARTY_GET = "|Hchannel:Party|h[P]|h%s: ",
+	CHAT_MONSTER_PARTY_GET = "|Hchannel:PARTY|h[P]|h%s: ",
 	CHAT_PARTY_GUIDE_GET = "|Hchannel:PARTY|h[I]|h%s: ",
-	CHAT_INSTANCE_CHAT_GET = "|Hchannel:INSTANCE_CHAT|h[I]|h%s: ",
-	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:INSTANCE_CHAT|h[I]|h%s: ",
-	CHAT_RAID_GET = "|Hchannel:raid|h[R]|h%s: ",
-	CHAT_RAID_LEADER_GET = "|Hchannel:raid|h[R]|h%s: ",
+	CHAT_INSTANCE_CHAT_GET = "|Hchannel:BG|h[I]|h%s: ",
+	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:BG|h[I]|h%s: ",
+	CHAT_RAID_GET = "|Hchannel:RAID|h[R]|h%s: ",
+	CHAT_RAID_LEADER_GET = "|Hchannel:RAID|h[R]|h%s: ",
 	CHAT_RAID_WARNING_GET = "[R]%s: ",
+	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:BG|h[I]|h%s: ",
+	CHAT_INSTANCE_CHAT_GET = "|Hchannel:BG|h[I]|h%s: ",
 
 	CHAT_AFK_GET = "[AFK]%s: ",
 	CHAT_DND_GET = "[DND]%s: ",
@@ -103,6 +105,16 @@ L.SC_DATA2 = {
 		{"LocalDefense",    1,12,	"D",},
 		{"LookingForGroup", 1,15,	"L",},
 		{"大脚世界频道",1,18,"世",},
+		{"大脚世界频道1",1,19,"世",},
+		{"大脚世界频道2",1,19,"世",},
+		{"大脚世界频道3",1,19,"世",},
+		{"大脚世界频道4",1,19,"世",},
+		{"大脚世界频道5",1,19,"世",},
+		{"大脚世界频道6",1,19,"世",},
+		{"大脚世界频道7",1,19,"世",},
+		{"大脚世界频道8",1,19,"世",},
+		{"大脚世界频道9",1,19,"世",},
+		{"大脚世界频道10",1,20,"世",},
 };
 L.SC_DATA3 = {
 	"General - ",
@@ -164,9 +176,10 @@ L.CONFIG = {
 	barStyle			 = "Style",
 
 	shortChannelName	 = "Short channel name",
-	shortChannelNameFormat = "Format",
+	shortChannelNameFormat = "Channel name format",
 	hyperLinkEnhanced	 = "Hyperlink in chat msg.",
 	chatEmote			 = "Emote",
+	chatEmote_channel	 = "Emote in public channel",
 	ColorNameByClass	 = "Color Name By Class",
 	shamanColor			 = "Change \124cfff48cbashaman\124r to \124cff006fdcshaman\124r.";
 	channelBarStyle		 = "Channel bar style",
@@ -203,7 +216,7 @@ L.CONFIG = {
 	copy				 = "Copy chat",
 	copyTagColor		 = "Color of timestamp",
 	copyTagFormat		 = "Format of tag",
-	copyTagFormatNotes	 = "[#s for original format]",
+	copyTagFormatNotes	 = "[Select original format by clicking dropdown menu to the right.]",
 	level				 = "Show guild member's level",
 	--hideConfBtn			 = "Hide conf wheel",
 	editBoxTab			 = "Press tab to switch channel",

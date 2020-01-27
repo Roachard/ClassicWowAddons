@@ -4,7 +4,7 @@
 ----------------------------------------------------------------------------------------------------
 local ADDON,NS = ...;
 ----------------------------------------------------------------------------------------------------
-NS.L = NS.L or {EMOTE = {}, };
+NS.L = NS.L or { EMOTE = {}, };
 local L = NS.L;
 ----------------------------------------------------------------------------------------------------
 L.EMOTE["zhCN"] = {
@@ -77,17 +77,19 @@ L.SC_DATA1 = {
 	CHAT_MONSTER_SAY_GET = "[说]%s: ",
 	CHAT_YELL_GET = "[喊]%s: ",
 	CHAT_MONSTER_YELL_GET = "[喊]%s: ",
-	CHAT_GUILD_GET = "|Hchannel:Guild|h[会]|h%s: ",
+	CHAT_GUILD_GET = "|Hchannel:GUILD|h[会]|h%s: ",
 	CHAT_OFFICER_GET = "|Hchannel:OFFICER|h[官]|h%s: ",
-	CHAT_PARTY_GET = "|Hchannel:Party|h[队]|h%s: ",
+	CHAT_PARTY_GET = "|Hchannel:PARTY|h[队]|h%s: ",
 	CHAT_PARTY_LEADER_GET = "|Hchannel:PARTY|h[队]|h%s: ",
-	CHAT_MONSTER_PARTY_GET = "|Hchannel:Party|h[队]|h%s: ",
+	CHAT_MONSTER_PARTY_GET = "|Hchannel:PARTY|h[队]|h%s: ",
 	CHAT_PARTY_GUIDE_GET = "|Hchannel:PARTY|h[副]|h%s: ",
-	CHAT_INSTANCE_CHAT_GET = "|Hchannel:INSTANCE_CHAT|h[副]|h%s: ",
-	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:INSTANCE_CHAT|h[副]|h%s: ",
-	CHAT_RAID_GET = "|Hchannel:raid|h[团]|h%s: ",
-	CHAT_RAID_LEADER_GET = "|Hchannel:raid|h[团]|h%s: ",
+	CHAT_INSTANCE_CHAT_GET = "|Hchannel:BG|h[副]|h%s: ",
+	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:BG|h[副]|h%s: ",
+	CHAT_RAID_GET = "|Hchannel:RAID|h[团]|h%s: ",
+	CHAT_RAID_LEADER_GET = "|Hchannel:RAID|h[团]|h%s: ",
 	CHAT_RAID_WARNING_GET = "[团]%s: ",
+	CHAT_INSTANCE_CHAT_LEADER_GET = "|Hchannel:BG|h[副]|h%s: ",
+	CHAT_INSTANCE_CHAT_GET = "|Hchannel:BG|h[副]|h%s: ",
 
 	CHAT_AFK_GET = "[AFK]%s: ",
 	CHAT_DND_GET = "[DND]%s: ",
@@ -103,6 +105,16 @@ L.SC_DATA2 = {--短频道名字，每行最后一个字符串为显示名字
 	{"本地防务",    1,12,"本",},
 	{"寻求组队",    1,12,"组",},
 	{"大脚世界频道",1,18,"世",},
+	{"大脚世界频道1",1,19,"世",},
+	{"大脚世界频道2",1,19,"世",},
+	{"大脚世界频道3",1,19,"世",},
+	{"大脚世界频道4",1,19,"世",},
+	{"大脚世界频道5",1,19,"世",},
+	{"大脚世界频道6",1,19,"世",},
+	{"大脚世界频道7",1,19,"世",},
+	{"大脚世界频道8",1,19,"世",},
+	{"大脚世界频道9",1,19,"世",},
+	{"大脚世界频道10",1,20,"世",},
 };
 L.SC_DATA3 = {
 	"^综合 - ",
@@ -164,9 +176,10 @@ L.CONFIG = {
 	barStyle				 = "图标风格",
 
 	shortChannelName		 = "短频道名",
-	shortChannelNameFormat	 = "短频道名格式",
+	shortChannelNameFormat	 = "频道名格式",
 	hyperLinkEnhanced		 = "聊天超链接(同时允许shift点击发送技能书技能)",
 	chatEmote				 = "聊天表情",
+	chatEmote_channel		 = "公共频道中的聊天表情",
 	ColorNameByClass		 = "聊天职业着色",
 	shamanColor				 = "将\124cfff48cba萨满\124r的职业颜色改成与正式服一样的\124cff006fdc蓝色\124r";
 	channelBarStyle			 = "频道切换栏风格",
@@ -203,7 +216,7 @@ L.CONFIG = {
 	copy					 = "复制聊天",
 	copyTagColor			 = "时间戳颜色",
 	copyTagFormat			 = "时间戳格式",
-	copyTagFormatNotes		 = "【#s代表原始样式】",
+	copyTagFormatNotes		 = "【可以从右边的下拉框选择】",
 	level					 = "聊天框显示公会成员等级",
 	--hideConfBtn				 = "隐藏设置按钮",
 	editBoxTab				 = "聊天框Tab键切换频道",

@@ -888,8 +888,10 @@ local function VUHDO_roleIconValidator(anInfo, _)
 		return true, "Interface\\LFGFrame\\UI-LFG-ICON-ROLES", -1, -1, -1, nil, nil, GetTexCoordsForRole("TANK");
 	elseif VUHDO_ID_RANGED_HEAL == anInfo["role"] then
 		return true, "Interface\\LFGFrame\\UI-LFG-ICON-ROLES", -1, -1, -1, nil, nil, GetTexCoordsForRole("HEALER");
+--[[
 	elseif VUHDO_ID_MELEE_DAMAGE == anInfo["role"] or VUHDO_ID_RANGED_DAMAGE == anInfo["role"] then
 		return true, "Interface\\LFGFrame\\UI-LFG-ICON-ROLES", -1, -1, -1, nil, nil, GetTexCoordsForRole("DAMAGER");
+]]
 	else
 		return false, nil, -1, -1, -1;
 	end

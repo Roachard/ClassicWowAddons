@@ -598,7 +598,7 @@ local VUHDO_DEFAULT_CONFIG = {
 	["RES_IS_SHOW_TEXT"] = false,
 
 	["CUSTOM_DEBUFF"] = {
-		["scale"] = 0.8,
+		["scale"] = 0.6,
 		["animate"] = true,
 		["timer"] = true,
 		["max_num"] = 3,
@@ -611,7 +611,7 @@ local VUHDO_DEFAULT_CONFIG = {
 		["selected"] = "",
 		["point"] = "TOPRIGHT",
 		["xAdjust"] = -2,
-		["yAdjust"] = -34,
+		["yAdjust"] = -24,
 		["STORED"] = { },
 
 		["TIMER_TEXT"] = {
@@ -931,7 +931,7 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 	},
 
 	["HOTS"] = {
-		["radioValue"] = 13,
+		["radioValue"] = 12,
 		["iconRadioValue"] = 1,
 		["stacksRadioValue"] = 2,
 
@@ -1163,7 +1163,7 @@ local VUHDO_DEFAULT_PANEL_SETUP = {
 --
 local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 	["HOTS"] = {
-		["size"] = 40,
+		["size"] = 32,
 	},
 	["MODEL"] = {
 		["ordering"] = VUHDO_ORDERING_STRICT,
@@ -1190,19 +1190,19 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["borderGapX"] = 0,
 		["borderGapY"] = 0,
 
-		["barWidth"] = 60,
-		["barHeight"] = 30,
+		["barWidth"] = 64,
+		["barHeight"] = 32,
 
 		["showHeaders"] = true,
 		["headerHeight"] = 12,
 		["headerWidth"] = 100,
 		["headerSpacing"] = 5,
 
-		["manaBarHeight"] = 4,
+		["manaBarHeight"] = 3,
 		["sideLeftWidth"] = 6,
 		["sideRightWidth"] = 6,
 
-		["maxColumnsWhenStructured"] = 5,
+		["maxColumnsWhenStructured"] = 6,
 		["maxRowsWhenLoose"] = 5,
 		["ommitEmptyWhenStructured"] = true,
 		["isPlayerOnTop"] = true,
@@ -1243,12 +1243,12 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 		["showTags"] = true,
 		["showPetOwners"] = true,
 		["position"] = "CENTER+CENTER",
-		["xAdjust"] = 0.000001,
-		["yAdjust"] = 0.000001,
+		["xAdjust"] = 0,
+		["yAdjust"] = -3,
 	},
 
 	["PANEL_COLOR"] = {
-		["barTexture"] = "VuhDo - Polished Wood",
+		["barTexture"] = "VuhDo - Convex",
 
 		["BACK"] = {
 			["R"] = 0, ["G"] = 0, ["B"] = 0, ["O"] = 0.35,
@@ -1306,7 +1306,7 @@ local VUHDO_DEFAULT_PER_PANEL_SETUP = {
 
 	["RAID_ICON"] = {
 		["show"] = true,
-		["scale"] = 0.7,
+		["scale"] = 0.6,
 		["point"] = "TOP",
 		["xAdjust"] = 0,
 		["yAdjust"] = -10,
@@ -1361,9 +1361,9 @@ function VUHDO_loadDefaultPanelSetup()
 	for tPanelNum = 1, 10 do -- VUHDO_MAX_PANELS
 		if not VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] and tPanelNum == 1 then
 			VUHDO_PANEL_SETUP[tPanelNum]["POSITION"] = {
-				["x"] = 200,
-				["y"] = 100,
-				["relativePoint"] = "CENTER",
+				["x"] = 130,
+				["y"] = 650,
+				["relativePoint"] = "BOTTOMLEFT",
 				["orientation"] = "TOPLEFT",
 				["growth"] = "TOPLEFT",
 				["width"] = 200,
@@ -1408,7 +1408,7 @@ end
 
 local VUHDO_DEFAULT_BUFF_CONFIG = {
   ["VERSION"] = 4,
-	["SHOW"] = true,
+	["SHOW"] = false,
 	["COMPACT"] = true,
 	["SHOW_LABEL"] = false,
 	["BAR_COLORS_TEXT"] = true,

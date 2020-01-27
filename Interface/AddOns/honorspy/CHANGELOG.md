@@ -1,6 +1,6 @@
 # HonorSpy
 
-## [1.6.7](https://github.com/kakysha/HonorSpy/tree/1.6.7) (2019-12-12)
-[Full Changelog](https://github.com/kakysha/HonorSpy/compare/1.6.6...1.6.7)
+## [1.7.1](https://github.com/kakysha/HonorSpy/tree/1.7.1) (2019-12-27)
+[Full Changelog](https://github.com/kakysha/HonorSpy/compare/1.7.0...1.7.1)
 
-- Sync over Battleground, correctly  
+- fix "friends" prints  

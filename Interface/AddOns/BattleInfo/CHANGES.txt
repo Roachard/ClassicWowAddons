@@ -1,34 +1,28 @@
-lightweight tag b9d5ec21bad27134ed50edddd0dfbb42dee22ec0 v2.1.0
-Author:	GitHub <noreply@github.com>
-Date:	Sat Dec 14 02:12:09 2019 -0800
+lightweight tag 0c410de020d08d3cc976018103d3016559e4f3d5 v2.3.6
+Author:	Boshi Lian <farmer1992@gmail.com>
+Date:	Sat Jan 18 20:22:40 2020 -0800
 
-commit b9d5ec21bad27134ed50edddd0dfbb42dee22ec0
+commit 0c410de020d08d3cc976018103d3016559e4f3d5
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 14 02:12:09 2019 -0800
+Date:   Sat Jan 18 20:22:40 2020 -0800
 
-    Update README.md
+    prevent battle conflict
 
-commit 29c8ae57d4e6f132647d8270f7d4ebef1da41e17
+commit 1c963cdd6e4939e3835c5816e97216ccfe7a2a5f
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 14 02:06:28 2019 -0800
+Date:   Fri Jan 17 21:02:16 2020 -0800
 
-    add quick select editbox
+    something may cause leave timer reset
 
-commit f5414fbe751ebe71122c352618bad2e60c3d29e8
+commit c8d0f6f1b5cd7c0d44a72110fb0b47eec5c55570
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 14 00:41:18 2019 -0800
+Date:   Wed Jan 15 02:24:26 2020 -0800
 
-    add toc notes
+    add rest btn
 
-commit 7b50776d9df4dd35674ac3e7394ae6198555d5a9
+commit 52a037be2e9e58add528c9762044c79a05e437ae
 Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Sat Dec 14 00:37:56 2019 -0800
+Date:   Wed Jan 15 00:53:50 2020 -0800
 
-    change struct
-
-commit f950ded319ea51c4c2f644a702c52cd2754956af
-Author: Boshi Lian <farmer1992@gmail.com>
-Date:   Thu Dec 12 07:25:25 2019 -0800
-
-    hook battle update
+    color stat
 

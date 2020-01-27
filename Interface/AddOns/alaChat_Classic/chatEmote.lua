@@ -1,6 +1,7 @@
 ﻿--[[--
 	alex@0
 --]]--
+-- do return; end
 ----------------------------------------------------------------------------------------------------
 local ADDON,NS = ...;
 local FUNC = NS.FUNC;
@@ -122,6 +123,7 @@ local CustomizedIconTable = {
 ------------------------------------------------------------------------------------------------
 --------------------------------------------------chat Emote
 local control_chatEmote = true;
+local control_chatEmote_channel = false;
 ------------------------------------------------------------------------------------------------
 local function IconSize(f)
 	--local _, font = f:GetFont();
@@ -307,6 +309,21 @@ local function ChatEmoteFilter(self, event, msg, ...)
 	return false, msg, ...
 end
 
+local function ChatEmoteFilter2(msg)
+	--print(msg)
+	-- for s in string.gmatch(msg, "({[^}]+})") do
+	-- 	if (Emote_Index2Path[s]) then
+	-- 		 msg = string.gsub(msg , s, "\124T" .. Emote_Index2Path[s] .. ":" ..IconSize(self) .. "\124t", 1);
+	-- 	end
+	-- end
+	for k, t in pairs(Emote_Index2Path) do
+		if string.find(msg, k) then
+			msg = string.gsub(msg, k, t);
+		end
+	end
+	return msg
+end
+
 local function SendChatMessage_Filter(text)
 	if control_chatEmote then
 		for s in string.gmatch(text, "\124T([^:]+):%d+\124t") do
@@ -375,10 +392,15 @@ local function chatEmote_ToggleOn(initing)
 		__alaBaseBtn:AddBtn(1, 1, mainButton, true);
 	end
 
+	-- if ala_add_AddMessage_filter then
+	-- 	ala_add_AddMessage_filter(ChatEmoteFilter2);
+	-- end
 	if ala_add_message_event_filter then
-		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "chatEmote", ChatEmoteFilter)
-		-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_JOIN", ChatEmoteFilter)
-		-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", ChatEmoteFilter)
+		if control_chatEmote_channel then
+			ala_add_message_event_filter("CHAT_MSG_CHANNEL", "chatEmote", ChatEmoteFilter)
+			-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_JOIN", ChatEmoteFilter)
+			-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", ChatEmoteFilter)
+		end
 		ala_add_message_event_filter("CHAT_MSG_SAY", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_YELL", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_WHISPER", "chatEmote", ChatEmoteFilter)
@@ -389,36 +411,14 @@ local function chatEmote_ToggleOn(initing)
 		ala_add_message_event_filter("CHAT_MSG_RAID_WARNING", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_PARTY", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_PARTY_LEADER", "chatEmote", ChatEmoteFilter)
-		-- ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "chatEmote", ChatEmoteFilter)
-		-- ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "chatEmote", ChatEmoteFilter)
+		ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "chatEmote", ChatEmoteFilter)
+		ala_add_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_GUILD", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_OFFICER", "chatEmote", ChatEmoteFilter)
-		ala_add_message_event_filter("CHAT_MSG_AFK", "chatEmote", ChatEmoteFilter)
+		-- ala_add_message_event_filter("CHAT_MSG_AFK", "chatEmote", ChatEmoteFilter)
 		ala_add_message_event_filter("CHAT_MSG_EMOTE", "chatEmote", ChatEmoteFilter)
-		ala_add_message_event_filter("CHAT_MSG_DND", "chatEmote", ChatEmoteFilter)
-		ala_add_message_event_filter("CHAT_MSG_COMMUNITIES_CHANNEL", "chatEmote", ChatEmoteFilter)
-	else
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL", ChatEmoteFilter)
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", ChatEmoteFilter)
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_SAY", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_YELL", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_BN_WHISPER", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_WHISPER_INFORM", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_LEADER", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_RAID_WARNING", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_PARTY_LEADER", ChatEmoteFilter)
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", ChatEmoteFilter)
-		-- ChatFrame_AddMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_GUILD", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_OFFICER", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_AFK", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_EMOTE", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_DND", ChatEmoteFilter)
-		ChatFrame_AddMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", ChatEmoteFilter)
+		-- ala_add_message_event_filter("CHAT_MSG_DND", "chatEmote", ChatEmoteFilter)
+		-- ala_add_message_event_filter("CHAT_MSG_COMMUNITIES_CHANNEL", "chatEmote", ChatEmoteFilter)
 	end
 
 	return control_chatEmote;
@@ -433,6 +433,9 @@ local function chatEmote_ToggleOff()
 		__alaBaseBtn:RemoveBtn(mainButton);
 	end
 
+	-- if ala_sub_AddMessage_filter then
+	-- 	ala_sub_AddMessage_filter(ChatEmoteFilter2);
+	-- end
 	if ala_remove_message_event_filter then
 		ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "chatEmote")
 		-- ala_remove_message_event_filter("CHAT_MSG_CHANNEL_JOIN", "chatEmote")
@@ -447,36 +450,14 @@ local function chatEmote_ToggleOff()
 		ala_remove_message_event_filter("CHAT_MSG_RAID_WARNING", "chatEmote")
 		ala_remove_message_event_filter("CHAT_MSG_PARTY", "chatEmote")
 		ala_remove_message_event_filter("CHAT_MSG_PARTY_LEADER", "chatEmote")
-		-- ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "chatEmote")
-		-- ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "chatEmote")
+		ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT", "chatEmote")
+		ala_remove_message_event_filter("CHAT_MSG_INSTANCE_CHAT_LEADER", "chatEmote")
 		ala_remove_message_event_filter("CHAT_MSG_GUILD", "chatEmote")
 		ala_remove_message_event_filter("CHAT_MSG_OFFICER", "chatEmote")
-		ala_remove_message_event_filter("CHAT_MSG_AFK", "chatEmote")
+		-- ala_remove_message_event_filter("CHAT_MSG_AFK", "chatEmote")
 		ala_remove_message_event_filter("CHAT_MSG_EMOTE", "chatEmote")
-		ala_remove_message_event_filter("CHAT_MSG_DND", "chatEmote")
-		ala_remove_message_event_filter("CHAT_MSG_COMMUNITIES_CHANNEL", "chatEmote")
-	else
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL", ChatEmoteFilter)
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_JOIN", ChatEmoteFilter)
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_CHANNEL_LEAVE", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_SAY", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_YELL", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_BN_WHISPER", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_WHISPER_INFORM", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_LEADER", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_RAID_WARNING", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_PARTY_LEADER", ChatEmoteFilter)
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT", ChatEmoteFilter)
-		-- ChatFrame_RemoveMessageEventFilter("CHAT_MSG_INSTANCE_CHAT_LEADER", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_GUILD", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_OFFICER", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_AFK", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_EMOTE", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_DND", ChatEmoteFilter)
-		ChatFrame_RemoveMessageEventFilter("CHAT_MSG_COMMUNITIES_CHANNEL", ChatEmoteFilter)
+		-- ala_remove_message_event_filter("CHAT_MSG_DND", "chatEmote")
+		-- ala_remove_message_event_filter("CHAT_MSG_COMMUNITIES_CHANNEL", "chatEmote")
 	end
 
 	--SendChatMessage = __SendChatMessage;
@@ -484,6 +465,26 @@ local function chatEmote_ToggleOff()
 	--BNSendConversationMessage = __BNSendConversationMessage;
 
 	return control_chatEmote;
+end
+local function chatEmote_channel_ToggleOn()
+	if control_chatEmote_channel then
+		return;
+	end
+	chatEmote_channel = true;
+	if control_chatEmote then
+		ala_add_message_event_filter("CHAT_MSG_CHANNEL", "chatEmote", ChatEmoteFilter)
+		-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_JOIN", ChatEmoteFilter)
+		-- ala_add_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", ChatEmoteFilter)
+	end
+end
+local function chatEmote_channel_ToggleOff()
+	if not chatEmote_channel then
+		return;
+	end
+	chatEmote_channel = false;
+	ala_remove_message_event_filter("CHAT_MSG_CHANNEL", "chatEmote")
+	-- ala_remove_message_event_filter("CHAT_MSG_CHANNEL_JOIN", "chatEmote")
+	-- ala_remove_message_event_filter("CHAT_MSG_CHANNEL_LEAVE", "chatEmote")
 end
 
 if FUNC then
@@ -500,5 +501,7 @@ if FUNC then
 			mainButton:SetHighlightTexture(ICON_PATH .. "emote_highlight");
 		end
 	end
+	FUNC.ON.chatEmote_channel = chatEmote_channel_ToggleOn;
+	FUNC.OFF.chatEmote_channel = chatEmote_channel_ToggleOff;
 end
 ------------------------------------------------------------------------------------------------

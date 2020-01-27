@@ -3,6 +3,23 @@
 --]]--
 ----------------------------------------------------------------------------------------------------
 local ADDON, NS = ...;
+_G.__ala_meta__ = _G.__ala_meta__ or {  };
+
+do
+	local _G = _G;
+	local env_meta = {  };
+	local function set_global(key, value)
+		rawset(env_meta, key, value);
+		print("emu assign global", key, value);
+		return value;
+	end
+	local env = setmetatable(env_meta, {
+			__index = _G,
+			__newindex = function(t, key, value) set_global(key, value); end,
+		}
+	);
+	setfenv(1, env);
+end
 
 local L = NS.L;
 if not L then return;end
@@ -161,7 +178,7 @@ local curPhase = 2;
 			edgeSize = 12,
 			insets = { left = 4, right = 4, top = 4, bottom = 4, }
 		},
-		equipmentFrameBackdropColor_blz = { 0.0, 0.0, 0.0, 0.5, },
+		equipmentFrameBackdropColor_blz = { 0.25, 0.25, 0.25, 1.0, },
 		equipmentFrameBackdropBorderColor_blz = { 1.0, 1.0, 1.0, 1.0, },
 
 		mainFrameXSizeMin_Style1 = 250,
@@ -388,15 +405,22 @@ local curPhase = 2;
 	local _GetSpellLink = _G.ALA_GetSpellLink;
 	--------------------------------------------------
 	local ADDON_MSG_CONTROL_CODE_LEN = 6;
-	local ADDON_MSG_QUERY_TALENTS = "_query";
-	local ADDON_MSG_REPLY_TALENTS = "_reply";
+	local ADDON_MSG_QUERY_TALENTS = "_q_tal";
+	local ADDON_MSG_REPLY_TALENTS = "_r_tal";
 	local ADDON_MSG_PUSH = "_push_";
 	local ADDON_MSG_PUSH_RECV = "_pushr";
 	local ADDON_MSG_PULL = "_pull_";
 	--
-	local ADDON_MSG_QUERY_EQUIPMENTS = "_queeq";
-	local ADDON_MSG_REPLY_EQUIPMENTS = "_repeq";
-	local ADDON_MSG_REPLY_ADDON_PACK = "_reppk";
+	local ADDON_MSG_QUERY_EQUIPMENTS = "_q_equ";
+	local ADDON_MSG_REPLY_EQUIPMENTS = "_r_equ";
+	local ADDON_MSG_REPLY_ADDON_PACK = "_r_pak";
+	----------------
+	local ADDON_MSG_QUERY_TALENTS_ = "_query";
+	local ADDON_MSG_REPLY_TALENTS_ = "_reply";
+	--
+	local ADDON_MSG_QUERY_EQUIPMENTS_ = "_queeq";
+	local ADDON_MSG_REPLY_EQUIPMENTS_ = "_repeq";
+	local ADDON_MSG_REPLY_ADDON_PACK_ = "_reppk";
 	--------------------------------------------------
 	local _talentDB = NS._talentDB;
 	local _indexToClass = NS._indexToClass;
@@ -494,10 +518,14 @@ local emu = {
 	playerGUID = UnitGUID('player'),
 	playerName = UnitName('player'),
 	realm = GetRealmName(),
+	playerFullName = UnitName('player') .. "-" .. GetRealmName();
 	specializedMainFrameInspect = {  },
 	queryCache = {  },	-- [GUID] = { [addon] = { data, time, }, }
 	recv_msg = {  };
 };
+emu.playerFullName_Len = strlen(emu.playerFullName);
+
+_G.__ala_meta__.emu = emu;
 local extern = { export = {  }, import = {  }, addon = {  }, };
 
 do	-- extern media
@@ -542,7 +570,7 @@ do	-- extern media
 	end
 	function extern.import.nfu(url)
 		--http://www.nfuwow.com/talents/60/warrior/tal/1331511131241111111100000000000000040000000000000000
-		--           nfuwow%.com/talents/60/([^/]+)/tal/(%d+)
+		--		   nfuwow%.com/talents/60/([^/]+)/tal/(%d+)
 		local _, _, class, data = strfind(url, "nfuwow%.com/talents/60/([^/]+)/tal/(%d+)");
 		if class and data then
 			class = strlower(class);
@@ -691,6 +719,7 @@ do	-- win manager
 					mainFrame:Hide();
 				end
 				emu.winMan_RelSpecializedName(mainFrame);
+				emu.EmuCore_Reset(mainFrame);
 				break;
 			end
 		end
@@ -884,6 +913,12 @@ do	-- win manager
 				mainFrame.spellTabFrame:SetBackdropColor(unpack(setting.spellTabFrameBackdropColor_blz));
 				mainFrame.spellTabFrame:SetBackdropBorderColor(unpack(setting.spellTabFrameBackdropBorderColor_blz));
 			end
+		end
+	end
+	function emu.winMan_Iterator(func)
+		local mainFrames = emu.mainFrames;
+		for i = mainFrames.used, 1, -1 do
+			func(mainFrames[i]);
 		end
 	end
 end
@@ -1564,11 +1599,18 @@ do	-- internal sub
 		return data[1] * MAX_NUM_COL + data[2] + 1;
 	end
 
-	function emu.EmuCore_SetName(mainFrame, name)			-- NAME CHANGED HERE ONLY
+	function emu.EmuCore_SetName(mainFrame, name)			-- NAME CHANGED HERE ONLY	-- and emu.EmuSub_UpdateLabelText
 		mainFrame.name = name;
 		if name then
 			local objects = mainFrame.objects;
 			objects.label:SetText(name);
+			local info = emu.get_pack_info(config.inspect_pack and emu.queryCache[name] and emu.queryCache[name].pack);
+			if info then
+				objects.pack_label:SetText(info);
+				objects.pack_label:Show();
+			else
+				objects.pack_label:Hide();
+			end
 			objects.resetToEmu:Show();
 			objects.resetToSetButton:Hide();
 			local classButtons = mainFrame.classButtons;
@@ -1585,6 +1627,7 @@ do	-- internal sub
 		else
 			local objects = mainFrame.objects;
 			objects.label:SetText(L.Emu);
+			objects.pack_label:Hide();
 			objects.resetToEmu:Hide();
 			objects.resetToSetButton:Hide();
 			local classButtons = mainFrame.classButtons;
@@ -1598,6 +1641,16 @@ do	-- internal sub
 			mainFrame.equipmentFrame:Hide();
 		end
 		mainFrame.objects.equipmentButton:Hide();
+	end
+	function emu.EmuSub_SetPack(name)
+		if config.inspect_pack then
+			local function func(mainFrame)
+				if mainFrame.name == name then
+					emu.EmuCore_SetName(mainFrame, name);
+				end
+			end
+			emu.winMan_Iterator(func);
+		end
 	end
 	function emu.EmuCore_SetLevel(mainFrame, level)			-- LEVEL CHANGED HERE ONLY
 		if level == nil then
@@ -2254,8 +2307,10 @@ do	-- internal sub
 	function emu.EmuSub_NotifyEquipmentInfo(name)
 		if not config.show_equipment then return; end
 		local meta = emu.winMan_GetSpecializedMeta(name);
-		for i = 2, #meta do
-			meta[i].objects.equipmentButton:Show();
+		if meta then
+			for i = 2, #meta do
+				meta[i].objects.equipmentButton:Show();
+			end
 		end
 	end
 	function emu.EmuSub_GetEquipmentInfo(meta)
@@ -2348,43 +2403,71 @@ do	-- communication func
 	function emu.CHAT_MSG_ADDON(self, event, prefix, text, channel, sender, target, zoneChannelID, localID, name, instanceID)
 		if prefix == ADDON_PREFIX then
 			local control_code = strsub(text, 1, ADDON_MSG_CONTROL_CODE_LEN);
-			local n, r =strsplit("-", sender);
-			if n and r == emu.realm then
+			local n, realm =strsplit("-", sender);
+			if n and realm == emu.realm then
 				sender = n;
+			else
+				realm = nil;
 			end
+			n = nil;
+			-- realm = (realm == nil or r == "") and emu.realm or realm;
 			if control_code == ADDON_MSG_QUERY_TALENTS then
+				if channel == "INSTANCE_CHAT" then
+					local target = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 2, - 1);
+					if target ~= emu.playerFullName then
+						return;
+					end
+				end
 				local class, data, level = emu.GetPlayerTalentData();
 				if class then
 					local code = emu.EmuCore_Encoder(class, data, level);
-					SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_TALENTS .. code, "WHISPER", sender);
-					SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_ADDON_PACK .. emu.get_pack(), "WHISPER", sender);
+					if channel == "WHISPER" then
+						SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_ADDON_PACK .. emu.get_pack(), "WHISPER", sender);
+						SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_TALENTS .. code, "WHISPER", sender);
+					elseif channel == "INSTANCE_CHAT" then
+						SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_ADDON_PACK .. emu.get_pack(), "INSTANCE_CHAT");
+						SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_TALENTS .. code .. "#" .. sender, "INSTANCE_CHAT");
+					end
 				end
 			elseif control_code == ADDON_MSG_QUERY_EQUIPMENTS then
+				if channel == "INSTANCE_CHAT" then
+					local target = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 2, - 1);
+					if target ~= emu.playerFullName then
+						return;
+					end
+				end
 				local meta = emu.EmuSub_GetEquipmentInfo();
 				local msg = "";
 				local n = 0;
 				for slot = 0, 19 do
-					msg = msg .. "#" .. slot .. "#" .. meta[slot];
+					msg = msg .. "+" .. slot .. "+" .. meta[slot];
 					n = n + 1;
 					if n >= 4 then
 						n = 0;
-						SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_EQUIPMENTS .. msg, "WHISPER", sender);
+						if channel == "WHISPER" then
+							SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_EQUIPMENTS .. msg, "WHISPER", sender);
+						elseif channel == "INSTANCE_CHAT" then
+							SendAddonMessage(ADDON_PREFIX, ADDON_MSG_REPLY_EQUIPMENTS .. msg .. "#" .. sender, "INSTANCE_CHAT");
+						end
 						msg = "";
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_TALENTS then
+			elseif control_code == ADDON_MSG_REPLY_TALENTS or control_code == ADDON_MSG_REPLY_TALENTS_ then
 				local code = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
 				if code and code ~= "" then
+					emu.queryCache[sender] = emu.queryCache[sender] or {  };
+					emu.queryCache[sender][0] = time();
+					local _1, _2 = strsplit("#", code);
+					emu.queryCache[sender].talent = _1;
+					if not _2 or _2 == emu.playerName or _2 == emu.playerFullName or strsub(_2, 1, emu.playerFullName_Len) == emu.playerFullName then	-- OLDVERSION
+						code = _1;
+					else
+						return;
+					end
 					local class, data, level = emu.EmuCore_Decoder(code);
 					if class and data and level then
-						local n, r =strsplit("-", sender);
-						if n and r == emu.realm then
-							sender = n;
-						end
 						local readOnly = false;
-						if n == emu.playerName then
-							readOnly = false;
-						else
+						if sender ~= emu.playerName then
 							readOnly = true;
 						end
 						local specializedMainFrame = emu.specializedMainFrameInspect[sender];
@@ -2399,14 +2482,17 @@ do	-- communication func
 						end
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_EQUIPMENTS then
+			elseif control_code == ADDON_MSG_REPLY_EQUIPMENTS or control_code == ADDON_MSG_REPLY_EQUIPMENTS_ then
 				local code = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
 				-- queryCache
 				-- emu.specializedMainFrameInspect
 				if code and code ~= "" then
-					local n, r =strsplit("-", sender);
-					if n and r == emu.realm then
-						sender = n;
+					local _1, _2 = strsplit("#", code);
+					emu.queryCache[sender].talent = _1;
+					if not _2 or _2 == emu.playerName or _2 == emu.playerFullName or strsub(_2, 1, emu.playerFullName_Len) == emu.playerFullName then	-- OLDVERSION
+						code = _1;
+					else
+						return;
 					end
 					-- #0#item:-1#1#item:123:::::#2#item:444:::::#3#item:-1
 					-- #(%d)#(item:[%-0-9:]+)#(%d)#(item:[%-0-9:]+)#(%d)#(item:[%-0-9:]+)#(%d)#(item:[%-0-9:]+)
@@ -2415,9 +2501,10 @@ do	-- communication func
 					local slot = nil;
 					local item = nil;
 					emu.queryCache[sender] = emu.queryCache[sender] or {  };
+					emu.queryCache[sender][0] = time();
 					-- wipe(emu.queryCache[sender]);
 					while true do
-						_, start, slot, item = strfind(code, "#(%d+)#(item:[%-0-9:]+)", start);
+						_, start, slot, item = strfind(code, "%+(%d+)%+(item:[%-0-9:]+)", start);
 						if slot and item then
 							slot = tonumber(slot);
 							if slot and slot >= 0 and slot <= 19 then
@@ -2439,9 +2526,18 @@ do	-- communication func
 						end
 					end
 				end
-			elseif control_code == ADDON_MSG_REPLY_ADDON_PACK then
+			elseif control_code == ADDON_MSG_REPLY_ADDON_PACK or control_code == ADDON_MSG_REPLY_ADDON_PACK_ then
+				emu.queryCache[sender] = emu.queryCache[sender] or {  };
+				emu.queryCache[sender][0] = time();
+				local code = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
+				local _1, _2 = strsplit("#", code);	-- OLD VERSION
+				if _2 then
+					code = _1;
+				end
+				emu.queryCache[sender].pack = code;
+				emu.EmuSub_SetPack(sender);
 				if config.inspect_pack then
-					emu.display_pack(strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1));
+					-- emu.display_pack(code);
 				end
 			elseif control_code == ADDON_MSG_PUSH or control_code == ADDON_MSG_PUSH_RECV then
 				local msg = strsub(text, ADDON_MSG_CONTROL_CODE_LEN + 1, - 1);
@@ -2474,6 +2570,32 @@ do	-- communication func
 		end
 	end
 	emu.CHAT_MSG_ADDON_LOGGED = emu.CHAT_MSG_ADDON;
+	function emu.Emu_Query(name, realm)
+		local n, r = strsplit("-", name);
+		if n ~= nil and n ~= "" and r ~= nil and r ~= "" then
+			name = n;
+			realm = r;
+		end
+		realm = (realm == nil or realm == "") and emu.realm or realm;
+		-- print("QUERY", name, realm);
+		if name then
+			if UnitInBattleground('player') and realm ~= emu.realm then
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS .. "#" .. name .. "-" .. realm, "INSTANCE_CHAT");
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS .. "#" .. name .. "-" .. realm, "INSTANCE_CHAT");
+			else
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS, "WHISPER", name);
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS, "WHISPER", name);
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS_, "WHISPER", name);
+				SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS_, "WHISPER", name);
+			end
+			for _, val in pairs(extern.addon) do
+				if UnitInBattleground('player') and realm ~= emu.realm then
+				else
+					SendAddonMessage(val.prefix, val.msg, "WHISPER", name);
+				end
+			end
+		end
+	end
 end
 
 do	-- external func
@@ -2589,15 +2711,6 @@ do	-- external func
 		emu.EmuCore_Reset(mainFrame);
 		emu.Emu_Set(mainFrame, class, data, level, readOnly, name);
 		-- emu.Emu_ChangeTab_Style2(mainFrame, tab);
-	end
-	function emu.Emu_Query(name)
-		if name then
-			SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_TALENTS, "WHISPER", name);
-			SendAddonMessage(ADDON_PREFIX, ADDON_MSG_QUERY_EQUIPMENTS, "WHISPER", name);
-			for _, val in pairs(extern.addon) do
-				SendAddonMessage(val.prefix, val.msg, "WHISPER", name);
-			end
-		end
 	end
 	function emu.Emu_ApplyTalents(mainFrame)
 		if InCombatLockdown() then
@@ -3061,7 +3174,7 @@ do	-- spellTabFrame
 	end
 	local function funcToCreateButton(parent, index, buttonHeight)
 		local button = CreateFrame("Button", nil, parent);
-		button:SetHeight(setting.spellTabFrameButtonHeight);
+		button:SetHeight(buttonHeight);
 		button:SetBackdrop(setting.spellTabFrameButtonBackdrop);
 		button:SetBackdropColor(unpack(setting.spellTabFrameButtonBackdropColor));
 		button:SetBackdropBorderColor(unpack(setting.spellTabFrameButtonBackdropBorderColor));
@@ -3071,7 +3184,7 @@ do	-- spellTabFrame
 	
 		local icon = button:CreateTexture(nil, "OVERLAY");
 		icon:SetTexture("Interface\\Icons\\inv_misc_questionmark");
-		icon:SetSize(setting.spellTabFrameButtonHeight - 4, setting.spellTabFrameButtonHeight - 4);
+		icon:SetSize(buttonHeight - 4, buttonHeight - 4);
 		icon:SetPoint("LEFT", 4, 0);
 		button.icon = icon;
 	
@@ -3103,7 +3216,7 @@ do	-- spellTabFrame
 		end
 	end
 	function emu.CreateSpellTabFrame(mainFrame)
-		local spellTabFrame = CreateFrame("Frame", mainFrame:GetName() .. "SpellTab", mainFrame);
+		local spellTabFrame = CreateFrame("Frame", nil, mainFrame);	-- mainFrame:GetName() .. "SpellTab"
 		spellTabFrame:SetPoint("LEFT", mainFrame, "RIGHT", 0, 0);
 		spellTabFrame:SetWidth(setting.spellTabFrameWidth);
 		if config.win_style == 'ala' then
@@ -3341,7 +3454,7 @@ do	-- talentFrame
 		end
 	end
 	function emu.CreateTalentIcon(talentFrame, id)
-		local icon = CreateFrame("Button", talentFrame:GetName() .. "TalentIcon" .. id, talentFrame);
+		local icon = CreateFrame("Button", nil, talentFrame);	-- talentFrame:GetName() .. "TalentIcon" .. id
 		icon:SetSize(setting.talentIconSize, setting.talentIconSize);
 
 		icon:Hide();
@@ -3439,7 +3552,7 @@ do	-- talentFrame
 		local talentFrames = {  };
 
 		for specIndex = 1, 3 do
-			local talentFrame = CreateFrame("Frame", mainFrame:GetName() .. "TalentFrame" .. specIndex, mainFrame);
+			local talentFrame = CreateFrame("Frame", nil, mainFrame);	-- mainFrame:GetName() .. "TalentFrame" .. specIndex
 			talentFrame:SetSize(setting.talentFrameXSizeSingle, setting.talentFrameYSize);
 
 			talentFrame:Show();
@@ -3620,10 +3733,14 @@ do	-- mainFrame sub objects
 	end
 	local function inspectTargetButton_OnClick(self)
 		if UnitExists('target') then
-			local name = UnitName('target');
+			local name, realm = UnitName('target');
 			if name then
-				emu.specializedMainFrameInspect[name] = { GetTime(), self:GetParent(), };
-				emu.Emu_Query(name);
+				if realm ~= nil and realm ~= "" and realm ~= emu.realm then
+					emu.specializedMainFrameInspect[name .. "-" .. realm] = { GetTime(), self:GetParent(), };
+				else
+					emu.specializedMainFrameInspect[name] = { GetTime(), self:GetParent(), };
+				end
+				emu.Emu_Query(name, realm);
 			end
 		end
 	end
@@ -3631,8 +3748,12 @@ do	-- mainFrame sub objects
 		text = L.applyTalentsButton_Notify,
 		button1 = L.OK,
 		button2 = L.Cancel,
-		OnShow = function(self) end,
-		OnAccept = function(self) end,
+		-- OnShow = function(self) end,
+		OnAccept = function(self)
+		end,
+		OnHide = function(self)
+			self.which = nil;
+		end,
 		timeout = 0,
 		whileDead = true,
 		hideOnEscape = true,
@@ -3640,7 +3761,9 @@ do	-- mainFrame sub objects
 	};
 	local function applyTalentsButton_OnClick(self)
 		if UnitLevel('player') >= 10 then
-			StaticPopupDialogs["alaTalentEmu_apply"].OnAccept = function() emu.Emu_ApplyTalents(self:GetParent()); end;
+			StaticPopupDialogs["alaTalentEmu_apply"].OnAccept = function()
+				emu.Emu_ApplyTalents(self:GetParent());
+			end;
 			StaticPopup_Show("alaTalentEmu_apply");
 		end
 	end
@@ -4000,6 +4123,13 @@ do	-- mainFrame sub objects
 			label:SetText(L.curPointsRemaining);
 			label:SetPoint("CENTER", mainFrame, "TOP", 0, - setting.mainFrameHeaderYSize * 0.5);
 			objects.label = label;
+
+			local pack_label = mainFrame:CreateFontString(nil, "ARTWORK");
+			pack_label:SetFont(setting.frameFont, setting.frameFontSize, setting.frameFontOutline);
+			pack_label:SetText("");
+			pack_label:SetPoint("BOTTOM", label, "TOP", 0, 4);
+			pack_label:Hide();
+			objects.pack_label = pack_label;
 
 			local resetToEmu = CreateFrame("Button", nil, mainFrame);
 			resetToEmu:SetSize(setting.controlButtonSize, setting.controlButtonSize);
@@ -4415,7 +4545,7 @@ do	-- mainFrame
 	local temp_id = 0;
 	function emu.CreateMainFrame()
 		temp_id = temp_id + 1;
-		local mainFrame = CreateFrame("Frame", NAME .. "MainFrame" .. temp_id, UIParent);
+		local mainFrame = CreateFrame("Frame", nil, UIParent);	-- NAME .. "MainFrame" .. temp_id
 		mainFrame.id = temp_id;
 
 		mainFrame:SetPoint("CENTER");
@@ -4745,7 +4875,7 @@ do	-- init
 				end
 				config = alaTalentEmuSV;
 			else
-				alaTalentEmuSV = config;
+				_G.alaTalentEmuSV = config;
 			end
 			emu.DB_PreProc(_talentDB);
 			emu.EmuCore_InitCodeTable();
@@ -4774,7 +4904,7 @@ do	-- init
 			emu.EmuCore_Init_ADDON_MESSAGE();
 			emu.tooltipFrame = emu.CreateTooltipFrame();
 
-			local _EventVehicle = CreateFrame("Frame", NAME .. "EventVehicle", UIParent);
+			local _EventVehicle = CreateFrame("Frame", nil, UIParent);	-- NAME .. "EventVehicle"
 			NS._EventVehicle = _EventVehicle;
 			_EventVehicle:RegisterEvent("CHAT_MSG_ADDON");
 			_EventVehicle:RegisterEvent("CHAT_MSG_ADDON_LOGGED");
@@ -4839,14 +4969,14 @@ do	-- SLASH and _G
 		emu.hideMainFrame(winId);
 	end
 	ATEMU.Query = function(unit)
-		if unit then
-			if UnitName(unit) then
-				unit = UnitName(unit);
-			end
+		unit = unit or 'target';
+		local name, realm = UnitName(unit);
+		if name then
+			emu.Emu_Query(name, realm);
 		else
-			unit = UnitName('target');
+			name, realm = strsplit("-", unit);
+			emu.Emu_Query(name, realm);
 		end
-		emu.Emu_Query(unit);
 	end
 	ATEMU.SetStyle = function(style)
 		config.style = style;
@@ -4951,50 +5081,68 @@ do	-- SLASH and _G
 		end
 		return nil;
 	end
-	--/run print(ATEMU.Create("paladin", "2314211111000015112111211000032113211111"))
-	--/run print(ATEMU.ExportCode(1))
-	--4Mv8i:8HsJ4gm7R4veBw0
-	--/run ATEMU.ImportCode("4Mv8i:8HsJ4gm7R4veBw0");
-	--/run print(ATEMU.ExportCode(2))
-	--4Mv8i:sdWw7gm7R4JMw0
-	--4jt-2:8QfgA0iJ5:2w0
-	--/run ATEMU.ImportCode("4Mv8i:sdWw7gm7R4JMw0");
 end
 ----------------------------------------------------------------------------------------------------Popup Menu
 do	-- popup
+	local text = nil;
 	if LOCALE == "zhCN" then
-		UnitPopupButtons["EMU_INSPECT"] = { text = "查询天赋", };
-		UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查询天赋", nested = 1, };
+		text = "查询天赋";
 	elseif LOCALE == "zhTW" then
-		UnitPopupButtons["EMU_INSPECT"] = { text = "查詢天賦", };
-		UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查詢天賦", nested = 1, };
+		text = "查詢天賦";
 	else
-		UnitPopupButtons["EMU_INSPECT"] = { text = "Inspect talent", };
-		UnitPopupButtons["BN_EMU_INSPECT"] = { text = "Inspect talent", nested = 1, };
+		text = "Inspect talent";
 	end
-	UnitPopupMenus["BN_EMU_INSPECT"] = {  },
 
-	tinsert(UnitPopupMenus["SELF"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["FRIEND"], 1, "EMU_INSPECT");
-	--tinsert(UnitPopupMenus["FRIEND_OFFLINE"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["PLAYER"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["PARTY"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["RAID_PLAYER"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["CHAT_ROSTER"], 1, "EMU_INSPECT");
-	tinsert(UnitPopupMenus["GUILD"], 1, "EMU_INSPECT");
+	local function inspect_talent(which, frame)
+		emu.Emu_Query(frame.name, frame.server);
+	end
 
-	-- tinsert(UnitPopupMenus["BN_FRIEND"], 1, "BN_EMU_INSPECT");
+	alaPopup.add_meta("EMU_INSPECT", { text, inspect_talent, });
+	alaPopup.add_list("SELF", "EMU_INSPECT");
+	alaPopup.add_list("FRIEND", "EMU_INSPECT");
+	--alaPopup.add_list("FRIEND_OFFLINE", "EMU_INSPECT");
+	alaPopup.add_list("PLAYER", "EMU_INSPECT");
+	alaPopup.add_list("PARTY", "EMU_INSPECT");
+	alaPopup.add_list("RAID", "EMU_INSPECT");
+	alaPopup.add_list("RAID_PLAYER", "EMU_INSPECT");
+	alaPopup.add_list("CHAT_ROSTER", "EMU_INSPECT");
+	alaPopup.add_list("GUILD", "EMU_INSPECT");
 
-	hooksecurefunc("UnitPopup_OnClick", function(self)
-		local name = UIDROPDOWNMENU_INIT_MENU.name;
-		if (self.value == "EMU_INSPECT") then
-			emu.Emu_Query(name);
-		-- elseif self.value == "BN_EMU_INSPECT" and self.arg1 then
-		--     emu.Emu_Query(self.arg1.name);
-		end
-	end);
 
 	if false then
+		if LOCALE == "zhCN" then
+			UnitPopupButtons["EMU_INSPECT"] = { text = "查询天赋", };
+			-- UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查询天赋", nested = 1, };
+		elseif LOCALE == "zhTW" then
+			UnitPopupButtons["EMU_INSPECT"] = { text = "查詢天賦", };
+			-- UnitPopupButtons["BN_EMU_INSPECT"] = { text = "查詢天賦", nested = 1, };
+		else
+			UnitPopupButtons["EMU_INSPECT"] = { text = "Inspect talent", };
+			-- UnitPopupButtons["BN_EMU_INSPECT"] = { text = "Inspect talent", nested = 1, };
+		end
+		-- UnitPopupMenus["BN_EMU_INSPECT"] = {  },
+
+		-- tinsert(UnitPopupMenus["SELF"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["FRIEND"], 1, "EMU_INSPECT");
+		-- --tinsert(UnitPopupMenus["FRIEND_OFFLINE"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["PLAYER"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["PARTY"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["RAID_PLAYER"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["CHAT_ROSTER"], 1, "EMU_INSPECT");
+		-- tinsert(UnitPopupMenus["GUILD"], 1, "EMU_INSPECT");
+
+		-- tinsert(UnitPopupMenus["BN_FRIEND"], 1, "BN_EMU_INSPECT");
+
+		hooksecurefunc("UnitPopup_OnClick", function(self)
+			local name = UIDROPDOWNMENU_INIT_MENU.name;
+			local server = UIDROPDOWNMENU_INIT_MENU.server;
+			if (self.value == "EMU_INSPECT") then
+				emu.Emu_Query(name, server);
+			-- elseif self.value == "BN_EMU_INSPECT" and self.arg1 then
+			--	 emu.Emu_Query(self.arg1.name, self.arg1.server);
+			end
+		end);
+
 		local LC = {  };
 		for k, v in pairs(LOCALIZED_CLASS_NAMES_FEMALE) do
 			LC[v] = k;
@@ -5040,7 +5188,7 @@ do	-- button_on_unitFrame
 		if not unitFrameName or unitFrameName == "" then
 			unitFrameName = "UNK" .. temp_unkFrame_id;
 		end
-		local unitFrameButton = CreateFrame("Button", NAME .. unitFrameName .. "Button", UIParent);
+		local unitFrameButton = CreateFrame("Button", nil, UIParent);	-- NAME .. unitFrameName .. "Button"
 		unitFrameButton:SetSize(60, 60);
 		unitFrameButton:Show();
 		unitFrameButton:SetAlpha(0.0);
@@ -5095,19 +5243,15 @@ do	-- button_on_unitFrame
 
 	C_Timer.After(1.0, function() hookUnitFrame(TargetFrame); end);
 end
-----------------------------------------------------------------------------------------------------Tooltip
-do	-- tooltip
+----------------------------------------------------------------------------------------------------
+do	-- 
 	local Orig_TalentFrameTalent_OnClick = nil;
 	local function _TalentFrameTalent_OnClick(self, mouseButton)
-		--ATEMU.QueryIdFromDB
-		--print(self, mouseButton)
 		if IsShiftKeyDown() then
 			local specIndex, id = PanelTemplates_GetSelectedTab(TalentFrame), self:GetID();
 			local name, iconTexture, tier, column, rank, maxRank, isExceptional, available = GetTalentInfo(specIndex, id);
 			local sId = ATEMU.QueryIdFromDB(emu.playerClass_Lower, specIndex, id, rank);
-			--print(emu.playerClass_Lower, specIndex, id, rank,sId, name)
 			local link = _GetSpellLink(sId, name);
-			--print(link)
 			if link then
 				local editBox = ChatEdit_ChooseBoxForSend();
 				editBox:Show();
@@ -5120,9 +5264,7 @@ do	-- tooltip
 	end
 	local TalentFrameTalents = {  };
 	local function onEvent(self, event, addon)
-		--print(event, addon);
 		if addon == "Blizzard_TalentUI" then
-			--print(TalentFrameTalent_OnClick)
 			Orig_TalentFrameTalent_OnClick = TalentFrameTalent_OnClick;
 			for i = 1, 999 do
 				local b = _G["TalentFrameTalent" .. i];
@@ -5157,9 +5299,10 @@ do	-- tooltip
 	--GameTooltip:SetHyperlink("itemString" or "itemLink")
 	--GameTooltip:SetSpellBookItem(spellBookId, bookType)
 	--GameTooltip:SetSpellByID(spellId)
-
+end
+----------------------------------------------------------------------------------------------------Tooltip
+do	-- tooltip
 	local function func_HookGTT(self, spellId)
-		--print(spellId)
 		local eClass, class, specIndex, spec, id, row, col, rank = ATEMU.QueryInfoFromDB(spellId);
 		if eClass then
 			local classColorTable = RAID_CLASS_COLORS[strupper(eClass)];
@@ -5168,7 +5311,6 @@ do	-- tooltip
 		end
 	end
 	local function func_SetHyperlink(self, link)
-		--print(gsub(link, "\124", "--"));
 		local _, _, spellId = strfind(link, "spell:(%d+)");
 		spellId = tonumber(spellId);
 		if spellId then
@@ -5190,12 +5332,10 @@ do	-- tooltip
 	end
 	local function func_SetAction(self, slot)
 		local actionType, id, subType = GetActionInfo(slot);
-		--print(actionType, id, subType)
 		if actionType == "spell" then
 			func_HookGTT(self, id);
 		elseif actionType == "macro" then
 			local spellId = GetMacroSpell(id);
-			--print(id, spellId)
 			if spellId then
 				func_HookGTT(self, spellId);
 			end
@@ -5257,23 +5397,29 @@ do	-- dev
 	function emu.get_pack()
 		return packs;
 	end
-	function emu.display_pack(meta)
+	function emu.get_pack_info(meta)
 		if meta and meta ~= "" then
 			meta = tonumber(meta);
 			if meta then
-				local msg = "";
+				local info = "";
 				local index = #knownPacks - 1;
 				local magic = 2 ^ index;
 				while magic >= 1 do
 					if meta >= magic then
-						msg = msg .. " " .. (knownPacks[index + 1] or "") .. index;
+						info = info .. " " .. (knownPacks[index + 1] or "???") .. "-" .. index;
 						meta = meta - magic;
 					end
 					magic = magic / 2;
 					index = index - 1;
 				end
-				print("Packed: ", msg);
+				return info;
 			end
+		end
+	end
+	function emu.display_pack(meta)
+		local info = emu.get_pack_info(meta);
+		if info then
+			print("Packed: ", info);
 		else
 			print("Packed: \124cffff0000none\124r")
 		end

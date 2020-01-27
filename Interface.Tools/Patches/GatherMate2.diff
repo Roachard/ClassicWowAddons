@@ -1,0 +1,22 @@
+diff --git a/Interface/AddOns/GatherMate2/Constants.lua b/Interface/AddOns/GatherMate2/Constants.lua
+index 771db62..a09d9d0 100644
+--- a/Interface/AddOns/GatherMate2/Constants.lua
++++ b/Interface/AddOns/GatherMate2/Constants.lua
+@@ -321,7 +321,7 @@ local node_ids = {
+ 		[NL["Large Darkwood Chest"]] 			= 510,
+ 		--[NL["Un'Goro Dirt Pile"]] 			= 511,
+ 		[NL["Bloodpetal Sprout"]] 				= 512,
+-		--[NL["Blood of Heroes"]] 				= 513,
++		[NL["Blood of Heroes"]] 				= 513,
+ 		[NL["Practice Lockbox"]] 				= 514,
+ 		[NL["Battered Footlocker"]] 			= 515,
+ 		[NL["Waterlogged Footlocker"]] 			= 516,
+@@ -787,7 +787,7 @@ local node_textures = {
+ 		[510] = icon_path.."Treasure\\chest.tga",
+ 		--[511] = icon_path.."Treasure\\soil.tga",
+ 		[512] = icon_path.."Treasure\\sprout.tga",
+-		--[513] = icon_path.."Treasure\\blood.tga",
++		[513] = icon_path.."Treasure\\blood.tga",
+ 		[514] = icon_path.."Treasure\\footlocker.tga",
+ 		[515] = icon_path.."Treasure\\footlocker.tga",
+ 		[516] = icon_path.."Treasure\\footlocker.tga",

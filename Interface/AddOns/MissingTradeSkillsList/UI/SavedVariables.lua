@@ -22,8 +22,16 @@ MTSLUI_PLAYER = {
         SIZE_NORMAL,
         SIZE_LARGE,
     },
+    MINIMAP = {
+        ACTIVE,
+        ANGLE,
+        RADIUS,
+        SHAPE,
+    },
     WELCOME_MSG,
     MTSL_LOCATION,
+    AUTO_SHOW_MTSL,
+    PATCH_LEVEL_MTSL,
 }
 
 MTSLUI_SAVED_VARIABLES = {
@@ -34,17 +42,21 @@ MTSLUI_SAVED_VARIABLES = {
     DEFAULT_SIZE_TEXT = 10,
     DEFAULT_SIZE_LABEL = 11,
     DEFAULT_SIZE_TITLE = 13,
+    -- Default at "12 o clock"
+    MIN_MINIMAP_ANGLE = 0,
+    MAX_MINIMAP_ANGLE = 359,
+    DEFAULT_MINIMAP_ANGLE = 90,
+    -- Default circle
+    DEFAULT_MINIMAP_SHAPE = "circle",
+    MIN_MINIMAP_RADIUS = -16,
+    MAX_MINIMAP_RADIUS = 32,
+    DEFAULT_MINIMAP_RADIUS = 0,
 
     -- Try and load the values from saved files
     Initialise = function(self)
         -- reset all if not found (first time)
         if MTSLUI_PLAYER == nil then
-            print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All saved variables have been reset to default values!")
-            MTSLUI_PLAYER = {}
-            self:ResetUIScales()
-            self:ResetSplitModes()
-            MTSLUI_PLAYER.FONT = "Default"
-            MTSLUI_PLAYER.WELCOME_MSG = 1
+            self:ResetPlayer()
         else
             -- reset/remove the old splitmode
             if MTSLUI_PLAYER.SPLIT_MODE ~= nil then
@@ -64,6 +76,8 @@ MTSLUI_SAVED_VARIABLES = {
             end
 
             self:SetShowWelcomeMessage(MTSLUI_PLAYER.WELCOME_MSG)
+            self:SetAutoShowMTSL(MTSLUI_PLAYER.AUTO_SHOW_MTSL)
+            self:SetPatchLevelMTSL(MTSLUI_PLAYER.PATCH_LEVEL_MTSL)
 
             if MTSLUI_PLAYER.FONT == nil or type(MTSLUI_PLAYER.FONT) ~= "table" or
                     MTSLUI_PLAYER.FONT.SIZE == nil or type(MTSLUI_PLAYER.FONT.SIZE) ~= "table" then
@@ -74,8 +88,38 @@ MTSLUI_SAVED_VARIABLES = {
             -- Intialise our fonts
             MTSLUI_FONTS:Initialise()
 
+            -- only reset the minimap
+            if MTSLUI_PLAYER.MINIMAP == nil or MTSLUI_PLAYER.MINIMAP ~= {} then
+                self:ResetMinimap()
+            else
+                self:ValidateMinimap()
+            end
+
+            -- only reset the tooltip
+            if MTSLUI_PLAYER.TOOLTIP == nil or MTSLUI_PLAYER.TOOLTIP ~= {} then
+                self:ResetEnhancedTooltip()
+            else
+                self:ValidateEnhancedTooltip()
+            end
+
             self:SetMTSLLocation(MTSLUI_PLAYER.MTSL_LOCATION)
         end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Reset the players saved variables
+    ------------------------------------------------------------------------------------------------
+    ResetPlayer = function(self)
+        print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: All saved variables have been reset to default values!")
+        MTSLUI_PLAYER = {}
+        self:ResetUIScales()
+        self:ResetSplitModes()
+        self:ResetFont()
+        MTSLUI_PLAYER.WELCOME_MSG = 1
+        MTSLUI_PLAYER.AUTO_SHOW_MTSL = 1
+        MTSLUI_PLAYER.PATCH_LEVEL_MTSL = MTSL_DATA.MIN_PATCH_LEVEL
+        self:ResetMinimap()
+        self:ResetTooltip()
     end,
 
     ------------------------------------------------------------------------------------------------
@@ -142,6 +186,27 @@ MTSLUI_SAVED_VARIABLES = {
         print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: Font was reset to default!")
     end,
 
+    ------------------------------------------------------------------------------------------------
+    -- Reset all minimap values to default
+    ------------------------------------------------------------------------------------------------
+    ResetMinimap = function(self)
+        MTSLUI_PLAYER.MINIMAP = {}
+        MTSLUI_PLAYER.MINIMAP.ACTIVE = 1
+        MTSLUI_PLAYER.MINIMAP.ANGLE = self.DEFAULT_MINIMAP_ANGLE
+        MTSLUI_PLAYER.MINIMAP.RADIUS = self.DEFAULT_MINIMAP_RADIUS
+        MTSLUI_PLAYER.MINIMAP.SHAPE = self.DEFAULT_MINIMAP_SHAPE
+
+        MTSLUI_MINIMAP:Show()
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Reset all tooltip values to default
+    ------------------------------------------------------------------------------------------------
+    ResetEnhancedTooltip = function(self)
+        MTSLUI_PLAYER.TOOLTIP = {}
+        MTSLUI_PLAYER.TOOLTIP.FACTIONS = "current character"
+        MTSLUI_PLAYER.TOOLTIP.ACTIVE = 1
+    end,
     ------------------------------------------------------------------------------------------------
     -- Load the saved splitmode from saved variable
     ------------------------------------------------------------------------------------------------
@@ -421,6 +486,27 @@ MTSLUI_SAVED_VARIABLES = {
     end,
 
     ------------------------------------------------------------------------------------------------
+    -- Sets the flag to show MTSL when opening a tradeskillframe/craftframe
+    --
+    -- @auto_show_mtsl        Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    SetAutoShowMTSL = function(self, auto_show_mtsl)
+        MTSLUI_PLAYER.AUTO_SHOW_MTSL = 1
+        if auto_show_mtsl == nil or auto_show_mtsl == 0 or auto_show_mtsl == false then
+            MTSLUI_PLAYER.AUTO_SHOW_MTSL = 0
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the flag to show MTSL when opening a tradeskillframe/craftframe
+    --
+    -- return			Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    GetAutoShowMTSL = function(self)
+        return MTSLUI_PLAYER.AUTO_SHOW_MTSL
+    end,
+
+    ------------------------------------------------------------------------------------------------
     -- Sets  the location where MTSL is hooked (left or right)
     --
     -- @frame_location        String         The location (default = right)
@@ -443,5 +529,182 @@ MTSLUI_SAVED_VARIABLES = {
     ------------------------------------------------------------------------------------------------
     GetMTSLLocation = function(self)
         return MTSLUI_PLAYER.MTSL_LOCATION
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the number of content patch used to show data
+    --
+    -- @patch_level        Number          Number between MTSL_DATA.MIN_PATCH_LEVEL and MTSL_DATA.MAX_PATCH_LEVEL
+    ------------------------------------------------------------------------------------------------
+    SetPatchLevelMTSL = function(self, patch_level)
+        MTSLUI_PLAYER.PATCH_LEVEL_MTSL = 1
+        if patch_level ~= nil and tonumber(patch_level) < tonumber(MTSL_DATA.MAX_PATCH_LEVEL) then
+            MTSLUI_PLAYER.PATCH_LEVEL_MTSL = patch_level
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the number of content patch used to show data
+    --
+    -- return			Number          The number of content patch
+    ------------------------------------------------------------------------------------------------
+    GetPatchLevelMTSL = function(self)
+        if MTSLUI_PLAYER.PATCH_LEVEL_MTSL == nil then
+            MTSLUI_PLAYER.PATCH_LEVEL_MTSL = 1
+        end
+        return MTSLUI_PLAYER.PATCH_LEVEL_MTSL
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the flag to say if we enhance tooltip or not
+    --
+    -- @enhance_tooltip        Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    SetEnhancedTooltipActive = function(self, enhance_tooltip)
+        MTSLUI_PLAYER.TOOLTIP.ACTIVE = 1
+        if enhance_tooltip == 0 or enhance_tooltip == false then
+            MTSLUI_PLAYER.TOOLTIP.ACTIVE = 0
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the flag to say if we enhance tooltip or not
+    --
+    -- return			Number          Flag indicating to enhance tooltip or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    GetEnhancedTooltipActive = function(self)
+        return MTSLUI_PLAYER.TOOLTIP.ACTIVE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the factions to show in the ehanced tooltip
+    --
+    -- @show_factions        String          Factions to show ("any" or "current player")
+    ------------------------------------------------------------------------------------------------
+    SetEnhancedTooltipFaction = function(self, show_factions)
+        MTSLUI_PLAYER.TOOLTIP.FACTIONS = "current character"
+        if show_factions == "any" then
+            MTSLUI_PLAYER.TOOLTIP.FACTIONS = show_factions
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the factions to show in the ehanced tooltip
+    --
+    -- return			 String          Factions to show ("any" or "current player")
+    ------------------------------------------------------------------------------------------------
+    GetEnhancedTooltipFaction = function(self)
+        return MTSLUI_PLAYER.TOOLTIP.FACTIONS
+    end,
+
+    ValidateEnhancedTooltip = function(self)
+        self:SetEnhancedTooltipActive(MTSLUI_PLAYER.TOOLTIP.ACTIVE)
+        self:SetEnhancedTooltipFaction(MTSLUI_PLAYER.TOOLTIP.FACTIONS)
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the flag to say if we show minimapbutton or not
+    --
+    -- @show_minimap        Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    SetMinimapButtonActive = function(self, show_minimap)
+        MTSLUI_PLAYER.MINIMAP.ACTIVE = 1
+        MTSLUI_MINIMAP:Show()
+        if show_minimap == 0 or show_minimap == false then
+            MTSLUI_PLAYER.MINIMAP.ACTIVE = 0
+            MTSLUI_MINIMAP:Hide()
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the flag to say if we show minimapbutton or not
+    --
+    -- return			Number          Flag indicating to show or not (1 = yes, 0 = no)
+    ------------------------------------------------------------------------------------------------
+    GetMinimapButtonActive = function(self)
+        return MTSLUI_PLAYER.MINIMAP.ACTIVE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the angle of the button around minimap
+    --
+    -- return			Number          The angle of the button (0 - 359 degrees)
+    ------------------------------------------------------------------------------------------------
+    GetMinimapButtonAngle = function(self)
+        if MTSLUI_PLAYER.MINIMAP.ANGLE == nil then
+            MTSLUI_PLAYER.MINIMAP.ANGLE = self.DEFAULT_MINIMAP_ANGLE
+        end
+        return MTSLUI_PLAYER.MINIMAP.ANGLE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the angle of the button around minimap
+    --
+    -- @new_angle       Number          The new angle (0 - 359 degrees)
+    ------------------------------------------------------------------------------------------------
+    SetMinimapButtonAngle = function(self, new_angle)
+        if new_angle ~= nil then
+            MTSLUI_PLAYER.MINIMAP.ANGLE = self.MIN_MINIMAP_ANGLE
+            if tonumber(new_angle) <= self.MAX_MINIMAP_ANGLE then
+                MTSLUI_PLAYER.MINIMAP.ANGLE = new_angle
+            end
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the shape of the minimap
+    --
+    -- return			String          The shape of the minimap (C or R)
+    ------------------------------------------------------------------------------------------------
+    GetMinimapShape = function(self)
+        if MTSLUI_PLAYER.MINIMAP.SHAPE == nil then
+            MTSLUI_PLAYER.MINIMAP.SHAPE = self.DEFAULT_MINIMAP_SHAPE
+        end
+        return MTSLUI_PLAYER.MINIMAP.SHAPE
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the shape of the minimap
+    --
+    -- @new_shape        String          The shape of the minimap (C or R)
+    ------------------------------------------------------------------------------------------------
+    SetMinimapShape = function(self, new_shape)
+        MTSLUI_PLAYER.MINIMAP.SHAPE = "circle"
+        if new_shape == "square" then
+            MTSLUI_PLAYER.MINIMAP.SHAPE = new_shape
+        end
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Gets the radius of the button next to the minimap
+    --
+    -- return			String          The shape of the minimap (C or R)
+    ------------------------------------------------------------------------------------------------
+    GetMinimapButtonRadius = function(self)
+        if MTSLUI_PLAYER.MINIMAP.RADIUS == nil then
+            MTSLUI_PLAYER.MINIMAP.RADIUS = self.DEFAULT_MINIMAP_RADIUS
+        end
+        return MTSLUI_PLAYER.MINIMAP.RADIUS
+    end,
+
+    ------------------------------------------------------------------------------------------------
+    -- Sets the radius of the button next to the minimap
+    --
+    -- @new_radius        number          The radius (number between 0 and 15)
+    ------------------------------------------------------------------------------------------------
+    SetMinimapButtonRadius = function(self, new_radius)
+        if new_radius ~= nil then
+            MTSLUI_PLAYER.MINIMAP.RADIUS = self.MIN_MINIMAP_RADIUS
+            if tonumber(new_radius) <= self.MAX_MINIMAP_RADIUS then
+                MTSLUI_PLAYER.MINIMAP.RADIUS = new_radius
+            end
+        end
+    end,
+
+    ValidateMinimap = function(self)
+        self:SetMinimapButtonActive(MTSLUI_PLAYER.MINIMAP.ACTIVE)
+        self:SetMinimapShape(MTSLUI_PLAYER.MINIMAP.SHAPE)
+        self:SetMinimapButtonRadius(MTSLUI_PLAYER.MINIMAP.RADIUS)
+        self:SetMinimapButtonAngle(MTSLUI_PLAYER.MINIMAP.ANGLE)
     end,
 }

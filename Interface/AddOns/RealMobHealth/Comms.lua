@@ -36,6 +36,7 @@ local MessageThrottle=0.1;
 local ChannelChecks={--	Channel availability functions
 	GUILD=IsInGuild;
 	BATTLEGROUND=InActiveBattlefield;
+	INSTANCE_CHAT=function() return IsInGroup(LE_PARTY_CATEGORY_INSTANCE); end;
 	PARTY=function() return IsInGroup(LE_PARTY_CATEGORY_HOME); end;
 	RAID=function() return IsInRaid(LE_PARTY_CATEGORY_HOME); end;
 }
@@ -52,6 +53,7 @@ end
 local function BroadcastMessage(pre,msg)--	Bloadcasts to all available group channels
 	if IsInGuild() then SendMessage(pre,msg,"GUILD"); end
 	if InActiveBattlefield() then SendMessage(pre,msg,"BATTLEGROUND"); end
+	if IsInGroup(LE_PARTY_CATEGORY_INSTANCE) then SendMessage(pre,msg,"INSTANCE_CHAT"); end
 	if IsInRaid(LE_PARTY_CATEGORY_HOME) then SendMessage(pre,msg,"RAID");
 	elseif IsInGroup(LE_PARTY_CATEGORY_HOME) then SendMessage(pre,msg,"PARTY"); end
 	SendMessage(pre,msg,"YELL");--	New channel in 1.13.3
@@ -73,6 +75,11 @@ end);
 
 AddOn.SetTimerInterval(MessageThrottle,function()
 	if #MessageQueue>0 then
+		if not AddOn.Options.EnablePeerCache then
+			MessageQueue = {}
+			return
+		end
+
 		local data=table_remove(MessageQueue,1);
 		local checkfunc=ChannelChecks[data[3]];
 		if not checkfunc or checkfunc() then
