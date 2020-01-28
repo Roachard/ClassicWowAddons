@@ -218,4 +218,4 @@ function BuffMasterConfigFunc()
 	end
 end
 
-BigFoot_AddCollector(BuffMasterConfigFunc)
+-- BigFoot_AddCollector(BuffMasterConfigFunc)
