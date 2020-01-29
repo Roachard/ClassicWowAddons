@@ -33,15 +33,14 @@ end
 ----------------------------------------------------------------------------------------------------------
 function MTSLUI_OPTIONS_MENU_FRAME:Initialise()
     self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLUI_Options_Menu_Frame", nil, nil, self.FRAME_WIDTH, self.FRAME_HEIGHT, true)
+    self.ui_frame:SetFrameLevel(10)
+    self.ui_frame:SetToplevel(true)
     -- Set Position to center of screen
     self.ui_frame:SetPoint("CENTER", nil, "CENTER", 0, 0)
     -- Dummy operation to do nothing, discarding the zooming in/out
     self.ui_frame:SetScript("OnMouseWheel", function() end)
     -- Make the screen dragable/movable
-    self.ui_frame:SetMovable(true)
-    self.ui_frame:RegisterForDrag("LeftButton")
-    self.ui_frame:SetScript("OnDragStart", function(frame) frame:StartMoving() end)
-    self.ui_frame:SetScript("OnDragStop", function(frame) frame:StopMovingOrSizing() end)
+    MTSLUI_TOOLS:AddDragToFrame(self.ui_frame)
     -- close/hide window on esc
     tinsert(UISpecialFrames, "MTSLUI_Options_Menu_Frame")
     -- add the close button
@@ -54,7 +53,7 @@ function MTSLUI_OPTIONS_MENU_FRAME:Initialise()
 
     -- initialise the content frames
     self.title_frame = MTSL_TOOLS:CopyObject(MTSLUI_TITLE_FRAME)
-    self.title_frame:Initialise(self.ui_frame, MTSLUI_LOCALES_LABELS["options"][MTSLUI_CURRENT_LANGUAGE], 715, 715)
+    self.title_frame:Initialise(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("options"), 715, 715)
     MTSLOPTUI_CONFIG_FRAME:Initialise(self.title_frame.ui_frame)
     MTSLOPTUI_SAVE_FRAME:Initialise(MTSLOPTUI_CONFIG_FRAME.ui_frame)
     MTSLOPTUI_RESET_FRAME:Initialise(MTSLOPTUI_SAVE_FRAME.ui_frame)

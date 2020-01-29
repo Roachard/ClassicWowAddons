@@ -21,25 +21,39 @@ MTSLUI_MINIMAP = {
         self.ui_frame:SetPushedTexture(MTSLUI_ADDON_PATH .. "\\Images\\minimap.blp")
         self.ui_frame:SetHighlightTexture(MTSLUI_ADDON_PATH .. "\\Images\\minimap.blp")
 
+        self.mouse_down = false
+
         self:HookEvents()
         self:Hide()
     end,
 
+    OnMouseDown = function (self)
+        MTSLUI_MINIMAP.mouse_down = true
+    end,
+
+    OnUpdate = function(self)
+        if MTSLUI_MINIMAP:IsMouseDown() == true then
+            MTSLUI_MINIMAP:DragButton()
+        end
+    end,
+
+    IsMouseDown = function(self)
+        return self.mouse_down == true
+    end,
+
+    OnMouseUp = function (self)
+        MTSLUI_MINIMAP.mouse_down = false
+        MTSLUI_MINIMAP:DragButton()
+    end,
+
     HookEvents = function(self)
-        self.ui_frame:SetMovable(true)
-        self.ui_frame:RegisterForDrag("LeftButton")
-        self.ui_frame:SetScript("OnDragStart", function(frame)
-            frame:StartMoving()
-            MTSLUI_MINIMAP:CalculateAngleButton()
-            MTSLUI_MINIMAP:DrawButton()
-            frame:StopMovingOrSizing()
-            frame:StartMoving()
-        end)
-        self.ui_frame:SetScript("OnDragStop", function(frame)
-            frame:StopMovingOrSizing()
-            MTSLUI_MINIMAP:CalculateAngleButton()
-            MTSLUI_MINIMAP:DrawButton()
-        end)
+        MTSLUI_TOOLS:AddDragToFrame(self.ui_frame)
+        -- Overwrite/add extra function/events)
+        self.ui_frame:SetScript("OnDragStart", MTSLUI_MINIMAP.OnMouseDown)
+        self.ui_frame:SetScript("OnDragStop", MTSLUI_MINIMAP.OnMouseUp)
+        self.ui_frame:SetScript("OnMouseDown", MTSLUI_MINIMAP.OnMouseDown)
+        self.ui_frame:SetScript("OnMouseUp", MTSLUI_MINIMAP.OnMouseUp)
+        self.ui_frame:SetScript("OnUpdate",  MTSLUI_MINIMAP.OnUpdate)
 
         self.ui_frame:SetScript("OnEnter", function(frame)
             GameTooltip:SetOwner(frame, "ANCHOR_BOTTOMRIGHT")
@@ -62,6 +76,11 @@ MTSLUI_MINIMAP = {
                 end
             end
         end)
+    end,
+
+    DragButton = function(self)
+        MTSLUI_MINIMAP:CalculateAngleButton()
+        MTSLUI_MINIMAP:DrawButton()
     end,
 
     CalculateAngleButton = function(self)
@@ -124,7 +143,7 @@ MTSLUI_MINIMAP = {
         end
 
         self.ui_frame:ClearAllPoints()
-        self.ui_frame:SetPoint("CENTER", Minimap, "CENTER", button_pos_x, button_pos_y)
+        self.ui_frame:SetPoint("CENTER", "Minimap", "CENTER", button_pos_x, button_pos_y)
     end,
 
     Hide = function(self)

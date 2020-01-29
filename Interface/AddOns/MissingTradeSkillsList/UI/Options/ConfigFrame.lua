@@ -102,21 +102,22 @@ MTSLOPTUI_CONFIG_FRAME = {
         -- UI Split Orientation
         self.minimap_shapes = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["circle"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("circle"),
                 ["id"] = "circle",
             },
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["square"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("square"),
                 ["id"] = "square",
             }
         }
 
         -- drop downs minimap shape
+        self.minimap_shape = MTSLUI_SAVED_VARIABLES:GetMinimapShape()
         self.ui_frame.minimap_shape_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_MINIMAP_SHAPE", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.minimap_shape_drop_down:SetPoint("TOPLEFT", self.minimap_button_check, "TOPRIGHT", -5, 2)
         self.ui_frame.minimap_shape_drop_down.initialize = self.CreateDropDownMinimapShape
         UIDropDownMenu_SetWidth(self.ui_frame.minimap_shape_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.minimap_shape_drop_down, MTSLUI_LOCALES_LABELS[MTSLUI_SAVED_VARIABLES:GetMinimapShape()][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.minimap_shape_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(MTSLUI_SAVED_VARIABLES:GetMinimapShape()))
 
         self.ui_frame.minimap_shape_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.minimap_shape_drop_down, "Shape", 0, 20, "LABEL", "CENTER")
 
@@ -144,7 +145,7 @@ MTSLOPTUI_CONFIG_FRAME = {
 
         self.ui_frame.minimap_reset_btn = MTSLUI_TOOLS:CreateBaseFrame("Button", "MTSLOPTUI_MINIMLAP_BTN_RESET", self.ui_frame, "UIPanelButtonTemplate", self.WIDTH_DD + 20, 26)
         self.ui_frame.minimap_reset_btn:SetPoint("TOPLEFT", self.ui_frame.minimap_radius_drop_down, "TOPRIGHT", -5, 0)
-        self.ui_frame.minimap_reset_btn:SetText(MTSLUI_LOCALES_LABELS["reset"][MTSLUI_CURRENT_LANGUAGE])
+        self.ui_frame.minimap_reset_btn:SetText(MTSLUI_TOOLS:GetLocalisedLabel("reset"))
         self.ui_frame.minimap_reset_btn:SetScript("OnClick", function ()
             MTSLUI_MINIMAP:ResetButton()
         end)
@@ -170,11 +171,11 @@ MTSLOPTUI_CONFIG_FRAME = {
         -- UI Split Orientation
         self.tooltip_factions = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["current character"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("current character"),
                 ["id"] = "current character",
             },
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["any"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("any"),
                 ["id"] = "any",
             }
         }
@@ -183,7 +184,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.tooltip_faction_drop_down:SetPoint("TOPLEFT", self.tooltip_check, "TOPRIGHT", -5, 2)
         self.ui_frame.tooltip_faction_drop_down.initialize = self.CreateDropDownTooltipFaction
         UIDropDownMenu_SetWidth(self.ui_frame.tooltip_faction_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.tooltip_faction_drop_down, MTSLUI_LOCALES_LABELS[MTSLUI_SAVED_VARIABLES:GetEnhancedTooltipFaction()][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.tooltip_faction_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(MTSLUI_SAVED_VARIABLES:GetEnhancedTooltipFaction()))
 
         self.ui_frame.tooltip_faction_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.tooltip_faction_drop_down, "Factions", 0, 20, "LABEL", "CENTER")
     end,
@@ -216,11 +217,11 @@ MTSLOPTUI_CONFIG_FRAME = {
         -- UI Split Orientation
         self.locations = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["left"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("left"),
                 ["id"] = "left",
             },
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["right"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("right"),
                 ["id"] = "right",
             }
         }
@@ -232,18 +233,18 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.location_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame, "TOPLEFT", self.MARGIN_RIGHT, margin_top + 7)
         self.ui_frame.location_mtsl_drop_down.initialize = self.CreateDropDownLocationMTSL
         UIDropDownMenu_SetWidth(self.ui_frame.location_mtsl_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.location_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetMTSLLocation())][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.location_mtsl_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetMTSLLocation())))
     end,
 
     InitialiseOptionsUISplitOrientation = function (self, margin_top)
         -- UI Split Orientation
         self.orientations = {
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["vertical"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("vertical"),
                 ["id"] = "Vertical",
             },
             {
-                ["name"] = MTSLUI_LOCALES_LABELS["horizontal"][MTSLUI_CURRENT_LANGUAGE],
+                ["name"] = MTSLUI_TOOLS:GetLocalisedLabel("horizontal"),
                 ["id"] = "Horizontal",
             }
         }
@@ -255,7 +256,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.orientation_mtsl_drop_down:SetPoint("TOPLEFT", self.ui_frame.location_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
         self.ui_frame.orientation_mtsl_drop_down.initialize = self.CreateDropDownOrientationMTSL
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_mtsl_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))))
         -- center text above the dropdown
         self.ui_frame.orientation_mtsl_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_mtsl_drop_down, "MTSL", 0, 20, "LABEL", "CENTER")
 
@@ -263,7 +264,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.orientation_account_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_mtsl_drop_down, "TOPRIGHT", -20, 0)
         self.ui_frame.orientation_account_drop_down.initialize = self.CreateDropDownOrientationAccount
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_account_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.orientation_account_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.orientation_account_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))))
         -- center text above the dropdown
         self.ui_frame.orientation_account_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_account_drop_down, "Account Explorer", 0, 22, "LABEL", "CENTER")
 
@@ -271,7 +272,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         self.ui_frame.orientation_database_drop_down:SetPoint("TOPLEFT", self.ui_frame.orientation_account_drop_down, "TOPRIGHT", -20, 0)
         self.ui_frame.orientation_database_drop_down.initialize = self.CreateDropDownOrientationDatabase
         UIDropDownMenu_SetWidth(self.ui_frame.orientation_database_drop_down, self.WIDTH_DD)
-        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))))
         -- center text above the dropdown
         self.ui_frame.orientation_database_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame.orientation_database_drop_down, "Database Explorer", 0, 22, "LABEL", "CENTER")
     end,
@@ -337,7 +338,7 @@ MTSLOPTUI_CONFIG_FRAME = {
             text = MTSLUI_PLAYER.FONT.SIZE.TEXT,
         }
 
-        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_LOCALES_LABELS["font"][MTSLUI_CURRENT_LANGUAGE] .. " (" .. MTSLUI_LOCALES_LABELS["reload UI"][MTSLUI_CURRENT_LANGUAGE] .. ")", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
+        self.ui_frame.font_text = MTSLUI_TOOLS:CreateLabel(self.ui_frame, MTSLUI_TOOLS:GetLocalisedLabel("font") .. " (" .. MTSLUI_TOOLS:GetLocalisedLabel("reload UI") .. ")", self.MARGIN_LEFT, margin_top, "LABEL", "TOPLEFT")
 
         self.ui_frame.font_type_drop_down = CreateFrame("Frame", "MTSLOPTUI_CONFIG_FRAME_DD_font_MTSL", self.ui_frame, "UIDropDownMenuTemplate")
         self.ui_frame.font_type_drop_down:SetPoint("TOPLEFT", self.ui_frame.scale_mtsl_drop_down, "BOTTOMLEFT", 0, -18)
@@ -615,7 +616,7 @@ MTSLOPTUI_CONFIG_FRAME = {
         MTSLUI_SAVED_VARIABLES:SetSplitModes(self.split_modes)
         MTSLUI_SAVED_VARIABLES:SetUIScales(self.ui_scales)
 
-        -- if Font was actualy changed, reload ui
+        -- if Font was actually changed, reload ui
         if MTSLUI_SAVED_VARIABLES:SetFont(self.font_name, self.font_size) == true then
             MTSLUI_FONTS:Initialise()
             ReloadUI()
@@ -640,9 +641,9 @@ MTSLOPTUI_CONFIG_FRAME = {
 
         MTSLUI_SAVED_VARIABLES:SetMTSLLocation(self.location_mtsl)
 
-        UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))][MTSLUI_CURRENT_LANGUAGE])
-        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))][MTSLUI_CURRENT_LANGUAGE])
-        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_LOCALES_LABELS[string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))][MTSLUI_CURRENT_LANGUAGE])
+        UIDropDownMenu_SetText(self.ui_frame.orientation_mtsl_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("MTSL"))))
+        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("ACCOUNT"))))
+        UIDropDownMenu_SetText(self.ui_frame.orientation_database_drop_down, MTSLUI_TOOLS:GetLocalisedLabel(string.lower(MTSLUI_SAVED_VARIABLES:GetSplitMode("DATABASE"))))
 
         UIDropDownMenu_SetText(self.ui_frame.scale_mtsl_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("MTSL"))
         UIDropDownMenu_SetText(self.ui_frame.scale_account_drop_down, MTSLUI_SAVED_VARIABLES:GetUIScaleAsText("ACCOUNT"))

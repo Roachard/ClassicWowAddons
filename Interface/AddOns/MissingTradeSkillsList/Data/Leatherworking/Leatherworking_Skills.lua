@@ -4164,14 +4164,15 @@ MTSL_DATA["Leatherworking"]["skills"] = {
 			5518, -- [1]
 		},
 		["special_action"] = {
-			["German"] = "Sprecht nach Abschluss der Quest mit dem NPC",
-			["Spanish"] = "Habla con el NPC después de completar la misión",
-			["English"] = "Talk to NPC after completing quest",
-			["Chinese"] = "完成任务后与NPC对话",
-			["Russian"] = "Поговорите с NPC после выполнения квеста",
-			["Korean"] = "퀘스트 완료 후 NPC와 대화",
-			["French"] = "Parlez au PNJ après avoir terminé la quête",
-			["Portuguese"] = "Fale com o NPC após completar a missão",
+			["German"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["German"],
+			["English"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["English"],
+			["Spanish"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Spanish"],
+			["Mexican"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Mexican"],
+			["French"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["French"],
+			["Portuguese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Portuguese"],
+			["Chinese"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Chinese"],
+			["Russian"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Russian"],
+			["Korean"] = MTSLUI_LOCALES_LABELS["talk to npc after quest"]["Korean"],
 		},
 	}, -- [196]
 	{

@@ -29,7 +29,7 @@ MTSL_LOGIC_FACTION_REPUTATION = {
             print(MTSLUI_FONTS.COLORS.TEXT.ERROR .. "MTSL: No faction found for id " .. faction_id .. "! Please report this bug!")
             return ""
         else
-            return faction["name"][MTSLUI_CURRENT_LANGUAGE]
+            return MTSLUI_TOOLS:GetLocalisedData(faction)
         end
     end,
 

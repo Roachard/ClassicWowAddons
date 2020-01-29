@@ -250,7 +250,7 @@ function Item:UpdateBorder()
 	self.NewItemTexture:SetShown(new and not paid)
 
 	self.IconOverlay:SetShown(id and C_AzeriteEmpoweredItem and C_AzeriteEmpoweredItem.IsAzeriteEmpoweredItemByID(id))
-	self.JunkIcon:SetShown(quality == LE_ITEM_QUALITY_POOR and not self.info.worthless)
+	self.JunkIcon:SetShown(Addon.sets.glowPoor and quality == LE_ITEM_QUALITY_POOR and not self.info.worthless)
 	self.BattlepayItemTexture:SetShown(new and paid)
 	self.QuestBorder:SetShown(questID)
 end
@@ -370,19 +370,20 @@ function Item:CreateDummy()
 	local function showTooltip(slot)
 		local parent = slot:GetParent()
 		local link = parent.info.link
+		if link then
+			GameTooltip:SetOwner(parent:GetTipAnchor())
+			parent:LockHighlight()
+			CursorUpdate(parent)
 
-		GameTooltip:SetOwner(parent:GetTipAnchor())
-		parent:LockHighlight()
-		CursorUpdate(parent)
+			if link:find('battlepet:') then
+				local _, specie, level, quality, health, power, speed = strsplit(':', link)
+				local name = link:match('%[(.-)%]')
 
-		if link:find('battlepet:') then
-			local _, specie, level, quality, health, power, speed = strsplit(':', link)
-			local name = link:match('%[(.-)%]')
-
-			BattlePetToolTip_Show(tonumber(specie), level, tonumber(quality), health, power, speed, name)
-		else
-			GameTooltip:SetHyperlink(link)
-			GameTooltip:Show()
+				BattlePetToolTip_Show(tonumber(specie), level, tonumber(quality), health, power, speed, name)
+			else
+				GameTooltip:SetHyperlink(link)
+				GameTooltip:Show()
+			end
 		end
 	end
 
@@ -402,8 +403,8 @@ function Item:CreateDummy()
 
 	slot:SetScript('OnLeave', function(slot)
 		slot:GetParent():UnlockHighlight()
+		slot:GetParent():OnLeave()
 		slot:Hide()
-		ResetCursor()
 	end)
 
 	return slot

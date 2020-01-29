@@ -64,7 +64,7 @@ MTSL_LOGIC_WORLD = {
     GetZoneNameById = function(self, id)
         local zone = MTSL_TOOLS:GetItemFromArrayByKeyValue(MTSL_DATA["zones"], "id", id)
         if zone then
-            return zone["name"][MTSLUI_CURRENT_LANGUAGE]
+            return MTSLUI_TOOLS:GetLocalisedData(zone)
         end
         return ""
     end,

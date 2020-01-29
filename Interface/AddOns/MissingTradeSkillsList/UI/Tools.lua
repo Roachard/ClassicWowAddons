@@ -109,8 +109,8 @@ MTSLUI_TOOLS = {
 	----------------------------------------------------------------------------------------
 	PrintAboutMessage = function (self)
 		print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_ADDON.NAME)
-		print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_FONTS.TAB .. "Author: " .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_ADDON.AUTHOR)
-		print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_FONTS.TAB .. "Version: " .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_ADDON.VERSION)
+		print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_FONTS.TAB .. MTSLUI_TOOLS:GetLocalisedLabel("author") .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_ADDON.AUTHOR)
+		print(MTSLUI_FONTS.COLORS.TEXT.TITLE .. MTSLUI_FONTS.TAB .. MTSLUI_TOOLS:GetLocalisedLabel("version") .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_ADDON.VERSION)
 	end,
 
 	----------------------------------------------------------------------------------------
@@ -124,10 +124,10 @@ MTSLUI_TOOLS = {
 		print(slashtext .. " options")
 		print(slashtext .. " about" .. MTSLUI_FONTS.TAB .. "Print information about this addon")
 		print(slashtext .. " help" .. MTSLUI_FONTS.TAB .. "Print how to use this addon")
-        print(slashtext .. " acc" .. MTSLUI_FONTS.TAB  .. "Opens the account wide frame")
-        print(slashtext .. " account")
+		print(slashtext .. " acc" .. MTSLUI_FONTS.TAB  .. "Opens the account wide frame")
+		print(slashtext .. " account")
 		print(slashtext .. " db" .. MTSLUI_FONTS.TAB .. "Opens the database explorer window")
-        print(slashtext .. " database")
+		print(slashtext .. " database")
 	end,
 
 	------------------------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ MTSLUI_TOOLS = {
 							if IsAddOnLoaded("TomTom") and SlashCmdList["TOMTOM_WAY"] ~= nil then
 								SlashCmdList["TOMTOM_WAY"](zone .. x_coord .. y_coord .. " " .. name_npc .. " (" .. item_name .. ")")
 							elseif not self.tomtom_warned then
-								print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: You need to install TomTom to add waypoints!")
+								print(MTSLUI_FONTS.COLORS.TEXT.WARNING .. "MTSL: " .. MTSLUI_TOOLS:GetLocalisedLabel("tomtom needed"))
 								self.tomtom_warned = true
 							end
 						end
@@ -199,16 +199,16 @@ MTSLUI_TOOLS = {
 		end
 	end,
 
-    ------------------------------------------------------------------------------------------------
-    -- Fill A drop down list
-    --
-    -- @values              Array           List containing values to add
-    -- @change_handler      Function        Function that handles the change of value in the DDL
+	------------------------------------------------------------------------------------------------
+	-- Fill A drop down list
+	--
+	-- @values              Array           List containing values to add
+	-- @change_handler      Function        Function that handles the change of value in the DDL
 	-- @change_frame_name	String			The name of the frame to handle the change event
-    ------------------------------------------------------------------------------------------------
-    FillDropDown = function(self, values, change_handler, change_frame_name)
-        local info = UIDropDownMenu_CreateInfo()
-        -- add all values
+	------------------------------------------------------------------------------------------------
+	FillDropDown = function(self, values, change_handler, change_frame_name)
+		local info = UIDropDownMenu_CreateInfo()
+		-- add all values
 		for _, v in pairs(values) do
 			-- already localised in array so no need to index
 			info.text = v.name
@@ -226,12 +226,29 @@ MTSLUI_TOOLS = {
 			info.hasArrow = false;
 			UIDropDownMenu_AddButton(info)
 		end
-    end,
+	end,
 
+	------------------------------------------------------------------------------------------------
+	-- Adds a generic drag to a frame
+	------------------------------------------------------------------------------------------------
 	AddDragToFrame = function(self, frame_to_drag)
 		frame_to_drag:SetMovable(true)
 		frame_to_drag:RegisterForDrag("LeftButton")
 		frame_to_drag:SetScript("OnDragStart", function(frame) frame:StartMoving() end)
 		frame_to_drag:SetScript("OnDragStop", function(frame) frame:StopMovingOrSizing() end)
+	end,
+
+	------------------------------------------------------------------------------------------------
+	-- Returns the text for a label in the current locale/language
+------------------------------------------------------------------------------------------------
+	GetLocalisedLabel = function(self, label)
+		return MTSLUI_LOCALES_LABELS[label][MTSLUI_CURRENT_LANGUAGE]
+	end,
+
+	------------------------------------------------------------------------------------------------
+	-- Returns the name of a data object in the current locale/language
+	------------------------------------------------------------------------------------------------
+	GetLocalisedData = function(self, data)
+		return data["name"][MTSLUI_CURRENT_LANGUAGE]
 	end,
 }

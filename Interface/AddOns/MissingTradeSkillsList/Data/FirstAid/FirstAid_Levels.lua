@@ -3,6 +3,7 @@
 ----------------------
 MTSL_DATA["First Aid"]["levels"] = {
 	{
+		["id"] = 3273,
 		["trainers"] = {
 			["price"] = 100,
 			["sources"] = {
@@ -33,11 +34,12 @@ MTSL_DATA["First Aid"]["levels"] = {
 			["Mexican"] = MTSLUI_LOCALES_PROFESSION_RANKS["Mexican"]["Apprentice"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Mexican"]["First Aid"],
 		},
 		["min_skill"] = 0,
-		["id"] = 3273,
 		["max_skill"] = 75,
 		["rank"] = 1,
+		["min_xp_level"] = 1,
 	},
 	{
+		["id"] = 3274,
 		["trainers"] = {
 			["price"] = 500,
 			["sources"] = {
@@ -68,11 +70,12 @@ MTSL_DATA["First Aid"]["levels"] = {
 			["Mexican"] = MTSLUI_LOCALES_PROFESSION_RANKS["Mexican"]["Journeyman"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Mexican"]["First Aid"],
 		},
 		["min_skill"] = 50,
-		["id"] = 3274,
 		["max_skill"] = 150,
 		["rank"] = 2,
+		["min_xp_level"] = 1,
 	},
 	{
+		["id"] = 7924,
 		["name"] = {
 			["German"] = MTSLUI_LOCALES_PROFESSION_RANKS["German"]["Expert"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["German"]["First Aid"],
 			["Spanish"] = MTSLUI_LOCALES_PROFESSION_RANKS["Spanish"]["Expert"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Spanish"]["First Aid"],
@@ -85,13 +88,13 @@ MTSL_DATA["First Aid"]["levels"] = {
 			["Mexican"] = MTSLUI_LOCALES_PROFESSION_RANKS["Mexican"]["Expert"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Mexican"]["First Aid"],
 		},
 		["min_skill"] = 125,
-		["id"] = 7924,
 		["max_skill"] = 225,
 		["rank"] = 3,
 		["item"] = 16084,
+		["min_xp_level"] = 1,
 	},
 	{
-		["min_xp_level"] = 35,
+		["id"] = 10846,
 		["name"] = {
 			["German"] = MTSLUI_LOCALES_PROFESSION_RANKS["German"]["Artisan"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["German"]["First Aid"],
 			["Spanish"] = MTSLUI_LOCALES_PROFESSION_RANKS["Spanish"]["Artisan"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Spanish"]["First Aid"],
@@ -103,13 +106,13 @@ MTSL_DATA["First Aid"]["levels"] = {
 			["Chinese"] = MTSLUI_LOCALES_PROFESSION_RANKS["Chinese"]["Artisan"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Chinese"]["First Aid"],
 			["Mexican"] = MTSLUI_LOCALES_PROFESSION_RANKS["Mexican"]["Artisan"] .. " " .. MTSLUI_LOCALES_PROFESSIONS["Mexican"]["First Aid"],
 		},
-		["min_skill"] = 200,
-		["id"] = 10846,
+		["min_skill"] = 225,
+		["max_skill"] = 300,
 		["quests"] = {
 			6622,
 			6624,
 		},
-		["max_skill"] = 300,
 		["rank"] = 4,
+		["min_xp_level"] = 35,
 	},
 }

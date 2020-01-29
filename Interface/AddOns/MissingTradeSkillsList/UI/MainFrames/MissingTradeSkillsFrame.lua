@@ -32,7 +32,8 @@ end
 ----------------------------------------------------------------------------------------------------------
 function MTSLUI_MISSING_TRADESKILLS_FRAME:Initialise()
     self.ui_frame = MTSLUI_TOOLS:CreateBaseFrame("Frame", "MTSLUI_MissingTradeSkillsFrame", MTSLUI_TOGGLE_BUTTON.ui_frame, nil, self.FRAME_WIDTH_VERTICAL_SPLIT, self.FRAME_HEIGHT_VERTICAL_SPLIT, true)
-    self.ui_frame:SetBackdropColor(0,0,0,1)
+    self.ui_frame:SetFrameLevel(10)
+    self.ui_frame:SetToplevel(true)
     -- Set Position relative to MTSL button
     self.ui_frame:SetPoint("TOPLEFT", MTSLUI_TOGGLE_BUTTON.ui_frame, "TOPRIGHT", -2, 0)
     -- Dummy operation to do nothing, discarding the zooming in/out
@@ -68,7 +69,7 @@ function MTSLUI_MISSING_TRADESKILLS_FRAME:CreateCompontentFrames()
     self.skill_detail_frame.ui_frame:SetPoint("BOTTOMLEFT", self.skill_list_frame.ui_frame, "BOTTOMRIGHT", 0, 0)
     -- Copy & init the pgoress bar
     self.progressbar = MTSL_TOOLS:CopyObject(MTSLUI_PROGRESSBAR)
-    self.progressbar:Initialise(self.ui_frame, "MTSLUI_MTSLF_PROGRESS_BAR", MTSLUI_LOCALES_LABELS["missing skills"][MTSLUI_CURRENT_LANGUAGE])
+    self.progressbar:Initialise(self.ui_frame, "MTSLUI_MTSLF_PROGRESS_BAR", MTSLUI_TOOLS:GetLocalisedLabel("missing skills"))
     -- Bottom of the frame
     self.progressbar.ui_frame:SetPoint("BOTTOMLEFT", self.ui_frame, "BOTTOMLEFT", 4, 2)
 end

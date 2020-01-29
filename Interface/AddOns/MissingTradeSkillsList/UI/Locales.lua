@@ -3,7 +3,6 @@ MTSLUI_CURRENT_LANGUAGE = "English"
 
 -- Contains the names of the professions in different languages/locales
 MTSLUI_LOCALES = {
-    -- French
     ["frFR"] = "French",
     ["enGB"] = "English",
     ["enUS"] = "English",
@@ -14,6 +13,7 @@ MTSLUI_LOCALES = {
     ["ptBR"] = "Portuguese",
     ["koKR"] = "Korean",
     ["zhCN"] = "Chinese",
+    ["zhTW"] = "Chinese",
 }
 
 MTSLUI_LOCALES_PROFESSION_RANKS = {
@@ -498,6 +498,17 @@ MTSLUI_LOCALES_LABELS = {
         ["Mexican"] = "Cualquier zona",
         ["Portuguese"] = "Qualquer zona",
     },
+    ["author"] = {
+        ["English"] = "Author: ",
+        ["French"] = "Auteur : ",
+        ["German"] = "Autor: ",
+        ["Russian"] = "Автор: ",
+        ["Korean"] = "저자: ",
+        ["Chinese"] = "作者: ",
+        ["Spanish"] = "Autor: ",
+        ["Mexican"] = "Autor: ",
+        ["Portuguese"] = "Autor: ",
+    },
     ["cancel"] = {
         ["English"] = "Cancel",
         ["French"] = "Annuler",
@@ -530,6 +541,17 @@ MTSLUI_LOCALES_LABELS = {
         ["Spanish"] = "Circulo",
         ["Mexican"] = "Circulo",
         ["Portuguese"] = "Círculo",
+    },
+    ["close options menu"] = {
+        ["English"] = "Please close options menu first!",
+        ["French"] = "Veuillez d'abord fermer le menu d'options !",
+        ["German"] = "Bitte zuerst das Optionsmenü schließen!",
+        ["Russian"] = "Пожалуйста, закройте меню опций первым!",
+        ["Korean"] = "옵션 메뉴를 먼저 닫으십시오!",
+        ["Chinese"] = "请先关闭选项菜单！",
+        ["Spanish"] = "¡Primero cierra el menú de opciones!",
+        ["Mexican"] = "¡Primero cierra el menú de opciones!",
+        ["Portuguese"] = "Por favor, feche o menu de opções primeiro!",
     },
     ["current"] = {
         ["English"] = "Current",
@@ -1059,16 +1081,27 @@ MTSLUI_LOCALES_LABELS = {
 		["Mexican"] = "Empezado por",
         ["Portuguese"] = "Começado por",
     },
+    ["status other characters"] = {
+        ["German"] = "Status andere Charakters:",
+        ["English"] = "Status other characters:",
+        ["Spanish"] = "Estado de otros personajes:",
+        ["Mexican"] = "Estado de otros personajes:",
+        ["French"] = "Statut des autres personnages :",
+        ["Portuguese"] = "Status de outros caracteres:",
+        ["Russian"] = "Статус других персонажей:",
+        ["Korean"] = "다른 캐릭터 상태 :",
+        ["Chinese"] = "状态其他字符:",
+    },
     ["talk to npc after quest"] = {
+        ["German"] = "Sprecht nach Abschluss der Quest mit dem NPC",
         ["English"] = "Talk to NPC after completing quest",
+        ["Spanish"] = "Habla con el NPC después de completar la misión",
+        ["Mexican"] = "Habla con el NPC después de completar la misión",
+        ["French"] = "Parlez au PNJ après avoir terminé la quête",
         ["Portuguese"] = "Fale com o NPC após completar a missão",
         ["Russian"] = "Поговорите с NPC после выполнения квеста",
-        ["Chinese"] = "完成任务后与NPC对话",
-        ["Spanish"] = "Habla con el NPC después de completar la misión",
-		["Mexican"] = "Habla con el NPC después de completar la misión",
-        ["French"] = "Parlez au PNJ après avoir terminé la quête",
         ["Korean"] = "퀘스트 완료 후 NPC와 대화",
-        ["German"] = "Sprecht nach Abschluss der Quest mit dem NPC",
+        ["Chinese"] = "完成任务后与NPC对话",
     },
     ["to"] = {
         ["English"] = " to ",
@@ -1080,6 +1113,17 @@ MTSLUI_LOCALES_LABELS = {
         ["Spanish"] = " hasta el ",
 		["Mexican"] = " hasta el ",
         ["Portuguese"] = " e ",
+    },
+    ["tomtom needed"] = {
+        ["English"] = "You need to install TomTom to add waypoints!",
+        ["French"] = "Vous devez installer TomTom pour ajouter des waypoints !",
+        ["German"] = "Sie müssen TomTom installieren, um Wegpunkte hinzuzufügen!",
+        ["Russian"] = "Вам нужно установить TomTom, чтобы добавить путевые точки!",
+        ["Korean"] = "웨이 포인트를 추가하려면 TomTom을 설치해야합니다!",
+        ["Chinese"] = "您需要安装TomTom才能添加航点!",
+        ["Spanish"] = "¡Necesita instalar TomTom para agregar puntos de referencia!",
+        ["Mexican"] = "¡Necesita instalar TomTom para agregar puntos de referencia!",
+        ["Portuguese"] = "Você precisa instalar o TomTom para adicionar waypoints!",
     },
     ["trained by"] = {
         ["English"] = "Trained by",
@@ -1113,6 +1157,17 @@ MTSLUI_LOCALES_LABELS = {
         ["Spanish"] = "Vendedor",
 		["Mexican"] = "Vendedor",
         ["Portuguese"] = "Fornecedor",
+    },
+    ["version"] = {
+        ["English"] = "Version: ",
+        ["French"] = "Version : ",
+        ["German"] = "Ausführung: ",
+        ["Russian"] = "Версия: ",
+        ["Korean"] = "버전: ",
+        ["Chinese"] = "版：",
+        ["Spanish"] = "Versión: ",
+        ["Mexican"] = "Versión: ",
+        ["Portuguese"] = "Versão: ",
     },
     ["vertical"] = {
         ["English"] = "Vertical",

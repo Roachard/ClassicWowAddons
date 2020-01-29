@@ -155,7 +155,7 @@ MTSLUI_LIST_FRAME = {
                             text_for_button =  MTSLUI_FONTS.COLORS.AVAILABLE.NO
                         end
                     end
-                    text_for_button = text_for_button .. "[" .. skill_for_button.min_skill .. "] " .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. skill_for_button["name"][MTSLUI_CURRENT_LANGUAGE]
+                    text_for_button = text_for_button .. "[" .. skill_for_button.min_skill .. "] " .. MTSLUI_FONTS.COLORS.TEXT.NORMAL .. MTSLUI_TOOLS:GetLocalisedData(skill_for_button)
                     -- update & show the button
                     self.LIST_BUITTONS[i]:Refresh(text_for_button, self.slider_active)
                     self.LIST_BUITTONS[i]:Show()
@@ -336,7 +336,7 @@ MTSLUI_LIST_FRAME = {
                         return false
                     -- equal skill so return alphabetical
                     else
-                        return a.name[MTSLUI_CURRENT_LANGUAGE] < b.name[MTSLUI_CURRENT_LANGUAGE]
+                        return MTSLUI_TOOLS:GetLocalisedData(a) < MTSLUI_TOOLS:GetLocalisedData(b)
                     end
                 end)
             else

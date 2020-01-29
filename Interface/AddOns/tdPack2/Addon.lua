@@ -21,24 +21,24 @@ ns.GUI = LibStub('tdGUI-1.0')
 function Addon:OnInitialize()
     local defaults = {
         profile = {
-            reverse = false,
+            reverse = true,
             console = true,
-            stackTogether = true,
+            stackTogether = false,
             stackBankFull = true,
             applyLibItemSearch = false,
             ruleOptionWindow = {point = 'CENTER', width = 637, height = 637},
             actions = {
                 [ns.COMMAND.BAG] = {
-                    [ns.CLICK_TOKENS.LEFT] = 'SORT',
+                    [ns.CLICK_TOKENS.LEFT] = 'SORT_BAG',
                     [ns.CLICK_TOKENS.RIGHT] = 'OPEN_RULE_OPTIONS',
-                    [ns.CLICK_TOKENS.CONTROL_LEFT] = 'SORT_BAG',
+                    [ns.CLICK_TOKENS.CONTROL_LEFT] = 'SORT',
                     [ns.CLICK_TOKENS.CONTROL_RIGHT] = 'OPEN_OPTIONS',
                     [ns.CLICK_TOKENS.SHIFT_LEFT] = 'SAVE',
                 },
                 [ns.COMMAND.BANK] = {
-                    [ns.CLICK_TOKENS.LEFT] = 'SORT',
+                    [ns.CLICK_TOKENS.LEFT] = 'SORT_BANK',
                     [ns.CLICK_TOKENS.RIGHT] = 'OPEN_RULE_OPTIONS',
-                    [ns.CLICK_TOKENS.CONTROL_LEFT] = 'SORT_BANK',
+                    [ns.CLICK_TOKENS.CONTROL_LEFT] = 'SORT',
                     [ns.CLICK_TOKENS.CONTROL_RIGHT] = 'OPEN_OPTIONS',
                     [ns.CLICK_TOKENS.SHIFT_LEFT] = 'SAVE',
                 },
