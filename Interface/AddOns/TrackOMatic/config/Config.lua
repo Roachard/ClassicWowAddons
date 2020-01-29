@@ -268,8 +268,8 @@ function TrackOMatic_Config_SetDefaults()
     TRACKOMATIC_VARS['config']['show_load_message'] = false;
     TRACKOMATIC_VARS['config']['show_alert_boxes'] = true;
     TrackOMatic_SetScale(1);
-    TrackOMatic_SetWidth(100);
-    TrackOMatic_Config_SetTexture("LiteStep");
+    TrackOMatic_SetWidth(75);
+    TrackOMatic_Config_SetTexture("Minimalist");
     TRACKOMATIC_VARS['config']['gold_glow_negative'] = true;
     TRACKOMATIC_VARS['config']['show_lowest_durability'] = false;
     TRACKOMATIC_VARS['config']['durability_glow_broken'] = true;
