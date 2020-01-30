@@ -409,7 +409,7 @@ function TrackOMatic_LoadSettings()
         --TrackOMatic_Upgrade_11000(version);
     end
     TRACKOMATIC_VARS['config']['version'] = TrackOMatic.VersionID;
-    TrackOMatic_CheckSetting("texture", "LiteStep");
+    TrackOMatic_CheckSetting("texture", "Minimalist");
     TrackOMatic_CheckSetting("gold_glow_negative", true);
     TrackOMatic_CheckSetting("show_lowest_durability", false);
     TrackOMatic_CheckSetting("item_default_glow", true);
@@ -426,7 +426,7 @@ function TrackOMatic_LoadSettings()
     TrackOMatic_CheckSetting("show_alert_boxes", true);
     local upd = TrackOMatic_CheckSetting("update_interval", 1);
 
-    TrackOMatic_CheckProfileSetting("width", 100);
+    TrackOMatic_CheckProfileSetting("width", 75);
     TrackOMatic_CheckProfileSetting("enable_glows", true);
     TrackOMatic_CheckProfileSetting("locked", false);
     TrackOMatic_CheckProfileSetting("visible", true);
